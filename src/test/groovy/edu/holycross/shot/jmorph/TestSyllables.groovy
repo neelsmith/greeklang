@@ -24,9 +24,11 @@ class TestSyllables extends GroovyTestCase {
     String testString = "a)/eide"
     def expected = ["a)/", "ei", "de"]
     GreekString gkstr = new GreekString(testString)
+
+    gkstr.debugLevel = 3
     def actualSyllables = gkstr.getSyllables()
-    
-    println actualSyllables
+
+    assert actualSyllables == expected
   }
 
   void testBreathingSeq() {

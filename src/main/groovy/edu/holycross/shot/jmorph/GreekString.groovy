@@ -9,6 +9,14 @@ package edu.holycross.shot.jmorph
  * 
  */
 class GreekString {
+
+
+  // Temporary constructs for debugging:
+  Integer SILENT = 0
+  Integer WARN =  1
+  Integer DEBUG = 2
+  Integer VERBOSE = 3
+  Integer debugLevel = 0
   
   def consonant = [
     'b','g','d',
@@ -113,6 +121,7 @@ class GreekString {
   // with vowel at pos count
   Integer countToInclude(String s, Integer startFrom) {
     Integer include = 0
+    boolean accentSeen = false
     String lookAt = s.substring(startFrom)
 
 
@@ -121,18 +130,31 @@ class GreekString {
     Integer count = 0
     while ((!done) && (count < max))  {
       String ch = lookAt.substring(count,count + 1)
-      if (isAccentBreathing(ch)) {
+
+      if (accentSeen && vowel.contains(ch)) {
+	// then new syllable: do not include
+
+      } else if (isAccentBreathing(ch)) {
+	accentSeen = true
 	include++;
+
+
       } else {
 	if (lookAt.size() > count+2) {
 	  if (diphthong.contains(ch + lookAt.substring(count+1,count+2))) {
-	    include++;
+	    if (lookAt.size() > count+3) {
+	      if (lookAt.substring(count+2,count+3) == "+") {
+		// no diphthong if diaeresis follows
+	      } else {
+		include++;
+	      }
+	    }
 	  }
 	}
       }
       count++
     }
-    println "Looked at " + lookAt + " and figured " + include   
+    if (debugLevel > WARN) {println "Looked at " + lookAt + " and figured " + include   }
     return include
 	  //already have vowel, so see if we need
 	// to add this char to syllable or not.
@@ -165,26 +187,37 @@ more characters to it.
     while (count < this.greekString.size()) {
       String ch = this.greekString.substring(count,count+1)
 
+      if (debugLevel > WARN) { println "Analyze character ${ch} at appendCoiunt ${appendCount}"}
+
+
       // are there characters to add?
       if (appendCount > 0) {
 	syllable.append(ch)
-	println "append ${appendCount}, so appending  " + ch + " to get " + syllable
+	if (debugLevel > WARN) { println "append ${appendCount}, so appending  " + ch + " to get " + syllable }
 	appendCount--
-	println "Decrement appendcount  to " + appendCount
+	if (debugLevel > WARN) { println "Decrement appendcount  to " + appendCount}
+	
+
+	if (appendCount == 0) {
+	  syllables.add(syllable.toString())
+	  if (debugLevel > WARN) {	  println "AppendCount at 0, so calling  it a syllable: " + syllables}
+	  syllable.setLength(0)
+	  vowelSeen = false
+	}
 
       } else {
 	// basic case: have we seen a vowel?
 	if (!vowelSeen) {
 
 	  syllable.append(ch)
-	  println "Count at 0 but no vowel yet: added to get " + syllable
+	  if (debugLevel >= VERBOSE ) { println "Count at 0 but no vowel yet: added to get " + syllable }
 	  if (vowel.contains(ch)) {
 	    vowelSeen = true
 	    appendCount = countToInclude(greekString, count)
 	  }
 
 	} else {
-	  println "Count at 0 and already have a vowel! End syll." + syllable
+	  if (debugLevel > WARN) { println "Count at 0 and already have a vowel! End syll." + syllable }
 	  // finished peekahead, but have seen a vowel
 	  // so end of syll!
 	  syllables.add(syllable.toString())
@@ -202,7 +235,7 @@ more characters to it.
     // Add any left-over letters to end of 
     // last syllable:
     if (syllable.toString().size() > 0 ) {
-      if (vowel.contains(syllable[0])) {
+      if (containsVowel(syllable)){
 	syllables.add(syllable.toString())
       } else {
 	String lastSyll = syllables[syllables.size() - 1] + syllable.toString()
@@ -212,6 +245,18 @@ more characters to it.
     return syllables
   }
 
+  boolean containsVowel (StringBuffer buff) {
+    return containsVowel(buff.toString())
+  }
+  boolean containsVowel (String s) {
+    boolean vowelSeen = false
+    s.each { ch ->
+      if (vowel.contains(ch)) {
+	vowelSeen = true
+      }
+    }
+    return vowelSeen
+  }
 
   /** Overrides default method.
    */
