@@ -1,0 +1,53 @@
+apply plugin: "base"
+apply plugin:  "groovy"
+apply plugin:  "maven"
+
+group = "edu.holycross.shot"
+version = '0.0.1'
+
+apply from: "versions.gradle"
+
+
+if (hasProperty('pub')) {
+    System.err.print "Using configuration data from ${pub}"
+    File confFile = new File(pub)
+    if (! confFile.exists()) {
+        throw new Exception("No publication configuration file ${pub} found.")
+    } else {
+        apply from: pub
+    }
+
+} else {
+    File confFile = new File("pub.gradle")
+    if (! confFile.exists()) {
+        throw new Exception("No publication configuration file ${confFile} found\
+.")
+    } else {
+        println "Using default configuration in 'pub.gradle'"
+        apply from: "pub.gradle"
+    }
+}
+
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+  compile group: 'org.codehaus.groovy', name: 'groovy-all', version: groovyVersion
+  testCompile group: 'junit', name: 'junit', version: junitVersion
+  testCompile group :'xmlunit', name: 'xmlunit', version: xmlunitVersion
+}
+
+
+uploadArchives {
+    repositories.mavenDeployer {
+        repository(url: nexusRepo) {                   
+            authentication (userName: nexusUser, password: nexusPassword)
+        }
+    }
+}
+
+
+

@@ -1,0 +1,6 @@
+
+ext {
+    nexusUser = ""
+    nexusPassword = ""
+    nexusRepo = ""
+}
