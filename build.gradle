@@ -8,6 +8,8 @@ version = '0.0.1'
 apply from: "versions.gradle"
 
 
+
+
 if (hasProperty('pub')) {
     System.err.print "Using configuration data from ${pub}"
     File confFile = new File(pub)
@@ -36,6 +38,7 @@ repositories {
 
 dependencies {
   compile group: 'org.codehaus.groovy', name: 'groovy-all', version: groovyVersion
+  compile group: 'org.xerial',name: 'sqlite-jdbc', version: sqlLiteVersion
   testCompile group: 'junit', name: 'junit', version: junitVersion
   testCompile group :'xmlunit', name: 'xmlunit', version: xmlunitVersion
 }

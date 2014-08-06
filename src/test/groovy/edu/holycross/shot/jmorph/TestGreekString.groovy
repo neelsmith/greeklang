@@ -7,9 +7,12 @@ import org.junit.Test
 
 class TestGreekString extends GroovyTestCase {
 
+
+  String testString = "mh=nin"
+
   void testConstructor() {
-    GreekString gkstr = new GreekString("mh=nin")
-    assert gkstr
+    GreekString gkstr = new GreekString(testString)
+    assert gkstr.toString() == testString
     
     assert shouldFail {
       GreekString bogus= new GreekString("123")
@@ -18,7 +21,7 @@ class TestGreekString extends GroovyTestCase {
 
 
   void testCharClass() {
-    GreekString gkstr = new GreekString("mh=nin")
+    GreekString gkstr = new GreekString(testString)
 
     gkstr.consonant.each { c ->
       assert gkstr.isAlphabetic(c)
@@ -28,7 +31,17 @@ class TestGreekString extends GroovyTestCase {
       assert gkstr.isAlphabetic(v)
     }
 
-    
+    gkstr.breathing.each { breath ->
+      assert gkstr.isAccentBreathing(breath)
+    }
+
+    gkstr.accent.each { acc ->
+      assert gkstr.isAccentBreathing(acc)
+    }
+
+
   }
+
+
 
 }
