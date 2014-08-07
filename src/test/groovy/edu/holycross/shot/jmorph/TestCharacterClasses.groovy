@@ -5,23 +5,23 @@ import static org.junit.Assert.*
 import org.junit.Test
 
 
-class TestGreekString extends GroovyTestCase {
+class TestCharacterClasses extends GroovyTestCase {
 
 
   String testString = "mh=nin"
 
   void testConstructor() {
-    GreekString gkstr = new GreekString(testString)
+    GreekWord gkstr = new GreekWord(testString)
     assert gkstr.toString() == testString
     
     assert shouldFail {
-      GreekString bogus= new GreekString("123")
+      GreekWord bogus= new GreekWord("123")
     }
   }
 
 
   void testCharClass() {
-    GreekString gkstr = new GreekString(testString)
+    GreekWord gkstr = new GreekWord(testString)
 
     gkstr.consonant.each { c ->
       assert gkstr.isAlphabetic(c)

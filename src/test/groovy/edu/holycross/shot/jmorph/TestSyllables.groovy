@@ -14,7 +14,7 @@ class TestSyllables extends GroovyTestCase {
     String testString = "mh=nin"
     def expected = ["mh=", "nin"]
 
-    GreekString gkstr = new GreekString(testString)
+    GreekWord gkstr = new GreekWord(testString)
     def actualSyllables = gkstr.getSyllables()
 
     assert actualSyllables == expected
@@ -23,7 +23,7 @@ class TestSyllables extends GroovyTestCase {
   void testBreathingDiphthSeq() {
     String testString = "a)/eide"
     def expected = ["a)/", "ei", "de"]
-    GreekString gkstr = new GreekString(testString)
+    GreekWord gkstr = new GreekWord(testString)
 
     gkstr.debugLevel = 3
     def actualSyllables = gkstr.getSyllables()
@@ -34,7 +34,7 @@ class TestSyllables extends GroovyTestCase {
   void testBreathingSeq() {
     String testString = "qea/"
     def expected = ["qe", "a/"]
-    GreekString gkstr = new GreekString(testString)
+    GreekWord gkstr = new GreekWord(testString)
     def actualSyllables = gkstr.getSyllables()
     assert actualSyllables == expected
   }

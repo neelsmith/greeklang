@@ -1,15 +1,18 @@
 package edu.holycross.shot.jmorph
 
 /**
- * A class for working with a Greek string represented
+ * A class for working with a Greek word represented
  * in a subset of the TLG's beta code.
  *
- * Valid characters are:
+ * Valid beta-code characters are:
  * alphabetic
+ * breathings
+ * accents
+ * diaeresis
+ * asterisk to mark upper case
  * 
  */
-class GreekString {
-
+class GreekWord {
 
   // Temporary constructs for debugging:
   Integer SILENT = 0
@@ -17,6 +20,8 @@ class GreekString {
   Integer DEBUG = 2
   Integer VERBOSE = 3
   Integer debugLevel = 0
+
+
   
   def consonant = [
     'b','g','d',
@@ -30,6 +35,14 @@ class GreekString {
     'u','w'
   ]
 
+  def breathing = [')','(']
+  def accent = ['/','\\','=']
+  def quantity = ['_','^']
+  String diaeresis = "+"
+  String asterisk = "*"
+
+
+  /** Pairs of vowels forming diphthongs. */
   def diphthong = [
     "ai", "ei","oi",
     "a|", "h|", "w|",
@@ -37,13 +50,9 @@ class GreekString {
     "hu", "ui"
   ]
 
-  // Include beta-code diaeresis "+"
-  def breathing = [')','(']
-  def accent = ['/','\\','=']
-  def quantity = ['_','^']
 
 
-
+  /** The word in beta code form.*/
   String greekString
 
 
@@ -52,11 +61,11 @@ class GreekString {
    * @param betaString Greek string, in beta code.
    * @throws Exception if not all characters in betaString are valid.
    */
-  GreekString(String betaString) 
+  GreekWord(String betaString) 
   throws Exception {
     Integer count = 0
     while (count < betaString.length() - 1) {
-      if (!(validChar(betaString.substring(count,count+1)))) {
+      if (!(isValidChar(betaString.substring(count,count+1)))) {
 	System.err.println "Error parsing ${betaString}: failed on ${betaString.substring(count,count+1)} (char ${count})"
 	throw new Exception("GreekString: invalid characer ${betaString.substring(count,count+1)}")
       }
@@ -71,12 +80,14 @@ class GreekString {
    * @param ch String to check.
    * @returns true if character is valid, otherwise false.
    */ 
-  boolean validChar(String ch) {
+  boolean isValidChar(String ch) {
     if (
       (breathing.contains(ch))
       || (isAlphabetic(ch)) 
       || (accent.contains(ch)) 
       || (quantity.contains(ch))
+      || (ch == diaeresis)
+      || (ch == asterisk)
     )  {
       return true
     } else {
@@ -117,9 +128,36 @@ class GreekString {
   }
 
 
-  // num chars to include in syll
-  // with vowel at pos count
-  Integer countToInclude(String s, Integer startFrom) {
+  /**  Scans from a vowel within greekString to see how many 
+   * further characters belong in the same syllable.
+   * @param startFrom Index of character to start scanning from.
+   * @returns Number of following characters belonging to the same
+   * syllable as the indexed vowel.
+   * @throws Exception if the indexed starting character is not
+   * a vowel.
+   */
+  Integer countToInclude(Integer startFrom) 
+  throws Exception {
+    return countToInclude(this.greekString, startFrom)
+  }
+
+  /**  Scans from a vowel within a word to see how many 
+   * further characters belong in the same syllable.
+   * @param s The word to scan.
+   * @param startFrom Index of character to start scanning from.
+   * @returns Number of following characters belonging to the same
+   * syllable as the indexed character.
+   * @throws Exception if the indexed starting character is not
+   * a vowel.
+   */
+  Integer countToInclude(String s, Integer startFrom) 
+  throws Exception {
+    String startChar = s.substring(startFrom,startFrom + 1)
+    if (! vowel.contains(startChar)) {
+      throw new Exception("GreekWord:countToInclude: ${startChar} is not a vowel.")
+    }
+
+
     Integer include = 0
     boolean accentSeen = false
     String lookAt = s.substring(startFrom)
@@ -258,7 +296,8 @@ more characters to it.
     return vowelSeen
   }
 
-  /** Overrides default method.
+  /** Overrides default implementation.
+   * @returns Beta-code version of a Greek word.
    */
   String toString() {
     return this.greekString
