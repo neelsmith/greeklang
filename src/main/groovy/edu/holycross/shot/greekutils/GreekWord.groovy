@@ -1,4 +1,12 @@
-package edu.holycross.shot.jmorph
+package edu.holycross.shot.greekutils
+
+
+/*
+This probably needs to be broken out into 2 classes:  one for static
+methods, and one concerned with a specific Greek word.
+
+ */
+
 
 /**
  * A class for working with a Greek word represented
@@ -58,12 +66,13 @@ class GreekWord {
 
   /** Constructor verifies that
    * String contains only valid characters.
-   * @param betaString Greek string, in beta code.
+   * @param srcString Greek string, in beta code.
    * @throws Exception if not all characters in betaString are valid.
    */
-  GreekWord(String betaString) 
+  GreekWord(String srcString) 
   throws Exception {
     Integer count = 0
+    String betaString = srcString.toLowerCase()
     while (count < betaString.length() - 1) {
       if (!(isValidChar(betaString.substring(count,count+1)))) {
 	System.err.println "Error parsing ${betaString}: failed on ${betaString.substring(count,count+1)} (char ${count})"
