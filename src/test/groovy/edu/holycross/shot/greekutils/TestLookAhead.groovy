@@ -1,4 +1,4 @@
-package edu.holycross.shot.jmorph
+package edu.holycross.shot.greekutils
 
 
 import static org.junit.Assert.*

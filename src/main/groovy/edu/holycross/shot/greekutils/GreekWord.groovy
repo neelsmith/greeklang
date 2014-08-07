@@ -128,6 +128,38 @@ class GreekWord {
   }
 
 
+  /** Determines if a single-character String
+   * is a vowel.
+   * @param ch Character to examine.
+   * @returns True if ch is a vowel.
+   */
+  boolean isVowel (String ch) {
+    return vowel.contains(ch)
+  }
+
+  /** Determines if a StringBuffer contains a vowel character.
+   * @param buff StringBuffer to examine.
+   * @returns True if buff contains a vowel.
+   */
+  boolean containsVowel (StringBuffer buff) {
+    return containsVowel(buff.toString())
+  }
+
+  /** Determines if a String contains a vowel character.
+   * @param s String to examine.
+   * @returns True if s contains a vowel.
+   */
+  boolean containsVowel (String s) {
+    boolean vowelSeen = false
+    s.each { ch ->
+      if (vowel.contains(ch)) {
+	vowelSeen = true
+      }
+    }
+    return vowelSeen
+  }
+
+
   /**  Scans from a vowel within greekString to see how many 
    * further characters belong in the same syllable.
    * @param startFrom Index of character to start scanning from.
@@ -153,15 +185,13 @@ class GreekWord {
   Integer countToInclude(String s, Integer startFrom) 
   throws Exception {
     String startChar = s.substring(startFrom,startFrom + 1)
-    if (! vowel.contains(startChar)) {
+    if (! isVowel(startChar)) {
       throw new Exception("GreekWord:countToInclude: ${startChar} is not a vowel.")
     }
-
 
     Integer include = 0
     boolean accentSeen = false
     String lookAt = s.substring(startFrom)
-
 
     boolean done = false
     Integer max = lookAt.size() - 1
@@ -206,15 +236,29 @@ class GreekWord {
 
   }
 
-  /** Breaks up syllables of GreekString into an ArrayList.
 
-Syllables must have a vowel.
-Scan L->R, and when we see a vowel, figure out if we need to append
-more characters to it.
 
-   * @returns An ArrayList of Strings, one per syllable.
+
+  /** Breaks up greekString into syllables.
+   * Syllables must have a vowel, so we scan the string from left to
+   * right,  and whenever we see a vowel, determine how many subsequent
+   * characters belong to the same syllable.
+   * @param wd A single Greek word in beta code.
+   * @returns An ArrayList of beta-code strings, one per syllable.
    */
   ArrayList getSyllables() {
+    return getSyllables(this.greekString)
+  }
+
+
+  /** Breaks up a Greek word in beta-code into syllables.
+   * Syllables must have a vowel, so we scan the string from left to
+   * right,  and whenever we see a vowel, determine how many subsequent
+   * characters belong to the same syllable.
+   * @param wd A single Greek word in beta code.
+   * @returns An ArrayList of beta-code strings, one per syllable.
+   */
+  ArrayList getSyllables(String wd) {
     def syllables = []
 
     boolean vowelSeen = false
@@ -222,8 +266,8 @@ more characters to it.
 
     Integer appendCount = 0
     Integer count = 0
-    while (count < this.greekString.size()) {
-      String ch = this.greekString.substring(count,count+1)
+    while (count < wd.size()) {
+      String ch = wd.substring(count,count+1)
 
       if (debugLevel > WARN) { println "Analyze character ${ch} at appendCoiunt ${appendCount}"}
 
@@ -251,7 +295,7 @@ more characters to it.
 	  if (debugLevel >= VERBOSE ) { println "Count at 0 but no vowel yet: added to get " + syllable }
 	  if (vowel.contains(ch)) {
 	    vowelSeen = true
-	    appendCount = countToInclude(greekString, count)
+	    appendCount = countToInclude(wd, count)
 	  }
 
 	} else {
@@ -283,20 +327,9 @@ more characters to it.
     return syllables
   }
 
-  boolean containsVowel (StringBuffer buff) {
-    return containsVowel(buff.toString())
-  }
-  boolean containsVowel (String s) {
-    boolean vowelSeen = false
-    s.each { ch ->
-      if (vowel.contains(ch)) {
-	vowelSeen = true
-      }
-    }
-    return vowelSeen
-  }
 
-  /** Overrides default implementation.
+
+  /** Overrides default implementation of toString.
    * @returns Beta-code version of a Greek word.
    */
   String toString() {
