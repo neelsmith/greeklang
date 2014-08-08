@@ -15,7 +15,7 @@ class TestFormInit extends GroovyTestCase {
   String conjVerbStr = "1:singular:present:indicative:active:::verb"
 
   def ptcplArray = ["","singular","present","participle","active","masculine","nominative","verb"]
-  String ptcplStr = ":singular:present:participle:active:masculine:case:verb"
+  String ptcplStr = ":singular:present:participle:active:masculine:nominative:verb"
 
   void testSimple() {
     MorphForm nounForm = new MorphForm(nounStr)

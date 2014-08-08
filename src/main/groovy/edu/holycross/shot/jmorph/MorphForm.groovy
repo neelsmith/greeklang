@@ -16,7 +16,8 @@ class MorphForm {
   Integer debugLevel = 0
 
 
-
+  def personList = ["1","2","3"]
+  String mPerson
 
   def numberList = ["singular","plural"]
   String mNumber 
@@ -35,7 +36,6 @@ class MorphForm {
 
   def caseList = ["nominative","genitive","dative","accusative"]
   String mCase
-
 
   def posList = ["noun","verb","adjective"]
   String mPos 
@@ -58,7 +58,7 @@ class MorphForm {
   throws Exception {
     def srcArray = srcString.split(/:/)
     if (srcArray.size() != 8) {
-      throw new Exception("MorphForm: too few components in srcString (${srcArray.size()})")
+      throw new Exception("MorphForm: too few components in srcString ${srcString} (${srcArray.size()})")
     } 
     initForm(srcArray as ArrayList)
   }
@@ -73,11 +73,162 @@ class MorphForm {
   MorphForm(ArrayList srcArray) 
   throws Exception {
     if (srcArray.size() != 8) {
-      throw new Exception("MorphForm: too few components in srcString (${srcArray.size()})")
+      throw new Exception("MorphForm: too few components in srcArray  ${srcArray} (${srcArray.size()})")
     } 
     initForm(srcArray)
   }
 
+
+
+  /** Initializes all values for conjugated verb
+   * or participle.
+   * @param formArray ArrayList of 8 elements.
+   * @throws Exception if invalid values or combination
+   * of values are found.
+   */
+  void initVerb(ArrayList formArray) 
+  throws Exception {
+
+    String mood = getMood(formArray)
+
+    if (mood == "participle") {
+      initParticiple(formArray)
+    } else if (moodList.contains(mood)) {
+      initConjugatedVerb(formArray)
+    } else {
+      throw new Exception("MorphForm:initVerb: in ${formArray}, bad value for mood ${mood}")
+    }
+  }
+
+
+
+  /** Initializes number, tense, voice, gender and case
+   * values for a participle.
+   * @param formArray ArrayList of 8 elements.
+   * @throws Exception if invalid values or combination
+   * of values are found.
+   */
+  void initParticiple(ArrayList formArray) 
+  throws Exception {
+
+
+    if (getPerson(formArray) != "") {
+      throw new Exception("MorphForm:initParticiple:  in ${formArray}, person value ${getPerson(formArray)} should be null for participle.")
+    }
+
+
+    String numStr = getNumber(formArray)
+    if (! numberList.contains(numStr)) {
+      throw new Exception("MorphForm:initParticiple:  in ${formArray}, bad value ${numStr} for number.")
+    } else {
+      this.mNumber = numStr
+    }
+
+    String tenseStr = getTense(formArray)
+    if (! tenseList.contains((tenseStr))) {
+      throw new Exception("MorphForm:initParticiple: in ${formArray}, bad value ${tenseStr} for tense.")
+    } else {
+      this.mTense = tenseStr
+    }
+
+    String moodStr = getMood(formArray)
+    if (! moodList.contains((moodStr))) {
+      throw new Exception("MorphForm:initParticiple:  in ${formArray}, bad value ${moodStr} for mood.")
+    } else {
+      this.mMood = moodStr
+    }
+
+    String voiceStr = getVoice(formArray)
+    if (! voiceList.contains((voiceStr))) {
+      throw new Exception("MorphForm:initParticiple:  in ${formArray}, bad value ${voiceStr} for voice.")
+    } else {
+      this.mVoice = voiceStr
+    }
+
+    String genStr = getGender(formArray)
+    if (! genderList.contains((genStr))) {
+      throw new Exception("MorphForm:initParticiple:  in ${formArray}, bad value ${genStr} for gender.")
+    } else {
+      this.mGender = genStr
+    }
+
+    String caseStr = getCase(formArray)
+    if (! caseList.contains((caseStr))) {
+      throw new Exception("MorphForm:initParticiple: in ${formArray}, bad value ${caseStr} for case.")
+    } else {
+      this.mCase = caseStr
+    }
+
+    String pos = getPos(formArray)
+    if (pos == "verb") {
+      this.mPos = pos
+    } else {
+      throw new Exception("MorphForm:initParticiple:  in ${formArray}, bad value ${pos} for part of speech.")
+    }
+  }
+
+
+
+  /** Initializes person, number, tense, voice, and mood
+   * values for a conjugated verb.
+   * @param formArray ArrayList of 8 elements.
+   * @throws Exception if invalid values or combination
+   * of values are found.
+   */
+  void initConjugatedVerb(ArrayList formArray) 
+  throws Exception {
+    [getGender(formArray), getCase(formArray)].each { val ->
+      if (val != "") {
+	throw new Exception("MorphForm:initVerb:  in ${formArray}, value ${val} should be null for conjugated verb.")
+      }
+    }
+
+
+    String persStr = getPerson(formArray)
+    if (! personList.contains((persStr))) {
+      throw new Exception("MorphForm:initVerb:  in ${formArray}, bad value ${persStr} for person.")
+    } else {
+      this.mPerson = persStr
+    }
+
+
+    String numStr = getNumber(formArray)
+    if (! numberList.contains((numStr))) {
+      throw new Exception("MorphForm:initVerb:  in ${formArray}, bad value ${numStr} for number.")
+    } else {
+      this.mNumber = numStr
+    }
+
+
+    String tenseStr = getTense(formArray)
+    if (! tenseList.contains((tenseStr))) {
+      throw new Exception("MorphForm:initVerb:  in ${formArray}, bad value ${tenseStr} for tense.")
+    } else {
+      this.mTense = tenseStr
+    }
+
+
+    String moodStr = getMood(formArray)
+    if (! moodList.contains((moodStr))) {
+      throw new Exception("MorphForm:initVerb: in ${formArray}, bad value ${moodStr} for mood.")
+    } else {
+      this.mMood = moodStr
+    }
+
+    String voiceStr = getVoice(formArray)
+    if (! voiceList.contains((voiceStr))) {
+      throw new Exception("MorphForm:initVerb: in ${formArray}, bad value ${voiceStr} for voice.")
+    } else {
+      this.mVoice = voiceStr
+    }
+
+    String pos = getPos(formArray)
+    if (pos == "verb") {
+      this.mPos = pos
+    } else {
+      throw new Exception("MorphForm:initVerb:  in ${formArray}, bad value ${pos} for part of speech.")
+    }
+  }
 
   /** Initializes gender, case, number values
    * for a noun or adjective.
@@ -91,24 +242,23 @@ class MorphForm {
     // Check that no inappropriate fields are set:
     [getPerson(formArray), getTense(formArray), getMood(formArray), getVoice(formArray)].each { val ->
       if (val != "") {
-	throw new Exception("MorphForm:initSubstantive:  value ${val} should be null for substantive.")
+	throw new Exception("MorphForm:initSubstantive:  in ${formArray}, value ${val} should be null for substantive.")
       }
     }
 
 
 
+    // And conversely check that only appropriate values for required fields are set:
     String genStr = getGender(formArray)
     if (! genderList.contains((genStr))) {
-      throw new Exception("MorphForm:initSubstantive:  bad value ${genStr} for gender.")
+      throw new Exception("MorphForm:initSubstantive:  in ${formArray}, bad value ${genStr} for gender.")
     } else {
       this.mGender = genStr
     }
 
-
-
     String caseStr = getCase(formArray)
     if (! caseList.contains((caseStr))) {
-      throw new Exception("MorphForm:initSubstantive:  bad value ${caseStr} for case.")
+      throw new Exception("MorphForm:initSubstantive: in ${formArray}, bad value ${caseStr} for case.")
     } else {
       this.mCase = caseStr
     }
@@ -125,9 +275,11 @@ class MorphForm {
     if ((pos == "noun") || (pos == "adjective")) {
       this.mPos = pos
     } else {
-      throw new Exception("MorphForm:initSubstantive:  bad value ${pos} for part of speech.")
+      throw new Exception("MorphForm:initSubstantive:  in ${formArray}, bad value ${pos} for part of speech.")
     }
   }
+
+
 
   /** Initializes member properties.
    * @param formArray ArrayList of 8 elements.
@@ -140,14 +292,16 @@ class MorphForm {
     switch (getPos(formArray)) {
 
     case "noun":
+    case "adjective":
     initSubstantive(formArray)
     break
 
     case "verb":
+    initVerb(formArray)
     break
 
     default:
-    throw new Exception("MorphForm: could not initialize form. Unrecognized part of speech #${getPos(formArray)}#")
+    throw new Exception("MorphForm: could not initialize form. In ${formArray}, unrecognized part of speech #${getPos(formArray)}#")
     break
     }
     
@@ -164,7 +318,7 @@ class MorphForm {
   String getPerson(ArrayList formArray) 
   throws Exception {
     if (formArray.size() != 8) {
-      throw new Exception("MorphForm:getCase:  formArray is wrong size (${formArray.size()})")
+      throw new Exception("MorphForm:getCase:  formArray ${formArray} is wrong size (${formArray.size()})")
     }
     return formArray[0]
   }
@@ -176,7 +330,7 @@ class MorphForm {
    */
   String getNumber(ArrayList formArray) {
     if (formArray.size() != 8) {
-      throw new Exception("MorphForm:getCase:  formArray is wrong size (${formArray.size()})")
+      throw new Exception("MorphForm:getCase:  formArray ${formArray} is wrong size (${formArray.size()})")
     }
     return formArray[1]
   }
@@ -189,7 +343,7 @@ class MorphForm {
    */
   String getTense(ArrayList formArray) {
     if (formArray.size() != 8) {
-      throw new Exception("MorphForm:getCase:  formArray is wrong size (${formArray.size()})")
+      throw new Exception("MorphForm:getCase:  formArray ${formArray}, is wrong size (${formArray.size()})")
     }
     return formArray[2]
   }
@@ -203,7 +357,7 @@ class MorphForm {
    */
   String getMood(ArrayList formArray) {
     if (formArray.size() != 8) {
-      throw new Exception("MorphForm:getCase:  formArray is wrong size (${formArray.size()})")
+      throw new Exception("MorphForm:getCase:  formArray ${formArray}  is wrong size (${formArray.size()})")
     }
     return formArray[3]
   }
@@ -217,7 +371,7 @@ class MorphForm {
    */
   String getVoice(ArrayList formArray) {
     if (formArray.size() != 8) {
-      throw new Exception("MorphForm:getCase:  formArray is wrong size (${formArray.size()})")
+      throw new Exception("MorphForm:getCase:  formArray ${formArray}  is wrong size (${formArray.size()})")
     }
     return formArray[4]
   }
@@ -231,7 +385,7 @@ class MorphForm {
    */
   String getGender(ArrayList formArray) {
     if (formArray.size() != 8) {
-      throw new Exception("MorphForm:getCase:  formArray is wrong size (${formArray.size()})")
+      throw new Exception("MorphForm:getCase:  formArray ${formArray} is wrong size (${formArray.size()})")
     }
     return formArray[5]
   }
@@ -246,7 +400,7 @@ class MorphForm {
   String getCase(ArrayList formArray) 
   throws Exception {
     if (formArray.size() != 8) {
-      throw new Exception("MorphForm:getCase:  formArray is wrong size (${formArray.size()})")
+      throw new Exception("MorphForm:getCase:  formArray ${formArray} is wrong size (${formArray.size()})")
     }
     return formArray[6]
   }
@@ -261,7 +415,7 @@ class MorphForm {
   String getPos(ArrayList formArray) 
   throws Exception {
     if (formArray.size() != 8) {
-      throw new Exception("MorphForm:getCase:  formArray is wrong size (${formArray.size()})")
+      throw new Exception("MorphForm:getCase:  formArray ${formArray} is wrong size (${formArray.size()})")
     }
     return formArray[7]
   }
