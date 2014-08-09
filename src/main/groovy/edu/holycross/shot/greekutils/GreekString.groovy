@@ -6,6 +6,11 @@ import edu.unc.epidoc.transcoder.TransCoder
  * A class for working with text in Greek.  Instances may
  * be initialized with any encoding of Greek that Hugh Cayless'
  * transcoder recognizes;  static methods expect beta code strings.
+ * Valid Greek characters are limited to the small set that can be 
+ * used to construct valid morphologically parseable lexical tokens, plus punctuation characters.
+ * If your representation of Greek text includes other characaters, such 
+ * as numeric characters, or more exotic kinds of punctuation, you will
+ * have to strip those out before creating a GreekString object.
  */
 class GreekString {
 
@@ -66,7 +71,6 @@ class GreekString {
   /** The string in beta code form.*/
   String greekString
 
-
   /** Constructor verifies that srcSring, supplied in an identified
    * system for encoding Greek, contains only valid characters
    * for a GreekString's underlying beta-code representation.
@@ -111,6 +115,12 @@ class GreekString {
     }
     this.greekString = betaString
   }
+
+
+
+  /***************************************************************************************/
+  //
+  //  ************  METHODS IDENTIFYING CHARACTER CLASSES   *****************************
 
 
   /** Determines if a one-character long string is a valid GreekString
@@ -166,6 +176,15 @@ class GreekString {
   }
 
 
+  /** Determines if a one-character long string is an accent.
+   * @param ch String to check.
+   * @returns true if character is accent, otherwise false.
+   */   
+  static boolean isAccent(ch) {
+    return (accent.contains(ch))
+  }
+
+
   /** Determines if a single-character String
    * is a vowel.
    * @param ch Character to examine.
@@ -196,6 +215,25 @@ class GreekString {
   }
 
 
+
+  /** Determines if a String is a diphthong.
+   * @param s String to examine.
+   * @returns True if s is a diphthong.
+   */
+  static boolean isDiphthong (String s) {
+    return diphthong.contains(s)
+  }
+
+  //
+  //  ************  END METHODS IDENTIFYING CHARACTER CLASSES   **************************
+  /***************************************************************************************/
+
+
+
+
+
+
+
   /** Determines if a StringBuffer contains a vowel character.
    * @param buff StringBuffer to examine.
    * @returns True if buff contains a vowel.
@@ -219,13 +257,21 @@ class GreekString {
   }
 
 
-  /** Determines if a String is a diphthong.
-   * @param s String to examine.
-   * @returns True if s is a diphthong.
+
+  /** Removes accent characters from a String. 
+   * @param s String to modify.
+   * @returns The string with all accent characters removed.
    */
-  static boolean isDiphthong (String s) {
-    return diphthong.contains(s)
+  static String stripAccents(String s) {
+    StringBuffer stripped = new StringBuffer()
+    s.each { ch ->
+      if (! isAccent(ch)) {
+	stripped.append(ch)
+      }
+    }
+    return stripped.toString()
   }
+
 
 
   /** Overrides default implementation of toString.
