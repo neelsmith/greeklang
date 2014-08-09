@@ -148,29 +148,29 @@ class MorphForm {
     try {
       this.mNumber = GrammaticalNumber.valueOf(numStr.toUpperCase())
     } catch (Exception e) {
-      throw new Exception("MorphForm:initVerb:  in ${formArray}, bad value ${numStr} for number.")
+      throw new Exception("MorphForm:initParticiple:  in ${formArray}, bad value ${numStr} for number.")
     }
 
     String tenseStr = getTense(formArray)
     try {
       this.mTense = Tense.valueOf(tenseStr.toUpperCase())
     } catch (Exception e) {
-      throw new Exception("MorphForm:initVerb:  in ${formArray}, bad value ${tenseStr} for tense.")
+      throw new Exception("MorphForm:initParticiple:  in ${formArray}, bad value ${tenseStr} for tense.")
     }
 
 
     String moodStr = getMood(formArray)
-    if (! moodList.contains((moodStr))) {
-      throw new Exception("MorphForm:initVerb: in ${formArray}, bad value ${moodStr} for mood.")
-    } else {
-      this.mMood = moodStr
+    try {
+      this.mMood = Mood.valueOf(moodStr.toUpperCase())
+    } catch (Exception e) {
+      throw new Exception("MorphForm:initParticiple: in ${formArray}, bad value ${moodStr} for mood.")
     }
 
     String voiceStr = getVoice(formArray)
-    if (! voiceList.contains((voiceStr))) {
-      throw new Exception("MorphForm:initVerb: in ${formArray}, bad value ${voiceStr} for voice.")
-    } else {
-      this.mVoice = voiceStr
+    try {
+      this.mVoice = Voice.valueOf(voiceStr.toUpperCase())
+    } catch (Exception e) {
+      throw new Exception("MorphForm:initParticiple: in ${formArray}, bad value ${voiceStr} for voice.")
     }
 
 
@@ -178,76 +178,24 @@ class MorphForm {
     try {
       this.mGender = Gender.valueOf(genStr.toUpperCase())
     } catch (Exception e) {
-      throw new Exception("MorphForm:initSubstantive:  in ${formArray}, bad value ${genStr} for gender.")
+      throw new Exception("MorphForm:initParticiple:  in ${formArray}, bad value ${genStr} for gender.")
     }
 
     String caseStr = getCase(formArray)
     try {
       this.mCase =  GrammaticalCase.valueOf(caseStr.toUpperCase())
     } catch (Exception e) {
-      throw new Exception("MorphForm:initSubstantive: in ${formArray}, bad value ${caseStr} for case.")
+      throw new Exception("MorphForm:initParticiple: in ${formArray}, bad value ${caseStr} for case.")
     }
-
-
 
 
     String pos = getPos(formArray)
     if (pos == "verb") {
       this.mPos = PartOfSpeech.VERB
     } else {
-      throw new Exception("MorphForm:initVerb:  in ${formArray}, bad value ${pos} for part of speech.")
-    }
-
-    /*
-    String numStr = getNumber(formArray)
-    if (! numberList.contains(numStr)) {
-      throw new Exception("MorphForm:initParticiple:  in ${formArray}, bad value ${numStr} for number.")
-    } else {
-      this.mNumber = numStr
-    }
-
-    String tenseStr = getTense(formArray)
-    if (! tenseList.contains((tenseStr))) {
-      throw new Exception("MorphForm:initParticiple: in ${formArray}, bad value ${tenseStr} for tense.")
-    } else {
-      this.mTense = tenseStr
-    }
-
-    String moodStr = getMood(formArray)
-    if (! moodList.contains((moodStr))) {
-      throw new Exception("MorphForm:initParticiple:  in ${formArray}, bad value ${moodStr} for mood.")
-    } else {
-      this.mMood = moodStr
-    }
-
-    String voiceStr = getVoice(formArray)
-    if (! voiceList.contains((voiceStr))) {
-      throw new Exception("MorphForm:initParticiple:  in ${formArray}, bad value ${voiceStr} for voice.")
-    } else {
-      this.mVoice = voiceStr
-    }
-
-    String genStr = getGender(formArray)
-    if (! genderList.contains((genStr))) {
-      throw new Exception("MorphForm:initParticiple:  in ${formArray}, bad value ${genStr} for gender.")
-    } else {
-      this.mGender = genStr
-    }
-
-    String caseStr = getCase(formArray)
-    if (! caseList.contains((caseStr))) {
-      throw new Exception("MorphForm:initParticiple: in ${formArray}, bad value ${caseStr} for case.")
-    } else {
-      this.mCase = caseStr
-    }
-
-    String pos = getPos(formArray)
-    if (pos == "verb") {
-      this.mPos = pos
-    } else {
       throw new Exception("MorphForm:initParticiple:  in ${formArray}, bad value ${pos} for part of speech.")
     }
-    */
+
   }
 
 

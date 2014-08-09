@@ -22,13 +22,11 @@ class TestFormInit extends GroovyTestCase {
     assert nounForm
 
     MorphForm verbForm = new MorphForm(conjVerbStr)
-    
-
-    /*assert verbForm
+    assert verbForm
 
     MorphForm ptcpForm = new MorphForm(ptcplStr)
     assert ptcpForm
-    */
+
   }
 
 

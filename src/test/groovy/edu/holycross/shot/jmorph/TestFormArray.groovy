@@ -11,7 +11,7 @@ class TestFormArray extends GroovyTestCase {
   
 
   void testGetters() {
-    String formStr = "1:singular:present:indicative:active:::verb"
+    String formStr = "first:singular:present:indicative:active:::verb"
     MorphForm mf = new MorphForm(formStr)
 
 
@@ -22,8 +22,8 @@ class TestFormArray extends GroovyTestCase {
     assert mf.getPos(formArray) == "noun"
 
 
-    def verbArray = ["1","singular","present","indicative","active","","","verb"]
-    assert mf.getPerson(verbArray) == "1"
+    def verbArray = ["first","singular","present","indicative","active","","","verb"]
+    assert mf.getPerson(verbArray) == "first"
     assert mf.getNumber(verbArray) == "singular"
     assert mf.getTense(verbArray) == "present"
     assert mf.getMood(verbArray) == "indicative"
