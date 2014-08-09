@@ -1,6 +1,10 @@
 ext {
     groovyVersion = '2.0.6'
     sqlLiteVersion =  '3.7.2'
+
+    epidocVersion = '1.2-SNAPSHOT'
+
+
     junitVersion = '4.8.2'
     xmlunitVersion = '1.3'
 }

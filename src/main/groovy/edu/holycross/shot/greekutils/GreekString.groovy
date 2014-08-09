@@ -1,5 +1,6 @@
 package edu.holycross.shot.greekutils
 
+import edu.unc.epidoc.transcoder.TransCoder
 
 /**
  * A class for working with text in Greek.  Instances may
@@ -66,8 +67,34 @@ class GreekString {
   String greekString
 
 
-  /** Constructor verifies that
-   * String contains only valid characters.
+  /** Constructor verifies that srcSring, supplied in an identified
+   * system for encoding Greek, contains only valid characters
+   * for a GreekString's underlying beta-code representation.
+   * @param srcString Greek string, in beta code.
+   * @param System for mapping Greek onto Unicode.  String value may
+   * be any of the values for "sourceEncoding" supported by the 
+   * epidoc transcoder.
+   * @throws Exception if not all characters in betaString are valid.
+   */
+  GreekString(String srcString, String greekMapping)  {
+    TransCoder xcoder = new TransCoder()
+    xcoder.setParser(greekMapping)
+    xcoder.setConverter("BetaCode")
+    
+    Integer count = 0
+    String betaString = xcoder.getString(srcString).toLowerCase()
+    while (count < betaString.length() - 1) {
+      if (!(isValidChar(betaString.substring(count,count+1)))) {
+	System.err.println "Error parsing ${betaString}: failed on ${betaString.substring(count,count+1)} (char ${count})"
+	throw new Exception("GreekString: invalid characer ${betaString.substring(count,count+1)}")
+      }
+      count++
+    }
+    this.greekString = betaString
+  }
+
+  /** Constructor verifies that srcSring contains only valid characters
+   * for beta-code representation.
    * @param srcString Greek string, in beta code.
    * @throws Exception if not all characters in betaString are valid.
    */

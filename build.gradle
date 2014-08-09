@@ -34,16 +34,18 @@ if (hasProperty('pub')) {
 
 repositories {
     mavenCentral()
-
-    // ADD BETA RELEASES FOR EPIDOC
+    maven {
+        url "http://beta.hpcc.uh.edu/nexus/content/repositories/releases"
+    }
+    maven {
+      url "http://beta.hpcc.uh.edu/nexus/content/repositories/papyriinfo/"
+    }
 }
 
 dependencies {
   compile group: 'org.codehaus.groovy', name: 'groovy-all', version: groovyVersion
   compile group: 'org.xerial',name: 'sqlite-jdbc', version: sqlLiteVersion
-
-  // Add this:
-  //compile group : 'edu.unc.epidoc', name: 'transcoder', version : '1.2-SNAPSHOT'
+  compile group : 'edu.unc.epidoc', name: 'transcoder', version : epidocVersion
 
   testCompile group: 'junit', name: 'junit', version: junitVersion
   testCompile group :'xmlunit', name: 'xmlunit', version: xmlunitVersion
