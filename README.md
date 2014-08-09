@@ -1,4 +1,7 @@
-jmorph
-======
+#greeklang#
 
-Playing around with jvm equivalents of some C code from morpheus
+Code library for working with text content in ancient Greek.
+
+See the wiki for a more information.
+
+
