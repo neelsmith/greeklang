@@ -14,16 +14,15 @@ class TestLookAhead extends GroovyTestCase {
     String testString = "mh=nin"
     GreekWord gkstr = new GreekWord(testString)
 
-
     
-    assert gkstr.countToInclude(testString,1) == 1
+    assert GreekWord.countToInclude(testString,1) == 1
     assert gkstr.countToInclude(1) == 1
 
-    assert gkstr.countToInclude(testString,4) == 0
+    assert GreekWord.countToInclude(testString,4) == 0
     assert gkstr.countToInclude(4) == 0
 
     assert shouldFail {
-      gkstr.countToInclude(testString,0)
+      GreekWord.countToInclude(testString,0)
     }
     assert shouldFail {
       gkstr.countToInclude(0)

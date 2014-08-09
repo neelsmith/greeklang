@@ -1,24 +1,8 @@
 package edu.holycross.shot.greekutils
 
 
-/*
-This probably needs to be broken out into 2 classes:  one for static
-methods, and one concerned with a specific Greek word.
-
- */
-
-
 /**
- * A class for working with a Greek word represented
- * in a subset of the TLG's beta code.
- *
- * Valid beta-code characters are:
- * alphabetic
- * breathings
- * accents
- * diaeresis
- * asterisk to mark upper case
- * 
+ * A class for working with a Greek word.
  */
 class GreekWord {
 
@@ -30,38 +14,10 @@ class GreekWord {
   Integer debugLevel = 0
 
 
-  
-  def consonant = [
-    'b','g','d',
-    'z','q','k',
-    'l','m','n','c',
-    'p','r','s','t',
-    'f','x','y'
-  ]
-  def vowel = [
-    'a', 'e','h','i','o',
-    'u','w'
-  ]
-
-  def breathing = [')','(']
-  def accent = ['/','\\','=']
-  def quantity = ['_','^']
-  String diaeresis = "+"
-  String asterisk = "*"
-
-
-  /** Pairs of vowels forming diphthongs. */
-  def diphthong = [
-    "ai", "ei","oi",
-    "a|", "h|", "w|",
-    "au","eu", "ou",
-    "hu", "ui"
-  ]
-
 
 
   /** The word in beta code form.*/
-  String greekString
+  GreekString betaCodeWord
 
 
   /** Constructor verifies that
@@ -72,104 +28,10 @@ class GreekWord {
   GreekWord(String srcString) 
   throws Exception {
     Integer count = 0
-    String betaString = srcString.toLowerCase()
-    while (count < betaString.length() - 1) {
-      if (!(isValidChar(betaString.substring(count,count+1)))) {
-	System.err.println "Error parsing ${betaString}: failed on ${betaString.substring(count,count+1)} (char ${count})"
-	throw new Exception("GreekString: invalid characer ${betaString.substring(count,count+1)}")
-      }
-      count++
-    }
-    this.greekString = betaString
+    this.betaCodeWord = new GreekString(srcString)
   }
 
-
-  /** Determines if a one-character long string is a valid GreekString
-   * character.
-   * @param ch String to check.
-   * @returns true if character is valid, otherwise false.
-   */ 
-  boolean isValidChar(String ch) {
-    if (
-      (breathing.contains(ch))
-      || (isAlphabetic(ch)) 
-      || (accent.contains(ch)) 
-      || (quantity.contains(ch))
-      || (ch == diaeresis)
-      || (ch == asterisk)
-    )  {
-      return true
-    } else {
-      return false
-    }
-  }
-
-  /** Determines if a one-character long string is an alphabetic
-   * character.
-   * @param ch String to check.
-   * @returns true if character is alphabetic, otherwise false.
-   */ 
-  boolean isAlphabetic(ch) {
-    if (
-      (consonant.contains(ch))
-      || (vowel.contains(ch))
-    ) {
-      return true
-    } else  {
-      return false 
-    }
-  }
-
-  /** Determines if a one-character long string is an accent
-   * or breathing character.
-   * @param ch String to check.
-   * @returns true if character is accent or breathing, otherwise false.
-   */   
-  boolean isAccentBreathing(ch) {
-    if (
-      (breathing.contains(ch))
-      || (accent.contains(ch))
-    ) {
-      return true
-    } else  {
-      return false 
-    }
-  }
-
-
-  /** Determines if a single-character String
-   * is a vowel.
-   * @param ch Character to examine.
-   * @returns True if ch is a vowel.
-   */
-  boolean isVowel (String ch) {
-    return vowel.contains(ch)
-  }
-
-  /** Determines if a StringBuffer contains a vowel character.
-   * @param buff StringBuffer to examine.
-   * @returns True if buff contains a vowel.
-   */
-  boolean containsVowel (StringBuffer buff) {
-    return containsVowel(buff.toString())
-  }
-
-  /** Determines if a String contains a vowel character.
-   * @param s String to examine.
-   * @returns True if s contains a vowel.
-   */
-  boolean containsVowel (String s) {
-    boolean vowelSeen = false
-    s.each { ch ->
-      if (vowel.contains(ch)) {
-	vowelSeen = true
-      }
-    }
-    return vowelSeen
-  }
-
-
-  /**  Scans from a vowel within greekString to see how many 
+  /**  Scans from a vowel within betaCodeWord to see how many 
    * further characters belong in the same syllable.
    * @param startFrom Index of character to start scanning from.
    * @returns Number of following characters belonging to the same
@@ -179,7 +41,7 @@ class GreekWord {
    */
   Integer countToInclude(Integer startFrom) 
   throws Exception {
-    return countToInclude(this.greekString, startFrom)
+    return countToInclude(this.betaCodeWord.toString(), startFrom)
   }
 
   /**  Scans from a vowel within a word to see how many 
@@ -191,10 +53,10 @@ class GreekWord {
    * @throws Exception if the indexed starting character is not
    * a vowel.
    */
-  Integer countToInclude(String s, Integer startFrom) 
+  static Integer countToInclude(String s, Integer startFrom) 
   throws Exception {
     String startChar = s.substring(startFrom,startFrom + 1)
-    if (! isVowel(startChar)) {
+    if (! GreekString.isVowel(startChar)) {
       throw new Exception("GreekWord:countToInclude: ${startChar} is not a vowel.")
     }
 
@@ -208,17 +70,17 @@ class GreekWord {
     while ((!done) && (count < max))  {
       String ch = lookAt.substring(count,count + 1)
 
-      if (accentSeen && vowel.contains(ch)) {
+      if (accentSeen && GreekString.isVowel(ch)) {
 	// then new syllable: do not include
 
-      } else if (isAccentBreathing(ch)) {
+      } else if (GreekString.isAccentOrBreathing(ch)) {
 	accentSeen = true
 	include++;
 
 
       } else {
 	if (lookAt.size() > count+2) {
-	  if (diphthong.contains(ch + lookAt.substring(count+1,count+2))) {
+	  if (GreekString.isDiphthong(ch + lookAt.substring(count+1,count+2))) {
 	    if (lookAt.size() > count+3) {
 	      if (lookAt.substring(count+2,count+3) == "+") {
 		// no diphthong if diaeresis follows
@@ -231,7 +93,7 @@ class GreekWord {
       }
       count++
     }
-    if (debugLevel > WARN) {println "Looked at " + lookAt + " and figured " + include   }
+    //if (debugLevel > WARN) {println "Looked at " + lookAt + " and figured " + include   }
     return include
 	  //already have vowel, so see if we need
 	// to add this char to syllable or not.
@@ -248,7 +110,7 @@ class GreekWord {
 
 
 
-  /** Breaks up greekString into syllables.
+  /** Breaks up betaCodeWord into syllables.
    * Syllables must have a vowel, so we scan the string from left to
    * right,  and whenever we see a vowel, determine how many subsequent
    * characters belong to the same syllable.
@@ -256,7 +118,7 @@ class GreekWord {
    * @returns An ArrayList of beta-code strings, one per syllable.
    */
   ArrayList getSyllables() {
-    return getSyllables(this.greekString)
+    return getSyllables(this.betaCodeWord.toString())
   }
 
 
@@ -267,7 +129,7 @@ class GreekWord {
    * @param wd A single Greek word in beta code.
    * @returns An ArrayList of beta-code strings, one per syllable.
    */
-  ArrayList getSyllables(String wd) {
+  static ArrayList getSyllables(String wd) {
     def syllables = []
 
     boolean vowelSeen = false
@@ -278,20 +140,20 @@ class GreekWord {
     while (count < wd.size()) {
       String ch = wd.substring(count,count+1)
 
-      if (debugLevel > WARN) { println "Analyze character ${ch} at appendCoiunt ${appendCount}"}
+      //if (debugLevel > WARN) { println "Analyze character ${ch} at appendCoiunt ${appendCount}"}
 
 
       // are there characters to add?
       if (appendCount > 0) {
 	syllable.append(ch)
-	if (debugLevel > WARN) { println "append ${appendCount}, so appending  " + ch + " to get " + syllable }
+	//if (debugLevel > WARN) { println "append ${appendCount}, so appending  " + ch + " to get " + syllable }
 	appendCount--
-	if (debugLevel > WARN) { println "Decrement appendcount  to " + appendCount}
+	//if (debugLevel > WARN) { println "Decrement appendcount  to " + appendCount}
 	
 
 	if (appendCount == 0) {
 	  syllables.add(syllable.toString())
-	  if (debugLevel > WARN) {	  println "AppendCount at 0, so calling  it a syllable: " + syllables}
+	  //if (debugLevel > WARN) {	  println "AppendCount at 0, so calling  it a syllable: " + syllables}
 	  syllable.setLength(0)
 	  vowelSeen = false
 	}
@@ -301,14 +163,14 @@ class GreekWord {
 	if (!vowelSeen) {
 
 	  syllable.append(ch)
-	  if (debugLevel >= VERBOSE ) { println "Count at 0 but no vowel yet: added to get " + syllable }
-	  if (vowel.contains(ch)) {
+	  //if (debugLevel >= VERBOSE ) { println "Count at 0 but no vowel yet: added to get " + syllable }
+	  if (GreekString.isVowel(ch)) {
 	    vowelSeen = true
 	    appendCount = countToInclude(wd, count)
 	  }
 
 	} else {
-	  if (debugLevel > WARN) { println "Count at 0 and already have a vowel! End syll." + syllable }
+	  //if (debugLevel > WARN) { println "Count at 0 and already have a vowel! End syll." + syllable }
 	  // finished peekahead, but have seen a vowel
 	  // so end of syll!
 	  syllables.add(syllable.toString())
@@ -326,7 +188,7 @@ class GreekWord {
     // Add any left-over letters to end of 
     // last syllable:
     if (syllable.toString().size() > 0 ) {
-      if (containsVowel(syllable)){
+      if (GreekString.containsVowel(syllable)){
 	syllables.add(syllable.toString())
       } else {
 	String lastSyll = syllables[syllables.size() - 1] + syllable.toString()
@@ -342,7 +204,7 @@ class GreekWord {
    * @returns Beta-code version of a Greek word.
    */
   String toString() {
-    return this.greekString
+    return this.betaCodeWord
   }
 
 }

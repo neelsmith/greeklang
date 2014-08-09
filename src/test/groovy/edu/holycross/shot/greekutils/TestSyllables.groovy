@@ -14,28 +14,30 @@ class TestSyllables extends GroovyTestCase {
     String testString = "mh=nin"
     def expected = ["mh=", "nin"]
 
-    GreekWord gkstr = new GreekWord(testString)
-    def actualSyllables = gkstr.getSyllables()
+    assert GreekWord.getSyllables(testString) == expected
 
-    assert actualSyllables == expected
+    GreekWord gkstr = new GreekWord(testString)
+    assert gkstr.getSyllables() == expected
   }
 
   void testBreathingDiphthSeq() {
     String testString = "a)/eide"
     def expected = ["a)/", "ei", "de"]
+
+    assert GreekWord.getSyllables(testString) == expected
+
     GreekWord gkstr = new GreekWord(testString)
-
-    gkstr.debugLevel = 3
-    def actualSyllables = gkstr.getSyllables()
-
-    assert actualSyllables == expected
+    assert gkstr.getSyllables() == expected
   }
 
   void testBreathingSeq() {
     String testString = "qea/"
     def expected = ["qe", "a/"]
+
+    assert GreekWord.getSyllables(testString) == expected
+
     GreekWord gkstr = new GreekWord(testString)
-    def actualSyllables = gkstr.getSyllables()
-    assert actualSyllables == expected
+    assert gkstr.getSyllables() == expected
+
   }
 }

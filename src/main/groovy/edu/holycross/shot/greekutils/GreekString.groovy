@@ -56,6 +56,11 @@ class GreekString {
     "hu", "ui"
   ]
 
+  /** Immutable set of punctuation characters. */
+  static punctuation = [
+    ".",  ";", ","
+  ]
+
 
   /** The string in beta code form.*/
   String greekString
@@ -88,10 +93,10 @@ class GreekString {
    */ 
   static boolean isValidChar(String ch) {
     if (
-      (GreekString.breathing.contains(ch))
-      || (GreekString.isAlphabetic(ch)) 
-      || (GreekString.accent.contains(ch)) 
-      || (GreekString.quantity.contains(ch))
+      (GreekString.isAlphabetic(ch)) 
+      || (GreekString.isAccentOrBreathing(ch)) 
+      || (GreekString.isQuantity(ch))
+      || (GreekString.isPunctuation(ch))
       || (ch == GreekString.diaeresis)
       || (ch == GreekString.asterisk)
     )  {
@@ -143,6 +148,27 @@ class GreekString {
     return vowel.contains(ch)
   }
 
+
+  /** Determines if a single-character String
+   * is a punctuation character.
+   * @param ch Character to examine.
+   * @returns True if ch is a punctuation character.
+   */
+  static boolean isPunctuation (String ch) {
+    return punctuation.contains(ch)
+  }
+
+
+  /** Determines if a single-character String
+   * is a vowel-quantity character.
+   * @param ch Character to examine.
+   * @returns True if ch is a vowel quantity character.
+   */
+  static boolean isQuantity (String ch) {
+    return quantity.contains(ch)
+  }
+
+
   /** Determines if a StringBuffer contains a vowel character.
    * @param buff StringBuffer to examine.
    * @returns True if buff contains a vowel.
@@ -166,6 +192,13 @@ class GreekString {
   }
 
 
+  /** Determines if a String is a diphthong.
+   * @param s String to examine.
+   * @returns True if s is a diphthong.
+   */
+  static boolean isDiphthong (String s) {
+    return diphthong.contains(s)
+  }
 
 
   /** Overrides default implementation of toString.

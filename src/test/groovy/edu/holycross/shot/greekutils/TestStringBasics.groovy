@@ -8,9 +8,9 @@ import org.junit.Test
 class TestStringBasics extends GroovyTestCase {
 
 
-  String testString = "mh=nin"
 
-  void testStatic() {
+
+  void testStaticMethods() {
 
     assert GreekString.vowel.size() == 7
     GreekString.vowel.each { v ->
@@ -37,6 +37,26 @@ class TestStringBasics extends GroovyTestCase {
       assert GreekString.isAlphabetic(acc) == false
     }
 
+
+    assert GreekString.diphthong.size() == 11
+    GreekString.diphthong.each { dip ->
+      assert GreekString.isDiphthong(dip)
+    }
+
+
+    assert GreekString.quantity.size() == 2
+    GreekString.quantity.each { q ->
+      assert GreekString.isQuantity(q)
+    }
+
+
+
+    GreekString.punctuation.each { punct ->
+      assert GreekString.isPunctuation(punct)
+    }
+
+
+    String testString = "mh=nin"
     assert GreekString.containsVowel(testString)
     
     
