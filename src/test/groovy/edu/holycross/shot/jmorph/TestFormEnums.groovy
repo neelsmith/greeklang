@@ -7,9 +7,6 @@ import org.junit.Test
 
 class TestFormEnums extends GroovyTestCase {
 
-
-  
-
    void testPersonVals() {
      def personList = ["first","second","third"]
      assert MorphForm.Person.values().size() == personList.size()
@@ -106,6 +103,23 @@ class TestFormEnums extends GroovyTestCase {
        }
      }
   }
+
+
+
+  void testDegreeVals() {
+
+    def degreeList = ["positive", "comparative", "superlative"]
+    assert MorphForm.Degree.values().size() == degreeList.size()
+    
+    degreeList.each { deg ->
+       def degVal = MorphForm.Degree.valueOf(deg.toUpperCase())
+       assert degVal
+       assert shouldFail {
+	 def badthing = MorphForm.Degree.valueOf(deg)
+       }
+     }
+  }
+
 
 
   void testPosVals() {

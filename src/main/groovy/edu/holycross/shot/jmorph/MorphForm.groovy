@@ -15,7 +15,6 @@ class MorphForm {
   Integer debugLevel = 0
 
 
-
   /** Enumerated values for grammatical person. */
   enum Person {
     FIRST,SECOND,THIRD
@@ -47,10 +46,20 @@ class MorphForm {
   enum GrammaticalCase {
     NOMINATIVE, GENITIVE, DATIVE, ACCUSATIVE, VOCATIVE
   }
+  /** Enumerated values for adjectival degrees. */
+  enum Degree {
+    POSITIVE,COMPARATIVE,SUPERLATIVE
+  }
   /** Enumerated values for parts of speech. */
   enum PartOfSpeech {
     NOUN, VERB, ADJECTIVE, ADVERB, CONJUNCTION, PARTICLE
   }
+
+
+  /** Number of properties or fields in morphological
+   * analysis structure. */
+  static Integer NUMBER_FIELDS = 9
+
 
 
   /** Possibly null value for morphological form's person. */
@@ -67,13 +76,16 @@ class MorphForm {
   Gender mGender
   /** Possibly null value for morphological form's  case. */
   GrammaticalCase mCase
+  /** Possibly null value for morphological form's  adjectival degree. */
+  Degree mDegree
   /** Possibly null value for morphological form's part of speech .*/
   PartOfSpeech mPos 
 
 
 
+
   /** Constructor initialized from colon-separated String.
-   * @param srcString a String with 8 fields separated by colons.
+   * @param srcString a String with 9 fields separated by colons.
    * The required sequence of values is:
    * 1. person
    * 2. number
@@ -82,14 +94,15 @@ class MorphForm {
    * 5. voice
    * 6. gender
    * 7. case
-   * 8. part of speech
+   * 8. degree of adverb
+   * 9. part of speech
    * 
    * @throws Exception if invalid combinations of values are found.
    */
   MorphForm(String srcString) 
   throws Exception {
     def srcArray = srcString.split(/:/)
-    if (srcArray.size() != 8) {
+    if (srcArray.size() != NUMBER_FIELDS) {
       throw new Exception("MorphForm: too few components in srcString ${srcString} (${srcArray.size()})")
     } 
     initForm(srcArray as ArrayList)
@@ -97,14 +110,14 @@ class MorphForm {
 
 
 
-  /** Constructor initialized from an ArrayList with 8 elements.
+  /** Constructor initialized from an ArrayList with NUMBER_FIELDS elements.
    * The order of the elements is the same as for a colon-delimited
    * String.
-   * @param srcArray An ArrayList with 8 elements.
+   * @param srcArray An ArrayList with NUMBER_FIELDS elements.
    */
   MorphForm(ArrayList srcArray) 
   throws Exception {
-    if (srcArray.size() != 8) {
+    if (srcArray.size() != NUMBER_FIELDS) {
       throw new Exception("MorphForm: too few components in srcArray  ${srcArray} (${srcArray.size()})")
     } 
     initForm(srcArray)
@@ -114,7 +127,7 @@ class MorphForm {
 
   /** Initializes all values for conjugated verb
    * or participle.
-   * @param formArray ArrayList of 8 elements.
+   * @param formArray ArrayList of NUMBER_FIELDS elements.
    * @throws Exception if invalid values or combination
    * of values are found.
    */
@@ -141,7 +154,7 @@ class MorphForm {
 
   /** Initializes number, tense, voice, gender and case
    * values for a participle.
-   * @param formArray ArrayList of 8 elements.
+   * @param formArray ArrayList of NUMBER_FIELDS elements.
    * @throws Exception if invalid values or combination
    * of values are found.
    */
@@ -210,7 +223,7 @@ class MorphForm {
 
   /** Initializes person, number, tense, voice, and mood
    * values for a conjugated verb.
-   * @param formArray ArrayList of 8 elements.
+   * @param formArray ArrayList of NUMBER_FIELDS elements.
    * @throws Exception if invalid values or combination
    * of values are found.
    */
@@ -268,7 +281,7 @@ class MorphForm {
 
   /** Initializes gender, case, number values
    * for a noun or adjective.
-   * @param formArray ArrayList of 8 elements.
+   * @param formArray ArrayList of NUMBER_FIELDS elements.
    * @throws Exception if invalid values or combination
    * of values are found.
    */
@@ -318,7 +331,7 @@ class MorphForm {
 
 
   /** Initializes member properties.
-   * @param formArray ArrayList of 8 elements.
+   * @param formArray ArrayList of NUMBER_FIELDS elements.
    * @throws Exception if invalid combination
    * of values is found.
    */
@@ -347,25 +360,25 @@ class MorphForm {
 
 
   /** Selects person value from formArray.
-   * @param formArray ArrayList of 8 elements.
+   * @param formArray ArrayList of NUMBER_FIELDS elements.
    * @returns Person value (1st element).
    * @throws Exception if ArrayList is wrong size.
    */
   static String getPerson(ArrayList formArray) 
   throws Exception {
-    if (formArray.size() != 8) {
+    if (formArray.size() != NUMBER_FIELDS) {
       throw new Exception("MorphForm:getCase:  formArray ${formArray} is wrong size (${formArray.size()})")
     }
     return formArray[0]
   }
 
   /** Selects number value from formArray.
-   * @param formArray ArrayList of 8 elements.
+   * @param formArray ArrayList of NUMBER_FIELDS elements.
    * @returns Gender value (2nd element).
    * @throws Exception if ArrayList is wrong size.
    */
   static String getNumber(ArrayList formArray) {
-    if (formArray.size() != 8) {
+    if (formArray.size() != NUMBER_FIELDS) {
       throw new Exception("MorphForm:getCase:  formArray ${formArray} is wrong size (${formArray.size()})")
     }
     return formArray[1]
@@ -373,12 +386,12 @@ class MorphForm {
 
 
   /** Selects tense value from formArray.
-   * @param formArray ArrayList of 8 elements.
+   * @param formArray ArrayList of NUMBER_FIELDS elements.
    * @returns Tense value (3rd element).
    * @throws Exception if ArrayList is wrong size.
    */
   static String getTense(ArrayList formArray) {
-    if (formArray.size() != 8) {
+    if (formArray.size() != NUMBER_FIELDS) {
       throw new Exception("MorphForm:getCase:  formArray ${formArray}, is wrong size (${formArray.size()})")
     }
     return formArray[2]
@@ -387,12 +400,12 @@ class MorphForm {
 
 
   /** Selects mood value from formArray.
-   * @param formArray ArrayList of 8 elements.
+   * @param formArray ArrayList of NUMBER_FIELDS elements.
    * @returns Mood value (4th element).
    * @throws Exception if ArrayList is wrong size.
    */
   static String getMood(ArrayList formArray) {
-    if (formArray.size() != 8) {
+    if (formArray.size() != NUMBER_FIELDS) {
       throw new Exception("MorphForm:getCase:  formArray ${formArray}  is wrong size (${formArray.size()})")
     }
     return formArray[3]
@@ -401,12 +414,12 @@ class MorphForm {
 
 
   /** Selects voice value from formArray.
-   * @param formArray ArrayList of 8 elements.
+   * @param formArray ArrayList of NUMBER_FIELDS elements.
    * @returns Voice value (5th element).
    * @throws Exception if ArrayList is wrong size.
    */
   static String getVoice(ArrayList formArray) {
-    if (formArray.size() != 8) {
+    if (formArray.size() != NUMBER_FIELDS) {
       throw new Exception("MorphForm:getCase:  formArray ${formArray}  is wrong size (${formArray.size()})")
     }
     return formArray[4]
@@ -415,12 +428,12 @@ class MorphForm {
 
 
   /** Selects gender value from formArray.
-   * @param formArray ArrayList of 8 elements.
+   * @param formArray ArrayList of NUMBER_FIELDS elements.
    * @returns Gender value (6th element).
    * @throws Exception if ArrayList is wrong size.
    */
   static String getGender(ArrayList formArray) {
-    if (formArray.size() != 8) {
+    if (formArray.size() != NUMBER_FIELDS) {
       throw new Exception("MorphForm:getCase:  formArray ${formArray} is wrong size (${formArray.size()})")
     }
     return formArray[5]
@@ -429,13 +442,13 @@ class MorphForm {
 
 
   /** Selects case value from formArray.
-   * @param formArray ArrayList of 8 elements.
+   * @param formArray ArrayList of NUMBER_FIELDS elements.
    * @returns Case value (7th element).
    * @throws Exception if ArrayList is wrong size.
    */
   static String getCase(ArrayList formArray) 
   throws Exception {
-    if (formArray.size() != 8) {
+    if (formArray.size() != NUMBER_FIELDS) {
       throw new Exception("MorphForm:getCase:  formArray ${formArray} is wrong size (${formArray.size()})")
     }
     return formArray[6]
@@ -443,17 +456,31 @@ class MorphForm {
 
 
 
+  /** Selects degree value from formArray.
+   * @param formArray ArrayList of NUMBER_FIELDS elements.
+   * @returns Degree value (8th element).
+   * @throws Exception if ArrayList is wrong size.
+   */
+  static String getDegree(ArrayList formArray) 
+  throws Exception {
+    if (formArray.size() != NUMBER_FIELDS) {
+      throw new Exception("MorphForm:getCase:  formArray ${formArray} is wrong size (${formArray.size()})")
+    }
+    return formArray[7]
+  }
+
+
   /** Selects part of speech value from formArray.
-   * @param formArray ArrayList of 8 elements.
-   * @returns Case value (8th element).
+   * @param formArray ArrayList of NUMBER_FIELDS elements.
+   * @returns Case value (9th element).
    * @throws Exception if ArrayList is wrong size.
    */
   static String getPos(ArrayList formArray) 
   throws Exception {
-    if (formArray.size() != 8) {
+    if (formArray.size() != NUMBER_FIELDS) {
       throw new Exception("MorphForm:getCase:  formArray ${formArray} is wrong size (${formArray.size()})")
     }
-    return formArray[7]
+    return formArray[8]
   }
 
 

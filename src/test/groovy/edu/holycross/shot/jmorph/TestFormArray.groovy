@@ -11,18 +11,18 @@ class TestFormArray extends GroovyTestCase {
   
 
   void testGetters() {
-    String formStr = "first:singular:present:indicative:active:::verb"
+    String formStr = "first:singular:present:indicative:active::::verb"
     MorphForm mf = new MorphForm(formStr)
 
 
-    def formArray = ["","singular","","","","masculine","nominative","noun"]
+    def formArray = ["","singular","","","","masculine","nominative","","noun"]
     assert mf.getCase(formArray) == "nominative"
     assert mf.getNumber(formArray) == "singular"
     assert mf.getGender(formArray) == "masculine"
     assert mf.getPos(formArray) == "noun"
 
 
-    def verbArray = ["first","singular","present","indicative","active","","","verb"]
+    def verbArray = ["first","singular","present","indicative","active","","","","verb"]
     assert mf.getPerson(verbArray) == "first"
     assert mf.getNumber(verbArray) == "singular"
     assert mf.getTense(verbArray) == "present"
@@ -31,7 +31,7 @@ class TestFormArray extends GroovyTestCase {
     assert mf.getPos(verbArray) ==  "verb"
 
 
-    def ptcplArray = ["","singular","present","participle","active","masculine","nominative","verb"]
+    def ptcplArray = ["","singular","present","participle","active","masculine","nominative","","verb"]
     assert mf.getTense(ptcplArray) == "present"
     assert mf.getMood(ptcplArray) == "participle"
     assert mf.getVoice(ptcplArray) == "active"
