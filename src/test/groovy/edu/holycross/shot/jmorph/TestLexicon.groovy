@@ -7,9 +7,6 @@ import org.junit.Test
 
 class TestLexicon extends GroovyTestCase {
 
-
-  
-
   void testLoad() {
     File lexiconFile  = new File("data/luschnig-paradigms.csv")
     Lexicon lexicon = new Lexicon(lexiconFile)

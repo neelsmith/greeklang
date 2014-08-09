@@ -27,7 +27,7 @@ class Lexicon {
   throws Exception {
     lexiconDb = Sql.newInstance("jdbc:sqlite:lexicon.db", "org.sqlite.JDBC")
     lexiconDb.execute("drop table if exists lexicon")
-    lexiconDb.execute("create table lexicon (urn string, lemma string, shortdef string)")
+    lexiconDb.execute("create table lexicon (urn string primary key, lemma string, shortdef string)")
 
     loadCsv(csvFile)
   }
