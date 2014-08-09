@@ -109,7 +109,7 @@ class TestFormEnums extends GroovyTestCase {
 
 
   void testPosVals() {
-    def posList = ["noun","verb","adjective"]
+    def posList = ["noun","verb","adjective","adverb","conjunction","particle"]
     assert MorphForm.PartOfSpeech.values().size() == posList.size()
     
     posList.each { pos ->

@@ -3,7 +3,7 @@ package edu.holycross.shot.jmorph
 
 
 /**
- * A class 
+ * A class identifying a morphological form.
  */
 class MorphForm {
 
@@ -49,7 +49,7 @@ class MorphForm {
   }
   /** Enumerated values for parts of speech. */
   enum PartOfSpeech {
-    NOUN, VERB, ADJECTIVE
+    NOUN, VERB, ADJECTIVE, ADVERB, CONJUNCTION, PARTICLE
   }
 
 
