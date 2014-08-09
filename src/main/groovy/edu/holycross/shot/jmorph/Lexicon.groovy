@@ -6,7 +6,7 @@ import org.sqlite.SQLite
 import groovy.sql.Sql
 
 /**
- * A class representing a morphological lexicon.
+ * A class for working with an inventory of Greek lexical entities.
  */
 class Lexicon {
 

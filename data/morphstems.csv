@@ -1,3 +1,2 @@
-LexicalEntity,Stem,Application
-urn:cite:perseus:lexentity.lex46862.1,mhn,noun_fem
-urn:cite:perseus:lexentity.lex10087.1,tartar,verb_regular
+StemUrn,LexicalEntity,Lemma,Stem,StemClass,Application
+"urn:cite:shot:morphstems.stem1","urn:cite:perseus:lexentity.lex17565.1","di/kh","di^k",h_hs,":::::feminine:::noun"

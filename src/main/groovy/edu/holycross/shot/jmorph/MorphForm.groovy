@@ -108,8 +108,6 @@ class MorphForm {
     initForm(srcArray as ArrayList)
   }
 
-
-
   /** Constructor initialized from an ArrayList with NUMBER_FIELDS elements.
    * The order of the elements is the same as for a colon-delimited
    * String.
@@ -123,6 +121,75 @@ class MorphForm {
     initForm(srcArray)
   }
 
+
+  MorphForm(ArrayList srcArray, boolean check) 
+  throws Exception {
+    if (srcArray.size() != NUMBER_FIELDS) {
+      throw new Exception("MorphForm: too few components in srcArray  ${srcArray} (${srcArray.size()})")
+    } 
+
+    if (check) {
+      initForm(srcArray)
+    } else {
+      initRawValues(srcArray)
+    }
+  }
+
+
+  // useful in filtering apps to talk about
+  // *part* of analysis...
+  void initRawValues(ArrayList formArray) {
+
+    String persStr = getPerson(formArray)
+    try {
+      this.mPerson = Person(valueOf(persStr.toUpperCase()))
+    } catch (Exception e) {}
+
+
+    String numStr = getNumber(formArray)
+    try {
+      this.mNumber = GrammaticalNumber.valueOf(numStr.toUpperCase())
+    } catch (Exception e) {}
+
+    String tenseStr = getTense(formArray)
+    try {
+      this.mTense = Tense.valueOf(tenseStr.toUpperCase())
+    } catch (Exception e) { }
+
+
+    String moodStr = getMood(formArray)
+    try {
+      this.mMood = Mood.valueOf(moodStr.toUpperCase())
+    } catch (Exception e) { }
+
+    String voiceStr = getVoice(formArray)
+    try {
+      this.mVoice = Voice.valueOf(voiceStr.toUpperCase())
+    } catch (Exception e) {}
+
+    String genStr = getGender(formArray)
+    try {
+      this.mGender = Gender.valueOf(genStr.toUpperCase())
+    } catch (Exception e) {}
+
+    String caseStr = getCase(formArray)
+    try {
+      this.mCase =  GrammaticalCase.valueOf(caseStr.toUpperCase())
+    } catch (Exception e) {}
+
+
+
+    String degreeStr = getDegree(formArray)
+    try {
+      this.mDegree =  Degree.valueOf(degreeStr.toUpperCase())
+    } catch (Exception e) {}
+
+
+    String pos = getPos(formArray)
+    try {
+      this.mPos = PartOfSpeech.valueOf(pos.toUpperCase())
+    } catch(Exception e) {}
+  }
 
 
   /** Initializes all values for conjugated verb
@@ -357,7 +424,88 @@ class MorphForm {
   }
 
 
+  /** INSTANCE GETTERS ************************************************* */
 
+
+  /** Gets enumerated value for person.
+   * @returns Person value, or null
+   */
+  Person getPerson() {
+    return this.mPerson
+  }
+
+  /** Gets enumerated value for grammatical number.
+   * @returns GrammaticalNumber value, or null
+   */
+  GrammaticalNumber getNumber() {
+    return this.mNumber
+  }
+
+
+
+  /** Gets enumerated value for tense.
+   * @returns Tense value, or null
+   */
+  Tense getTense() {
+    return this.mTense
+  }
+
+  /** Gets enumerated value for mood.
+   * @returns Mood value, or null
+   */
+  Mood getMood() {
+    return this.mMood
+  }
+
+  /** Gets enumerated value for voice.
+   * @returns Voice value, or null
+   */
+  Voice getVoice() {
+    return this.mVoice
+  }
+
+
+
+  /** Gets enumerated value for gender.
+   * @returns Gender value, or null
+   */
+  Gender getGender() {
+    return this.mGender
+  }
+
+
+  /** Gets enumerated value for grammatical case.
+   * @returns GrammaticalCase value, or null
+   */
+  GrammaticalCase getCase() {
+    return this.mCase
+  }
+
+  /** Gets enumerated value for adjectival degree.
+   * @returns Degree value, or null
+   */
+  Degree getDegree() {
+    return this.mDegree
+  }
+
+  /** Gets enumerated value for part of speech.
+   * @returns PartOfSpeech value, or null
+   */
+  PartOfSpeech getPartOfSpeech() {
+    return this.mPos
+  }
+
+
+  /**********************************************************************/
+  //
+  /** ****** STATIC METHODS ****************/
+  //
+
+
+  static String getPerson(String formString)  
+  throws Exception {
+    return getPerson(formString.split(/:/))
+  }
 
   /** Selects person value from formArray.
    * @param formArray ArrayList of NUMBER_FIELDS elements.
@@ -440,7 +588,6 @@ class MorphForm {
   }
 
 
-
   /** Selects case value from formArray.
    * @param formArray ArrayList of NUMBER_FIELDS elements.
    * @returns Case value (7th element).
@@ -482,8 +629,6 @@ class MorphForm {
     }
     return formArray[8]
   }
-
-
 
 
 
