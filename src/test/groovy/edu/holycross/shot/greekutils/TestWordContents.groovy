@@ -12,9 +12,10 @@ class TestWordContents extends GroovyTestCase {
 
   void testConstructor() {
     GreekWord gkstr = new GreekWord(testString)
-    
-    assert gkstr.containsVowel("mh=")
-    assert gkstr.containsVowel("m") == false
+
+    assert shouldFail {
+      GreekWord notAWord = new GreekWord("123")
+    }
   }
 
 

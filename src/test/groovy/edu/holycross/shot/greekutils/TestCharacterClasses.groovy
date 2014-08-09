@@ -20,32 +20,5 @@ class TestCharacterClasses extends GroovyTestCase {
   }
 
 
-  void testCharClass() {
-    GreekWord gkstr = new GreekWord(testString)
-
-    gkstr.consonant.each { c ->
-      assert gkstr.isAlphabetic(c)
-      assert gkstr.isVowel(c) == false
-    }
-
-    gkstr.vowel.each { v ->
-      assert gkstr.isAlphabetic(v)
-      assert gkstr.isVowel(v)
-    }
-
-    gkstr.breathing.each { breath ->
-      assert gkstr.isAccentBreathing(breath)
-      assert gkstr.isAlphabetic(breath) == false
-    }
-
-    gkstr.accent.each { acc ->
-      assert gkstr.isAccentBreathing(acc)
-      assert gkstr.isAlphabetic(acc) == false
-    }
-
-
-  }
-
-
 
 }
