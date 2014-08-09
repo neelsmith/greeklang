@@ -15,53 +15,60 @@ class MorphForm {
   Integer debugLevel = 0
 
 
+
+  /** Enumerated values for grammatical person. */
   enum Person {
     FIRST,SECOND,THIRD
   }
+  /** Enumerated values for grammatical number. */
   enum GrammaticalNumber {
     SINGULAR, DUAL, PLURAL
   }
+  /** Enumerated values for grammatical tense. */
   enum Tense {
     PRESENT,IMPERFECT,FUTURE,AORIST,PERFECT,PLUPERFECT
   }
+  /** Enumerated values for categories of verb including
+   * traditional grammatical mood and other inflectional groups
+   * such as participles and verbal adjectives.
+   */
   enum Mood {
     INDICATIVE,SUBJUNCTIVE,OPTATIVE,IMPERATIVE,PARTICIPLE,VADJ
   }
+  /** Enumerated values for grammatical voice. */
   enum Voice {
     ACTIVE, MIDDLE, PASSIVE
   }
+  /** Enumerated values for grammatical gender. */
   enum Gender {
     MASCULINE, FEMININE, NEUTER
   }
+  /** Enumerated values for grammatical case. */
   enum GrammaticalCase {
     NOMINATIVE, GENITIVE, DATIVE, ACCUSATIVE, VOCATIVE
   }
+  /** Enumerated values for parts of speech. */
   enum PartOfSpeech {
     NOUN, VERB, ADJECTIVE
   }
 
 
-  /** Grammatical person. */
+  /** Possibly null value for morphological form's person. */
   Person mPerson
-  /** Grammatical number. */
+  /** Possibly null value for morphological form's number. */
   GrammaticalNumber mNumber 
-  /** Gramatical tense. */
+  /** Possibly null value for morphological form's tense. */
   Tense mTense
-  /** Categories of verb forms including traditional grammatical
-   * mood, and distinct inflectional categories such ad participle and
-   * verbal adjective. */
+  /** Possibly null value for morphological form's category of verb.*/
   Mood mMood
-  /** Gramatical voice. */
+  /** Possibly null value for morphological form's  voice. */
   Voice mVoice
-  /** Grammatical gender. */
+  /** Possibly null value for morphological form's  gender. */
   Gender mGender
-  /** Gramatical case. */
+  /** Possibly null value for morphological form's  case. */
   GrammaticalCase mCase
-  /** Part of speech .*/
+  /** Possibly null value for morphological form's part of speech .*/
   PartOfSpeech mPos 
-
-
-
 
 
 
@@ -121,6 +128,7 @@ class MorphForm {
 
     } else {
       try {
+	// make sure we have a valid mood value:
 	def m = Mood.valueOf(moodString)
       } catch (Exception e) {
 	throw new Exception("MorphForm:initVerb: in ${formArray}, bad value for mood ${moodString}")
@@ -343,7 +351,7 @@ class MorphForm {
    * @returns Person value (1st element).
    * @throws Exception if ArrayList is wrong size.
    */
-  String getPerson(ArrayList formArray) 
+  static String getPerson(ArrayList formArray) 
   throws Exception {
     if (formArray.size() != 8) {
       throw new Exception("MorphForm:getCase:  formArray ${formArray} is wrong size (${formArray.size()})")
@@ -356,7 +364,7 @@ class MorphForm {
    * @returns Gender value (2nd element).
    * @throws Exception if ArrayList is wrong size.
    */
-  String getNumber(ArrayList formArray) {
+  static String getNumber(ArrayList formArray) {
     if (formArray.size() != 8) {
       throw new Exception("MorphForm:getCase:  formArray ${formArray} is wrong size (${formArray.size()})")
     }
@@ -369,7 +377,7 @@ class MorphForm {
    * @returns Tense value (3rd element).
    * @throws Exception if ArrayList is wrong size.
    */
-  String getTense(ArrayList formArray) {
+  static String getTense(ArrayList formArray) {
     if (formArray.size() != 8) {
       throw new Exception("MorphForm:getCase:  formArray ${formArray}, is wrong size (${formArray.size()})")
     }
@@ -383,7 +391,7 @@ class MorphForm {
    * @returns Mood value (4th element).
    * @throws Exception if ArrayList is wrong size.
    */
-  String getMood(ArrayList formArray) {
+  static String getMood(ArrayList formArray) {
     if (formArray.size() != 8) {
       throw new Exception("MorphForm:getCase:  formArray ${formArray}  is wrong size (${formArray.size()})")
     }
@@ -397,7 +405,7 @@ class MorphForm {
    * @returns Voice value (5th element).
    * @throws Exception if ArrayList is wrong size.
    */
-  String getVoice(ArrayList formArray) {
+  static String getVoice(ArrayList formArray) {
     if (formArray.size() != 8) {
       throw new Exception("MorphForm:getCase:  formArray ${formArray}  is wrong size (${formArray.size()})")
     }
@@ -411,7 +419,7 @@ class MorphForm {
    * @returns Gender value (6th element).
    * @throws Exception if ArrayList is wrong size.
    */
-  String getGender(ArrayList formArray) {
+  static String getGender(ArrayList formArray) {
     if (formArray.size() != 8) {
       throw new Exception("MorphForm:getCase:  formArray ${formArray} is wrong size (${formArray.size()})")
     }
@@ -425,7 +433,7 @@ class MorphForm {
    * @returns Case value (7th element).
    * @throws Exception if ArrayList is wrong size.
    */
-  String getCase(ArrayList formArray) 
+  static String getCase(ArrayList formArray) 
   throws Exception {
     if (formArray.size() != 8) {
       throw new Exception("MorphForm:getCase:  formArray ${formArray} is wrong size (${formArray.size()})")
@@ -440,7 +448,7 @@ class MorphForm {
    * @returns Case value (8th element).
    * @throws Exception if ArrayList is wrong size.
    */
-  String getPos(ArrayList formArray) 
+  static String getPos(ArrayList formArray) 
   throws Exception {
     if (formArray.size() != 8) {
       throw new Exception("MorphForm:getCase:  formArray ${formArray} is wrong size (${formArray.size()})")
