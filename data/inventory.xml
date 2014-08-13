@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:/data/repos/git/greeklang/schemas/CiteCollectionInventory.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<collectionService xmlns="http://chs.harvard.edu/xmlns/cite">
+
+
+<!-- Data structure for analyzing Greek morphology, as a set of related CITE Collections -->
+    <citeCollection canonicalId="MorphStemType" label="Label" urn="urn:cite:ns:stemtype">
+        <namespaceMapping abbr="ns" fullValue="http://shot.holycross.edu/~nsmith/datans/ns"></namespaceMapping>
+        <title xmlns="http://purl.org/dc/elements/1.1/">Types of morphological stems</title>
+        <creator xmlns="http://purl.org/dc/elements/1.1/">Neel Smith</creator>
+        <coverage xmlns="http://purl.org/dc/elements/1.1/">Morphological stem types used in jmorph parsing system</coverage>
+        <description xmlns="http://purl.org/dc/elements/1.1/">Types morphological stems, mapped to broader inflectional classes</description>
+        <rights xmlns="http://purl.org/dc/elements/1.1/">Public domain</rights>
+        
+        <source type="file" value="typeMappings.csv"></source>
+        <citeProperty name="MorphStemType"  label="Stem type" type="citeurn"/>
+        <citeProperty name="Label" label="Description" type="string"/>
+        <citeProperty name="EndingsClass" label="Inflectional class" type="citeurn" join="naturaljoin"/>
+    </citeCollection>
+
+
+
+</collectionService>
