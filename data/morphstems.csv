@@ -1,4 +1,4 @@
 StemUrn,LexicalEntity,Lemma,Stem,StemClass,Application
-"urn:cite:shot:morphstems.stem1","urn:cite:perseus:lexentity.lex17565.1","di/kh","di^k",urn:cite:ns:stemtype.h_hs,":::::feminine:::noun"
-"urn:cite:shot:morphstems.stem2","urn:cite:perseus:lexentity.lex41535.1","lo/gos","log",urn:cite:ns:stemtype.os_ou,":::::mascuilne:::noun"
+"urn:cite:ns:morphstem.stem1","urn:cite:perseus:lexentity.lex17565.1","di/kh","di^k",urn:cite:ns:stemtype.h_hs,":::::feminine:::noun"
+"urn:cite:ns:morphstem.stem2","urn:cite:perseus:lexentity.lex41535.1","lo/gos","log",urn:cite:ns:stemtype.os_ou,":::::masculine:::noun"
 

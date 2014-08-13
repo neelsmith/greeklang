@@ -3,9 +3,68 @@
 <collectionService xmlns="http://chs.harvard.edu/xmlns/cite">
 
 
-<!-- Data structure for analyzing Greek morphology, as a set of related CITE Collections -->
+<!-- Data structures for analyzing Greek morphology, as a set of related CITE Collections -->
+    <!--
+        Complete system requires:
+        
+        1. morphological lexicon (morphstems.cvs): vocabulary 
+        2. morphological endings (endings.csv)
+        3. morphological stem types (typeMappings.csv), linked to broader inflectional classes (inflclass.csv)
+        
+        
+        Morphological lexica may in turned be linked to other lexica:  multiple ones are in the 
+        subdirectory 'lexica'
+       --> 
+    
+    
+    
+    <!--    1. morphological lexicon (morphstems.cvs): vocabulary  -->
+    <!-- StemUrn,LexicalEntity,Lemma,Stem,StemClass,Application -->
+    <citeCollection canonicalId="StemUrn" label="Lemma" urn="urn:cite:ns:morphstem">
+        <namespaceMapping abbr="ns" fullValue="http://shot.holycross.edu/~nsmith/datans/ns"></namespaceMapping>
+        
+        <title xmlns="http://purl.org/dc/elements/1.1/">Morphological database</title>
+        <creator xmlns="http://purl.org/dc/elements/1.1/">Neel Smith</creator>
+        <coverage xmlns="http://purl.org/dc/elements/1.1/">Database of morphological stems and forms used in jmorph parsing system</coverage>
+        <description xmlns="http://purl.org/dc/elements/1.1/">Morphological database</description>
+        <rights xmlns="http://purl.org/dc/elements/1.1/">Public domain</rights>
+        
+        <source type="file" value="morphstems.csv"></source>
+        
+        
+        <citeProperty name="StemUrn"  label="Ending URN" type="citeurn"/>
+        <citeProperty  name="LexicalEntity" label="Lexical entity" type="citeurn"/>
+        <citeProperty name="Lemma" label="Lemma" type="string"/>
+        <citeProperty name="StemClass" label="Morphological stem class" type="citeurn"/>
+        <citeProperty name="Application" label="Form filter" type="string"/>
+        
+    </citeCollection>
+    
+    
+    <!-- 2. morphological endings (endings.csv) -->
+    <citeCollection canonicalId="EndingUrn" label="EndingString" urn="urn:cite:ns:morphend">
+        <namespaceMapping abbr="ns" fullValue="http://shot.holycross.edu/~nsmith/datans/ns"></namespaceMapping>
+        
+        <title xmlns="http://purl.org/dc/elements/1.1/">Morphological endings</title>
+        <creator xmlns="http://purl.org/dc/elements/1.1/">Neel Smith</creator>
+        <coverage xmlns="http://purl.org/dc/elements/1.1/">Morphological endings used in jmorph parsing system</coverage>
+        <description xmlns="http://purl.org/dc/elements/1.1/">Morphological endings</description>
+        <rights xmlns="http://purl.org/dc/elements/1.1/">Public domain</rights>
+        
+        <source type="file" value="endings.csv"></source>
+        
+        
+        <citeProperty name="EndingUrn"  label="Ending URN" type="citeurn"/>
+        <citeProperty name="EndingString" label="Ending" type="string"/>
+        <citeProperty name="Form" label="Form filter" type="string"/>
+        <citeProperty name="FormSet" label="Inflectional class" type="citeurn" join="naturaljoin"/>
+        
+    </citeCollection>
+    
+    <!-- 3. morphological stem types and inflectional classes -->
     <citeCollection canonicalId="MorphStemType" label="Label" urn="urn:cite:ns:stemtype">
         <namespaceMapping abbr="ns" fullValue="http://shot.holycross.edu/~nsmith/datans/ns"></namespaceMapping>
+
         <title xmlns="http://purl.org/dc/elements/1.1/">Types of morphological stems</title>
         <creator xmlns="http://purl.org/dc/elements/1.1/">Neel Smith</creator>
         <coverage xmlns="http://purl.org/dc/elements/1.1/">Morphological stem types used in jmorph parsing system</coverage>
@@ -17,7 +76,37 @@
         <citeProperty name="Label" label="Description" type="string"/>
         <citeProperty name="EndingsClass" label="Inflectional class" type="citeurn" join="naturaljoin"/>
     </citeCollection>
-
-
-
+    <citeCollection canonicalId="InflClass" label="Label" urn="urn:cite:ns:inflclass">
+        <namespaceMapping abbr="ns" fullValue="http://shot.holycross.edu/~nsmith/datans/ns"></namespaceMapping>
+        
+        <title xmlns="http://purl.org/dc/elements/1.1/">Inflectional classes</title>
+        <creator xmlns="http://purl.org/dc/elements/1.1/">Neel Smith</creator>
+        <coverage xmlns="http://purl.org/dc/elements/1.1/">Morphological inflectional classes used in jmorph parsing system</coverage>
+        <description xmlns="http://purl.org/dc/elements/1.1/">Inflectional classes</description>
+        <rights xmlns="http://purl.org/dc/elements/1.1/">Public domain</rights>
+        
+        <source type="file" value="inflclass.csv"></source>
+        <citeProperty name="InflClass"  label="Stem type" type="citeurn"/>
+        <citeProperty name="Label" label="Description" type="string"/>
+        
+    </citeCollection>
+    
+    <!-- Other lexica -->
+    <citeCollection canonicalId="LexicalEntity" label="Lemma" urn="urn:cite:perseus:lexentity">
+        <namespaceMapping abbr="perseus" fullValue="http://perseus.edu/PERSLEXENT"/>
+        <title xmlns="http://purl.org/dc/elements/1.1/">Vocabulary from Luschnig paradigms</title>
+        <creator xmlns="http://purl.org/dc/elements/1.1/">Neel Smith</creator>
+        <coverage xmlns="http://purl.org/dc/elements/1.1/">Greek vocabulary used as paradigm words in Greek textbook by Luschnig</coverage>
+        <description xmlns="http://purl.org/dc/elements/1.1/">Vocabulary list of paradigm words in Luschnig</description>
+        <rights xmlns="http://purl.org/dc/elements/1.1/">Public domain</rights>
+        
+        <source type="file" value="lexica/luschnig-paradigms.csv"/>
+        <citeProperty name="LexicalEntity" label="Lexical entity" type="citeurn"/>
+        <citeProperty name="Lemma" label="Lemma" type="string"/>
+        <citeProperty name="ShortDef" label="Short definition" type="string"/>
+        
+    </citeCollection>
+    
+ 
+    
 </collectionService>
