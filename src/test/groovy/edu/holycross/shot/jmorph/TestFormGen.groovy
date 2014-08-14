@@ -9,29 +9,40 @@ import org.junit.Test
 
 import edu.harvard.chs.cite.CiteUrn
 
-class TestTags extends GroovyTestCase {
+class TestFormGen extends GroovyTestCase {
+
+
+  CiteUrn logos = new CiteUrn("urn:cite:perseus:lexentity.lex41535.1")
+  MorphForm m_dat_s = new MorphForm( ["","singular","","","","masculine","dative","","noun"])
 
   File stemsFile  = new File("testdata/morph/morphstems.csv")
   File endingsFile  = new File("testdata/morph/endings.csv")
   File stemTypesFile = new File("testdata/morph/stemtypes.csv")
   File inflClassFile = new File("testdata/morph/inflclass.csv")
+
+
   File tagsFile = new File("testdata/morph/tags.csv")
 
-  CiteUrn logos = new CiteUrn("urn:cite:perseus:lexentity.lex41535.1")
+
 
   void testLoad() {
     MorphSql msql = new MorphSql(stemsFile, endingsFile, stemTypesFile, inflClassFile)
     msql.loadTags(tagsFile)
     assert msql
 
-    groovy.sql.Sql morphDb =  Sql.newInstance("jdbc:sqlite:jmorph.db", "org.sqlite.JDBC")
-
-    Integer expectedCount = 29
-    morphDb.eachRow("select count(*) as rowcount from tags") { r ->
-      assert expectedCount == r.rowcount as Integer
-    }
+    FormGenerator generator = new FormGenerator(msql)
+    assert generator
   }
 
+
+  void testNounGener() {
+    MorphSql msql = new MorphSql(stemsFile, endingsFile, stemTypesFile, inflClassFile)
+    FormGenerator generator = new FormGenerator(msql)
+    generator.debug = 5
+    println generator.generate(logos, m_dat_s)
+  }
+
+  /*
   void testSelect() {
     MorphSql msql = new MorphSql(stemsFile, endingsFile, stemTypesFile, inflClassFile)
     msql.loadTags(tagsFile)
@@ -48,15 +59,7 @@ class TestTags extends GroovyTestCase {
       String form = it[0]
       assert epicEndings.contains(form)
     }
+
   }
-
-  void testReturnType() {
-    MorphSql msql = new MorphSql(stemsFile, endingsFile, stemTypesFile, inflClassFile)
-    ArrayList allEndingsList = msql.endingsForLexEnt(logos)
-    allEndingsList.each {
-      println "Class ${it.getClass()}: ${it}"
-    }
-  }
-
-
+*/
 }

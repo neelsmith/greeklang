@@ -11,11 +11,11 @@ class TestNounFilter extends GroovyTestCase {
   // fully specified forms:
   def masc_nom_s = ["","singular","","","","masculine","nominative","","noun"]
   def fem_nom_s = ["","singular","","","","feminine","nominative","","noun"]
-  def formsList = [masc_nom_s, fem_nom_s]
+  ArrayList formsList = [masc_nom_s, fem_nom_s]
 
   // filters:
-  def any_nom_s = ["","singular","","","","","nominative","","noun"]
-  def any_masc =  ["","","","","","masculine","","","noun"]
+  ArrayList any_nom_s = ["","singular","","","","","nominative","","noun"]
+  ArrayList any_masc =  ["","","","","","masculine","","","noun"]
   
   void testNoun() {
     assert MorphForm.getCase(masc_nom_s) == "nominative"
