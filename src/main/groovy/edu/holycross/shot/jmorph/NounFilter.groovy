@@ -21,6 +21,9 @@ class NounFilter {
   }
 
 
+  static ArrayList filterList(ArrayList formsArrayList, MorphForm filter) {
+    return filterList(formsArrayList, filter.toArrayOfString())
+  }
 
   //  
   static ArrayList filterList(ArrayList formsArrayList, ArrayList filterForm) {
