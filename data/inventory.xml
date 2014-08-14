@@ -7,9 +7,9 @@
     <!--
         Complete system requires:
         
-        1. morphological lexicon (morphstems.cvs): vocabulary 
+        1. morphological lexicon (morphstems.cvs) 
         2. morphological endings (endings.csv)
-        3. morphological stem types (typeMappings.csv), linked to broader inflectional classes (inflclass.csv)
+        3. morphological stem types (stemtypes.csv), linked to broader inflectional classes (inflclass.csv)
         
         
         Morphological lexica may in turned be linked to other lexica:  multiple ones are in the 
@@ -71,7 +71,7 @@
         <description xmlns="http://purl.org/dc/elements/1.1/">Types morphological stems, mapped to broader inflectional classes</description>
         <rights xmlns="http://purl.org/dc/elements/1.1/">Public domain</rights>
         
-        <source type="file" value="typeMappings.csv"></source>
+        <source type="file" value="stemtypes.csv"></source>
         <citeProperty name="MorphStemType"  label="Stem type" type="citeurn"/>
         <citeProperty name="Label" label="Description" type="string"/>
         <citeProperty name="EndingsClass" label="Inflectional class" type="citeurn" join="naturaljoin"/>
