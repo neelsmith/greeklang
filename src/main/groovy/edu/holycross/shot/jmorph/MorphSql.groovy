@@ -1,5 +1,8 @@
 package edu.holycross.shot.jmorph
 
+import edu.harvard.chs.cite.CiteUrn
+
+
 import au.com.bytecode.opencsv.CSVReader
 import java.sql.*
 import org.sqlite.SQLite
@@ -47,8 +50,62 @@ class MorphSql {
     loadStems(stemCsv)
     loadEndings(endingsCsv)
     loadStemTypes(stemTypesCsv)
-    load inflectionalClasses(inflClassesCsv)
+    loadInflectionalClasses(inflClassesCsv)
   }
+
+
+
+  ArrayList endingsForLexEnt(CiteUrn lexicalEntityUrn) {
+    return  endingsForLexEnt(lexicalEntityUrn.toString()) 
+  }
+
+  // returns array of ending+form+class lists
+  ArrayList endingsForLexEnt(String lexicalEntityString) {
+    ArrayList endings = []
+
+    String query = """
+select ic.label AS inflclass, e.ending AS ending, e.form  AS form
+FROM morphstem m, endings e, stemtype st, inflclass ic
+WHERE m.stemclass =  st.urn AND st.inflclass = ic.urn AND st.inflclass = e.formset
+AND m.lexurn = '""" + lexicalEntityString + "'"
+
+    morphDb.eachRow(query) { r ->
+      def record = []
+      record.add(r.ending)
+      record.add(r.form)
+      record.add(r.inflclass)
+      endings.add(record)
+    }
+    return endings
+  }
+
+
+
+  // returns array of ending+form+class lists
+  ArrayList endingsForLexEnt(CiteUrn lexicalEntity, String tag) {
+    return endingsForLexEnt(lexicalEntity.toString(), tag)
+  }
+
+
+  ArrayList endingsForLexEnt(String lexicalEntityString, String tag) {
+    ArrayList endings = []
+
+    String query = """
+select ic.label AS inflclass, e.ending AS ending, e.form  AS form
+FROM morphstem m, endings e, stemtype st, inflclass ic, tags t
+WHERE m.stemclass =  st.urn AND st.inflclass = ic.urn AND st.inflclass = e.formset AND e.urn = t.ending
+AND m.lexurn = '""" + lexicalEntityString + "' AND t.tag = '"  + tag + "'"
+
+    morphDb.eachRow(query) { r ->
+      def record = []
+      record.add(r.ending)
+      record.add(r.form)
+      record.add(r.inflclass)
+      endings.add(record)
+    }
+    return endings
+  }
+
 
 
   /** Loads morphological stem types from a csv file. 
@@ -62,7 +119,7 @@ class MorphSql {
     def inflClassData = morphDb.dataSet("inflclass")
 
     Integer count = 0
-    CSVReader reader = new CSVReader(new FileReader(f))        
+    CSVReader reader = new CSVReader(new FileReader(csvFile))        
     reader.readAll().each { cols ->
       if (count == 0) {
 	// skip header line
@@ -86,10 +143,10 @@ class MorphSql {
   void loadStemTypes(File csvFile) {
     morphDb.execute("drop table if exists stemtype")
     morphDb.execute("create table stemtype (urn string primary key,label string, inflclass string)")
-    def stemTypeData = morphDb.dataSet("morphstem")
+    def stemTypeData = morphDb.dataSet("stemtype")
 
     Integer count = 0
-    CSVReader reader = new CSVReader(new FileReader(f))        
+    CSVReader reader = new CSVReader(new FileReader(csvFile))        
     reader.readAll().each { cols ->
       if (count == 0) {
 	// skip header line
@@ -115,7 +172,7 @@ class MorphSql {
     def stemData = morphDb.dataSet("morphstem")
 
     Integer count = 0
-    CSVReader reader = new CSVReader(new FileReader(f))        
+    CSVReader reader = new CSVReader(new FileReader(csvFile))        
     reader.readAll().each { cols ->
       if (count == 0) {
 	// skip header line
@@ -198,6 +255,32 @@ class MorphSql {
     }
   }
 
+
+
+ /** Loads tag data from a csv file. 
+   * @param csvFile File with lexicon data in csv format.
+   */
+  void loadTags(File csvFile) {
+    morphDb.execute("drop table if exists tags")
+    morphDb.execute("create table tags (ending string, tag string)")
+
+    def tags = morphDb.dataSet("tags")
+
+    Integer count = 0
+    CSVReader reader = new CSVReader(new FileReader(csvFile))        
+    reader.readAll().each { cols ->
+      if (count == 0) {
+	// skip header line
+      } else {
+	if (cols.size() == 2) {
+	  tags.add(ending: cols[0], tag: cols[1])
+	} else {
+	 System.err.println "Skipping input line with ${cols.size()} data columns."
+	}
+      }
+      count++;
+    }
+  }
 
 
 

@@ -45,6 +45,9 @@ repositories {
 dependencies {
   compile group: 'org.codehaus.groovy', name: 'groovy-all', version: groovyVersion
   compile group: 'org.xerial',name: 'sqlite-jdbc', version: sqlLiteVersion
+
+  compile group: 'edu.harvard.chs', name : 'cite' , version: '0.90.0'
+
   compile group : 'edu.unc.epidoc', name: 'transcoder', version : epidocVersion
   compile group: 'net.sf.opencsv', name: 'opencsv', version : opencsvVersion
 
