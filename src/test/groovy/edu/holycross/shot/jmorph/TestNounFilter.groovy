@@ -11,7 +11,7 @@ class TestNounFilter extends GroovyTestCase {
   // fully specified forms:
   def masc_nom_s = ["","singular","","","","masculine","nominative","","noun"]
   def fem_nom_s = ["","singular","","","","feminine","nominative","","noun"]
-
+  def formsList = [masc_nom_s, fem_nom_s]
 
   // filters:
   def any_nom_s = ["","singular","","","","","nominative","","noun"]
@@ -29,15 +29,18 @@ class TestNounFilter extends GroovyTestCase {
     assert MorphForm.getPos(fem_nom_s) == "noun"
 
 
-    def formsList = [masc_nom_s, fem_nom_s]
-
 
     println "Filter list for any masc:"
-    println NounFilter.filterList(formsList, any_masc)
+    println FormFilter.filterList(formsList, any_masc)
 
     println "Filter list for any nom.s.:"
-    println NounFilter.filterList(formsList, any_nom_s)
+    println FormFilter.filterList(formsList, any_nom_s)
     
+  }
+
+  void testUsingMorphForm() {
+    MorphForm anyMascForm = new MorphForm(any_masc, false)
+    println "Filter for any masc; " + FormFilter.filterList(formsList,anyMascForm)
   }
 
 

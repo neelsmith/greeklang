@@ -5,7 +5,7 @@ package edu.holycross.shot.jmorph
 /**
  * 
  */
-class NounFilter {
+class FormFilter {
 
   // Temporary constructs for debugging:
   Integer SILENT = 0
@@ -17,7 +17,7 @@ class NounFilter {
 
 
 
-  NounFilter() {
+  FormFilter() {
   }
 
 
