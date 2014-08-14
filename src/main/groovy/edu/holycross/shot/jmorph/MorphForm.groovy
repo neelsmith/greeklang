@@ -139,7 +139,6 @@ class MorphForm {
   // useful in filtering apps to talk about
   // *part* of analysis...
   void initRawValues(ArrayList formArray) {
-
     String persStr = getPerson(formArray)
     try {
       this.mPerson = Person(valueOf(persStr.toUpperCase()))
@@ -245,7 +244,6 @@ class MorphForm {
     } catch (Exception e) {
       throw new Exception("MorphForm:initParticiple:  in ${formArray}, bad value ${tenseStr} for tense.")
     }
-
 
     String moodStr = getMood(formArray)
     try {
@@ -424,7 +422,9 @@ class MorphForm {
   }
 
 
-  /** INSTANCE GETTERS ************************************************* */
+  //////////////////////////////////////////////////////////////////////////
+  // INSTANCE GETTERS
+
 
 
   /** Gets enumerated value for person.
@@ -495,10 +495,37 @@ class MorphForm {
     return this.mPos
   }
 
+  ArrayList toArrayOfString() {
+    ArrayList strList = []
+    strList[0] = this.mPerson?.toString()
+    strList[1] = this.mNumber?.toString()
+    strList[2] = this.mTense?.toString()
+    strList[3] = this.mMood?.toString()
+    strList[4] = this.mVoice?.toString()
+    strList[5] = this.mGender?.toString()
+    strList[6] = this.mCase?.toString()
+    strList[7] = this.mDegree?.toString()
+    strList[8] = this.mPos?.toString()
+    return strList
+  }
 
-  /**********************************************************************/
+  ArrayList toArrayList() {
+    ArrayList asArray = []
+    asArray[0] = this.mPerson
+    asArray[1] = this.mNumber
+    asArray[2] = this.mTense
+    asArray[3] = this.mMood
+    asArray[4] = this.mVoice
+    asArray[5] = this.mGender
+    asArray[6] = this.mCase
+    asArray[7] = this.mDegree
+    asArray[8] = this.mPos
+  }
+
+
+  //////////////////////////////////////////////////////////////////////////
   //
-  /** ****** STATIC METHODS ****************/
+  /// STATIC METHODS
   //
 
 
@@ -615,7 +642,6 @@ class MorphForm {
     }
     return formArray[7]
   }
-
 
   /** Selects part of speech value from formArray.
    * @param formArray ArrayList of NUMBER_FIELDS elements.
