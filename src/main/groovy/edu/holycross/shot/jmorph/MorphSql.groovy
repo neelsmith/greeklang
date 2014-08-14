@@ -262,7 +262,7 @@ AND m.lexurn = '""" + lexicalEntityString + "' AND t.tag = '"  + tag + "'"
    */
   void loadTags(File csvFile) {
     morphDb.execute("drop table if exists tags")
-    morphDb.execute("create table tags (ending string, tag string)")
+    morphDb.execute("create table tags (tagurn string primary key, ending string, tag string)")
 
     def tags = morphDb.dataSet("tags")
 
@@ -272,8 +272,8 @@ AND m.lexurn = '""" + lexicalEntityString + "' AND t.tag = '"  + tag + "'"
       if (count == 0) {
 	// skip header line
       } else {
-	if (cols.size() == 2) {
-	  tags.add(ending: cols[0], tag: cols[1])
+	if (cols.size() == 3) {
+	  tags.add(tagurn: cols[0], ending: cols[1], tag: cols[2])
 	} else {
 	 System.err.println "Skipping input line with ${cols.size()} data columns."
 	}

@@ -1,5 +1,8 @@
 package edu.holycross.shot.jmorph
 
+import java.sql.*
+import org.sqlite.SQLite
+import groovy.sql.Sql
 
 import static org.junit.Assert.*
 import org.junit.Test
@@ -21,6 +24,17 @@ class TestTags extends GroovyTestCase {
     msql.loadTags(tagsFile)
     assert msql
 
+    groovy.sql.Sql morphDb =  Sql.newInstance("jdbc:sqlite:jmorph.db", "org.sqlite.JDBC")
+
+    Integer expectedCount = 29
+    morphDb.eachRow("select count(*) as rowcount from tags") { r ->
+      assert expectedCount == r.rowcount as Integer
+    }
+  }
+
+  void testSelect() {
+    MorphSql msql = new MorphSql(stemsFile, endingsFile, stemTypesFile, inflClassFile)
+    msql.loadTags(tagsFile)
 
     // test data has one of two tags: 'standard' or 'epic'
     ArrayList allEndingsList = msql.endingsForLexEnt(logos)
@@ -34,6 +48,7 @@ class TestTags extends GroovyTestCase {
       String form = it[0]
       assert epicEndings.contains(form)
     }
+
   }
 
 }
