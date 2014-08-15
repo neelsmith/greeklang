@@ -1,0 +1,5 @@
+Lemma,LexEnt,Form,Tags,ExpectedList
+λόγος,urn:cite:perseus:lexentity.lex41535.1,":singular::::masculine:genitive::noun",,"lo/gou,lo/goio"
+λόγος,urn:cite:perseus:lexentity.lex41535.1,":singular::::masculine:genitive::noun",epic,"lo/goio"
+λόγος,urn:cite:perseus:lexentity.lex41535.1,":singular::::masculine:genitive::noun",standard,"lo/gou"
+
