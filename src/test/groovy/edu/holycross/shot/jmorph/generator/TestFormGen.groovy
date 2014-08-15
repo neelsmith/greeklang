@@ -48,4 +48,24 @@ class TestFormGen extends GroovyTestCase {
     assert generator.generate(logos, m_gen_s, "standard").size() == 1
   }
 
+
+  void testVerbGener() {
+    MorphSql msql = new MorphSql(stemsFile, endingsFile, stemTypesFile, inflClassFile)
+    FormGenerator generator = new FormGenerator(msql)
+    generator.debug = 4
+
+
+    CiteUrn to_have = new CiteUrn("urn:cite:perseus:lexentity.lex113895.1")
+    MorphForm pr_act_2s = new MorphForm( ["second","singular","present","indicative","active","","","","verb"])
+
+    // Single standard form, e)/xeis:
+    assert generator.generate(to_have, pr_act_2s).size() == 1
+
+    // Either sxsh/seis or e(/ceis :
+    MorphForm fut_act_2s = new MorphForm( ["second","singular","future","indicative","active","","","","verb"])
+    assert generator.generate(to_have, fut_act_2s).size() == 2
+  }
+
+
+
 }

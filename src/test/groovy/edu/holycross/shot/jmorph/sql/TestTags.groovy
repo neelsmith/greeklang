@@ -26,9 +26,10 @@ class TestTags extends GroovyTestCase {
 
     groovy.sql.Sql morphDb =  Sql.newInstance("jdbc:sqlite:jmorph.db", "org.sqlite.JDBC")
 
-    Integer expectedCount = 30
+    Integer expectedMinCount = 30
     morphDb.eachRow("select count(*) as rowcount from tags") { r ->
-      assert expectedCount == r.rowcount as Integer
+      Integer actualCount = r.rowcount as Integer
+      assert actualCount >= expectedMinCount
     }
   }
 

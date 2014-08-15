@@ -14,12 +14,16 @@ import groovy.sql.Sql
  */
 class MorphSql {
 
+
+
+
   // Temporary constructs for debugging:
   Integer SILENT = 0
   Integer WARN =  1
-  Integer DEBUG = 2
+  Integer DEBUGLEVEL = 2
   Integer VERBOSE = 3
-  Integer debugLevel = 0
+
+  Integer debug = 0
 
 
   /** Sqlite database system for Greek morphological parsing. */
@@ -66,8 +70,12 @@ class MorphSql {
     String query = """
 select ic.label AS inflclass, e.ending AS ending, e.form  AS form, m.lemma AS lemma, m.stem AS stem, m.application AS applyfilter
 FROM morphstem m, endings e, stemtype st, inflclass ic
-WHERE m.stemclass =  st.urn AND st.inflclass = ic.urn AND st.inflclass = e.formset
+WHERE m.stemclass =  st.urn AND st.inflclass = ic.urn AND st.inflclass = e.formset 
 AND m.lexurn = '""" + lexicalEntityString + "'"
+
+    if (debug > WARN) {
+      System.err.println "MorphSql: apply query " + query
+    }
 
     morphDb.eachRow(query) { r ->
       def record = []

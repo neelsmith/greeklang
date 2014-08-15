@@ -14,6 +14,7 @@ class FormGenerator {
   Integer WARN =  1
   Integer DEBUG = 2
   Integer VERBOSE = 3
+  Integer FRANTIC = 5
   Integer debugLevel = 0
 
 
@@ -32,14 +33,45 @@ class FormGenerator {
    */
   ArrayList generate(CiteUrn lexEnt, MorphForm requestedForm) {
     ArrayList candidatesList = db.endingsForLexEnt(lexEnt)
+
+
+
+    // filter these candidates against:
+    // 1. limits on the stem value (application filer from morphstems)
+    // 2. limits on the ending value (from endings)
+
+    if (debug > WARN) {
+      System.err.println "FormGenerator: for ${lexEnt}, generate form : " + requestedForm.toArrayOfString()
+    }
+
     ArrayList usableList = []
     candidatesList.each {  candidate ->
+      if (debug > FRANTIC) {
+	System.err.println "CANDIDATE STRUCT: " + candidate      
+      }	
+
       ArrayList candidateFormFilter = candidate[1].split(/:/)
-      if (FormFilter.formMatches(requestedForm.toArrayOfString(), candidateFormFilter)) {
+      ArrayList candidateStemFilter = candidate[5].split(/:/)
+      
+      if (
+	(FormFilter.formMatches(requestedForm.toArrayOfString(), candidateFormFilter)) && 
+	(FormFilter.formMatches(requestedForm.toArrayOfString(),candidateStemFilter ))
+      ) {
 	usableList.add(candidate)
+	if (debug > WARN) {
+	  System.err.println "Mathch of candidate " + candidateFormFilter
+	  System.err.println " with req'ed form" + requestedForm.toArrayOfString()
+	  System.err.println "so added " + candidate
+	  
+	  System.err.println "Usable list size now " + usableList.size()
+	}
+
       }
     }
     def validForms = []
+    if (debug > WARN) {
+      System.err.println "FormGenerator:  got ${usableList.size()} usable candidates : " + usableList
+    }
     usableList.each { rec ->
       // PROCESS HERE... FEED OFF BY PoS to appropriate method
       String raw =  rec[4] + rec[0]
