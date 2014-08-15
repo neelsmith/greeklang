@@ -2,6 +2,6 @@
 
 Code library for working with text content in ancient Greek.
 
-See the wiki for a more information.
+See [the project wiki](https://github.com/neelsmith/greeklang/wiki) for information.
 
 
