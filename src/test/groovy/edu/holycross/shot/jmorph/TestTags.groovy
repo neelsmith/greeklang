@@ -26,7 +26,7 @@ class TestTags extends GroovyTestCase {
 
     groovy.sql.Sql morphDb =  Sql.newInstance("jdbc:sqlite:jmorph.db", "org.sqlite.JDBC")
 
-    Integer expectedCount = 29
+    Integer expectedCount = 30
     morphDb.eachRow("select count(*) as rowcount from tags") { r ->
       assert expectedCount == r.rowcount as Integer
     }
@@ -43,7 +43,7 @@ class TestTags extends GroovyTestCase {
 
     assert epicList.size() + stdList.size() == allEndingsList.size()
 
-    def epicEndings = ["oii+n", "oisi", "oio"]
+    def epicEndings = ["oii+n", "oisi", "oio", "ofi"]
     epicList.each {
       String form = it[0]
       assert epicEndings.contains(form)
