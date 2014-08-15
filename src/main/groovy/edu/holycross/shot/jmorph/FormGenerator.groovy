@@ -27,28 +27,48 @@ class FormGenerator {
   /** Generates a specified form of a specified lexical entity.
    * @param lexEnt The lexical entity in question.
    * @param requestedForm The form to generate.
-   * @returns An appropriate surface string for the specified lexical
+   * @returns An ArrayList of appropriate surface strings for the specified lexical
    * entity in the specified form.
    */
-  String generate(CiteUrn lexEnt, MorphForm requestedForm) {
+  ArrayList generate(CiteUrn lexEnt, MorphForm requestedForm) {
     ArrayList candidatesList = db.endingsForLexEnt(lexEnt)
-    if (debug > WARN) {
-      System.err.println "Considering ${candidatesList.size()} possible endings"
-    }
     ArrayList usableList = []
     candidatesList.each {  candidate ->
       ArrayList candidateFormFilter = candidate[1].split(/:/)
-      if (debug > WARN) {
-	System.err.println "Checking ${requestedForm.toArrayOfString()} against " + candidateFormFilter
-      }
       if (FormFilter.formMatches(requestedForm.toArrayOfString(), candidateFormFilter)) {
 	usableList.add(candidate)
       }
     }
-    if (debug > WARN) {
-      System.err.println "Filtered to get ${usableList.size()} possible endings"
+    def validForms = []
+    usableList.each { rec ->
+      // PROCESS HERE... FEED OFF BY PoS to appropriate method
+      String raw =  rec[4] + rec[0]
+      validForms.add(raw)
     }
-    return usableList
+
+    return validForms
+  }
+
+
+
+
+  ArrayList generate(CiteUrn lexEnt, MorphForm requestedForm, String tag) {
+    ArrayList candidatesList = db.endingsForLexEnt(lexEnt, tag)
+    ArrayList usableList = []
+    candidatesList.each {  candidate ->
+      ArrayList candidateFormFilter = candidate[1].split(/:/)
+      if (FormFilter.formMatches(requestedForm.toArrayOfString(), candidateFormFilter)) {
+	usableList.add(candidate)
+      }
+    }
+    def validForms = []
+    usableList.each { rec ->
+      // PROCESS HERE... FEED OFF BY PoS to appropriate method
+      String raw =  rec[4] + rec[0]
+      validForms.add(raw)
+    }
+
+    return validForms
   }
 
 }

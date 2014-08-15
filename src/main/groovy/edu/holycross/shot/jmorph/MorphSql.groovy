@@ -64,7 +64,7 @@ class MorphSql {
     ArrayList endings = []
 
     String query = """
-select ic.label AS inflclass, e.ending AS ending, e.form  AS form
+select ic.label AS inflclass, e.ending AS ending, e.form  AS form, m.lemma AS lemma, m.stem AS stem, m.application AS applyfilter
 FROM morphstem m, endings e, stemtype st, inflclass ic
 WHERE m.stemclass =  st.urn AND st.inflclass = ic.urn AND st.inflclass = e.formset
 AND m.lexurn = '""" + lexicalEntityString + "'"
@@ -74,6 +74,10 @@ AND m.lexurn = '""" + lexicalEntityString + "'"
       record.add(r.ending)
       record.add(r.form)
       record.add(r.inflclass)
+      record.add(r.lemma)
+      record.add(r.stem)
+      record.add(r.applyfilter)
+
       endings.add(record)
     }
     return endings
@@ -91,7 +95,7 @@ AND m.lexurn = '""" + lexicalEntityString + "'"
     ArrayList endings = []
 
     String query = """
-select ic.label AS inflclass, e.ending AS ending, e.form  AS form
+select ic.label AS inflclass, e.ending AS ending, e.form  AS form, m.lemma AS lemma, m.stem AS stem, m.application AS applyfilter
 FROM morphstem m, endings e, stemtype st, inflclass ic, tags t
 WHERE m.stemclass =  st.urn AND st.inflclass = ic.urn AND st.inflclass = e.formset AND e.urn = t.ending
 AND m.lexurn = '""" + lexicalEntityString + "' AND t.tag = '"  + tag + "'"
@@ -101,6 +105,10 @@ AND m.lexurn = '""" + lexicalEntityString + "' AND t.tag = '"  + tag + "'"
       record.add(r.ending)
       record.add(r.form)
       record.add(r.inflclass)
+      record.add(r.lemma)
+      record.add(r.stem)
+      record.add(r.applyfilter)
+
       endings.add(record)
     }
     return endings
