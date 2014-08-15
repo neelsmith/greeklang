@@ -33,3 +33,37 @@ urn:cite:ns:morphend.end_15b,"oi",":plural::::feminine:vocative::noun","urn:cite
 urn:cite:ns:morphend.end_15c,"a",":plural::::neuter:vocative::noun","urn:cite:ns:inflclass.decl2"
 
 
+urn:cite:ns:morphend.vbend_1,"w","first:singular:present:indicative:active::::verb","urn:cite:ns:inflclass.w_verb"
+urn:cite:ns:morphend.vbend_1fut,"w","first:singular:future:indicative:active::::verb","urn:cite:ns:inflclass.w_verb"
+urn:cite:ns:morphend.vbend_2,"eis","second:singular:present:indicative:active::::verb","urn:cite:ns:inflclass.w_verb"
+urn:cite:ns:morphend.vbend_2fut,"eis","second:singular:future:indicative:active::::verb","urn:cite:ns:inflclass.w_verb"
+urn:cite:ns:morphend.vbend_3,"ei","third:singular:present:indicative:active::::verb","urn:cite:ns:inflclass.w_verb"
+urn:cite:ns:morphend.vbend_3fut,"ei","third:singular:future:indicative:active::::verb","urn:cite:ns:inflclass.w_verb"
+
+
+urn:cite:ns:morphend.vbend_4,"eton","second:dual:present:indicative:active::::verb","urn:cite:ns:inflclass.w_verb"
+urn:cite:ns:morphend.vbend_4fut,"eton","second:dual:future:indicative:active::::verb","urn:cite:ns:inflclass.w_verb"
+urn:cite:ns:morphend.vbend_5,"eton","third:dual:present:indicative:active::::verb","urn:cite:ns:inflclass.w_verb"
+urn:cite:ns:morphend.vbend_5fut,"eton","third:dual:future:indicative:active::::verb","urn:cite:ns:inflclass.w_verb"
+
+
+urn:cite:ns:morphend.vbend_6,"omen","first:plural:present:indicative:active::::verb","urn:cite:ns:inflclass.w_verb"
+urn:cite:ns:morphend.vbend_6fut,"omen","first:plural:future:indicative:active::::verb","urn:cite:ns:inflclass.w_verb"
+urn:cite:ns:morphend.vbend_7,"ete","second:plural:present:indicative:active::::verb","urn:cite:ns:inflclass.w_verb"
+urn:cite:ns:morphend.vbend_7fut,"ete","second:plural:future:indicative:active::::verb","urn:cite:ns:inflclass.w_verb"
+urn:cite:ns:morphend.vbend_8,"ousi","third:plural:present:indicative:active::::verb","urn:cite:ns:inflclass.w_verb"
+urn:cite:ns:morphend.vbend_8fut,"ousi","third:plural:future:indicative:active::::verb","urn:cite:ns:inflclass.w_verb"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
