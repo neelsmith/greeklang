@@ -23,16 +23,26 @@ class FormGenerator {
     db = sqlDb
   }
 
+
+  /** Generates a specified form of a specified lexical entity.
+   * @param lexEnt The lexical entity in question.
+   * @param requestedForm The form to generate.
+   * @returns An appropriate surface string for the specified lexical
+   * entity in the specified form.
+   */
   String generate(CiteUrn lexEnt, MorphForm requestedForm) {
-    ArrayList endingsList = db.endingsForLexEnt(lexEnt)
+    ArrayList candidatesList = db.endingsForLexEnt(lexEnt)
     if (debug > WARN) {
-      System.err.println "Considering ${endingsList.size()} possible endings"
+      System.err.println "Considering ${candidatesList.size()} possible endings"
     }
     ArrayList usableList = []
-    endingsList.each {  el ->
-      ArrayList formArray = el[1].split(/:/)
-      if (FormFilter.formMatches(formArray,requestedForm)) {
-	usableList.add(filtered[0])
+    candidatesList.each {  candidate ->
+      ArrayList candidateFormFilter = candidate[1].split(/:/)
+      if (debug > WARN) {
+	System.err.println "Checking ${requestedForm.toArrayOfString()} against " + candidateFormFilter
+      }
+      if (FormFilter.formMatches(requestedForm.toArrayOfString(), candidateFormFilter)) {
+	usableList.add(candidate)
       }
     }
     if (debug > WARN) {
