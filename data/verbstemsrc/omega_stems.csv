@@ -1,0 +1,10 @@
+StemUrn,LexicalEntity,Lemma,Stem,StemClass,Application
+urn:cite:ns:morphstem.o_1_pp1,urn:cite:perseus:lexentity.lex113895.1,e)/xw,e)/x,urn:cite:ns:stemtype.princpt1,::present::::::verb
+urn:cite:ns:morphstem.o_1_pp2_a,urn:cite:perseus:lexentity.lex113895.1,e)/xw,sxhs,urn:cite:ns:stemtype.princpt2,::future::active::::verb
+urn:cite:ns:morphstem.o_1_pp2_a2,urn:cite:perseus:lexentity.lex113895.1,e)/xw,e(c,urn:cite:ns:stemtype.princpt2,::future::active::::verb
+urn:cite:ns:morphstem.o_1_pp2_m,urn:cite:perseus:lexentity.lex113895.1,e)/xw,sxhs,urn:cite:ns:stemtype.princpt2,::middle::active::::verb
+urn:cite:ns:morphstem.o_1_pp2_m2,urn:cite:perseus:lexentity.lex113895.1,e)/xw,e(c,urn:cite:ns:stemtype.princpt2,::middle::active::::verb
+urn:cite:ns:morphstem.o_1_aor2_a,urn:cite:perseus:lexentity.lex113895.1,e)/xw,sx,urn:cite:ns:stemtype.aor2,::aorist::middle::::verb
+urn:cite:ns:morphstem.o_1_aor2_m,urn:cite:perseus:lexentity.lex113895.1,e)/xw,sx,urn:cite:ns:stemtype.aor2,::aorist::active::::verb
+urn:cite:ns:morphstem.o_1_pp6_p,urn:cite:perseus:lexentity.lex113895.1,e)/xw,sxeq,urn:cite:ns:stemtype.princpt6,::aorist::passive::::verb
+urn:cite:ns:morphstem.o_1_pp6_f,urn:cite:perseus:lexentity.lex113895.1,e)/xw,sxeq,urn:cite:ns:stemtype.princpt6,::future::passive::::verb

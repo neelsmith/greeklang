@@ -1,9 +1,0 @@
-MorphStemType,Label,EndingsClass
-urn:cite:ns:stemtype.os_ou,"os_ou morphological type of second declension",urn:cite:ns:inflclass.decl2
-urn:cite:ns:stemtype.os_ou_ult,"os_our morphological type with persistent accent on ultimate",urn:cite:ns:inflclass.decl2
-
-urn:cite:ns:stemtype.princpt1,"First principal part of omega verb",urn:cite:ns:inflclass.w_verb
-urn:cite:ns:stemtype.princpt2,"Second principal part of omega verb",urn:cite:ns:inflclass.w_verb
-urn:cite:ns:stemtype.aor2,"Second aorist stem of omega verb",urn:cite:ns:inflclass.aor2
-
-
