@@ -39,10 +39,10 @@ class TestTags extends GroovyTestCase {
 
     // test data has one of two tags: 'standard' or 'epic'
     ArrayList allEndingsList = msql.endingsForLexEnt(logos)
-    ArrayList stdList =  msql.endingsForLexEnt(logos, "standard" )
+    //ArrayList stdList =  msql.endingsForLexEnt(logos, "standard" )
     ArrayList epicList = msql.endingsForLexEnt(logos, "epic" )
 
-    assert epicList.size() + stdList.size() == allEndingsList.size()
+    //assert epicList.size() + stdList.size() == allEndingsList.size()
 
     def epicEndings = ["oii+n", "oisi", "oio", "ofi"]
     epicList.each {
@@ -55,7 +55,7 @@ class TestTags extends GroovyTestCase {
     MorphSql msql = new MorphSql(stemsFile, endingsFile, stemTypesFile, inflClassFile)
     ArrayList allEndingsList = msql.endingsForLexEnt(logos)
     allEndingsList.each {
-      println "Class ${it.getClass()}: ${it}"
+      //println "Class ${it.getClass()}: ${it}"
     }
   }
 

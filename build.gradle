@@ -10,9 +10,6 @@ mainClassName = "Parser"
 
 apply from: "versions.gradle"
 
-
-
-
 if (hasProperty('pub')) {
     System.err.print "Using configuration data from ${pub}"
     File confFile = new File(pub)
@@ -70,6 +67,9 @@ task morphStems() {
   description = "Creates composite csv file for morphological stems collection."
 }
 morphStems.doLast {
+  if (! buildDir.exists()) {
+    buildDir.mkdir()
+  }
   File stems = new File(buildDir, "morphstems.csv")  
   stems.setText("StemUrn,LexicalEntity,Lemma,Stem,StemClass,Application\n")
 
@@ -89,20 +89,119 @@ morphStems.doLast {
   }
 }
 
-task csv(dependsOn: [inflClass, morphStems]) {
-  description = "Builds 5 composite csv files from multiple source files."
+
+task endings() {
+  description = "Creates composite csv file for endings collection."
+}
+
+endings.doLast {
+  if (! buildDir.exists()) {
+    buildDir.mkdir()
+  }
+  File endingsFile = new File(buildDir, "endings.csv")
+  endingsFile.setText("EndingUrn,EndingString,Form,FormSet\n")
+
+  def srcDirs = ["data/nounendsrc", "data/verbendsrc"]
+  srcDirs.each {
+    File dir = new File(it)
+    dir.eachFileMatch(~/.*.csv/) { csvFile ->  
+      Integer count = 0
+      csvFile.eachLine { ln ->
+	if (count > 0) {
+	  endingsFile.append("${ln}\n", "UTF-8")
+	}
+	count++;
+      }
+    }
+  }
+}
+
+task stemTypes() {
+  description = "Creates composite csv file for stemtypes collection."
+}
+stemTypes.doLast {
+  if (! buildDir.exists()) {
+    buildDir.mkdir()
+  }
+  File stemtypes = new File(buildDir, "stemtypes.csv")
+  stemtypes.setText("MorphStemType,Label,EndingsClass")
+
+
+  def srcDirs = ["data/stemtypesrc"]
+
+  srcDirs.each {
+    File dir = new File(it)
+    dir.eachFileMatch(~/.*.csv/) { csvFile ->  
+      Integer count = 0
+      csvFile.eachLine { ln ->
+	if (count > 0) {
+	  stemtypes.append("${ln}\n", "UTF-8")
+	}
+	count++;
+      }
+    }
+  }
+}
+
+
+
+task tags() {
+  description = "Creates composite csv file with a tag record for each ending."
+}
+tags.doLast {
+  File tags = new File(buildDir, "tags.csv")
+  tags.setText("TaggingUrn,Ending,Tag\n")
+  Integer tagCount = 0
+
+
+  def stdSrc = ["data/nounendsrc/decl2-standard.csv", "data/verbendsrc/standard.csv"]
+  def epicSrc = ["data/nounendsrc/decl2-epic.csv"]
+
+
+
+  stdSrc.each { 
+    File src = new File(it)
+    Integer lineCount = 0
+    src.eachLine {  ln ->
+      if (lineCount > 0) {
+	def cols = ln.split(/,/)
+	if ((cols.size() > 0) && (cols[0].size() > 0)) {
+	  tagCount++;
+	  tags.append("urn:cite:ns:morphtag.${tagCount},${cols[0]},standard\n")
+	}
+      }
+      lineCount++;
+    }
+  }
+
+
+  epicSrc.each { 
+    File src = new File(it)
+    Integer lineCount = 0
+    src.eachLine {  ln ->
+      if (lineCount > 0) {
+	def cols = ln.split(/,/)
+	if ((cols.size() > 0) && (cols[0].size() > 0)) {
+	  tagCount++;
+	  tags.append("urn:cite:ns:morphtag.${tagCount},${cols[0]},epic\n")
+	}
+      }
+      lineCount++;
+    }
+  }  
+}
+
+task csv(type: Copy, dependsOn: [inflClass, morphStems, endings, stemTypes, tags]) {
+  description = "Builds CITE Collection of 5 composite csv files and XML inventory from multiple source files."
+  from ("data") {
+    include "inventory.xml"
+  }
+  into "${buildDir}"
 }
 
 csv.doLast {
-  println "Build csv now. Should also copy inventory.xml to work area."
-
-
-  File endings = new File(buildDir, "endings.csv")
-  File stemtypes = new File(buildDir, "stemtypes.csv")
-  File tags = new File(buildDir, "tags.csv")
-
+  println  "Composite csv files and CITE Collection inventory now in build area."
 }
-
 
 task db(dependsOn: ["csv"]) {
   description = "Builds sqlite database from csv source."
@@ -110,6 +209,7 @@ task db(dependsOn: ["csv"]) {
 
 db.doLast {
   println "Build sqlite db now."
+  // will have to use a buildSrc class to wrap MorphSql presumably?
 }
 
 

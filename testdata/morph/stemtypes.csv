@@ -1,0 +1,33 @@
+MorphStemType,Label,EndingsClassurn:cite:ns:stemtype.a_hs,"First declension nouns in alpha",urn:cite:ns:inflclass.decl1
+urn:cite:ns:stemtype.ah_ahs,"First declension nouns ...",urn:cite:ns:inflclass.decl1
+urn:cite:ns:stemtype.eh_ehs,"First declension nouns ...",urn:cite:ns:inflclass.decl1
+urn:cite:ns:stemtype.h_hs,"First declension nouns ...",urn:cite:ns:inflclass.decl1
+urn:cite:ns:stemtype.hs_ou,"First declension nouns ...",urn:cite:ns:inflclass.decl1
+
+
+urn:cite:ns:stemtype.os_ou,"Second declension nouns in -os with persistent accent on antepenult",urn:cite:ns:inflclass.decl2
+urn:cite:ns:stemtype.os_ou_ult,"Second declension nouns in -os with persistent accent on ultima",urn:cite:ns:inflclass.decl2
+urn:cite:ns:stemtype.ws_ou,"Second declension nouns ...",urn:cite:ns:inflclass.decl2
+urn:cite:ns:stemtype.ws_w,"Second declension nouns ...",urn:cite:ns:inflclass.decl2
+
+urn:cite:ns:stemtype.ar_atos,"Third declension nouns ...",urn:cite:ns:inflclass.decl3
+urn:cite:ns:stemtype.c_gos,"Third declension nouns ...",urn:cite:ns:inflclass.decl3
+urn:cite:ns:stemtype.c_kos,"Third declension nouns ...",urn:cite:ns:inflclass.decl3
+urn:cite:ns:stemtype.c_ktos,"Third declension nouns ...",urn:cite:ns:inflclass.decl3
+urn:cite:ns:stemtype.hs_eos,"Third declension nouns ...",urn:cite:ns:inflclass.decl3
+urn:cite:ns:stemtype.irreg_decl3,"Third declension nouns ...",urn:cite:ns:inflclass.decl3
+urn:cite:ns:stemtype.is_ews,"Third declension nouns ...",urn:cite:ns:inflclass.decl3
+urn:cite:ns:stemtype.is_idos,"Third declension nouns ...",urn:cite:ns:inflclass.decl3
+urn:cite:ns:stemtype.ma_matos,"Third declension nouns ...",urn:cite:ns:inflclass.decl3
+urn:cite:ns:stemtype.r_ros,"Third declension nouns ...",urn:cite:ns:inflclass.decl3
+urn:cite:ns:stemtype.s_dos,"Third declension nouns ...",urn:cite:ns:inflclass.decl3
+urn:cite:ns:stemtype.s_os,"Third declension nouns ...",urn:cite:ns:inflclass.decl3
+urn:cite:ns:stemtype.us_ews,"Third declension nouns ...",urn:cite:ns:inflclass.decl3
+urn:cite:ns:stemtype.us_uos,"Third declension nouns ...",urn:cite:ns:inflclass.decl3
+urn:cite:ns:stemtype.wn_onos,"Third declension nouns ...",urn:cite:ns:inflclass.decl3
+urn:cite:ns:stemtype.wn_ontos,"Third declension nouns ...",urn:cite:ns:inflclass.decl3
+urn:cite:ns:stemtype.ws_oos,"Third declension nouns ...",urn:cite:ns:inflclass.decl3
+urn:cite:ns:stemtype.ws_wos,"Third declension nouns ...",urn:cite:ns:inflclass.decl3
+urn:cite:ns:stemtype.princpt1,"First principal part of omega verb",urn:cite:ns:inflclass.w_verb
+urn:cite:ns:stemtype.princpt2,"Second principal part of omega verb",urn:cite:ns:inflclass.w_verb
+urn:cite:ns:stemtype.aor2,"Second aorist stem of omega verb",urn:cite:ns:inflclass.aor2
