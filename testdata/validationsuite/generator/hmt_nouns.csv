@@ -1,0 +1,14 @@
+Lemma,LexEnt,Form,Tags,ExpectedList,ExpectedInUtf8
+οἰωνός,urn:cite:perseus:lexentity.lex49558.1,:singular::::masculine:genitive::noun,,"oi)wnou=,oi)wnoi=o","οἰωνοῦ,οἰωνοῖο"
+γαῖα,urn:cite:perseus:lexentity.lex15908.1,:singular::::feminine:genitive::noun,,gai/hs,"γαίης"
+γῆ,urn:cite:perseus:lexentity.lex17292.1,:singular::::feminine:genitive::noun,,gh=s,"γῆς"
+δῶρον,urn:cite:perseus:lexentity.lex23689.1,:singular::::neuter:genitive::noun,,dw/rou,"δώρου"
+μῦθος,urn:cite:perseus:lexentity.lex46877.1,:singular::::masculine:genitive::noun,,mu/qou,"μύθου"
+νῆσος,urn:cite:perseus:lexentity.lex48640.1,:singular::::feminine:genitive::noun,,nh/sou,"νήσου"
+
+αἷμα,urn:cite:perseus:lexentity.lex12289.1,:singular::::neuter:genitive::noun,,ai(/matos,"αἵματος"
+αὖξις,urn:cite:perseus:lexentity.lex13045.1,:singular::::feminine:genitive::noun,,au)/cews,"αὔξεως"
+βῆμα,urn:cite:perseus:lexentity.lex15483.1,:singular::::neuter:genitive::noun,,bh/matos,"βήματος"
+μῆνις,urn:cite:perseus:lexentity.lex46862.1,:singular::::feminine:genitive::noun,,mh/nio,"μήνιος"
+ἴτυς,urn:cite:perseus:lexentity.lex117747.1,:singular::::feminine:genitive::noun,,i)/tuos,"ἴτυος"
+ἔπος,urn:cite:perseus:lexentity.lex113735.1,:singular::::neuter:genitive::noun,,epeos,"ἔπεος"
