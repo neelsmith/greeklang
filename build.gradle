@@ -1,9 +1,12 @@
 apply plugin: "base"
 apply plugin:  "groovy"
+apply plugin: 'application'
 apply plugin:  "maven"
 
 group = "edu.holycross.shot"
 version = '0.0.1'
+
+mainClassName = "Parser"
 
 apply from: "versions.gradle"
 
@@ -56,6 +59,61 @@ dependencies {
 }
 
 
+task inflClass(type: Copy) {
+  from ("data/inflection") {
+    include "*.csv"
+  }
+  into "${buildDir}"
+}
+
+task morphStems() {
+  description = "Creates composite csv file for morphological stems collection."
+}
+morphStems.doLast {
+  File stems = new File(buildDir, "morphstems.csv")  
+  stems.setText("StemUrn,LexicalEntity,Lemma,Stem,StemClass,Application\n")
+
+  def srcDirs = ["data/nounstemsrc", "data/verbstemsrc"]
+
+  srcDirs.each {
+    File dir = new File(it)
+    dir.eachFileMatch(~/.*.csv/) { csvFile ->  
+      Integer count = 0
+      csvFile.eachLine { ln ->
+	if (count > 0) {
+	  stems.append("${ln}\n", "UTF-8")
+	}
+	count++;
+      }
+    }
+  }
+}
+
+task csv(dependsOn: [inflClass, morphStems]) {
+  description = "Builds 5 composite csv files from multiple source files."
+}
+
+csv.doLast {
+  println "Build csv now. Should also copy inventory.xml to work area."
+
+
+  File endings = new File(buildDir, "endings.csv")
+  File stemtypes = new File(buildDir, "stemtypes.csv")
+  File tags = new File(buildDir, "tags.csv")
+
+}
+
+
+task db(dependsOn: ["csv"]) {
+  description = "Builds sqlite database from csv source."
+}
+
+db.doLast {
+  println "Build sqlite db now."
+}
+
+
+
 uploadArchives {
     repositories.mavenDeployer {
         repository(url: nexusRepo) {                   
@@ -66,3 +124,12 @@ uploadArchives {
 
 
 
+// add csv files to executable jar?  or sqlite binary?
+task uberjar(type: Jar,dependsOn:[':compileJava',':compileGroovy']) {
+    from files(sourceSets.main.output.classesDir)
+    from configurations.runtime.asFileTree.files.collect { zipTree(it) }
+
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+}
