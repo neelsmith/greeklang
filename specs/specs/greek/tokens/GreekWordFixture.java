@@ -1,4 +1,4 @@
-package specs.greek;
+package specs.greek.tokens;
 
 import org.concordion.integration.junit4.ConcordionRunner;
 import org.junit.runner.RunWith;
