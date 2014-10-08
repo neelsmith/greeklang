@@ -1,5 +1,6 @@
 apply plugin: "base"
 apply plugin:  "groovy"
+apply plugin:  "java"
 apply plugin: 'application'
 apply plugin:  "maven"
 
@@ -51,8 +52,12 @@ dependencies {
   compile group : 'edu.unc.epidoc', name: 'transcoder', version : epidocVersion
   compile group: 'net.sf.opencsv', name: 'opencsv', version : opencsvVersion
 
-  testCompile group: 'junit', name: 'junit', version: junitVersion
+  //testCompile group: 'junit', name: 'junit', version: junitVersion
+  testCompile 'junit:junit:4.11'
+  testCompile 'org.concordion:concordion:1.4.4'
+
   testCompile group :'xmlunit', name: 'xmlunit', version: xmlunitVersion
+
 }
 
 
@@ -232,4 +237,40 @@ task uberjar(type: Jar,dependsOn:[':compileJava',':compileGroovy']) {
     manifest {
         attributes 'Main-Class': mainClassName
     }
+}
+
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+        resources {
+            srcDir 'src'
+        }
+    }
+    test {
+        java {
+            srcDir "${buildDir}/specs"
+        }
+        resources {
+            srcDir "${buildDir}/specs"
+        }
+    }
+}
+
+
+task copySpecs(type: Copy) {
+  from "specs"
+  into "${buildDir}/specs"
+}
+
+// Make all testing depend on a filter copy to buildDir.
+// If that works, make all testing depned on a md -> html xform,
+// and write specs in markdown.
+test.dependsOn  copySpecs
+
+test {
+    systemProperties 'concordion.output.dir': file("${buildDir}/concordion-results")
+
 }
