@@ -186,6 +186,16 @@ class GreekString {
 
 
   /** Determines if a single-character String
+   * is a consonant.
+   * @param ch Character to examine.
+   * @returns True if ch is a consonant.
+   */
+  static boolean isConsonant (String ch) {
+    return consonant.contains(ch)
+  }
+
+
+  /** Determines if a single-character String
    * is a vowel.
    * @param ch Character to examine.
    * @returns True if ch is a vowel.
