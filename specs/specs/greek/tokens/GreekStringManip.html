@@ -3,7 +3,7 @@
 
 <body>
 
-<h1>Classifying characters and strings</h1>
+<h1>Classifying non-white-space characters and strings</h1>
 
 <p>Individual characters in a lexical token can be classified as:</p>
 
@@ -15,6 +15,7 @@
   <li>punctuation</li>
   </ul>
 
+  
 <div class="example">
   
   <h3>Example: mh=nin</h3>
@@ -69,6 +70,9 @@
     
   </table>
 
+
+
+  
   <h3>Example: a)/eide</h3>
     <table>
     <tr>
@@ -143,6 +147,7 @@
       <th>Class</th>
     </tr>
 
+    
     <tr>
       <td concordion:set="#src">,</td><td
     concordion:assertTrue="isPunctuation(#src)">punctuation</td>
@@ -155,7 +160,27 @@
     </tr>
     
   </table>
-  
+</div>
+
+<p>Pairs of vowels in a lexical token can be classified as
+  diphthongs.
+  </p>
+
+
+<div class="example">
+  <h3>Example: diphthongs</h3>
+
+    <table>
+    <tr>
+      <th>Token</th>
+      <th>Class</th>
+    </tr>
+
+    <tr>
+      <td concordion:set="#src">ou</td><td
+    concordion:assertTrue="isDiphthong(#src)">diphthong</td>
+    </tr>
+  </table>
 </div>
 
   

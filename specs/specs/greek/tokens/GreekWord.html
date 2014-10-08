@@ -5,20 +5,36 @@
 
 <h1>Lexical tokens (Greek words)</h1>
 
-<p>Lexical tokens are composed only of valid Greek characters.
-A lexical token may be created directly from any string that 
-is a valid <a href="GreekString.html">Greek string</a>.
+<p>Lexical tokens are composed <em>only</em> of valid Greek
+characters, and may include any valid Greek characters except white-space
+characters.
+See the specification of
+a <a href="GreekString.html">Greek string</a> for details.
+</p>
+<p>Lexical tokens may be created directly from strings,
+and converted back to strings, following the same rules
+as Greek strings.
 </p>
 
 <div class="example">
   
   <h3>Examples</h3>
-  <p>We can create a lexical token from the string <strong
-  concordion:set="#wd">mh=nin</strong>,
-and can convert it back
-to the string
-  <strong concordion:assertEquals="getString(#wd)">mh=nin</strong>.
-  </p>
+  <p>Create a lexical token from a string,
+  and convert it back to a string:
+</p>
+  
+      <table concordion:execute="#result = getString(#wd)">
+	<tr>
+	  <th concordion:set="#wd">Source string</th>
+	  <th concordion:assertEquals="#result">Token as a String</th>
+	</tr>
+
+	<tr><td>MH=NIN</td><td>mh=nin</td></tr>
+	<tr><td>mh=nin</td><td>mh=nin</td></tr>
+	<tr><td>Mh=nin</td><td>mh=nin</td></tr>
+	<tr><td>*mh=nin</td><td>*mh=nin</td></tr>
+	
+      </table>
 
 </div>
   

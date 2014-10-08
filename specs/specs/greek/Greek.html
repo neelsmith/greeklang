@@ -5,10 +5,13 @@
 <body>
 <h1>Greek</h1>
 <p>This documentation specifies a computational system for working
-with ancient Greek.  The specification includes live tests
+with ancient Greek. The specification includes live tests verifying that
+an implementation fulfills the specification.  The live tests
+are
 defined using <a href="http://concordion.org">concordion</a>, so the
 programming language used to implement the live tests is left open.
 </p>
+
 <p>The specification is maintained in a
 <a href="https://github.com/neelsmith/greeklang">version control repository</a>
 with implementations in JVM languages (java and groovy). A copy of the specification rendered with concordion to run all tests
@@ -19,8 +22,12 @@ this implementation is posted at <a href="http://shot.holycross.edu/~nsmith/gree
 <h2>Specifications</h2>
 
 <ul>
-<li><a href="tokens/Tokens.html">strings of characters and lexical tokens</a> </li>
-<li>Greek <a href="morphology/Morphology.html">morphology</a></li>
+<li><a href="tokens/Tokens.html">Strings of characters and lexical
+  tokens</a> </li>
+  <li><a href="syllables/Syllables.html">Syllabification of tokens</a> </li>
+<li><a href="morphology/Morphology.html">Greek morphology</a></li>
+<li><a href="hexameter/Hexameter.html">Hexameter meter</a></li>
+
   </ul>
 </body>
 </html>

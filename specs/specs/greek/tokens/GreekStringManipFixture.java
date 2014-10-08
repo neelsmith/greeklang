@@ -44,4 +44,9 @@ public class GreekStringManipFixture {
     }
 
 
+    public boolean isDiphthong(String str) {
+	return GreekString.isDiphthong(str);
+    }
+
+
 }
