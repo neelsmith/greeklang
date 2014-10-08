@@ -4,14 +4,15 @@
 
 <h1>GreekStrings</h1>
 
-<p>GreekStrings are strings composed exclusively of characters
-that are relevant for ancient Greek: Greek alphabetic
+<p>GreekStrings are objects composed exclusively of characters
+in the small set
+relevant for ancient Greek: Greek alphabetic
 characters, accents, breathings or punctuation marks.
 </p>
 <p>
 GreekStrings are created from Strings by mapping
-Unicode code points on to ancient Greek characters
-in one of two mappings:</p>
+Unicode code points on to the ancient Greek characters
+according to one of two mappings:</p>
 
 <ul>
 <li>an alphabetic subset of the TLG project's Beta Code</li>
@@ -19,6 +20,11 @@ in one of two mappings:</p>
 </ul>
 
 
+<p>When GreekStrings are converted back to Strings,
+they use the the beta-code convention, with all alphabetic
+characters represented by lower-case Roman characters.  An
+asterisk identifies an upper-case character in the GreekString.
+</p>
 
 
 <h2>Beta-code mapping</h2>
@@ -55,14 +61,33 @@ in one of two mappings:</p>
     <div class="example">
       <h3>Examples</h3>
 
-      <table concordion:execute="#result = getBetaForUnicode(#src)">
+      <table>
 	<tr>
-	  <th concordion:set="#src">Source String</th>
-	  <th concordion:assertEquals="#result">GreekString</th>
+	  <th>Source String</th>
+	  <th>GreekString</th>
 	</tr>
 
-	<tr><td>μῆνιν</td><td>mh=nin</td></tr>
-	<tr><td>Μῆνιν</td><td>*mh=nin</td></tr>
+	<tr>
+	  <td><span  concordion:set="#src">μῆνιν</span> (combining)</td>
+	  <td concordion:assertEquals="getBetaForUnicode(#src)">mh=nin</td>
+	</tr>
+	
+	<tr>
+	  <td><span  concordion:set="#src">Μῆνιν</span>	(combining)</td>
+	  <td concordion:assertEquals="getBetaForUnicode(#src)">*mh=nin</td>
+	</tr>
+
+	<tr>
+	  <td><span  concordion:set="#src">μῆνιν</span> (precombined)</td>
+	  <td
+	  concordion:assertEquals="getBetaForUnicode(#src)">mh=nin</td>
+	</tr>
+	  
+	<tr>
+	  <td><span  concordion:set="#src">Μῆνιν</span> (precombined)</td>
+	  <td
+	  concordion:assertEquals="getBetaForUnicode(#src)">*mh=nin</td>
+	</tr>
 	
       </table>
       

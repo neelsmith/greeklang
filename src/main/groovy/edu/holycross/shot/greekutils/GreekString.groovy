@@ -185,6 +185,15 @@ class GreekString {
   }
 
 
+  /** Determines if a one-character long string is a breathing.
+   * @param ch String to check.
+   * @returns true if character is a breathing, otherwise false.
+   */   
+  static boolean isBreathing(ch) {
+    return (breathing.contains(ch))
+  }
+
+
   /** Determines if a single-character String
    * is a consonant.
    * @param ch Character to examine.

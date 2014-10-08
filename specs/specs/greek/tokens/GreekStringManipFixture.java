@@ -29,6 +29,12 @@ public class GreekStringManipFixture {
     }
 
 
+    public boolean isBreathing(String str) {
+	return GreekString.isBreathing(str);
+    }
+
+
+
     public boolean isValid(String str) {
 	return GreekString.isValidChar(str);
     }

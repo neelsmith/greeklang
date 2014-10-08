@@ -3,25 +3,24 @@
 
 <body>
 
-<h1>GreekWords</h1>
+<h1>Lexical tokens (Greek words)</h1>
 
-<p>GreekWords are composed only of valid Greek characters.</p>
+<p>Lexical tokens are composed only of valid Greek characters.
+A lexical token may be created directly from any string that 
+is a valid <a href="GreekString.html">Greek string</a>.
+</p>
 
 <div class="example">
   
   <h3>Examples</h3>
-  <p>The String <strong concordion:set="#wd">mh=nin</strong> is
-  a valid Greek word, that converts back to the string
+  <p>We can create a lexical token from the string <strong
+  concordion:set="#wd">mh=nin</strong>,
+and can convert it back
+to the string
   <strong concordion:assertEquals="getString(#wd)">mh=nin</strong>.
   </p>
 
 </div>
-
-<h2>See also</h2>
-
-<ul>
-<li><a href="GreekString.html">GreekString</a></li>
-  </ul>
   
 </body>
 </html>

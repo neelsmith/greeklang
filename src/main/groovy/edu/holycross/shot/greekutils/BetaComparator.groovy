@@ -17,7 +17,7 @@ class BetaComparator implements Comparator {
     * ordered map in betaOrder.
     * @return  -1 if s1 < s2, 0 if s1 == s2, 1 if s1 > s2
     */
-    private int charComp (s1,s2) {
+    static private int charComp (s1,s2) {
         def mapEntry1 =   betaOrder.find {it.value == s1.toLowerCase()}
         def mapEntry2 =   betaOrder.find{it.value == s2.toLowerCase()}
         if ((!mapEntry1) || (!mapEntry2)) {
@@ -39,7 +39,7 @@ class BetaComparator implements Comparator {
     * @param s2 Second String to compare.
     * @return  -1 if s1 < s2, 0 if s1 == s2, 1 if s1 > s2
     */
-    int compare(s1, s2) {
+    static int compare(s1, s2) {
         int idx = 0
         def maxChars = 0
         if (s1.size() > s2.size()) {
