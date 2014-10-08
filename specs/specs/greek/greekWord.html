@@ -1,0 +1,27 @@
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+<link href="../../concordion.css" rel="stylesheet" type="text/css" />
+
+<body>
+
+<h1>GreekWords</h1>
+
+<p>GreekWords are composed only of valid Greek characters.</p>
+
+<div class="example">
+  
+  <h3>Examples</h3>
+  <p>The String <strong concordion:set="#wd">mh=nin</strong> is
+  a valid Greek word, that converts back to the string
+  <strong concordion:assertEquals="getString(#wd)">mh=nin</strong>.
+  </p>
+
+</div>
+
+<h2>See also</h2>
+
+<ul>
+<li><a href="GreekString.html">GreekString</a></li>
+  </ul>
+  
+</body>
+</html>

@@ -1,0 +1,105 @@
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+<link href="../../concordion.css" rel="stylesheet" type="text/css" />
+
+<body>
+
+<h1>Classifying characters and strings</h1>
+
+<p>Individual characters in a GreekString can be classified as:</p>
+
+<ul>
+<li>alphabetic.  These can be further classified
+  as vowels or consonants.</li>
+  <li>breathings</li>
+  <li>punctuation</li>
+  </ul>
+
+<div class="example">
+  
+  <h3>Example: mh=nin</h3>
+
+  <table>
+    <tr>
+      <th>GreekString</th>
+      <th>Class</th>
+    </tr>
+
+    <tr>
+      <td concordion:set="#src">m</td><td><span
+      concordion:assertTrue="isAlphabetic(#src)">alphabetic</span>
+	and <span concordion:assertTrue="isConsonant(#src)">consonant</span></td>
+    </tr>
+
+    
+    <tr>
+      <td concordion:set="#src">h</td><td><span
+      concordion:assertTrue="isAlphabetic(#src)">alphabetic</span>
+	and <span
+      concordion:assertTrue="isVowel(#src)">vowel</span></td>
+    </tr>
+
+
+
+    <tr>
+      <td concordion:set="#src">=</td><td><span
+	concordion:assertTrue="isAccent(#src)">accent</span></td>
+      </tr>
+
+
+    <tr>
+      <td concordion:set="#src">n</td><td><span
+      concordion:assertTrue="isAlphabetic(#src)">alphabetic</span>
+	and <span concordion:assertTrue="isConsonant(#src)">consonant</span></td>
+    </tr>
+
+    <tr>
+      <td concordion:set="#src">i</td><td><span
+      concordion:assertTrue="isAlphabetic(#src)">alphabetic</span>
+	and <span
+      concordion:assertTrue="isVowel(#src)">vowel</span></td>
+    </tr>
+    
+    <tr>
+      <td concordion:set="#src">n</td><td><span
+      concordion:assertTrue="isAlphabetic(#src)">alphabetic</span>
+	and <span concordion:assertTrue="isConsonant(#src)">consonant</span></td>
+    </tr>
+
+    
+  </table>
+
+  <h3>Example: a)/eide</h3>
+    <table>
+    <tr>
+      <th>GreekString</th>
+      <th>Class</th>
+    </tr>
+
+    </table>
+    
+    <h3>Others</h3>
+
+  <table>
+    <tr>
+      <th>GreekString</th>
+      <th>Class</th>
+    </tr>
+
+    <tr>
+      <td concordion:set="#src">,</td><td
+    concordion:assertTrue="isPunctuation(#src)">punctuation</td>
+    </tr>
+
+    
+    <tr>
+      <td concordion:set="#src">j</td><td
+    concordion:assertFalse="isValid(#src)">not a valid character</td>
+    </tr>
+    
+  </table>
+  
+</div>
+
+  
+</body>
+</html>
