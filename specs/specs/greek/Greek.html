@@ -1,21 +1,29 @@
 <html xmlns:concordion="http://www.concordion.org/2007/concordion">
 <head>
 <link href="../../concordion.css" rel="stylesheet" type="text/css" />
+<title>Greek</title>
 </head>
 <body>
-<h1>Greek</h1>
-<p>This documentation specifies a computational system for working
+<h1>A computational system for working with ancient Greek</h1>
+<p>In this documentation, you will find
+the early draft of a specification for an
+extensive computational system for working
 with ancient Greek. The specification includes live tests verifying that
 an implementation fulfills the specification.  The live tests
 are
-defined using <a href="http://concordion.org">concordion</a>, so the
-programming language used to implement the live tests is left open.
+defined using <a href="http://concordion.org">concordion</a>, so
+the specification can be implemented in and tested with multiple
+programming languages.
 </p>
 
-<p>The specification is maintained in a
-<a href="https://github.com/neelsmith/greeklang">version control repository</a>
-with implementations in JVM languages (java and groovy). A copy of the specification rendered with concordion to run all tests
-in
+<p>
+The specification is maintained at
+<a
+href="https://github.com/neelsmith/greeklang">https://github.com/neelsmith/greeklang</a>,
+along
+with an implementation in JVM languages (java and groovy).
+A copy of the specification rendered with concordion to run all tests the
+of
 this implementation is posted at <a href="http://shot.holycross.edu/~nsmith/greekspec/Greek.html">http://shot.holycross.edu/~nsmith/greekspec/Greek.html</a>
 </p>
 
@@ -29,5 +37,20 @@ this implementation is posted at <a href="http://shot.holycross.edu/~nsmith/gree
 <li><a href="hexameter/Hexameter.html">Hexameter meter</a></li>
 
   </ul>
+
+<h2>Key to visual conventions</h2>
+<p>The specifications are defined using
+<a href="http://concordion.org">concordion</a> to run
+  automated tests.  The resulting web pages are highlighted
+as follows:</p>
+
+<ul>
+<li>
+  <span class="success">
+ successfully completed automated tests</span></li>
+<li>
+ <span class="failure">failed tests</span></li>
+  </ul>
+
 </body>
 </html>
