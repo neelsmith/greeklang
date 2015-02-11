@@ -1,0 +1,28 @@
+# Dependencies
+markdown:         redcarpet
+pygments:         true
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            greeklang
+tagline:          ''
+description:      'Specification of a computational system for working with ancient Greek, and implementations of the specification in code libraries'
+baseurl: '/greeklang/'
+
+
+author:
+  name:           'Neel Smith'
+ 
+
+paginate:         5
+
+
+version:          0.12.0
+
+links:
+  - title: Github project
+    url: https://github.com/neelsmith/greeklang
+    external: true
+   
