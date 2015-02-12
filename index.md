@@ -3,5 +3,5 @@ title: greeklang
 layout: page
 ---
 
-- live specifications
-- API docs
+- [live specifications](specs/greek/Greek.html)
+- [API docs](api)
