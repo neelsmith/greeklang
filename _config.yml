@@ -6,9 +6,9 @@ pygments:         true
 permalink:        pretty
 
 # Setup
-title:            greeklang
-tagline:          ''
-description:      'Specification of a computational system for working with ancient Greek, and implementations of the specification in code libraries'
+title:            A computational system for ancient Greek
+tagline:          'Automated verification of orthography, morphology, and epic hexameter'
+description:      'Specification of a computational system for working with ancient Greek, and implementations of the specification in code libraries for the JVM'
 baseurl: '/greeklang/'
 
 
@@ -22,7 +22,15 @@ paginate:         5
 version:          0.12.0
 
 links:
+  - title: Live specifications
+    url: http://neelsmith.github.io/greeklang/specs/greek/Greek.html
+    external: true
+  - title: API documentation
+    url: http://neelsmith.github.io/greeklang/api
+    external: true
   - title: Github project
     url: https://github.com/neelsmith/greeklang
     external: true
-   
+  - title: Neel Smith elsewhere on github
+    url: http://neelsmith.github.io
+    external: true

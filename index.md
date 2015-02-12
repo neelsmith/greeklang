@@ -1,5 +1,5 @@
 ---
-title: greeklang
+title: A computational system for ancient Greek
 layout: page
 ---
 
