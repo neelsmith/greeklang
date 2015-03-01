@@ -1,14 +1,15 @@
-package specs.greek.tokens;
+package greek.tokens;
 
-import org.concordion.integration.junit4.ConcordionRunner;
-import org.junit.runner.RunWith;
+//import org.concordion.integration.junit4.ConcordionRunner;
+//import org.junit.runner.RunWith;
+import org.concordion.integration.junit3.ConcordionTestCase;
 
 import edu.holycross.shot.greekutils.GreekString;
 
 /* Run this class as a JUnit test. */
 
-@RunWith(ConcordionRunner.class)
-public class GreekStringFixture  {
+//@RunWith(ConcordionRunner.class)
+public class GreekStringTest extends ConcordionTestCase {
     
     public String getBetaString(String str) {
         //return new Greeter().greetingFor(firstName);

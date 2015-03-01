@@ -1,4 +1,4 @@
-package specs.greek;
+package greek;
 
 
 import org.concordion.integration.junit3.ConcordionTestCase;

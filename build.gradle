@@ -1,3 +1,6 @@
+import com.github.rjeschke.txtmark.*
+import org.apache.tools.ant.filters.*
+
 apply plugin: "base"
 apply plugin:  "groovy"
 apply plugin:  "java"
@@ -33,6 +36,38 @@ if (hasProperty('pub')) {
 
 
 
+if (hasProperty('conf')) {
+    System.err.print "Using configuration data from ${conf}"
+    File confFile = new File(conf)
+    if (! confFile.exists()) {
+        throw new Exception("No publication configuration file ${conf} found.")
+    } else {
+        apply from: conf
+    }
+
+} else {
+    File confFile = new File("conf.gradle")
+    if (! confFile.exists()) {
+        throw new Exception("No publication configuration file ${confFile} found\
+.")
+    } else {
+        println "Using default configuration in 'conf.gradle'"
+        apply from: "conf.gradle"
+    }
+}
+
+
+
+
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath group: 'com.github.rjeschke', name: 'txtmark', version: '0.11'
+  }
+}
+
 repositories {
     mavenCentral()
     maven {
@@ -47,16 +82,18 @@ dependencies {
   compile group: 'org.codehaus.groovy', name: 'groovy-all', version: groovyVersion
   compile group: 'org.xerial',name: 'sqlite-jdbc', version: sqlLiteVersion
 
-  compile group: 'edu.harvard.chs', name : 'cite' , version: '0.90.0'
+
 
   compile group : 'edu.unc.epidoc', name: 'transcoder', version : epidocVersion
   compile group: 'net.sf.opencsv', name: 'opencsv', version : opencsvVersion
 
-  //testCompile group: 'junit', name: 'junit', version: junitVersion
   testCompile 'junit:junit:4.11'
   testCompile 'org.concordion:concordion:1.4.4'
 
   testCompile group :'xmlunit', name: 'xmlunit', version: xmlunitVersion
+
+  // to document:
+  compile group: 'edu.harvard.chs', name : 'cite' , version: citeVersion
 
 }
 
@@ -239,7 +276,7 @@ task uberjar(type: Jar,dependsOn:[':compileJava',':compileGroovy']) {
     }
 }
 
-
+// for specs with concordion:
 sourceSets {
     main {
         java {
@@ -251,7 +288,7 @@ sourceSets {
     }
     test {
         java {
-            srcDir "${buildDir}/specs"
+            srcDir "specs/java"
         }
         resources {
             srcDir "${buildDir}/specs"
@@ -273,4 +310,84 @@ test.dependsOn  copySpecs
 test {
     systemProperties 'concordion.output.dir': file("${buildDir}/concordion-results")
 
+}
+
+// for specs with concordion:
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+        resources {
+            srcDir 'src'
+        }
+    }
+    test {
+        java {
+	  srcDir "specs/java"
+        }
+        resources {
+	  srcDir "${buildDir}/specs"
+        }
+    }
+}
+
+task cpResources(type: Copy) {
+  from "specs/resources"
+  into "${buildDir}/specs"
+}
+
+task setUpResources(dependsOn: cpResources) {
+}
+setUpResources.doLast {
+  println "READING FILE TREE FROM " + mdSrc + " DIRECTORY"
+  FileTree tree = fileTree(mdSrc) {
+    include "**/*.md"
+  }
+  tree.visit { f ->
+    if (f.relativePath.isFile()) {
+      File inFile = new File("${mdSrc}/${f.relativePath}")
+      println "Need to work on " + inFile
+      def segs = f.relativePath.getSegments()
+      String treePath = "${buildDir}/specs"
+      Integer limit =  segs.size() - 1
+      segs.eachWithIndex { s, i ->
+	if (i < limit) {
+	  treePath = "${treePath}/${s}"
+	  File nxtDir = new File(treePath)
+	  if (! nxtDir.exists()) {
+	    nxtDir.mkdir()
+	  }
+	}
+      }
+      File outDir = new File(treePath)
+      String htmlFileName = f.relativePath.getLastName().replaceFirst(/.md$/,".html")
+      File htmlFile = new File(outDir, htmlFileName)
+      println "Created ${htmlFile}"
+
+      String body = Processor.process(inFile.getText("UTF-8"),Configuration.DEFAULT)
+      htmlFile.setText("${htmlPreface}${body}${htmlEnd}", "UTF-8")
+    }
+  }
+}
+
+
+test.dependsOn setUpResources
+test {
+    systemProperties 'concordion.output.dir': file("${buildDir}/concordion-results")
+}
+
+task addVersion(){
+}
+addVersion.doLast {
+  tokenMap["version"] = version
+  tokenMap["deps"] = """
+    <tr><td>cite</td><td>${citeVersion}</td></tr>""".toString()
+}
+
+task conc(type: Copy, dependsOn: [test, addVersion]) {
+//task conc(type: Copy) {
+  from "${buildDir}/concordion-results"
+  into "${buildDir}/concordion-formatted"
+  filter(ReplaceTokens, tokens: tokenMap)
 }
