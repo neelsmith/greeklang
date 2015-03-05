@@ -382,7 +382,8 @@ task addVersion(){
 addVersion.doLast {
   tokenMap["version"] = version
   tokenMap["deps"] = """
-    <tr><td>cite</td><td>${citeVersion}</td></tr>""".toString()
+    <tr><td>cite</td><td>${citeVersion}</td></tr>
+    <tr><td>epidoc</td><td>${epidocVersion}</td></tr>""".toString()
 }
 
 task conc(type: Copy, dependsOn: [test, addVersion]) {

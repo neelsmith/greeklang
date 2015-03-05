@@ -10,9 +10,22 @@ import edu.holycross.shot.greekutils.GreekString;
 
 //@RunWith(ConcordionRunner.class)
 public class GreekStringTest extends ConcordionTestCase {
+
+
+    public String asUnicode(String str) {
+	GreekString gs;
+	try {
+	    gs = new GreekString(str);
+	    return gs.toString(true);
+	} catch (Exception e) {
+	    System.err.println("Exception in test: " + e.toString());
+	    return null;
+	}
+
+    }
+
     
     public String getBetaString(String str) {
-        //return new Greeter().greetingFor(firstName);
 	GreekString gs;
 	try {
 	    gs = new GreekString(str);

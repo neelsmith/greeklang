@@ -1,46 +1,20 @@
 # GreekStrings
 
-GreekStrings are objects composed exclusively of characters in the small set relevant for ancient Greek: Greek alphabetic characters, accents, breathings, punctuation marks or white space.
+GreekStrings are composed exclusively of characters in the small set relevant for ancient Greek: Greek alphabetic characters, accents, breathings, punctuation marks or white space.
 
 GreekStrings are created from Strings by mapping Unicode code points on to the ancient Greek characters according to one of two mappings:
 
-- an alphabetic subset of the TLG project's Beta Code
-- a subset of the Unicode ancient Greek range
-- 
+- an alphabetic subset of the TLG project's <a concordion:run="concordion" href="BetaCodeXlit.html">Beta Code</a>
+- a subset of the <a concordion:run="concordion" href="UcodeXlit.html">ancient Greek range</a> of Unicode
+
+
+
 When GreekStrings are converted back to Strings, they use the the beta-code convention, with all alphabetic characters represented by lower-case Roman characters. An asterisk identifies an upper-case character in the GreekString.
-
-## Beta-code mapping
-
-A GreekString may be created from a case-insensitive String.
-
-@openex@
-
-
-### Examples ###
-
-
-<table concordion:execute="#result = getBetaString(#src)">
-	<tr>
-	  <th concordion:set="#src">Source String</th>
-	  <th concordion:assertEquals="#result">GreekString</th>
-	</tr>
-
-	<tr><td>MH=NIN</td><td>mh=nin</td></tr>
-	<tr><td>mh=nin</td><td>mh=nin</td></tr>
-	<tr><td>Mh=nin</td><td>mh=nin</td></tr>
-	<tr><td>*mh=nin</td><td>*mh=nin</td></tr>
-	
-      </table>
-      
-
-
-@closeex@
-
 
 ## Unicode Greek mapping ##
 
 
-A GreekString may be created from either precombined or combining Unicode codepoints.
+A GreekString may be created from either precombined or combining Unicode codepoints.  Equivalent values in Unicode are 
 
 
 @openex@
@@ -84,3 +58,10 @@ A GreekString may be created from either precombined or combining Unicode codepo
 
 
 @closeex@
+
+
+Whether constructed from beta-code or unicode source string, Greek Strings can converted to Unicode NFC.
+
+
+SO <strong concordion:set="#beta1">*mh=nin</strong> converts to <strong concordion:assertEquals="asUnicode(#beta1)">Μῆνιν</strong>
+

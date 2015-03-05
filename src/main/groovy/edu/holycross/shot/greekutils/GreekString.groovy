@@ -87,6 +87,7 @@ class GreekString {
     
     Integer count = 0
     String betaString = xcoder.getString(srcString).toLowerCase()
+    betaString = betaString.replaceAll("s1","s")
     while (count < betaString.length() - 1) {
       if (!(isValidChar(betaString.substring(count,count+1)))) {
 	System.err.println "Error parsing ${betaString}: failed on ${betaString.substring(count,count+1)} (char ${count})"
