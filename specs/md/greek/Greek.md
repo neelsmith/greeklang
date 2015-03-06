@@ -8,8 +8,8 @@ The specification together with an implementation in JVM languages (java and gro
 ## Specifications
 
 - Strings of <a concordion:run="concordion" href="tokens/Tokens.html">characters and lexical tokens</a>
-- Syllabification of tokens
-- Greek morphology
-- Homeric hexameter
+- <a concordion:run="concordion" href="syllables/Syllables.html">Syllabification of tokens</a>
+- <a concordion:run="concordion" href="morphology/Morphology.html">Greek morphology</a>
+- <a concordion:run="concordion" href="hexameter/Hexameter.html">Homeric hexameter</a>
 
 
