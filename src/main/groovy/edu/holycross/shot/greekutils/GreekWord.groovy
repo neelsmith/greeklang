@@ -204,7 +204,17 @@ class GreekWord {
    * @returns Beta-code version of a Greek word.
    */
   String toString() {
-    return this.betaCodeWord
+    return this.betaCodeWord.toString()
   }
+
+   String toString(boolean asUnicode) {
+     if (asUnicode) {
+       GreekString s = new GreekString(this.betaCodeWord.toString())
+       System.err.println ("GreekWord: Got ${s}, as uni = " + s.toString(asUnicode))
+       return s.toString(asUnicode)
+    } else {
+       return this.betaCodeWord.toString()
+    }
+   }
 
 }

@@ -1,6 +1,8 @@
 package edu.holycross.shot.greekutils
 
 import edu.unc.epidoc.transcoder.TransCoder
+import java.text.Normalizer
+import java.text.Normalizer.Form
 
 /**
  * A class for working with text in Greek.  Instances may
@@ -9,7 +11,7 @@ import edu.unc.epidoc.transcoder.TransCoder
  * Valid Greek characters are limited to the small set that can be 
  * used to construct valid morphologically parseable lexical tokens, plus punctuation characters.
  * If your representation of Greek text includes other characaters, such 
- * as numeric characters, or more exotic kinds of punctuation, you will
+ * as numeric characters, or more exotic kinds of punctuatio, you will
  * have to strip those out before creating a GreekString object.
  */
 class GreekString {
@@ -64,7 +66,7 @@ class GreekString {
 
   /** Immutable set of punctuation characters. */
   static punctuation = [
-    ".",  ";", ","
+    ".",  ";", ",","'"
   ]
 
 
@@ -77,7 +79,7 @@ class GreekString {
    * @param srcString Greek string, in beta code.
    * @param System for mapping Greek onto Unicode.  String value may
    * be any of the values for "sourceEncoding" supported by the 
-   * epidoc transcoder.
+   * epidoc transcoder, such as "Unicode".
    * @throws Exception if not all characters in betaString are valid.
    */
   GreekString(String srcString, String greekMapping)  {
@@ -91,7 +93,8 @@ class GreekString {
     while (count < betaString.length() - 1) {
       if (!(isValidChar(betaString.substring(count,count+1)))) {
 	System.err.println "Error parsing ${betaString}: failed on ${betaString.substring(count,count+1)} (char ${count})"
-	throw new Exception("GreekString: invalid characer ${betaString.substring(count,count+1)}")
+	System.err.println "GreekString:constructor with ${greekMapping} invalid character at position ${count}:  '" + betaString.substring(count,count+1) + "'"
+	throw new Exception("GreekString:constructor with ${greekMapping} invalid character at position ${count}:  '" + betaString.substring(count,count+1) + "'")
       }
       count++
     }
@@ -119,7 +122,7 @@ class GreekString {
 
 
 
-  /***************************************************************************************/
+  /* ************************************************************************************* */
   //
   //  ************  METHODS IDENTIFYING CHARACTER CLASSES   *****************************
 
@@ -135,11 +138,13 @@ class GreekString {
       || (GreekString.isAccentOrBreathing(ch)) 
       || (GreekString.isQuantity(ch))
       || (GreekString.isPunctuation(ch))
+      || (GreekString.isWhiteSpace(ch))
       || (ch == GreekString.diaeresis)
       || (ch == GreekString.asterisk)
     )  {
       return true
     } else {
+      System.err.println("GreekString: invalid beta code character ${ch}")
       return false
     }
   }
@@ -149,7 +154,7 @@ class GreekString {
    * @param ch String to check.
    * @returns true if character is alphabetic, otherwise false.
    */ 
-  static boolean isAlphabetic(ch) {
+  static boolean isAlphabetic(String ch) {
     if (
       (GreekString.consonant.contains(ch))
       || (GreekString.vowel.contains(ch))
@@ -225,6 +230,13 @@ class GreekString {
   }
 
 
+
+  static boolean isWhiteSpace (String ch) {
+    return Character.isWhitespace(ch as char)
+    //punctuation.contains(ch)
+  }
+
+
   /** Determines if a single-character String
    * is a vowel-quantity character.
    * @param ch Character to examine.
@@ -246,7 +258,7 @@ class GreekString {
 
   //
   //  ************  END METHODS IDENTIFYING CHARACTER CLASSES   **************************
-  /***************************************************************************************/
+  /* ************************************************************************************* */
 
 
 
@@ -293,12 +305,29 @@ class GreekString {
   }
 
 
+  static ArrayList tokenize(GreekString s) {
+    ArrayList tokens = s.greekString.split(/\s/)
+    return tokens
+  }
 
+  
   /** Overrides default implementation of toString.
    * @returns Beta-code version of a Greek word.
    */
   String toString() {
     return this.greekString
+  }
+
+  String toString(boolean asUnicode) {
+    if (asUnicode) {
+      TransCoder xcoder = new TransCoder()
+      xcoder.setParser("BetaCode")
+      xcoder.setConverter("UnicodeC")
+      String u = xcoder.getString(this.greekString)
+      return Normalizer.normalize(u, Form.NFC)
+    } else {
+      return this.greekString
+    }
   }
 
 }

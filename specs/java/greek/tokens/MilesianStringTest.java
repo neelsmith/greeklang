@@ -10,4 +10,18 @@ public class MilesianStringTest extends ConcordionTestCase {
     public boolean isDigit(String str) {
 	return MilesianString.isDigit(str);
     }
+
+    public String toStr(String s)
+    throws Exception {
+	    MilesianString ms = new MilesianString(s);
+	    return ms.toString();
+    }
+
+
+
+    public String toBetaCode(String s)
+    throws Exception {
+	    MilesianString ms = new MilesianString(s);
+	    return ms.toString(true);
+    }
 }

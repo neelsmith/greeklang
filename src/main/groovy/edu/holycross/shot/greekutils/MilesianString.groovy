@@ -44,7 +44,7 @@ class MilesianString {
 
   static fract = [
     '𐅵', '𐅷'
-    ]
+  ]
 
 
 
@@ -54,7 +54,7 @@ class MilesianString {
 
   /** Constructor verifies that srcString, supplied in an identified
    * system for encoding Greek, contains only valid characters
-   * for a MilesianString's underlying beta-code representation.
+   * for a MilesianString's underlying representation.
    */
   MilesianString(String srcString, String greekMapping)  {
     /*
@@ -94,8 +94,8 @@ class MilesianString {
       }
       count++
     }
-    this.greekString = betaString
     */
+    this.milesianString = srcString
   }
 
 
@@ -103,6 +103,21 @@ class MilesianString {
     return (MilesianString.digit.contains(digitCh))
   }
 
+
+  String toString() {
+    return this.milesianString
+  }
+  
+  String toString(boolean asBeta) {
+    if (asBeta) {
+      TransCoder xcoder = new TransCoder()
+      xcoder.setParser("Unicode")
+      xcoder.setConverter("BetaCode")
+      return xcoder.getString(this.milesianString)
+    } else {
+      return this.milesianString
+    }
+  }
   
 
 }
