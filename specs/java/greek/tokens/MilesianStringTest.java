@@ -18,7 +18,6 @@ public class MilesianStringTest extends ConcordionTestCase {
     }
 
 
-
     public String toBetaCode(String s)
     throws Exception {
 	    MilesianString ms = new MilesianString(s);

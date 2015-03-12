@@ -9,78 +9,249 @@ MilesianStrings are created from Strings by mapping Unicode code points on to th
 
 
 
-## Constructing and working with integers < 1,000 ##
+## Constructing MilesianStrings ##
 
-The Milesian system is essentially a place value system with distinct places for units, tens and hundreds.  Because units, tens and hundreds use distinct character ranges, however, there is no need of a 0 character.  The order of units is right to left from smallest to largest.
 
-MilesianStrings may be constructed from the following lower-case Unicode characters:
+### Valid digit characters ###
 
-Ones digits:
 
-| Numeric value | Unicode code point | Typical glyph |  
-|  ------	| ------	| ------	|  
-| 1 | U 03B1 | α |  
-| 2 | U 03B2 | β |  
-| 3 | U 03B3 | γ |  
-| 4 | U 03B4 | δ |  
-| 5 |  U 03B5| ε |  
-| 6 | U 3DB | ϛ |  
-| 7 |  U 03B6 | ζ |  
-| 8 | U 03B7 | η |  
-| 9 | U 03B8 | θ|  
+
+MilesianStrings may be constructed from the following lower-case Unicode characters to represent integers < 1,000.
+
+**Ones digits**:
+
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Numeric value</th>
+	<th style="text-align:left;">Unicode code point</th>
+	<th style="text-align:left;">Typical glyph</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">1</td>
+	<td style="text-align:left;">U 03B1</td>
+	<td style="text-align:left;">α</td>
+</tr>
+<tr>
+	<td style="text-align:left;">2</td>
+	<td style="text-align:left;">U 03B2</td>
+	<td style="text-align:left;">β</td>
+</tr>
+<tr>
+	<td style="text-align:left;">3</td>
+	<td style="text-align:left;">U 03B3</td>
+	<td style="text-align:left;">γ</td>
+</tr>
+<tr>
+	<td style="text-align:left;">4</td>
+	<td style="text-align:left;">U 03B4</td>
+	<td style="text-align:left;">δ</td>
+</tr>
+<tr>
+	<td style="text-align:left;">5</td>
+	<td style="text-align:left;">U 03B5</td>
+	<td style="text-align:left;">ε</td>
+</tr>
+<tr>
+	<td style="text-align:left;">6</td>
+	<td style="text-align:left;">U 3DB</td>
+	<td style="text-align:left;">ϛ</td>
+</tr>
+<tr>
+	<td style="text-align:left;">7</td>
+	<td style="text-align:left;">U 03B6</td>
+	<td style="text-align:left;">ζ</td>
+</tr>
+<tr>
+	<td style="text-align:left;">8</td>
+	<td style="text-align:left;">U 03B7</td>
+	<td style="text-align:left;">η</td>
+</tr>
+<tr>
+	<td style="text-align:left;">9</td>
+	<td style="text-align:left;">U 03B8</td>
+	<td style="text-align:left;">θ</td>
+</tr>
+</tbody>
+</table>
+
+
+**Tens digits**:
+
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Numeric value</th>
+	<th style="text-align:left;">Unicode code point</th>
+	<th style="text-align:left;">Typical glyph</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">10</td>
+	<td style="text-align:left;">U 03B9</td>
+	<td style="text-align:left;">ι</td>
+</tr>
+<tr>
+	<td style="text-align:left;">20</td>
+	<td style="text-align:left;">U 03BA</td>
+	<td style="text-align:left;">κ</td>
+</tr>
+<tr>
+	<td style="text-align:left;">30</td>
+	<td style="text-align:left;">U 03BB</td>
+	<td style="text-align:left;">λ</td>
+</tr>
+<tr>
+	<td style="text-align:left;">40</td>
+	<td style="text-align:left;">U 03BC</td>
+	<td style="text-align:left;">μ</td>
+</tr>
+<tr>
+	<td style="text-align:left;">50</td>
+	<td style="text-align:left;">U 03BD</td>
+	<td style="text-align:left;">ν</td>
+</tr>
+<tr>
+	<td style="text-align:left;">60</td>
+	<td style="text-align:left;">U 3DE</td>
+	<td style="text-align:left;">ξ</td>
+</tr>
+<tr>
+	<td style="text-align:left;">70</td>
+	<td style="text-align:left;">U 03BF</td>
+	<td style="text-align:left;">ο</td>
+</tr>
+<tr>
+	<td style="text-align:left;">80</td>
+	<td style="text-align:left;">U 03B7</td>
+	<td style="text-align:left;">π</td>
+</tr>
+<tr>
+	<td style="text-align:left;">90</td>
+	<td style="text-align:left;">U 03DF</td>
+	<td style="text-align:left;">ϟ</td>
+</tr>
+</tbody>
+</table>
+
+
+
  
-Tens digits:
+**Hundreds digits**:
 
-| Numeric value | Unicode code point | Typical glyph |  
-|  ------	| ------	| ------	|  
-| 10 | U 03B9 | ι |  
-| 20 | U 03BA | κ |  
-| 30 | U 03BB | λ |  
-| 40 | U 03BC | μ |  
-| 50 |  U 03BD| ν |  
-| 60 | U 3DE | ξ |  
-| 70 |  U 03BF | ο |  
-| 80 | U 03B7 | π |  
-| 90 | U 03DF | ϟ |  
- 
-Hundreds digits:
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
 
-| Numeric value | Unicode code point | Typical glyph |  
-|  ------	| ------	| ------	|  
-| 100 | U 03C0 | ρ |  
-| 200 | U 03C1 | σ |  
-| 300 | U 03C2 | τ |  
-| 400 | U 03C3 | υ |  
-| 500 |  U 03C4| φ |  
-| 600 | U 03C5 | χ|  
-| 700 |  U 03C6 | ψ |  
-| 800 | U 03C7 | ω |  
-| 900 | U  03E1| ϡ |  
+<thead>
+<tr>
+	<th style="text-align:left;">Numeric value</th>
+	<th style="text-align:left;">Unicode code point</th>
+	<th style="text-align:left;">Typical glyph</th>
+</tr>
+</thead>
 
+<tbody>
+<tr>
+	<td style="text-align:left;">100</td>
+	<td style="text-align:left;">U 03C0</td>
+	<td style="text-align:left;">ρ</td>
+</tr>
+<tr>
+	<td style="text-align:left;">200</td>
+	<td style="text-align:left;">U 03C1</td>
+	<td style="text-align:left;">σ</td>
+</tr>
+<tr>
+	<td style="text-align:left;">300</td>
+	<td style="text-align:left;">U 03C2</td>
+	<td style="text-align:left;">τ</td>
+</tr>
+<tr>
+	<td style="text-align:left;">400</td>
+	<td style="text-align:left;">U 03C3</td>
+	<td style="text-align:left;">υ</td>
+</tr>
+<tr>
+	<td style="text-align:left;">500</td>
+	<td style="text-align:left;">U 03C4</td>
+	<td style="text-align:left;">φ</td>
+</tr>
+<tr>
+	<td style="text-align:left;">600</td>
+	<td style="text-align:left;">U 03C5</td>
+	<td style="text-align:left;">χ</td>
+</tr>
+<tr>
+	<td style="text-align:left;">700</td>
+	<td style="text-align:left;">U 03C6</td>
+	<td style="text-align:left;">ψ</td>
+</tr>
+<tr>
+	<td style="text-align:left;">800</td>
+	<td style="text-align:left;">U 03C7</td>
+	<td style="text-align:left;">ω</td>
+</tr>
+<tr>
+	<td style="text-align:left;">900</td>
+	<td style="text-align:left;">U 03E1</td>
+	<td style="text-align:left;">ϡ</td>
+</tr>
+</tbody>
+</table>
+
+
+
+Two other characters are valid digits.  Unicode upper case Μ (U 039C ) represents the numeric value 10,000 (μυριάς),  while Unicode upper case Ο (U 039F) represents either a value of 0 or a null value (οὐδέν).
 
 
 @openex@
 
 ### Examples ###
 
-This lower case 
+Lower case 
 <strong concordion:set="#alpha">α</strong> is a 
-<strong concordion:assertTrue="isDigit(#alpha)">valid digit</strong> character, but this upper case 
+<strong concordion:assertTrue="isDigit(#alpha)">valid digit</strong> character, but upper case 
 <strong concordion:set="#big">Α</strong> is 
 <strong concordion:assertFalse="isDigit(#big)">not</strong>.
+
+Lower case <strong concordion:set="#omicron">ο</strong>
+is a <strong concordion:assertTrue="isDigit(#omicron)">valid digit</strong> character
+with a numeric value of 40, while upper case <strong concordion:set="#ouden">Ο</strong>
+is a <strong concordion:assertTrue="isDigit(#ouden)">valid digit</strong> character indicating either 0 or a null value.
 
 @closeex@
 
 
 
-## Other characters ##
-
-Unicode upper case mu == myriad.
-
-Unicode upper case omicron == ouden.
+## Syntax of MilesianStrings##
 
 
-## Syntax of larger values ##
+The Milesian system is essentially a place value system with distinct places for units, tens and hundreds.  Because units, tens and hundreds use distinct character ranges, however, there is no need of a 0 character.  The order of units is right to left from smallest to largest.
+
+
 
 values > 10,000 to left of M
 
