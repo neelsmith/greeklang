@@ -10,8 +10,7 @@ import java.text.Normalizer.Form
 class MilesianString {
 
 
-
-   Integer debug = 0
+  Integer debug = 0
    
   // Temporary constructs for debugging:
   Integer SILENT = 0
@@ -21,9 +20,9 @@ class MilesianString {
   Integer debugLevel = 0
 
 
-  /** Immutable set of consonant characters. */
-
-  
+  /** Immutable set of digit characters, identified
+   * by decimal code point in Unicode character set. 
+   */
   static digit = [
     924, //	(39c)	Μ (upper case)
     927, //	(39f)	Ο (upper case)
@@ -52,13 +51,16 @@ class MilesianString {
     968, //	(3c8)	ψ
     969, //	(3c9)	ω
     987, //	(3db)	ϛ
-    990, //	(3de)	Ϟ (upper case) ??
+    991, //	(3de)	
     993 //	(3e1)	ϡ
   ]
 
   
   static punct = [
-    ',', "'", '"'
+    32, // space
+    44, // comma
+    39, // single quote
+    34 // double quote
   ]
 
 
@@ -76,25 +78,12 @@ class MilesianString {
    * for a MilesianString's underlying representation.
    */
   MilesianString(String srcString, String greekMapping)  {
-    /*
-    TransCoder xcoder = new TransCoder()
-    xcoder.setParser(greekMapping)
-    xcoder.setConverter("BetaCode")
-    
-    Integer count = 0
-    String betaString = xcoder.getString(srcString).toLowerCase()
-    betaString = betaString.replaceAll("s1","s")
-    while (count < betaString.length() - 1) {
-      if (!(isValidChar(betaString.substring(count,count+1)))) {
-	System.err.println "Error parsing ${betaString}: failed on ${betaString.substring(count,count+1)} (char ${count})"
-	System.err.println "GreekString:constructor with ${greekMapping} invalid character at position ${count}:  '" + betaString.substring(count,count+1) + "'"
-	throw new Exception("GreekString:constructor with ${greekMapping} invalid character at position ${count}:  '" + betaString.substring(count,count+1) + "'")
-      }
-      count++
-    }
-    this.greekString = betaString
-    */
+
+    // to be added ...
   }
+
+
+  
   boolean isValidCP(int codePt) {
     if (digit.contains(codePt) || punct.contains(codePt) || fract.contains(codePt)) {
       return true
@@ -164,6 +153,14 @@ class MilesianString {
    }
 
 
+  static boolean isDigit(int codePt) {
+     return (MilesianString.digit.contains(codePt))
+  }
+
+
+  static boolean isDigit(Integer codePt) {
+    return (MilesianString.digit.contains(codePt as int))
+  }
 
    /** Overrides default toString method.
     * @returns String representation of MilesianString.
