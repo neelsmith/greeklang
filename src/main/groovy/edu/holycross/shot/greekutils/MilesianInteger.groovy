@@ -9,6 +9,8 @@ import java.text.Normalizer.Form
  */
 class MilesianInteger {
 
+  Integer debug = 0
+  
   // Temporary constructs for debugging:
   Integer SILENT = 0
   Integer WARN =  1
@@ -19,19 +21,50 @@ class MilesianInteger {
 
   /** Ordered list of Unicode code points
    * in the source string. */
-  ArrayList codePoints = []
+  public ArrayList codePoints = []
 
-
-  /** Decimal codepoint for space */
-  static int space  = 32
-  
-  /** Decimal codepoint for comma */
-  static int comma  = 44
+  Integer integerValue
 
   /** Decimal codepoint for upper-case mu */
   static int myriad = 924
+
+
+  /** Constructor building MilesianInteger directly from String representation.
+   * @param str String representation of a MilesianInteger.
+   * @throws Exception if str is not valid .
+   */
+  MilesianInteger(String str)
+  throws Exception {
+    int max = str.codePointCount(0, str.length())
+    int idx = 0
+    int codePoint = str.codePointAt(idx)
+    int count = 0
+    while (count < max) {
+      codePoint = str.codePointAt(idx)
+      if ((codePoint == MilesianString.space) || (codePoint == MilesianString.singleq)) {
+	// ignore
+	  
+      } else if (MilesianString.isDigit(codePoint) || (codePoint == MilesianString.comma ) )  {
+	codePoints.add(codePoint)
+      } else {
+	throw new Exception("MilesianInteger: ${codePoint} is not a valid codepoint for a MilesianInteger.")
+      }
+      idx = str.offsetByCodePoints(idx,1)
+      count++
+    }
+    if (debug > 0) { System.err.println "Initialized to code points " + codePoints }
+
+    // validate by converting to integer:
+    try {
+      this.integerValue = MilesianInteger.toInteger(codePoints)
+    } catch (Exception e) {
+      throw e
+    }
+    
+  }
+
   
-  /** Constructor */
+  /** Constructor building from a MilesianString. */
   MilesianInteger(MilesianString milStr)
   throws Exception {
     StringBuffer sb = new StringBuffer(milStr.toString())
@@ -40,7 +73,7 @@ class MilesianInteger {
     int codePoint = sb.codePointAt(idx)
     while (idx <= max) {
       codePoint = sb.codePointAt(idx)
-      if (codePoint == space) {
+      if (codePoint == MilesianString.space) {
 	// ignore
       } else if (MilesianString.isDigit(codePoint) || (codePoint == comma ))  {
 	codePoints.add(codePoint)
@@ -49,21 +82,35 @@ class MilesianInteger {
       }
       idx = sb.offsetByCodePoints(idx,1)
     }
-    System.err.println "Initialized to code points " + codePoints
+    if (debug > 0)  {System.err.println "Initialized to code points " + codePoints}
+    // validate by converting to integer:
+    try {
+      this.integerValue = MilesianInteger.toInteger(codePoints)
+    } catch (Exception e) {
+      throw e
+    }
+
   }
 
   
-  /** Converts value of source string to
-   * Integer for values in range 1..19,999 .
+  /** Converts value of an ArrayList of codepoints to
+   * an Integer for values in range 1..19,999 .
    */
-  Integer toInteger() {
+  static Integer toInteger(ArrayList cpList)
+  throws Exception {
+    def columns = ["myriad": "" ,"thousands": "","hundreds": "" ,"tens": "", "ones": ""]
+    
     Integer total = -1
-    boolean inThousands = codePoints.contains(comma)
-    codePoints.each { cp ->
-System.err.println "examine cp ${cp} w total " + total
+    boolean inThousands = cpList.contains(MilesianString.comma)
+    cpList.each { cp ->
+      if (debug > 0) { System.err.println "examine cp ${cp} w total " + total} 
       switch (cp) {
       case myriad:
       total = 10000;
+      if (columns["myriad"]) {
+	throw new Exception("MilesianInteger: invalid syntax")
+      }
+      columns["myriad"] = true
       break
       
       case comma:
@@ -74,9 +121,21 @@ System.err.println "examine cp ${cp} w total " + total
       Integer cpValue = MilesianInteger.getDigitValue(cp)
       if (inThousands) {
 	// ERROR IF cpValue > 9 !
-	
+	if (cpValue > 9) {
+	  throw new Exception("MilesianInteger: bad syntax, digit for value ${cpValue} not allowed here")
+	}
 	cpValue = cpValue *1000
+	if (columns["throusands"]) { // ALSO CHECK TOTAL...?
+	  throw new Exception("MilesianInteger: invalid syntax")
+	}
+	
+	columns["thousands"] = true
       }
+
+      //switch on cpValue:
+      // > 99
+      // > 9
+      // > 0
       if (total == -1) {
 	total = cpValue
       } else {

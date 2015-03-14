@@ -55,97 +55,214 @@ class MilesianString {
     993 //	(3e1)	ϡ
   ]
 
-  
+
+
+  // **** Other code points *** //
+
+  /** Single quote character. */
+  static int singleq = 39
+  /** Double quote character. */
+  static int doubleq = 34
+  /** Space character. */
+  static int space = 32
+  /** Comma. */
+  static int comma = 44
+
+
+  /** Immutable set of valid puncutation characters. */
   static punct = [
-    32, // space
-    44, // comma
-    39, // single quote
-    34 // double quote
+    space,
+    comma,
+    singleq,
+    doubleq
   ]
 
 
+  // **** Special abbreviated fraction characters  *** //
+
+  /** Abbreviation for one half.*/
+  static int onehalf = 65909 //	(U 10175)	𐅵
+  
+  /** Abbreviation for two thirds.*/
+  static twothirds = 65911 //	(10177)	𐅷
+
+  /** Immutable set of valid abbreviations for fractions. */
   static fract = [
-    65909, //	(10175)	𐅵
-    65911 //	(10177)	𐅷
+    onehalf,
+    twothirds
   ]
 
   
-  /** The string in beta code form.*/
+  
+  /** The string in unicode form.*/
   String milesianString
 
-  /** Constructor verifies that srcString, supplied in an identified
-   * system for encoding Greek, contains only valid characters
-   * for a MilesianString's underlying representation.
-   */
-  MilesianString(String srcString, String greekMapping)  {
+  /** Number of Unicode code points in milesianString. */
+  int cpMax
+  
 
-    // to be added ...
+  /** Determines if milesianString has a fraction component.
+   * @returns True if the number includes a fractional component.
+   */
+  boolean hasFraction() {
+    boolean fractionSeen = false
+    
+    int idx = 0
+    int codePoint = milesianString.codePointAt(idx)
+    int count = 0
+    while (count < cpMax) {
+      codePoint = sb.codePointAt(idx)
+      if (codePoint == doubleq) {
+	fractionSeen = true
+      }
+      idx = milesianString.offsetByCodePoints(idx, 1)
+      count++
+    }
+    return fractionSeen
   }
 
 
+  /** Determines if milesianString has an integer component.
+   * @returns True if the number includes an integer component.
+   */
+  boolean hasIntegerPart() {
+    boolean fractionSeen = false
+    boolean singleQSeen = false
+    int idx = 0
+    int codePoint = milesianString.codePointAt(idx)
+    int count = 0
+    while (count < cpMax) {
+      codePoint = milesianString.codePointAt(idx)
+      if (codePoint == MilesianString.doubleq) {
+	fractionSeen = true
+	
+      } else if (codePoint == MilesianString.singleq) {
+	singleQSeen = true
+	
+      }
+      idx = milesianString.offsetByCodePoints(idx, 1)
+      count++
+    }
+
+    if ((singleQSeen) || (fractionSeen == false)) {
+      return true
+    } else {
+
+      
+      return false
+    }
+  }
+
+
+
+
+  String getFractionPart() {
+
+    int substrIdx = 0
+    int idx = 0
+    int codePoint = milesianString.codePointAt(idx)
+    int count = 0
+    System.err.println "getFractionPart: analyse " + cpMax + " code points."
+    while (count < (cpMax)) {
+      System.err.println "getFractionPart: get cp at " + idx + " for count " + count
+      codePoint = milesianString.codePointAt(idx)
+      System.err.println "getFractionPart: codepoint " + codePoint + " at idx " + idx + " w max " + cpMax
+      if (codePoint == MilesianString.singleq) {
+	System.err.println "\tfound s quote, so make substr idx " + idx
+	substrIdx = idx + 1
+      }
+      System.err.print "\tadvance idx to "
+      idx = milesianString.offsetByCodePoints(idx,1)
+      System.err.println idx
+      count++
+    }
+    System.err.println "getFrationPart: returning " + milesianString.substring(substrIdx, milesianString.length() )
+    return (milesianString.substring(substrIdx, milesianString.length() ))
+  }
+
   
-  boolean isValidCP(int codePt) {
+  /** Extracts integer component from a MilesianString
+   */
+  String getIntegerPart() {
+    int substrIdx = milesianString.offsetByCodePoints(milesianString.length() - 1, 1)
+    System.err.println "getIntegerPat: initial substridx is " + substrIdx
+    int idx = 0
+    int codePoint = milesianString.codePointAt(idx)
+    int count = 0
+    while (count < cpMax) {
+      codePoint = milesianString.codePointAt(idx)
+      System.err.println "Codepoint " + codePoint + " at idx " + idx + " w max " + cpMax
+      if (codePoint == MilesianString.singleq) {
+	System.err.println "\tfound s quote, so make substr idx " + idx
+	substrIdx = idx + 1
+      }
+      idx = milesianString.offsetByCodePoints(idx,1)
+      count++
+    }
+
+    System.err.println "getIntegerPart: get subsr from 0 to  " + substrIdx
+    return (milesianString.substring(0, substrIdx))
+  }
+
+  
+
+  /** Determines if codePt is a valid code point
+   * for a MilesianString.
+   * @parm codePt The code point to examine.
+   * @returns True if codePt is a valid code point.
+   */
+  static boolean isValidCP(int codePt) {
     if (digit.contains(codePt) || punct.contains(codePt) || fract.contains(codePt)) {
       return true
     } else {
       return false
     }
   }
-
-
-  int getFollowingCP(int i, StringBuffer buff) {
-    int nextIdx = buff.offsetByCodePoints(i,1)	
-    int cp = buff.codePointAt(nextIdx)
-    return(cp)
-  }
-
   
+  /** Constructor creating a MilesianString from a String value.
+   * @param srcString String representation of a MilesianString.
+   * @throws Exception if srcString is not valid.
+   */
   MilesianString(String srcString)
   throws Exception {
-    StringBuffer sb = new StringBuffer(srcString)
-    int max = sb.codePointCount(0, sb.length() - 1)
-    int idx = 0
-    int codePoint = sb.codePointAt(idx)
-    while (idx < max) {
-      codePoint = sb.codePointAt(idx)
-      if (! isValidCP(codePoint)) {
-	throw new Exception("MilesianString: invalid char at code point " + codePoint)
-      }
-      idx = sb.offsetByCodePoints(idx,1)
-    }
     this.milesianString = srcString
+    cpMax = milesianString.codePointCount(0, milesianString.length())
+    if (debug > 0) {
+      System.err.println "Consructor: ${cpMax} code points for " + milesianString
+    }
+    MilesianInteger mInt = null
+    MilesianFraction mFract = null
+    try {
+      mInt = new MilesianInteger(this.getIntegerPart())
+    } catch (Exception e) {
+      //throw e
+    }
+
+    try {
+      mFract = new MilesianFraction(this.getFractionPart())
+    } catch (Exception e) {
+    }
+
+    if ((mInt == null) && (mFract == null)) {
+      throw new Exception ("MilesianString: could not find a valid integer or fraction component")
+    }
   }
-  
 
-  /** Peeks ahead in a StringBuffer to find next code 
-   * point after i.
-   * @param buff StringBuffer to peek into.
-   * @param i Index to start looking from.
-   * @returns The next code point in buff, or null if 
-   * none found.
+
+  /** Constructor verifies that srcString, supplied in an identified
+   * system for encoding Greek, contains only valid characters
+   * for a MilesianString's underlying representation.
    */
-  int getFollowingCodePoint(StringBuffer buff, int i)
-  throws Exception {
-     int max = buff.codePointCount(0, buff.length() - 1)
-     int nextIdx = buff.offsetByCodePoints(i,1)
-     if (debug > 1) {
-       System.err.println ("Check for fnext cp at idx " + nextIdx + " compared to " + max)
-     }
-     if (nextIdx <= max) {
-       int cp = buff.codePointAt(nextIdx)
-       return(cp)
-     } else {
-       throw new Exception("MilesianString: code point beyond maximum count.")
-     }
-   }
+  MilesianString(String srcString, String greekMapping)  {
+    // to be added ...
+  }
 
-   
-   /** Determines if a String is contained in the list of
-    * valid MilesianString digits.
-    * @param digitCh A single Unicode character to test.
-    * @returns True if digitCh is in the list of 
-    * valid digit characters.
-    */
+  /** Determines if a String is contained in the list of
+   * valid MilesianString digits.
+   * @param digitCh A single Unicode character to test.
+   * @returns True if digitCh is in the list of 
+   * valid digit characters.
+   */
    static boolean isDigit(String digitCh) {
      StringBuffer buff = new StringBuffer(digitCh)
      int codePt = buff.codePointAt(0)
@@ -153,11 +270,24 @@ class MilesianString {
    }
 
 
+  /** Determines if a code point represents a character
+   * in the list of valid MilesianString digits.
+   * @param codePt Code point to examine.
+   * @returns True if codePt is in the list of 
+   * valid code points.
+   */
   static boolean isDigit(int codePt) {
      return (MilesianString.digit.contains(codePt))
   }
 
 
+
+  /** Determines if a code point represents a character
+   * in the list of valid MilesianString digits.
+   * @param codePt Code point to examine.
+   * @returns True if codePt is in the list of 
+   * valid code points.
+   */
   static boolean isDigit(Integer codePt) {
     return (MilesianString.digit.contains(codePt as int))
   }

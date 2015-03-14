@@ -23,4 +23,36 @@ public class MilesianStringTest extends ConcordionTestCase {
 	    MilesianString ms = new MilesianString(s);
 	    return ms.toString(true);
     }
+
+    public boolean isValid(String s) {
+	try {
+	    MilesianString ms = new MilesianString(s);
+	    return true;
+	} catch (Exception e) {
+	    return false;
+	}
+    }
+
+
+    public boolean hasIntegerPart(String s)
+    throws Exception {
+	MilesianString ms = new MilesianString(s);
+	return ms.hasIntegerPart();
+    }
+
+
+    
+    public String getIntegerPart(String s)
+    throws Exception {
+	MilesianString ms = new MilesianString(s);
+	return ms.getIntegerPart();
+    }
+
+
+    public String getFractionPart(String s)
+	throws Exception {
+	MilesianString ms = new MilesianString(s);
+	return ms.getFractionPart();
+    }
+	
 }
