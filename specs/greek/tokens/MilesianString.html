@@ -162,9 +162,9 @@ ins {
   font-size: 8pt;
 }
 </style><meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-</head><body><span class="breadcrumbs"><a href="../Greek.html">A computational system for Greek, version 0.0.2</a> &gt; <a href="Tokens.html">Digital representation of Greek text</a> &gt;</span>
+</head><body><span class="breadcrumbs"><a href="../Greek.html">A computational system for Greek, version 0.0.3</a> &gt; <a href="Tokens.html">Digital representation of Greek text</a> &gt;</span>
     <h1>MilesianStrings</h1>
-<p>MilesianStrings are composed exclusively of characters relevant for numeric notation in the "Milesian" system: 27 characters for digits representing unit values 1-9, the tens values 10-90 and the hundreds values 100-900;  a character for the value 10,000 (μυριάς); a special character representing zero or a null value (οὐδέν); two characters abbreviating the fractions 1/2 and 2/3; aand three punctuation characters used to distinguish integers from fractions, and to separate units of thousands from smaller units.</p>
+<p>MilesianStrings are composed exclusively of characters relevant for numeric notation in the "Milesian" system: 27 characters for digits representing unit values 1-9, the tens values 10-90 and the hundreds values 100-900;  a character for the value 10,000 (μυριάς); a special character representing zero or a null value (οὐδέν); two characters abbreviating the fractions 1/2 and 2/3; and three punctuation characters used to distinguish integers from fractions, and to separate units of thousands from smaller units.</p>
 <p>MilesianStrings are created from Strings by mapping Unicode code points on to the ancient Greek characters according to one of two mappings:</p>
 <ul>
 <li>a subset of the ancient Greek range of Unicode</li>
@@ -365,7 +365,18 @@ ins {
 </tr>
 </tbody>
 </table>
-<p>Two other characters are valid digits.  Unicode upper case Μ (U 039C ) represents the numeric value 10,000 (μυριάς),  while Unicode upper case Ο (U 039F) represents either a value of 0 or a null value (οὐδέν).</p>
+<p>Two other characters are valid digits:</p>
+<ul>
+<li>Unicode upper case Μ (U 039C ) represents the numeric value 10,000 (μυριάς)</li>
+<li>Unicode upper case Ο (U 039F) represents either a value of 0 or a null value (οὐδέν)</li>
+</ul>
+<h3>Other valid characters</h3>
+<p>Three non-digit characters are valid:</p>
+<ul>
+<li>The space (U 0020) is permitted anywhere in a String used to construct a MilesianString:  it has no value and is ignored;  output of a MilesianString object to a String uses the space between the integer and fractional components of the String to enhance readability.</li>
+<li>The single quote character marks the integer component of the string.<br /></li>
+<li>The double quote marks the fractional component.</li>
+</ul>
 <p><div class='example'></p>
 <h3>Examples</h3>
 <p>Lower case
@@ -379,9 +390,40 @@ with a numeric value of 40, while upper case <strong concordion:set="#ouden">Ο<
 is a <strong concordion:assertTrue="isDigit(#ouden)" class="success">valid digit</strong> character indicating either 0 or a null value.</p>
 <p></div></p>
 <h2>Syntax of MilesianStrings</h2>
-<p>The Milesian system is essentially a place value system with distinct places for units, tens and hundreds.  Because units, tens and hundreds use distinct character ranges, however, there is no need of a 0 character.  The order of units is right to left from smallest to largest.</p>
+<p>MilesianStrings may contain either or both of two components:  the first gives positive integers, the second gives fractional units.  If the string includes both components, the rightmost significant character of the integer component must be a single quote character, and the rightmost significant character of the fractional component must be a double quote character.  If the string consists only of a fractional component, the rightmost significant character must be a double quote character.  If the string consists only of an integer component, it may optionally include a single quote as the rightmost significant character.</p>
+<p><div class='example'></p>
+<h3>Examples: integer and fractional components</h3>
+<p>The string <strong concordion:set="#longstr">ε' 𐅵 δ"</strong>
+has two components. We can verify that it <strong concordion:assertTrue="hasIntegerPart(#longstr)" class="success">has an integer component</strong>, and determine that its integer component is <strong concordion:assertEquals="getIntegerPart(#longstr)" class="success">ε'</strong>, and its fractional component is <strong concordion:assertEquals="getFractionPart(#longstr)" class="success">𐅵 δ"</strong>.</p>
+<p>The string <strong concordion:set="#five">ε</strong> has only one component.  We can determine that it
+<strong concordion:assertTrue="hasIntegerPart(#five)" class="success">has an integer component</strong>, and that its integer component is
+<strong concordion:assertEquals="getIntegerPart(#five)" class="success">ε</strong>.</p>
+<p>The string <strong concordion:set="#third">γ"</strong> (1/3) has only one component.  We can determine that it
+<strong concordion:assertFalse="hasIntegerPart(#third)" class="success">does not have an integer component</strong>.</p>
+<p></div></p>
+<h3>Syntax of integer values &lt; 1,000</h3>
+<p>The Milesian system is essentially a place value system with distinct places for units, tens and hundreds.  Because units, tens and hundreds use distinct character ranges, however, there is no need of a 0 character.<br /></p>
+<p>The order of units is right to left from smallest to largest.</p>
+<p><div class='example'></p>
+<h3>Examples</h3>
+<p>The string <strong concordion:set="#ex365">τξε</strong> is a <strong concordion:assertTrue="isValid(#ex365)" class="success">valid string</strong> for the numeric value 365.</p>
+<p>The string <strong concordion:set="#ex365space">τ ξ ε</strong>  (including white spaces )is also a <strong concordion:assertTrue="isValid(#ex365space)" class="success">valid string</strong> since white space is not significant.</p>
+<p>The string <strong concordion:set="#ex305">τε</strong> (with no tens digit) is a <strong concordion:assertTrue="isValid(#ex305)" class="success">valid string</strong> for the numeric value 305.<br /></p>
+<p>The string <strong concordion:set="#badval">ετ</strong> is <strong concordion:assertFalse="isValid(#badval)" class="success">NOT valid</strong> since its digits are not ordered right to left from smallest value to largest value.</p>
+<p></div></p>
+<h3>Syntax of integer values in the range 1,000..9,999</h3>
+<p>For values of 1,000 - 9,000, the Milesian notation uses the same unit digits, but separated by a comma from the value &lt; 1,000.</p>
+<p><div class='example'></p>
+<h3>Examples</h3>
+<p>The string <strong concordion:set="#ex1001">α,α</strong> is a <strong concordion:assertTrue="isValid(#ex1001)" class="success">valid string</strong> for the numeric value 1001.</p>
+<p></div></p>
+<h3>Syntax of integer values in the range 9,999..19,999</h3>
+<p>The value 10,000 is represented by upper case mu, Μ, for myriad.</p>
 <p>values &gt; 10,000 to left of M</p>
 <p>values &lt; 1,000 separated by comma from 1,000 to 9,999</p>
+<p><div class='example'></p>
+<p>The string <strong concordion:set="#ex11001">Μα,α</strong> is a <strong concordion:assertTrue="isValid(#ex11001)" class="success">valid string</strong> for the numeric value 11,001.</p>
+<p></div></p>
 <h2>Fractions</h2>
 <p>chars represent unit fractions, plus two special ones:</p>
 <p>one half 𐅵
@@ -395,10 +437,15 @@ U 10177</p>
 <p>The one-half char
 <strong concordion:set="#half">𐅵</strong> appears not to be covered in the Epidoc
 transcoder:  it comes back unchanged from conversion to beta code as
-<strong concordion:assertEquals="toBetaCode(#half)" class="success">𐅵</strong>.</p>
+<strong assertEquals="toBetaCode(#half)">𐅵</strong>.</p>
 <p></div></p>
-<h2>ASCII-only representation</h2>
-<p>Upper-case ASCII characters used, please "#" Strings from TLG conventions.</p>
+<h2>ASCII-only representation of MilesianStrings</h2>
+<p>Upper-case ASCII characters used, plus three "#" strings from TLG conventions:</p>
+<ul>
+<li><code>#2</code> == ϛ (6)</li>
+<li><code>#3</code> == ϟ (90)</li>
+<li><code>#5</code> == ϡ (900)</li>
+</ul>
 <p><div class='example'></p>
 <h3>Examples: alphabetic characters</h3>
 <p>Converting alphabetic α to a String yields <strong concordion:assertEquals="toStr(#alpha)" class="success">α</strong>.  Asking for it in ASCII yields <strong concordion:assertEquals="toBetaCode(#alpha)" class="success">A</strong>.</p>
@@ -411,5 +458,5 @@ transcoder:  it comes back unchanged from conversion to beta code as
 <p>Converting the digit  <strong concordion:set="#dig900">ϡ</strong> (900) yields
 <strong concordion:assertEquals="toBetaCode(#dig900)" class="success">#5</strong>.</p>
 <p></div></p>
-<div class="footer">Results generated by <a href="http://www.concordion.org" style="font-weight: bold; text-decoration: none; color: #89C;">Concordion</a><div class="testTime">in 17 ms on 13-Mar-2015 at 04:57:39 EDT</div></div></body>
+<div class="footer">Results generated by <a href="http://www.concordion.org" style="font-weight: bold; text-decoration: none; color: #89C;">Concordion</a><div class="testTime">in 64 ms on 15-Mar-2015 at 05:52:22 EDT</div></div></body>
 </html>
