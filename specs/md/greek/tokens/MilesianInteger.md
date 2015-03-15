@@ -40,7 +40,7 @@ The string <strong concordion:set="#ex1001">α,α</strong> has the value
 ### Example: MAXINT in Milesian ###
 
 
-The string <strong concordion:set="#maxex">Μθ,ϡϟθ</strong> has the value 
+The string <strong concordion:set="#maxex">Μθ,ϡϙθ</strong> has the value 
 <strong concordion:assertEquals="milesianToInteger(#maxex)">19999</strong>.
 
 @closeex@

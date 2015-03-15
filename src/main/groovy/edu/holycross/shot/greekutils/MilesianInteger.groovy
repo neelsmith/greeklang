@@ -310,7 +310,7 @@ class MilesianInteger {
 
 
     // 3de
-    case 991:
+    case 985:
     return 90
     break
 
