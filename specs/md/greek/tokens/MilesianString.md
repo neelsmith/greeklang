@@ -359,7 +359,7 @@ semantics: sum of values of unit fractions
 The one-half char 
 <strong concordion:set="#half">𐅵</strong> appears not to be covered in the Epidoc
 transcoder:  it comes back unchanged from conversion to beta code as 
-<strong concordion:assertEquals="toBetaCode(#half)">𐅵</strong>.
+<strong assertEquals="toBetaCode(#half)">𐅵</strong>.
 
 
 @closeex@

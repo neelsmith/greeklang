@@ -17,7 +17,7 @@ The current draft aims to specify three kinds of token:  alphabetic text, number
 
 ## Specifications for the "Milesian" numeric notation ##
 
-The "Milesian" system of numeric notation borrowed glyphs from the alphabetic writing systems, including glyphs for 6, 90 and 900 drawn from epichoric alphabets, and lacking any corresponding character in the later literary Greek alphabet.
+The "Milesian" system of numeric notation borrowed glyphs from the alphabetic writing systems.  In addition glyphs from familiar from the standard literary Greek alphabet, these included glyphs for 6, 90 and 900 drawn from epichoric alphabets, and lacking any corresponding character in the later literary Greek alphabet.
 
 - Valid <a concordion:run="concordion" href="MilesianString.html">strings of characters</a>
 - Valid <a concordion:run="concordion" href="MilesianInteger.html">integers</a>

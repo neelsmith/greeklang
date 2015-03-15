@@ -9,7 +9,7 @@ import java.text.Normalizer.Form
  */
 class MilesianInteger {
 
-  Integer debug = 0
+  public Integer debug = 5
   
   // Temporary constructs for debugging:
   Integer SILENT = 0
@@ -52,12 +52,16 @@ class MilesianInteger {
       idx = str.offsetByCodePoints(idx,1)
       count++
     }
-    if (debug > 0) { System.err.println "Initialized to code points " + codePoints }
+    if (debug > 0) { System.err.println "Initialized to code points " + codePoints
+
+    }
 
     // validate by converting to integer:
     try {
       this.integerValue = MilesianInteger.toInteger(codePoints)
+      if (debug > 0) { System.err.println "Integer value " + this.integerValue }
     } catch (Exception e) {
+      System.err.println("MilesianInteger: exception forming integer from code points ${codePoints}")
       throw e
     }
     
@@ -75,7 +79,7 @@ class MilesianInteger {
       codePoint = sb.codePointAt(idx)
       if (codePoint == MilesianString.space) {
 	// ignore
-      } else if (MilesianString.isDigit(codePoint) || (codePoint == comma ))  {
+      } else if (MilesianString.isDigit(codePoint) || (codePoint == MilesianString.comma ))  {
 	codePoints.add(codePoint)
       } else {
 	throw new Exception("MilesianInteger: ${codePoint} is not a valid codepoint for a MilesianInteger.")
@@ -98,44 +102,74 @@ class MilesianInteger {
    */
   static Integer toInteger(ArrayList cpList)
   throws Exception {
-    def columns = ["myriad": "" ,"thousands": "","hundreds": "" ,"tens": "", "ones": ""]
+    Integer debug = 5
+    if (debug > 0) {
+      System.err.println "Converting cpList ${cpList} to integer"
+    }
+    def columns = ["myriad": false,"thousands": false,"hundreds": false ,"tens": false, "ones": false]
     
     Integer total = -1
     boolean inThousands = cpList.contains(MilesianString.comma)
+    
     cpList.each { cp ->
-      if (debug > 0) { System.err.println "examine cp ${cp} w total " + total} 
+      if (debug > 0) { System.err.println "examine cp ${cp} w total " + total + ", in thousands? " + inThousands} 
+
       switch (cp) {
+	
       case myriad:
       total = 10000;
-      if (columns["myriad"]) {
+      if (columns["myriad"] || columns["thousands"] || columns["hundreds"] || columns["tens"] || columns["ones"]) {
 	throw new Exception("MilesianInteger: invalid syntax")
       }
       columns["myriad"] = true
       break
       
-      case comma:
+      case MilesianString.comma:
       inThousands = false
       break
 
       default:
       Integer cpValue = MilesianInteger.getDigitValue(cp)
+      if (debug > 0) { System.err.println "Value for digit is ${cpValue}"}
       if (inThousands) {
 	// ERROR IF cpValue > 9 !
 	if (cpValue > 9) {
 	  throw new Exception("MilesianInteger: bad syntax, digit for value ${cpValue} not allowed here")
 	}
 	cpValue = cpValue *1000
-	if (columns["throusands"]) { // ALSO CHECK TOTAL...?
+	if (columns["thousands"] || columns["hundreds"] || columns["tens"] || columns["ones"]) {
 	  throw new Exception("MilesianInteger: invalid syntax")
 	}
-	
 	columns["thousands"] = true
-      }
+      } else {
+	if (debug > 0) {System.println "Checking below thousand with value ${cpValue}"}
+	if (cpValue > 99) {
+	  if (debug > 0) {
+	    System.err.println "cpValue > 0, so test expr: "
+	    System.err.println "true? " +   (columns["hundreds"] || columns["tens"] || columns["ones"]) 
+	}
+	  if (columns["hundreds"] || columns["tens"] || columns["ones"]) {
+	    if (debug > 0) { System.err.println "Throw an EXCEPTION!"}
+	    throw new Exception("MilesianInteger: invalid syntax")
+	  }
+	  columns["hundreds"] = true
+	
+	} else if (cpValue > 9) {
+	  if (columns["tens"] || columns["ones"]) {
+	    throw new Exception("MilesianInteger: invalid syntax")
+	  }
+	  columns["tens"] = true
 
-      //switch on cpValue:
-      // > 99
-      // > 9
-      // > 0
+	} else if (cpValue > 0) {
+	  if (debug > 0) {
+	    System.err.println "cpValue > 0"
+	  }
+	  if (columns["ones"]) {
+	    throw new Exception("MilesianInteger: invalid syntax")
+	  }
+	  columns["ones"] = true
+	}
+      }
       if (total == -1) {
 	total = cpValue
       } else {
@@ -143,14 +177,15 @@ class MilesianInteger {
       }
       break
       }
-      
     }
+      
     if (total == -1) {
       throw new Exception("MilesianString: not a valid integer value.")
     } else {
       return total
     }
   }
+    
 
   /** Determines Integer value for a single
    * digit character identified by Unicode

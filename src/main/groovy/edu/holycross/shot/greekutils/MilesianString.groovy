@@ -158,26 +158,40 @@ class MilesianString {
 
   String getFractionPart() {
 
-    int substrIdx = 0
+    int substrIdx = -1
     int idx = 0
     int codePoint = milesianString.codePointAt(idx)
     int count = 0
-    System.err.println "getFractionPart: analyse " + cpMax + " code points."
+    if (debug > 0) {
+      System.err.println "getFractionPart: analyse " + cpMax + " code points."
+    }
     while (count < (cpMax)) {
-      System.err.println "getFractionPart: get cp at " + idx + " for count " + count
+      if (debug > 0) { System.err.println "getFractionPart: get cp at " + idx + " for count " + count }
       codePoint = milesianString.codePointAt(idx)
-      System.err.println "getFractionPart: codepoint " + codePoint + " at idx " + idx + " w max " + cpMax
+      if (debug > 0) { System.err.println "getFractionPart: codepoint " + codePoint + " at idx " + idx + " w max " + cpMax }
       if (codePoint == MilesianString.singleq) {
-	System.err.println "\tfound s quote, so make substr idx " + idx
+	if (debug > 0) { System.err.println "\tfound s quote, so make substr idx " + idx}
 	substrIdx = idx + 1
       }
-      System.err.print "\tadvance idx to "
+
+      if (codePoint == MilesianString.doubleq) {
+	if (substrIdx == - 1) {
+	  substrIdx = 0
+	}
+      }
+      
+      if (debug >  0) { System.err.print "\tadvance idx to "}
       idx = milesianString.offsetByCodePoints(idx,1)
-      System.err.println idx
+      if (debug > 0)  { System.err.println idx}
       count++
     }
-    System.err.println "getFrationPart: returning " + milesianString.substring(substrIdx, milesianString.length() )
-    return (milesianString.substring(substrIdx, milesianString.length() ))
+    if (substrIdx == -1) {
+      if (debug > 0) { System.err.println "NO fraction part."}
+      throw new Exception("MilesianString: no fraction part")
+    } else {
+      if (debug  > 0) { System.err.println "getFrationPart: returning " + milesianString.substring(substrIdx, milesianString.length() )}
+      return (milesianString.substring(substrIdx, milesianString.length() ))
+    }
   }
 
   
@@ -185,22 +199,22 @@ class MilesianString {
    */
   String getIntegerPart() {
     int substrIdx = milesianString.offsetByCodePoints(milesianString.length() - 1, 1)
-    System.err.println "getIntegerPat: initial substridx is " + substrIdx
+    if (debug > 0) {System.err.println "getIntegerPat: initial substridx is " + substrIdx}
     int idx = 0
     int codePoint = milesianString.codePointAt(idx)
     int count = 0
     while (count < cpMax) {
       codePoint = milesianString.codePointAt(idx)
-      System.err.println "Codepoint " + codePoint + " at idx " + idx + " w max " + cpMax
+      if (debug > 0) { System.err.println "Codepoint " + codePoint + " at idx " + idx + " w max " + cpMax}
       if (codePoint == MilesianString.singleq) {
-	System.err.println "\tfound s quote, so make substr idx " + idx
+	if (debug > 0) { System.err.println "\tfound s quote, so make substr idx " + idx }
 	substrIdx = idx + 1
       }
       idx = milesianString.offsetByCodePoints(idx,1)
       count++
     }
 
-    System.err.println "getIntegerPart: get subsr from 0 to  " + substrIdx
+    if (debug > 0) { System.err.println "getIntegerPart: get subsr from 0 to  " + substrIdx}
     return (milesianString.substring(0, substrIdx))
   }
 
@@ -236,15 +250,21 @@ class MilesianString {
       mInt = new MilesianInteger(this.getIntegerPart())
     } catch (Exception e) {
       //throw e
+      System.err.println "NO INTEGER"
+      mInt = null
     }
 
     try {
       mFract = new MilesianFraction(this.getFractionPart())
     } catch (Exception e) {
+      mFract = null
     }
 
     if ((mInt == null) && (mFract == null)) {
-      throw new Exception ("MilesianString: could not find a valid integer or fraction component")
+      System.err.println "MilesianString: could not find a valid integer or fraction component in " + srcString
+      throw new Exception ("MilesianString: could not find a valid integer or fraction component in ${srcString}")
+    } else {
+    System.err.println "NO PROBLEM"
     }
   }
 
