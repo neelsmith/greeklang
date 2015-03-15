@@ -1,9 +1,11 @@
 # MilesianIntegers
 
 
-Convert from MilesianString with simple integer to Integer.
+In addition to verifiying the syntax of the integer portion of a MilesianString, the
+MilesianInteger class can convert the integer portion of a MilesianString to an integer value.
 
-Convert individual digits.
+The current specification defines syntax for positive integers up to a maximum value of 19,999.
+
 
 @openex@
 ### Example: individual digits ###

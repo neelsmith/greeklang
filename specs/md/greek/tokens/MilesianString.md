@@ -147,8 +147,8 @@ MilesianStrings may be constructed from the following lower-case Unicode charact
 </tr>
 <tr>
 	<td style="text-align:left;">90</td>
-	<td style="text-align:left;">U 03DF</td>
-	<td style="text-align:left;">ϟ</td>
+	<td style="text-align:left;">U 03D9</td>
+	<td style="text-align:left;">ϙ</td>
 </tr>
 </tbody>
 </table>
@@ -370,7 +370,7 @@ transcoder:  it comes back unchanged from conversion to beta code as
 Upper-case ASCII characters used, plus three "#" strings from TLG conventions:
 
 - `#2` == ϛ (6)
-- `#3` == ϟ (90)
+- `#3` ==  ϙ (90)
 - `#5` == ϡ (900)
 
 @openex@
@@ -392,7 +392,7 @@ Converting alphabetic α to a String yields <strong concordion:assertEquals="toS
 Converting the digit <strong concordion:set="#dig6">ϛ</strong>  (6) to ASCII yields
 <strong concordion:assertEquals="toBetaCode(#dig6)">#2</strong>.
 
-Converting the digit  <strong concordion:set="#dig90">ϟ</strong> (90) should yield `#3` but does not.
+Converting the digit  <strong concordion:set="#dig90">ϙ</strong> (90) to ASCII yields <strong concordion:assertEquals="toBetaCode(#dig90)">#3</strong>
 
 
 Converting the digit  <strong concordion:set="#dig900">ϡ</strong> (900) yields
