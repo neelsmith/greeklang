@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?><html xmlns:concordion="http://www.concordion.org/2007/concordion"><head><style>* {
+  font-family: Arial;
+}
+body {
+  padding: 32px;  
+}
+pre {
+  padding: 6px 28px 6px 28px;
+  background-color: #E8EEF7;
+}
+pre, pre *, code, code *, kbd {
+  font-family: Courier New, Courier;
+  font-size: 10pt;
+}
+h1, h1 * {
+  font-size: 24pt;	
+}
+p, td, th, li, .breadcrumbs {
+  font-size: 10pt;
+}
+p, li {
+  line-height: 140%;
+  max-width: 720px;
+}
+table {
+  border-collapse: collapse;
+  empty-cells: show;
+  margin: 8px 0px 8px 0px;
+}
+th, td {
+  border: 1px solid black;
+  padding: 3px;
+}
+td {
+  background-color: white;
+  vertical-align: top;
+}
+th {
+  background-color: #C3D9FF;
+}
+li {
+  margin-top: 6px;
+  margin-bottom: 6px; 
+}
+
+.example {
+  padding: 6px 16px 6px 16px;
+  border: 1px solid #C3D9FF;
+  margin: 6px 0px 28px 0px;
+  background-color: #F5F9FD;
+}
+.example h3 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 12pt;
+}
+
+p.success {
+  padding: 2px;
+}
+.success, .success * {
+  background-color: #afa !important;
+}
+.success pre {
+  background-color: #bbffbb;
+}
+.failure, .failure * {
+  background-color: #ffb0b0;
+  padding: 1px;
+}
+.failure .expected {
+  text-decoration: line-through;
+  color: #bb5050;
+}
+.ignored, .ignored * {
+  background-color: #f0f0f0 !important;	
+}
+
+ins {
+  text-decoration: none;	
+}
+
+.exceptionMessage {
+  background-color: #fdd;
+  font-family: Courier New, Courier, Monospace;
+  font-size: 10pt;
+  display: block;
+  font-weight: normal;
+  padding: 4px;
+  text-decoration: none !important;
+}
+.stackTrace, .stackTrace * {
+  font-weight: normal;
+}
+.stackTrace {
+  display: none;
+  padding: 1px 4px 4px 4px;
+  background-color: #fdd;
+  border-top: 1px dotted black;
+}
+.stackTraceExceptionMessage {
+  display: block;
+  font-family: Courier New, Courier, Monospace;
+  font-size: 8pt;
+  white-space: wrap;
+  padding: 1px 0px 1px 0px;
+}
+.stackTraceEntry {
+  white-space: nowrap;
+  font-family: Courier New, Courier, Monospace;
+  display: block;
+  font-size: 8pt;
+  padding: 1px 0px 1px 32px;
+}
+.stackTraceButton {
+  font-size: 8pt;
+  margin: 2px 8px 2px 0px;
+  font-weight: normal;
+  font-family: Arial;
+}
+
+.special {
+  font-style: italic;
+}
+.missing, .missing * {
+  background-color: #ff9999;
+  color:#bb5050;
+  text-decoration: line-through;
+}
+.surplus, .surplus * {
+  background-color: #ff9999;
+}
+.footer {
+  text-align: right;
+  margin-top: 40px;
+  font-size: 8pt;
+  width: 100%;
+  color: #999;
+}
+.footer .testTime {
+  padding: 2px 10px 0px 0px;
+}
+
+.idea {
+  font-size: 9pt;
+  color: #888;
+  font-style: italic;	
+}
+.tight li {
+  margin-top: 1px;
+  margin-bottom: 1px; 
+}
+.commentary {
+  float: right;
+  width: 200px;
+  background-color: #ffffd0;
+  padding:8px;
+  border: 3px solid #eeeeb0;	 
+  margin: 10px 0px 10px 10px;	 
+}
+.commentary, .commentary * {
+  font-size: 8pt;
+}
+</style><meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+</head><body><span class="breadcrumbs"><a href="../../Greek.html">A computational system for Greek, version 0.0.3</a> &gt; <a href="../Tokens.html">Digital representation of Greek text</a> &gt; <a href="Milesian.html">MilesianStrings</a> &gt;</span>
+    <h1>Syntax of MilesianStrings</h1>
+<p>MilesianStrings may contain either or both of two components:  the first gives positive integers, the second gives fractional units.  If the string includes both components, the rightmost significant character of the integer component must be a single quote character, and the rightmost significant character of the fractional component must be a double quote character.  If the string consists only of a fractional component, the rightmost significant character must be a double quote character.  If the string consists only of an integer component, it may optionally include a single quote as the rightmost significant character.</p>
+<p>Within the integer component, white space is not significant:  only digit characters and the comma indicating the place column of thousands digits are considered in computing an integer value.</p>
+<p>Fractional expresssions represent a sum of unit fractions.  White space separates unit fractions that should be added together.</p>
+<p><div class='example'></p>
+<h3>Examples: integer and fractional components</h3>
+<p>The string <strong concordion:set="#longstr">ε' 𐅵 δ"</strong>
+has two components. We can verify that it <strong concordion:assertTrue="hasIntegerPart(#longstr)" class="success">has an integer component</strong>, and determine that its integer component is <strong concordion:assertEquals="getIntegerPart(#longstr)" class="success">ε'</strong>, and its fractional component is <strong concordion:assertEquals="getFractionPart(#longstr)" class="success">𐅵 δ"</strong>.</p>
+<p>The string <strong concordion:set="#five">ε</strong> has only one component.  We can determine that it
+<strong concordion:assertTrue="hasIntegerPart(#five)" class="success">has an integer component</strong>, and that its integer component is
+<strong concordion:assertEquals="getIntegerPart(#five)" class="success">ε</strong>.</p>
+<p>The string <strong concordion:set="#third">γ"</strong> (1/3) has only one component.  We can determine that it
+<strong concordion:assertFalse="hasIntegerPart(#third)" class="success">does not have an integer component</strong>.</p>
+<p></div></p>
+<h2>Syntax of individual components</h2>
+<ul>
+<li><a concordion:run="concordion" href="MilesianIntegerSyntax.html" class="success">Syntax of integer component</a></li>
+<li><a concordion:run="concordion" href="MilesianFractionSyntax.html" class="success">Syntax of fractional component</a></li>
+</ul>
+<h2>Syntax of integer values</h2>
+<h3>Integer values &lt; 1,000</h3>
+<p>The Milesian system is essentially a place value system with distinct places for units, tens and hundreds.  Because units, tens and hundreds use distinct character ranges, however, there is no need of a 0 character.<br /></p>
+<p>The order of units is right to left from smallest to largest.</p>
+<p><div class='example'></p>
+<h3>Examples</h3>
+<p>The string <strong concordion:set="#ex365">τξε</strong> is a <strong concordion:assertTrue="isValid(#ex365)" class="success">valid string</strong> for the numeric value 365.</p>
+<p>The string <strong concordion:set="#ex365space">τ ξ ε</strong>  (including white spaces )is also a <strong concordion:assertTrue="isValid(#ex365space)" class="success">valid string</strong> since white space is not significant.</p>
+<p>The string <strong concordion:set="#ex305">τε</strong> (with no tens digit) is a <strong concordion:assertTrue="isValid(#ex305)" class="success">valid string</strong> for the numeric value 305.<br /></p>
+<p>The string <strong concordion:set="#badval">ετ</strong> is <strong concordion:assertFalse="isValid(#badval)" class="success">NOT valid</strong> since its digits are not ordered right to left from smallest value to largest value.</p>
+<p></div></p>
+<h3>Integer values in the range 1,000..9,999</h3>
+<p>For values of 1,000 - 9,000, the Milesian notation uses the same unit digits, but separated by a comma from the value &lt; 1,000.</p>
+<p><div class='example'></p>
+<h3>Examples</h3>
+<p>The string <strong concordion:set="#ex1001">α,α</strong> is a <strong concordion:assertTrue="isValid(#ex1001)" class="success">valid string</strong> for the numeric value 1001.</p>
+<p></div></p>
+<h3>Integer values in the range 9,999..19,999</h3>
+<p>The value 10,000 is represented by upper case mu, Μ, for myriad.</p>
+<p>values &gt; 10,000 to left of M</p>
+<p>values &lt; 1,000 separated by comma from 1,000 to 9,999</p>
+<p><div class='example'></p>
+<p>The string <strong concordion:set="#ex11001">Μα,α</strong> is a <strong concordion:assertTrue="isValid(#ex11001)" class="success">valid string</strong> for the numeric value 11,001.</p>
+<p></div></p>
+<h2>Fractions</h2>
+<p>chars represent unit fractions, plus two special ones:</p>
+<p>one half 𐅵
+U 10175</p>
+<p>two thirds 𐅷
+U 10177</p>
+<p>syntax of string: separated by markers in continuous string</p>
+<p>semantics: sum of values of unit fractions</p>
+<p><div class='example'></p>
+<h3>Examples: fractions</h3>
+<p>A value corresponding to 7/12 is expressed as 1/2 + 1/7.</p>
+<p>This could be done as β ιζ"</p>
+<p>The one-half char
+<strong concordion:set="#half">𐅵</strong> appears not to be covered in the Epidoc
+transcoder:  it comes back unchanged from conversion to beta code as
+<strong assertEquals="toBetaCode(#half)">𐅵</strong>.</p>
+<p></div></p>
+<div class="footer">Results generated by <a href="http://www.concordion.org" style="font-weight: bold; text-decoration: none; color: #89C;">Concordion</a><div class="testTime">in 86 ms on 16-Mar-2015 at 17:30:02 EDT</div></div></body>
+</html>
