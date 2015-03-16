@@ -1,4 +1,5 @@
-# MilesianStrings
+# Valid characters in MilesianStrings
+
 
 MilesianStrings are composed exclusively of characters relevant for numeric notation in the "Milesian" system: 27 characters for digits representing unit values 1-9, the tens values 10-90 and the hundreds values 100-900;  a character for the value 10,000 (μυριάς); a special character representing zero or a null value (οὐδέν); two characters abbreviating the fractions 1/2 and 2/3; and three punctuation characters used to distinguish integers from fractions, and to separate units of thousands from smaller units.
 
@@ -9,10 +10,7 @@ MilesianStrings are created from Strings by mapping Unicode code points on to th
 
 
 
-## Constructing MilesianStrings ##
-
-
-### Valid digit characters ###
+## Valid digit characters ##
 
 
 
@@ -234,7 +232,7 @@ Two other characters are valid digits:
 
 Three non-digit characters are valid:
 
-- The space (U 0020) is permitted anywhere in a String used to construct a MilesianString:  it has no value and is ignored;  output of a MilesianString object to a String uses the space between the integer and fractional components of the String to enhance readability.
+- The space (U 0020) is permitted anywhere in the integer component of a MilesianStringa String used to construct a MilesianString:  it has no value and is ignored;  output of a MilesianString object to a String uses the space between the integer and fractional components of the String to enhance readability.
 - The single quote character marks the integer component of the string.  
 - The double quote marks the fractional component.
 
@@ -256,148 +254,3 @@ is a <strong concordion:assertTrue="isDigit(#ouden)">valid digit</strong> charac
 @closeex@
 
 
-
-## Syntax of MilesianStrings##
-
-MilesianStrings may contain either or both of two components:  the first gives positive integers, the second gives fractional units.  If the string includes both components, the rightmost significant character of the integer component must be a single quote character, and the rightmost significant character of the fractional component must be a double quote character.  If the string consists only of a fractional component, the rightmost significant character must be a double quote character.  If the string consists only of an integer component, it may optionally include a single quote as the rightmost significant character.
-
-
-@openex@
-### Examples: integer and fractional components ###
-
-The string <strong concordion:set="#longstr">ε' 𐅵 δ"</strong>
-has two components. We can verify that it <strong concordion:assertTrue="hasIntegerPart(#longstr)">has an integer component</strong>, and determine that its integer component is <strong concordion:assertEquals="getIntegerPart(#longstr)">ε'</strong>, and its fractional component is <strong concordion:assertEquals="getFractionPart(#longstr)">𐅵 δ"</strong>.
-
-The string <strong concordion:set="#five">ε</strong> has only one component.  We can determine that it
-<strong concordion:assertTrue="hasIntegerPart(#five)">has an integer component</strong>, and that its integer component is 
-<strong concordion:assertEquals="getIntegerPart(#five)">ε</strong>.
-
-The string <strong concordion:set="#third">γ"</strong> (1/3) has only one component.  We can determine that it
-<strong concordion:assertFalse="hasIntegerPart(#third)">does not have an integer component</strong>.
-
-
-
-@closeex@
-
-### Syntax of integer values < 1,000 ###
-
-
-The Milesian system is essentially a place value system with distinct places for units, tens and hundreds.  Because units, tens and hundreds use distinct character ranges, however, there is no need of a 0 character.  
-
-The order of units is right to left from smallest to largest.
-
-@openex@
-### Examples ###
-
-The string <strong concordion:set="#ex365">τξε</strong> is a <strong concordion:assertTrue="isValid(#ex365)">valid string</strong> for the numeric value 365.
-
-
-The string <strong concordion:set="#ex365space">τ ξ ε</strong>  (including white spaces )is also a <strong concordion:assertTrue="isValid(#ex365space)">valid string</strong> since white space is not significant.
-
-The string <strong concordion:set="#ex305">τε</strong> (with no tens digit) is a <strong concordion:assertTrue="isValid(#ex305)">valid string</strong> for the numeric value 305.  
-
-The string <strong concordion:set="#badval">ετ</strong> is <strong concordion:assertFalse="isValid(#badval)">NOT valid</strong> since its digits are not ordered right to left from smallest value to largest value.
-
-@closeex@
-
-### Syntax of integer values in the range 1,000..9,999 ###
-
-
-For values of 1,000 - 9,000, the Milesian notation uses the same unit digits, but separated by a comma from the value < 1,000.
-
-
-@openex@
-
-### Examples ###
-
-The string <strong concordion:set="#ex1001">α,α</strong> is a <strong concordion:assertTrue="isValid(#ex1001)">valid string</strong> for the numeric value 1001.
-
-
-@closeex@
-
-### Syntax of integer values in the range 9,999..19,999 ###
-
-The value 10,000 is represented by upper case mu, Μ, for myriad.
-
-
-
-values > 10,000 to left of M
-
-values < 1,000 separated by comma from 1,000 to 9,999
-
-
-@openex@
-
-
-The string <strong concordion:set="#ex11001">Μα,α</strong> is a <strong concordion:assertTrue="isValid(#ex11001)">valid string</strong> for the numeric value 11,001.
-
-
-@closeex@
-
-
-
-## Fractions ##
-
-chars represent unit fractions, plus two special ones:
-
-one half 𐅵
-U 10175
-
-two thirds 𐅷
-U 10177
-
-syntax of string: separated by markers in continuous string
-
-
-semantics: sum of values of unit fractions
-
-
-@openex@
-
-### Examples: fractions
-
-The one-half char 
-<strong concordion:set="#half">𐅵</strong> appears not to be covered in the Epidoc
-transcoder:  it comes back unchanged from conversion to beta code as 
-<strong assertEquals="toBetaCode(#half)">𐅵</strong>.
-
-
-@closeex@
-
-
-## ASCII-only representation of MilesianStrings##
-
-Upper-case ASCII characters used, plus three "#" strings from TLG conventions:
-
-- `#2` == ϛ (6)
-- `#3` ==  ϙ (90)
-- `#5` == ϡ (900)
-
-@openex@
-
-
-
-### Examples: alphabetic characters ###
-
-
-Converting alphabetic α to a String yields <strong concordion:assertEquals="toStr(#alpha)">α</strong>.  Asking for it in ASCII yields <strong concordion:assertEquals="toBetaCode(#alpha)">A</strong>.
-
-
-@closeex@
-
-@openex@
-
-### Examples: numeric digits
-
-Converting the digit <strong concordion:set="#dig6">ϛ</strong>  (6) to ASCII yields
-<strong concordion:assertEquals="toBetaCode(#dig6)">#2</strong>.
-
-Converting the digit  <strong concordion:set="#dig90">ϙ</strong> (90) to ASCII yields <strong concordion:assertEquals="toBetaCode(#dig90)">#3</strong>
-
-
-Converting the digit  <strong concordion:set="#dig900">ϡ</strong> (900) yields
-<strong concordion:assertEquals="toBetaCode(#dig900)">#5</strong>.
-
-
-
-@closeex@ 

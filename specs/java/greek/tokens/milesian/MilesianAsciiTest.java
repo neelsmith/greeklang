@@ -1,11 +1,11 @@
-package greek.tokens;
+package greek.tokens.milesian;
 
 
 import org.concordion.integration.junit3.ConcordionTestCase;
 
 import edu.holycross.shot.greekutils.MilesianString;
 
-public class MilesianStringTest extends ConcordionTestCase {
+public class MilesianAsciiTest extends ConcordionTestCase {
 
     public boolean isDigit(String str) {
 	return MilesianString.isDigit(str);

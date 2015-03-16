@@ -1,4 +1,4 @@
-package greek.tokens;
+package greek.tokens.milesian;
 
 
 import org.concordion.integration.junit3.ConcordionTestCase;
