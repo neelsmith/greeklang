@@ -39,6 +39,17 @@ class MilesianFraction {
   /** The string in beta code form.*/
   String milesianString
 
+
+  /** Transcription as an expression for sum of unit fractions in
+   * Arabic numbers.   */
+  public String transcription
+
+
+  BigDecimal fractionValue
+
+
+
+  
   /** Constructor verifies that srcString, supplied in an identified
    * system for encoding Greek, contains only valid characters
    * for a MilesianString's underlying beta-code representation.
@@ -47,6 +58,17 @@ class MilesianFraction {
     // to be added...
     }*/
 
+
+
+  BigDecimal getFractionValue() {
+    return getFractionValue(3)  
+  }
+  
+  BigDecimal getFractionValue(Integer places) {
+    Integer placeFactor =  10**places
+    return (Math.round(fractionValue * placeFactor) / placeFactor)
+  }
+  
   /** Constructor verifies that srcSring contains only valid characters
    * for beta-code representation.
    * @param srcString Greek string, in beta code.
@@ -54,21 +76,28 @@ class MilesianFraction {
    */
   MilesianFraction(String srcString) 
   throws Exception {
+    this.transcription = ""
     // check for initialize abbr. char
     String initializeString
     if (srcString.codePointCount(0,srcString.length()) < srcString.length()) {
-
       // convert abbrs to convetional unit fraction form:
       int cp = srcString.codePointAt(0)
-      System.err.println "Check initialize code point ${cp}"
+      if (debug > 0 )  { System.err.println "Check initialize code point ${cp}"}
+
+      
       switch (cp) {
       case 65909:
-      System.err.println "Initial char is 1/2"
+      if (debug > 0) { System.err.println "Initial char is 1/2"}
+      
       initializeString = "β "
+      transcription = "1/2"
+      fractionValue = 1 / 2
       break
       
       case 65911:
       initializeString = "β ϛ "
+      transcription = "1/2 + 1/6"
+      fractionValue = (1/2)  + (1/6)
       break
 
       default:
@@ -91,18 +120,21 @@ class MilesianFraction {
     // check syntax for order:
     unitFracts.each { unit ->
       if (debug > 0) { System.err.println "MilesianFraction: checking unit " + unit}
-      // special case abbrs!
       unit = unit.replaceAll(/"/, '')
       
       MilesianInteger mInt = new MilesianInteger(unit)
+      if (transcription == "") {
+	transcription = "1/${mInt.integerValue}"
+	fractionValue = 1 / mInt.integerValue
+	
+      } else {
+	transcription = transcription + " + 1/${mInt.integerValue}"
+	fractionValue += 1 / mInt.integerValue
+      }
+
       if (largestSoFar == 0) {
-	if (unit == "𐅵") {
-	  largestSoFar = 2
-	} else if (unit == "𐅷") {
-	  largestSoFar = 3
-	} else {
 	  largestSoFar = mInt.integerValue
-	}
+
 
       } else {
 	// denominators must increase:
@@ -110,7 +142,11 @@ class MilesianFraction {
 	  throw new Exception("MilesianFraction: syntax error in ${srcString}")
 	}
       }
+
     }
   }
+
+
+
 
 }
