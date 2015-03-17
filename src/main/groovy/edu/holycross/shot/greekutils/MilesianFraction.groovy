@@ -9,6 +9,9 @@ import java.text.Normalizer.Form
  */
 class MilesianFraction {
 
+  Integer debug = 5
+
+  
   // Temporary constructs for debugging:
   Integer SILENT = 0
   Integer WARN =  1
@@ -28,6 +31,11 @@ class MilesianFraction {
   ]
 
 
+  /** Ordered list of individual unit fractions
+   * expressed as integers giving the denominator.
+   */
+  ArrayList unitFracts = []
+  
   /** The string in beta code form.*/
   String milesianString
 
@@ -35,26 +43,9 @@ class MilesianFraction {
    * system for encoding Greek, contains only valid characters
    * for a MilesianString's underlying beta-code representation.
    */
-  MilesianFraction(String srcString, String greekMapping)  {
-    /*
-    TransCoder xcoder = new TransCoder()
-    xcoder.setParser(greekMapping)
-    xcoder.setConverter("BetaCode")
-    
-    Integer count = 0
-    String betaString = xcoder.getString(srcString).toLowerCase()
-    betaString = betaString.replaceAll("s1","s")
-    while (count < betaString.length() - 1) {
-      if (!(isValidChar(betaString.substring(count,count+1)))) {
-	System.err.println "Error parsing ${betaString}: failed on ${betaString.substring(count,count+1)} (char ${count})"
-	System.err.println "GreekString:constructor with ${greekMapping} invalid character at position ${count}:  '" + betaString.substring(count,count+1) + "'"
-	throw new Exception("GreekString:constructor with ${greekMapping} invalid character at position ${count}:  '" + betaString.substring(count,count+1) + "'")
-      }
-      count++
-    }
-    this.greekString = betaString
-    */
-  }
+/*  MilesianFraction(String srcString, String greekMapping)  {
+    // to be added...
+    }*/
 
   /** Constructor verifies that srcSring contains only valid characters
    * for beta-code representation.
@@ -63,19 +54,63 @@ class MilesianFraction {
    */
   MilesianFraction(String srcString) 
   throws Exception {
-    /*
-    Integer count = 0
-    String betaString = srcString.toLowerCase()
-    while (count < betaString.length() - 1) {
-      if (!(isValidChar(betaString.substring(count,count+1)))) {
-	System.err.println "Error parsing ${betaString}: failed on ${betaString.substring(count,count+1)} (char ${count})"
-	throw new Exception("GreekString: invalid characer ${betaString.substring(count,count+1)}")
-      }
-      count++
-    }
-    this.greekString = betaString
-    */
-  }
+    // check for initialize abbr. char
+    String initializeString
+    if (srcString.codePointCount(0,srcString.length()) < srcString.length()) {
 
+      // convert abbrs to convetional unit fraction form:
+      int cp = srcString.codePointAt(0)
+      System.err.println "Check initialize code point ${cp}"
+      switch (cp) {
+      case 65909:
+      System.err.println "Initial char is 1/2"
+      initializeString = "β "
+      break
+      
+      case 65911:
+      initializeString = "β ϛ "
+      break
+
+      default:
+      // throw Exception
+      break
+      }
+      
+      // offset to second code point:
+      int startIdx = srcString.offsetByCodePoints(0,1)
+      initializeString = initializeString + srcString.subSequence(startIdx,srcString.length())
+      
+    } else {
+      initializeString = srcString
+    }
+
+    
+    this.unitFracts = initializeString.split(/[ ]+/)
+    // throw out " marker
+    Integer largestSoFar = 0
+    // check syntax for order:
+    unitFracts.each { unit ->
+      if (debug > 0) { System.err.println "MilesianFraction: checking unit " + unit}
+      // special case abbrs!
+      unit = unit.replaceAll(/"/, '')
+      
+      MilesianInteger mInt = new MilesianInteger(unit)
+      if (largestSoFar == 0) {
+	if (unit == "𐅵") {
+	  largestSoFar = 2
+	} else if (unit == "𐅷") {
+	  largestSoFar = 3
+	} else {
+	  largestSoFar = mInt.integerValue
+	}
+
+      } else {
+	// denominators must increase:
+	if (mInt.integerValue <= largestSoFar) {
+	  throw new Exception("MilesianFraction: syntax error in ${srcString}")
+	}
+      }
+    }
+  }
 
 }

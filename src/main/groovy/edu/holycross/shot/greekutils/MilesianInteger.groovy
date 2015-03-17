@@ -23,6 +23,8 @@ class MilesianInteger {
    * in the source string. */
   public ArrayList codePoints = []
 
+
+  /** Value of the MilesianInteger as an Integer */
   Integer integerValue
 
   /** Decimal codepoint for upper-case mu */

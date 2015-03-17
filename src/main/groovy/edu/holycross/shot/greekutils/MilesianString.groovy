@@ -97,6 +97,14 @@ class MilesianString {
   /** The string in unicode form.*/
   String milesianString
 
+  /** The integer component as a MilesianInteger object. */
+  MilesianInteger mInt
+
+  /** The fractional component as a MilesianFraction object. */
+  MilesianFraction mFract
+
+
+  
   /** Number of Unicode code points in milesianString. */
   int cpMax
   
@@ -244,13 +252,12 @@ class MilesianString {
     if (debug > 0) {
       System.err.println "Consructor: ${cpMax} code points for " + milesianString
     }
-    MilesianInteger mInt = null
-    MilesianFraction mFract = null
+
     try {
       mInt = new MilesianInteger(this.getIntegerPart())
     } catch (Exception e) {
       //throw e
-      System.err.println "NO INTEGER"
+      if (debug > 0) { System.err.println "NO INTEGER"}
       mInt = null
     }
 
@@ -263,8 +270,6 @@ class MilesianString {
     if ((mInt == null) && (mFract == null)) {
       System.err.println "MilesianString: could not find a valid integer or fraction component in " + srcString
       throw new Exception ("MilesianString: could not find a valid integer or fraction component in ${srcString}")
-    } else {
-    System.err.println "NO PROBLEM"
     }
   }
 

@@ -227,14 +227,18 @@ Two other characters are valid digits:
 -  Unicode upper case Μ (U 039C ) represents the numeric value 10,000 (μυριάς)
 -  Unicode upper case Ο (U 039F) represents either a value of 0 or a null value (οὐδέν)
 
+## Valid fractional characters ##
+
+Fractional values as the denominator of a unit fraction: the integer value of the denominator is represented in the same way as whole integer units.  In addition, 
+ two special characters abbreviating the common fractions 1/2 and 2/3 are allowed as alternatives, and are encode with the Unicode code points U 10175 ( 𐅵  = 1/2) and U 10177 (𐅷 = 2/3).
 
 ### Other valid characters ###
 
 Three non-digit characters are valid:
 
-- The space (U 0020) is permitted anywhere in the integer component of a MilesianStringa String used to construct a MilesianString:  it has no value and is ignored;  output of a MilesianString object to a String uses the space between the integer and fractional components of the String to enhance readability.
-- The single quote character marks the integer component of the string.  
-- The double quote marks the fractional component.
+- The space character (U 0020).  Within the integer component of a MilesianString, it has no value and is ignored; withint the fractional component, spaces separate unit fractions.  (See the [syntax specification of fractions](MilesianFractionSyntax.html).)  Output of a MilesianString object to a String uses the space between the integer and fractional components of the String to enhance readability.
+- The single quote character terminates the integer component of the string.  
+- The double quote terminates the fractional component of the string.
 
 @openex@
 
@@ -252,5 +256,6 @@ with a numeric value of 40, while upper case <strong concordion:set="#ouden">Ο<
 is a <strong concordion:assertTrue="isDigit(#ouden)">valid digit</strong> character indicating either 0 or a null value.
 
 @closeex@
+
 
 
