@@ -7,7 +7,7 @@ import org.junit.Test
 /** Class tests identifying fraction component of a 
  * MilesianString only containing a fraction component.
  */
-class TestFractionString extends GroovyTestCase {
+class TestMilParts extends GroovyTestCase {
 
   String longStr = "ε' 𐅵 δ" + '"'
   String intStr = "ε'"
