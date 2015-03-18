@@ -9,7 +9,7 @@ import java.text.Normalizer.Form
  */
 class MilesianFraction {
 
-  Integer debug = 5
+  Integer debug = 0
 
   
   // Temporary constructs for debugging:
@@ -44,10 +44,8 @@ class MilesianFraction {
    * Arabic numbers.   */
   public String transcription
 
-
+  /** Decimal value of the fraction expression. */
   BigDecimal fractionValue
-
-
 
   
   /** Constructor verifies that srcString, supplied in an identified
@@ -58,14 +56,32 @@ class MilesianFraction {
     // to be added...
     }*/
 
+  String xscribe() {
+    return this.transcription;
+  }
 
-
-  BigDecimal getFractionValue() {
+  /** Formats decimal value of the fraction
+   * to the default of 3 significant digits. 
+   */
+  BigDecimal getFractionValue()
+  throws Exception {
     return getFractionValue(3)  
   }
-  
-  BigDecimal getFractionValue(Integer places) {
+
+
+  /** Formats decimal value of the fraction
+   * to a specified number of significant places. 
+   * @param places Number of places to round to.
+   * @returns A BigDecimal rounded to places number
+   * of digits.
+   * @throws Exception of fractionValue is null
+   */
+  BigDecimal getFractionValue(Integer places)
+  throws Exception {
     Integer placeFactor =  10**places
+    if (fractionValue == null) {
+      throw new Exception("MilesianFraction: cannot get null fractionValue")
+    }
     return (Math.round(fractionValue * placeFactor) / placeFactor)
   }
   
@@ -80,24 +96,21 @@ class MilesianFraction {
     // check for initialize abbr. char
     String initializeString
     if (srcString.codePointCount(0,srcString.length()) < srcString.length()) {
-      // convert abbrs to convetional unit fraction form:
+      // convert abbreviation chars to convetional unit fraction form:
       int cp = srcString.codePointAt(0)
-      if (debug > 0 )  { System.err.println "Check initialize code point ${cp}"}
-
-      
       switch (cp) {
       case 65909:
       if (debug > 0) { System.err.println "Initial char is 1/2"}
       
       initializeString = "β "
       transcription = "1/2"
-      fractionValue = 1 / 2
+      fractionValue = 0 // 1 / 2
       break
       
       case 65911:
       initializeString = "β ϛ "
       transcription = "1/2 + 1/6"
-      fractionValue = (1/2)  + (1/6)
+      fractionValue = 0 // (1/2)  + (1/6)
       break
 
       default:
@@ -112,23 +125,34 @@ class MilesianFraction {
     } else {
       initializeString = srcString
     }
-
     
+
     this.unitFracts = initializeString.split(/[ ]+/)
     // throw out " marker
     Integer largestSoFar = 0
     // check syntax for order:
     unitFracts.each { unit ->
-      if (debug > 0) { System.err.println "MilesianFraction: checking unit " + unit}
-      unit = unit.replaceAll(/"/, '')
+
+      unit = unit.replaceAll('"', '')
+      if (debug > 0) { System.err.println "MilesianFraction: checking unit " + unit + "; try to make int"}
       
       MilesianInteger mInt = new MilesianInteger(unit)
-      if (transcription == "") {
+      if (debug > 0) {
+	System.err.println "Made int with value " + mInt.integerValue
+	System.err.println ", curr transcriptoin is #"  + transcription + "# and xcr size is " + transcription.size()
+      }
+
+      
+      if (transcription.size() == 0) {
+	if (debug > 0) {System.err.println "Int val is " + mInt.integerValue	}
 	transcription = "1/${mInt.integerValue}"
 	fractionValue = 1 / mInt.integerValue
+
+	if (debug > 0) {"Initializing fractionValue as ${ 1 / mInt.integerValue} to ${fractionValue}"}
 	
       } else {
 	transcription = transcription + " + 1/${mInt.integerValue}"
+	if (debug > 0) {"Adding ${ 1 / mInt.integerValue} to ${fractionValue}"}
 	fractionValue += 1 / mInt.integerValue
       }
 

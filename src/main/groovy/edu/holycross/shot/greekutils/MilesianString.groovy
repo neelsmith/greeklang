@@ -107,6 +107,31 @@ class MilesianString {
   
   /** Number of Unicode code points in milesianString. */
   int cpMax
+
+
+  /** Computes decimal value of string with fractional
+   * value rounded to default of 3 digits.
+   * @returns Sum of converting integer and
+   * fractional components individually.
+   */
+  BigDecimal toDecimal() {
+    Integer intVal = MilesianInteger.toInteger(mInt.codePoints)
+    return (intVal + mFract.getFractionValue())
+  }
+
+
+
+  /** Computes decimal value of string rounded to numDigits
+   * places below zero.
+   * @returns Sum of converting integer and
+   * fractional components individually.
+   */
+  BigDecimal toDecimal(Integer numDigits) {
+    Integer intVal = MilesianInteger.toInteger(mInt.codePoints)
+    return (intVal + mFract.getFractionValue(numDigits))
+  }
+  
+
   
 
   /** Determines if milesianString has a fraction component.
@@ -164,8 +189,10 @@ class MilesianString {
 
 
 
-  String getFractionPart() {
 
+  /** Extracts fraction component from a MilesianString.
+   */
+  String getFractionPart() {
     int substrIdx = -1
     int idx = 0
     int codePoint = milesianString.codePointAt(idx)
@@ -175,11 +202,20 @@ class MilesianString {
     }
     while (count < (cpMax)) {
       if (debug > 0) { System.err.println "getFractionPart: get cp at " + idx + " for count " + count }
+      
       codePoint = milesianString.codePointAt(idx)
+      
       if (debug > 0) { System.err.println "getFractionPart: codepoint " + codePoint + " at idx " + idx + " w max " + cpMax }
+      
       if (codePoint == MilesianString.singleq) {
 	if (debug > 0) { System.err.println "\tfound s quote, so make substr idx " + idx}
+
+
 	substrIdx = idx + 1
+	// skip leading spaces
+	while (milesianString.codePointAt(substrIdx) == MilesianString.space) {
+	  substrIdx++
+	}
       }
 
       if (codePoint == MilesianString.doubleq) {
@@ -194,16 +230,19 @@ class MilesianString {
       count++
     }
     if (substrIdx == -1) {
-      if (debug > 0) { System.err.println "NO fraction part."}
+      if (debug > 0) { System.err.println "NO fraction part, so throw Exception."}
       throw new Exception("MilesianString: no fraction part")
     } else {
       if (debug  > 0) { System.err.println "getFrationPart: returning " + milesianString.substring(substrIdx, milesianString.length() )}
+
+
+
       return (milesianString.substring(substrIdx, milesianString.length() ))
     }
   }
 
   
-  /** Extracts integer component from a MilesianString
+  /** Extracts integer component from a MilesianString.
    */
   String getIntegerPart() {
     int substrIdx = milesianString.offsetByCodePoints(milesianString.length() - 1, 1)
@@ -253,14 +292,12 @@ class MilesianString {
       System.err.println "Consructor: ${cpMax} code points for " + milesianString
     }
 
+
     try {
       mInt = new MilesianInteger(this.getIntegerPart())
     } catch (Exception e) {
-      //throw e
-      if (debug > 0) { System.err.println "NO INTEGER"}
       mInt = null
     }
-
     try {
       mFract = new MilesianFraction(this.getFractionPart())
     } catch (Exception e) {
@@ -343,6 +380,22 @@ class MilesianString {
        return this.milesianString
      }
    }
-  
+
+  String xscribe() {
+    String xcription = ""
+    if (this.mInt) {
+      System.err.println "Have an integer component, so get xcr..."
+      xcription = "${MilesianInteger.toInteger(this.mInt.codePoints)} "
+      System.err.println "Now at " + xcription
+    }
+    if (this.mFract) {
+      System.err.println "Have a fraction component, so get xcr..."
+      xcription += this.mFract.xscribe()
+      System.err.println "Now at " + xcription
+    } else {
+      System.err.println "\n\n-->NO FRACTION"
+    }
+    return  xcription.replaceFirst(/[ ]+$/, '')
+  }
 
 }

@@ -9,7 +9,7 @@ import java.text.Normalizer.Form
  */
 class MilesianInteger {
 
-  public Integer debug = 5
+  public Integer debug = 0
   
   // Temporary constructs for debugging:
   Integer SILENT = 0
@@ -104,7 +104,7 @@ class MilesianInteger {
    */
   static Integer toInteger(ArrayList cpList)
   throws Exception {
-    Integer debug = 5
+    Integer debug = 0
     if (debug > 0) {
       System.err.println "Converting cpList ${cpList} to integer"
     }
