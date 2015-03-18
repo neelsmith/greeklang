@@ -16,18 +16,18 @@ class TestDecimals extends GroovyTestCase {
 
   void testFractions() {
     MilesianFraction mf = new MilesianFraction(fract)
-    println "${fract} == " + mf.getFractionValue()
-
+    assert mf.getFractionValue() == 0.75 
+    
     String third = 'γ"'
     mf  = new MilesianFraction(third)
     assert mf.getFractionValue() == 0.333
     assert mf.getFractionValue(4) == 0.3333
     
+
     String expan = 'β δ"'
     mf  = new MilesianFraction(expan)
     assert mf.getFractionValue() == 0.75
-    assert mf.getFractionValue(4) == 0.75
-    
+    assert mf.getFractionValue(4) == 0.75 
   }
 
   /** Tests string with both integer and fraction components*/
@@ -35,10 +35,7 @@ class TestDecimals extends GroovyTestCase {
     MilesianString multiPart = new MilesianString(longStr)
     assert MilesianInteger.toInteger(multiPart.mInt.codePoints) == 5
     assert multiPart.getFractionPart() == fract
-        
-    println "Fractional part == " +  multiPart.mFract.getFractionValue()
-    
-    //assert multiPart.toDecimal() == 5.75
-  }
+    assert multiPart.toDecimal() == 5.75
+    }
 
 }
