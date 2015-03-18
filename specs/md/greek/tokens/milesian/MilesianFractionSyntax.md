@@ -10,18 +10,31 @@ Fractional values are expressed as sums of unit fractions.  Unit fractions are s
 
 @openex@
 
-### Examples: fractions
+### Examples: unit fractions ###
+
+The fraction one-third is written <strong concordion:set="#third">γ"</strong>.  Its fractional component is <strong concordion:assertEquals="getFractionPart(#third)">γ"</strong>,  and it is
+<strong concordion:assertTrue="isValid(#third)">syntactically valid</strong>.
+
+
+The fraction one-half can be written with the abbreviation  <strong concordion:set="#half">𐅵"</strong>.  Its fractional component is <strong concordion:assertEquals="getFractionPart(#half)">𐅵"</strong>, 
+<strong concordion:assertTrue="isValid(#half)">syntactically valid</strong>.
+
+@closeex@
+
+@openex@
+
+### Examples:  sums of fractions
 
 A value corresponding to 7/12 is expressed as 1/2 + 1/12.
 
 As a MilesianString, this can be written as <strong concordion:set="#fract1">β ιβ"</strong>.  Its fractional component is <strong concordion:assertEquals="getFractionPart(#fract1)">β ιβ"</strong>, 
-which parses as <strong concordion:assertTrue="isValid(#fract1)">syntactially valid</strong>.
+which parses as <strong concordion:assertTrue="isValid(#fract1)">syntactically valid</strong>.
 
 Alternatively, the same value can be written with the abbreviation for 1/2 as 
 <strong concordion:set="#abbr">𐅵 ιβ"</strong>.  Its
 fractional part is 
 <strong concordion:assertEquals="getFractionPart(#abbr)">𐅵 ιβ"</strong>,
-which parses as <strong concordion:assertTrue="isValid(#abbr)">syntactially valid</strong>.
+which parses as <strong concordion:assertTrue="isValid(#abbr)">syntactically valid</strong>.
 
 
 
