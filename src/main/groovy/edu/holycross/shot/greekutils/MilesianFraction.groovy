@@ -134,38 +134,40 @@ class MilesianFraction {
     unitFracts.each { unit ->
 
       unit = unit.replaceAll('"', '')
-      if (debug > 0) { System.err.println "MilesianFraction: checking unit " + unit + "; try to make int"}
       
-      MilesianInteger mInt = new MilesianInteger(unit)
-      if (debug > 0) {
-	System.err.println "Made int with value " + mInt.integerValue
-	System.err.println ", curr transcriptoin is #"  + transcription + "# and xcr size is " + transcription.size()
-      }
+      if (debug > 0) { System.err.println "MilesianFraction: checking unit #" + unit + "#; try to make int"}
+      if (unit.size() > 0) {
+	MilesianInteger mInt = new MilesianInteger(unit)
+	if (debug > 0) {
+	  System.err.println "Made int with value " + mInt.integerValue
+	  System.err.println ", curr transcriptoin is #"  + transcription + "# and xcr size is " + transcription.size()
+	}
 
       
-      if (transcription.size() == 0) {
-	if (debug > 0) {System.err.println "Int val is " + mInt.integerValue	}
-	transcription = "1/${mInt.integerValue}"
-	fractionValue = 1 / mInt.integerValue
+	if (transcription.size() == 0) {
+	  if (debug > 0) {System.err.println "Int val is " + mInt.integerValue	}
+	  transcription = "1/${mInt.integerValue}"
+	  fractionValue = 1 / mInt.integerValue
 
-	if (debug > 0) {"Initializing fractionValue as ${ 1 / mInt.integerValue} to ${fractionValue}"}
+	  if (debug > 0) {"Initializing fractionValue as ${ 1 / mInt.integerValue} to ${fractionValue}"}
 	
-      } else {
-	transcription = transcription + " + 1/${mInt.integerValue}"
-	if (debug > 0) {"Adding ${ 1 / mInt.integerValue} to ${fractionValue}"}
-	fractionValue += 1 / mInt.integerValue
-      }
+	} else {
+	  transcription = transcription + " + 1/${mInt.integerValue}"
+	  if (debug > 0) {"Adding ${ 1 / mInt.integerValue} to ${fractionValue}"}
+	  fractionValue += 1 / mInt.integerValue
+	}
 
-      if (largestSoFar == 0) {
+	if (largestSoFar == 0) {
 	  largestSoFar = mInt.integerValue
 
 
-      } else {
-	// denominators must increase:
-	if (mInt.integerValue <= largestSoFar) {
-	  throw new Exception("MilesianFraction: syntax error in ${srcString}")
+	} else {
+	  // denominators must increase:
+	  if (mInt.integerValue <= largestSoFar) {
+	    throw new Exception("MilesianFraction: syntax error in ${srcString}")
+	  }
 	}
-      }
+      } // empty unit, e.g., " char that has been eliminated.
 
     }
   }

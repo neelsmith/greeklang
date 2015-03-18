@@ -299,7 +299,8 @@ class MilesianString {
       mInt = null
     }
     try {
-      mFract = new MilesianFraction(this.getFractionPart())
+      String fpart = this.getFractionPart()
+      mFract = new MilesianFraction( fpart)
     } catch (Exception e) {
       mFract = null
     }
