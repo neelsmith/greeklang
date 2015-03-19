@@ -20,6 +20,7 @@ public class MilesianIntegerTest extends ConcordionTestCase {
     throws Exception {
 	MilesianString ms = new MilesianString(str);
 	MilesianInteger mi = new MilesianInteger(ms);
-	return MilesianInteger.toInteger(mi.codePoints);
+	return mi.toInteger();
+	//	return MilesianInteger.toInteger(mi.codePoints);
     }
 }

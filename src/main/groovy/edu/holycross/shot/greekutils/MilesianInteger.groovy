@@ -98,6 +98,16 @@ class MilesianInteger {
 
   }
 
+
+  /** Converts the value of the MilesianInteger
+   * to an Integer for values in the range 1..19,999.
+   * @returns The integer value of the MilesianInteger.
+   * @throws 
+   */
+  public Integer toInteger() {
+    return MilesianInteger.toInteger(this.codePoints)
+  }
+
   
   /** Converts value of an ArrayList of codepoints to
    * an Integer for values in range 1..19,999 .

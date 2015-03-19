@@ -10,6 +10,7 @@ The current specification defines syntax for positive integers up to a maximum v
 @openex@
 ### Example: individual digits ###
 
+
 The digit <strong concordion:set="#alpha">α</strong> has the value 
 <strong concordion:assertEquals="getDigitValue(#alpha)">1</strong>.
 
