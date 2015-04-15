@@ -9,8 +9,10 @@ The current draft aims to specify three kinds of token:  alphabetic text, number
 ## Specifications for alphabetic text
 
 
-- Valid <a concordion:run="concordion" href="GreekString.html">strings of characters</a>
-- Valid <a concordion:run="concordion"  href="GreekWord.html">lexical tokens</a> ("words")
+- Valid <a concordion:run="concordion" href="GreekString.html">strings of characters</a> in the orthography of standard printed editions
+-  Valid <a concordion:run="concordion" href="MsString.html">strings of characters</a> in the  usage found in manuscripts
+- Valid <a concordion:run="concordion"  href="GreekWord.html">lexical tokens</a> ("words") in the orthography of standard printed editions
+-  Valid <a concordion:run="concordion"  href="MsWord.html">lexical tokens</a> ("words") as found in manuscripts
 - <a concordion:run="concordion"  href="GreekStringManip.html">Classifying characters</a> in Greek strings and tokens
 - <a concordion:run="concordion"  href="GreekSort.html">Alphabetic sorting and comparison</a>
 
