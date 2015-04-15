@@ -63,5 +63,13 @@ A GreekString may be created from either precombined or combining Unicode codepo
 Whether constructed from beta-code or unicode source string, Greek Strings can converted to Unicode NFC.
 
 
-SO <strong concordion:set="#beta1">*mh=nin</strong> converts to <strong concordion:assertEquals="asUnicode(#beta1)">Μῆνιν</strong>
+@openex@
+
+
+### Example ###
+
+
+The ASCII string <strong concordion:set="#beta1">*mh=nin</strong> converts to the NFC Unicode string <strong concordion:assertEquals="asUnicode(#beta1)">Μῆνιν</strong>.
+
+@closeex@
 

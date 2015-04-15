@@ -30,7 +30,7 @@ Create a lexical token from a string, and convert it back to a string:
 ## Tokenization ##
 
 
-A Greek string may comprise more than one lexical token.  White space characters that are permitted in GreekStrings but not in Greek words to delimit tokens within a String. The GreekString class can create a list of Greek Words from a Greek String.
+A Greek string may comprise more than one lexical token.  White space characters that are permitted in GreekStrings but not in Greek words delimit tokens within a String. The GreekString class can create a list of Greek Words from a Greek String.
 
 @openex@
 

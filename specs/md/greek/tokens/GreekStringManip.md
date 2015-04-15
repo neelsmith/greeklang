@@ -5,10 +5,12 @@
 
 Individual characters in a lexical token can be classified as:
 
--alphabetic.  These can be further classified  as vowels or consonants.
+
+- alphabetic.  These can be further classified  as vowels or consonants.
 - accents
 - breathings
 - punctuation
+
 
 @openex@
 
