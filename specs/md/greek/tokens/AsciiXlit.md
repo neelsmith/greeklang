@@ -4,21 +4,23 @@ The following characters are allowed in the ASCII representation of Greek string
 
 ## Alphabetic characters ##
 
-To represent the Greek alphabetic characters alpha-omega, the lower or upper case ASCII characters of the TLG project mapping are permitted.  Note that sigma is a single character:  because presentational variants of glyphs (such as terminal or lunate forms of glyphs for sigma) are not characters, they are not represented in Greek strings.
+To represent the Greek alphabetic characters alpha-omega, the lower or upper case ASCII characters of the TLG beta-code mapping are permitted.  
 
+Iota subscript is treated as a distinct character, and is represented by the vertical bar (or "pipe", Unicode 124).  Sigma, on the other hand, is a single character:  because presentational variants such as terminal or lunate sigma are not characters, they are not represented in Greek strings.
 
 @openex@
 
 ### Examples: lower-case characters ###
+ 
+The mapping of ASCII to Unicode Greek transcriptions can be illustrated by 
+creating a GreekString from an ASCII source, and then converting the GreekString to Unicode in NFC form.
 
-
-<table concordion:execute="#result = getBetaForUnicode(#src2)">
+<table concordion:execute="#result = uForBeta(#src2)">
 
 <tr>
-	  <th concordion:assertEquals="#result">GreekString</th>
-	   <th concordion:set="#src2">Source String</th>
-
-	</tr>
+   <th concordion:set="#src2">Source String</th>
+  <th concordion:assertEquals="#result">GreekString as Unicode</th>
+</tr>
 
 <tr><td>a</td><td>α</td></tr>
 <tr><td>b</td><td>β</td></tr>
@@ -37,34 +39,22 @@ To represent the Greek alphabetic characters alpha-omega, the lower or upper cas
 <tr><td>o</td><td>ο</td></tr>
 <tr><td>p</td><td>π</td></tr>
 <tr><td>r</td><td>ρ</td></tr>
-<tr><td>s</td><td>σ</td></tr>
+<tr><td>s</td><td>ς</td></tr>
 <tr><td>t</td><td>τ</td></tr>
 <tr><td>u</td><td>υ</td></tr>
 <tr><td>f</td><td>φ</td></tr>
 <tr><td>x</td><td>χ</td></tr>
 <tr><td>y</td><td>ψ</td></tr>
 <tr><td>w</td><td>ω</td></tr>
+<tr><td>|</td><td>ι</td></tr>
 </table>
 
 @closeex@
 
 
+## Breathings and accents ##
 
-## White space
-
-- white space:
-    - space, tab, new line, carriage return
-
-
-## Punctuation ##
-
-
-- punctuation:
-    - period
-    - comma
-    - high stop
-    - question mark
-    - crasis
+Breathings and accents are 
 
 - breathings:
    -   rough
@@ -73,6 +63,33 @@ To represent the Greek alphabetic characters alpha-omega, the lower or upper cas
     -   acute
     -   grave
     -   circumflex
+
+
+## White space
+
+GreekStrings may include any of the following "white space" characters: space (Unicode 32), tab (Unicode 9), new line (Unicode 10), carriage return (Unicode 13).  They are preserved unchanged both in the underlying representation and in conversions to string values.
+
+@openex@
+
+### Example ###
+
+If we intialize a GreekString from the source string <strong concordion:set="#white">*Mh=nin a)/eide</strong>, then converting it back to an ASCII string will preserve the white space:
+
+<pre concordion:assertEquals="getBetaString(#white)">*mh=nin a)/eide</pre>
+
+
+@closeex@
+## Punctuation ##
+
+The following punctuation marks are valid 
+
+- punctuation:
+    - period
+    - comma
+    - high stop
+    - question mark
+    - crasis
+
 
 @openex@
 

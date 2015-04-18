@@ -60,7 +60,7 @@ yields  this ordered list of GreekWords:
 
 
 
-Like GreekStrings, GreekWords can represented as Unicode strings in NFC form.
+Like GreekStrings, GreekWords can be represented as Unicode strings in NFC form.
 
 
 

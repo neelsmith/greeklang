@@ -8,7 +8,7 @@ import edu.holycross.shot.greekutils.GreekString;
 
 /* Run this class as a JUnit test. */
 //@RunWith(ConcordionRunner.class)
-public class BetaCodeXlitTest extends ConcordionTestCase {
+public class AsciiXlitTest extends ConcordionTestCase {
     
     public String getBetaString(String str) {
         //return new Greeter().greetingFor(firstName);
@@ -23,7 +23,21 @@ public class BetaCodeXlitTest extends ConcordionTestCase {
 
     }
 
-     public String getBetaForUnicode(String str) {
+
+    
+    public String uForBeta(String str) {
+	GreekString gs;
+	try {
+	    gs = new GreekString(str);
+	    return gs.toString(true);
+	} catch (Exception e) {
+	    System.err.println("Exception in test: " + e.toString());
+	    return null;
+	}
+    }
+
+    
+    public String getBetaForUnicode(String str) {
 	GreekString gs;
 	try {
 	    gs = new GreekString(str, "Unicode");

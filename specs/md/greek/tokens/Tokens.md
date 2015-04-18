@@ -9,22 +9,22 @@ The current draft aims to specify three kinds of token:  alphabetic text, number
 ## Specifications for alphabetic text
 
 
-- Valid <a concordion:run="concordion" href="GreekString.html">strings of characters</a> in the orthography of standard printed editions
--  Valid <a concordion:run="concordion" href="MsString.html">strings of characters</a> in the  usage found in manuscripts
-- Valid <a concordion:run="concordion"  href="GreekWord.html">lexical tokens</a> ("words") in the orthography of standard printed editions
--  Valid <a concordion:run="concordion"  href="MsWord.html">lexical tokens</a> ("words") as found in manuscripts
-- <a concordion:run="concordion"  href="GreekStringManip.html">Classifying characters</a> in Greek strings and tokens
-- <a concordion:run="concordion"  href="GreekSort.html">Alphabetic sorting and comparison</a>
+- Valid <a concordion:run="concordion" href="GreekString.html">strings of characters</a> in the orthography of standard printed editions. (**Substantially complete**)
+-  Valid <a concordion:run="concordion" href="MsString.html">strings of characters</a> in the  usage found in manuscripts (**Outline only**)
+- Valid <a concordion:run="concordion"  href="GreekWord.html">lexical tokens</a> ("words") in the orthography of standard printed editions (**Substantially complete**)
+-  Valid <a concordion:run="concordion"  href="MsWord.html">lexical tokens</a> ("words") as found in manuscripts (**Substantially complete**)
+- <a concordion:run="concordion"  href="GreekStringManip.html">Classifying characters</a> in Greek strings and tokens (**Substantially complete**)
+- <a concordion:run="concordion"  href="GreekSort.html">Alphabetic sorting and comparison</a> (**Substantially complete**)
 
 
-## Specifications for the "Milesian" numeric notation ##
+## Specifications for the "Milesian" numeric notation (**substantially complete**)##
 
 The "Milesian" system of numeric notation borrowed glyphs from the alphabetic writing systems.  In addition to glyphs from familiar from the standard literary Greek alphabet, these included glyphs for 6, 90 and 900 drawn from epichoric alphabets, and lacking any corresponding character in the later literary Greek alphabet.
 
 - <a concordion:run="concordion" href="milesian/Milesian.html">Milesian notation</a>
 
 
-## Specifications for other symbolic notation ##
+## Specifications for other symbolic notation  (**TBA**) ##
 
 - Valid astronomical symbols
 
