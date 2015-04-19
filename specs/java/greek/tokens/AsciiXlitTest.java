@@ -28,6 +28,8 @@ public class AsciiXlitTest extends ConcordionTestCase {
     public String uForBeta(String str) {
 	GreekString gs;
 	try {
+
+	    System.err.println ("Get unicode for " + str);
 	    gs = new GreekString(str);
 	    return gs.toString(true);
 	} catch (Exception e) {
