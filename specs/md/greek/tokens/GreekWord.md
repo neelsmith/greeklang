@@ -63,6 +63,7 @@ yields  this ordered list of GreekWords:
 Like GreekStrings, GreekWords can be represented as Unicode strings in NFC form.
 
 
+@openex@
 
  <table concordion:execute="#to = toUnicode(#from)">
 
