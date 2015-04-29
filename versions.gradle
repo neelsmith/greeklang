@@ -1,13 +1,14 @@
 ext {
     groovyVersion = '2.0.6'
     sqlLiteVersion =  '3.7.2'
-
-
     opencsvVersion = '2.0'
 
     junitVersion = '4.8.2'
     xmlunitVersion = '1.3'
 
-    citeVersion = "0.92.2"
+
+    versionMap = [
+      "cite" : "0.94.1"
+    ]
     epidocVersion = '1.2-SNAPSHOT'
 }

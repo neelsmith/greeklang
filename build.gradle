@@ -8,7 +8,7 @@ apply plugin: 'application'
 apply plugin:  "maven"
 
 group = "edu.holycross.shot"
-version = '0.0.9'
+version = '0.0.10'
 
 mainClassName = "Parser"
 
@@ -93,9 +93,29 @@ dependencies {
   testCompile group :'xmlunit', name: 'xmlunit', version: xmlunitVersion
 
   // to document:
-  compile group: 'edu.harvard.chs', name : 'cite' , version: citeVersion
+  compile group: 'edu.harvard.chs', name : 'cite' , version: versionMap["cite"]
 
 }
+
+
+task vmap {
+  description = "Prints out version info for key dependencies."
+}
+vmap.doLast {
+  println "\nDependencies in greeklang ${version}:"
+  versionMap.keySet().sort().each { k ->
+    print k
+    Integer spaces = 15 - k.size()
+    Integer idx = 0
+    while(idx < spaces) {
+      print " "
+      idx++
+    }
+    println versionMap[k]
+  }
+  println ""
+}
+
 
 
 task inflClass(type: Copy) {
@@ -381,9 +401,11 @@ task addVersion(){
 }
 addVersion.doLast {
   tokenMap["version"] = version
-  tokenMap["deps"] = """
-    <tr><td>cite</td><td>${citeVersion}</td></tr>
-    <tr><td>epidoc</td><td>${epidocVersion}</td></tr>""".toString()
+  StringBuilder deps = new StringBuilder()
+  versionMap.keySet().sort().each { k ->
+    deps.append("<tr><td>${k}</td><td>${versionMap[k]}</td></tr>\n")
+  }
+  tokenMap["deps"] = deps.toString()
 }
 
 task conc(type: Copy, dependsOn: [test, addVersion]) {
