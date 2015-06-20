@@ -19,14 +19,17 @@ class GreekMsString extends GreekString {
     "·", "⁑" , "⁚"
   ]
 
+  /** Floating macron character. */
   static macron = "\u0304"
+  /** Floating breve character. */
   static breve = "\u0306"
+  /** Floating diaeresis character. */
   static diaeresis = "\u0308"
+  /** Floating grave character. */
   static floatingGrave = "\u0300"
-  
-  // combining macron, combining breve
-  // combining diaeresis 
-  // √ floating grave
+
+
+  /** Immutable set of further quantity and breathing characters allowed in MSS. */
   static msQuantityOrBreathing = [
     macron,breve,diaeresis,floatingGrave
   ]
