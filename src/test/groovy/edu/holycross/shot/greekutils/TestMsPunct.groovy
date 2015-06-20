@@ -20,7 +20,6 @@ class TestMsPunct extends GroovyTestCase {
     }
   }
 
-
   void testStaticBreathQuant() {
 
     ["\u0300", "\u0304", "\u0306", "\u0308"].each { mark ->
@@ -37,12 +36,6 @@ class TestMsPunct extends GroovyTestCase {
     assert GreekMsString.isValidChar(hamza) == false
   }
   
-  void testInstance() {
-    String eoSchol = "⁑"
-    GreekMsString greekEoSchol = new GreekMsString(eoSchol, "Unicode")
-    assert greekEoSchol.toString() == eoSchol
-  }
-
 
 
 }

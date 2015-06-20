@@ -34,14 +34,15 @@ class GreekMsString extends GreekString {
     macron,breve,diaeresis,floatingGrave
   ]
 
-  
 
-
-  String greekString
+  String msBetaString
+  String msUnicodeString
   
   GreekMsString(String srcString, String greekMapping)  {
-    super(srcString, greekMapping)
+    super(srcString, greekMapping, true)
 
+    this.msUnicodeString = srcString
+    
     TransCoder xcoder = new TransCoder()
     xcoder.setParser(greekMapping)
     xcoder.setConverter("BetaCode")
@@ -50,17 +51,28 @@ class GreekMsString extends GreekString {
     String betaString = xcoder.getString(srcString).toLowerCase()
     betaString = betaString.replaceAll("s1","s")
 
+    StringBuilder cleanString = new StringBuilder()
 
-    while (count < betaString.length() - 1) {
-      if (!(isValidMsChar(betaString.substring(count,count+1)))) {
-	System.err.println "Error parsing ${betaString}: failed on ${betaString.substring(count,count+1)} (char ${count})"
-	System.err.println "GreekString:constructor with ${greekMapping} invalid character at position ${count}:  '" + betaString.substring(count,count+1) + "'"
-	throw new Exception("GreekString:constructor with ${greekMapping} invalid character at position ${count}:  '" + betaString.substring(count,count+1) + "'")
+    int max = betaString.codePointCount(0, betaString.size() - 1)
+    int idx = 0
+    while (idx <= max) {
+      int cp = betaString.codePointAt(idx)
+      if (cp != null) {
+	String s = new String(Character.toChars(cp))
+
+	System.err.println "CHECK " + s
+	if (GreekString.isValidChar(s)) {
+
+	  cleanString.append(s)
+	  System.err.println "valid so appended, now at ${cleanString.toString()}"
+	}
       }
-      count++
+      idx = betaString.offsetByCodePoints(idx,1)	
     }
-    this.greekString = betaString
-
+    // get last char:
+    //int cp = betaString.codePointAt(max)
+    
+    this.msBetaString = cleanString.toString()
   }
 
 
@@ -145,5 +157,16 @@ class GreekMsString extends GreekString {
 
 
 
+  String toString() {
+    return this.msUnicodeString
+  }
+
+  String toString(boolean asUnicode) {
+    if (asUnicode) {
+      return this.msUnicodeString
+    } else {
+      return this.msBetaString
+    }
+  }
 
 }

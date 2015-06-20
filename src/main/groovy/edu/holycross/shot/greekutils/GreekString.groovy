@@ -100,6 +100,18 @@ class GreekString {
       count++
     }
     this.greekString = betaString
+
+  }
+
+  GreekString(String srcString, String greekMapping, boolean ignoreInvalid)  {
+    TransCoder xcoder = new TransCoder()
+    xcoder.setParser(greekMapping)
+    xcoder.setConverter("BetaCode")
+    
+    Integer count = 0
+    String betaString = xcoder.getString(srcString).toLowerCase()
+    betaString = betaString.replaceAll("s1","s")
+    this.greekString = betaString
   }
 
   /** Constructor verifies that srcSring contains only valid characters
