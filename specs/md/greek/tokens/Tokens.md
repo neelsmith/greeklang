@@ -13,7 +13,7 @@ The current draft aims to specify three kinds of token:  alphabetic text, number
 -  Valid <a concordion:run="concordion" href="MsString.html">strings of characters</a> in the orthography found in manuscripts (**Outline only**)
 - Valid <a concordion:run="concordion"  href="GreekWord.html">lexical tokens</a> ("words") in the orthography of standard printed editions (**Substantially complete**)
 -  Valid <a concordion:run="concordion"  href="MsWord.html">lexical tokens</a> ("words") in the orthography found in manuscripts (**TBA**)
-- <a concordion:run="concordion"  href="GreekSort.html">Alphabetic sorting and comparison</a> (**Inital phase complete**)
+- <a concordion:run="concordion"  href="GreekSort.html">Alphabetic sorting and comparison</a> (**Initial phase complete**)
 
 
 ## Specifications for the "Milesian" numeric notation (**substantially complete**)##
