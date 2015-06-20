@@ -9,19 +9,24 @@ import org.junit.Test
  */
 class TestMsPunct extends GroovyTestCase {
 
-  String eoSchol = "⁑"
-  String floatingGrave = "`"
+
+
   
-  //    "·", "⁑" , "⁚"
+  
   void testStaticPunctSigns() {
-    assert GreekMsString.isMsPunctuation(eoSchol)
-    assert GreekMsString.isValidMsChar(eoSchol)
+    [ "·", "⁑" , "⁚"].each { punctSign ->
+      assert GreekMsString.isMsPunctuation(punctSign)
+      assert GreekMsString.isValidMsChar(punctSign)
+    }
   }
 
 
-  void testStaticBreathQuatn() {
-    assert GreekMsString.isMsQuantityOrBreathing(floatingGrave)
-    assert GreekMsString.isValidMsChar(eoSchol)
+  void testStaticBreathQuant() {
+
+    ["\u0300", "\u0304", "\u0306", "\u0308"].each { mark ->
+      assert GreekMsString.isMsQuantityOrBreathing(mark)
+      assert GreekMsString.isValidMsChar(mark)
+    }
   }
   
   
@@ -33,6 +38,7 @@ class TestMsPunct extends GroovyTestCase {
   }
   
   void testInstance() {
+    String eoSchol = "⁑"
     GreekMsString greekEoSchol = new GreekMsString(eoSchol, "Unicode")
     assert greekEoSchol.toString() == eoSchol
   }

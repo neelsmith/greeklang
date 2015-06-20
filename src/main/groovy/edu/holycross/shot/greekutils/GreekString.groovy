@@ -38,7 +38,7 @@ class GreekString {
   static vowel = [
     'a', 'e','h',
     'i','o','u',
-    'w'
+    'w','|'
   ]
 
   /** Immutable set of breathing characters. */
@@ -47,6 +47,7 @@ class GreekString {
   /** Immutable set of accent characters. */
   static accent = ['/','\\','=']
 
+  // these are not really orthographic, are they?
   /** Immutable set of vowel quantity markers. */
   static quantity = ['_','^']
 

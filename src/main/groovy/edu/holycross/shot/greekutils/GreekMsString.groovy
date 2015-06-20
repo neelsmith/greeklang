@@ -19,12 +19,16 @@ class GreekMsString extends GreekString {
     "·", "⁑" , "⁚"
   ]
 
-
+  static macron = "\u0304"
+  static breve = "\u0306"
+  static diaeresis = "\u0308"
+  static floatingGrave = "\u0300"
+  
   // combining macron, combining breve
-  // combining diaeresis
-  // floating grave: 
+  // combining diaeresis 
+  // √ floating grave
   static msQuantityOrBreathing = [
-    "`"
+    macron,breve,diaeresis,floatingGrave
   ]
 
   
@@ -116,8 +120,6 @@ class GreekMsString extends GreekString {
 
  
   static boolean isValidMsChar(String ch) {
-    System.err.println "checkin MsChar ${ch}"
-    System.err.println "is it msPunct? " + GreekMsString.isMsPunctuation(ch)
     if (
       (GreekString.isAlphabetic(ch)) 
       || (GreekString.isAccentOrBreathing(ch)) 
