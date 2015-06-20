@@ -59,19 +59,12 @@ class GreekMsString extends GreekString {
       int cp = betaString.codePointAt(idx)
       if (cp != null) {
 	String s = new String(Character.toChars(cp))
-
-	System.err.println "CHECK " + s
 	if (GreekString.isValidChar(s)) {
-
 	  cleanString.append(s)
-	  System.err.println "valid so appended, now at ${cleanString.toString()}"
 	}
       }
       idx = betaString.offsetByCodePoints(idx,1)	
     }
-    // get last char:
-    //int cp = betaString.codePointAt(max)
-    
     this.msBetaString = cleanString.toString()
   }
 
