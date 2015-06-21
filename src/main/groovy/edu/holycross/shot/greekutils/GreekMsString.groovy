@@ -53,42 +53,25 @@ class GreekMsString extends GreekString {
 
     StringBuilder cleanString = new StringBuilder()
 
-    int max = betaString.codePointCount(0, betaString.size() - 1)
-    int idx = 0
-    while (idx <= max) {
-      int cp = betaString.codePointAt(idx)
-      if (cp != null) {
-	String s = new String(Character.toChars(cp))
-	if (GreekString.isValidChar(s)) {
-	  cleanString.append(s)
+    if (betaString.size() > 0) {
+
+      int max = betaString.codePointCount(0, betaString.size() - 1)
+      int idx = 0
+      while (idx <= max) {
+	int cp = betaString.codePointAt(idx)
+	if (cp != null) {
+	  String s = new String(Character.toChars(cp))
+	  if (GreekString.isValidChar(s)) {
+	    cleanString.append(s)
+	  }
 	}
+	idx = betaString.offsetByCodePoints(idx,1)	
       }
-      idx = betaString.offsetByCodePoints(idx,1)	
+    } else {
+      System.err.println "GreekMsString:warning: 0-length ascii form for " + srcString
     }
     this.msBetaString = cleanString.toString()
   }
-
-
-  /** Constructor verifies that srcSring contains only valid characters
-   * for beta-code representation.
-   * @param srcString Greek string, in beta code.
-   * @throws Exception if not all characters in betaString are valid.
-   */
-
-  /*
-  GreekMsString(String srcString)  throws Exception {
-    Integer count = 0
-    String betaString = srcString.toLowerCase()
-    while (count < betaString.length() - 1) {
-      if (!(isValidMsChar(betaString.substring(count,count+1)))) {
-	System.err.println "Error parsing ${betaString}: failed on ${betaString.substring(count,count+1)} (char ${count})"
-	throw new Exception("GreekString: invalid characer ${betaString.substring(count,count+1)}")
-      }
-      count++
-    }
-    this.greekString = betaString
-    }*/
-
 
 
   /** Determines if a single-character String
@@ -107,8 +90,6 @@ class GreekMsString extends GreekString {
   }
 
 
-
-
   /** Determines if a single-character String
    * is a specially allowed MS quantity or breathing character.
    * @param ch Character to examine.
@@ -125,8 +106,11 @@ class GreekMsString extends GreekString {
   }
 
 
-
- 
+  /** Determines if a single-character String
+   * is allowed in the orthography of Greek manuscripts.
+   * @param ch Character to examine.
+   * @returns True if ch is a valid character.
+   */
   static boolean isValidMsChar(String ch) {
     if (
       (GreekString.isAlphabetic(ch)) 
