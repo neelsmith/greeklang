@@ -13,7 +13,8 @@ class GreekMsString extends GreekString {
   Integer VERBOSE = 3
   Integer debugLevel = 0
 
-
+  static evilImpostorStopCodePoint = 183
+  
   static highStop = "\u0387"
   static twoDots = "\u205A"
   static endOfScholion = "\u2051"
@@ -45,6 +46,16 @@ class GreekMsString extends GreekString {
   
   GreekMsString(String srcString, String greekMapping)  {
     super(srcString, greekMapping, true)
+    Integer debug = 0
+    int lastCp = srcString.codePointCount(0, srcString.size() - 1)
+    if (debug > 0) {
+      System.err.println "Final codepoint in ${srcString} = " + srcString.codePointAt(lastCp)
+    }
+    // Slay the evil unicode equivalency of Ano Teleia and Mid Dot:
+    if (srcString.codePointAt(lastCp) == evilImpostorStopCodePoint)  {
+      throw new Exception("GreekMsString: Unicode 'middle dot' not allowed in Greek Strings: please use Greek Ano Teleia instead (Unicode x0387 == 903). ")
+    }
+
 
     this.msUnicodeString = srcString
     
@@ -56,8 +67,13 @@ class GreekMsString extends GreekString {
     String betaString = xcoder.getString(srcString).toLowerCase()
     betaString = betaString.replaceAll("s1","s")
 
-    StringBuilder cleanString = new StringBuilder()
 
+    if (debug > 0) {
+      System.err.println "GreekMsString: ${srcString} -> ascii ${betaString}"
+    }
+    
+    StringBuilder cleanString = new StringBuilder()
+        
     if (betaString.size() > 0) {
       int max = betaString.codePointCount(0, betaString.size() - 1)
       int idx = 0

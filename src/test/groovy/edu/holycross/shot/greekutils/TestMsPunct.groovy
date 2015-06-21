@@ -14,7 +14,7 @@ class TestMsPunct extends GroovyTestCase {
   
   
   void testStaticPunctSigns() {
-    [ "·", "⁑" , "⁚"].each { punctSign ->
+    [ "\u0387", "⁑" , "⁚"].each { punctSign ->
       assert GreekMsString.isMsPunctuation(punctSign)
       assert GreekMsString.isValidMsChar(punctSign)
     }

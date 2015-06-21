@@ -31,7 +31,11 @@ class TestMsStrings extends GroovyTestCase {
     String high = "δίῳ·"
     GreekMsString greekHigh = new GreekMsString(high, "Unicode")
     println "${high} -> ${greekHigh.toString(false)} "
-    
+
+    String evilImpostor = "πυκίλαι·"
+    assert shouldFail {
+      GreekMsString dotless = new GreekMsString(evilImpostor, "Unicode")
+    }
   }
 
 }
