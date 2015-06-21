@@ -106,6 +106,12 @@ class GreekMsString extends GreekString {
 	validPunct = true
       }
     }
+    [".", "," ].each { s ->
+      if (s == ch) {
+	validPunct = true
+      }
+    }
+    
     return validPunct
   }
 
