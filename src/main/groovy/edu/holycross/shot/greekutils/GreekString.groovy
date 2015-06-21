@@ -67,7 +67,7 @@ class GreekString {
 
   /** Immutable set of punctuation characters. */
   static punctuation = [
-    ".",  ";", ",","'"
+    ".",  ";", ",","'",":"
   ]
 
 

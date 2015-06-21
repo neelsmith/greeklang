@@ -14,9 +14,14 @@ class GreekMsString extends GreekString {
   Integer debugLevel = 0
 
 
+  static highStop = "\u0387"
+  static twoDots = "\u205A"
+  static endOfScholion = "\u2051"
+  
   /** Immutable set of punctuation characters allowed in MSS. */
   static msPunctuation = [
-    "·", "⁑" , "⁚"
+    highStop, endOfScholion , twoDots
+    //    "·", "⁑" , "⁚"
   ]
 
   /** Floating macron character. */
@@ -54,7 +59,6 @@ class GreekMsString extends GreekString {
     StringBuilder cleanString = new StringBuilder()
 
     if (betaString.size() > 0) {
-
       int max = betaString.codePointCount(0, betaString.size() - 1)
       int idx = 0
       while (idx <= max) {

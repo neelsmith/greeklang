@@ -27,5 +27,11 @@ class TestMsStrings extends GroovyTestCase {
     //   assert greekMacronCombo.toString() == macronCombo
   }
 
+  void testAwfulHighStops() {
+    String high = "δίῳ·"
+    GreekMsString greekHigh = new GreekMsString(high, "Unicode")
+    println "${high} -> ${greekHigh.toString(false)} "
+    
+  }
 
 }
