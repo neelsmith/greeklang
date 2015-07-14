@@ -320,6 +320,7 @@ sourceSets {
 
 
 task copySpecs(type: Copy) {
+  description "Copies specification source into build area."
   from "specs"
   into "${buildDir}/specs"
 }
@@ -359,9 +360,10 @@ task cpResources(type: Copy) {
   into "${buildDir}/specs"
 }
 
-task setUpResources(dependsOn: cpResources) {
+task convertResources(dependsOn: cpResources) {
+  description "Converts markdown source to HTML concordion can process."
 }
-setUpResources.doLast {
+convertResources.doLast {
   println "READING FILE TREE FROM " + mdSrc + " DIRECTORY"
   FileTree tree = fileTree(mdSrc) {
     include "**/*.md"
@@ -387,19 +389,26 @@ setUpResources.doLast {
       File htmlFile = new File(outDir, htmlFileName)
       println "Created ${htmlFile}"
 
-      String body = Processor.process(inFile.getText("UTF-8"),Configuration.DEFAULT)
-      htmlFile.setText("${htmlPreface}${body}${htmlEnd}", "UTF-8")
+      try {
+	String body = Processor.process(inFile.getText("UTF-8"),Configuration.DEFAULT)
+	htmlFile.setText("${htmlPreface}${body}${htmlEnd}", "UTF-8")
+      } catch (Exception e) {
+	System.err.println "Oops.  convertResources task unable to convert markdown source to HTML!"
+	System.err.println e
+      }
+	
     }
   }
 }
 
 
-test.dependsOn setUpResources
+test.dependsOn convertResources
 test {
     systemProperties 'concordion.output.dir': file("${buildDir}/concordion-results")
 }
 
 task addVersion(){
+  description "Adds version property to map of tokens to filter."
 }
 addVersion.doLast {
   tokenMap["version"] = version
@@ -412,6 +421,7 @@ addVersion.doLast {
 
 task conc(type: Copy, dependsOn: [test, addVersion]) {
 //task conc(type: Copy) {
+  description "Formats final concordion output by filtering tokens."
   from "${buildDir}/concordion-results"
   into "${buildDir}/concordion-formatted"
   filter(ReplaceTokens, tokens: tokenMap)
