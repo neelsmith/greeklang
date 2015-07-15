@@ -162,10 +162,15 @@ ins {
   font-size: 8pt;
 }
 </style><meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-</head><body><span class="breadcrumbs"><a href="../Greek.html">A computational system for Greek, version 0.0.9</a> &gt; <a href="Tokens.html">Digital representation of Greek text</a> &gt;</span>
+</head><body><span class="breadcrumbs"><a href="../Greek.html">A computational system for Greek, version 0.0.20</a> &gt; <a href="Tokens.html">Digital representation of Greek text</a> &gt;</span>
     <h1>Unicode subset</h1>
 <h2>Unicode Greek mapping</h2>
-<p>A GreekString may be created from either precombined or combining Unicode codepoints.  Equivalent values in Unicode are</p>
+<p>The following characters are allowed in the transcription system using the ancient Greek section of Unicode.</p>
+<h3>Individual alphabetic characters</h3>
+<p>For the twenty-four individual alphabetic characters of the Attic-Ionic alphabet, the
+twenty-four upper-case Unicode code points 0391 - 03A1 and 03A3 - 03A9 may be used.  For equivalent lower-case characters, the  twenty-five lower case Unicode code points from 03B1 - 03C9 may be used.  Either 03C2 (final sigma) or 03C3 (sigma) may be used for the character sigma;  both are mapped to ASCII <code>s</code>.</p>
+<p><div class='example'></p>
+<p>The mapping of ASCII to Unicode Greek transcriptions can be illustrated by creating a GreekString from a Unicode source, and then converting the GreekString to the corresponding ASCII-only transcription.</p>
 <table concordion:execute="#result = getBetaForUnicode(#src2)">
 
 <tr>
@@ -199,8 +204,10 @@ ins {
 <tr><td class="success">w</td><td>ω</td></tr>
 </table>
 <p></div></p>
-<p><div class='example'></p>
-<h3>Examples</h3>
+<h3>Vowels combining with iota subscript, diaeresis, accents and breathings</h3>
+<p>A GreekString may be individual Greek vowel characters together with the combining Unicode codepoint for smooth or rough breathing,  the three accent characters, iota subscript and diaeresis.  Alternatively, a GreekString may use the equivalent Unicode precombined characters.
+<div class='example'></p>
+<h3>Examples: transcription with combining and precombined codepoints</h3>
 <table concordion:execute="#result = getBetaForUnicode(#src)">
 
 <tr>
@@ -234,12 +241,57 @@ ins {
 
 </table>
 <p></div></p>
-<p>Whether constructed from beta-code or unicode source string, Greek Strings can be converted to Unicode in NFC form.</p>
+<h3>Punctuation</h3>
+<p>The following punctuation characters are allowed:</p>
+<ul>
+<li>period . (= \u002E)</li>
+<li>comma , (= \u002C)</li>
+<li>high stop · (= \u0387)</li>
+<li>question mark ; (= \u037E)</li>
+</ul>
 <p><div class='example'></p>
-<h3>Example</h3>
+<h3>Examples of punctuation</h3>
+<p>The comma and period characters are identical in Unicode Greek transcription and ASCII transcription:</p>
+<table concordion:execute="#result = getBetaForUnicode(#src3)">
+
+<tr>
+      <th concordion:assertEquals="#result">ASCII only transcription</th>
+       <th concordion:set="#src3">Unicode transcription</th>
+    </tr>
+<tr><td class="success">.</td><td>.</td></tr>
+<tr><td class="success">,</td><td>,</td></tr>
+</table>
+<p>The Greek question mark character converts to a semicolon in ASCII transcription, and
+the high stop character converts to a colon.</p>
+<table concordion:execute="#result = getBetaForUnicode(#src3)">
+
+<tr>
+      <th concordion:assertEquals="#result">ASCII only transcription</th>
+       <th concordion:set="#src3">Unicode transcription</th>
+    </tr>
+<tr><td class="success">;</td><td>;</td></tr>
+<tr><td class="success">:</td><td>·</td></tr>
+</table>
+<p></div></p>
+<h3>Elision</h3>
+<p>The elision character is transcribed in both ASCII and Unicode Greek transcriptions with the apostrophe character <code>'</code> (= \u0027).</p>
+<table concordion:execute="#result = getBetaForUnicode(#src3)">
+
+<tr>
+      <th concordion:assertEquals="#result">ASCII only transcription</th>
+       <th concordion:set="#src3">Unicode transcription</th>
+    </tr>
+<tr><td class="success">'</td><td>'</td></tr>
+</table>
+<p><div class='example'></p>
+<p></div></p>
+<h2>Unicode output</h2>
+<p>Whether constructed from beta-code or unicode source string, Greek Strings can be converted to Unicode in NFC form, except that two code points are maintained without normalization:  Greek high stop and Greek question mark.</p>
+<p><div class='example'></p>
+<h3>Examples:  conversion to NFC Unicode</h3>
 <p>The ASCII string <strong concordion:set="#beta1">*mh=nin</strong> converts to the NFC Unicode string <strong concordion:assertEquals="asUnicode(#beta1)" class="success">Μῆνιν</strong>.</p>
 <p>The Unicode string <strong concordion:set="#u1">ἐπίρρημα</strong> converts to ASCII string <strong concordion:assertEquals="getBetaForUnicode(#u1)" class="success">e)pi/rrhma</strong> and NFC Unicode string
 <strong concordion:assertEquals="uForU(#u1)" class="success">ἐπίρρημα</strong>
 </div></p>
-<div class="footer">Results generated by <a href="http://www.concordion.org" style="font-weight: bold; text-decoration: none; color: #89C;">Concordion</a><div class="testTime">in 148 ms on 18-Apr-2015 at 20:36:16 EDT</div></div></body>
+<div class="footer">Results generated by <a href="http://www.concordion.org" style="font-weight: bold; text-decoration: none; color: #89C;">Concordion</a><div class="testTime">in 139 ms on 15-Jul-2015 at 13:46:07 EDT</div></div></body>
 </html>
