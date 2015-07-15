@@ -53,7 +53,7 @@ The mapping of ASCII to Unicode Greek transcriptions can be illustrated by creat
 
 @closeex@
 
-### Iota subscript, diaeresis, vowels, accents and breathings ###
+### Vowels combining with iota subscript, diaeresis, accents and breathings ###
 
 
 
