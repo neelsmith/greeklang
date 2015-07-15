@@ -12,7 +12,7 @@ class TestStringBasics extends GroovyTestCase {
 
   void testStaticMethods() {
 
-    assert GreekString.vowel.size() == 7
+    assert GreekString.vowel.size() == 8
     GreekString.vowel.each { v ->
       assert GreekString.isAlphabetic(v)
       assert GreekString.isVowel(v)
