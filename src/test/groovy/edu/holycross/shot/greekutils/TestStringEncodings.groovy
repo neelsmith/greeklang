@@ -24,7 +24,6 @@ class TestStringEncodings extends GroovyTestCase {
 
     assert shouldFail {
       GreekString badString = new GreekString(notGreek, "Unicode")
-      System.err.println "Got badString " + badString
     }
 
   }

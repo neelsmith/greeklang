@@ -68,7 +68,11 @@ class GreekString {
 
   /** Immutable set of punctuation characters. */
   static punctuation = [
-    ".",  ";", ",","'",":"
+    ".",
+    ";",
+    ",",
+    ":",
+    "'"
   ]
 
 
@@ -333,19 +337,39 @@ class GreekString {
 
   
   /** Overrides default implementation of toString.
-   * @returns Beta-code version of a Greek word.
+   * @returns ASCII-only version of a Greek word.
    */
   String toString() {
     return this.greekString
   }
 
+
+  /** Overrides default implementation of toString.
+   * @param asUnicode True if output should be Unicode
+   * in NFC form.
+   * @returns ASCII-only version of a Greek word.
+   */
   String toString(boolean asUnicode) {
     if (asUnicode) {
       TransCoder xcoder = new TransCoder()
       xcoder.setParser("BetaCode")
       xcoder.setConverter("UnicodeC")
       String u = xcoder.getString(this.greekString)
-      return Normalizer.normalize(u, Form.NFC)
+      u = Normalizer.normalize(u, Form.NFC)
+      if (debugLevel > 1) {
+	System.err.println "Before check, normalized " + u
+      }
+      // Override epidoc mapping of high stop
+      // and Greek question mark:
+	    
+      u  = u.replaceAll(/\u00B7/,"\u0387")
+      u = u.replaceAll(/\u003B/,"\u037E")
+
+      if (debugLevel > 1) {
+	System.err.println "After check " + u
+      }
+      
+      return u //Normalizer.normalize(u, Form.NFC)
     } else {
       return this.greekString
     }

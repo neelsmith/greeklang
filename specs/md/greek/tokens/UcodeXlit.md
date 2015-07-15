@@ -57,8 +57,7 @@ The mapping of ASCII to Unicode Greek transcriptions can be illustrated by creat
 
 
 
-A GreekString may be individual Greek vowel characters together with the combining Unicode codepoint for smooth or rough breathing,  the three accent characters, iota subscript and diaeresis.  Alternatively, a GreekString may use the equivalent Unicode precombined characters.  Whether constructed from beta-code or unicode source string, Greek Strings can be converted to Unicode in NFC form.
-
+A GreekString may be individual Greek vowel characters together with the combining Unicode codepoint for smooth or rough breathing,  the three accent characters, iota subscript and diaeresis.  Alternatively, a GreekString may use the equivalent Unicode precombined characters. 
 @openex@
 
 ###Examples: transcription with combining and precombined codepoints
@@ -105,8 +104,63 @@ A GreekString may be individual Greek vowel characters together with the combini
 
 
 
+
+### Punctuation ###
+
+The following punctuation characters are allowed:
+
+- period . (= \u002E)
+- comma , (= \u002C)
+- high stop · (= \u0387)
+- question mark ; (= \u037E)
+
+
+
 @openex@
 
+### Examples of punctuation ###
+
+The comma and period characters are identical in Unicode Greek transcription and ASCII transcription:
+
+
+<table concordion:execute="#result = getBetaForUnicode(#src3)">
+
+<tr>
+	  <th concordion:assertEquals="#result">ASCII only transcription</th>
+	   <th concordion:set="#src3">Unicode transcription</th>
+	</tr>
+<tr><td>.</td><td>.</td></tr>
+<tr><td>,</td><td>,</td></tr>
+</table>
+
+
+The Greek question mark character converts to a semicolon in ASCII transcription, and
+the high stop character converts to a colon.
+<table concordion:execute="#result = getBetaForUnicode(#src3)">
+
+<tr>
+	  <th concordion:assertEquals="#result">ASCII only transcription</th>
+	   <th concordion:set="#src3">Unicode transcription</th>
+	</tr>
+<tr><td>;</td><td>;</td></tr>
+<tr><td>:</td><td>·</td></tr>
+</table>
+
+
+
+@closeex@
+
+### Elision
+
+
+
+
+## Unicode output
+
+ Whether constructed from beta-code or unicode source string, Greek Strings can be converted to Unicode in NFC form.
+
+
+@openex@
 
 ### Examples:  conversion to NFC Unicode ###
 
