@@ -361,15 +361,13 @@ class GreekString {
       }
       // Override epidoc mapping of high stop
       // and Greek question mark:
-	    
       u  = u.replaceAll(/\u00B7/,"\u0387")
       u = u.replaceAll(/\u003B/,"\u037E")
-
       if (debugLevel > 1) {
 	System.err.println "After check " + u
       }
       
-      return u //Normalizer.normalize(u, Form.NFC)
+      return u
     } else {
       return this.greekString
     }

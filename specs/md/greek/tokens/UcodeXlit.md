@@ -152,12 +152,25 @@ the high stop character converts to a colon.
 
 ### Elision
 
+The elision character is transcribed in both ASCII and Unicode Greek transcriptions with the apostrophe character `'` (= \u0027).
+<table concordion:execute="#result = getBetaForUnicode(#src3)">
+
+<tr>
+	  <th concordion:assertEquals="#result">ASCII only transcription</th>
+	   <th concordion:set="#src3">Unicode transcription</th>
+	</tr>
+<tr><td>'</td><td>'</td></tr>
+</table>
+
+@openex@
+
+@closeex@
 
 
 
 ## Unicode output
 
- Whether constructed from beta-code or unicode source string, Greek Strings can be converted to Unicode in NFC form.
+ Whether constructed from beta-code or unicode source string, Greek Strings can be converted to Unicode in NFC form, except that two code points are maintained without normalization:  Greek high stop and Greek question mark.
 
 
 @openex@
