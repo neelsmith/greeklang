@@ -171,7 +171,7 @@ TBA
 
 Adjacent breathing, accent, and diaeresis are always represented in that sequence.
 
-The sequence breathing, accent, and diaeresis *follows* lower-case vowels.  When the vowel is a diphthong, they follow the second vowel of the diphthong. For upper-case vowels, the sequence follows the asterisk marking upper case, and *precedes* the vowel character.
+The sequence breathing, accent, and diaeresis *follows* lower-case vowels.  When the vowel is a diphthong, they follow the second vowel of the diphthong. For upper-case vowels, the sequence follows the asterisk marking upper case, and *precedes* the vowel character.  While this may seem illogical, it simplifies interoperation with legacy ASCII-only encodings of polytonic Greek.
 
 
 @openex@

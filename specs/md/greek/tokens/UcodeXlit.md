@@ -4,9 +4,19 @@
 
 ## Unicode Greek mapping ##
 
+The following characters are allowed in the transcription system using the ancient Greek section of Unicode.
 
-A GreekString may be created from either precombined or combining Unicode codepoints.  Equivalent values in Unicode are 
+### Individual alphabetic characters ###
 
+
+
+For the twenty-four individual alphabetic characters of the Attic-Ionic alphabet, the
+twenty-four upper-case Unicode code points 0391 - 03A1 and 03A3 - 03A9 may be used.  For equivalent lower-case characters, the  twenty-five lower case Unicode code points from 03B1 - 03C9 may be used.  Either 03C2 (final sigma) or 03C3 (sigma) may be used for the character sigma;  both are mapped to ASCII `s`.
+
+
+@openex@
+
+The mapping of ASCII to Unicode Greek transcriptions can be illustrated by creating a GreekString from a Unicode source, and then converting the GreekString to the corresponding ASCII-only transcription.
 
 <table concordion:execute="#result = getBetaForUnicode(#src2)">
 
@@ -43,12 +53,15 @@ A GreekString may be created from either precombined or combining Unicode codepo
 
 @closeex@
 
+### Iota subscript, diaeresis, vowels, accents and breathings ###
 
 
+
+A GreekString may be individual Greek vowel characters together with the combining Unicode codepoint for smooth or rough breathing,  the three accent characters, iota subscript and diaeresis.  Alternatively, a GreekString may use the equivalent Unicode precombined characters.  Whether constructed from beta-code or unicode source string, Greek Strings can be converted to Unicode in NFC form.
 
 @openex@
 
-###Examples
+###Examples: transcription with combining and precombined codepoints
 
 
 <table concordion:execute="#result = getBetaForUnicode(#src)">
@@ -89,13 +102,13 @@ A GreekString may be created from either precombined or combining Unicode codepo
 @closeex@
 
 
-Whether constructed from beta-code or unicode source string, Greek Strings can be converted to Unicode in NFC form.
+
 
 
 @openex@
 
 
-### Example ###
+### Examples:  conversion to NFC Unicode ###
 
 
 The ASCII string <strong concordion:set="#beta1">*mh=nin</strong> converts to the NFC Unicode string <strong concordion:assertEquals="asUnicode(#beta1)">Μῆνιν</strong>.

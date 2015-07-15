@@ -21,7 +21,8 @@ class GreekString {
   Integer WARN =  1
   Integer DEBUG = 2
   Integer VERBOSE = 3
-  Integer debugLevel = 0
+  
+  Integer debugLevel = 5
 
 
   /** Immutable set of consonant characters. */
@@ -91,7 +92,9 @@ class GreekString {
     Integer count = 0
     String betaString = xcoder.getString(srcString).toLowerCase()
     betaString = betaString.replaceAll("s1","s")
-    while (count < betaString.length() - 1) {
+    System.err.println "Analyze " + srcString + " as " + greekMapping + " (len ${betaString} = " + betaString.length() + ")"
+    
+    while (count < betaString.length()) {
       if (!(isValidChar(betaString.substring(count,count+1)))) {
 	System.err.println "Error parsing ${betaString}: failed on ${betaString.substring(count,count+1)} (char ${count})"
 	System.err.println "GreekString:constructor with ${greekMapping} invalid character at position ${count}:  '" + betaString.substring(count,count+1) + "'"
@@ -123,7 +126,7 @@ class GreekString {
   throws Exception {
     Integer count = 0
     String betaString = srcString.toLowerCase()
-    while (count < betaString.length() - 1) {
+    while (count < betaString.length() ) {
       if (!(isValidChar(betaString.substring(count,count+1)))) {
 	System.err.println "Error parsing ${betaString}: failed on ${betaString.substring(count,count+1)} (char ${count})"
 	throw new Exception("GreekString: invalid characer ${betaString.substring(count,count+1)}")
@@ -146,6 +149,10 @@ class GreekString {
    * @returns true if character is valid, otherwise false.
    */ 
   static boolean isValidChar(String ch) {
+    Integer debug = 0
+    if (debug> 0) {
+      System.err.println "GreekString: check " + ch
+    }
     if (
       (GreekString.isAlphabetic(ch)) 
       || (GreekString.isAccentOrBreathing(ch)) 
@@ -155,6 +162,7 @@ class GreekString {
       || (ch == GreekString.diaeresis)
       || (ch == GreekString.asterisk)
     )  {
+      if (debug > 0) { System.err.println "${ch} is OK!" }
       return true
     } else {
       System.err.println("GreekString: invalid beta code character ${ch}")

@@ -21,9 +21,12 @@ class TestStringEncodings extends GroovyTestCase {
 
   void testLimits() {
     String notGreek = "αλφα = 1"
+
     assert shouldFail {
       GreekString badString = new GreekString(notGreek, "Unicode")
+      System.err.println "Got badString " + badString
     }
+
   }
 
 
