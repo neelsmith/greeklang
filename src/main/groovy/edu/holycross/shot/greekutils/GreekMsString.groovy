@@ -19,6 +19,9 @@ class GreekMsString extends GreekString {
   static twoDots = "\u205A"
   static endOfScholion = "\u2051"
   static beginSection = "\u2021"
+  static combiningMacron = "\u0304"
+  static combiningBreve = "\u0306"
+  static combiningDiaeresis = "\u0308"
   
   /** Immutable set of punctuation characters allowed in MSS. */
   static msPunctuation = [
@@ -47,6 +50,12 @@ class GreekMsString extends GreekString {
   String msUnicodeString
 
 
+  
+  /** Converts from Unicode transcription to ASCII transcription.
+   * @param uniString String in Unicode transcription.
+   * @param Greek mapping String.
+   * @returns String in ASCII transcription.
+   */
   static String asciifyUnicode (String uniString, String mapping) {
     TransCoder xcoder = new TransCoder()
     xcoder.setParser(mapping)
@@ -57,13 +66,42 @@ class GreekMsString extends GreekString {
     asciiString = asciiString.replaceAll("s1","s")
     // other substitutions: ms Puncts ...
 
-    return asciiString
+    StringBuilder cleanString = new StringBuilder()
+        
+    if (asciiString.size() > 0) {
+      int max = asciiString.codePointCount(0, asciiString.size() - 1)
+      int idx = 0
+      while (idx <= max) {
+	int cp = asciiString.codePointAt(idx)
+	if (cp != null) {
+	  String s = new String(Character.toChars(cp))
+	  if (s == GreekMsString.combiningMacron) {
+	    cleanString.append("_")
 
+	  } else if (s == GreekMsString.combiningBreve) {
+	    cleanString.append("^")
+
+	  } else if (s == GreekMsString.combiningDiaeresis) {
+	    cleanString.append("+")
+
+
+	    
+	  } else if (GreekString.isValidChar(s)) {
+	    cleanString.append(s)
+	  }
+	}
+	idx = asciiString.offsetByCodePoints(idx,1)	
+      }
+    } else {
+      System.err.println "GreekMsString:warning: 0-length ascii form for " + uniString
+    }
+    return cleanString.toString()
   }
   
   
   GreekMsString(String srcString, String greekMapping)  {
     super(srcString, greekMapping, true)
+
     Integer debug = 0
 
     int lastCp = srcString.codePointCount(0, srcString.size() - 1)
@@ -75,34 +113,14 @@ class GreekMsString extends GreekString {
       throw new Exception("GreekMsString: Unicode 'middle dot' not allowed in Greek Strings: please use Greek Ano Teleia instead (Unicode x0387 == 903). ")
     }
 
-
     this.msUnicodeString = srcString
-    String asciiString = asciifyUnicode(srcString, greekMapping)
+    this.msAsciiString = asciifyUnicode(srcString, greekMapping)
     
 
     if (debug > 0) {
       System.err.println "GreekMsString: ${srcString} -> ascii ${asciiString}"
     }
-    
-    StringBuilder cleanString = new StringBuilder()
-        
-    if (asciiString.size() > 0) {
-      int max = asciiString.codePointCount(0, asciiString.size() - 1)
-      int idx = 0
-      while (idx <= max) {
-	int cp = asciiString.codePointAt(idx)
-	if (cp != null) {
-	  String s = new String(Character.toChars(cp))
-	  if (GreekString.isValidChar(s)) {
-	    cleanString.append(s)
-	  }
-	}
-	idx = asciiString.offsetByCodePoints(idx,1)	
-      }
-    } else {
-      System.err.println "GreekMsString:warning: 0-length ascii form for " + srcString
-    }
-    this.msAsciiString = cleanString.toString()
+
   }
 
 
