@@ -15,14 +15,15 @@ class GreekMsString extends GreekString {
 
   static evilImpostorStopCodePoint = 183
   
-  static highStop = "\u0387"
+  static highStop = "\u0387" // should be good in GreekString, too?
   static twoDots = "\u205A"
   static endOfScholion = "\u2051"
+  static beginSection = "\u2021"
   
   /** Immutable set of punctuation characters allowed in MSS. */
   static msPunctuation = [
-    highStop, endOfScholion , twoDots
-    //    "·", "⁑" , "⁚"
+    highStop, endOfScholion , twoDots, beginSection
+    //    "·", "⁑" , "⁚", "‡"
   ]
 
   /** Floating macron character. */
@@ -40,13 +41,31 @@ class GreekMsString extends GreekString {
     macron,breve,diaeresis,floatingGrave
   ]
 
-
-  String msBetaString
+  /** Greek MS string in ASCII transcription. */
+  String msAsciiString
+  /** Greek MS string transcribed in Greek range of Unicode. */
   String msUnicodeString
+
+
+  static String asciifyUnicode (String uniString, String mapping) {
+    TransCoder xcoder = new TransCoder()
+    xcoder.setParser(mapping)
+    xcoder.setConverter("BetaCode")
+    
+    Integer count = 0
+    String asciiString = xcoder.getString(uniString).toLowerCase()
+    asciiString = asciiString.replaceAll("s1","s")
+    // other substitutions: ms Puncts ...
+
+    return asciiString
+
+  }
+  
   
   GreekMsString(String srcString, String greekMapping)  {
     super(srcString, greekMapping, true)
     Integer debug = 0
+
     int lastCp = srcString.codePointCount(0, srcString.size() - 1)
     if (debug > 0) {
       System.err.println "Final codepoint in ${srcString} = " + srcString.codePointAt(lastCp)
@@ -58,39 +77,32 @@ class GreekMsString extends GreekString {
 
 
     this.msUnicodeString = srcString
+    String asciiString = asciifyUnicode(srcString, greekMapping)
     
-    TransCoder xcoder = new TransCoder()
-    xcoder.setParser(greekMapping)
-    xcoder.setConverter("BetaCode")
-    
-    Integer count = 0
-    String betaString = xcoder.getString(srcString).toLowerCase()
-    betaString = betaString.replaceAll("s1","s")
-
 
     if (debug > 0) {
-      System.err.println "GreekMsString: ${srcString} -> ascii ${betaString}"
+      System.err.println "GreekMsString: ${srcString} -> ascii ${asciiString}"
     }
     
     StringBuilder cleanString = new StringBuilder()
         
-    if (betaString.size() > 0) {
-      int max = betaString.codePointCount(0, betaString.size() - 1)
+    if (asciiString.size() > 0) {
+      int max = asciiString.codePointCount(0, asciiString.size() - 1)
       int idx = 0
       while (idx <= max) {
-	int cp = betaString.codePointAt(idx)
+	int cp = asciiString.codePointAt(idx)
 	if (cp != null) {
 	  String s = new String(Character.toChars(cp))
 	  if (GreekString.isValidChar(s)) {
 	    cleanString.append(s)
 	  }
 	}
-	idx = betaString.offsetByCodePoints(idx,1)	
+	idx = asciiString.offsetByCodePoints(idx,1)	
       }
     } else {
       System.err.println "GreekMsString:warning: 0-length ascii form for " + srcString
     }
-    this.msBetaString = cleanString.toString()
+    this.msAsciiString = cleanString.toString()
   }
 
 
@@ -168,7 +180,7 @@ class GreekMsString extends GreekString {
     if (asUnicode) {
       return this.msUnicodeString
     } else {
-      return this.msBetaString
+      return this.msAsciiString
     }
   }
 
