@@ -38,4 +38,14 @@ class TestMsStrings extends GroovyTestCase {
     }
   }
 
+
+  void testWordString() {
+    String verbForm = "κλονέονται"
+    GreekMsString msVerbForm = new GreekMsString(verbForm, "Unicode")
+    println "${msVerbForm} -> ${msVerbForm.toString(false)} "
+
+   
+  }
+
+  
 }

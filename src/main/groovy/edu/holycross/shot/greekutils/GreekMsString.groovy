@@ -57,12 +57,17 @@ class GreekMsString extends GreekString {
    * @returns String in ASCII transcription.
    */
   static String asciifyUnicode (String uniString, String mapping) {
+
+    // decompose UniString:
+    String decomposed = Normalizer.normalize(uniString, Form.NFD)
+
+    
     TransCoder xcoder = new TransCoder()
     xcoder.setParser(mapping)
     xcoder.setConverter("BetaCode")
     
     Integer count = 0
-    String asciiString = xcoder.getString(uniString).toLowerCase()
+    String asciiString = xcoder.getString(decomposed).toLowerCase()
     asciiString = asciiString.replaceAll("s1","s")
     // other substitutions: ms Puncts ...
 

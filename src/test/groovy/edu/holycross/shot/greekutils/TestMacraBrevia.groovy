@@ -37,12 +37,26 @@ class TestMacraBrevia extends GroovyTestCase {
 
   void testDiaeresis () {
     String diaeresis = "ί̈σχειν"
-    String expectedAscii = "i/+sxein"
+    String expectedAscii = "i+/sxein"
 
     GreekMsString diaeresisString = new GreekMsString(diaeresis, "Unicode")
     assert diaeresisString.toString(false) ==  GreekMsString.asciifyUnicode(diaeresis, "Unicode")
     assert diaeresisString.toString(false) == expectedAscii
 
   }
+
+  void testPrecomposed() {
+    File precomposed = new File("testdata/strings/kwkcombo.txt")
+    String nfcStr = precomposed.getText("UTF-8")
+    GreekMsString msString = new GreekMsString(nfcStr, "Unicode")
+
+    String expectedAscii = "kw/ku_sen"
+    String actualAscii =  msString.toString(false).replaceAll("\n","")
+
+    println "Expected #${expectedAscii}#"
+    println "Actual #${actualAscii}#"
+
+  }
+
   
 }

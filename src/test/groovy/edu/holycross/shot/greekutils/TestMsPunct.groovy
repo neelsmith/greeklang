@@ -11,17 +11,14 @@ class TestMsPunct extends GroovyTestCase {
 
 
 
-  
-  
   void testStaticPunctSigns() {
-    [ "\u0387", "⁑" , "⁚"].each { punctSign ->
+    [ "\u0387", "⁑" , "⁚", "‡"].each { punctSign ->
       assert GreekMsString.isMsPunctuation(punctSign)
       assert GreekMsString.isValidMsChar(punctSign)
     }
   }
 
   void testStaticBreathQuant() {
-
     ["\u0300", "\u0304", "\u0306", "\u0308"].each { mark ->
       assert GreekMsString.isMsQuantityOrBreathing(mark)
       assert GreekMsString.isValidMsChar(mark)
@@ -37,5 +34,9 @@ class TestMsPunct extends GroovyTestCase {
   }
   
 
+
+  void testConverting() {
+  }
+  
 
 }
