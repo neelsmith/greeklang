@@ -1,0 +1,11 @@
+
+apply plugin: "base"
+apply plugin: "java"
+apply plugin: "groovy"
+
+task hello {
+  description = "Greet from subproject."
+}
+hello.doLast {
+  println description
+}
