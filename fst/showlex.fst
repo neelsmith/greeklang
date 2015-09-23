@@ -1,0 +1,3 @@
+$stems$ = "lexicon.fst"
+$stems$
+ 
