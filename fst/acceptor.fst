@@ -4,7 +4,7 @@
 #include "stemtypes.fst"
 
 
-% #character# if defined in "phonology.fst"
+% #character# is defined in "phonology.fst"
 % #extratag# is defined in "extratags.fst"
 #nonmorph# = #character# #extratag#
 $nonmorph$ = [#nonmorph#]
