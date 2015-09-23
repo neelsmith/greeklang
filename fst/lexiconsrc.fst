@@ -1,1 +1,2 @@
-mhn<fem><is_idos>
+mhn<fem><is_ios>
+phlei\+d<masc><hs_ou>
