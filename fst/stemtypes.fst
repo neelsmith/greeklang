@@ -1,6 +1,6 @@
 #noun1# = <a_hs>
 #noun2# = <os_ou><os_on><hs_ou>
-#noun3# = <is_ios>
+#noun3# = <is_ios><eus_ews>
 
 
 #noun# = #noun1# #noun2# #noun3#
