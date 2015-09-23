@@ -1,13 +1,13 @@
 %% inflection.fst
 
-$is_ios_ending$ = <is_ios>
-(is<nom><sg>|\
+$is_ios_ending$ = <is_ios> (is<nom><sg>|\
 i<voc><sg>|\
-in<acc><sg>)
+in<acc><sg> )
 
 
-$hs_ou_ending$ = <hs_ou> (hs[<nom><voc>]<sg> )
+$hs_ou_ending$ = <hs_ou> (hs[<nom><voc>]<sg> |\
+hn<acc><sg>)
 
-$ending$ = $is_ios_ending$ | $hs_ou_ending
+$ending$ = $is_ios_ending$ | $hs_ou_ending$
 
 $ending$
