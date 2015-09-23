@@ -14,7 +14,7 @@ $nonmorph$ = [#nonmorph#]
 %
 % #noun# is the set of stemtypes for nouns.
 $=noun$ = [#noun#]
-$nounacceptor$ = ($=case$ | $=number$ | $=gender$ | $nonmorph$)* $=noun$ ($=case$ | $=number$ | $=gender$ | $nonmorph$)* $=noun$
+$nounacceptor$ = ($=case$ | $=number$ | $=gender$ | $nonmorph$ )* $=noun$ $=noun$ ($=case$ | $=number$ | $=gender$ | $nonmorph$ )* 
 
 
 $acceptor$  = $nounacceptor$

@@ -4,7 +4,23 @@
 #include "phonology.fst"
 
 $stemraw$ = "lexiconsrc.fst"
+$stems$ = $stemraw$
+$ends$ = "<inflection.a>"
 
-ALPHABET = [#character#] [#tag#]
+%$morph$ = $stems$ {\:\:}:<> $ends$
 
-$stemraw$
+$morph$ = $stems$ $ends$
+
+% $morph$ YIELDS:
+%generate> mhn<fem><is_ios>::<is_ios>is<nom><sg>
+%mhn<fem><is_ios><is_ios>is<nom><sg>
+%generate>
+%analyze> mhn<fem><is_ios><is_ios>is<nom><sg>
+%mhn<fem><is_ios>::<is_ios>is<nom><sg>
+
+$acceptor$ = "<acceptor.a>"
+
+$acceptor$ || $morph$
+
+
+%ALPHABET = [#character#] [#tag#]
