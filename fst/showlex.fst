@@ -1,3 +1,4 @@
 $stems$ = "lexicon.fst"
-$stems$
- 
+$extras$ = "extralex.fst"
+
+$stems$ | $extras$

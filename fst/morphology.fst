@@ -4,13 +4,17 @@
 #include "extratags.fst"
 #include "phonology.fst"
 
-$stemraw$ = "lexicon.fst"
+%$stemraw$ = "lexicon.fst" |  "extralex.fst"
+$stemraw$ =  "extralex.fst"
 $stems$ = $stemraw$
+%$extrastems$ = "extralex.fst"
+
 
 $ends$ = "<inflection.a>"
 $extrainfl$ = "<extrainfl.a>"
 
-$morph$ = $stems$ ($ends$ | $extrainfl$ )
+%$morph$ = ($stems$ | $extrastems$ ) ($ends$ | $extrainfl$ )
+$morph$ = $stems$  ($ends$ | $extrainfl$ )
 
 % $morph$ YIELDS:
 %generate> mhn<fem><is_ios><is_ios>is<nom><sg>
@@ -25,7 +29,9 @@ $acceptor$ = "<acceptor.a>"
 
 
 %$acceptor$ || $morph$
-$morph$
+%$morph$
+
+$stems$
 
 % analyze> basil<masc><eus_ews><eus_ews>eus<masc><nom><sg>
 % basil<masc><eus_ews><eus_ews>eus<masc><nom><sg>
