@@ -24,7 +24,9 @@ $acceptor$ = "<acceptor.a>"
 
 
 
-$acceptor$ || $morph$
+%$acceptor$ || $morph$
+$morph$
+
 % analyze> basil<masc><eus_ews><eus_ews>eus<masc><nom><sg>
 % basil<masc><eus_ews><eus_ews>eus<masc><nom><sg>
 

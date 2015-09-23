@@ -13,11 +13,10 @@
 
 
 $consonant$ = [#consonant#]
+$breathing$ = [#breathing#]
 $vowel$ = [#vowel#]
 $vowel-sep$ = $vowel$ $vowel$ [#diaeresis#]:[#diaeresis#<>]
 $vowel$ = ($vowel-sep$ | $vowel$)
+$crushacc$ = [#accent#]:<>
 
-
-
-
-$letter$ = ($consonant$ | $vowel$)
+$character$ = ($consonant$ | $vowel$ | $breathing$ | $crushacc$ )
