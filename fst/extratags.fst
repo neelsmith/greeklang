@@ -6,5 +6,3 @@
 #include "stemtypes.fst"
 
 #extratag# = <epic>
-
-#is_ios_epic# = <is_ios> (is<fem><nom><sg>)

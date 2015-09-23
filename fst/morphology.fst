@@ -7,11 +7,10 @@
 $stemraw$ = "lexicon.fst"
 $stems$ = $stemraw$
 
-% Compile when stable:  use .fst in dev't:
-%$ends$ = "inflection.fst"
 $ends$ = "<inflection.a>"
+$extrainfl$ = "<extrainfl.a>"
 
-$morph$ = $stems$ $ends$
+$morph$ = $stems$ ($ends$ | $extrainfl$ )
 
 % $morph$ YIELDS:
 %generate> mhn<fem><is_ios><is_ios>is<nom><sg>
@@ -21,13 +20,12 @@ $morph$ = $stems$ $ends$
 %mhn<fem><is_ios><is_ios>is<nom><sg>
 
 
-% Compile when stable:  use .fst in dev't:
 $acceptor$ = "<acceptor.a>"
-%$acceptor$ = "acceptor.fst"
+
 
 
 $acceptor$ || $morph$
-%$morph$
-%$stems$ $ends$
+% analyze> basil<masc><eus_ews><eus_ews>eus<masc><nom><sg>
+% basil<masc><eus_ews><eus_ews>eus<masc><nom><sg>
 
 %ALPHABET = [#character#] [#tag#]
