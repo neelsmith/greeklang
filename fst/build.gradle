@@ -1,0 +1,46 @@
+// For unit testing:
+apply plugin: "groovy"
+
+apply from: "fstconf.gradle"
+
+task cpSrc (type: Copy) {
+    description = "Copies src directory to build area."
+    from ("src") {
+      include ("makefile", "**/*.fst")
+    }
+    into "${buildDir}/fst"
+}
+
+
+task cpRules (type: Copy) {
+    description = "Copies rules directory to build area."
+    from ("rules") {
+      include ("**/*.fst")
+    }
+    into "${buildDir}/fst"
+}
+
+
+task cpStems (type: Copy) {
+    description = "Copies stems directory to build area."
+    from ("stems") {
+      include ('**/*.fst')
+    }
+    into "${buildDir}/fst"
+}
+
+
+task cpTags (type: Copy) {
+    description = "Copies tags directory to build area."
+    from ("tags") {
+      include ('**/*.fst')
+    }
+    into "${buildDir}/fst"
+}
+
+task cpAll (dependsOn: [cpTags, cpStems, cpRules, cpSrc]){
+  description = "Copies all source material to build area"
+}
+cpAll.doLast {
+  System.err.println "All source files copied to build area."
+}

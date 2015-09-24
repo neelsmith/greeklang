@@ -1,4 +1,4 @@
 $stems$ = "lexicon.fst"
-$extras$ = "extralex.fst"
+$extras$ = "iliad.fst"
 
 $stems$ | $extras$

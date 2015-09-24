@@ -1,13 +1,12 @@
 %% morphology.fst : a Finite State Transducer for ancient Greek morphology %%
 
 #include "symbols.fst"
-#include "extratags.fst"
 #include "phonology.fst"
 
-%$stemraw$ = "lexicon.fst" |  "extralex.fst"
-$stemraw$ =  "extralex.fst"
+$stemraw$ = "lexicon.fst" |  "iliad.fst"
+%$stemraw$ =  "iliad.fst"
 $stems$ = $stemraw$
-%$extrastems$ = "extralex.fst"
+
 
 
 $ends$ = "<inflection.a>"
@@ -29,9 +28,9 @@ $acceptor$ = "<acceptor.a>"
 
 
 %$acceptor$ || $morph$
-%$morph$
+$morph$
 
-$stems$
+%$stems$
 
 % analyze> basil<masc><eus_ews><eus_ews>eus<masc><nom><sg>
 % basil<masc><eus_ews><eus_ews>eus<masc><nom><sg>
