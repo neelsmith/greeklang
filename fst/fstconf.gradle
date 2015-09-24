@@ -1,5 +1,5 @@
 
 ext {
   FSTCOMPILER = "/usr/bin/fst-compiler"
-  MAKE = "usr/bin/make"
+  MAKE = "/usr/bin/make"
 }

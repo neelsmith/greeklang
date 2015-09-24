@@ -49,3 +49,9 @@ task cpAll (dependsOn: [cpTags, cpStems, cpRules, cpSrc]){
 cpAll.doLast {
   System.err.println "All source files copied to build area."
 }
+
+
+task fst(type:Exec, dependsOn: cpAll) {
+  description = "Builds Finite State Transducer in ${buildDir}/fst."
+  commandLine =  [MAKE, "${buildDir}/fst/makefile".toString()]
+}
