@@ -4,6 +4,7 @@
 % 1. morphological tags
 #include "@workdir@symbols.fst"
 #include "@workdir@extratags.fst"
+#include "@workdir@urns.fst"
 % 2. ASCII representation of polytonic Greek
 #include "@workdir@phonology.fst"
 
@@ -26,7 +27,7 @@ $morph$ = $stems$ $separator$ $separator$ $ends$
 % #morphtags# is defined in "symbols.fst"
 % #stemtype#  is defined in "stemtypes.fst"
 % #extratag#  is defined in "extratgs.fst"
-ALPHABET = [#character#] [#extratag#]:<> [#morphtags#]:<> [#stemtype#]:<> [#separator#]:<>
+ALPHABET = [#character#] [#extratag#]:<> [#morphtags#]:<> [#stemtype#]:<> [#separator#]:<> [#urn#]:<>
 $striptags$ = .*
 
 $acceptor$ = "<@workdir@acceptor.a>"

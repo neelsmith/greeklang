@@ -1,6 +1,7 @@
 #include "@workdir@symbols.fst"
 #include "@workdir@extratags.fst"
 #include "@workdir@phonology.fst"
+#include "@workdir@urns.fst"
 #include "@workdir@stemtypes.fst"
 
 
@@ -10,10 +11,11 @@ $extratag$ = [#extratag#]
 #nonmorph# = #character# #extratag#
 $nonmorph$ = [#nonmorph#]
 
+$urn$ = [#urn#]
 % #noun# is the set of stemtypes for nouns,
 % defined in stemtypes.fst
 $=noun$ = [#noun#]
-$nounacceptor$ =  $nonmorph$+ <noun> $=gender$ $=noun$ $extratag$* $separator$+ $=noun$  $nonmorph$* $=gender$ $=case$ $=number$ $nonmorph$*
+$nounacceptor$ =  $urn$ $nonmorph$+ <noun> $=gender$ $=noun$ $extratag$* $separator$+ $=noun$  $nonmorph$* $=gender$ $=case$ $=number$ $nonmorph$*
 
 
 
