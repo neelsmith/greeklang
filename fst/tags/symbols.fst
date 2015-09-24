@@ -1,25 +1,40 @@
 #include "@workdir@stemtypes.fst"
 
-% Start with noun morphology:
+
+% Variables with symbols for morphological concepts.
+%
+% Parts of speech:
+#pos# = <noun><verb><adj>
+
+%
+% 1. Noun morphology:
+%
 #gender# = <masc><fem><neut>
 #case# = <nom><acc><gen><dat><voc>
 #number# = <sg><pl>
+%
+% 2. Adjective morphology:
+%
+%
+% 3. Verb morphology:
+%
 
-#morph# =  #gender# #case# #number#
 
-#tag# = #morph#
+#morphtags# = #pos# #gender# #case# #number#
 
 
+
+
+
+% Transducers for the above variables:
 $gender$ = [#gender#]
 $case$ = [#case#]
 $number$ = [#number#]
 
-$tag$ = [#tag#]
 
+
+
+% Identity variables for the transducers:
 $=gender$ = [#gender#]
 $=case$ = [#case#]
 $=number$ = [#number#]
-
-$=stemtype$ = [#stemtype#]
-
-$separator$ = {\:\:}:<>

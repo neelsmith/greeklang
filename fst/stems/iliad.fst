@@ -1,2 +1,2 @@
-qe<fem><a_as><epic>
-nous<masc><os_ou><epic>
+qe<noun><fem><a_as><epic>
+nous<noun><masc><os_ou><epic>

@@ -53,5 +53,5 @@ cpAll.doLast {
 
 task fst(type:Exec, dependsOn: cpAll) {
   description = "Builds Finite State Transducer in ${buildDir}/fst."
-  commandLine =  [MAKE, "${buildDir}/fst/makefile".toString()]
+  commandLine =  [MAKE, "-f", "${buildDir}/fst/makefile".toString()]
 }
