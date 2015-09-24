@@ -1,7 +1,7 @@
 %% morphology.fst : a Finite State Transducer for ancient Greek morphology %%
 
-#include "symbols.fst"
-#include "phonology.fst"
+#include "@workdir@symbols.fst"
+#include "@workdir@phonology.fst"
 
 $stemraw$ = "lexicon.fst" |  "iliad.fst"
 %$stemraw$ =  "iliad.fst"

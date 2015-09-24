@@ -1,7 +1,7 @@
-#include "symbols.fst"
-#include "extratags.fst"
-#include "phonology.fst"
-#include "stemtypes.fst"
+#include "@workdir@symbols.fst"
+#include "@workdir@extratags.fst"
+#include "@workdir@phonology.fst"
+#include "@workdir@stemtypes.fst"
 
 
 % #extratag# is defined in "extratags.fst"

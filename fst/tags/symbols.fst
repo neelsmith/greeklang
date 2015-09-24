@@ -1,4 +1,4 @@
-#include "stemtypes.fst"
+#include "@workdir@stemtypes.fst"
 
 % Start with noun morphology:
 #gender# = <masc><fem><neut>

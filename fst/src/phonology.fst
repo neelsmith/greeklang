@@ -1,4 +1,4 @@
-#include "symbols.fst"
+#include "@workdir@symbols.fst"
 
 #consonant# = bgdzqklmncprstfxy
 #vowel# = aeiouhw\|
