@@ -27,8 +27,8 @@ $acceptor$ = "<acceptor.a>"
 
 
 
-%$acceptor$ || $morph$
-$morph$
+$acceptor$ || $morph$
+%$morph$
 
 %$stems$
 

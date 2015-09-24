@@ -4,15 +4,15 @@
 #include "stemtypes.fst"
 
 
-% #character# is defined in "phonology.fst"
 % #extratag# is defined in "extratags.fst"
+$extratag$ = [#extratag#]
+% #character# is defined in "phonology.fst"
 #nonmorph# = #character# #extratag#
 $nonmorph$ = [#nonmorph#]
 
-
 % #noun# is the set of stemtypes for nouns.
 $=noun$ = [#noun#]
-$nounacceptor$ =  $nonmorph$* $=gender$ $=noun$ $=noun$  $nonmorph$* $=gender$ $=case$ $=number$ $nonmorph$*
+$nounacceptor$ =  $nonmorph$* $=gender$ $=noun$ $extratag$* $=noun$  $nonmorph$* $=gender$ $=case$ $=number$ $nonmorph$*
 
 
 $acceptor$  = $nounacceptor$
