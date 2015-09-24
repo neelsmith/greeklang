@@ -3,6 +3,7 @@
 % Tokens in our alphabet:
 % 1. morphological tags
 #include "@workdir@symbols.fst"
+#include "@workdir@extratags.fst"
 % 2. ASCII representation of polytonic Greek
 #include "@workdir@phonology.fst"
 
@@ -19,14 +20,14 @@ $extrainfl$ = "<@workdir@extrainfl.a>"
 
 $ends$ = $basicend$ | $extrainfl$
 
-ALPHABET = $character$ [#morphtags#] [#stemtype#]:<>
-$stripstemtype$ = .*
 
-$morph$ = $stems$ $ends$ || $stripstemtype$
+$morph$ = $stems$ $separator$ $separator$ $ends$
+
+% #morphtags# is defined in "symbols.fst"
+% #stemtype#  is defined in "stemtypes.fst"
+% #extratag#  is defined in "extratgs.fst"
+ALPHABET = [#character#] [#extratag#]:<> [#morphtags#]:<> [#stemtype#]:<> [#separator#]:<>
+$striptags$ = .*
 
 $acceptor$ = "<@workdir@acceptor.a>"
-$acceptor$ || $morph$
-
-%YIELDS:
-%analyze> mhn<noun><fem>is<fem><nom><sg>
-%mhn<noun><fem><is_ios><is_ios>is<fem><nom><sg>
+$acceptor$ || $morph$ || $striptags$

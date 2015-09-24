@@ -21,7 +21,7 @@ $decl1noun_ending$ = $a_as_ending$ | $hs_ou_ending$
 % Second declension patterns:
 %
 
-$os_ou_ending$ = <hs_ou> (os[<masc>fem>]<nom><<sg> |\
+$os_ou_ending$ = <os_ou> (os[<masc><fem>]<nom><sg> |\
   ou[<masc><fem>]<gen><sg> \
   w\|[<masc><fem>]<dat><sg> \
   on[<masc><fem>]<acc><sg> \

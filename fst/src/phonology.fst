@@ -19,4 +19,8 @@ $vowel-sep$ = $vowel$ $vowel$ [#diaeresis#]:[#diaeresis#<>]
 $vowel$ = ($vowel-sep$ | $vowel$)
 $crushacc$ = [#accent#]:<>
 
+
 $character$ = ($consonant$ | $vowel$ | $breathing$ | $crushacc$ )
+
+#separator# = \:
+$separator$ = [#separator#]
