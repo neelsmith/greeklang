@@ -29,6 +29,8 @@ $morph$ = $stems$ $separator$ $separator$ $ends$
 % #extratag#  is defined in "extratgs.fst"
 ALPHABET = [#character#] [#extratag#]:<> [#morphtags#]:<> [#stemtype#]:<> [#separator#]:<> [#urn#]:<>
 $striptags$ = .*
+% ADD REPLACE OPERATION LIKE THIS ONE: {aa}:{bb} ^-> c__c
+% y <=> i ([<Verb><Adj>] [el])
 
 $acceptor$ = "<@workdir@acceptor.a>"
 $acceptor$ || $morph$ || $striptags$

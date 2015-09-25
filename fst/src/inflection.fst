@@ -22,9 +22,13 @@ $decl1noun_ending$ = $a_as_ending$ | $hs_ou_ending$
 %
 
 $os_ou_ending$ = <os_ou> (os[<masc><fem>]<nom><sg> |\
-  ou[<masc><fem>]<gen><sg> \
-  w\|[<masc><fem>]<dat><sg> \
-  on[<masc><fem>]<acc><sg> \
+  ou[<masc><fem>]<gen><sg> |\
+  w\|[<masc><fem>]<dat><sg> |\
+  on[<masc><fem>]<acc><sg> |\
+  oi[<masc><fem>]<nom><pl> |\
+  wn[<masc><fem>]<gen><pl> |\
+  ois[<masc><fem>]<dat><pl> |\
+  ous[<masc><fem>]<acc><pl> \
 )
 
 $decl2noun_ending$ = $os_ou_ending$
