@@ -1,6 +1,6 @@
 %% inflection.fst
 
-#include "@workdir@nouninfl.fst"
+#include "@workdir@inflection/nouninfl.fst"
 
 $ending$ = $nouninfl$
 
