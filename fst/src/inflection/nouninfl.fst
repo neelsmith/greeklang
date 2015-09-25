@@ -33,6 +33,7 @@ $os_ou_ending$ = <os_ou> (os[<masc><fem>]<nom><sg> |\
   ou[<masc><fem>]<gen><sg> |\
   w\|[<masc><fem>]<dat><sg> |\
   on[<masc><fem>]<acc><sg> |\
+  e[<masc><fem>]<voc><sg> |\
   oi[<masc><fem>]<nom><pl> |\
   wn[<masc><fem>]<gen><pl> |\
   ois[<masc><fem>]<dat><pl> |\
@@ -73,6 +74,7 @@ $eus_ews_ending$ = <eus_ews> (eus[<masc>][<nom><voc>]<sg> |\
   ei[<masc>]<dat><sg> |\
   ea[<masc>]<acc><sg> |\
   h[<masc>]<acc><sg> |\
+  eu[<masc><fem>]<voc><sg> |\
   eis[<masc>]<nom><pl> |\
   ewn[<masc>]<gen><pl> |\
   eusi[<masc>]<dat><pl> |\
