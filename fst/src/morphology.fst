@@ -5,16 +5,17 @@
 #include "@workdir@symbols.fst"
 #include "@workdir@extratags.fst"
 #include "@workdir@urns.fst"
+
 % 2. ASCII representation of polytonic Greek
 #include "@workdir@phonology.fst"
 
 
-% Assemble list of lexica in gradle build,
+% Assemble list of lexica of stems in gradle build,
 % and insert here with token filter:
 $stemraw$ = "@workdir@lexicon.fst" |  "@workdir@iliad.fst"
 $stems$ = $stemraw$
 
-% Assemble list of stemtypes in gradle build,
+% Assemble list of inflectional patterns in gradle build,
 % and insert here with token filter:
 $basicend$ = "<@workdir@inflection.a>"
 $extrainfl$ = "<@workdir@extrainfl.a>"
@@ -24,13 +25,18 @@ $ends$ = $basicend$ | $extrainfl$
 
 $morph$ = $stems$ $separator$ $separator$ $ends$
 
-% #morphtags# is defined in "symbols.fst"
+% #morphtag# is defined in "symbols.fst"
 % #stemtype#  is defined in "stemtypes.fst"
 % #extratag#  is defined in "extratgs.fst"
-ALPHABET = [#character#] [#extratag#]:<> [#morphtags#]:<> [#stemtype#]:<> [#separator#]:<> [#urn#]:<>
+ALPHABET = [#character#] [#extratag#]:<> [#morphtag#]:<> [#stemtype#]:<> [#separator#]:<> [#urn#]:<>
 $striptags$ = .*
-% ADD REPLACE OPERATION LIKE THIS ONE: {aa}:{bb} ^-> c__c
-% y <=> i ([<Verb><Adj>] [el])
+
 
 $acceptor$ = "<@workdir@acceptor.a>"
 $acceptor$ || $morph$ || $striptags$
+
+
+% From input to analysis:
+% mhnis
+% we get analysis output:
+% <n67485>mhn<noun><fem><is_ios>::<is_ios>is<fem><nom><sg>

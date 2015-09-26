@@ -52,6 +52,12 @@ cpAll.doLast {
 
 
 task fst(type:Exec, dependsOn: cpAll) {
-  description = "Builds Finite State Transducer in ${buildDir}/fst."
+  description = "Builds binary Finite State Transducer in ${buildDir}/fst/morphology.a"
   commandLine =  [MAKE, "-f", "${buildDir}/fst/makefile".toString()]
+}
+
+
+task fstgen(type:Exec, dependsOn: fst) {
+  description = "Builds switched Finite State Transducer in ${buildDir}/fst/bulkgen.a"
+  commandLine =  [FSTCOMPILER, "-s", "${buildDir}/fst/morphology.fst".toString(), "${buildDir}/fst/bulkgen.a".toString()]
 }

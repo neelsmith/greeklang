@@ -20,7 +20,7 @@
 %
 
 
-#morphtags# = #pos# #gender# #case# #number#
+#morphtag# = #pos# #gender# #case# #number#
 
 
 
