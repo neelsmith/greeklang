@@ -11,16 +11,21 @@
 %
 #gender# = <masc><fem><neut>
 #case# = <nom><acc><gen><dat><voc>
-#number# = <sg><pl>
+#number# = <sg><dual><pl>
 %
 % 2. Adjective morphology:
 %
 %
 % 3. Verb morphology:
 %
+#person# = <1st><2nd><3rd>
+% number already defined in noun morphology
+#tense# = <pres><impft><fut><aor><pft><plupft>
+#mood# = <indic><subj><opt><imptv>
+#voice# = <act><mid><pass>
 
 
-#morphtag# = #pos# #gender# #case# #number#
+#morphtag# = #pos# #gender# #case# #number# #person# #tense# #mood# #voice#
 
 
 

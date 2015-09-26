@@ -84,5 +84,6 @@ $eus_ews_ending$ = <eus_ews> (eus[<masc>][<nom><voc>]<sg> |\
 $decl3noun_ending$ = $is_ios_ending$ | $is_ews_ending$ | $eus_ews_ending$
 
 
-
+% Sum it all up:
 $nouninfl$ = $decl1noun_ending$ | $decl2noun_ending$ | $decl3noun_ending$
+$nouninfl$

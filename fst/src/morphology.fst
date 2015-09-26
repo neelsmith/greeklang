@@ -32,6 +32,7 @@ ALPHABET = [#character#] [#extratag#]:<> [#morphtag#]:<> [#stemtype#]:<> [#separ
 $striptags$ = .*
 
 
+
 $acceptor$ = "<@workdir@acceptor.a>"
 $acceptor$ || $morph$ || $striptags$
 
@@ -40,3 +41,6 @@ $acceptor$ || $morph$ || $striptags$
 % mhnis
 % we get analysis output:
 % <n67485>mhn<noun><fem><is_ios>::<is_ios>is<fem><nom><sg>
+% Verb example: luw
+% We hope to get
+% <n64316>lu<verb><w_regular>::<w_regular>w<1st><sg><pres><indic><act>

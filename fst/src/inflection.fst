@@ -1,7 +1,6 @@
 %% inflection.fst
 
-#include "@workdir@inflection/nouninfl.fst"
 
-$ending$ = $nouninfl$
+$ending$ = "<@workdir@inflection/nouninfl.a>" | "<@workdir@inflection/verbinfl.a>"
 
 $ending$

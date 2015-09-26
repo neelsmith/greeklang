@@ -10,4 +10,9 @@
 
 % Add other stem types here....
 
-#stemtype# = #noun#
+#omega# = <w_regular> <ew_contract> <aw_contract> <ow_contract>
+#mi# = <mi_pres>
+
+#verb#  = #omega#
+
+#stemtype# = #noun# #verb#
