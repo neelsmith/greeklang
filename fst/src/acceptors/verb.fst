@@ -14,7 +14,7 @@ $nonmorph$ = [#nonmorph#]
 
 $urn$ = [#urn#]
 $=verb$ = [#verb#]
-$person$ = [<1st>]
+$person$ = [#person#]
 $number$ = [#number#]
 $tense$ = [#tense#]
 $mood$ = [#mood#]
