@@ -16,7 +16,7 @@
 #=ltr# = a-z
 ALPHABET = [#ltr#] [#tag#] [#urn#]
 $augmented$ = {[#=ltr#]}:{e[#=ltr#]} ^-> ([#urn#] __ [a-z]+ <aor>)
-%$augmented$ = {[#=ltr#]}:{e[#=ltr#]} ^-> ([#urn#] __ )
+
 
 
 % Pass other tenses through unchanged.
