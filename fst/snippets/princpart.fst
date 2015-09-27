@@ -3,8 +3,6 @@
 %
 
 
-%$toylexicon$ = <n64316>lu<aor> | <n64316>lu<pres>
-
 $toylexicon$ = <n64316>lu[<aor><pres>]
 
 #ltr# = a-z
