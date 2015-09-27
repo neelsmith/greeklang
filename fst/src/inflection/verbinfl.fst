@@ -25,17 +25,49 @@ $w_pres_indic_ending$ = <w_regular> ( \
     ontai<3rd><sg><pres><indic><pass> \
 )
 
-
+% Imperfect indicative:
 $w_imperfect_ending$ = <w_regular> ( \
     on<1st><sg><impft><indic><act> |\
     es<2nd><sg><impft><indic><act> |\
     e<3rd><sg><impft><indic><act> |\
     omen<1st><sg><impft><indic><act> |\
     ete<2nd><sg><impft><indic><act> |\
-    on<3rd><sg><impft><indic><act> \
+    on<3rd><sg><impft><indic><act> |\
+    \
+    omhn<1st><sg><impft><indic><mid> |\
+    ou<2nd><sg><impft><indic><mid> |\
+    eto<3rd><sg><impft><indic><mid> |\
+    omeqa<1st><sg><impft><indic><mid> |\
+    esqe<2nd><sg><impft><indic><mid> |\
+    onto<3rd><sg><impft><indic><mid> |\
+    \
+    omhn<1st><sg><impft><indic><pass> |\
+    ou<2nd><sg><impft><indic><pass> |\
+    eto<3rd><sg><impft><indic><pass> |\
+    omeqa<1st><sg><impft><indic><pass> |\
+    esqe<2nd><sg><impft><indic><pass> |\
+    onto<3rd><sg><impft><indic><pass> \
 )
 
-$w_regular_endings$ = $w_pres_indic_ending$ | $w_imperfect_ending$
+
+% Aor m-p:
+$aor1_mp_ending$ = <w_regular> ( \
+    a<1st><sg><impft><indic><act> |\
+    as<2nd><sg><impft><indic><act> |\
+    e<3rd><sg><impft><indic><act> |\
+    amen<1st><sg><impft><indic><act> |\
+    ate<2nd><sg><impft><indic><act> |\
+    an<3rd><sg><impft><indic><act> |\
+    \
+    amhn<1st><sg><impft><indic><mid> |\
+    w<2nd><sg><impft><indic><mid> |\
+    ato<3rd><sg><impft><indic><mid> |\
+    ameqa<1st><sg><impft><indic><mid> |\
+    asqe<2nd><sg><impft><indic><mid> |\
+    anto<3rd><sg><impft><indic><mid> \
+    \
+)
+$w_regular_endings$ = $w_pres_indic_ending$ | $w_imperfect_ending$  | $aor1_mp_ending$
 
 
 $verbinfl$ = $w_regular_endings$
