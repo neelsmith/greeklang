@@ -5,7 +5,7 @@
 
 %$toylexicon$ = <n64316>lu<aor> | <n64316>lu<pres>
 
-$toylexicon$ = <n64316>lu<aor>
+$toylexicon$ = <n64316>lu[<aor><pres>]
 
 #ltr# = a-z
 #urn# = <n64316>
@@ -26,4 +26,8 @@ $1stpp$ = [#urn#] [#ltr#]+ [#not_aorist#]
 
 $princpart$ = ($1stpp$ | $2ndpp$)
 
-$toylexicon$ || $princpart$
+% Format for final display:
+ALPHABET = [#ltr#] [#tag#]:<> [#urn#]:<>
+$striptag$ = .*
+
+$toylexicon$ || $princpart$ || $striptag$
