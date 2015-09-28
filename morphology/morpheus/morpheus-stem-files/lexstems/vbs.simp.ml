@@ -1968,7 +1968,7 @@
 ;ao prevb_aug
 
 :le:a)ntignwmone/w
-:de:a)ntignwmon	ew_denom
+:de:a)ntignwmon ew_denom
 
 :le:a)nticoe/w
 :de:a)ntico ew_denom
