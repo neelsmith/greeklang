@@ -19,11 +19,12 @@ File morphStemFile = new File(args[1])
 
 // maps morpheus labels to our labels
 def stemLabelMap = [
-"reg_conj" : " <w_regular>",
+"reg_conj" : "w_regular",
 "aw_denom" : "aw_contract",
 "ew_denom" : "ew_contract",
 "ow_denom" : "ow_contract"
 ]
+
 
 def formToIdMap = [:]
 lexEntFile.eachLine {
@@ -69,6 +70,10 @@ morphStemFile.eachLine { ln ->
       String stemClass = stemEntry[1]
 
       if ((stemLabelMap[stemClass]) && (formToIdMap[lemma])) {
+
+        // replace quantity markers with symbols
+        stem = stem.replaceAll("\\^", "<short>")
+        stem = stem.replaceAll("_", "<long>")
         if (stem ==~ /.+\-.+/) {
           fstLexList.add( "<${formToIdMap[lemma]}>${stem.replaceFirst(/[\-]/,'<#>')}<verb><${stemLabelMap[stemClass]}>")
 
