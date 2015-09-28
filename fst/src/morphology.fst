@@ -2,7 +2,9 @@
 
 % Tokens in our alphabet:
 % 1. morphological tags
-#include "@workdir@symbols.fst"
+#include "@workdir@morphsymbols.fst"
+#include "@workdir@stemtypes.fst"
+
 #include "@workdir@extratags.fst"
 #include "@workdir@urns.fst"
 

@@ -1,11 +1,9 @@
-#include "@workdir@stemtypes.fst"
-
-
-% Variables with symbols for morphological concepts.
+% morphsymbols.fst
+%
+% Definitions of all symbols used to express a morphological analysis
 %
 % Parts of speech:
 #pos# = <noun><verb><adj>
-
 %
 % 1. Noun morphology:
 %
@@ -15,6 +13,7 @@
 %
 % 2. Adjective morphology:
 %
+#degree# = <posit><comp><superl>
 %
 % 3. Verb morphology:
 %
@@ -25,18 +24,17 @@
 #voice# = <act><mid><pass>
 
 
-#morphtag# = #pos# #gender# #case# #number# #person# #tense# #mood# #voice#
+#morphtag# = #pos# #gender# #case# #number# #person# #tense# #mood# #voice# #degree$
 
 
 
 
+% Consider whether those belong here or elsewhere...?
 
 % Transducers for the above variables:
 $gender$ = [#gender#]
 $case$ = [#case#]
 $number$ = [#number#]
-
-
 
 
 % Identity variables for the transducers:
