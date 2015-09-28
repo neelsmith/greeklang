@@ -16,9 +16,9 @@
 <n839><#>a)gr<verb><ew_contract>
 <n905><#>a)gri<verb><ow_contract>
 <n950><#>a)grupn<verb><ew_contract>
-<n960><#>a)grwss<verb>< <w_regular>>
-<n1081><#>a)gx<verb>< <w_regular>>
-<n1083><#>a)g<verb>< <w_regular>>
+<n960><#>a)grwss<verb><w_regular>
+<n1081><#>a)gx<verb><w_regular>
+<n1083><#>a)g<verb><w_regular>
 <n1111><#>a)gwnoqet<verb><ew_contract>
 <n1234><#>a)dhl<verb><ew_contract>
 <n1246><#>a)^dhmon<verb><ew_contract>
@@ -27,26 +27,26 @@
 <n1452><#>a)doc<verb><ew_contract>
 <n1497><#>a(dr<verb><ow_contract>
 <n1521><#>a)du^na^t<verb><ew_contract>
-<n1587><#>a)eid<verb>< <w_regular>>
-<n1587><#>a)|d<verb>< <w_regular>>
+<n1587><#>a)eid<verb><w_regular>
+<n1587><#>a)|d<verb><w_regular>
 <n1686><#>a)elpt<verb><ew_contract>
-<n1703><#>a)ec<verb>< <w_regular>>
+<n1703><#>a)ec<verb><w_regular>
 <n1728><#>a)erodrom<verb><ew_contract>
 <n1739>a)ero<#>metr<verb><ew_contract>
 <n1774><#>a)ert<verb><aw_contract>
-<n1829><#>a(z<verb>< <w_regular>>
-<n1871><#>a)<verb>< <w_regular>>
+<n1829><#>a(z<verb><w_regular>
+<n1871><#>a)<verb><w_regular>
 <n1965><#>a)qet<verb><ew_contract>
 <n2012><#>a)_ql<verb><ew_contract>
 <n2012><#>a)eql<verb><ew_contract>
 <n2047><#>a)qr<verb><ew_contract>
 <n2066><#>a)qu_m<verb><ew_contract>
-<n2084><#>a)qu_r<verb>< <w_regular>>
-<n2234><#>ai)d<verb>< <w_regular>>
+<n2084><#>a)qu_r<verb><w_regular>
+<n2234><#>ai)d<verb><w_regular>
 <n2301><#>ai)qa^l<verb><ow_contract>
 <n2307>ai)qer<#>emba^t<verb><ew_contract>
 <n2346>ai)qrio<#>koit<verb><ew_contract>
-<n2361><#>ai)q<verb>< <w_regular>>
+<n2361><#>ai)q<verb><w_regular>
 <n2439><#>ai(ma^t<verb><ow_contract>
 <n2469>ai(mo<#>rro<verb><ew_contract>
 <n2491><#>ai(m<verb><ow_contract>
@@ -62,7 +62,7 @@
 <n3306><#>a)kon<verb><aw_contract>
 <n3366><#>a)kosm<verb><ew_contract>
 <n3372><#>a)kost<verb><aw_contract>
-<n3398><#>a)kou<verb>< <w_regular>>
+<n3398><#>a)kou<verb><w_regular>
 <n3442><#>a)kra_xol<verb><ew_contract>
 <n3468><#>a)kri_bolog<verb><ew_contract>
 <n3473><#>a)kri_b<verb><ow_contract>
@@ -73,9 +73,9 @@
 <n3714><#>a)ktain<verb><ow_contract>
 <n3864><#>a)^l<verb><aw_contract>
 <n3895><#>a)lg<verb><ew_contract>
-<n3907><#>a)ld<verb>< <w_regular>>
-<n3965><#>a)leif<verb>< <w_regular>>
-<n4019><#>a)^lek<verb>< <w_regular>>
+<n3907><#>a)ld<verb><w_regular>
+<n3965><#>a)leif<verb><w_regular>
+<n4019><#>a)^lek<verb><w_regular>
 <n4225><#>a)lind<verb><ew_contract>
 <n4240><#>a(li<verb><ow_contract>
 <n4240><#>a(li<verb><ow_contract>
@@ -98,11 +98,11 @@
 <n5001><#>a)^maur<verb><ow_contract>
 <n5024><#>a)mbl<verb><ow_contract>
 <n5044>a)mblu<#>wp<verb><ew_contract>
-<n5125><#>a)^melg<verb>< <w_regular>>
+<n5125><#>a)^melg<verb><w_regular>
 <n5131><#>a)^mel<verb><ew_contract>
 <n5153><#>a)menhn<verb><ow_contract>
-<n5159><#>a)^merg<verb>< <w_regular>>
-<n5160><#>a)^merd<verb>< <w_regular>>
+<n5159><#>a)^merg<verb><w_regular>
+<n5160><#>a)^merd<verb><w_regular>
 <n5270><#>a)miqr<verb><ew_contract>
 <n5276><#>a(mill<verb><aw_contract>
 <n5358><#>a)mnhmon<verb><ew_contract>
@@ -110,8 +110,8 @@
 <n5367><#>a)mna_st<verb><ew_contract>
 <n5399><#>a)moir<verb><ew_contract>
 <n5502><#>a)mpelourg<verb><ew_contract>
-<n5705><#>a)mfiaz<verb>< <w_regular>>
-<n5705><#>a)mfiez<verb>< <w_regular>>
+<n5705><#>a)mfiaz<verb><w_regular>
+<n5705><#>a)mfiez<verb><w_regular>
 <n6058><#>sbht<verb><ew_contract>
 <n6058><#>sba^t<verb><ew_contract>
 <n6058><#>a)mfisbht<verb><ew_contract>
@@ -133,7 +133,7 @@
 <n8822>a)nqo<#>for<verb><ew_contract>
 <n8910>a)nqrwpo<#>sfa^g<verb><ew_contract>
 <n8913>a)nqrwpo<#>fa^g<verb><ew_contract>
-<n9146><#>a)noig<verb>< <w_regular>>
+<n9146><#>a)noig<verb><w_regular>
 <n9211>a)<#>nom<verb><ew_contract>
 <n9241><#>a)nomoi<verb><ow_contract>
 <n9379><#>a)nta^gwnist<verb><ew_contract>
@@ -149,9 +149,9 @@
 <n10728><#>a)ntl<verb><ew_contract>
 <n10776>a)nt<#>ofqalm<verb><ew_contract>
 <n10870><#>a)nupodht<verb><ew_contract>
-<n10921><#>a(^nu^<verb>< <w_regular>>
-<n10921><#>a)^nu^<verb>< <w_regular>>
-<n10924><#>a)nwg<verb>< <w_regular>>
+<n10921><#>a(^nu^<verb><w_regular>
+<n10921><#>a)^nu^<verb><w_regular>
+<n10924><#>a)nwg<verb><w_regular>
 <n11072><#>a)ci<verb><ow_contract>
 <n11154><#>a)ort<verb><ew_contract>
 <n11163><#>a)oss<verb><ew_contract>
@@ -166,18 +166,18 @@
 <n12133><#>a)pist<verb><ew_contract>
 <n12222><#>a(pl<verb><ow_contract>
 <n12701><#>a)poin<verb><aw_contract>
-<n13028><#>lau<verb>< <w_regular>>
+<n13028><#>lau<verb><w_regular>
 <n13815><#>a)posta^t<verb><ew_contract>
 <n13991><#>a)potaur<verb><ow_contract>
 <n14142><#>a)potrwp<verb><aw_contract>
 <n14394><#>a)prakt<verb><ew_contract>
 <n14646><#>a)ra^b<verb><ew_contract>
-<n14705><#>a)r<verb>< <w_regular>>
+<n14705><#>a)r<verb><w_regular>
 <n14773><#>a)rg<verb><ew_contract>
 <n14859>a)rgu^ro<#>log<verb><ew_contract>
-<n14924><#>a)rd<verb>< <w_regular>>
+<n14924><#>a)rd<verb><w_regular>
 <n14966><#>a)ret<verb><aw_contract>
-<n14975><#>a)^rhg<verb>< <w_regular>>
+<n14975><#>a)^rhg<verb><w_regular>
 <n15000><#>a)rqm<verb><ew_contract>
 <n15013><#>a)rqr<verb><ow_contract>
 <n15038><#>a)riqm<verb><ew_contract>
@@ -199,12 +199,12 @@
 <n15604><#>a)rt<verb><ew_contract>
 <n15764>a)rto<#>si_t<verb><ew_contract>
 <n15770><#>a)rtofa^g<verb><ew_contract>
-<n15795><#>a)rtu^<verb>< <w_regular>>
+<n15795><#>a)rtu^<verb><w_regular>
 <n15833><#>a)rxaiolog<verb><ew_contract>
 <n15897><#>a)rxhget<verb><ew_contract>
 <n15946>a)rxi<#>qewr<verb><ew_contract>
 <n16012><#>a)rxitekton<verb><ew_contract>
-<n16051><#>a)rx<verb>< <w_regular>>
+<n16051><#>a)rx<verb><w_regular>
 <n16132><#>a)seb<verb><ew_contract>
 <n16151><#>a)sept<verb><ew_contract>
 <n16178><#>a)sqen<verb><ow_contract>
@@ -223,7 +223,7 @@
 <n16955><#>a)_t<verb><aw_contract>
 <n16996><#>a)tekn<verb><ow_contract>
 <n17039>a)<#>teukt<verb><ew_contract>
-<n17069>a)<#>ti^<verb>< <w_regular>>
+<n17069>a)<#>ti^<verb><w_regular>
 <n17073><#>a)ti_ma^gel<verb><ew_contract>
 <n17082><#>a)ti_m<verb><aw_contract>
 <n17089><#>a)ti_m<verb><ow_contract>
@@ -234,7 +234,7 @@
 <n17301><#>a)tu^x<verb><ew_contract>
 <n17317><#>au)g<verb><ew_contract>
 <n17335><#>au)d<verb><aw_contract>
-<n17345>au)<#>eru^<verb>< <w_regular>>
+<n17345>au)<#>eru^<verb><w_regular>
 <n17365><#>au)qent<verb><ew_contract>
 <n17411><#>au)l<verb><ew_contract>
 <n17445>au)lo<#>qet<verb><ew_contract>
@@ -247,9 +247,9 @@
 <n18057><#>au)x<verb><ew_contract>
 <n18067><#>au)xm<verb><ew_contract>
 <n18067><#>au)xm<verb><aw_contract>
-<n18081><#>au)<verb>< <w_regular>>
-<n18081><#>a)u_<verb>< <w_regular>>
-<n18163><#>a)fa^t<verb>< <w_regular>>
+<n18081><#>au)<verb><w_regular>
+<n18081><#>a)u_<verb><w_regular>
+<n18163><#>a)fa^t<verb><w_regular>
 <n18184><#>a)feid<verb><ew_contract>
 <n18477><#>a)fra^d<verb><ew_contract>
 <n18491><#>a)fr<verb><ew_contract>
@@ -261,13 +261,13 @@
 <n18687><#>a)^x<verb><ew_contract>
 <n18687><#>a)^x<verb><ew_contract>
 <n18708><#>a)xqofor<verb><ew_contract>
-<n18731><#>a)xlu_<verb>< <w_regular>>
+<n18731><#>a)xlu_<verb><w_regular>
 <n18862><#>a)yeud<verb><ew_contract>
 <n18877><#>a(yi_d<verb><ow_contract>
 <n18883><#>a(yi^ma^x<verb><ew_contract>
-<n18915><#>a)_<verb>< <w_regular>>
+<n18915><#>a)_<verb><w_regular>
 <n18946><#>a)wt<verb><ew_contract>
-<n18996><#>ba^k<verb>< <w_regular>>
+<n18996><#>ba^k<verb><w_regular>
 <n19239><#>ba^la^n<verb><ow_contract>
 <n19269><#>ballantiotom<verb><ew_contract>
 <n19363><#>bar<verb><ew_contract>
@@ -278,14 +278,14 @@
 <n19722><#>bebai<verb><ow_contract>
 <n19736><#>bebhl<verb><ow_contract>
 <n19891><#>bi<verb><aw_contract>
-<n19893><#>basq<verb>< <w_regular>>
+<n19893><#>basq<verb><w_regular>
 <n19944><#>bi_n<verb><ew_contract>
 <n19992><#>bi<verb><ow_contract>
 <n20067><#>blasfhm<verb><ew_contract>
-<n20097><#>blep<verb>< <w_regular>>
+<n20097><#>blep<verb><w_regular>
 <n20130><#>blhx<verb><aw_contract>
-<n20153><#>bli^t<verb>< <w_regular>>
-<n20169><#>blu^z<verb>< <w_regular>>
+<n20153><#>bli^t<verb><w_regular>
+<n20169><#>blu^z<verb><w_regular>
 <n20195><#>bo<verb><aw_contract>
 <n20205><#>bohdrom<verb><ew_contract>
 <n20213><#>bohq<verb><ew_contract>
@@ -302,27 +302,27 @@
 <n20720><#>bouforb<verb><ew_contract>
 <n20735><#>bowt<verb><ew_contract>
 <n20790>bra^du^<#>plo<verb><ew_contract>
-<n20820><#>bra^t<verb>< <w_regular>>
-<n20952><#>brex<verb>< <w_regular>>
+<n20820><#>bra^t<verb><w_regular>
+<n20952><#>brex<verb><w_regular>
 <n20965><#>bri<verb><aw_contract>
-<n20981><#>bri_q<verb>< <w_regular>>
+<n20981><#>bri_q<verb><w_regular>
 <n20988><#>bri_m<verb><aw_contract>
 <n20988><#>bri_m<verb><ow_contract>
 <n21017><#>brom<verb><ew_contract>
 <n21027><#>bront<verb><aw_contract>
 <n21051><#>brotokton<verb><ew_contract>
 <n21054><#>brot<verb><ow_contract>
-<n21083><#>brox<verb>< <w_regular>>
-<n21102><#>bruk<verb>< <w_regular>>
-<n21102><#>brux<verb>< <w_regular>>
+<n21083><#>brox<verb><w_regular>
+<n21102><#>bruk<verb><w_regular>
+<n21102><#>brux<verb><w_regular>
 <n21133><#>brux<verb><aw_contract>
-<n21133><#>bru_x<verb>< <w_regular>>
-<n21147><#>bru_<verb>< <w_regular>>
+<n21133><#>bru_x<verb><w_regular>
+<n21147><#>bru_<verb><w_regular>
 <n21154><#>brwm<verb><aw_contract>
 <n21217><#>bu_n<verb><ew_contract>
 <n21238><#>bursodey<verb><ew_contract>
 <n21253><#>burs<verb><ow_contract>
-<n21276><#>bu_<verb>< <w_regular>>
+<n21276><#>bu_<verb><w_regular>
 <n21351><#>bwstr<verb><ew_contract>
 <n21595><#>ga^n<verb><aw_contract>
 <n21602><#>gan<verb><ow_contract>
@@ -337,7 +337,7 @@
 <n21859><#>genei<verb><aw_contract>
 <n21902><#>genn<verb><aw_contract>
 <n21988>geront<#>a^gwg<verb><ew_contract>
-<n22036><#>geu<verb>< <w_regular>>
+<n22036><#>geu<verb><w_regular>
 <n22046><#>gefu_r<verb><ow_contract>
 <n22061><#>gewmetr<verb><ew_contract>
 <n22075>gew<#>pon<verb><ew_contract>
@@ -349,14 +349,14 @@
 <n22125>gh<#>ox<verb><ew_contract>
 <n22145><#>ghrobosk<verb><ew_contract>
 <n22154>ghro<#>trof<verb><ew_contract>
-<n22164><#>ghru<verb>< <w_regular>>
-<n22164><#>ga_ru<verb>< <w_regular>>
-<n22209><#>gn<verb>< <w_regular>>
+<n22164><#>ghru<verb><w_regular>
+<n22164><#>ga_ru<verb><w_regular>
+<n22209><#>gn<verb><w_regular>
 <n22216><#>gla^g<verb><aw_contract>
-<n22283><#>gla^f<verb>< <w_regular>>
+<n22283><#>gla^f<verb><w_regular>
 <n22379><#>glu^ku^mu_q<verb><ew_contract>
-<n22421>g<#>lu^f<verb>< <w_regular>>
-<n22421><#>glu^f<verb>< <w_regular>>
+<n22421>g<#>lu^f<verb><w_regular>
+<n22421><#>glu^f<verb><w_regular>
 <n22430><#>glwss<verb><aw_contract>
 <n22508><#>gnwmolog<verb><ew_contract>
 <n22533>gnwsi<#>ma^x<verb><ew_contract>
@@ -368,7 +368,7 @@
 <n22714><#>goun<verb><ow_contract>
 <n22736><#>grai<verb><ow_contract>
 <n22768><#>gramma^tofor<verb><ew_contract>
-<n22825>g<#>ra^f<verb>< <w_regular>>
+<n22825>g<#>ra^f<verb><w_regular>
 <n22825><#>graf<verb><ew_contract>
 <n22831><#>grhgor<verb><ew_contract>
 <n22950><#>gui<verb><ow_contract>
@@ -379,21 +379,21 @@
 <n23178>da|do<#>for<verb><ew_contract>
 <n23203><#>daidal<verb><ow_contract>
 <n23222><#>daimon<verb><aw_contract>
-<n23272><#>dai<verb>< <w_regular>>
-<n23273><#>dai<verb>< <w_regular>>
-<n23283><#>dhk<verb>< <w_regular>>
-<n23283><#>da_k<verb>< <w_regular>>
+<n23272><#>dai<verb><w_regular>
+<n23273><#>dai<verb><w_regular>
+<n23283><#>dhk<verb><w_regular>
+<n23283><#>da_k<verb><w_regular>
 <n23297><#>dakrurro<verb><ew_contract>
-<n23304><#>dakru_<verb>< <w_regular>>
+<n23304><#>dakru_<verb><w_regular>
 <n23323>daktu^lo<#>deikt<verb><ew_contract>
-<n23420><#>da^neiz<verb>< <w_regular>>
+<n23420><#>da^neiz<verb><w_regular>
 <n23443><#>da^pa^n<verb><aw_contract>
 <n23491><#>dasmolog<verb><ew_contract>
 <n23495><#>dasmofor<verb><ew_contract>
-<n23538><#>da^t<verb>< <w_regular>>
+<n23538><#>da^t<verb><w_regular>
 <n23565>dafnh<#>for<verb><ew_contract>
 <n23652><#>deikan<verb><aw_contract>
-<n23658><#>deik<verb>< <w_regular>>
+<n23658><#>deik<verb><w_regular>
 <n23702><#>deima^t<verb><ow_contract>
 <n23718>deino<#>log<verb><ew_contract>
 <n23721>deino<#>pa^q<verb><ew_contract>
@@ -408,16 +408,16 @@
 <n24048><#>dendrotom<verb><ew_contract>
 <n24082><#>deci<verb><aw_contract>
 <n24082><#>deci<verb><ow_contract>
-<n24129><#>derk<verb>< <w_regular>>
-<n24129><#>dra^k<verb>< <w_regular>>
+<n24129><#>derk<verb><w_regular>
+<n24129><#>dra^k<verb><w_regular>
 <n24173><#>desm<verb><ow_contract>
 <n24173><#>desm<verb><ew_contract>
-<n24192><#>despoz<verb>< <w_regular>>
+<n24192><#>despoz<verb><w_regular>
 <n24205><#>despot<verb><ew_contract>
-<n24277><#>deu<verb>< <w_regular>>
-<n24281><#>def<verb>< <w_regular>>
-<n24289><#>dex<verb>< <w_regular>>
-<n24291><#>dey<verb>< <w_regular>>
+<n24277><#>deu<verb><w_regular>
+<n24281><#>def<verb><w_regular>
+<n24289><#>dex<verb><w_regular>
+<n24291><#>dey<verb><w_regular>
 <n24342><#>dhl<verb><ow_contract>
 <n24349><#>dhma^gwg<verb><ew_contract>
 <n24355><#>dhmarx<verb><ew_contract>
@@ -431,8 +431,8 @@
 <n24430><#>dhm<verb><ow_contract>
 <n24447><#>dhmosi<verb><ow_contract>
 <n24498><#>dhri^<verb><aw_contract>
-<n24498><#>dhri_<verb>< <w_regular>>
-<n24498><#>dhri_<verb>< <w_regular>>
+<n24498><#>dhri_<verb><w_regular>
+<n24498><#>dhri_<verb><w_regular>
 <n24498><#>dhri<verb><aw_contract>
 <n24859><#>diait<verb><aw_contract>
 <n24988><#>dia_kon<verb><ew_contract>
@@ -460,8 +460,8 @@
 <n27663><#>di^xognwmon<verb><ew_contract>
 <n27696>di^xo<#>stat<verb><ew_contract>
 <n27698><#>di^xotom<verb><ew_contract>
-<n27764><#>diwk<verb>< <w_regular>>
-<n27847><#>dok<verb>< <w_regular>>
+<n27764><#>diwk<verb><w_regular>
+<n27847><#>dok<verb><w_regular>
 <n27847><#>dok<verb><ew_contract>
 <n27867><#>dokim<verb><aw_contract>
 <n27902><#>doli<verb><ow_contract>
@@ -478,7 +478,7 @@
 <n28199><#>doup<verb><ew_contract>
 <n28199><#>gdoup<verb><ew_contract>
 <n28235><#>doxm<verb><ow_contract>
-<n28379><#>drep<verb>< <w_regular>>
+<n28379><#>drep<verb><w_regular>
 <n28420><#>drom<verb><aw_contract>
 <n28550><#>du<verb><aw_contract>
 <n28573><#>du^na^m<verb><ow_contract>
@@ -509,8 +509,8 @@
 <n29659><#>duswn<verb><ew_contract>
 <n29664>dus<#>wp<verb><ew_contract>
 <n29669>dus<#>wr<verb><ew_contract>
-<n29676><#>du_<verb>< <w_regular>>
-<n29677><#>du_<verb>< <w_regular>>
+<n29676><#>du_<verb><w_regular>
+<n29677><#>du_<verb><w_regular>
 <n29777>dwmato<#>fqor<verb><ew_contract>
 <n29778><#>dwm<verb><aw_contract>
 <n29791><#>dwr<verb><ew_contract>
@@ -522,8 +522,8 @@
 <n30520><#>e)grhgor<verb><aw_contract>
 <n30694><#>e(dn<verb><ow_contract>
 <n30694><#>e)edn<verb><ow_contract>
-<n30743><#>e(z<verb>< <w_regular>>
-<n30743><#>e(sd<verb>< <w_regular>>
+<n30743><#>e(z<verb><w_regular>
+<n30743><#>e(sd<verb><w_regular>
 <n30765><#>e)qeloka^k<verb><ew_contract>
 <n30792>e)qhmo<#>log<verb><ew_contract>
 <n30860>ei)do<#>poi<verb><ew_contract>
@@ -531,28 +531,28 @@
 <n31104><#>ei)lusp<verb><aw_contract>
 <n31104><#>i)lusp<verb><aw_contract>
 <n31110><#>ei)lu_f<verb><aw_contract>
-<n31112><#>ei)lu_<verb>< <w_regular>>
-<n31112><#>ei)lu^<verb>< <w_regular>>
+<n31112><#>ei)lu_<verb><w_regular>
+<n31112><#>ei)lu^<verb><w_regular>
 <n32546><#>e)kpagl<verb><ew_contract>
 <n32987>e)k<#>tefr<verb><ow_contract>
 <n33227>fullo<#>for<verb><ew_contract>
 <n33424><#>e)lass<verb><ow_contract>
 <n33424><#>e)latt<verb><ow_contract>
 <n33430><#>e)lastr<verb><ew_contract>
-<n33539><#>e)legx<verb>< <w_regular>>
+<n33539><#>e)legx<verb><w_regular>
 <n33546><#>e)le<verb><ew_contract>
 <n33619>e)leuqero<#>stom<verb><ew_contract>
 <n33623><#>e)leuqer<verb><ow_contract>
-<n33721><#>e)li_nu<verb>< <w_regular>>
+<n33721><#>e)li_nu<verb><w_regular>
 <n33740><#>e(lk<verb><ew_contract>
 <n33750>e(lko<#>poi<verb><ew_contract>
 <n33752><#>e(lk<verb><ow_contract>
-<n33770><#>e(lk<verb>< <w_regular>>
-<n33770><#>e(lku^<verb>< <w_regular>>
+<n33770><#>e(lk<verb><w_regular>
+<n33770><#>e(lku^<verb><w_regular>
 <n33857>e)l<#>log<verb><ew_contract>
-<n33910><#>e)lp<verb>< <w_regular>>
-<n33923><#>e(lu<verb>< <w_regular>>
-<n33923><#>e)lu<verb>< <w_regular>>
+<n33910><#>e)lp<verb><w_regular>
+<n33923><#>e(lu<verb><w_regular>
+<n33923><#>e)lu<verb><w_regular>
 <n34258>e)mped<#>ork<verb><ew_contract>
 <n34264><#>e)mped<verb><ow_contract>
 <n34460><#>e)mpol<verb><aw_contract>
@@ -560,38 +560,38 @@
 <n35216><#>e)ndi^<verb><aw_contract>
 <n35346>e)n<#>eido-for<verb><ew_contract>
 <n35883>e)n<#>noxl<verb><ew_contract>
-<n35886><#>e(n<verb>< <w_regular>>
+<n35886><#>e(n<verb><w_regular>
 <n37100>e)celeuqero<#>stom<verb><ew_contract>
-<n37776><#>ei)k<verb>< <w_regular>>
-<n38467><#>e)peig<verb>< <w_regular>>
+<n37776><#>ei)k<verb><w_regular>
+<n38467><#>e)peig<verb><w_regular>
 <n38996><#>e)pibwmiosta^t<verb><ew_contract>
 <n39843><#>kour<verb><ew_contract>
 <n40154><#>mel<verb><ew_contract>
-<n41798><#>e(p<verb>< <w_regular>>
+<n41798><#>e(p<verb><w_regular>
 <n42207><#>e)rgola^b<verb><ew_contract>
-<n42224><#>e)erg<verb>< <w_regular>>
-<n42224><#>ei)rg<verb>< <w_regular>>
-<n42224><#>ei(rg<verb>< <w_regular>>
-<n42224><#>e)rg<verb>< <w_regular>>
-<n42230><#>e)rg<verb>< <w_regular>>
+<n42224><#>e)erg<verb><w_regular>
+<n42224><#>ei)rg<verb><w_regular>
+<n42224><#>ei(rg<verb><w_regular>
+<n42224><#>e)rg<verb><w_regular>
+<n42230><#>e)rg<verb><w_regular>
 <n42244>e)rebo<#>di_f<verb><aw_contract>
-<n42267><#>e)reid<verb>< <w_regular>>
-<n42288><#>e)reip<verb>< <w_regular>>
-<n42310><#>e)ret<verb>< <w_regular>>
+<n42267><#>e)reid<verb><w_regular>
+<n42288><#>e)reip<verb><w_regular>
+<n42310><#>e)ret<verb><w_regular>
 <n42312><#>e)resxhl<verb><ew_contract>
 <n42321><#>e)retm<verb><ow_contract>
 <n42332><#>e)reuq<verb><ew_contract>
-<n42339><#>e)reuq<verb>< <w_regular>>
+<n42339><#>e)reuq<verb><w_regular>
 <n42343><#>e)reun<verb><aw_contract>
-<n42351><#>e)ref<verb>< <w_regular>>
+<n42351><#>e)ref<verb><w_regular>
 <n42387><#>e)rhm<verb><ow_contract>
-<n42394><#>e)rhtu_<verb>< <w_regular>>
-<n42394><#>e)ra_tu<verb>< <w_regular>>
+<n42394><#>e)rhtu_<verb><w_regular>
+<n42394><#>e)ra_tu<verb><w_regular>
 <n42507><#>e)riourg<verb><ew_contract>
-<n42686><#>e(rp<verb>< <w_regular>>
-<n42686><#>e(rpu^<verb>< <w_regular>>
+<n42686><#>e(rp<verb><w_regular>
+<n42686><#>e(rpu^<verb><w_regular>
 <n42783><#>e)ru_ka^n<verb><aw_contract>
-<n42785><#>e)ru_k<verb>< <w_regular>>
+<n42785><#>e)ru_k<verb><w_regular>
 <n42825><#>e)rxa^t<verb><aw_contract>
 <n42835><#>e)rw<verb><ew_contract>
 <n42842><#>ei)rwt<verb><aw_contract>
@@ -658,9 +658,9 @@
 <n45402><#>eu)fhm<verb><ew_contract>
 <n45471><#>eu)xa^rist<verb><ew_contract>
 <n45489><#>eu)xet<verb><aw_contract>
-<n45499><#>eu)x<verb>< <w_regular>>
+<n45499><#>eu)x<verb><w_regular>
 <n45539><#>eu)yu_x<verb><ew_contract>
-<n45543><#>eu(<verb>< <w_regular>>
+<n45543><#>eu(<verb><w_regular>
 <n45570>eu)<#>wx<verb><ew_contract>
 <n45570>eu)<#>wx<verb><ew_contract>
 <n45889><#>e)xemu_q<verb><ew_contract>
@@ -669,7 +669,7 @@
 <n45930><#>e)xqodop<verb><ew_contract>
 <n46090><#>za^men<verb><ew_contract>
 <n46161><#>zeughla^t<verb><ew_contract>
-<n46176><#>zeug<verb>< <w_regular>>
+<n46176><#>zeug<verb><w_regular>
 <n46218><#>zhlotu^p<verb><ew_contract>
 <n46221><#>zhl<verb><ow_contract>
 <n46232><#>zhmi<verb><ow_contract>
@@ -690,12 +690,12 @@
 <n46580><#>h(b<verb><aw_contract>
 <n46613><#>a(_g<verb><ew_contract>
 <n46613><#>h(g<verb><ew_contract>
-<n46648><#>a(_d<verb>< <w_regular>>
-<n46648><#>h(d<verb>< <w_regular>>
+<n46648><#>a(_d<verb><w_regular>
+<n46648><#>h(d<verb><w_regular>
 <n46700><#>h(dupa^q<verb><ew_contract>
 <n46759><#>h)q<verb><ew_contract>
 <n46778><#>h)qopoi<verb><ew_contract>
-<n46804><#>h(k<verb>< <w_regular>>
+<n46804><#>h(k<verb><w_regular>
 <n46854><#>h)li^qi<verb><ow_contract>
 <n46887><#>h(li<verb><ow_contract>
 <n46939><#>h(l<verb><ow_contract>
@@ -703,15 +703,15 @@
 <n46998>h(mero<#>log<verb><ew_contract>
 <n47022><#>h(mer<verb><ow_contract>
 <n47022><#>a_(mer<verb><ow_contract>
-<n47382><#>h)mu_<verb>< <w_regular>>
-<n47382><#>a)mu_<verb>< <w_regular>>
+<n47382><#>h)mu_<verb><w_regular>
+<n47382><#>a)mu_<verb><w_regular>
 <n47409><#>h(niostrof<verb><ew_contract>
 <n47416><#>h(niox<verb><ew_contract>
 <n47441><#>h)p<verb><aw_contract>
 <n47463><#>h)peir<verb><ow_contract>
 <n47478><#>h)pia^l<verb><ew_contract>
-<n47503><#>a)_pu<verb>< <w_regular>>
-<n47503><#>h)pu_<verb>< <w_regular>>
+<n47503><#>a)_pu<verb><w_regular>
+<n47503><#>h)pu_<verb><w_regular>
 <n47533><#>h)rem<verb><ew_contract>
 <n47614><#>e(ss<verb><ow_contract>
 <n47614><#>h(tt<verb><aw_contract>
@@ -727,7 +727,7 @@
 <n47758>qa^lasso<#>kra^t<verb><ew_contract>
 <n47783><#>qa^lass<verb><ow_contract>
 <n47783><#>qa^latt<verb><ow_contract>
-<n47819><#>qalp<verb>< <w_regular>>
+<n47819><#>qalp<verb><w_regular>
 <n47836><#>qamb<verb><ew_contract>
 <n47864><#>qa^na^t<verb><aw_contract>
 <n47879><#>qa^na^t<verb><ow_contract>
@@ -740,7 +740,7 @@
 <n47964><#>qh<verb><aw_contract>
 <n48057><#>qei<verb><ow_contract>
 <n48057><#>qeei<verb><ow_contract>
-<n48066><#>qelg<verb>< <w_regular>>
+<n48066><#>qelg<verb><w_regular>
 <n48108><#>qemeli<verb><ow_contract>
 <n48138><#>qem<verb><ow_contract>
 <n48144><#>qeobla^b<verb><ew_contract>
@@ -754,22 +754,22 @@
 <n48513>qesmo<#>poi<verb><ew_contract>
 <n48543><#>qespiw|d<verb><ew_contract>
 <n48579><#>qewr<verb><ew_contract>
-<n48614><#>qhg<verb>< <w_regular>>
+<n48614><#>qhg<verb><w_regular>
 <n48636><#>qa_l<verb><ew_contract>
 <n48636><#>qhl<verb><ew_contract>
-<n48636><#>qa_l<verb>< <w_regular>>
+<n48636><#>qa_l<verb><w_regular>
 <n48692>qhmo<#>log<verb><ew_contract>
 <n48722><#>qhr<verb><aw_contract>
 <n48768><#>qhri<verb><ow_contract>
 <n48775>qhro<#>bol<verb><ew_contract>
-<n48867><#>qig<verb>< <w_regular>>
-<n48896><#>qli_b<verb>< <w_regular>>
+<n48867><#>qig<verb><w_regular>
+<n48896><#>qli_b<verb><w_regular>
 <n48928><#>qoin<verb><aw_contract>
 <n48946><#>qol<verb><ow_contract>
 <n48953><#>qo<verb><ow_contract>
 <n48970><#>qoru^b<verb><ew_contract>
 <n49048><#>qra^sustom<verb><ew_contract>
-<n49074><#>qrau<verb>< <w_regular>>
+<n49074><#>qrau<verb><w_regular>
 <n49083><#>qr<verb><ew_contract>
 <n49104><#>qrhn<verb><ew_contract>
 <n49120><#>qrhnw|d<verb><ew_contract>
@@ -793,18 +793,18 @@
 <n49522><#>qu^r<verb><ow_contract>
 <n49538><#>qursofor<verb><ew_contract>
 <n49546><#>qu^rwr<verb><ew_contract>
-<n49589><#>qu_<verb>< <w_regular>>
-<n49589><#>qu^<verb>< <w_regular>>
-<n49590><#>qu_<verb>< <w_regular>>
+<n49589><#>qu_<verb><w_regular>
+<n49589><#>qu^<verb><w_regular>
+<n49590><#>qu_<verb><w_regular>
 <n49667><#>i)akx<verb><ew_contract>
 <n49692><#>i)ambopoi<verb><ew_contract>
 <n49705><#>i)<verb><aw_contract>
-<n49774><#>i)au<verb>< <w_regular>>
+<n49774><#>i)au<verb><w_regular>
 <n49776><#>i)a^x<verb><ew_contract>
 <n49833>i)dio<#>boul<verb><ew_contract>
 <n49859><#>i)di<verb><ow_contract>
 <n49918><#>i)dn<verb><ow_contract>
-<n49933><#>i(dru_<verb>< <w_regular>>
+<n49933><#>i(dru_<verb><w_regular>
 <n49985><#>i(er<verb><aw_contract>
 <n49985><#>i(r<verb><aw_contract>
 <n50066><#>i(eromnhmon<verb><ew_contract>
@@ -814,11 +814,11 @@
 <n50121><#>i(erofant<verb><ew_contract>
 <n50137><#>i(er<verb><ow_contract>
 <n50137><#>i_(r<verb><ow_contract>
-<n50228><#>i)qu_<verb>< <w_regular>>
+<n50228><#>i)qu_<verb><w_regular>
 <n50238><#>i(ka^n<verb><ow_contract>
 <n50247><#>i)^kel<verb><ow_contract>
-<n50284><#>i(k<verb>< <w_regular>>
-<n50322><#>i(_k<verb>< <w_regular>>
+<n50284><#>i(k<verb><w_regular>
+<n50322><#>i(_k<verb><w_regular>
 <n50330><#>i(le<verb><ow_contract>
 <n50461>i(ma^tio<#>fu^la^k<verb><ew_contract>
 <n50465><#>i(m<verb><aw_contract>
@@ -836,7 +836,7 @@
 <n51224><#>i)^s<verb><ow_contract>
 <n51256><#>i(stor<verb><ew_contract>
 <n51297><#>i)sxa^n<verb><aw_contract>
-<n51368><#>i)sxu_<verb>< <w_regular>>
+<n51368><#>i)sxu_<verb><w_regular>
 <n51443><#>i)xqu<verb><aw_contract>
 <n51445><#>i)xqubol<verb><ew_contract>
 <n51531>i)xno<#>skop<verb><ew_contract>
@@ -870,12 +870,12 @@
 <n52649>kall<#>i_r<verb><ew_contract>
 <n52657>kalli<#>qu^t<verb><ew_contract>
 <n52830>ka^lo<#>poi<verb><ew_contract>
-<n53015><#>kamp<verb>< <w_regular>>
+<n53015><#>kamp<verb><w_regular>
 <n53054><#>ka^na^x<verb><ew_contract>
 <n53079><#>ka^nhfor<verb><ew_contract>
 <n53193><#>kapn<verb><ow_contract>
 <n53214><#>kapr<verb><aw_contract>
-<n53242><#>kapu<verb>< <w_regular>>
+<n53242><#>kapu<verb><w_regular>
 <n53257>ka^ra_<#>dok<verb><ew_contract>
 <n53269><#>ka^ra_n<verb><ow_contract>
 <n53271><#>ka^ra_tom<verb><ew_contract>
@@ -885,10 +885,10 @@
 <n53461><#>karp<verb><ow_contract>
 <n53485><#>karter<verb><ew_contract>
 <n53532>ka^ru_ko<#>poi<verb><ew_contract>
-<n53562><#>karf<verb>< <w_regular>>
-<n53624><#>kattu_<verb>< <w_regular>>
+<n53562><#>karf<verb><w_regular>
+<n53624><#>kattu_<verb><w_regular>
 <n56271><#>kaux<verb><aw_contract>
-<n56406><#>ka^r<verb>< <w_regular>>
+<n56406><#>ka^r<verb><w_regular>
 <n56445><#>kela^d<verb><ew_contract>
 <n56456><#>kelain<verb><ow_contract>
 <n56558>ken<#>emba^t<verb><ew_contract>
@@ -896,7 +896,7 @@
 <n56591>keno<#>ta^f<verb><ew_contract>
 <n56597><#>ken<verb><ow_contract>
 <n56597><#>kein<verb><ow_contract>
-<n56610>ken<#>t<verb>< <w_regular>>
+<n56610>ken<#>t<verb><w_regular>
 <n56610><#>kent<verb><ew_contract>
 <n56646><#>kentr<verb><ow_contract>
 <n56793><#>keraunobol<verb><ew_contract>
@@ -904,7 +904,7 @@
 <n56823><#>kerd<verb><ew_contract>
 <n56910>kero<#>tu^p<verb><ew_contract>
 <n56920><#>kertom<verb><ew_contract>
-<n56974><#>keuq<verb>< <w_regular>>
+<n56974><#>keuq<verb><w_regular>
 <n56979><#>kefa^lai<verb><ow_contract>
 <n57095><#>khl<verb><ew_contract>
 <n57109><#>khli_d<verb><ow_contract>
@@ -919,21 +919,21 @@
 <n57591><#>kissofor<verb><ew_contract>
 <n57591><#>kittofor<verb><ew_contract>
 <n57598><#>kiss<verb><ow_contract>
-<n57681><#>klagg<verb>< <w_regular>>
+<n57681><#>klagg<verb><w_regular>
 <n57753><#>kleidoux<verb><ew_contract>
 <n57753><#>klh|doux<verb><ew_contract>
-<n57788><#>klei<verb>< <w_regular>>
-<n57788><#>klh|<verb>< <w_regular>>
-<n57788><#>klhi_<verb>< <w_regular>>
-<n57847><#>klh|z<verb>< <w_regular>>
+<n57788><#>klei<verb><w_regular>
+<n57788><#>klh|<verb><w_regular>
+<n57788><#>klhi_<verb><w_regular>
+<n57847><#>klh|z<verb><w_regular>
 <n57873>klhro<#>dot<verb><ew_contract>
 <n57874><#>klhronom<verb><ew_contract>
 <n57885><#>klhroux<verb><ew_contract>
 <n57890><#>klhr<verb><ow_contract>
 <n57890><#>kla_r<verb><ow_contract>
 <n57985><#>klon<verb><ew_contract>
-<n58065><#>klwq<verb>< <w_regular>>
-<n58124><#>knhq<verb>< <w_regular>>
+<n58065><#>klwq<verb><w_regular>
+<n58124><#>knhq<verb><w_regular>
 <n58200><#>kni_s<verb><aw_contract>
 <n58212><#>kni_s<verb><ow_contract>
 <n58230><#>knuz<verb><ow_contract>
@@ -949,7 +949,7 @@
 <n58580><#>koletr<verb><aw_contract>
 <n58590><#>koll<verb><aw_contract>
 <n58657><#>kolob<verb><ow_contract>
-<n58707><#>kolou<verb>< <w_regular>>
+<n58707><#>kolou<verb><w_regular>
 <n58720><#>kolp<verb><ow_contract>
 <n58736><#>kolumb<verb><aw_contract>
 <n58751><#>kolw|<verb><aw_contract>
@@ -959,34 +959,34 @@
 <n58855><#>kona^b<verb><ew_contract>
 <n58879><#>kon<verb><ew_contract>
 <n58879><#>konn<verb><ew_contract>
-<n58911><#>koni_<verb>< <w_regular>>
+<n58911><#>koni_<verb><w_regular>
 <n58964><#>kop<verb><ow_contract>
 <n58992><#>kopr<verb><ew_contract>
 <n59016><#>koprofor<verb><ew_contract>
-<n59102><#>korqu_<verb>< <w_regular>>
+<n59102><#>korqu_<verb><w_regular>
 <n59190><#>koruz<verb><aw_contract>
-<n59227><#>koruq<verb>< <w_regular>>
+<n59227><#>koruq<verb><w_regular>
 <n59245><#>koru^f<verb><ow_contract>
 <n59295><#>kosm<verb><ew_contract>
 <n59548><#>koxu^d<verb><ew_contract>
 <n59575><#>kra^d<verb><aw_contract>
-<n59588><#>krag<verb>< <w_regular>>
+<n59588><#>krag<verb><w_regular>
 <n59590><#>kraipa^l<verb><aw_contract>
 <n59641>kra^no<#>poi<verb><ew_contract>
 <n59663><#>krasped<verb><ow_contract>
 <n59708><#>krat<verb><ew_contract>
 <n59778><#>krea_nom<verb><ew_contract>
-<n59801><#>krek<verb>< <w_regular>>
+<n59801><#>krek<verb><w_regular>
 <n59836><#>kreokop<verb><ew_contract>
 <n59846><#>kreourg<verb><ew_contract>
 <n59846><#>kreorg<verb><ew_contract>
 <n59952><#>kri_q<verb><aw_contract>
 <n60095><#>krok<verb><ow_contract>
 <n60157><#>krot<verb><ew_contract>
-<n60209><#>krou<verb>< <w_regular>>
-<n60296><#>krwg<verb>< <w_regular>>
+<n60209><#>krou<verb><w_regular>
+<n60296><#>krwg<verb><w_regular>
 <n60330><#>kt<verb><ew_contract>
-<n60375><#>kti^<verb>< <w_regular>>
+<n60375><#>kti^<verb><w_regular>
 <n60379><#>kti^l<verb><ow_contract>
 <n60398><#>ktu^p<verb><ew_contract>
 <n60488><#>ku^bern<verb><aw_contract>
@@ -999,10 +999,10 @@
 <n60648>kuklo<#>sob<verb><ew_contract>
 <n60657><#>kukl<verb><ow_contract>
 <n60692><#>ku^lind<verb><ew_contract>
-<n60703><#>ku^li_<verb>< <w_regular>>
+<n60703><#>ku^li_<verb><w_regular>
 <n60755><#>ku_ma^t<verb><ow_contract>
 <n60824><#>ku^n<verb><aw_contract>
-<n60838><#>ku^<verb>< <w_regular>>
+<n60838><#>ku^<verb><w_regular>
 <n60842><#>ku^nhget<verb><ew_contract>
 <n60842><#>ku^na_get<verb><ew_contract>
 <n60846><#>ku^nhg<verb><ew_contract>
@@ -1010,13 +1010,13 @@
 <n60884>ku^no<#>drom<verb><ew_contract>
 <n60901>ku^no<#>kop<verb><ew_contract>
 <n60971>kuo<#>for<verb><ew_contract>
-<n61030><#>ku_r<verb>< <w_regular>>
+<n61030><#>ku_r<verb><w_regular>
 <n61073><#>ku_r<verb><ow_contract>
 <n61095><#>kurt<verb><ow_contract>
-<n61176><#>ku_<verb>< <w_regular>>
+<n61176><#>ku_<verb><w_regular>
 <n61203>kwdwno<#>for<verb><ew_contract>
-<n61224><#>kwku_<verb>< <w_regular>>
-<n61265><#>kwlu_<verb>< <w_regular>>
+<n61224><#>kwku_<verb><w_regular>
+<n61265><#>kwlu_<verb><w_regular>
 <n61314><#>kwmw|d<verb><ew_contract>
 <n61326>kwmw|do<#>loix<verb><ew_contract>
 <n61350>kwno<#>tom<verb><ew_contract>
@@ -1026,39 +1026,39 @@
 <n61469>labro<#>pot<verb><ew_contract>
 <n61490><#>la^ga^r<verb><ow_contract>
 <n61529>la^go<#>kton<verb><ew_contract>
-<n61542><#>lhx<verb>< <w_regular>>
+<n61542><#>lhx<verb><w_regular>
 <n61679>laio<#>tom<verb><ew_contract>
 <n61718><#>la_k<verb><ew_contract>
 <n61764><#>la^la^g<verb><ew_contract>
 <n61771><#>la^l<verb><ew_contract>
-<n61791><#>lhb<verb>< <w_regular>>
-<n61791><#>la_b<verb>< <w_regular>>
-<n61791><#>lab<verb>< <w_regular>>
+<n61791><#>lhb<verb><w_regular>
+<n61791><#>la_b<verb><w_regular>
+<n61791><#>lab<verb><w_regular>
 <n61833><#>lampet<verb><aw_contract>
-<n61875><#>lamp<verb>< <w_regular>>
-<n61885><#>lhq<verb>< <w_regular>>
-<n61885><#>la_q<verb>< <w_regular>>
-<n61885><#>laq<verb>< <w_regular>>
+<n61875><#>lamp<verb><w_regular>
+<n61885><#>lhq<verb><w_regular>
+<n61885><#>la_q<verb><w_regular>
+<n61885><#>laq<verb><w_regular>
 <n62100>la^fu_ro<#>pwl<verb><ew_contract>
 <n62155><#>laxn<verb><ow_contract>
-<n62204><#>leg<verb>< <w_regular>>
-<n62205><#>leg<verb>< <w_regular>>
+<n62204><#>leg<verb><w_regular>
+<n62205><#>leg<verb><w_regular>
 <n62209>le<#>hla^t<verb><ew_contract>
-<n62218><#>leib<verb>< <w_regular>>
-<n62274><#>leip<verb>< <w_regular>>
+<n62218><#>leib<verb><w_regular>
+<n62274><#>leip<verb><w_regular>
 <n62287><#>leitourg<verb><ew_contract>
 <n62287><#>lh|tourg<verb><ew_contract>
-<n62303><#>leix<verb>< <w_regular>>
+<n62303><#>leix<verb><w_regular>
 <n62452><#>lepi^d<verb><ow_contract>
 <n62507><#>leptolog<verb><ew_contract>
 <n62542>lepto<#>tom<verb><ew_contract>
 <n62546><#>leptourg<verb><ew_contract>
-<n62577><#>lep<verb>< <w_regular>>
+<n62577><#>lep<verb><w_regular>
 <n62659>leuko<#>gra^f<verb><ew_contract>
 <n62773><#>leuk<verb><ow_contract>
-<n62792><#>leu<verb>< <w_regular>>
-<n62824><#>la_g<verb>< <w_regular>>
-<n62824><#>lhg<verb>< <w_regular>>
+<n62792><#>leu<verb><w_regular>
+<n62824><#>la_g<verb><w_regular>
+<n62824><#>lhg<verb><w_regular>
 <n62878><#>lhk<verb><ew_contract>
 <n62878><#>la_k<verb><ew_contract>
 <n62903><#>lhm<verb><aw_contract>
@@ -1068,7 +1068,7 @@
 <n63228><#>li^qourg<verb><ew_contract>
 <n63234><#>li^qofor<verb><ew_contract>
 <n63248><#>likm<verb><aw_contract>
-<n63270><#>lai<verb>< <w_regular>>
+<n63270><#>lai<verb><w_regular>
 <n63348>li_mo<#>kton<verb><ew_contract>
 <n63411><#>linopt<verb><aw_contract>
 <n63463>li^p<#>andr<verb><ew_contract>
@@ -1076,7 +1076,7 @@
 <n63497><#>li^p<verb><aw_contract>
 <n63579>li^po<#>yu_x<verb><ew_contract>
 <n63579>leipo<#>yu_x<verb><ew_contract>
-<n63599><#>li^t<verb>< <w_regular>>
+<n63599><#>li^t<verb><w_regular>
 <n63668><#>lixm<verb><aw_contract>
 <n63734><#>logogra^f<verb><ew_contract>
 <n63759><#>logoma^x<verb><ew_contract>
@@ -1084,8 +1084,8 @@
 <n63794><#>logx<verb><ow_contract>
 <n63814><#>loidor<verb><ew_contract>
 <n63933><#>loutroxo<verb><ew_contract>
-<n63937><#>lou<verb>< <w_regular>>
-<n63937><#>lo<verb>< <w_regular>>
+<n63937><#>lou<verb><w_regular>
+<n63937><#>lo<verb><w_regular>
 <n63941><#>lof<verb><aw_contract>
 <n63956><#>lof<verb><ow_contract>
 <n63967><#>loxa_g<verb><ew_contract>
@@ -1098,8 +1098,8 @@
 <n64238><#>lutt<verb><aw_contract>
 <n64251><#>luss<verb><ow_contract>
 <n64265><#>lutr<verb><ow_contract>
-<n64316><#>lu^<verb>< <w_regular>>
-<n64316><#>lu_<verb>< <w_regular>>
+<n64316><#>lu^<verb><w_regular>
+<n64316><#>lu_<verb><w_regular>
 <n64319><#>lwb<verb><aw_contract>
 <n64349><#>lwpodu^t<verb><ew_contract>
 <n64379><#>lwf<verb><aw_contract>
@@ -1112,7 +1112,7 @@
 <n64665>makro<#>kom<verb><ew_contract>
 <n64671><#>makrolog<verb><ew_contract>
 <n64691>makro<#>por<verb><ew_contract>
-<n64914><#>ma^q<verb>< <w_regular>>
+<n64914><#>ma^q<verb><w_regular>
 <n64959><#>manti^pol<verb><ew_contract>
 <n65010><#>marg<verb><aw_contract>
 <n65017><#>marg<verb><ow_contract>
@@ -1127,8 +1127,8 @@
 <n65347><#>mega^laux<verb><ew_contract>
 <n65361><#>mega^lhgor<verb><ew_contract>
 <n65514><#>mega^lofron<verb><ew_contract>
-<n65671><#>mequ^<verb>< <w_regular>>
-<n65685><#>mequ<verb>< <w_regular>>
+<n65671><#>mequ^<verb><w_regular>
+<n65685><#>mequ<verb><w_regular>
 <n65686><#>meiagwg<verb><ew_contract>
 <n65691><#>meid<verb><aw_contract>
 <n65734>meion<#>ekt<verb><ew_contract>
@@ -1140,7 +1140,7 @@
 <n66183><#>melopoi<verb><ew_contract>
 <n66188>melo<#>tu^p<verb><ew_contract>
 <n66200><#>melw|d<verb><ew_contract>
-<n66252><#>memf<verb>< <w_regular>>
+<n66252><#>memf<verb><w_regular>
 <n66255><#>memyi^moir<verb><ew_contract>
 <n66285><#>menoin<verb><aw_contract>
 <n66310><#>merimn<verb><aw_contract>
@@ -1155,17 +1155,17 @@
 <n67147><#>metewrolog<verb><ew_contract>
 <n67225><#>metr<verb><ew_contract>
 <n67247><#>metriopa^q<verb><ew_contract>
-<n67321><#>mhd<verb>< <w_regular>>
+<n67321><#>mhd<verb><w_regular>
 <n67436>mhlo<#>sfa^g<verb><ew_contract>
 <n67441><#>mhlofor<verb><ew_contract>
 <n67448><#>mhl<verb><ow_contract>
-<n67488><#>mhni_<verb>< <w_regular>>
-<n67501><#>mhnu_<verb>< <w_regular>>
-<n67501><#>ma_nu_<verb>< <w_regular>>
-<n67537><#>mhru_<verb>< <w_regular>>
-<n67537><#>ma_ru_<verb>< <w_regular>>
+<n67488><#>mhni_<verb><w_regular>
+<n67501><#>mhnu_<verb><w_regular>
+<n67501><#>ma_nu_<verb><w_regular>
+<n67537><#>mhru_<verb><w_regular>
+<n67537><#>ma_ru_<verb><w_regular>
 <n67545><#>mhti<verb><aw_contract>
-<n67550><#>mhti_<verb>< <w_regular>>
+<n67550><#>mhti_<verb><w_regular>
 <n67580><#>mhtrokton<verb><ew_contract>
 <n67615><#>mhxa^n<verb><aw_contract>
 <n67637>mhxa^nor<#>ra^f<verb><ew_contract>
@@ -1173,7 +1173,7 @@
 <n67729><#>mi_krolog<verb><ew_contract>
 <n67836><#>milt<verb><ow_contract>
 <n67853><#>mi_m<verb><ew_contract>
-<n67869><#>mn<verb>< <w_regular>>
+<n67869><#>mn<verb><w_regular>
 <n67872><#>mi_molog<verb><ew_contract>
 <n67884><#>minq<verb><ow_contract>
 <n67974><#>mi_s<verb><ew_contract>
@@ -1223,13 +1223,13 @@
 <n69232><#>mu^rey<verb><ew_contract>
 <n69452>mus<#>pol<verb><ew_contract>
 <n69476><#>musti_l<verb><aw_contract>
-<n69531><#>mu^<verb>< <w_regular>>
-<n69531><#>mu_<verb>< <w_regular>>
+<n69531><#>mu^<verb><w_regular>
+<n69531><#>mu_<verb><w_regular>
 <n69555><#>mwk<verb><aw_contract>
 <n69582><#>mwm<verb><aw_contract>
 <n69657><#>naiet<verb><aw_contract>
 <n69753><#>nark<verb><aw_contract>
-<n69771><#>nad<verb>< <w_regular>>
+<n69771><#>nad<verb><w_regular>
 <n69782><#>naua_g<verb><ew_contract>
 <n69782><#>nauhg<verb><ew_contract>
 <n69787><#>nauarx<verb><ew_contract>
@@ -1252,19 +1252,19 @@
 <n70426><#>neourg<verb><ew_contract>
 <n70451><#>neoxm<verb><ow_contract>
 <n70458><#>ne<verb><ow_contract>
-<n70530><#>neu<verb>< <w_regular>>
+<n70530><#>neu<verb><w_regular>
 <n70569><#>newkor<verb><ew_contract>
 <n70573><#>newlk<verb><ew_contract>
 <n70630><#>nh<verb><ew_contract>
 <n70646>nh<#>koust<verb><ew_contract>
 <n70674><#>nhn<verb><ew_contract>
 <n70683>nho<#>por<verb><ew_contract>
-<n70813><#>nhf<verb>< <w_regular>>
-<n70819><#>nhx<verb>< <w_regular>>
+<n70813><#>nhf<verb><w_regular>
+<n70819><#>nhx<verb><w_regular>
 <n70839><#>ni_k<verb><aw_contract>
 <n70850><#>ni_khfor<verb><ew_contract>
-<n70900><#>ni_f<verb>< <w_regular>>
-<n70910><#>nw<verb>< <w_regular>>
+<n70900><#>ni_f<verb><w_regular>
+<n70910><#>nw<verb><w_regular>
 <n70910><#>no<verb><ew_contract>
 <n70989><#>nomoqet<verb><ew_contract>
 <n71037><#>nos<verb><ew_contract>
@@ -1303,7 +1303,7 @@
 <n71820><#>cu^r<verb><ew_contract>
 <n71820><#>cu^r<verb><aw_contract>
 <n71820><#>cu^r<verb><ow_contract>
-<n71880><#>cu_<verb>< <w_regular>>
+<n71880><#>cu_<verb><w_regular>
 <n71917><#>o)bolosta^t<verb><ew_contract>
 <n71960><#>o)gk<verb><aw_contract>
 <n71980><#>o)gk<verb><ow_contract>
@@ -1315,9 +1315,9 @@
 <n72086><#>o(dopoi<verb><ew_contract>
 <n72103><#>o(d<verb><ow_contract>
 <n72105><#>o)du^n<verb><aw_contract>
-<n72148><#>w)d<verb>< <w_regular>>
+<n72148><#>w)d<verb><w_regular>
 <n72192><#>oi)a_kostrof<verb><ew_contract>
-<n72201><#>oi)g<verb>< <w_regular>>
+<n72201><#>oi)g<verb><w_regular>
 <n72208><#>oi)d<verb><ew_contract>
 <n72259><#>oi)kei<verb><ow_contract>
 <n72259><#>oi)khi<verb><ow_contract>
@@ -1330,9 +1330,9 @@
 <n72390><#>oi)kteir<verb><ew_contract>
 <n72414>oi)ktro<#>xo<verb><ew_contract>
 <n72426><#>oi)m<verb><aw_contract>
-<n72437><#>oi)mwg<verb>< <w_regular>>
+<n72437><#>oi)mwg<verb><w_regular>
 <n72588><#>oi)n<verb><ow_contract>
-<n72610><#>o)i+<verb>< <w_regular>>
+<n72610><#>o)i+<verb><w_regular>
 <n72619><#>oi)<verb><ow_contract>
 <n72622><#>oi)opol<verb><ew_contract>
 <n72666><#>oi)str<verb><ew_contract>
@@ -1381,11 +1381,11 @@
 <n74563><#>o(ploma^n<verb><ew_contract>
 <n74587><#>o(plofor<verb><ew_contract>
 <n74655><#>o)pt<verb><aw_contract>
-<n74682><#>o)pu<verb>< <w_regular>>
+<n74682><#>o)pu<verb><w_regular>
 <n74708><#>o)pwrofor<verb><ew_contract>
-<n74735><#>o)p<verb>< <w_regular>>
+<n74735><#>o)p<verb><w_regular>
 <n74764><#>o)rg<verb><aw_contract>
-<n74797><#>o)reg<verb>< <w_regular>>
+<n74797><#>o)reg<verb><w_regular>
 <n74805><#>o)reiba^t<verb><ew_contract>
 <n74856><#>o)reopol<verb><ew_contract>
 <n74890><#>o)rexq<verb><ew_contract>
@@ -1401,8 +1401,8 @@
 <n75152><#>o(rm<verb><aw_contract>
 <n75155><#>o(rm<verb><ew_contract>
 <n75241><#>o)rni_qoma^n<verb><ew_contract>
-<n75267><#>o)r<verb>< <w_regular>>
-<n75315><#>o)rou<verb>< <w_regular>>
+<n75267><#>o)r<verb><w_regular>
+<n75315><#>o)rou<verb><w_regular>
 <n75352><#>o)rrwd<verb><ew_contract>
 <n75352><#>a)rrwd<verb><ew_contract>
 <n75370><#>o)rsolop<verb><ew_contract>
@@ -1441,11 +1441,11 @@
 <n76730><#>pakt<verb><ow_contract>
 <n76749><#>pa^laimon<verb><ew_contract>
 <n76774><#>pa^lai<verb><ow_contract>
-<n76801><#>pa^lai<verb>< <w_regular>>
+<n76801><#>pa^lai<verb><w_regular>
 <n76804><#>pa^la^m<verb><aw_contract>
 <n76825><#>pa^l<verb><ew_contract>
 <n76856><#>pa^lillog<verb><ew_contract>
-<n76882>pa^lim<#>plagg<verb>< <w_regular>>
+<n76882>pa^lim<#>plagg<verb><w_regular>
 <n76924><#>pa^lindrom<verb><ew_contract>
 <n76957>pa^lin<#>stom<verb><ew_contract>
 <n76976><#>pa^li^nw|d<verb><ew_contract>
@@ -1456,61 +1456,61 @@
 <n77944>para<#>docolog<verb><ew_contract>
 <n78219>para<#>koit<verb><ew_contract>
 <n79504><#>eu)khl<verb><ew_contract>
-<n79955><#>pa^t<verb>< <w_regular>>
-<n79983><#>paq<verb>< <w_regular>>
+<n79955><#>pa^t<verb><w_regular>
+<n79983><#>paq<verb><w_regular>
 <n79986><#>pa^ta^g<verb><ew_contract>
-<n80003><#>pa^t<verb>< <w_regular>>
+<n80003><#>pa^t<verb><w_regular>
 <n80008><#>pa^t<verb><ew_contract>
 <n80059><#>patrokton<verb><ew_contract>
-<n80140><#>pau<verb>< <w_regular>>
+<n80140><#>pau<verb><w_regular>
 <n80153><#>paxn<verb><ow_contract>
 <n80220><#>ped<verb><aw_contract>
 <n80286>pezo<#>ba^t<verb><ew_contract>
 <n80297><#>pezoma^x<verb><ew_contract>
 <n80303>pezo<#>por<verb><ew_contract>
 <n80318><#>peiqarx<verb><ew_contract>
-<n80327><#>peiq<verb>< <w_regular>>
+<n80327><#>peiq<verb><w_regular>
 <n80357><#>peir<verb><aw_contract>
 <n80388><#>pekt<verb><ew_contract>
-<n80390><#>pek<verb>< <w_regular>>
+<n80390><#>pek<verb><w_regular>
 <n80442><#>pelek<verb><aw_contract>
 <n80442><#>pelekk<verb><aw_contract>
-<n80557><#>pemp<verb>< <w_regular>>
+<n80557><#>pemp<verb><w_regular>
 <n80587><#>penq<verb><ew_contract>
 <n80836><#>penthkontarx<verb><ew_contract>
-<n80929>p<#>nu<verb>< <w_regular>>
+<n80929>p<#>nu<verb><w_regular>
 <n80967><#>perai<verb><ow_contract>
 <n80993><#>per<verb><aw_contract>
-<n81016><#>perq<verb>< <w_regular>>
+<n81016><#>perq<verb><w_regular>
 <n82087>peri<#>sqen<verb><ew_contract>
 <n82642><#>peron<verb><aw_contract>
-<n82756><#>pet<verb>< <w_regular>>
+<n82756><#>pet<verb><w_regular>
 <n82805><#>petr<verb><ow_contract>
-<n82816><#>peuq<verb>< <w_regular>>
-<n82887><#>phg<verb>< <w_regular>>
+<n82816><#>peuq<verb><w_regular>
+<n82887><#>phg<verb><w_regular>
 <n82900><#>phd<verb><aw_contract>
 <n82900><#>pa_d<verb><aw_contract>
 <n82940><#>phlodom<verb><ew_contract>
 <n82962><#>phlofor<verb><ew_contract>
 <n83012><#>phr<verb><ow_contract>
-<n83056><#>pi_du<verb>< <w_regular>>
-<n83057><#>piek<verb>< <w_regular>>
-<n83057><#>piez<verb>< <w_regular>>
+<n83056><#>pi_du<verb><w_regular>
+<n83057><#>piek<verb><w_regular>
+<n83057><#>piez<verb><w_regular>
 <n83075><#>pi^qa^nolog<verb><ew_contract>
 <n83086><#>pi^qa^n<verb><ow_contract>
 <n83101>pi^qhko<#>fa^g<verb><ew_contract>
 <n83147><#>pi_l<verb><ew_contract>
 <n83182><#>pimpl<verb><ew_contract>
 <n83218><#>pi^n<verb><ow_contract>
-<n83246><#>pi_<verb>< <w_regular>>
-<n83253><#>pet<verb>< <w_regular>>
+<n83246><#>pi_<verb><w_regular>
+<n83253><#>pet<verb><w_regular>
 <n83330><#>pist<verb><ow_contract>
 <n83405><#>pla^gi<verb><ow_contract>
 <n83467><#>pla^n<verb><aw_contract>
 <n83520><#>pla^ta^g<verb><ew_contract>
 <n83554><#>pla^t<verb><ow_contract>
 <n83673><#>plekta^n<verb><aw_contract>
-<n83683><#>plek<verb>< <w_regular>>
+<n83683><#>plek<verb><w_regular>
 <n83706><#>pleonekt<verb><ew_contract>
 <n83744>pleuro<#>kop<verb><ew_contract>
 <n83804><#>plhmmel<verb><ew_contract>
@@ -1520,8 +1520,8 @@
 <n83910><#>plinqourg<verb><ew_contract>
 <n83914><#>plinqofor<verb><ew_contract>
 <n83972><#>plout<verb><ew_contract>
-<n84008><#>plu<verb>< <w_regular>>
-<n84081>p<#>ni_g<verb>< <w_regular>>
+<n84008><#>plu<verb><w_regular>
+<n84081>p<#>ni_g<verb><w_regular>
 <n84105><#>podagr<verb><aw_contract>
 <n84196><#>pohfa^g<verb><ew_contract>
 <n84196><#>poia_fa^g<verb><ew_contract>
@@ -1529,7 +1529,7 @@
 <n84234><#>po<verb><ew_contract>
 <n84234><#>poi<verb><ew_contract>
 <n84359>poio<#>log<verb><ew_contract>
-<n84369><#>poipnu_<verb>< <w_regular>>
+<n84369><#>poipnu_<verb><w_regular>
 <n84395><#>pok<verb><ow_contract>
 <n84405><#>polemarx<verb><ew_contract>
 <n84410><#>polem<verb><ew_contract>
@@ -1556,27 +1556,27 @@
 <n85914><#>pos<verb><ow_contract>
 <n85962><#>pot<verb><aw_contract>
 <n86181>praci^<#>kop<verb><ew_contract>
-<n86276><#>prep<verb>< <w_regular>>
-<n86326><#>prhq<verb>< <w_regular>>
+<n86276><#>prep<verb><w_regular>
+<n86326><#>prhq<verb><w_regular>
 <n88115><#>procen<verb><ew_contract>
 <n90430><#>proswpolhpt<verb><ew_contract>
 <n90498><#>proter<verb><ew_contract>
 <n90646><#>prousel<verb><ew_contract>
 <n90908><#>prwta^gwnist<verb><ew_contract>
-<n91087><#>ptai<verb>< <w_regular>>
+<n91087><#>ptai<verb><w_regular>
 <n91142>pteror<#>ru<verb><ew_contract>
 <n91148>ptero<#>fu<verb><ew_contract>
 <n91154><#>pter<verb><ow_contract>
 <n91209><#>ptoi<verb><ew_contract>
 <n91209><#>pto<verb><ew_contract>
-<n91268><#>ptu<verb>< <w_regular>>
+<n91268><#>ptu<verb><w_regular>
 <n91324><#>pugma^x<verb><ew_contract>
-<n91391><#>pu_q<verb>< <w_regular>>
+<n91391><#>pu_q<verb><w_regular>
 <n91451><#>pukn<verb><ow_contract>
 <n91505><#>pu^l<verb><ow_contract>
 <n91510><#>pu^lwr<verb><ew_contract>
-<n91516><#>peuq<verb>< <w_regular>>
-<n91516><#>pu^q<verb>< <w_regular>>
+<n91516><#>peuq<verb><w_regular>
+<n91516><#>pu^q<verb><w_regular>
 <n91562>pu^r<#>akt<verb><ew_contract>
 <n91562>pu^r<#>akt<verb><ow_contract>
 <n91584><#>purghr<verb><ew_contract>
@@ -1598,14 +1598,14 @@
 <n92041><#>r(abdoux<verb><ew_contract>
 <n92044><#>r(abdofor<verb><ew_contract>
 <n92078><#>r(a|diourg<verb><ew_contract>
-<n92118><#>r(ai<verb>< <w_regular>>
+<n92118><#>r(ai<verb><w_regular>
 <n92135><#>r(a^k<verb><ow_contract>
 <n92210><#>r(a^fa^ni_d<verb><ow_contract>
 <n92249><#>r(ayw|d<verb><ew_contract>
-<n92263><#>r(egk<verb>< <w_regular>>
-<n92263><#>r(egx<verb>< <w_regular>>
-<n92303><#>r(ep<verb>< <w_regular>>
-<n92323><#>r(a^g<verb>< <w_regular>>
+<n92263><#>r(egk<verb><w_regular>
+<n92263><#>r(egx<verb><w_regular>
+<n92303><#>r(ep<verb><w_regular>
+<n92323><#>r(a^g<verb><w_regular>
 <n92393><#>r(i_g<verb><ew_contract>
 <n92418><#>r(izobol<verb><ew_contract>
 <n92433><#>r(izofa^g<verb><ew_contract>
@@ -1621,11 +1621,11 @@
 <n92730><#>r(of<verb><ew_contract>
 <n92741><#>r(oxq<verb><ew_contract>
 <n92806>r(u_m<#>oulk<verb><ew_contract>
-<n92808><#>r(u_<verb>< <w_regular>>
+<n92808><#>r(u_<verb><w_regular>
 <n92883><#>r(u^ti^d<verb><ow_contract>
-<n92933><#>r(w<verb>< <w_regular>>
+<n92933><#>r(w<verb><w_regular>
 <n93025>sa^gh<#>for<verb><ew_contract>
-<n93166><#>salpigg<verb>< <w_regular>>
+<n93166><#>salpigg<verb><w_regular>
 <n93231><#>sa^ni^d<verb><ow_contract>
 <n93332><#>sark<verb><aw_contract>
 <n93378><#>sark<verb><ow_contract>
@@ -1633,8 +1633,8 @@
 <n93440><#>saul<verb><ow_contract>
 <n93469><#>saf<verb><ew_contract>
 <n93472><#>sa^fhn<verb><ew_contract>
-<n93536><#>seb<verb>< <w_regular>>
-<n93601><#>sei<verb>< <w_regular>>
+<n93536><#>seb<verb><w_regular>
+<n93601><#>sei<verb><w_regular>
 <n93607><#>sela^g<verb><ew_contract>
 <n93694><#>semnolog<verb><ew_contract>
 <n93700>semno<#>mu_q<verb><ew_contract>
@@ -1643,7 +1643,7 @@
 <n93717><#>semn<verb><ow_contract>
 <n93777><#>shk<verb><ow_contract>
 <n93816><#>shmei<verb><ow_contract>
-<n93850><#>shp<verb>< <w_regular>>
+<n93850><#>shp<verb><w_regular>
 <n93963><#>si_g<verb><aw_contract>
 <n94051>si^dhro<#>tom<verb><ew_contract>
 <n94060><#>si^dhrofor<verb><ew_contract>
@@ -1685,21 +1685,21 @@
 <n95383><#>sku_totom<verb><ew_contract>
 <n95387>sku_to<#>tra^g<verb><ew_contract>
 <n95456><#>sma^ra^g<verb><ew_contract>
-<n95501><#>smhx<verb>< <w_regular>>
-<n95555><#>smu_x<verb>< <w_regular>>
-<n95561><#>smwx<verb>< <w_regular>>
+<n95501><#>smhx<verb><w_regular>
+<n95555><#>smu_x<verb><w_regular>
+<n95561><#>smwx<verb><w_regular>
 <n95567><#>sob<verb><ew_contract>
 <n95684><#>spa^q<verb><aw_contract>
 <n95752><#>sparga^n<verb><ow_contract>
 <n95756><#>sparg<verb><aw_contract>
-<n95760><#>sparg<verb>< <w_regular>>
+<n95760><#>sparg<verb><w_regular>
 <n95795><#>spa^ta^l<verb><aw_contract>
 <n95817><#>speir<verb><aw_contract>
-<n95836><#>spar<verb>< <w_regular>>
-<n95849><#>sped<verb>< <w_regular>>
-<n95849><#>speid<verb>< <w_regular>>
-<n95896><#>sperx<verb>< <w_regular>>
-<n95898><#>speud<verb>< <w_regular>>
+<n95836><#>spar<verb><w_regular>
+<n95849><#>sped<verb><w_regular>
+<n95849><#>speid<verb><w_regular>
+<n95896><#>sperx<verb><w_regular>
+<n95898><#>speud<verb><w_regular>
 <n95935><#>spi^l<verb><ow_contract>
 <n96001><#>spod<verb><ew_contract>
 <n96015><#>spod<verb><ow_contract>
@@ -1708,30 +1708,30 @@
 <n96171><#>staqm<verb><aw_contract>
 <n96227><#>sta^l<verb><aw_contract>
 <n96300><#>staur<verb><ow_contract>
-<n96404><#>steg<verb>< <w_regular>>
-<n96408><#>steib<verb>< <w_regular>>
-<n96408><#>sti^b<verb>< <w_regular>>
-<n96425><#>steix<verb>< <w_regular>>
+<n96404><#>steg<verb><w_regular>
+<n96408><#>steib<verb><w_regular>
+<n96408><#>sti^b<verb><w_regular>
+<n96425><#>steix<verb><w_regular>
 <n96432><#>stele<verb><ow_contract>
-<n96447><#>sta^l<verb>< <w_regular>>
-<n96453><#>stemf<verb>< <w_regular>>
+<n96447><#>sta^l<verb><w_regular>
+<n96453><#>stemf<verb><w_regular>
 <n96488><#>stenolesx<verb><ew_contract>
 <n96515><#>stenoxwr<verb><ew_contract>
 <n96521><#>sten<verb><ow_contract>
 <n96521><#>stein<verb><ow_contract>
-<n96541><#>sterg<verb>< <w_regular>>
+<n96541><#>sterg<verb><w_regular>
 <n96565><#>stere<verb><ow_contract>
 <n96568><#>ster<verb><ew_contract>
 <n96643><#>stefa^nhfor<verb><ew_contract>
 <n96643><#>stefa^na_for<verb><ew_contract>
 <n96666><#>stefa^n<verb><ow_contract>
-<n96679><#>stef<verb>< <w_regular>>
+<n96679><#>stef<verb><w_regular>
 <n96717><#>sthl<verb><ow_contract>
 <n96735>sthmor<#>ra^g<verb><ew_contract>
 <n96763>sti^ba^do<#>koit<verb><ew_contract>
 <n96776><#>sti^b<verb><ew_contract>
 <n96789><#>stigma^thfor<verb><ew_contract>
-<n96814><#>stilb<verb>< <w_regular>>
+<n96814><#>stilb<verb><w_regular>
 <n96856><#>sti^x<verb><aw_contract>
 <n96930><#>stoixei<verb><ow_contract>
 <n96939><#>stoix<verb><ew_contract>
@@ -1745,19 +1745,19 @@
 <n97153><#>stra^t<verb><ow_contract>
 <n97166><#>strebl<verb><ow_contract>
 <n97184>strefe<#>di_n<verb><ew_contract>
-<n97186><#>stra^f<verb>< <w_regular>>
-<n97186><#>stra^b<verb>< <w_regular>>
-<n97186><#>stref<verb>< <w_regular>>
+<n97186><#>stra^f<verb><w_regular>
+<n97186><#>stra^b<verb><w_regular>
+<n97186><#>stref<verb><w_regular>
 <n97194>streyo<#>di^k<verb><ew_contract>
 <n97216><#>strob<verb><ew_contract>
 <n97298><#>strof<verb><ew_contract>
 <n97310>strofo<#>di_n<verb><ew_contract>
 <n97349><#>strwf<verb><aw_contract>
-<n97359><#>stug<verb>< <w_regular>>
+<n97359><#>stug<verb><w_regular>
 <n97359><#>stu^g<verb><ew_contract>
 <n97371><#>stugn<verb><ow_contract>
 <n97387><#>stu_l<verb><ow_contract>
-<n97435><#>stu_f<verb>< <w_regular>>
+<n97435><#>stu_f<verb><w_regular>
 <n98108><#>su_kolog<verb><ew_contract>
 <n98115><#>su_k<verb><ow_contract>
 <n98121>su_ko<#>tra^g<verb><ew_contract>
@@ -1773,7 +1773,7 @@
 <n101639><#>sfendon<verb><aw_contract>
 <n101639><#>sfendon<verb><aw_contract>
 <n101671><#>sfhk<verb><ow_contract>
-<n101698><#>sfigg<verb>< <w_regular>>
+<n101698><#>sfigg<verb><w_regular>
 <n101741><#>sfri^g<verb><aw_contract>
 <n101863>sxhma^to<#>poi<verb><ew_contract>
 <n101972><#>swk<verb><ew_contract>
@@ -1787,18 +1787,18 @@
 <n102213><#>ta^laipwr<verb><ew_contract>
 <n102246>ta^la^si<#>ourg<verb><ew_contract>
 <n102318><#>tanta^l<verb><ow_contract>
-<n102369><#>ta^nu^<verb>< <w_regular>>
+<n102369><#>ta^nu^<verb><w_regular>
 <n102373><#>taciarx<verb><ew_contract>
 <n102380><#>taci<verb><ow_contract>
 <n102392><#>ta^pein<verb><ow_contract>
 <n102440><#>tarb<verb><ew_contract>
 <n102471><#>ta^ri_xopwl<verb><ew_contract>
-<n102513><#>tarxu_<verb>< <w_regular>>
+<n102513><#>tarxu_<verb><w_regular>
 <n102576><#>taurokton<verb><ew_contract>
 <n102581><#>taur<verb><ow_contract>
 <n102590><#>taurosfa^g<verb><ew_contract>
 <n102629>tau)to<#>poi<verb><ew_contract>
-<n102759><#>tegg<verb>< <w_regular>>
+<n102759><#>tegg<verb><w_regular>
 <n102783><#>teqrippotrof<verb><ew_contract>
 <n102801><#>teix<verb><ew_contract>
 <n102814><#>teixodom<verb><ew_contract>
@@ -1815,30 +1815,30 @@
 <n102992><#>teleut<verb><aw_contract>
 <n103021><#>telwn<verb><ew_contract>
 <n103117><#>tera^tolog<verb><ew_contract>
-<n103190><#>terp<verb>< <w_regular>>
+<n103190><#>terp<verb><w_regular>
 <n103523><#>tetrarx<verb><ew_contract>
-<n103681><#>teux<verb>< <w_regular>>
-<n103681><#>tux<verb>< <w_regular>>
+<n103681><#>teux<verb><w_regular>
+<n103681><#>tux<verb><w_regular>
 <n103695><#>texn<verb><aw_contract>
 <n103722><#>texnolog<verb><ew_contract>
-<n103785><#>ta^k<verb>< <w_regular>>
-<n103785><#>ta_k<verb>< <w_regular>>
-<n103785><#>thk<verb>< <w_regular>>
+<n103785><#>ta^k<verb><w_regular>
+<n103785><#>ta_k<verb><w_regular>
+<n103785><#>thk<verb><w_regular>
 <n103798><#>thleq<verb><aw_contract>
 <n103846><#>thmel<verb><ew_contract>
 <n103871><#>thr<verb><ew_contract>
 <n103882><#>tht<verb><aw_contract>
 <n103882><#>ta_t<verb><aw_contract>
-<n103942><#>tek<verb>< <w_regular>>
+<n103942><#>tek<verb><w_regular>
 <n103944><#>ti_l<verb><aw_contract>
 <n103963><#>ti_malf<verb><ew_contract>
 <n103972><#>ti_m<verb><aw_contract>
 <n104015><#>ti_mwr<verb><ew_contract>
-<n104040><#>ti^<verb>< <w_regular>>
-<n104040><#>tei<verb>< <w_regular>>
-<n104040><#>ti_<verb>< <w_regular>>
-<n104040><#>tei<verb>< <w_regular>>
-<n104136><#>tmhg<verb>< <w_regular>>
+<n104040><#>ti^<verb><w_regular>
+<n104040><#>tei<verb><w_regular>
+<n104040><#>ti_<verb><w_regular>
+<n104040><#>tei<verb><w_regular>
+<n104136><#>tmhg<verb><w_regular>
 <n104196><#>toixwru^x<verb><ew_contract>
 <n104218><#>tokoglu^f<verb><ew_contract>
 <n104222>toko<#>for<verb><ew_contract>
@@ -1857,14 +1857,14 @@
 <n104504><#>tra^gw|d<verb><ew_contract>
 <n104534><#>tra_n<verb><ow_contract>
 <n104572><#>tra^p<verb><ew_contract>
-<n104678><#>trem<verb>< <w_regular>>
-<n104685><#>trep<verb>< <w_regular>>
-<n104690><#>qref<verb>< <w_regular>>
-<n104690><#>tra^f<verb>< <w_regular>>
-<n104690><#>qra^f<verb>< <w_regular>>
-<n104695><#>trex<verb>< <w_regular>>
+<n104678><#>trem<verb><w_regular>
+<n104685><#>trep<verb><w_regular>
+<n104690><#>qref<verb><w_regular>
+<n104690><#>tra^f<verb><w_regular>
+<n104690><#>qra^f<verb><w_regular>
+<n104695><#>trex<verb><w_regular>
 <n104728><#>triain<verb><ow_contract>
-<n104838><#>tri_b<verb>< <w_regular>>
+<n104838><#>tri_b<verb><w_regular>
 <n104940><#>trihrarx<verb><ew_contract>
 <n105154>tri^podh<#>for<verb><ew_contract>
 <n105304><#>tri^ta^gwnist<verb><ew_contract>
@@ -1881,13 +1881,13 @@
 <n105647><#>tru^g<verb><aw_contract>
 <n105717><#>tru_p<verb><aw_contract>
 <n105738><#>tru^f<verb><aw_contract>
-<n105769><#>tru_x<verb>< <w_regular>>
-<n105769><#>tru_x<verb>< <w_regular>>
-<n105771><#>tru_<verb>< <w_regular>>
-<n105791><#>trwg<verb>< <w_regular>>
+<n105769><#>tru_x<verb><w_regular>
+<n105769><#>tru_x<verb><w_regular>
+<n105771><#>tru_<verb><w_regular>
+<n105791><#>trwg<verb><w_regular>
 <n105815><#>trwp<verb><aw_contract>
 <n105821><#>trwx<verb><aw_contract>
-<n105829><#>teux<verb>< <w_regular>>
+<n105829><#>teux<verb><w_regular>
 <n105861><#>tu^l<verb><ow_contract>
 <n105885><#>tumboxo<verb><ew_contract>
 <n105943><#>tu^p<verb><ow_contract>
@@ -1898,8 +1898,8 @@
 <n106029><#>tu_r<verb><ow_contract>
 <n106068><#>tufl<verb><ow_contract>
 <n106080><#>tu_f<verb><ow_contract>
-<n106081><#>tu_f<verb>< <w_regular>>
-<n106081><#>tu^f<verb>< <w_regular>>
+<n106081><#>tu_f<verb><w_regular>
+<n106081><#>tu^f<verb><w_regular>
 <n106259>u(gro<#>por<verb><ew_contract>
 <n106305><#>u(da^topot<verb><ew_contract>
 <n106316><#>u(da^t<verb><ow_contract>
@@ -1922,30 +1922,30 @@
 <n109909><#>u(yhlolog<verb><ew_contract>
 <n109926><#>u(yhlofron<verb><ew_contract>
 <n110019><#>u(y<verb><ow_contract>
-<n110027><#>u(_<verb>< <w_regular>>
+<n110027><#>u(_<verb><w_regular>
 <n110088><#>faidr<verb><ow_contract>
 <n110159><#>fa^laggoma^x<verb><ew_contract>
 <n110173><#>fa^lakr<verb><ow_contract>
 <n110246><#>fa^ner<verb><ow_contract>
 <n110317><#>farma^k<verb><aw_contract>
 <n110355><#>farma^k<verb><ow_contract>
-<n110469><#>fau<verb>< <w_regular>>
-<n110484><#>feid<verb>< <w_regular>>
-<n110598><#>fer<verb>< <w_regular>>
-<n110606><#>feug<verb>< <w_regular>>
-<n110606><#>fu^g<verb>< <w_regular>>
+<n110469><#>fau<verb><w_regular>
+<n110484><#>feid<verb><w_regular>
+<n110598><#>fer<verb><w_regular>
+<n110606><#>feug<verb><w_regular>
+<n110606><#>fu^g<verb><w_regular>
 <n110618><#>feya^l<verb><ow_contract>
 <n110634><#>fhl<verb><ow_contract>
-<n110662><#>fqegg<verb>< <w_regular>>
+<n110662><#>fqegg<verb><w_regular>
 <n110685><#>fqeirotra^g<verb><ew_contract>
-<n110689><#>fqar<verb>< <w_regular>>
+<n110689><#>fqar<verb><w_regular>
 <n110700><#>fqi^n<verb><aw_contract>
 <n110700><#>fqi^n<verb><ew_contract>
-<n110727><#>fqi^<verb>< <w_regular>>
-<n110727><#>fqi_<verb>< <w_regular>>
+<n110727><#>fqi^<verb><w_regular>
+<n110727><#>fqi_<verb><w_regular>
 <n110740><#>fqon<verb><ew_contract>
 <n110854><#>fi^lanqrwp<verb><ew_contract>
-<n110979><#>fi^l<verb>< <w_regular>>
+<n110979><#>fi^l<verb><w_regular>
 <n110979><#>fi^l<verb><ew_contract>
 <n110982><#>fi^lhd<verb><ew_contract>
 <n110988><#>fi^lhko<verb><ew_contract>
@@ -1970,13 +1970,13 @@
 <n111602><#>fi^loxwr<verb><ew_contract>
 <n111614><#>fi^loyu_x<verb><ew_contract>
 <n111662><#>fi_m<verb><ow_contract>
-<n111683><#>fi_tu_<verb>< <w_regular>>
-<n111748><#>fleg<verb>< <w_regular>>
+<n111683><#>fi_tu_<verb><w_regular>
+<n111748><#>fleg<verb><w_regular>
 <n111768><#>flhna^f<verb><aw_contract>
-<n111778><#>fli_b<verb>< <w_regular>>
+<n111778><#>fli_b<verb><w_regular>
 <n111855><#>flua_r<verb><ew_contract>
 <n111855><#>fluhr<verb><ew_contract>
-<n111881><#>flu<verb>< <w_regular>>
+<n111881><#>flu<verb><w_regular>
 <n111895><#>fob<verb><ew_contract>
 <n111915><#>foib<verb><aw_contract>
 <n111967>foini_ko<#>ba^t<verb><ew_contract>
@@ -1986,13 +1986,13 @@
 <n112142><#>forolog<verb><ew_contract>
 <n112155><#>forthg<verb><ew_contract>
 <n112204><#>fra^gell<verb><ow_contract>
-<n112217><#>fra^d<verb>< <w_regular>>
+<n112217><#>fra^d<verb><w_regular>
 <n112266><#>frena^pa^t<verb><aw_contract>
 <n112297><#>fren<verb><ow_contract>
-<n112347><#>fri_<verb>< <w_regular>>
+<n112347><#>fri_<verb><w_regular>
 <n112350><#>fron<verb><ew_contract>
 <n112384><#>frour<verb><ew_contract>
-<n112429><#>fru_g<verb>< <w_regular>>
+<n112429><#>fru_g<verb><w_regular>
 <n112431><#>fruktwr<verb><ew_contract>
 <n112477>fu^go<#>di^k<verb><ew_contract>
 <n112481><#>fu^goma^x<verb><ew_contract>
@@ -2005,11 +2005,11 @@
 <n112673><#>fu_s<verb><aw_contract>
 <n112693><#>fu_sigg<verb><ow_contract>
 <n112706><#>fu^siognwmon<verb><ew_contract>
-<n112794><#>fu_<verb>< <w_regular>>
+<n112794><#>fu_<verb><w_regular>
 <n112826><#>fwnask<verb><ew_contract>
 <n112832><#>fwn<verb><ew_contract>
 <n112853><#>fwr<verb><aw_contract>
-<n112919><#>xaz<verb>< <w_regular>>
+<n112919><#>xaz<verb><w_regular>
 <n112945><#>xa^laz<verb><aw_contract>
 <n113006><#>xa^li_na^gwg<verb><ew_contract>
 <n113022><#>xa^lifron<verb><ew_contract>
@@ -2023,7 +2023,7 @@
 <n113476><#>xasm<verb><ew_contract>
 <n113485><#>xa^t<verb><ew_contract>
 <n113500><#>xaun<verb><ow_contract>
-<n113513><#>xez<verb>< <w_regular>>
+<n113513><#>xez<verb><w_regular>
 <n113520>xeilo<#>pot<verb><ew_contract>
 <n113539>xeim<#>ask<verb><ew_contract>
 <n113555>xeimo<#>fu^g<verb><ew_contract>
@@ -2035,9 +2035,9 @@
 <n113994><#>xi_liarx<verb><ew_contract>
 <n114102><#>xlain<verb><ow_contract>
 <n114151><#>xli^d<verb><aw_contract>
-<n114165><#>xli_<verb>< <w_regular>>
+<n114165><#>xli_<verb><w_regular>
 <n114181>xloh<#>kom<verb><ew_contract>
-<n114243><#>xnau<verb>< <w_regular>>
+<n114243><#>xnau<verb><w_regular>
 <n114246><#>xno<verb><aw_contract>
 <n114332><#>xol<verb><aw_contract>
 <n114363><#>xol<verb><ow_contract>
@@ -2045,7 +2045,7 @@
 <n114655><#>xrhsmhgor<verb><ew_contract>
 <n114664><#>xrhsmolog<verb><ew_contract>
 <n114676><#>xrhsmw|d<verb><ew_contract>
-<n114726><#>xri_<verb>< <w_regular>>
+<n114726><#>xri_<verb><w_regular>
 <n114754>xrono<#>tri^b<verb><ew_contract>
 <n114905><#>xru_solog<verb><ew_contract>
 <n115012><#>xru_sofor<verb><ew_contract>
@@ -2053,12 +2053,12 @@
 <n115031><#>xru_s<verb><ow_contract>
 <n115037>xru_s<#>wn<verb><ew_contract>
 <n115116><#>xutl<verb><ow_contract>
-<n115192><#>xw<verb>< <w_regular>>
-<n115192><#>xw<verb>< <w_regular>>
+<n115192><#>xw<verb><w_regular>
+<n115192><#>xw<verb><w_regular>
 <n115201><#>xwr<verb><ew_contract>
 <n115226><#>xwrogra^f<verb><ew_contract>
 <n115237>xwro<#>fi^l<verb><ew_contract>
-<n115374><#>yau<verb>< <w_regular>>
+<n115374><#>yau<verb><w_regular>
 <n115417><#>yeli<verb><ow_contract>
 <n115430><#>yeudaggel<verb><ew_contract>
 <n115464><#>yeudhgor<verb><ew_contract>
@@ -2066,11 +2066,11 @@
 <n115514><#>yeudolog<verb><ew_contract>
 <n115524><#>yeudomartu^r<verb><ew_contract>
 <n115570>yeudo<#>stom<verb><ew_contract>
-<n115586><#>yeud<verb>< <w_regular>>
+<n115586><#>yeud<verb><w_regular>
 <n115593><#>yeust<verb><ew_contract>
 <n115616><#>yhla^f<verb><aw_contract>
 <n115676><#>yhfofor<verb><ew_contract>
-<n115684><#>yhx<verb>< <w_regular>>
+<n115684><#>yhx<verb><w_regular>
 <n115748><#>yi_l<verb><ow_contract>
 <n115761><#>yimu^qi<verb><ow_contract>
 <n115810><#>yof<verb><ew_contract>
@@ -2081,18 +2081,18 @@
 <n115936><#>yu_x<verb><ow_contract>
 <n115955><#>yuxrolog<verb><ew_contract>
 <n115967><#>yuxr<verb><ow_contract>
-<n115980><#>yu_x<verb>< <w_regular>>
+<n115980><#>yu_x<verb><w_regular>
 <n116011><#>ywr<verb><aw_contract>
-<n116024><#>ywx<verb>< <w_regular>>
-<n116058><#>w)di_n<verb>< <w_regular>>
-<n116068><#>w)z<verb>< <w_regular>>
-<n116070><#>w)q<verb>< <w_regular>>
+<n116024><#>ywx<verb><w_regular>
+<n116058><#>w)di_n<verb><w_regular>
+<n116068><#>w)z<verb><w_regular>
+<n116070><#>w)q<verb><w_regular>
 <n116070><#>w)q<verb><ew_contract>
 <n116205>w)mo<#>qet<verb><ew_contract>
 <n116244><#>w)n<verb><ew_contract>
 <n116359><#>w(roqet<verb><ew_contract>
 <n116372><#>w(ronom<verb><ew_contract>
-<n116397><#>w)ru_<verb>< <w_regular>>
+<n116397><#>w)ru_<verb><w_regular>
 <n116435><#>w)ta^koust<verb><ew_contract>
 <n116470><#>w)fel<verb><ew_contract>
 <n116485><#>w)xr<verb><aw_contract>
