@@ -70,10 +70,10 @@ morphStemFile.eachLine { ln ->
 
       if ((stemLabelMap[stemClass]) && (formToIdMap[lemma])) {
         if (stem ==~ /.+\-.+/) {
-          fstLexList.add( "<${formToIdMap[lemma]}>${stem.replaceFirst(/[\-]/,'<#>')}<${stemLabelMap[stemClass]}>")
+          fstLexList.add( "<${formToIdMap[lemma]}>${stem.replaceFirst(/[\-]/,'<#>')}<verb><${stemLabelMap[stemClass]}>")
 
         } else {
-          fstLexList.add( "<${formToIdMap[lemma]}><#>${stem}<${stemLabelMap[stemClass]}>")
+          fstLexList.add( "<${formToIdMap[lemma]}><#>${stem}<verb><${stemLabelMap[stemClass]}>")
         }
 
       }
