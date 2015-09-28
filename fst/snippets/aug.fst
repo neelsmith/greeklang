@@ -7,28 +7,36 @@
 
 #ltr# = a-z
 #urn# = <n64316>
-#tag# = <pres><aor>
+#tag# = <pres><impft><aor><pft><plupft><fut><futpft>
+#smooth# =  \)
+#rough# = \(
+#breathing# = #smooth# #rough#
 
-#not_augmented# = <pres>
+#augmenttense# = <aor><impft><plupft>
+#not_augmented# = <pres><fut><pft><futpft>
 
+#tense# = #tag#
+
+
+%%%%%%%%%%%%%%%%%%%% Handle augment as needed %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
 % Use an agreement variable to expand stem with augment
-% when followed by tag <aor>
+% when followed by tag for augmenting tense
 #=ltr# = a-z
-ALPHABET = [#ltr#] [#tag#] [#urn#]
-$augmented$ = {[#=ltr#]}:{e[#=ltr#]} ^-> ([#urn#] __ [a-z]+ <aor>)
-
-
+ALPHABET = [#ltr#] [#tag#] [#urn#] [#breathing#]
+$augmented$ = {[#=ltr#]}:{e\)[#=ltr#]} ^-> ([#urn#] __ [a-z]+ [#augmenttense#])
 
 % Pass other tenses through unchanged.
-ALPHABET = [#ltr#] [#tag#] [#urn#]
+ALPHABET = [#ltr#] [#breathing#][#tag#] [#urn#]
 $unaugmented$ = [#urn#] [#ltr#]+ [#not_augmented#]
 
 $augment$ = ($augmented$ | $unaugmented$)
 
+
 % Format for final display:
-ALPHABET = [#ltr#] [#tag#]:<> [#urn#]:<>
+ALPHABET = [#ltr#] [#breathing#] [#tag#]:<> [#urn#]:<>
 $striptag$ = .*
 
 
-$toylexicon$ = <n64316>lu<aor> | <n64316>lu<pres>
+$toylexicon$ = <n64316>lu[#tense#]
 $toylexicon$  || $augment$ || $striptag$

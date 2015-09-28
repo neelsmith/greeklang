@@ -19,7 +19,7 @@ $toylexicon$ = <n64316>lu[<aor><pres>]
 
 
 
-%%%%%%%%%%%%%%%%%%%% Handle augment as needed %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% Modify stem of regular verbs to form principal parts %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % Use an agreement variable to expand stem with "s"
 % when followed by tag <aor>
@@ -40,7 +40,8 @@ $princpart$ = ($1stpp$ | $2ndpp$)
 
 
 
-%%%%%%%%%%%% Modify stem of regular verbs to form principal parts %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%% Handle augment as needed %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % Use an agreement variable to expand stem with augment
 % when followed by tag <aor>
