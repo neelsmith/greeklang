@@ -2,7 +2,7 @@ ext {
 
   versionMap = [
     "cite" : "0.94.1",
-    "groovy" : "2.0.6",
+    "groovy" : "2.0.6", /* update this value */
 
     "concordion" : "1.4.4",
 
