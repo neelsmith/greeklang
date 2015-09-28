@@ -7,8 +7,9 @@ $toylexicon$ = <n64316>lu[<aor><pres>]
 #ltr# = a-z
 #urn# = <n64316>
 #tag# = <pres><aor>
-#smooth# = <smooth>
-#breathing# = #smooth#
+#smooth# =  \)
+#rough# = \(
+#breathing# = #smooth# #rough#
 
 % Distinguish tenses taking augment from those that do not
 #not_2ndpp# = <pres>
@@ -45,7 +46,7 @@ $princpart$ = ($1stpp$ | $2ndpp$)
 % when followed by tag <aor>
 #=ltr# = a-z
 ALPHABET = [#ltr#] [#tag#] [#urn#] [#breathing#]
-$augmented$ = {[#=ltr#]}:{e[#=ltr#]} ^-> ([#urn#] __ [a-z]+ <aor>)
+$augmented$ = {[#=ltr#]}:{e\)[#=ltr#]} ^-> ([#urn#] __ [a-z]+ <aor>)
 
 % Pass other tenses through unchanged.
 ALPHABET = [#ltr#] [#tag#] [#urn#]  [#breathing#]
