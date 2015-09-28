@@ -14,13 +14,16 @@
 #accent# = \/\=
 #diacritic# = #diaeresis# #accent#
 
-#character# = #letter# #diacritic#
-$character$ = [#character#]
+#alphacharacter# = #letter# #diacritic#
+$alphacharacter$ = [#alphacharacter#]
 
 % Additional editorial symbols used in stem files:
 #morpheme# = <#>
 #vowelquant# = <long><short>
-#editorial# = #vowelquant# #morpheme#
+#editorial# = #morpheme# #vowelquant#
+
+#character# = #alphacharacter# #editorial#
+
 
 #separator# = \:
 $separator$ = [#separator#]

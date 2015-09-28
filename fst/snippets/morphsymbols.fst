@@ -24,20 +24,4 @@
 #voice# = <act><mid><pass>
 
 
-#morphtag# = #pos# #gender# #case# #number# #person# #tense# #mood# #voice# #degree$
-
-
-
-
-% Consider whether those belong here or elsewhere...?
-
-% Transducers for the above variables:
-$gender$ = [#gender#]
-$case$ = [#case#]
-$number$ = [#number#]
-
-
-% Identity variables for the transducers:
-$=gender$ = [#gender#]
-$=case$ = [#case#]
-$=number$ = [#number#]
+#morphtag# = #pos# #gender# #case# #number# #person# #tense# #mood# #voice# #degree#
