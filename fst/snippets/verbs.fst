@@ -7,10 +7,11 @@
 
 
 % toy data set
-$urn$ = [<n64316>]
+#urn# = <n64316>
+$urn$ = [#urn#]
 #extratag# = <ml>
 $extratag$ = [#extratag#]
-$toylexicon$ = <n64316>lu<verb><w_regular><ml>
+$toylexicon$ = <n64316><#>lu<verb><w_regular><ml>
 $toyending$ = <w_regular>w<1st><sg>[<pres><fut>][<indic><subj>]<act>
 
 
@@ -32,8 +33,24 @@ $voice$ = [#voice#]
 
 $verbacceptor$ =  $urn$ $nonmorph$+ <verb> $=verbclass$  $extratag$* $separator$+ $=verbclass$ $nonmorph$* $person$ $number$ $tense$ $mood$ $voice$ $nonmorph$*
 
-%%%%%%%%%% Snippet test
 
+% example of accepted verb id:
+% <n64316><#>lu<verb><w_regular><ml>::<w_regular>w<1st><sg><pres><indic><act>
+
+
+
+
+%%%%%%%%  Format for final display: %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Surface form composed solely of alphabetic characters (including accents and
+% diacritics in the alphabet)
+ALPHABET = [#alphacharacter#] [#editorial#]:<>  [#morphtag#]:<> [#urn#]:<> [#separator#]:<> [#verbclass#]:<> [#extratag#]:<>
+$striptag$ = .*
+
+
+
+%%%%%%%%%% Snippet test
+% the simple mophology formula
 $morph$ = $toylexicon$ \:\: $toyending$
 
-$morph$   || $verbacceptor$
+% the final verb pipeline
+$morph$   || $verbacceptor$  || $striptag$
