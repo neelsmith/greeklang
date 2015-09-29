@@ -20,7 +20,7 @@
 
 #stemtype# = <w_regular>
 
-#extras# = <ml>
+#extras# = <ml><hmt>
 
 #augmenttense# = <aor><impft><plupft>
 #not_augmented# = <pres><fut><pft><futpft>
@@ -37,7 +37,7 @@
 ALPHABET = [#alphachar#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extras#]
 $2ndpp$ = {[#=ltr#]}:{[#=ltr#]s} ^-> ([#urn#]<#>[a-z]+ __ <verb><w_regular>[#extras#]*[\:]+<w_regular>[#alphachar#]*[#person#][#number#][#2ndpptense#])
 
-$tstlexicon$ = <n64316><#>lu<verb><w_regular><ml>\:\:<w_regular>w<1st><sg>[#tense#]<indic><act>
+$tstlexicon$ = <n64316><#>lu<verb><w_regular><ml>\:\:<w_regular>w<1st><sg>[#tense#]<indic><act><hmt>
 
 
 
