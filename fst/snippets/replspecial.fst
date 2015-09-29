@@ -3,11 +3,13 @@
 
 
 #ltr# = a-z
-#urn# = <n64316>
-#tense# = <pres><impft><aor><pft><plupft><fut><futpft>
 #smooth# =  \)
 #rough# = \(
 #breathing# = #smooth# #rough#
+#alphachar# = #ltr# #breathing#
+
+#urn# = <n64316>
+#tense# = <pres><impft><aor><pft><plupft><fut><futpft>
 
 #augmenttense# = <aor><impft><plupft>
 #not_augmented# = <pres><fut><pft><futpft>
@@ -19,11 +21,10 @@
 #=ltr# = a-z
 
 
-ALPHABET = [#ltr#] [#tense#] [#urn#] [#breathing#] [\:] [<#>]
+ALPHABET = [#alphachar#] [#tense#] [#urn#] [#breathing#] [\:] [<#>]
 $2ndpp$ = {[#=ltr#]}:{[#=ltr#]s} ^-> ([#urn#]<#>[a-z]+ __ [\:]+[#2ndpptense#])
 
 $tstlexicon$ = <n64316><#>lu\:\:[#tense#]
-
 
 
 
