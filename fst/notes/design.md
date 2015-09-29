@@ -12,7 +12,9 @@ Data:
 Process:
 
 - automatically extract list of URNs from stems
-- *best practice recommendation*:  every lexicon is identified by some user-defined stem, e.g., <ml> for middle Liddell.  Perhaps enforce by requiring *some* extratag to be included in lex stem?
+- every lexicon should be identified by some user-defined stem, e.g., &lt;ml> for middle Liddell.  Enforce this by requiring *some* extratag to be included in lex stem
+- *best practice recommendation*:  any additional inflectional patterns should also be tagged.  Not explicitly enforced, however.
+- Need to map morpheus stem classes/tenses (inflectionl patterns) to Smyth references
 - acceptors allow optional inclusion of additional tags
 
 
