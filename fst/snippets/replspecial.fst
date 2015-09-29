@@ -1,4 +1,4 @@
-%How to replace special chars like :
+%How to replace special chars like the colon :
 
 
 
@@ -19,10 +19,10 @@
 #=ltr# = a-z
 
 
-ALPHABET = [#ltr#] [#tense#] [#urn#] [#breathing#] [\:]
-$2ndpp$ = {[#=ltr#]}:{[#=ltr#]s} ^-> ([#urn#][a-z]+ __ [\:]+[#2ndpptense#])
+ALPHABET = [#ltr#] [#tense#] [#urn#] [#breathing#] [\:] [<#>]
+$2ndpp$ = {[#=ltr#]}:{[#=ltr#]s} ^-> ([#urn#]<#>[a-z]+ __ [\:]+[#2ndpptense#])
 
-$tstlexicon$ = <n64316>lu\:\:[#tense#]
+$tstlexicon$ = <n64316><#>lu\:\:[#tense#]
 
 
 
