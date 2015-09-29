@@ -11,7 +11,12 @@
 #urn# = <n64316>
 #pos# = <verb>
 #tense# = <pres><impft><aor><pft><plupft><fut><futpft>
-#morphtag# = #pos# #tense#
+#person# = <1st>
+#number# = <sg>
+#mood# = <indic>
+#voice# = <act><mid><pass>
+
+#morphtag# = #pos# #person# #number# #tense# #mood# #voice#
 
 
 #extras# = <ml>
