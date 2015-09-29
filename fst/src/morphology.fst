@@ -14,8 +14,7 @@
 
 % Assemble list of lexica of stems in gradle build,
 % and insert here with token filter:
-$stemraw$ = "@workdir@lexicon.fst" |  "@workdir@iliad.fst"
-$stems$ = $stemraw$
+$stems$ = @lexica@
 
 % Assemble list of inflectional patterns in gradle build,
 % and insert here with token filter:

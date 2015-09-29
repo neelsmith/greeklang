@@ -1,6 +1,6 @@
 
 % noun.fst
-#include "@workdir@symbols.fst"
+#include "@workdir@morphsymbols.fst"
 #include "@workdir@extratags.fst"
 #include "@workdir@phonology.fst"
 #include "@workdir@urns.fst"
