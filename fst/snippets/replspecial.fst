@@ -59,7 +59,7 @@ $6th_pp$ = {[#=ltr#]}:{[#=ltr#]q} ^-> ([#urn#]<#>[a-z]+ __ <verb><w_regular>[#ex
 
 % Add reduplication on 4th and 5th parts:
 ALPHABET = [#alphachar#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extras#]
-$4th_5th_pp$ = {[#=ltr#]}:{[#=ltr#]e[#=ltr#]} ^-> ([#urn#]<#>[a-z]+ __ <verb><w_regular>[#extras#]*[\:]+<w_regular>[#alphachar#]*[#person#][#number#][#4th_5th_tense#])
+$redupe$ = {[#=ltr#]}:{[#=ltr#]e[#=ltr#]} ^-> ([#urn#]<#> __ [a-z]+<verb><w_regular>[#extras#]*[\:]+<w_regular>[#alphachar#]*[#person#][#number#][#4th_5th_tense#])
 
 
 ALPHABET = [#alphachar#] [#morphtag#]:<> [#urn#]:<> [\:]:<> [<#>]:<> [#stemtype#]:<> [#extras#]:<>
@@ -79,6 +79,6 @@ $synoptic$ = <n64316><#>lu<verb><w_regular><ml>\:\:<w_regular> ( \
   mai<1st><sg><pft><indic><pass> \
 )
 
-
+$4th_5th_pp$ =  $redupe$
 
 $synoptic$ ||  $2nd_3rd_pp$ || $4th_5th_pp$  || $6th_pp$ || $striptag$
