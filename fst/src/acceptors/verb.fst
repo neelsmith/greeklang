@@ -10,14 +10,14 @@ $extratag$ = [#extratag#]
 $nonmorph$ = [#nonmorph#]
 
 $urn$ = [#urn#]
-$=verb$ = [#verb#]
+$=verbclass$ = [#verbclass#]
 $person$ = [#person#]
 $number$ = [#number#]
 $tense$ = [#tense#]
 $mood$ = [#mood#]
 $voice$ = [#voice#]
 
-$verbacceptor$ =  $urn$ $nonmorph$+ <verb> $=verb$  $extratag$* $separator$+ $=verb$ $nonmorph$* $person$ $number$ $tense$ $mood$ $voice$ $nonmorph$*
+$verbacceptor$ =  $urn$ $nonmorph$+ <verb> $=verbclass$  $extratag$* $separator$+ $=verbclass$ $nonmorph$* $person$ $number$ $tense$ $mood$ $voice$ $nonmorph$*
 
 
 $verbacceptor$

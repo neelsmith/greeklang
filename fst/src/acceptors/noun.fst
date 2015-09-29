@@ -10,10 +10,10 @@ $extratag$ = [#extratag#]
 $nonmorph$ = [#nonmorph#]
 
 $urn$ = [#urn#]
-% #noun# is the set of stemtypes for nouns,
+% #nounclass# is the set of stemtypes for nouns,
 % defined in stemtypes.fst
-$=noun$ = [#noun#]
-$nounacceptor$ =  $urn$ $nonmorph$+ <noun> $=gender$ $=noun$ $extratag$* $separator$+ $=noun$  $nonmorph$* $=gender$ $=case$ $=number$ $nonmorph$*
+$=nounclass$ = [#nounclass#]
+$nounacceptor$ =  $urn$ $nonmorph$+ <noun> $=gender$ $=nounclass$ $extratag$* $separator$+ $=nounclass$  $nonmorph$* $=gender$ $=case$ $=number$ $nonmorph$*
 
 
 $nounacceptor$
