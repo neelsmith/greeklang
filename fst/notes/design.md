@@ -25,11 +25,10 @@ Process:
 ### princ.parts
 
 - first step in verb pipeline
-- filter on #classtem# tag:  separate transducers for regular formations:
+- filter on #classtem# tag:  group into $regular$ $irregular$ princ part groups, with separate transducers for each of regular formation patterns:
     - w_regular
     - [aeo]_contract
-    - (possibly -mi classses: to be investigated)
--
+    - (other classes to be investigated regular -mi verbs, [aio]zw)
 - other classtems must give all principal parts, normally 6, or possibly 4 for deponents.  Note that deponency is not a morphological feature: absence of principal parts is just a question of usage/attestation that might reflect in some cases the semantic and syntactic phenomenon of deponency.  A single transducer should simply classify 1st-6thpp stems and use thoses values.
 
 
@@ -67,4 +66,5 @@ Process:
 - URNs for lexical entities drawn from external lex.ent. source
 - generate URNs for stems, with one collection per "lexicon".  Since each lexicon has a lex.ent. URN, we have mapped stems to lexical entities.
 - generate URNs for inflectional patterns:  at what level is collection and object?  Might be sensible to include URN per transducer and output that along with stem class.  Or is stem class enough?
+- do we need URNs for each fundamental analysis pattern (without tags)? e.g., each PNTMV combo for conjugated verbs?
 - could we put smyth references on transducers as optional tags?
