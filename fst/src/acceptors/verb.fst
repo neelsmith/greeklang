@@ -1,10 +1,7 @@
-% verb.fst
-% Acceptor for conjugated verbal forms
-#include "@workdir@morphsymbols.fst"
-#include "@workdir@extratags.fst"
-#include "@workdir@phonology.fst"
-#include "@workdir@urns.fst"
-#include "@workdir@stemtypes.fst"
+% noun.fst
+% Limits input to valid morphological analyses of conjugated verbal forms
+%
+#include "@workdir@allsymbols.fst"
 
 % #extratag# is defined in "extratags.fst"
 $extratag$ = [#extratag#]
