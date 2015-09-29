@@ -1,8 +1,20 @@
 
+# Design notes
+
+## definitions and requirements
 
 
+- goal is a two-way mapping between a surface form and a morphological analysis
+    - explicitly *not* attempting to create a system modelling either synchronic or diachronic linguistic features:  the internal system is a purely utilitarian black box supporting the goal of 2-way mapping
+    - NB:  this is in general a good match to FST technology, but movable Greek accents are awkward
+- rigorously specified formats for both surface forms and analyses
+- clean separation of concerns:  system is *only* a morphological system
+- all citable conceptual entities identified by URN
+    - this enables integration in larger systems
+- must support dynamically loaded lexica of stems and inflectional rules
+- must support dynamically defined tagging of arbitrary (even non-morphological) taxonomies
 
-## extratags design
+## extratags
 
 Data:
 
@@ -44,6 +56,13 @@ Process:
 
 ## accent
 
+Data:
+
+- explicitly characterize nominal stems with one of 3 tags `<ultacc><penacc><antacc>`
+- quarrying from morpheus: it looks like default nominal entries are &lt;antacc> ("as good as recessive"), with morpheus labels `stem_acc` and `suff_acc` identifying `<penacc>` and `<ult_acc>` respectively
+
+Process:
+
 - gradle build takes list of words (configurable: default `wordlist.txt`), cps to buidl area
 - strip accent, write list of stripped words to build area
 - run FST on stripped list
@@ -68,3 +87,4 @@ Process:
 - generate URNs for inflectional patterns:  at what level is collection and object?  Might be sensible to include URN per transducer and output that along with stem class.  Or is stem class enough?
 - do we need URNs for each fundamental analysis pattern (without tags)? e.g., each PNTMV combo for conjugated verbs?
 - could we put smyth references on transducers as optional tags?
+- consider library support for RDF output
