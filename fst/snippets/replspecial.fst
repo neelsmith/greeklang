@@ -13,6 +13,9 @@
 #tense# = <pres><impft><aor><pft><plupft><fut><futpft>
 #morphtag# = #pos# #tense#
 
+
+#extras# = <ml>
+
 #augmenttense# = <aor><impft><plupft>
 #not_augmented# = <pres><fut><pft><futpft>
 
@@ -25,10 +28,10 @@
 #=ltr# = a-z
 
 
-ALPHABET = [#alphachar#] [#morphtag#] [#urn#] [#breathing#] [\:] [<#>]
-$2ndpp$ = {[#=ltr#]}:{[#=ltr#]s} ^-> ([#urn#]<#>[a-z]+ __ <verb>[\:]+[#2ndpptense#])
+ALPHABET = [#alphachar#] [#morphtag#] [#urn#] [\:] [<#>] [#extras#]
+$2ndpp$ = {[#=ltr#]}:{[#=ltr#]s} ^-> ([#urn#]<#>[a-z]+ __ <verb>[#extras#]*[\:]+[#2ndpptense#])
 
-$tstlexicon$ = <n64316><#>lu<verb>\:\:[#tense#]
+$tstlexicon$ = <n64316><#>lu<verb><ml>\:\:[#tense#]
 
 
 
