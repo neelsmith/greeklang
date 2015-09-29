@@ -55,6 +55,19 @@ String rulesFstStatement(File dir) {
   return stmt.toString()
 }
 
+String rulesMakeStatement(File dir) {
+  StringBuilder stmt = new StringBuilder()
+  def fileList = []
+  dir.eachFileMatch(~/.*.fst/) { fstFile ->
+    String compiledFile = fstFile.getName().replaceFirst(/fst$/, "a")
+    fileList.add ("${buildDir}/fst/${compiledFile}".toString())
+  }
+  fileList.each { f ->
+    stmt.append(f + " ")
+  }
+  return stmt.toString()
+}
+
 task cpSrc (type: Copy) {
     description = "Copies src directory to build area."
     from ("src") {
@@ -62,8 +75,8 @@ task cpSrc (type: Copy) {
     }
     into "${buildDir}/fst"
     filter(ReplaceTokens, tokens: ["workdir" : "${buildDir}/fst/".toString(), "lexica": lexiconFstStatement(new File(stemsdir)), "makelexica": lexiconMakeStatement(new File(stemsdir)),
-    "extrafstrules": rulesFstStatement(new File(rulesdir))//,
-    //"extmakerules": rulesFstStatement(rulesdir),
+    "extrafstrules": rulesFstStatement(new File(rulesdir)),
+    "extramakerules": rulesMakeStatement(new File(rulesdir))
      ])
 }
 

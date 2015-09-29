@@ -12,16 +12,11 @@
 #include "@workdir@phonology.fst"
 
 
-% Assemble list of lexica of stems in gradle build,
-% and insert here with token filter:
+% Dynamically loaded lexica of stems:
 $stems$ = @lexica@
 
-% Assemble list of inflectional patterns in gradle build,
-% and insert here with token filter:
-$basicend$ = "<@workdir@inflection.a>"
-$extrainfl$ = "<@workdir@extrainfl.a>"
-
-$ends$ = $basicend$ | $extrainfl$
+% Dynamically loaded inflectional rules:
+$ends$ =  "<@workdir@inflection.a>"| @extrafstrules@
 
 
 $morph$ = $stems$ $separator$ $separator$ $ends$
