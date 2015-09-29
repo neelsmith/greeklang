@@ -1,22 +1,13 @@
 %% morphology.fst : a Finite State Transducer for ancient Greek morphology %%
 
-% Tokens in our alphabet:
-% 1. morphological tags
-#include "@workdir@morphsymbols.fst"
-#include "@workdir@stemtypes.fst"
-
-#include "@workdir@extratags.fst"
-#include "@workdir@urns.fst"
-
-% 2. ASCII representation of polytonic Greek
-#include "@workdir@phonology.fst"
-
+% All symbols used in the FST:
+#include "@workdir@allsymbols.fst"
 
 % Dynamically loaded lexica of stems:
 $stems$ = @lexica@
 
 % Dynamically loaded inflectional rules:
-$ends$ =  "<@workdir@inflection.a>"| @extrafstrules@
+$ends$ =  "<@workdir@inflection.a>" | @extrafstrules@
 
 
 $morph$ = $stems$ $separator$ $separator$ $ends$
