@@ -61,7 +61,12 @@ $6th_pp$ = {[#=ltr#]}:{[#=ltr#]q} ^-> ([#urn#]<#>[a-z]+ __ <verb><w_regular>[#ex
 ALPHABET = [#alphachar#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extras#]
 $redupe$ = {[#=ltr#]}:{[#=ltr#]e[#=ltr#]} ^-> ([#urn#]<#> __ [a-z]+<verb><w_regular>[#extras#]*[\:]+<w_regular>[#alphachar#]*[#person#][#number#][#4th_5th_tense#])
 
+% Add kappa to 4th only: restrict to active voice.
+ALPHABET = [#alphachar#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extras#]
+$kappa$ = {[#=ltr#]}:{[#=ltr#]k} ^-> ([#urn#]<#>[a-z]+ __ <verb><w_regular>[#extras#]*[\:]+<w_regular>[#alphachar#]*[#person#][#number#][#4th_5th_tense#][#mood#]<act>)
 
+
+% Formatting for final display
 ALPHABET = [#alphachar#] [#morphtag#]:<> [#urn#]:<> [\:]:<> [<#>]:<> [#stemtype#]:<> [#extras#]:<>
 $striptag$ = .*
 
@@ -79,6 +84,8 @@ $synoptic$ = <n64316><#>lu<verb><w_regular><ml>\:\:<w_regular> ( \
   mai<1st><sg><pft><indic><pass> \
 )
 
-$4th_5th_pp$ =  $redupe$
+
+
+$4th_5th_pp$ =  $redupe$ || $kappa$
 
 $synoptic$ ||  $2nd_3rd_pp$ || $4th_5th_pp$  || $6th_pp$ || $striptag$
