@@ -20,9 +20,9 @@
 
 
 ALPHABET = [#ltr#] [#tense#] [#urn#] [#breathing#] [\:]
-$augmented$ = {[#=ltr#]}:{e\)[#=ltr#]} ^-> ([#urn#] __ [a-z]+\:[#augmenttense#])
+$augmented$ = {[#=ltr#]}:{e\)[#=ltr#]} ^-> ([#urn#] __ [a-z]+[\:]+[#augmenttense#])
 
-$tstlexicon$ = <n64316>lu\:[#tense#]
+$tstlexicon$ = <n64316>lu\:\:[#tense#]
 
 
 
