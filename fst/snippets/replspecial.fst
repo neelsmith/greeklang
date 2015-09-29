@@ -22,12 +22,25 @@
 
 #extras# = <ml><hmt>
 
-#augmenttense# = <aor><impft><plupft>
-#not_augmented# = <pres><fut><pft><futpft>
+
+%
+#2nd_3rd_6th_tense# = <aor><fut><futpft>
+#2nd_3rd_voice# = <act><mid>
+#6th_voice# = <pass>
+
+#nosigmatense# = <pres><impft><pft><plupft>
 
 
-% not really 2nd pp:  just stems needing -sigma extension
-#2ndpptense# = <aor><fut>
+
+% reduplication on 4th and 5th:
+#redupetense# = <pft><plupft><futpft>
+% also -kappa on 4th
+#kappatense# = <pft>
+
+
+% 6th
+#thetatense# = <aor><fut>
+
 
 % Use an agreement variable to expand stem with augment
 % when followed by tag for augmenting tense
@@ -35,10 +48,12 @@
 
 
 ALPHABET = [#alphachar#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extras#]
-$2ndpp$ = {[#=ltr#]}:{[#=ltr#]s} ^-> ([#urn#]<#>[a-z]+ __ <verb><w_regular>[#extras#]*[\:]+<w_regular>[#alphachar#]*[#person#][#number#][#2ndpptense#])
+$2nd_3rd_pp$ = {[#=ltr#]}:{[#=ltr#]s} ^-> ([#urn#]<#>[a-z]+ __ <verb><w_regular>[#extras#]*[\:]+<w_regular>[#alphachar#]*[#person#][#number#][#2nd_3rd_6th_tense#][#mood#][#2nd_3rd_voice#])
 
-$tstlexicon$ = <n64316><#>lu<verb><w_regular><ml>\:\:<w_regular>w<1st><sg>[#tense#]<indic><act><hmt>
+$tstlexicon$ = <n64316><#>lu<verb><w_regular><ml>\:\:<w_regular> (w<1st><sg><fut><indic><act> |\
+  a<1st><sg><aor><indic><act> \
+)
 
 
 
-$tstlexicon$ || $2ndpp$
+$tstlexicon$ || $2nd_3rd_pp$
