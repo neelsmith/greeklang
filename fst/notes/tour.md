@@ -12,9 +12,24 @@ It is a finite state transducer (FST) that works by joining together *stems* and
 
 
 
-## The gradle build system
+## Using the gradle build system
 
 Tasks:
 
 - `gradle fst` builds the FST in `fst/build/fst/morphology.a`
 - `gradle fstgen` builds a "switched" FST in `fst/build/fst/bulkgen.a`
+
+Configuration:  set in file `fstconf.gradle`.  Values may be overriden on the command line with `-P` flag. E.g.,
+
+    gradle -Pstemsdir=/altnerate/directory/for/stems fst
+
+
+
+## Using the transducer with SFST tools
+
+Examples:
+
+- batch analyze lists of input:  `fst-mor morphology.a`
+- batch generate forms from analyses:  `fst-infl bulkgen.a`
+- print the graph of the transducer: `fst-print morphology.a`
+- generate a visual graph: `fst-print morphology.a | perl fst2dot.pl - | dot -T png -o morphology.png`
