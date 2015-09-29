@@ -18,6 +18,11 @@
 
 
 % TBA: all other parts of speech
+% adj
+% ptcpl
+% pronoun
+% Various indeclinables
+
 
 % Union of all stemtypes
 #stemtype# = #nounclass# #verbclass#
