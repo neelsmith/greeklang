@@ -38,8 +38,6 @@
 #kappatense# = <pft>
 
 
-% 6th
-#thetatense# = <aor><fut>
 
 
 % Use an agreement variable to expand stem with augment
@@ -50,10 +48,18 @@
 ALPHABET = [#alphachar#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extras#]
 $2nd_3rd_pp$ = {[#=ltr#]}:{[#=ltr#]s} ^-> ([#urn#]<#>[a-z]+ __ <verb><w_regular>[#extras#]*[\:]+<w_regular>[#alphachar#]*[#person#][#number#][#2nd_3rd_6th_tense#][#mood#][#2nd_3rd_voice#])
 
+
+ALPHABET = [#alphachar#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extras#]
+$6th_pp$ = {[#=ltr#]}:{[#=ltr#]q} ^-> ([#urn#]<#>[a-z]+ __ <verb><w_regular>[#extras#]*[\:]+<w_regular>[#alphachar#]*[#person#][#number#][#2nd_3rd_6th_tense#][#mood#][#6th_voice#])
+
 $tstlexicon$ = <n64316><#>lu<verb><w_regular><ml>\:\:<w_regular> (w<1st><sg><fut><indic><act> |\
-  a<1st><sg><aor><indic><act> \
+  a<1st><sg><aor><indic><act> |\
+  hn<1st><sg><aor><indic><pass> \
 )
 
 
 
-$tstlexicon$ || $2nd_3rd_pp$
+$tstlexicon$ ||  $2nd_3rd_pp$ || $6th_pp$
+
+%$tstlexicon$ ||  $6th_pp$
+%$tstlexicon$ || $2nd_3rd_pp$
