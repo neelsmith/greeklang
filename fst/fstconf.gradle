@@ -4,4 +4,5 @@ ext {
   MAKE = "/usr/bin/make"
 
   stemsdir = "fst/stems"
+  rulesdir = "fst/rules"
 }

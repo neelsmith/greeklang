@@ -36,13 +36,35 @@ String lexiconFstStatement(File dir) {
 }
 
 
+// get list of .fst files in directory
+String rulesFstStatement(File dir) {
+  StringBuilder stmt = new StringBuilder()
+  def fileList = []
+  dir.eachFileMatch(~/.*.fst/) { fstFile ->
+    String compiledFile = fstFile.getName().replaceFirst(/fst$/, "a")
+    fileList.add ('"<' + "${buildDir}/fst/${compiledFile}".toString() + '>"')
+  }
+  fileList.eachWithIndex { f, i ->
+    if (i < (fileList.size() - 1)) {
+      stmt.append( f + ' | ')
+    } else {
+      stmt.append( f )
+    }
+
+  }
+  return stmt.toString()
+}
+
 task cpSrc (type: Copy) {
     description = "Copies src directory to build area."
     from ("src") {
       include ("makefile", "**/*.fst")
     }
     into "${buildDir}/fst"
-    filter(ReplaceTokens, tokens: ["workdir" : "${buildDir}/fst/".toString(), "lexica": lexiconFstStatement(new File(stemsdir)), "makelexica": lexiconMakeStatement(new File(stemsdir)) ])
+    filter(ReplaceTokens, tokens: ["workdir" : "${buildDir}/fst/".toString(), "lexica": lexiconFstStatement(new File(stemsdir)), "makelexica": lexiconMakeStatement(new File(stemsdir)),
+    "extrafstrules": rulesFstStatement(new File(rulesdir))//,
+    //"extmakerules": rulesFstStatement(rulesdir),
+     ])
 }
 
 

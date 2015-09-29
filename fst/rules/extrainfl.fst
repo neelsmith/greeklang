@@ -6,7 +6,7 @@
 %
 % For example:  use an <epic> tag:
 %
-$eus_ews_epic$ = <eus_ews> (hos[<masc><fem>]<gen><sg><epic> )
+$eus_ews_epic$ = <eus_ews> (hos[<masc><fem>]<gen><sg><epic><hmt> )
 
 $extras$ = $eus_ews_epic$
 
