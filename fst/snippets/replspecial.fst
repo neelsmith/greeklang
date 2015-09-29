@@ -1,4 +1,7 @@
-%How to replace special chars like the colon :
+% Illustrates how to replace special chars like the colon, and how
+% to pipe together replacement patterns to generate regular principal parts.
+% This example is a transducer for w_regular verbs; parallel transducers
+% could handle other regular patterns like contract verbs.
 
 
 
@@ -28,12 +31,13 @@
 #2nd_3rd_voice# = <act><mid>
 #6th_voice# = <pass>
 
-#nosigmatense# = <pres><impft><pft><plupft>
+
 
 
 
 % reduplication on 4th and 5th:
-#redupetense# = <pft><plupft><futpft>
+#4th_5th_tense# = <pft><plupft><futpft>
+
 % also -kappa on 4th
 #kappatense# = <pft>
 
@@ -44,22 +48,37 @@
 % when followed by tag for augmenting tense
 #=ltr# = a-z
 
-
+% Extend second and third principal parts with sigma:
 ALPHABET = [#alphachar#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extras#]
 $2nd_3rd_pp$ = {[#=ltr#]}:{[#=ltr#]s} ^-> ([#urn#]<#>[a-z]+ __ <verb><w_regular>[#extras#]*[\:]+<w_regular>[#alphachar#]*[#person#][#number#][#2nd_3rd_6th_tense#][#mood#][#2nd_3rd_voice#])
 
 
+% Extend 6th principal part with theta:
 ALPHABET = [#alphachar#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extras#]
 $6th_pp$ = {[#=ltr#]}:{[#=ltr#]q} ^-> ([#urn#]<#>[a-z]+ __ <verb><w_regular>[#extras#]*[\:]+<w_regular>[#alphachar#]*[#person#][#number#][#2nd_3rd_6th_tense#][#mood#][#6th_voice#])
 
-$tstlexicon$ = <n64316><#>lu<verb><w_regular><ml>\:\:<w_regular> (w<1st><sg><fut><indic><act> |\
+% Add reduplication on 4th and 5th parts:
+ALPHABET = [#alphachar#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extras#]
+$4th_5th_pp$ = {[#=ltr#]}:{[#=ltr#]e[#=ltr#]} ^-> ([#urn#]<#>[a-z]+ __ <verb><w_regular>[#extras#]*[\:]+<w_regular>[#alphachar#]*[#person#][#number#][#4th_5th_tense#])
+
+
+ALPHABET = [#alphachar#] [#morphtag#]:<> [#urn#]:<> [\:]:<> [<#>]:<> [#stemtype#]:<> [#extras#]:<>
+$striptag$ = .*
+
+$synoptic$ = <n64316><#>lu<verb><w_regular><ml>\:\:<w_regular> ( \
+  w<1st><sg><pres><indic><act> |\
+  omai<1st><sg><pres><indic><mid> |\
   a<1st><sg><aor><indic><act> |\
-  hn<1st><sg><aor><indic><pass> \
+  amhn<1st><sg><aor><indic><mid> |\
+  w<1st><sg><fut><indic><act> |\
+  omai<1st><sg><fut><indic><mid> |\
+  omai<1st><sg><fut><indic><mid> |\
+  hsomai<1st><sg><fut><indic><pass> |\
+  hn<1st><sg><aor><indic><pass> |\
+  a<1st><sg><pft><indic><act> |\
+  mai<1st><sg><pft><indic><pass> \
 )
 
 
 
-$tstlexicon$ ||  $2nd_3rd_pp$ || $6th_pp$
-
-%$tstlexicon$ ||  $6th_pp$
-%$tstlexicon$ || $2nd_3rd_pp$
+$synoptic$ ||  $2nd_3rd_pp$ || $4th_5th_pp$  || $6th_pp$ || $striptag$
