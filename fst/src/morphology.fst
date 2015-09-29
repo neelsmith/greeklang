@@ -19,7 +19,7 @@ $acceptor$ = "<@workdir@acceptor.a>"
 %
 % #morphtag# is defined in "symbols.fst"
 % #stemtype#  is defined in "stemtypes.fst"
-% #extratag#  is defined in "extratgs.fst"
+% #extratag#  is defined in "extratags.fst"
 ALPHABET = [#character#] [#extratag#]:<> [#morphtag#]:<> [#stemtype#]:<> [#separator#]:<> [#urn#]:<>
 $striptags$ = .*
 
@@ -28,7 +28,9 @@ $striptags$ = .*
 $acceptor$ || $morph$ || $striptags$
 
 % Examples of translations from surface form to analysis:
+%
 % input:  mhnis
 % output: <n67485>mhn<noun><fem><is_ios>::<is_ios>is<fem><nom><sg>
+%
 % input:  luw
 % output: <n64316><#>lu<verb><w_regular>::<w_regular>w<1st><sg><pres><indic><act>
