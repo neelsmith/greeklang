@@ -10,7 +10,9 @@ $=verbclass$ = [#verbclass#]
 $verbanalysis$ = [#urn#][#stemchars#]+<verb><w_regular>[#extratag#]*\:\:<w_regular>[#letter#]*[#person#][#number#][#tense#][#mood#][#voice#][#extratag#]*
 
 $princparts$ =  "<@workdir@/acceptors/w_princparts.a>"
-
 $verbacceptor$  = $princparts$ || $verbanalysis$
+
+%$augment$ =  "<@workdir@/acceptors/augment.a>"
+%$verbacceptor$  = $princparts$ || $augment$ || $verbanalysis$
 
 $verbacceptor$
