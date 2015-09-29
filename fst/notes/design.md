@@ -9,12 +9,13 @@
 
 Data:
 
-- 2 directories of dynamically loaded files:  one defining stems, and one implementing inflectional rules
+- 2 directories of dynamically loaded files:  one defining stems, and one implementing inflectional rules.  The directories should be configurable
 - single list of additional tags
 
 Process:
 
 - automatically extract list of URNs from stems
+- best practice:  every lexicon is identified by some user-defined stem, e.g., <ml> for middle Liddell
 - acceptors allow optional inclusion of additional tags
 
 
@@ -30,7 +31,11 @@ Process:
 
 ## princ.parts
 
-- filter on #pos# tag
+- filter on #classtem# tag:  separate transducers for regular formations:
+    - w_regular
+    - [aeo]_contract
+    - (possibly -mi classses: to be investigated)
+- other classtems must give all principal parts, normally 6, or possibly 4 for deponents.  Note that deponency is not a morphological feature: absence of principal parts is just a question of usage/attestation that might reflect in some cases the semantic and syntactic phenomenon of deponency
 
 ## accent
 
