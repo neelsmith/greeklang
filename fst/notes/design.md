@@ -54,6 +54,10 @@ Process:
 
 - map lexicon entries to URN values in .csv file in extracting entries from morpheus source
 - use .csv white boards to check off progress
+- use HMT project vocab lists to drive development of inflectional patterns for real corpora:
+   - *Iliad*
+   - scholia
+   - other texts
 
 
 ## unifying and integrating data
