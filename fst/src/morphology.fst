@@ -1,7 +1,7 @@
 %% morphology.fst : a Finite State Transducer for ancient Greek morphology
 %
 % All symbols used in the FST:
-#include "@workdir@allsymbols.fst"
+#include "@workdir@symbols.fst"
 %
 % Dynamically loaded lexica of stems:
 $stems$ = @lexica@

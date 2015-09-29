@@ -1,7 +1,7 @@
 % noun.fst
 % Limits input to valid morphological analyses of conjugated verbal forms
 %
-#include "@workdir@allsymbols.fst"
+#include "@workdir@symbols.fst"
 
 % #extratag# is defined in "extratags.fst"
 $extratag$ = [#extratag#]
