@@ -4,7 +4,8 @@ apply plugin: "groovy"
 
 apply from: "fstconf.gradle"
 
-// get list of .fst files in directory
+// Generates appropriate statement to add to makefile dependencies
+// for lexica.
 String lexiconMakeStatement(File dir) {
   StringBuilder stmt = new StringBuilder()
   def fileList = []
@@ -17,7 +18,8 @@ String lexiconMakeStatement(File dir) {
   return stmt.toString()
 }
 
-// get list of .fst files in directory
+// Generates appropriate SFST-PL statements for including lexica
+// in .fst files.
 String lexiconFstStatement(File dir) {
   StringBuilder stmt = new StringBuilder()
   def fileList = []
@@ -36,7 +38,8 @@ String lexiconFstStatement(File dir) {
 }
 
 
-// get list of .fst files in directory
+// Generates appropriate SFST-PL statements for including
+// compiled inflectional rules.
 String rulesFstStatement(File dir) {
   StringBuilder stmt = new StringBuilder()
   def fileList = []
@@ -55,6 +58,8 @@ String rulesFstStatement(File dir) {
   return stmt.toString()
 }
 
+// Generates appropriate statements for makefile
+// dependencies on compiled inflectional rules.
 String rulesMakeStatement(File dir) {
   StringBuilder stmt = new StringBuilder()
   def fileList = []
@@ -118,21 +123,13 @@ cpAll.doLast {
 }
 
 
-
-task tokenFormat() {
-}
-tokenFormat.doLast {
-  System.err.println lexiconFileStatement(new File("fst/stems"))
-}
-
-
 task fst(type:Exec, dependsOn: cpAll) {
   description = "Builds binary Finite State Transducer in ${buildDir}/fst/morphology.a"
   commandLine =  [MAKE, "-f", "${buildDir}/fst/makefile".toString()]
 }
 
 
-task fstgen(type:Exec, dependsOn: fst) {
+task fstgen(type:Exec, dependsOn: cpAll) {
   description = "Builds binary Finite State Transducer in ${buildDir}/fst/morphology.a and switched FST in ${buildDir}/fst/bulkgen.a"
   commandLine =  [FSTCOMPILER, "-s", "${buildDir}/fst/morphology.fst".toString(), "${buildDir}/fst/bulkgen.a".toString()]
 }
