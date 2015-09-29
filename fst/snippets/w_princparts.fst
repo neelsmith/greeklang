@@ -65,26 +65,8 @@ ALPHABET = [#alphachar#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extras#]
 $kappa$ = {[#=ltr#]}:{[#=ltr#]k} ^-> ([#urn#]<#>[a-z]+ __ <verb><w_regular>[#extras#]*[\:]+<w_regular>[#alphachar#]*[#person#][#number#][#4th_5th_tense#][#mood#]<act>)
 
 
-% Formatting for final display
-ALPHABET = [#alphachar#] [#morphtag#]:<> [#urn#]:<> [\:]:<> [<#>]:<> [#stemtype#]:<> [#extras#]:<>
-$striptag$ = .*
-
-$synoptic$ = <n64316><#>lu<verb><w_regular><ml>\:\:<w_regular> ( \
-  w<1st><sg><pres><indic><act> |\
-  omai<1st><sg><pres><indic><mid> |\
-  a<1st><sg><aor><indic><act> |\
-  amhn<1st><sg><aor><indic><mid> |\
-  w<1st><sg><fut><indic><act> |\
-  omai<1st><sg><fut><indic><mid> |\
-  omai<1st><sg><fut><indic><mid> |\
-  hsomai<1st><sg><fut><indic><pass> |\
-  hn<1st><sg><aor><indic><pass> |\
-  a<1st><sg><pft><indic><act> |\
-  mai<1st><sg><pft><indic><pass> \
-)
-
-
-
 $4th_5th_pp$ =  $redupe$ || $kappa$
 
-$synoptic$ ||  $2nd_3rd_pp$ || $4th_5th_pp$  || $6th_pp$ || $striptag$
+%$synoptic$ ||  $2nd_3rd_pp$ || $4th_5th_pp$  || $6th_pp$ || $striptag$
+
+$2nd_3rd_pp$ || $4th_5th_pp$  || $6th_pp$
