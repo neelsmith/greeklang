@@ -18,6 +18,7 @@
 
 #morphtag# = #pos# #person# #number# #tense# #mood# #voice#
 
+#stemtype# = <w_regular>
 
 #extras# = <ml>
 
@@ -33,10 +34,10 @@
 #=ltr# = a-z
 
 
-ALPHABET = [#alphachar#] [#morphtag#] [#urn#] [\:] [<#>] [#extras#]
-$2ndpp$ = {[#=ltr#]}:{[#=ltr#]s} ^-> ([#urn#]<#>[a-z]+ __ <verb>[#extras#]*[\:]+[#2ndpptense#])
+ALPHABET = [#alphachar#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extras#]
+$2ndpp$ = {[#=ltr#]}:{[#=ltr#]s} ^-> ([#urn#]<#>[a-z]+ __ <verb><w_regular>[#extras#]*[\:]+[#2ndpptense#])
 
-$tstlexicon$ = <n64316><#>lu<verb><ml>\:\:[#tense#]
+$tstlexicon$ = <n64316><#>lu<verb><w_regular><ml>\:\:[#tense#]
 
 
 
