@@ -27,7 +27,7 @@
 #morphtag# = #pos# #gender# #case# #number# #person# #tense# #mood# #voice# #degree$
 
 
-
+#persistacc# = <ultacc><penacc><antacc>
 
 % Consider whether those belong here or elsewhere...?
 

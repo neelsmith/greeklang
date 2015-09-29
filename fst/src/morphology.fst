@@ -11,6 +11,7 @@ $ends$ =  "<@workdir@inflection.a>" | @extrafstrules@
 %
 % Morphology data is the crossing of stems and endings:
 $morph$ = $stems$ $separator$ $separator$ $ends$
+
 %
 % Acceptor filters for content satisfying requirements for morphological analysis
 $acceptor$ = "<@workdir@acceptor.a>"
@@ -20,12 +21,16 @@ $acceptor$ = "<@workdir@acceptor.a>"
 % #morphtag# is defined in "symbols.fst"
 % #stemtype#  is defined in "stemtypes.fst"
 % #extratag#  is defined in "extratags.fst"
-ALPHABET = [#character#] [#extratag#]:<> [#morphtag#]:<> [#stemtype#]:<> [#separator#]:<> [#urn#]:<>
+
+
+
+ALPHABET =  [#character#] [#urn#]:<>  [#editorial#]:<> [#morphtag#]:<> [#stemtype#]:<> [#extratag#]:<> [#separator#]:<>
 $striptags$ = .*
 
 
 % Final transducer:
 $acceptor$ || $morph$ || $striptags$
+
 
 % Examples of translations from surface form to analysis:
 %

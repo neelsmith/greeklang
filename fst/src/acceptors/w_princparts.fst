@@ -4,14 +4,11 @@
 
 #include "@workdir@symbols.fst"
 
-%
+% relation of 2nd, 3rd and 6th parts
+% determined by combof tense and voice
 #2nd_3rd_6th_tense# = <aor><fut><futpft>
 #2nd_3rd_voice# = <act><mid>
 #6th_voice# = <pass>
-
-
-
-
 
 % reduplication on 4th and 5th:
 #4th_5th_tense# = <pft><plupft><futpft>

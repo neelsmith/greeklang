@@ -3,7 +3,6 @@ ext {
   FSTCOMPILER = "/usr/bin/fst-compiler"
   MAKE = "/usr/bin/make"
 
-  stemsdir = "fst/stems"
-  //stemsdir = "fst/dev"
+  stemsdir = "fst/dev"
   rulesdir = "fst/rules"
 }

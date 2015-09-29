@@ -3,6 +3,27 @@ import org.apache.tools.ant.filters.ReplaceTokens
 apply plugin: "groovy"
 
 apply from: "fstconf.gradle"
+/*
+
+if (project.hasProperty('fstconf')) {
+    System.err.print "Using configuration data from ${fstconf}"
+    File confFile = new File(fstconf)
+    if (! confFile.exists()) {
+        throw new Exception("No configuration file ${fstconf} found.")
+    } else {
+        apply from: confFile
+    }
+
+} else {
+    File confFile = new File("${projectDir}/fstconf.gradle")
+    if (! confFile.exists()) {
+        throw new Exception("No configuration file ${confFile} found.")
+    } else {
+        println "Using default configuration in 'fstconf.gradle'"
+        apply from: "${projectDir}/fstconf.gradle"
+    }
+}
+*/
 
 // Generates appropriate statement to add to makefile dependencies
 // for lexica.
