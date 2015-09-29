@@ -27,7 +27,7 @@ $striptags$ = .*
 % Final transducer:
 $acceptor$ || $morph$ || $striptags$
 
-% Examples of translations from input to analysis:
+% Examples of translations from surface form to analysis:
 % input:  mhnis
 % output: <n67485>mhn<noun><fem><is_ios>::<is_ios>is<fem><nom><sg>
 % input:  luw
