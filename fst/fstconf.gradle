@@ -2,4 +2,6 @@
 ext {
   FSTCOMPILER = "/usr/bin/fst-compiler"
   MAKE = "/usr/bin/make"
+
+  stemsdir = "fst/stems"
 }

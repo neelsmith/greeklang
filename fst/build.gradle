@@ -42,7 +42,7 @@ task cpSrc (type: Copy) {
       include ("makefile", "**/*.fst")
     }
     into "${buildDir}/fst"
-    filter(ReplaceTokens, tokens: ["workdir" : "${buildDir}/fst/".toString(), "lexica": lexiconFstStatement(new File("fst/stems")), "makelexica": lexiconMakeStatement(new File("fst/stems")) ])
+    filter(ReplaceTokens, tokens: ["workdir" : "${buildDir}/fst/".toString(), "lexica": lexiconFstStatement(new File(stemsdir)), "makelexica": lexiconMakeStatement(new File(stemsdir)) ])
 }
 
 
