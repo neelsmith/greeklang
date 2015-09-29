@@ -22,9 +22,10 @@ $acceptor$ = "<@workdir@acceptor.a>"
 % #stemtype#  is defined in "stemtypes.fst"
 % #extratag#  is defined in "extratags.fst"
 
-
-
-ALPHABET =  [#character#] [#urn#]:<>  [#editorial#]:<> [#morphtag#]:<> [#stemtype#]:<> [#extratag#]:<> [#separator#]:<>
+% Suppress analytical markup in surface forms:
+#surfacesymbol# = #character#
+#analysissymbol# = #urn# #editorial# #morphtag# #stemtype# #extratag# #separator#
+ALPHABET = [#surfacesymbol#] [#analysissymbol#]:<>
 $striptags$ = .*
 
 
