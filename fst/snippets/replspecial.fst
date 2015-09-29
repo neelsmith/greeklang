@@ -35,9 +35,9 @@
 
 
 ALPHABET = [#alphachar#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extras#]
-$2ndpp$ = {[#=ltr#]}:{[#=ltr#]s} ^-> ([#urn#]<#>[a-z]+ __ <verb><w_regular>[#extras#]*[\:]+[#2ndpptense#])
+$2ndpp$ = {[#=ltr#]}:{[#=ltr#]s} ^-> ([#urn#]<#>[a-z]+ __ <verb><w_regular>[#extras#]*[\:]+<w_regular>[#alphachar#]*[#person#][#number#][#2ndpptense#])
 
-$tstlexicon$ = <n64316><#>lu<verb><w_regular><ml>\:\:[#tense#]
+$tstlexicon$ = <n64316><#>lu<verb><w_regular><ml>\:\:<w_regular>w<1st><sg>[#tense#]
 
 
 
