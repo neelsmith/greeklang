@@ -12,7 +12,7 @@
 #augmenttense# = <aor><impft><plupft>
 #not_augmented# = <pres><fut><pft><futpft>
 
-
+#2ndpptense# = <aor><fut>
 
 % Use an agreement variable to expand stem with augment
 % when followed by tag for augmenting tense
@@ -20,11 +20,11 @@
 
 
 ALPHABET = [#ltr#] [#tense#] [#urn#] [#breathing#] [\:]
-$augmented$ = {[#=ltr#]}:{e\)[#=ltr#]} ^-> ([#urn#] __ [a-z]+[\:]+[#augmenttense#])
+$2ndpp$ = {[#=ltr#]}:{[#=ltr#]s} ^-> ([#urn#][a-z]+ __ [\:]+[#2ndpptense#])
 
 $tstlexicon$ = <n64316>lu\:\:[#tense#]
 
 
 
 
-$tstlexicon$ || $augmented$
+$tstlexicon$ || $2ndpp$
