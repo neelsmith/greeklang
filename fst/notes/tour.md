@@ -36,3 +36,9 @@ Examples:
 - batch generate forms from analyses:  `fst-infl bulkgen.a`
 - print the graph of the transducer: `fst-print morphology.a`
 - generate a visual graph: `fst-print morphology.a | perl fst2dot.pl - | dot -T png -o morphology.png`
+
+
+## More on definitions
+
+- not treating compound forms as a morphological mapping
+- not treating part of speech in traditional sense: reflects instead the analytical categories (which *are* traditional!)
