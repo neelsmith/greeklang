@@ -68,11 +68,11 @@ $kappa$ = {[#=ltr#]}:{[#=ltr#]k} ^-> ([#urn#]<#>[a-z]+ __ <verb><w_regular>[#ext
 
 #=dupe# = a-z
 ALPHABET = [#letter#] [#urn#] [<#>]  [#morphtag#] [#stemtype#] [\:] [#extratag#]
-$redupex$ = {[#=dupe#]}:{[#=dupe#]e[#=dupe#]} ^-> ([#urn#]<#>__ [a-z]+<verb><w_regular>\:\:<w_regular> )
+$redupex$ = {[#=dupe#]}:{[#=dupe#]e[#=dupe#]} ^-> ([#urn#]<#>__ [a-z]+<verb><w_regular>[#extratag#]*\:\:<w_regular>[#letter#]+[#person#][#number#])
 
 %#failingdata# = <n64316><#>lu<verb><w_regular>::<w_regular>mai<1st><sg><perf><indic><mid>
 
 
-$failingdata$ = <n64316><#>lu<verb><w_regular>\:\:<w_regular>
+$failingdata$ = <n64316><#>lu<verb><w_regular>\:\:<w_regular>mai<1st><sg>
 
 $failingdata$ || $redupex$
