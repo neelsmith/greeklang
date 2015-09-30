@@ -1,4 +1,6 @@
 % vadjinfl.fst
+% Smyth #471
+%
 
 $vadj_ending$ = <vadj> (\
   teos<masc><nom><sg> |\
