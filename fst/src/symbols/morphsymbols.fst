@@ -24,7 +24,7 @@
 #voice# = <act><mid><pass>
 
 
-#morphtag# = #pos# #gender# #case# #number# #person# #tense# #mood# #voice# #degree$
+#morphtag# = #pos# #gender# #case# #number# #person# #tense# #mood# #voice# #degree#
 
 
 #persistacc# = <ultacc><penacc><antacc>

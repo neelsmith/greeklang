@@ -50,25 +50,24 @@ $w_imperfect_ending$ = <w_regular> ( \
 )
 
 
-% Aor m-p:
-$aor1_mp_ending$ = <w_regular> ( \
-    a<1st><sg><impft><indic><act> |\
-    as<2nd><sg><impft><indic><act> |\
-    e<3rd><sg><impft><indic><act> |\
-    amen<1st><sg><impft><indic><act> |\
-    ate<2nd><sg><impft><indic><act> |\
-    an<3rd><sg><impft><indic><act> |\
+% Aor act and mid:
+$aor1_actmid_ending$ = <w_regular> ( \
+    a<1st><sg><aor><indic><act> |\
+    as<2nd><sg><aor><indic><act> |\
+    e<3rd><sg><aor><indic><act> |\
+    amen<1st><sg><aor><indic><act> |\
+    ate<2nd><sg><aor><indic><act> |\
+    an<3rd><sg><aor><indic><act> |\
     \
-    amhn<1st><sg><impft><indic><mid> |\
-    w<2nd><sg><impft><indic><mid> |\
-    ato<3rd><sg><impft><indic><mid> |\
-    ameqa<1st><sg><impft><indic><mid> |\
-    asqe<2nd><sg><impft><indic><mid> |\
-    anto<3rd><sg><impft><indic><mid> \
+    amhn<1st><sg><aor><indic><mid> |\
+    w<2nd><sg><aor><indic><mid> |\
+    ato<3rd><sg><aor><indic><mid> |\
+    ameqa<1st><sg><aor><indic><mid> |\
+    asqe<2nd><sg><aor><indic><mid> |\
+    anto<3rd><sg><aor><indic><mid> \
     \
 )
-$w_regular_endings$ = $w_pres_indic_ending$ | $w_imperfect_ending$  | $aor1_mp_ending$
-
+$w_regular_endings$ = ($aor1_actmid_ending$ | $w_pres_indic_ending$ | $w_imperfect_ending$ )
 
 $verbinfl$ = $w_regular_endings$
 

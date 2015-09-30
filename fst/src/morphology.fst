@@ -30,7 +30,7 @@ $striptags$ = .*
 
 
 % Final transducer:
-$acceptor$ || $morph$ || $striptags$
+$morph$ || $acceptor$ || $striptags$
 
 
 % Examples of translations from surface form to analysis:
