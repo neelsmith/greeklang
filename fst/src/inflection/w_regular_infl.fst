@@ -1,7 +1,7 @@
 % w_regular_infl.fst
 % Inflectional patterns for regular omega verbs
 
-% Present indicative:
+% Present and future indicative endings:
 $w_presfut_indic_ending$ = <w_regular> ( \
     w<1st><sg>[<pres><fut>]<indic><act> |\
     eis<2nd><sg>[<pres><fut>]<indic><act> |\
@@ -10,19 +10,13 @@ $w_presfut_indic_ending$ = <w_regular> ( \
     ete<2nd><sg>[<pres><fut>]<indic><act> |\
     ousi<3rd><sg>[<pres><fut>]<indic><act> |\
     \
-    omai<1st><sg>[<pres><fut>]<indic><mid> |\
-    ei<2nd><sg>[<pres><fut>]<indic><mid> |\
-    etai<3rd><sg>[<pres><fut>]indic><mid> |\
-    omeqa<1st><sg>[<pres><fut>]<indic><mid> |\
-    esqe<2nd><sg>[<pres><fut>]<indic><mid> |\
-    ontai<3rd><sg>[<pres><fut>]<indic><mid> \
+    omai<1st><sg>[<pres><fut>]<indic>[<mid><pass>] |\
+    ei<2nd><sg>[<pres><fut>]<indic>[<mid><pass>] |\
+    etai<3rd><sg>[<pres><fut>]indic>[<mid><pass>] |\
+    omeqa<1st><sg>[<pres><fut>]<indic>[<mid><pass>] |\
+    esqe<2nd><sg>[<pres><fut>]<indic>[<mid><pass>] |\
+    ontai<3rd><sg>[<pres><fut>]<indic>[<mid><pass>]  \
     \
-    omai<1st><sg>[<pres><fut>]<indic><pass> |\
-    ei<2nd><sg>[<pres><fut>]<indic><pass> |\
-    etai<3rd><sg>[<pres><fut>]<indic><pass> |\
-    omeqa<1st><sg>[<pres><fut>]<indic><pass> |\
-    esqe<2nd><sg>[<pres><fut>]<indic><pass> |\
-    ontai<3rd><sg>[<pres><fut>]<indic><pass> \
 )
 
 
@@ -36,19 +30,13 @@ $w_imperfect_ending$ = <w_regular> ( \
     ete<2nd><sg><impft><indic><act> |\
     on<3rd><sg><impft><indic><act> |\
     \
-    omhn<1st><sg><impft><indic><mid> |\
-    ou<2nd><sg><impft><indic><mid> |\
-    eto<3rd><sg><impft><indic><mid> |\
-    omeqa<1st><sg><impft><indic><mid> |\
-    esqe<2nd><sg><impft><indic><mid> |\
-    onto<3rd><sg><impft><indic><mid> |\
+    omhn<1st><sg><impft><indic>[<mid><pass>] |\
+    ou<2nd><sg><impft><indic>[<mid><pass>] |\
+    eto<3rd><sg><impft><indic>[<mid><pass>] |\
+    omeqa<1st><sg><impft><indic>[<mid><pass>] |\
+    esqe<2nd><sg><impft><indic>[<mid><pass>] |\
+    onto<3rd><sg><impft><indic>[<mid><pass>] \
     \
-    omhn<1st><sg><impft><indic><pass> |\
-    ou<2nd><sg><impft><indic><pass> |\
-    eto<3rd><sg><impft><indic><pass> |\
-    omeqa<1st><sg><impft><indic><pass> |\
-    esqe<2nd><sg><impft><indic><pass> |\
-    onto<3rd><sg><impft><indic><pass> \
 )
 
 
@@ -71,7 +59,7 @@ $aor1_actmid_ending$ = <w_regular> ( \
 )
 
 
-% Aor act and mid:
+% Perfect act, mid, passive:
 $pft_act_ending$ = <w_regular> ( \
     a<1st><sg><pft><indic><act> |\
     as<2nd><sg><pft><indic><act> |\
