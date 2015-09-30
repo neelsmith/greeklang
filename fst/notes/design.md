@@ -92,9 +92,9 @@ Process:
 
 ## development sequence
 
-- harness for groovy unit tests
+- harness for groovy unit tests.  Or use shell script-based tests?
 - complete conjugated forms of Smyth #308
-- infinitives
-- verbal adjs (sep PoS b/c no degree!)
+- infinitives. Will need classification of nominal accent.
+- √ verbal adjs (sep PoS b/c no degree!)
 - ptcpls
 - adjs: regular formation of comp, superl
