@@ -78,12 +78,12 @@ $pft_indic_ending$ = <w_regular> ( \
     ate<2nd><pl><pft><indic><act> |\
     asi<3rd><pl><pft><indic><act> |\
     \
-    mai<1st><sg><perf><indic>[<mid><pass>] |\
-    sai<2nd><sg><perf><indic>[<mid><pass>] |\
-    tai<3rd><sg><perf>indic>[<mid><pass>] |\
-    meqa<1st><pl><perf><indic>[<mid><pass>] |\
-    sqe<2nd><pl><perf><indic>[<mid><pass>] |\
-    ntai<3rd><pl><perf><indic>[<mid><pass>]  \
+    mai<1st><sg><pft><indic>[<mid><pass>] |\
+    sai<2nd><sg><pft><indic>[<mid><pass>] |\
+    tai<3rd><sg><pft>indic>[<mid><pass>] |\
+    meqa<1st><pl><pft><indic>[<mid><pass>] |\
+    sqe<2nd><pl><pft><indic>[<mid><pass>] |\
+    ntai<3rd><pl><pft><indic>[<mid><pass>]  \
     \
 )
 
