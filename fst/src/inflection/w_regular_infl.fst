@@ -6,6 +6,6 @@
 % Pluperfect, fut. perfect not yet added
 %
 
-$w_regular$ = "<@workdir@inflection/w_regular/indicative.a>"
+$w_regular$ = "<@workdir@inflection/w_regular/indicative.a>" |  "<@workdir@inflection/w_regular/subjunctive.a>" | "<@workdir@inflection/w_regular/optative.a>"  | "<@workdir@inflection/w_regular/imperative.a>" 
 
 $w_regular$
