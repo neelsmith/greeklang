@@ -2,8 +2,11 @@
 %
 % Definitions of all symbols used to express a morphological analysis
 %
-% Parts of speech:
-#pos# = <noun><verb><adj>
+% "Parts of speech": not traditional definition, but distinguished by
+% analytical pattern.  E.g., <infin> has distinct pattern that is neither
+% noun nor verb.
+#pos# = <noun><adj><verb><vadj><infin><ptcpl>
+#verbparts# = <verb><vadj><infin><ptcpl>
 %
 % 1. Noun morphology:
 %
@@ -28,6 +31,9 @@
 
 
 #persistacc# = <ultacc><penacc><antacc>
+
+
+
 
 % Consider whether those belong here or elsewhere...?
 
