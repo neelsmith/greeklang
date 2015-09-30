@@ -4,12 +4,15 @@
 
 % Present and future indicative endings:
 $w_presfut_opt_ending$ = <w_regular> ( \
-    oimi<1st><sg>[<pres><fut>]<opt><act> |\
-    ois<2nd><sg>[<pres><fut>]<opt><act> |\
-    oi<3rd><sg>[<pres><fut>]<opt><act> |\
-    oimen<1st><pl>[<pres><fut>]<opt><act> |\
-    oite<2nd><pl>[<pres><fut>]<opt><act> |\
-    oien<3rd><pl>[<pres><fut>]<opt><act> |\
+    oimi<1st><sg>[<pres><fut><pft>]<opt><act> |\
+    oihn<1st><sg><pft><opt><act> |\
+    ois<2nd><sg>[<pres><fut><pft>]<opt><act> |\
+    oihs<2nd><sg><pft><opt><act> |\
+    oi<3rd><sg>[<pres><fut><pft>]<opt><act> |\
+    oih<3rd><sg><pft><opt><act> |\
+    oimen<1st><pl>[<pres><fut><pft>]<opt><act> |\
+    oite<2nd><pl>[<pres><fut><pft>]<opt><act> |\
+    oien<3rd><pl>[<pres><fut><pft>]<opt><act> |\
     \
     oimhn<1st><sg>[<pres><fut>]<opt>[<mid><pass>] |\
     oio<2nd><sg>[<pres><fut>]<opt>[<mid><pass>] |\
