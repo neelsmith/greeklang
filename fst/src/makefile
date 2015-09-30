@@ -3,5 +3,6 @@
 @workdir@acceptors/verb.a: @workdir@acceptors/w_princparts.a @workdir@acceptors/augment.a
 @workdir@inflection.a: @workdir@inflection/nouninfl.a @workdir@inflection/verbinfl.a
 @workdir@inflection/verbinfl.a:  @workdir@inflection/w_regular_infl.a
+@workdir@inflection/w_regular_infl.a: @workdir@inflection/w_regular/indicative.a
 %.a: %.fst
 	fst-compiler $< $@
