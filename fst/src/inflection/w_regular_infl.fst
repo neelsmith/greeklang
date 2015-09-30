@@ -19,8 +19,6 @@ $w_presfut_indic_ending$ = <w_regular> ( \
     \
 )
 
-
-
 % Imperfect indicative:
 $w_imperfect_ending$ = <w_regular> ( \
     on<1st><sg><impft><indic><act> |\
@@ -40,8 +38,8 @@ $w_imperfect_ending$ = <w_regular> ( \
 )
 
 
-% Aor act and mid:
-$aor1_actmid_ending$ = <w_regular> ( \
+% First aorist
+$aor1_indic_ending$ = <w_regular> ( \
     a<1st><sg><aor><indic><act> |\
     as<2nd><sg><aor><indic><act> |\
     e<3rd><sg><aor><indic><act> |\
@@ -54,13 +52,20 @@ $aor1_actmid_ending$ = <w_regular> ( \
     ato<3rd><sg><aor><indic><mid> |\
     ameqa<1st><sg><aor><indic><mid> |\
     asqe<2nd><sg><aor><indic><mid> |\
-    anto<3rd><sg><aor><indic><mid> \
+    anto<3rd><sg><aor><indic><mid> |\
+    \
+    hn<1st><sg><aor><indic><pass> |\
+    hs<2nd><sg><aor><indic><pass> |\
+    h<3rd><sg><aor><indic><pass> |\
+    hmen<1st><sg><aor><indic><pass> |\
+    hte<2nd><sg><aor><indic><pass> |\
+    hsan<3rd><sg><aor><indic><pass> \
     \
 )
 
 
 % Perfect act, mid, passive:
-$pft_act_ending$ = <w_regular> ( \
+$pft_indic_ending$ = <w_regular> ( \
     a<1st><sg><pft><indic><act> |\
     as<2nd><sg><pft><indic><act> |\
     e<3rd><sg><pft><indic><act> |\
@@ -69,6 +74,6 @@ $pft_act_ending$ = <w_regular> ( \
     asi<3rd><sg><pft><indic><act> \
 )
 
-$w_regular_endings$ = ( $w_presfut_indic_ending$ | $w_imperfect_ending$ | $aor1_actmid_ending$ | $pft_act_ending$)
+$w_regular_endings$ = ( $w_presfut_indic_ending$ | $w_imperfect_ending$ | $aor1_indic_ending$ | $pft_indic_ending$)
 
 $w_regular_endings$
