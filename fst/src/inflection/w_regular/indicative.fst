@@ -87,7 +87,25 @@ $pft_indic_ending$ = <w_regular> ( \
     \
 )
 
-$w_indicative$ = ( $w_presfut_indic_ending$ | $w_imperfect_ending$ | $aor1_indic_ending$ | $pft_indic_ending$)
+
+% Pluperfect act, mid, passive:
+$plupft_indic_ending$ = <w_regular> ( \
+  h<1st><sg><plupft><indic><act> |\
+  hs<2nd><sg><plupft><indic><act> |\
+  ei<3rd><sg><plupft><indic><act> |\
+  emen<1st><pl><plupft><indic><act> |\
+  ete<2nd><pl><plupft><indic><act> |\
+  esan<3rd><pl><plupft><indic><act> |\
+  \
+  mhn<1st><sg><plupft><indic>[<mid><pass>] |\
+  so<2nd><sg><plupft><indic>[<mid><pass>] |\
+  to<3rd><sg><plupft><indic>[<mid><pass>] |\
+  meqa<1st><pl><plupft><indic>[<mid><pass>] |\
+  sqe<2nd><pl><plupft><indic>[<mid><pass>] |\
+  nto<3rd><pl><plupft><indic>[<mid><pass>] \
+)
+
+$w_indicative$ = ( $w_presfut_indic_ending$ | $w_imperfect_ending$ | $aor1_indic_ending$ | $pft_indic_ending$ | $plupft_indic_ending$)
 
 
-$w_indicative$ 
+$w_indicative$
