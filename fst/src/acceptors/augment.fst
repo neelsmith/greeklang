@@ -10,7 +10,7 @@
 
 #=ltr# = a-z
 ALPHABET = [#letter#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extratag#]
-$augmented$ = {[#=ltr#]}:{e\)[#=ltr#]} ^-> (<#> __ [#letter#]+<verb><w_regular>[#extratag#]*\:\:<w_regular>[#letter#]*[#person#][#number#][#augmenttense#])
+$augmented$ = {[#=ltr#]}:{e\)[#=ltr#]} ^-> (<#> __ [#letter#]+<verb><w_regular>[#extratag#]*\:\:<w_regular>[#letter#]*[#person#][#number#][#augmenttense#]<indic>)
 
  $augmented$
 
