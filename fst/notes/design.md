@@ -88,3 +88,13 @@ Process:
 - do we need URNs for each fundamental analysis pattern (without tags)? e.g., each PNTMV combo for conjugated verbs?
 - could we put smyth references on transducers as optional tags?
 - consider library support for RDF output
+
+
+## development sequence
+
+- harness for groovy unit tests
+- complete conjugated forms of Smyth #308
+- infinitives
+- verbal adjs (sep PoS b/c no degree!)
+- ptcpls
+- adjs: regular formation of comp, superl
