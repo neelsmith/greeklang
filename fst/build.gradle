@@ -181,9 +181,33 @@ cpTestLists.doLast {
   System.err.println "Word lists for tests copied to work area"
 }
 
-task testFST(dependsOn: [cpTestStems, cpTestLists]) {
+task buildTestLists(dependsOn: [cpTestLists]) {
+  description = "Convert UTF-8 word lists to FST tokens"
+  def fileList = []
+  File listsDir = new File("${buildDir}/tests/wordlists")
+  listsDir.eachFileMatch(~/.*.fst/) { fstFile ->
+    fileList.add ("${buildDir}/fst/${fstFile.getName()}".toString())
+    System.err.println "${buildDir}/fst/${fstFile.getName()}".toString()
+  }
+
+}
+
+
+task buildTestFST(dependsOn: [buildTestLists, cpTestStems]) {
+  description = "Compiles FST with test data installed"
+}
+
+task testFST(dependsOn: [buildTestFST]) {
   description = "Runs FST on test word lists and analyzes results."
+  // make depend on a task to build test FST (compiling fst after good setup)
 }
 testFST.doLast{
   System.err.println "Ran testFST"
+}
+
+task analyzeTests(dependsOn: testFST){
+  description = "Reads output of testFST task and generates analytical report"
+}
+analyzeTests.doLast {
+  System.err.println "Analyzed results of FST testing"
 }
