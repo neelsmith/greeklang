@@ -30,8 +30,6 @@
 #morphtag# = #pos# #gender# #case# #number# #person# #tense# #mood# #voice# #degree#
 
 
-#persistacc# = <ultacc><penacc><antacc>
-
 
 
 

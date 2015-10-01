@@ -20,7 +20,8 @@ $character$ = [#character#]
 % Additional editorial symbols used in stem files:
 #morpheme# = <#>
 #vowelquant# = <long><short>
-#editorial# = #vowelquant# #morpheme#
+#persistacc# = <ultacc><penacc><antacc>
+#editorial# = #vowelquant# #morpheme# #persistacc#
 % All valid chars used in stem file:
 #stemchars# = #character# #editorial#
 

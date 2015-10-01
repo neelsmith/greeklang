@@ -23,4 +23,5 @@ $morph$
 % verbal adjective: <n64316><#>lu<verb><w_regular>::<vadj>teon<neut><nom><sg><penacc>
 %
 % FAILING: infinitive
+%<n64316><#>lu<verb><w_regular>::<infin>ein<pres><act><penacc>
 %
