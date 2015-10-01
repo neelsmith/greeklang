@@ -153,3 +153,37 @@ task fstgen(type:Exec, dependsOn: cpAll) {
   description = "Builds binary Finite State Transducer in ${buildDir}/fst/morphology.a and switched FST in ${buildDir}/fst/bulkgen.a"
   commandLine =  [FSTCOMPILER, "-s", "${buildDir}/fst/morphology.fst".toString(), "${buildDir}/fst/bulkgen.a".toString()]
 }
+
+
+
+
+task cpTestStems (type: Copy) {
+  description = "Copies stem files for tests copied to stems dir"
+  from ("testdata/stems") {
+    include ('**/*.fst')
+  }
+  into "stems"
+}
+cpTestStems.doLast {
+  System.err.println "Stem files for tests copied to stems dir."
+}
+
+
+
+task cpTestLists (type: Copy) {
+  description = "Copies word lists for tests to work area"
+  from ("testdata/wordlists") {
+    include ('**/*.txt')
+  }
+  into "${buildDir}/tests/wordlists"
+}
+cpTestLists.doLast {
+  System.err.println "Word lists for tests copied to work area"
+}
+
+task testFST(dependsOn: [cpTestStems, cpTestLists]) {
+  description = "Runs FST on test word lists and analyzes results."
+}
+testFST.doLast{
+  System.err.println "Ran testFST"
+}
