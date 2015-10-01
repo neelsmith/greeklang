@@ -143,7 +143,6 @@ cpAll.doLast {
   System.err.println "All source files copied to build area."
 }
 
-
 task fst(type:Exec, dependsOn: cpAll) {
   description = "Builds binary Finite State Transducer in ${buildDir}/fst/morphology.a"
   commandLine =  [MAKE, "-f", "${buildDir}/fst/makefile".toString()]
