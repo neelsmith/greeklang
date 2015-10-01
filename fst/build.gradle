@@ -190,7 +190,6 @@ buildTestTokens.doLast {
   utf2beta.setConverter("BetaCode")
 
 
-
   def tokensDir = file("${buildDir}/tests/tokens")
   if (! tokensDir.exists()) {
     tokensDir.mkdir()
@@ -199,23 +198,43 @@ buildTestTokens.doLast {
   listsDir.eachFileMatch(~/.*.txt/) { utf8file ->
     String listText = utf8file.getText("UTF-8")
     String tokenized = utf2beta.getString(listText).replaceAll(/[=\\/\\\\]/,"").toLowerCase()
+    String baseName = FilenameUtils.getName(utf8file.toString())
     File tokensFile = new File(
-      "${buildDir}/tests/tokens/${FilenameUtils.getName(utf8file.toString())}"
+      "${buildDir}/tests/tokens/${baseName}"
       )
     tokensFile.setText(tokenized)
+    System.err.println "Added tokens for ${baseName}"
   }
-  System.err.println "Completed building test lists with FST tokens"
+
 }
 
-/*
-task testFST(dependsOn: [buildTestFST]) {
+
+
+task testFST(dependsOn: buildTestTokens) {
   description = "Runs FST on test word lists and analyzes results."
-  // make depend on a task to build test FST (compiling fst after good setup)
+  //outputs.file "${buildDir}/fst/bulkgen.a".toString()
+  inputs.dir file("${buildDir}/tests/tokens")
+  outputs.file file("${buildDir}/tests/report.txt")
 }
 testFST.doLast{
-  System.err.println "Ran testFST"
-}
+  def tokensDir = file("${buildDir}/tests/tokens")
+  StringBuffer rept = new StringBuffer()
+  tokensDir.eachFileMatch(~/.*.txt/) { tokens ->
+    def cmd = "${FSTINFL} ${buildDir}/fst/morphology.a ${tokens}"
+    Process process = cmd.execute()
+    def out = new StringBuffer()
+    def err = new StringBuffer()
+    process.consumeProcessOutput( out, err )
+    process.waitFor()
+    System.err.println "Analyze file: ${tokens}"
+    rept.append(out.toString())
 
+  }
+
+  File reptFile = new File("${buildDir}/tests/report.txt")
+  reptFile.setText(rept.toString())
+}
+/*
 task analyzeTests(dependsOn: testFST){
   description = "Reads output of testFST task and generates analytical report"
 }

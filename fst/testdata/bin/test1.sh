@@ -1,6 +1,8 @@
 
-MORPH=$1
-DATAFILE=$2
+MORPH=../build/fst/morphology.a
 
-echo /bin/cat $DATAFILE | /usr/bin/fst-mor $MORPH
+
+DATAFILE=$1
+
+echo Analyzing $DATAFILE
 /bin/cat $DATAFILE | /usr/bin/fst-mor $MORPH

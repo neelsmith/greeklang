@@ -1,7 +1,9 @@
 
 ext {
   FSTCOMPILER = "/usr/bin/fst-compiler"
+  FSTINFL = "/usr/bin/fst-infl"
   MAKE = "/usr/bin/make"
+  CAT = "/bin/cat"
 
   stemsdir = "stems"
   rulesdir = "rules"
