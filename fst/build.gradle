@@ -1,8 +1,10 @@
 import org.apache.tools.ant.filters.ReplaceTokens
+import org.apache.commons.io.FilenameUtils
 // For unit testing:
 apply plugin: "groovy"
 
 apply from: "fstconf.gradle"
+
 /*
 
 if (project.hasProperty('fstconf')) {
@@ -24,6 +26,15 @@ if (project.hasProperty('fstconf')) {
     }
 }
 */
+
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath group: 'org.apache.commons', name: 'commons-io', version: '1.3.2'
+  }
+}
 
 // Generates appropriate statement to add to makefile dependencies
 // for lexica.
@@ -155,12 +166,12 @@ task fstgen(type:Exec, dependsOn: cpAll) {
 }
 
 
-
+/*
 
 task cpTestStems (type: Copy) {
   description = "Copies stem files for tests copied to stems dir"
   from ("testdata/stems") {
-    include ('**/*.fst')
+    include ('** / *.fst')
   }
   into "stems"
 }
@@ -173,7 +184,7 @@ cpTestStems.doLast {
 task cpTestLists (type: Copy) {
   description = "Copies word lists for tests to work area"
   from ("testdata/wordlists") {
-    include ('**/*.txt')
+    include ('** / *.txt')
   }
   into "${buildDir}/tests/wordlists"
 }
@@ -181,20 +192,25 @@ cpTestLists.doLast {
   System.err.println "Word lists for tests copied to work area"
 }
 
-task buildTestLists(dependsOn: [cpTestLists]) {
+task buildTestTokens(dependsOn: [cpTestLists]) {
   description = "Convert UTF-8 word lists to FST tokens"
+  outputs.dir file("${buildDir}/tests/wordlists")
+  inputs.dir file("${buildDir}/tests/tokens")
+}
+buildTestTokens.doLast {
+  def tokensDir = file("${buildDir}/tests/tokens")
+  def listsDir = file("${buildDir}/tests/wordlists")
   def fileList = []
-  File listsDir = new File("${buildDir}/tests/wordlists")
-  listsDir.eachFileMatch(~/.*.fst/) { fstFile ->
-    fileList.add ("${buildDir}/fst/${fstFile.getName()}".toString())
-    System.err.println "${buildDir}/fst/${fstFile.getName()}".toString()
+  listsDir.eachFileMatch(~/.*.txt/) { fstFile ->
+    fileList.add (FilenameUtils.getName(fstFile.toString()))
   }
-
+  System.err.println "Completed building test lists with FST tokens"
+  System.err.println "Got list " + fileList
 }
 
-
-task buildTestFST(dependsOn: [buildTestLists, cpTestStems]) {
+task buildTestFST(dependsOn: [buildTestTokens, cpTestStems]) {
   description = "Compiles FST with test data installed"
+
 }
 
 task testFST(dependsOn: [buildTestFST]) {
@@ -211,3 +227,4 @@ task analyzeTests(dependsOn: testFST){
 analyzeTests.doLast {
   System.err.println "Analyzed results of FST testing"
 }
+*/
