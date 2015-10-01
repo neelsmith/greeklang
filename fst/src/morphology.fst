@@ -16,13 +16,8 @@ $morph$ = $stems$ $separator$ $separator$ $ends$
 % Acceptor filters for content satisfying requirements for morphological analysis
 $acceptor$ = "<@workdir@acceptor.a>"
 
-% Formatting: strip out all tags at surface level.
 %
-% #morphtag# is defined in "symbols.fst"
-% #stemtype#  is defined in "stemtypes.fst"
-% #extratag#  is defined in "extratags.fst"
-
-% Suppress analytical markup in surface forms:
+% Formatting: suppress analytical markup in surface forms:
 #surfacesymbol# = #character#
 #analysissymbol# = #urn# #editorial# #morphtag# #stemtype# #extratag# #separator#
 ALPHABET = [#surfacesymbol#] [#analysissymbol#]:<>
@@ -30,7 +25,7 @@ $striptags$ = .*
 
 
 % Final transducer:
-$morph$ || $acceptor$ || $striptags$
+$morph$ || $acceptor$  || $striptags$
 
 
 % Examples of translations from surface form to analysis:

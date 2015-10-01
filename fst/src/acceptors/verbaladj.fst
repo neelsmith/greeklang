@@ -13,13 +13,9 @@
 % or 6th part classes.
 #vadjclass# = #verbclass#
 
-$vadjacceptor$ = [#urn#][#stemchars#]+<verb>[#vadjclass#][#extratag#]*\:\:<vadj>[#stemchars#]+[#gender#][#case#][#number#]
-
-
-%<vadj>[#stemchars#]+[#gender#][#case#][#number#][#extratag#]*
-
+$vadjacceptor$ = [#urn#][#stemchars#]+<verb>[#vadjclass#][#extratag#]*\:\:<vadj>[#stemchars#]+[#gender#][#case#][#number#][#persistacc#]
 
 $vadjacceptor$
 
 % Example:
-% <n64316><#>lu<verb><w_regular>::<vadj>teon<neut><nom><sg>
+% <n64316><#>lu<verb><w_regular>::<vadj>teon<neut><nom><sg><penacc>
