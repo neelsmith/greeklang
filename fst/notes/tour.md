@@ -43,3 +43,18 @@ Examples:
 
 - not treating compound forms as a morphological mapping
 - not treating part of speech in traditional sense: reflects instead the analytical categories (which *are* traditional!)
+
+## Utilities and debugging
+
+### transducers
+
+- `rawmorph.a`
+- `rawlex.a`
+
+### The `utils` directory
+
+Presume that "fst/utils" file are used from greekutils root, so go ahead and embed references to included files in relative terms
+
+This contrasts with src files, which have a gradle filter expression, and are compiled to explicit path references.
+
+Explain this in docs.
