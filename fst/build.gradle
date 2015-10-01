@@ -1,31 +1,8 @@
 import org.apache.tools.ant.filters.ReplaceTokens
 import org.apache.commons.io.FilenameUtils
-// For unit testing:
+
 apply plugin: "groovy"
-
 apply from: "fstconf.gradle"
-
-/*
-
-if (project.hasProperty('fstconf')) {
-    System.err.print "Using configuration data from ${fstconf}"
-    File confFile = new File(fstconf)
-    if (! confFile.exists()) {
-        throw new Exception("No configuration file ${fstconf} found.")
-    } else {
-        apply from: confFile
-    }
-
-} else {
-    File confFile = new File("${projectDir}/fstconf.gradle")
-    if (! confFile.exists()) {
-        throw new Exception("No configuration file ${confFile} found.")
-    } else {
-        println "Using default configuration in 'fstconf.gradle'"
-        apply from: "${projectDir}/fstconf.gradle"
-    }
-}
-*/
 
 buildscript {
   repositories {
@@ -35,6 +12,14 @@ buildscript {
     classpath group: 'org.apache.commons', name: 'commons-io', version: '1.3.2'
   }
 }
+task hello() {
+}
+hello.doLast {
+  System.err.println "Yo from  project ${project.name}"
+  System.err.println "It has build dir "+ buildDir
+  System.err.println "and project dir "+ projectDir
+}
+
 
 // Generates appropriate statement to add to makefile dependencies
 // for lexica.
@@ -55,7 +40,9 @@ String lexiconMakeStatement(File dir) {
 String lexiconFstStatement(File dir) {
   StringBuilder stmt = new StringBuilder()
   def fileList = []
+
   dir.eachFileMatch(~/.*.fst/) { fstFile ->
+    //fileList.add ('"' + "${projectDir}/${fstFile.getName()}".toString() + '"')
     fileList.add ('"' + "${buildDir}/fst/${fstFile.getName()}".toString() + '"')
   }
   fileList.eachWithIndex { f, i ->
@@ -68,6 +55,8 @@ String lexiconFstStatement(File dir) {
   }
   return stmt.toString()
 }
+
+
 
 
 // Generates appropriate SFST-PL statements for including
@@ -105,21 +94,26 @@ String rulesMakeStatement(File dir) {
   return stmt.toString()
 }
 
+
+
 task cpSrc (type: Copy) {
-    description = "Copies src directory to build area."
-    from ("src") {
+    description = "Filters and copies src directory to build area."
+    from ("src/fst") {
       include ("makefile", "**/*.fst")
     }
     into "${buildDir}/fst"
-    filter(ReplaceTokens, tokens: ["workdir" : "${buildDir}/fst/".toString(), "lexica": lexiconFstStatement(new File(stemsdir)), "makelexica": lexiconMakeStatement(new File(stemsdir)),
-    "extrafstrules": rulesFstStatement(new File(rulesdir)),
-    "extramakerules": rulesMakeStatement(new File(rulesdir))
+    filter(
+      ReplaceTokens, tokens: [
+      "workdir" : buildDir.toString() + "/fst/",
+      "lexica": lexiconFstStatement(new File("${projectDir}/${stemsdir}")),
+      "makelexica": lexiconMakeStatement(new File("${projectDir}/${stemsdir}")),
+      "extrafstrules": rulesFstStatement(new File("${projectDir}/${rulesdir}")),
+      "extramakerules": rulesMakeStatement(new File("${projectDir}/${rulesdir}"))
      ])
 }
 
-
 task cpRules (type: Copy) {
-    description = "Copies rules directory to build area."
+    description = "Filters and copies directory with additional inflectional rules to build area."
     from ("rules") {
       include ("**/*.fst")
     }
@@ -129,7 +123,7 @@ task cpRules (type: Copy) {
 
 
 task cpStems (type: Copy) {
-    description = "Copies stems directory to build area."
+    description = "Filters adn copies directory with lexica of stems to build area."
     from ("stems") {
       include ('**/*.fst')
     }
@@ -139,13 +133,14 @@ task cpStems (type: Copy) {
 
 
 task cpTags (type: Copy) {
-    description = "Copies tags directory to build area."
+    description = "Filters and copies directory with taxonomic tags to build area."
     from ("tags") {
       include ('**/*.fst')
     }
     into "${buildDir}/fst"
     filter(ReplaceTokens, tokens: ["workdir" : "${buildDir}/fst/".toString()])
 }
+
 
 task cpAll (dependsOn: [cpTags, cpStems, cpRules, cpSrc]){
   description = "Copies all source material to build area"
@@ -154,6 +149,7 @@ cpAll.doLast {
   System.err.println "All source files copied to build area."
 }
 
+/*
 task fst(type:Exec, dependsOn: cpAll) {
   description = "Builds binary Finite State Transducer in ${buildDir}/fst/morphology.a"
   commandLine =  [MAKE, "-f", "${buildDir}/fst/makefile".toString()]
@@ -166,10 +162,10 @@ task fstgen(type:Exec, dependsOn: cpAll) {
 }
 
 
-/*
+
 
 task cpTestStems (type: Copy) {
-  description = "Copies stem files for tests copied to stems dir"
+  description = "Copies stem files for tests to stems dir"
   from ("testdata/stems") {
     include ('** / *.fst')
   }
@@ -178,9 +174,9 @@ task cpTestStems (type: Copy) {
 cpTestStems.doLast {
   System.err.println "Stem files for tests copied to stems dir."
 }
+*/
 
-
-
+/*
 task cpTestLists (type: Copy) {
   description = "Copies word lists for tests to work area"
   from ("testdata/wordlists") {
