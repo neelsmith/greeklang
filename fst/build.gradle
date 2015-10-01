@@ -162,29 +162,17 @@ task fst(type:Exec, dependsOn: cpAll) {
 task fstgen(type:Exec, dependsOn: cpAll) {
   description = "Builds binary Finite State Transducer in ${buildDir}/fst/morphology.a and 'switched' FST (for bulk generation of surface symbols) in ${buildDir}/fst/bulkgen.a"
 
+  outputs.file "${buildDir}/fst/bulkgen.a".toString()
+  inputs.dir "${buildDir}/fst"
+
   commandLine =  [FSTCOMPILER, "-s", "${buildDir}/fst/morphology.fst".toString(), "${buildDir}/fst/bulkgen.a".toString()]
 }
 
 
-/*
-
-task cpTestStems (type: Copy) {
-  description = "Copies stem files for tests to stems dir"
-  from ("testdata/stems") {
-    include ('** / *.fst')
-  }
-  into "stems"
-}
-cpTestStems.doLast {
-  System.err.println "Stem files for tests copied to stems dir."
-}
-*/
-
-/*
 task cpTestLists (type: Copy) {
   description = "Copies word lists for tests to work area"
   from ("testdata/wordlists") {
-    include ('** / *.txt')
+    include ('**/*.txt')
   }
   into "${buildDir}/tests/wordlists"
 }
@@ -194,8 +182,8 @@ cpTestLists.doLast {
 
 task buildTestTokens(dependsOn: [cpTestLists]) {
   description = "Convert UTF-8 word lists to FST tokens"
-  outputs.dir file("${buildDir}/tests/wordlists")
-  inputs.dir file("${buildDir}/tests/tokens")
+  inputs.dir file("${buildDir}/tests/wordlists")
+  outputs.dir file("${buildDir}/tests/tokens")
 }
 buildTestTokens.doLast {
   def tokensDir = file("${buildDir}/tests/tokens")
@@ -208,11 +196,7 @@ buildTestTokens.doLast {
   System.err.println "Got list " + fileList
 }
 
-task buildTestFST(dependsOn: [buildTestTokens, cpTestStems]) {
-  description = "Compiles FST with test data installed"
-
-}
-
+/*
 task testFST(dependsOn: [buildTestFST]) {
   description = "Runs FST on test word lists and analyzes results."
   // make depend on a task to build test FST (compiling fst after good setup)
