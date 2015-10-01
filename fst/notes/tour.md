@@ -21,6 +21,7 @@ Tasks:
 
 - `gradle fst` builds the FST in `fst/build/fst/morphology.a`
 - `gradle fstgen` builds a "switched" FST in `fst/build/fst/bulkgen.a`
+- `gradle raw` builds a debugging tool to display the raw morphological data in `fst/build/fst/raw.a`
 
 Configuration:  set in file `fstconf.gradle`.  Values may be overriden on the command line with `-P` flag. E.g.,
 
