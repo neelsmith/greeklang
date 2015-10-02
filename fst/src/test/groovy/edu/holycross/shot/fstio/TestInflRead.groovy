@@ -1,14 +1,14 @@
 package edu.holycross.shot.fstio
 
-
-import static org.junit.Assert.*
 import org.junit.Test
+import static groovy.test.GroovyAssert.shouldFail
 
 
-class TestInflRead extends GroovyTestCase {
+class TestInflRead {
 
-  File dataFile = new File("testdata/inflreports/inflrept.txt")
+  File dataFile = new File("testdata/inflreports/inflrept1.txt")
 
+  @Test
   void TestInflReader() {
     FstInflReader fstReader = new FstInflReader()
     def analyses = fstReader.readFstInflFile(dataFile)

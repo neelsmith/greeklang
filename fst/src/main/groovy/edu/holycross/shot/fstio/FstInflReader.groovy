@@ -1,10 +1,5 @@
 package edu.holycross.shot.fstio
 
-
-
-import static org.junit.Assert.*
-import org.junit.Test
-
 /**
 * Class for parsing output of SFST toolkit's fst-infl parser.
 */
@@ -29,14 +24,14 @@ class FstInflReader {
     LinkedHashMap analyses = [:]
     ArrayList currentAnalyses = []
     String currentToken = ""
-    fstInlFile.eachLine { ln ->
+    fstInflFile.eachLine { ln ->
       if (ln[0] == '>') {
           if (currentAnalyses.size() > 0) {
             analyses[currentToken] = currentAnalyses
             currentAnalyses.clear()
           }
           currentToken = ln.replaceFirst(/> /, "")
-          currentAnalyses[currentToken] = []
+          //currentAnalyses[currentToken] = [null]
 
         } else if (ln ==~ /no result.+/) {
           // failure

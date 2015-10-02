@@ -3,7 +3,7 @@ import org.apache.commons.io.FilenameUtils
 import edu.unc.epidoc.transcoder.TransCoder
 
 
-apply plugin: "groovy"
+//apply plugin: "groovy"
 apply from: "fstconf.gradle"
 
 buildscript {
@@ -18,14 +18,7 @@ buildscript {
     classpath group : 'edu.unc.epidoc', name: 'transcoder', version : '1.2-SNAPSHOT'
   }
 }
-repositories {
-    mavenCentral()
-}
 
-dependencies {
-  compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.0.6'
-  testCompile group: 'junit', name: 'junit', version:  '4.11'
-}
 
 // Generates appropriate statement to add to makefile dependencies
 // for lexica.
