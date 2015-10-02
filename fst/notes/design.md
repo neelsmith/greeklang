@@ -98,3 +98,19 @@ Process:
 - √ verbal adjs (sep PoS b/c no degree!)
 - ptcpls
 - adjs: regular formation of comp, superl
+
+## Terminology and citable entities
+
+Conceptually (generically), for each canonically citable *token* in a *corpus of texts*, each *morphological analysis* joins a canonically citable *stem* with a canonically citable *morphological identification* with  optionally including further *taxonomic tags*.  A given project may define canonical citation values for taxonomic tags;  it may  also define canonical citation values for each morphological analysis for each canonically citable token.
+
+Concretely, the morphological analyzer takes a String value for a token and generates
+
+- the URN for a stem (e.g., URN for λυ)
+    - the data structure for stems in turn includes a URN for the lexical entity that the stem belongs to (e.g., URN for entity with lemma λύω)
+- the URN for an identification (e.g., "1st s. pres. indic. act of a conjugated verb")
+- a (possibly empty) set of project-specific taxonomic tag (examples: "epic form", "HMT project")
+
+The analyzer is rigorously limited to working with the morphology of a String value tokens
+Applying the morphological analyzer a specific text corpus therefore requires an external or wrapper system that tokenizes the corpus of texts, submits them to the analyzer and keeps track of URNs for the tokens it submits.  
+
+This is a non-morphological concern that should be separated cleanly from the analysis system.
