@@ -12,8 +12,8 @@ class TestInflRead {
   void TestInflReader() {
     FstInflReader fstReader = new FstInflReader()
     def analyses = fstReader.readFstInflFile(dataFile)
-    analyses.keySet().each {
-      println it + " -> " + analyses[it]
+    analyses.keySet().each { k ->
+      println k + " -> " + analyses[k]
     }
   }
 }
