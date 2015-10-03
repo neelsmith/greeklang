@@ -18,10 +18,8 @@ $acceptor$ = "<@workdir@acceptor.a>"
 
 %
 % Formatting: suppress analytical markup in surface forms:
-#surfacesymbol# = #character#
-#analysissymbol# = #urn# #editorial# #morphtag# #stemtype# #extratag# #separator#
-ALPHABET = [#surfacesymbol#] [#analysissymbol#]:<>
-$striptags$ = .*
+$striptags$ = "<@workdir@striptags.a>"
+
 
 
 % Final transducer:
