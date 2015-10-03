@@ -1,6 +1,11 @@
 
 # Tour of the Greek FST
 
+## Background
+
+The build system in this project lets you build a parser for a specified set of stem lexica, using a specified set of inflectional rules.
+
+## Overview of what's here
 
 The two-way morphological analyzer is defined in `morphology.fst`. (The accompanying gradle build compiles this to `morphology.a`).  It is a finite state transducer (FST) that works by joining together *stems* and *inflectional patterns*.
 
@@ -43,6 +48,15 @@ Examples:
 
 - not treating compound forms as a morphological mapping
 - not treating part of speech in traditional sense: reflects instead the analytical categories (which *are* traditional!)
+
+
+
+## Testing
+
+Two testing systems are included.  Invoke them with:
+
+- `gradle test`.  Unit tests for system development.
+- `gradle analyseTests`.  Tests and analyses a dynamically defined set of stems and inflectional rules.  You can use this to debug and develop your own parser.
 
 ## Utilities and debugging
 

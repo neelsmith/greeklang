@@ -234,6 +234,9 @@ testFST.doLast{
   File reptFile = new File("${buildDir}/tests/report.txt")
   reptFile.setText(rept.toString())
 }
+
+// To do this dynamically we need to invoke the
+// jvm classes compiled for this subproject
 /*
 task analyzeTests(dependsOn: testFST){
   description = "Reads output of testFST task and generates analytical report"
