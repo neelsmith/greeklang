@@ -1,7 +1,7 @@
 package edu.holycross.shot.fstio
 
 /**
-* Class for parsing output of SFST toolkit's fst-infl parser.
+* Class for reading output of SFST toolkit's fst-infl parser.
 */
 class FstInflReader {
 
