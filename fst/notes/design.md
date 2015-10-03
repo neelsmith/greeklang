@@ -114,3 +114,17 @@ The analyzer is rigorously limited to working with the morphology of a String va
 Applying the morphological analyzer a specific text corpus therefore requires an external or wrapper system that tokenizes the corpus of texts, submits them to the analyzer and keeps track of URNs for the tokens it submits.  
 
 This is a non-morphological concern that should be separated cleanly from the analysis system.
+
+## Bigger overview
+
+This project assumes a corpus-linguistic approach to the study of historical languages.
+
+For morphological purposes, what is the "Greek" language in this perspective?  We need to distinguish the notion of "Greek" as a historical phenomenon -- a language spoken and used by particular people in particular times and places from "Greek" as the object of scholarly study.  For the latter purpose, we can consider "Greek" to be the corpus of material that satisfies some definition of Greekness.  For morphological purposes, we can say that "Greek" is the language known from the corpus of texts that can be analyzed morphologically with the set of categories defined here.
+
+This system is really a parser-generator:  it compiles a binary parser with a given set of stem lexica and inflectional rules.
+
+There is no standard lexicon:  that is a corpus-focused question.
+
+There is a minimal set of inflectional rules compiled in `inflection.a` (from `src/inflection.fst`, which in turn is simply a transducer including the rules in `src/inflection`) compiled as separate transducers.
+
+The reason for the distinction is that there are fundamental complex inflectional patterns that persist across
