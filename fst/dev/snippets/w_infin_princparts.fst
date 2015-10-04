@@ -29,7 +29,36 @@ ALPHABET = [#letter#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extratag#] 
 $2nd_3rd_pp$ = {[#=ltr#]}:{[#=ltr#]s} ^-> ([#urn#][#stemchars#]+ __ <verb><w_regular>[#extratag#]*[\:]+<infin>[#letter#]+[#2nd_3rd_6th_tense#][<act><mid>][#persistacc#])
 
 
-$2nd_3rd_pp$
+
+%%%%% 6th principal part %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Extend stem with theta:
+ALPHABET = [#letter#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extratag#][#persistacc#]
+$6th_pp$ = {[#=ltr#]}:{[#=ltr#]q} ^-> ([#urn#][#stemchars#]+ __ <verb><w_regular>[#extratag#]*[\:]+<infin>[#letter#]+[#2nd_3rd_6th_tense#]<pass>[#persistacc#])
+
+
+
+
+
+%%%%% 4th and 5th principal parts %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Add reduplication:
+ALPHABET = [#letter#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extratag#]
+$redupe$ = {[#=ltr#]}:{[#=ltr#]e[#=ltr#]} ^-> ([#urn#]<#> __ [a-z]+<verb><w_regular>[#extratag#]*[\:]+<w_regular>[#letter#]*[#person#][#number#][#4th_5th_tense#])
+
+
+%%%%% 4th principal part only  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Extend stem with kappa:
+ALPHABET = [#letter#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extratag#]
+$kappa$ = {[#=ltr#]}:{[#=ltr#]k} ^-> ([#urn#]<#>[a-z]+ __ <verb><w_regular>[#extratag#]*[\:]+<w_regular>[#letter#]*[#person#][#number#][#4th_5th_tense#][#mood#]<act>)
+
+
+% Complete processing of 4th and 5th principal parts:
+$4th_5th_pp$ =  $redupe$ || $kappa$
+
+
+% Final transducer. (NB: leaves stem untouched for 1st principal part.)
+%$2nd_3rd_pp$ || $4th_5th_pp$  || $6th_pp$
+
+$2nd_3rd_pp$  || $6th_pp$
 
 % model
 % % <n64316><#>lu<verb><w_regular>::<infin>ein<pres><act><penacc>
