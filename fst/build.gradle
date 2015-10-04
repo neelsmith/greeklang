@@ -207,7 +207,7 @@ utils.doLast {
 
 task cpTestLists (type: Copy) {
   description = "Copies word lists for tests to work area"
-  from ("testdata/wordlists") {
+  from ("testing/wordlists") {
     include ('**/*.txt')
   }
   into "${buildDir}/tests/wordlists"
@@ -227,7 +227,7 @@ buildTestTokens.doLast {
   utf2beta.setConverter("BetaCode")
 
 
-  def tokensDir = file("${buildDir}/tests/tokens")
+  def tokensDir = new File("${buildDir}/test/tokens")
   if (! tokensDir.exists()) {
     tokensDir.mkdir()
   }
@@ -275,10 +275,46 @@ testFST.doLast{
 // To do this dynamically we need to invoke the
 // jvm classes compiled for this subproject
 /*
-task analyzeTests(dependsOn: testFST){
+task analyzeFSTTests(dependsOn: testFST){
   description = "Reads output of testFST task and generates analytical report"
 }
-analyzeTests.doLast {
+analyzeFSTTests.doLast {
   System.err.println "Analyzed results of FST testing"
 }
 */
+
+
+task testVerbAcceptor(dependsOn: fst) {
+  description = "Tests verb acceptor"
+}
+testVerbAcceptor.doLast {
+  String verbAcceptor = "${buildDir}/fst/acceptors/verb.a"
+  String tokens = "unittests/acceptors/verb_analyses.txt"
+  def cmd = "${FSTINFL} ${verbAcceptor} ${tokens}"
+  Process process = cmd.execute()
+  def out = new StringBuffer()
+  def err = new StringBuffer()
+  process.consumeProcessOutput( out, err )
+  process.waitFor()
+  System.err.println "Executed ${cmd}"
+  System.err.println  "Analyzed as " + out.toString()
+
+  String expectedAnalysis =
+    """> <n64316><#>lu<verb><w_regular>::<w_regular>w<1st><sg><pres><indic><act>
+<n64316><#>lu<verb><w_regular>::<w_regular>w<1st><sg><pres><indic><act>
+"""
+  System.err.println "Length expected = " + expectedAnalysis.size()
+  System.err.println "Compare actual " + out.toString().size()
+  assert out.toString() == expectedAnalysis
+}
+
+task testAcceptors(dependsOn: [testVerbAcceptor]) {
+  description = "Tests all acceptor transducers"
+}
+
+task testIntegratedTransducers(dependsOn: [testAcceptors]) {
+  description = "Tests integration of transducers"
+}
+testIntegratedTransducers.doLast {
+  System.err.println "Completed integration tests on all transducers"
+}
