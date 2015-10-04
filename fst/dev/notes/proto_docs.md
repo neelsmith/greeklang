@@ -4,10 +4,12 @@
 
 "Parts of speech" as defined by analytical patterns:
 
-- *conjugated verb*: PNTMV
-- *infintive*: TVacc
+- verbs:
+    - *conjugated verb*: PNTMV
+    - *infintive*: TVacc
+    - *verbal adjective*: GCN (and has has lex.ent. URN with `verb` PoS)
+    - *participle*: TVGCN
 - *noun*: GCN (and has has lex.ent. URN with `noun` PoS)
 - *adjective*: GCND
 - *adverb*: D
-- *verbal adjective*: GCN (and has has lex.ent. URN with `verb` PoS)
 - *indeclinable form*: what it says
