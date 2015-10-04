@@ -17,8 +17,24 @@
 
 ## Testing
 
+### Test JVM classes
+
+- tested using JUnit 4 for unit tests
+
+### Testing FST system
+
+
 - all transducers are individually compiled and unit tested
 - similarly, "piplelines" of transducers are  compiled and tested for integration
+
+
+
+### Testing data contents of a complete FST for morphology
+
+1. Compile your `morphology.a` transducer
+2. Place wordlists in `testdata/wordlists`
+3. Run gradle task
+
 
 
 ## extratags
