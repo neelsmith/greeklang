@@ -15,6 +15,52 @@
 - must support dynamically defined tagging of arbitrary (even non-morphological) taxonomies
 
 
+## Terminology and citable entities
+
+Conceptually (generically), for each canonically citable *token* in a *corpus of texts*, each *morphological analysis* joins a canonically citable *stem* with a canonically citable *morphological identification* with  optionally including further *taxonomic tags*.  A given project may define canonical citation values for taxonomic tags;  it may  also define canonical citation values for each morphological analysis for each canonically citable token.
+
+Concretely, the morphological analyzer takes a String value for a token and generates
+
+- the URN for a stem (e.g., URN for λυ)
+    - the data structure for stems in turn includes a URN for the lexical entity that the stem belongs to (e.g., URN for entity with lemma λύω)
+- the URN for an identification (e.g., "1st s. pres. indic. act of a conjugated verb")
+- a (possibly empty) set of project-specific taxonomic tag (examples: "epic form", "HMT project")
+
+The analyzer is rigorously limited to working with the morphology of a String value tokens
+Applying the morphological analyzer a specific text corpus therefore requires an external or wrapper system that tokenizes the corpus of texts, submits them to the analyzer and keeps track of URNs for the tokens it submits.  
+
+This is a non-morphological concern that should be separated cleanly from the analysis system.
+
+
+## Two-tier identifications
+
+Abstractly, the system resolves a form of a lexical entity to an identification.
+
+Concretely, in joining stems to inflectional patterns, it needs to identify (by URN) the specific stem and the specific inflectional pattern.  The stem points to a lexical entity; the identification points to a morphological ID.  I don't think we need to add URNs to individual word formations because in a corpus-oriented approach, we already know:
+
+1. CTS URN of the occurrence, when we have a string to analyze.  (By whatever process the supplying system uses to get to a normalized form that is legit to submit to the FST.)
+2. From the URN-labelled stem -> the lex.ent. URN.
+3. From the infectional component, we're guaranteed to have enough data to identify the proper MorphAnalysis URN.
+
+So we can always say "This concrete passage is form X of lexent. Y."
+
+We break out the components of the morphId object into symbols for the FST so it can work with them directly.
+
+
+## Bigger overview
+
+This project assumes a corpus-linguistic approach to the study of historical languages.
+
+For morphological purposes, what is the "Greek" language in this perspective?  We need to distinguish the notion of "Greek" as a historical phenomenon -- a language spoken and used by particular people in particular times and places from "Greek" as the object of scholarly study.  For the latter purpose, we can consider "Greek" to be the corpus of material that satisfies some definition of Greekness.  For morphological purposes, we can say that "Greek" is the language known from the corpus of texts that can be analyzed morphologically with the set of categories defined here.
+
+This system is really a parser-generator:  it compiles a binary parser with a given set of stem lexica and inflectional rules.
+
+There is no standard lexicon:  that is a corpus-focused question.
+
+There is a minimal set of inflectional rules compiled in `inflection.a` (from `src/inflection.fst`, which in turn is simply a transducer including the rules in `src/inflection`) compiled as separate transducers.
+
+The reason for the distinction is that there are fundamental complex inflectional patterns that persist across
+
 ## Testing
 
 ### Test JVM classes
@@ -115,39 +161,11 @@ Process:
 
 ## development sequence
 
-- harness for groovy unit tests.  Or use shell script-based tests?
-- complete conjugated forms of Smyth #308
-- infinitives. Will need classification of nominal accent.
-- √ verbal adjs (sep PoS b/c no degree!)
-- ptcpls
-- adjs: regular formation of comp, superl
-
-## Terminology and citable entities
-
-Conceptually (generically), for each canonically citable *token* in a *corpus of texts*, each *morphological analysis* joins a canonically citable *stem* with a canonically citable *morphological identification* with  optionally including further *taxonomic tags*.  A given project may define canonical citation values for taxonomic tags;  it may  also define canonical citation values for each morphological analysis for each canonically citable token.
-
-Concretely, the morphological analyzer takes a String value for a token and generates
-
-- the URN for a stem (e.g., URN for λυ)
-    - the data structure for stems in turn includes a URN for the lexical entity that the stem belongs to (e.g., URN for entity with lemma λύω)
-- the URN for an identification (e.g., "1st s. pres. indic. act of a conjugated verb")
-- a (possibly empty) set of project-specific taxonomic tag (examples: "epic form", "HMT project")
-
-The analyzer is rigorously limited to working with the morphology of a String value tokens
-Applying the morphological analyzer a specific text corpus therefore requires an external or wrapper system that tokenizes the corpus of texts, submits them to the analyzer and keeps track of URNs for the tokens it submits.  
-
-This is a non-morphological concern that should be separated cleanly from the analysis system.
-
-## Bigger overview
-
-This project assumes a corpus-linguistic approach to the study of historical languages.
-
-For morphological purposes, what is the "Greek" language in this perspective?  We need to distinguish the notion of "Greek" as a historical phenomenon -- a language spoken and used by particular people in particular times and places from "Greek" as the object of scholarly study.  For the latter purpose, we can consider "Greek" to be the corpus of material that satisfies some definition of Greekness.  For morphological purposes, we can say that "Greek" is the language known from the corpus of texts that can be analyzed morphologically with the set of categories defined here.
-
-This system is really a parser-generator:  it compiles a binary parser with a given set of stem lexica and inflectional rules.
-
-There is no standard lexicon:  that is a corpus-focused question.
-
-There is a minimal set of inflectional rules compiled in `inflection.a` (from `src/inflection.fst`, which in turn is simply a transducer including the rules in `src/inflection`) compiled as separate transducers.
-
-The reason for the distinction is that there are fundamental complex inflectional patterns that persist across
+1. harness for multiple kinds of tests, as described above
+2. infinitives. Complete development of separate stem generator
+3. complete conjugated forms of Smyth #308
+4. compound verbs
+5. ptcpls
+6. adjs: regular formation of comp, superl
+7. advs: degree
+8. nouns: use Iliadic word lists to select first declensional classes to implement
