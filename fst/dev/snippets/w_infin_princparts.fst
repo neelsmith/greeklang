@@ -49,12 +49,12 @@ $redupe$ = {[#=ltr#]}:{[#=ltr#]e[#=ltr#]} ^-> ([#urn#][<#>]* __ [#stemchars#]+<v
 
 %%%%% 4th principal part only  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Extend stem with kappa:
-ALPHABET = [#letter#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extratag#]
-$kappa$ = {[#=ltr#]}:{[#=ltr#]k} ^-> ([#urn#]<#>[a-z]+ __ <verb><w_regular>[#extratag#]*[\:]+<w_regular>[#letter#]*[#person#][#number#][#4th_5th_tense#][#mood#]<act>)
+ALPHABET = [#letter#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extratag#][#persistacc#]
+$kappa$ = {[#=ltr#]}:{[#=ltr#]k} ^-> ([#urn#][#stemchars#]+ __ <verb><w_regular>[#extratag#]*[\:]+<infin>[#letter#]+[#4th_5th_tense#]<act>)
 
 
 % Complete processing of 4th and 5th principal parts:
-$4th_5th_pp$ =  $redupe$ %|| $kappa$
+$4th_5th_pp$ =  $redupe$ || $kappa$
 
 
 % Final transducer. (NB: leaves stem untouched for 1st principal part.)
