@@ -1,0 +1,51 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+import org.apache.commons.io.FilenameUtils
+
+
+apply plugin: "groovy"
+apply plugin: "java"
+apply from: "fstconf.gradle"
+
+
+buildscript {
+  repositories {
+    mavenCentral()
+    maven {
+      url "http://beta.hpcc.uh.edu/nexus/content/repositories/papyriinfo/"
+    }
+  }
+  dependencies {
+    classpath group: 'org.apache.commons', name: 'commons-io', version: '1.3.2'
+    classpath group : 'edu.unc.epidoc', name: 'transcoder', version : '1.2-SNAPSHOT'
+  }
+}
+
+task testVerbAcceptor() {
+  description = "Tests verb acceptor"
+}
+testVerbAcceptor.doLast {
+  String verbAcceptor = "${buildDir}/fst/acceptors/verb.a"
+  String tokens = "core_tests/acceptors/verb_analyses.txt"
+  def cmd = "${FSTINFL} ${verbAcceptor} ${tokens}"
+  Process process = cmd.execute()
+  def out = new StringBuffer()
+  def err = new StringBuffer()
+  process.consumeProcessOutput( out, err )
+  process.waitFor()
+  String expectedAnalysis =
+    """> <n64316><#>lu<verb><w_regular>::<w_regular>w<1st><sg><pres><indic><act>
+<n64316><#>lu<verb><w_regular>::<w_regular>w<1st><sg><pres><indic><act>
+"""
+  assert out.toString() == expectedAnalysis
+}
+
+task testAcceptors(dependsOn: [testVerbAcceptor]) {
+  description = "Tests all acceptor transducers"
+}
+
+task testIntegratedTransducers(dependsOn: [testAcceptors]) {
+  description = "Tests integration of transducers"
+}
+testIntegratedTransducers.doLast {
+  System.err.println "Completed integration tests on all transducers"
+}
