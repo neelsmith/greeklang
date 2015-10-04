@@ -14,6 +14,13 @@
 - must support dynamically loaded lexica of stems and inflectional rules
 - must support dynamically defined tagging of arbitrary (even non-morphological) taxonomies
 
+
+## Testing
+
+- all transducers are individually compiled and unit tested
+- similarly, "piplelines" of transducers are  compiled and tested for integration
+
+
 ## extratags
 
 Data:
