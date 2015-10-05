@@ -1,2 +1,4 @@
 > <n64316><#>lus<verb><w_regular>::<w_regular>w<1st><sg><fut><indic><act>
 <n64316><#>lu<verb><w_regular>::<w_regular>w<1st><sg><fut><indic><act>
+> <n64316><#>lus<verb><w_regular>::<w_regular>omai<1st><sg><fut><indic><mid>
+<n64316><#>lu<verb><w_regular>::<w_regular>omai<1st><sg><fut><indic><mid>

@@ -3,4 +3,4 @@
 %
 % 2nd principal part:
 <n64316><#>lus<verb><w_regular>::<w_regular>w<1st><sg><fut><indic><act>
-%<n64316><#>lus<verb><w_regular>::<w_regular>omai<1st><sg><fut><mid><act>
+<n64316><#>lus<verb><w_regular>::<w_regular>omai<1st><sg><fut><indic><mid>
