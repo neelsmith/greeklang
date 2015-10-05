@@ -58,6 +58,10 @@ Two testing systems are included.  Invoke them with:
 - `gradle test`.  Unit tests for system development.
 - `gradle analyseTests`.  Tests and analyses a dynamically defined set of stems and inflectional rules.  You can use this to debug and develop your own parser.
 
+
+Also this: `gradle -b core_test_build.gradle <TASK>`
+
+
 ## Utilities and debugging
 
 ### transducers
