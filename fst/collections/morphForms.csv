@@ -1,4 +1,5 @@
 Urn,AnalyticalClass,Label
+urn:cite:morph:form.000,indecl,indeclinable form
 urn:cite:morph:form.cv00000,conjverb,conjugated verb: 1st singular present indicative active
 urn:cite:morph:form.cv00001,conjverb,conjugated verb: 1st singular present indicative middle
 urn:cite:morph:form.cv00002,conjverb,conjugated verb: 1st singular present indicative passive
@@ -647,3 +648,1059 @@ urn:cite:morph:form.cv22522,conjverb,conjugated verb: 3rd plural pluperfect opta
 urn:cite:morph:form.cv22530,conjverb,conjugated verb: 3rd plural pluperfect imperative active
 urn:cite:morph:form.cv22531,conjverb,conjugated verb: 3rd plural pluperfect imperative middle
 urn:cite:morph:form.cv22532,conjverb,conjugated verb: 3rd plural pluperfect imperative passive
+urn:cite:morph:form.va000,vadj,verbal adjective: masculine nominative singular
+urn:cite:morph:form.va001,vadj,verbal adjective: masculine nominative dual
+urn:cite:morph:form.va002,vadj,verbal adjective: masculine nominative plural
+urn:cite:morph:form.va010,vadj,verbal adjective: masculine genitive singular
+urn:cite:morph:form.va011,vadj,verbal adjective: masculine genitive dual
+urn:cite:morph:form.va012,vadj,verbal adjective: masculine genitive plural
+urn:cite:morph:form.va020,vadj,verbal adjective: masculine dative singular
+urn:cite:morph:form.va021,vadj,verbal adjective: masculine dative dual
+urn:cite:morph:form.va022,vadj,verbal adjective: masculine dative plural
+urn:cite:morph:form.va030,vadj,verbal adjective: masculine accusative singular
+urn:cite:morph:form.va031,vadj,verbal adjective: masculine accusative dual
+urn:cite:morph:form.va032,vadj,verbal adjective: masculine accusative plural
+urn:cite:morph:form.va040,vadj,verbal adjective: masculine vocative singular
+urn:cite:morph:form.va041,vadj,verbal adjective: masculine vocative dual
+urn:cite:morph:form.va042,vadj,verbal adjective: masculine vocative plural
+urn:cite:morph:form.va100,vadj,verbal adjective: feminine nominative singular
+urn:cite:morph:form.va101,vadj,verbal adjective: feminine nominative dual
+urn:cite:morph:form.va102,vadj,verbal adjective: feminine nominative plural
+urn:cite:morph:form.va110,vadj,verbal adjective: feminine genitive singular
+urn:cite:morph:form.va111,vadj,verbal adjective: feminine genitive dual
+urn:cite:morph:form.va112,vadj,verbal adjective: feminine genitive plural
+urn:cite:morph:form.va120,vadj,verbal adjective: feminine dative singular
+urn:cite:morph:form.va121,vadj,verbal adjective: feminine dative dual
+urn:cite:morph:form.va122,vadj,verbal adjective: feminine dative plural
+urn:cite:morph:form.va130,vadj,verbal adjective: feminine accusative singular
+urn:cite:morph:form.va131,vadj,verbal adjective: feminine accusative dual
+urn:cite:morph:form.va132,vadj,verbal adjective: feminine accusative plural
+urn:cite:morph:form.va140,vadj,verbal adjective: feminine vocative singular
+urn:cite:morph:form.va141,vadj,verbal adjective: feminine vocative dual
+urn:cite:morph:form.va142,vadj,verbal adjective: feminine vocative plural
+urn:cite:morph:form.va200,vadj,verbal adjective: neuter nominative singular
+urn:cite:morph:form.va201,vadj,verbal adjective: neuter nominative dual
+urn:cite:morph:form.va202,vadj,verbal adjective: neuter nominative plural
+urn:cite:morph:form.va210,vadj,verbal adjective: neuter genitive singular
+urn:cite:morph:form.va211,vadj,verbal adjective: neuter genitive dual
+urn:cite:morph:form.va212,vadj,verbal adjective: neuter genitive plural
+urn:cite:morph:form.va220,vadj,verbal adjective: neuter dative singular
+urn:cite:morph:form.va221,vadj,verbal adjective: neuter dative dual
+urn:cite:morph:form.va222,vadj,verbal adjective: neuter dative plural
+urn:cite:morph:form.va230,vadj,verbal adjective: neuter accusative singular
+urn:cite:morph:form.va231,vadj,verbal adjective: neuter accusative dual
+urn:cite:morph:form.va232,vadj,verbal adjective: neuter accusative plural
+urn:cite:morph:form.va240,vadj,verbal adjective: neuter vocative singular
+urn:cite:morph:form.va241,vadj,verbal adjective: neuter vocative dual
+urn:cite:morph:form.va242,vadj,verbal adjective: neuter vocative plural
+urn:cite:morph:form.if00,infin,infintive: present active
+urn:cite:morph:form.if01,infin,infintive: present middle
+urn:cite:morph:form.if02,infin,infintive: present passive
+urn:cite:morph:form.if10,infin,infintive: imperfect active
+urn:cite:morph:form.if11,infin,infintive: imperfect middle
+urn:cite:morph:form.if12,infin,infintive: imperfect passive
+urn:cite:morph:form.if20,infin,infintive: future active
+urn:cite:morph:form.if21,infin,infintive: future middle
+urn:cite:morph:form.if22,infin,infintive: future passive
+urn:cite:morph:form.if30,infin,infintive: aorist active
+urn:cite:morph:form.if31,infin,infintive: aorist middle
+urn:cite:morph:form.if32,infin,infintive: aorist passive
+urn:cite:morph:form.if40,infin,infintive: perfect active
+urn:cite:morph:form.if41,infin,infintive: perfect middle
+urn:cite:morph:form.if42,infin,infintive: perfect passive
+urn:cite:morph:form.if50,infin,infintive: pluperfect active
+urn:cite:morph:form.if51,infin,infintive: pluperfect middle
+urn:cite:morph:form.if52,infin,infintive: pluperfect passive
+urn:cite:morph:form.pc00000,ptcpl,participle: masculine nominative singular present active
+urn:cite:morph:form.pc00001,ptcpl,participle: masculine nominative singular present middle
+urn:cite:morph:form.pc00002,ptcpl,participle: masculine nominative singular present passive
+urn:cite:morph:form.pc00010,ptcpl,participle: masculine nominative singular imperfect active
+urn:cite:morph:form.pc00011,ptcpl,participle: masculine nominative singular imperfect middle
+urn:cite:morph:form.pc00012,ptcpl,participle: masculine nominative singular imperfect passive
+urn:cite:morph:form.pc00020,ptcpl,participle: masculine nominative singular future active
+urn:cite:morph:form.pc00021,ptcpl,participle: masculine nominative singular future middle
+urn:cite:morph:form.pc00022,ptcpl,participle: masculine nominative singular future passive
+urn:cite:morph:form.pc00030,ptcpl,participle: masculine nominative singular aorist active
+urn:cite:morph:form.pc00031,ptcpl,participle: masculine nominative singular aorist middle
+urn:cite:morph:form.pc00032,ptcpl,participle: masculine nominative singular aorist passive
+urn:cite:morph:form.pc00040,ptcpl,participle: masculine nominative singular perfect active
+urn:cite:morph:form.pc00041,ptcpl,participle: masculine nominative singular perfect middle
+urn:cite:morph:form.pc00042,ptcpl,participle: masculine nominative singular perfect passive
+urn:cite:morph:form.pc00050,ptcpl,participle: masculine nominative singular pluperfect active
+urn:cite:morph:form.pc00051,ptcpl,participle: masculine nominative singular pluperfect middle
+urn:cite:morph:form.pc00052,ptcpl,participle: masculine nominative singular pluperfect passive
+urn:cite:morph:form.pc00100,ptcpl,participle: masculine nominative dual present active
+urn:cite:morph:form.pc00101,ptcpl,participle: masculine nominative dual present middle
+urn:cite:morph:form.pc00102,ptcpl,participle: masculine nominative dual present passive
+urn:cite:morph:form.pc00110,ptcpl,participle: masculine nominative dual imperfect active
+urn:cite:morph:form.pc00111,ptcpl,participle: masculine nominative dual imperfect middle
+urn:cite:morph:form.pc00112,ptcpl,participle: masculine nominative dual imperfect passive
+urn:cite:morph:form.pc00120,ptcpl,participle: masculine nominative dual future active
+urn:cite:morph:form.pc00121,ptcpl,participle: masculine nominative dual future middle
+urn:cite:morph:form.pc00122,ptcpl,participle: masculine nominative dual future passive
+urn:cite:morph:form.pc00130,ptcpl,participle: masculine nominative dual aorist active
+urn:cite:morph:form.pc00131,ptcpl,participle: masculine nominative dual aorist middle
+urn:cite:morph:form.pc00132,ptcpl,participle: masculine nominative dual aorist passive
+urn:cite:morph:form.pc00140,ptcpl,participle: masculine nominative dual perfect active
+urn:cite:morph:form.pc00141,ptcpl,participle: masculine nominative dual perfect middle
+urn:cite:morph:form.pc00142,ptcpl,participle: masculine nominative dual perfect passive
+urn:cite:morph:form.pc00150,ptcpl,participle: masculine nominative dual pluperfect active
+urn:cite:morph:form.pc00151,ptcpl,participle: masculine nominative dual pluperfect middle
+urn:cite:morph:form.pc00152,ptcpl,participle: masculine nominative dual pluperfect passive
+urn:cite:morph:form.pc00200,ptcpl,participle: masculine nominative plural present active
+urn:cite:morph:form.pc00201,ptcpl,participle: masculine nominative plural present middle
+urn:cite:morph:form.pc00202,ptcpl,participle: masculine nominative plural present passive
+urn:cite:morph:form.pc00210,ptcpl,participle: masculine nominative plural imperfect active
+urn:cite:morph:form.pc00211,ptcpl,participle: masculine nominative plural imperfect middle
+urn:cite:morph:form.pc00212,ptcpl,participle: masculine nominative plural imperfect passive
+urn:cite:morph:form.pc00220,ptcpl,participle: masculine nominative plural future active
+urn:cite:morph:form.pc00221,ptcpl,participle: masculine nominative plural future middle
+urn:cite:morph:form.pc00222,ptcpl,participle: masculine nominative plural future passive
+urn:cite:morph:form.pc00230,ptcpl,participle: masculine nominative plural aorist active
+urn:cite:morph:form.pc00231,ptcpl,participle: masculine nominative plural aorist middle
+urn:cite:morph:form.pc00232,ptcpl,participle: masculine nominative plural aorist passive
+urn:cite:morph:form.pc00240,ptcpl,participle: masculine nominative plural perfect active
+urn:cite:morph:form.pc00241,ptcpl,participle: masculine nominative plural perfect middle
+urn:cite:morph:form.pc00242,ptcpl,participle: masculine nominative plural perfect passive
+urn:cite:morph:form.pc00250,ptcpl,participle: masculine nominative plural pluperfect active
+urn:cite:morph:form.pc00251,ptcpl,participle: masculine nominative plural pluperfect middle
+urn:cite:morph:form.pc00252,ptcpl,participle: masculine nominative plural pluperfect passive
+urn:cite:morph:form.pc01000,ptcpl,participle: masculine genitive singular present active
+urn:cite:morph:form.pc01001,ptcpl,participle: masculine genitive singular present middle
+urn:cite:morph:form.pc01002,ptcpl,participle: masculine genitive singular present passive
+urn:cite:morph:form.pc01010,ptcpl,participle: masculine genitive singular imperfect active
+urn:cite:morph:form.pc01011,ptcpl,participle: masculine genitive singular imperfect middle
+urn:cite:morph:form.pc01012,ptcpl,participle: masculine genitive singular imperfect passive
+urn:cite:morph:form.pc01020,ptcpl,participle: masculine genitive singular future active
+urn:cite:morph:form.pc01021,ptcpl,participle: masculine genitive singular future middle
+urn:cite:morph:form.pc01022,ptcpl,participle: masculine genitive singular future passive
+urn:cite:morph:form.pc01030,ptcpl,participle: masculine genitive singular aorist active
+urn:cite:morph:form.pc01031,ptcpl,participle: masculine genitive singular aorist middle
+urn:cite:morph:form.pc01032,ptcpl,participle: masculine genitive singular aorist passive
+urn:cite:morph:form.pc01040,ptcpl,participle: masculine genitive singular perfect active
+urn:cite:morph:form.pc01041,ptcpl,participle: masculine genitive singular perfect middle
+urn:cite:morph:form.pc01042,ptcpl,participle: masculine genitive singular perfect passive
+urn:cite:morph:form.pc01050,ptcpl,participle: masculine genitive singular pluperfect active
+urn:cite:morph:form.pc01051,ptcpl,participle: masculine genitive singular pluperfect middle
+urn:cite:morph:form.pc01052,ptcpl,participle: masculine genitive singular pluperfect passive
+urn:cite:morph:form.pc01100,ptcpl,participle: masculine genitive dual present active
+urn:cite:morph:form.pc01101,ptcpl,participle: masculine genitive dual present middle
+urn:cite:morph:form.pc01102,ptcpl,participle: masculine genitive dual present passive
+urn:cite:morph:form.pc01110,ptcpl,participle: masculine genitive dual imperfect active
+urn:cite:morph:form.pc01111,ptcpl,participle: masculine genitive dual imperfect middle
+urn:cite:morph:form.pc01112,ptcpl,participle: masculine genitive dual imperfect passive
+urn:cite:morph:form.pc01120,ptcpl,participle: masculine genitive dual future active
+urn:cite:morph:form.pc01121,ptcpl,participle: masculine genitive dual future middle
+urn:cite:morph:form.pc01122,ptcpl,participle: masculine genitive dual future passive
+urn:cite:morph:form.pc01130,ptcpl,participle: masculine genitive dual aorist active
+urn:cite:morph:form.pc01131,ptcpl,participle: masculine genitive dual aorist middle
+urn:cite:morph:form.pc01132,ptcpl,participle: masculine genitive dual aorist passive
+urn:cite:morph:form.pc01140,ptcpl,participle: masculine genitive dual perfect active
+urn:cite:morph:form.pc01141,ptcpl,participle: masculine genitive dual perfect middle
+urn:cite:morph:form.pc01142,ptcpl,participle: masculine genitive dual perfect passive
+urn:cite:morph:form.pc01150,ptcpl,participle: masculine genitive dual pluperfect active
+urn:cite:morph:form.pc01151,ptcpl,participle: masculine genitive dual pluperfect middle
+urn:cite:morph:form.pc01152,ptcpl,participle: masculine genitive dual pluperfect passive
+urn:cite:morph:form.pc01200,ptcpl,participle: masculine genitive plural present active
+urn:cite:morph:form.pc01201,ptcpl,participle: masculine genitive plural present middle
+urn:cite:morph:form.pc01202,ptcpl,participle: masculine genitive plural present passive
+urn:cite:morph:form.pc01210,ptcpl,participle: masculine genitive plural imperfect active
+urn:cite:morph:form.pc01211,ptcpl,participle: masculine genitive plural imperfect middle
+urn:cite:morph:form.pc01212,ptcpl,participle: masculine genitive plural imperfect passive
+urn:cite:morph:form.pc01220,ptcpl,participle: masculine genitive plural future active
+urn:cite:morph:form.pc01221,ptcpl,participle: masculine genitive plural future middle
+urn:cite:morph:form.pc01222,ptcpl,participle: masculine genitive plural future passive
+urn:cite:morph:form.pc01230,ptcpl,participle: masculine genitive plural aorist active
+urn:cite:morph:form.pc01231,ptcpl,participle: masculine genitive plural aorist middle
+urn:cite:morph:form.pc01232,ptcpl,participle: masculine genitive plural aorist passive
+urn:cite:morph:form.pc01240,ptcpl,participle: masculine genitive plural perfect active
+urn:cite:morph:form.pc01241,ptcpl,participle: masculine genitive plural perfect middle
+urn:cite:morph:form.pc01242,ptcpl,participle: masculine genitive plural perfect passive
+urn:cite:morph:form.pc01250,ptcpl,participle: masculine genitive plural pluperfect active
+urn:cite:morph:form.pc01251,ptcpl,participle: masculine genitive plural pluperfect middle
+urn:cite:morph:form.pc01252,ptcpl,participle: masculine genitive plural pluperfect passive
+urn:cite:morph:form.pc02000,ptcpl,participle: masculine dative singular present active
+urn:cite:morph:form.pc02001,ptcpl,participle: masculine dative singular present middle
+urn:cite:morph:form.pc02002,ptcpl,participle: masculine dative singular present passive
+urn:cite:morph:form.pc02010,ptcpl,participle: masculine dative singular imperfect active
+urn:cite:morph:form.pc02011,ptcpl,participle: masculine dative singular imperfect middle
+urn:cite:morph:form.pc02012,ptcpl,participle: masculine dative singular imperfect passive
+urn:cite:morph:form.pc02020,ptcpl,participle: masculine dative singular future active
+urn:cite:morph:form.pc02021,ptcpl,participle: masculine dative singular future middle
+urn:cite:morph:form.pc02022,ptcpl,participle: masculine dative singular future passive
+urn:cite:morph:form.pc02030,ptcpl,participle: masculine dative singular aorist active
+urn:cite:morph:form.pc02031,ptcpl,participle: masculine dative singular aorist middle
+urn:cite:morph:form.pc02032,ptcpl,participle: masculine dative singular aorist passive
+urn:cite:morph:form.pc02040,ptcpl,participle: masculine dative singular perfect active
+urn:cite:morph:form.pc02041,ptcpl,participle: masculine dative singular perfect middle
+urn:cite:morph:form.pc02042,ptcpl,participle: masculine dative singular perfect passive
+urn:cite:morph:form.pc02050,ptcpl,participle: masculine dative singular pluperfect active
+urn:cite:morph:form.pc02051,ptcpl,participle: masculine dative singular pluperfect middle
+urn:cite:morph:form.pc02052,ptcpl,participle: masculine dative singular pluperfect passive
+urn:cite:morph:form.pc02100,ptcpl,participle: masculine dative dual present active
+urn:cite:morph:form.pc02101,ptcpl,participle: masculine dative dual present middle
+urn:cite:morph:form.pc02102,ptcpl,participle: masculine dative dual present passive
+urn:cite:morph:form.pc02110,ptcpl,participle: masculine dative dual imperfect active
+urn:cite:morph:form.pc02111,ptcpl,participle: masculine dative dual imperfect middle
+urn:cite:morph:form.pc02112,ptcpl,participle: masculine dative dual imperfect passive
+urn:cite:morph:form.pc02120,ptcpl,participle: masculine dative dual future active
+urn:cite:morph:form.pc02121,ptcpl,participle: masculine dative dual future middle
+urn:cite:morph:form.pc02122,ptcpl,participle: masculine dative dual future passive
+urn:cite:morph:form.pc02130,ptcpl,participle: masculine dative dual aorist active
+urn:cite:morph:form.pc02131,ptcpl,participle: masculine dative dual aorist middle
+urn:cite:morph:form.pc02132,ptcpl,participle: masculine dative dual aorist passive
+urn:cite:morph:form.pc02140,ptcpl,participle: masculine dative dual perfect active
+urn:cite:morph:form.pc02141,ptcpl,participle: masculine dative dual perfect middle
+urn:cite:morph:form.pc02142,ptcpl,participle: masculine dative dual perfect passive
+urn:cite:morph:form.pc02150,ptcpl,participle: masculine dative dual pluperfect active
+urn:cite:morph:form.pc02151,ptcpl,participle: masculine dative dual pluperfect middle
+urn:cite:morph:form.pc02152,ptcpl,participle: masculine dative dual pluperfect passive
+urn:cite:morph:form.pc02200,ptcpl,participle: masculine dative plural present active
+urn:cite:morph:form.pc02201,ptcpl,participle: masculine dative plural present middle
+urn:cite:morph:form.pc02202,ptcpl,participle: masculine dative plural present passive
+urn:cite:morph:form.pc02210,ptcpl,participle: masculine dative plural imperfect active
+urn:cite:morph:form.pc02211,ptcpl,participle: masculine dative plural imperfect middle
+urn:cite:morph:form.pc02212,ptcpl,participle: masculine dative plural imperfect passive
+urn:cite:morph:form.pc02220,ptcpl,participle: masculine dative plural future active
+urn:cite:morph:form.pc02221,ptcpl,participle: masculine dative plural future middle
+urn:cite:morph:form.pc02222,ptcpl,participle: masculine dative plural future passive
+urn:cite:morph:form.pc02230,ptcpl,participle: masculine dative plural aorist active
+urn:cite:morph:form.pc02231,ptcpl,participle: masculine dative plural aorist middle
+urn:cite:morph:form.pc02232,ptcpl,participle: masculine dative plural aorist passive
+urn:cite:morph:form.pc02240,ptcpl,participle: masculine dative plural perfect active
+urn:cite:morph:form.pc02241,ptcpl,participle: masculine dative plural perfect middle
+urn:cite:morph:form.pc02242,ptcpl,participle: masculine dative plural perfect passive
+urn:cite:morph:form.pc02250,ptcpl,participle: masculine dative plural pluperfect active
+urn:cite:morph:form.pc02251,ptcpl,participle: masculine dative plural pluperfect middle
+urn:cite:morph:form.pc02252,ptcpl,participle: masculine dative plural pluperfect passive
+urn:cite:morph:form.pc03000,ptcpl,participle: masculine accusative singular present active
+urn:cite:morph:form.pc03001,ptcpl,participle: masculine accusative singular present middle
+urn:cite:morph:form.pc03002,ptcpl,participle: masculine accusative singular present passive
+urn:cite:morph:form.pc03010,ptcpl,participle: masculine accusative singular imperfect active
+urn:cite:morph:form.pc03011,ptcpl,participle: masculine accusative singular imperfect middle
+urn:cite:morph:form.pc03012,ptcpl,participle: masculine accusative singular imperfect passive
+urn:cite:morph:form.pc03020,ptcpl,participle: masculine accusative singular future active
+urn:cite:morph:form.pc03021,ptcpl,participle: masculine accusative singular future middle
+urn:cite:morph:form.pc03022,ptcpl,participle: masculine accusative singular future passive
+urn:cite:morph:form.pc03030,ptcpl,participle: masculine accusative singular aorist active
+urn:cite:morph:form.pc03031,ptcpl,participle: masculine accusative singular aorist middle
+urn:cite:morph:form.pc03032,ptcpl,participle: masculine accusative singular aorist passive
+urn:cite:morph:form.pc03040,ptcpl,participle: masculine accusative singular perfect active
+urn:cite:morph:form.pc03041,ptcpl,participle: masculine accusative singular perfect middle
+urn:cite:morph:form.pc03042,ptcpl,participle: masculine accusative singular perfect passive
+urn:cite:morph:form.pc03050,ptcpl,participle: masculine accusative singular pluperfect active
+urn:cite:morph:form.pc03051,ptcpl,participle: masculine accusative singular pluperfect middle
+urn:cite:morph:form.pc03052,ptcpl,participle: masculine accusative singular pluperfect passive
+urn:cite:morph:form.pc03100,ptcpl,participle: masculine accusative dual present active
+urn:cite:morph:form.pc03101,ptcpl,participle: masculine accusative dual present middle
+urn:cite:morph:form.pc03102,ptcpl,participle: masculine accusative dual present passive
+urn:cite:morph:form.pc03110,ptcpl,participle: masculine accusative dual imperfect active
+urn:cite:morph:form.pc03111,ptcpl,participle: masculine accusative dual imperfect middle
+urn:cite:morph:form.pc03112,ptcpl,participle: masculine accusative dual imperfect passive
+urn:cite:morph:form.pc03120,ptcpl,participle: masculine accusative dual future active
+urn:cite:morph:form.pc03121,ptcpl,participle: masculine accusative dual future middle
+urn:cite:morph:form.pc03122,ptcpl,participle: masculine accusative dual future passive
+urn:cite:morph:form.pc03130,ptcpl,participle: masculine accusative dual aorist active
+urn:cite:morph:form.pc03131,ptcpl,participle: masculine accusative dual aorist middle
+urn:cite:morph:form.pc03132,ptcpl,participle: masculine accusative dual aorist passive
+urn:cite:morph:form.pc03140,ptcpl,participle: masculine accusative dual perfect active
+urn:cite:morph:form.pc03141,ptcpl,participle: masculine accusative dual perfect middle
+urn:cite:morph:form.pc03142,ptcpl,participle: masculine accusative dual perfect passive
+urn:cite:morph:form.pc03150,ptcpl,participle: masculine accusative dual pluperfect active
+urn:cite:morph:form.pc03151,ptcpl,participle: masculine accusative dual pluperfect middle
+urn:cite:morph:form.pc03152,ptcpl,participle: masculine accusative dual pluperfect passive
+urn:cite:morph:form.pc03200,ptcpl,participle: masculine accusative plural present active
+urn:cite:morph:form.pc03201,ptcpl,participle: masculine accusative plural present middle
+urn:cite:morph:form.pc03202,ptcpl,participle: masculine accusative plural present passive
+urn:cite:morph:form.pc03210,ptcpl,participle: masculine accusative plural imperfect active
+urn:cite:morph:form.pc03211,ptcpl,participle: masculine accusative plural imperfect middle
+urn:cite:morph:form.pc03212,ptcpl,participle: masculine accusative plural imperfect passive
+urn:cite:morph:form.pc03220,ptcpl,participle: masculine accusative plural future active
+urn:cite:morph:form.pc03221,ptcpl,participle: masculine accusative plural future middle
+urn:cite:morph:form.pc03222,ptcpl,participle: masculine accusative plural future passive
+urn:cite:morph:form.pc03230,ptcpl,participle: masculine accusative plural aorist active
+urn:cite:morph:form.pc03231,ptcpl,participle: masculine accusative plural aorist middle
+urn:cite:morph:form.pc03232,ptcpl,participle: masculine accusative plural aorist passive
+urn:cite:morph:form.pc03240,ptcpl,participle: masculine accusative plural perfect active
+urn:cite:morph:form.pc03241,ptcpl,participle: masculine accusative plural perfect middle
+urn:cite:morph:form.pc03242,ptcpl,participle: masculine accusative plural perfect passive
+urn:cite:morph:form.pc03250,ptcpl,participle: masculine accusative plural pluperfect active
+urn:cite:morph:form.pc03251,ptcpl,participle: masculine accusative plural pluperfect middle
+urn:cite:morph:form.pc03252,ptcpl,participle: masculine accusative plural pluperfect passive
+urn:cite:morph:form.pc04000,ptcpl,participle: masculine vocative singular present active
+urn:cite:morph:form.pc04001,ptcpl,participle: masculine vocative singular present middle
+urn:cite:morph:form.pc04002,ptcpl,participle: masculine vocative singular present passive
+urn:cite:morph:form.pc04010,ptcpl,participle: masculine vocative singular imperfect active
+urn:cite:morph:form.pc04011,ptcpl,participle: masculine vocative singular imperfect middle
+urn:cite:morph:form.pc04012,ptcpl,participle: masculine vocative singular imperfect passive
+urn:cite:morph:form.pc04020,ptcpl,participle: masculine vocative singular future active
+urn:cite:morph:form.pc04021,ptcpl,participle: masculine vocative singular future middle
+urn:cite:morph:form.pc04022,ptcpl,participle: masculine vocative singular future passive
+urn:cite:morph:form.pc04030,ptcpl,participle: masculine vocative singular aorist active
+urn:cite:morph:form.pc04031,ptcpl,participle: masculine vocative singular aorist middle
+urn:cite:morph:form.pc04032,ptcpl,participle: masculine vocative singular aorist passive
+urn:cite:morph:form.pc04040,ptcpl,participle: masculine vocative singular perfect active
+urn:cite:morph:form.pc04041,ptcpl,participle: masculine vocative singular perfect middle
+urn:cite:morph:form.pc04042,ptcpl,participle: masculine vocative singular perfect passive
+urn:cite:morph:form.pc04050,ptcpl,participle: masculine vocative singular pluperfect active
+urn:cite:morph:form.pc04051,ptcpl,participle: masculine vocative singular pluperfect middle
+urn:cite:morph:form.pc04052,ptcpl,participle: masculine vocative singular pluperfect passive
+urn:cite:morph:form.pc04100,ptcpl,participle: masculine vocative dual present active
+urn:cite:morph:form.pc04101,ptcpl,participle: masculine vocative dual present middle
+urn:cite:morph:form.pc04102,ptcpl,participle: masculine vocative dual present passive
+urn:cite:morph:form.pc04110,ptcpl,participle: masculine vocative dual imperfect active
+urn:cite:morph:form.pc04111,ptcpl,participle: masculine vocative dual imperfect middle
+urn:cite:morph:form.pc04112,ptcpl,participle: masculine vocative dual imperfect passive
+urn:cite:morph:form.pc04120,ptcpl,participle: masculine vocative dual future active
+urn:cite:morph:form.pc04121,ptcpl,participle: masculine vocative dual future middle
+urn:cite:morph:form.pc04122,ptcpl,participle: masculine vocative dual future passive
+urn:cite:morph:form.pc04130,ptcpl,participle: masculine vocative dual aorist active
+urn:cite:morph:form.pc04131,ptcpl,participle: masculine vocative dual aorist middle
+urn:cite:morph:form.pc04132,ptcpl,participle: masculine vocative dual aorist passive
+urn:cite:morph:form.pc04140,ptcpl,participle: masculine vocative dual perfect active
+urn:cite:morph:form.pc04141,ptcpl,participle: masculine vocative dual perfect middle
+urn:cite:morph:form.pc04142,ptcpl,participle: masculine vocative dual perfect passive
+urn:cite:morph:form.pc04150,ptcpl,participle: masculine vocative dual pluperfect active
+urn:cite:morph:form.pc04151,ptcpl,participle: masculine vocative dual pluperfect middle
+urn:cite:morph:form.pc04152,ptcpl,participle: masculine vocative dual pluperfect passive
+urn:cite:morph:form.pc04200,ptcpl,participle: masculine vocative plural present active
+urn:cite:morph:form.pc04201,ptcpl,participle: masculine vocative plural present middle
+urn:cite:morph:form.pc04202,ptcpl,participle: masculine vocative plural present passive
+urn:cite:morph:form.pc04210,ptcpl,participle: masculine vocative plural imperfect active
+urn:cite:morph:form.pc04211,ptcpl,participle: masculine vocative plural imperfect middle
+urn:cite:morph:form.pc04212,ptcpl,participle: masculine vocative plural imperfect passive
+urn:cite:morph:form.pc04220,ptcpl,participle: masculine vocative plural future active
+urn:cite:morph:form.pc04221,ptcpl,participle: masculine vocative plural future middle
+urn:cite:morph:form.pc04222,ptcpl,participle: masculine vocative plural future passive
+urn:cite:morph:form.pc04230,ptcpl,participle: masculine vocative plural aorist active
+urn:cite:morph:form.pc04231,ptcpl,participle: masculine vocative plural aorist middle
+urn:cite:morph:form.pc04232,ptcpl,participle: masculine vocative plural aorist passive
+urn:cite:morph:form.pc04240,ptcpl,participle: masculine vocative plural perfect active
+urn:cite:morph:form.pc04241,ptcpl,participle: masculine vocative plural perfect middle
+urn:cite:morph:form.pc04242,ptcpl,participle: masculine vocative plural perfect passive
+urn:cite:morph:form.pc04250,ptcpl,participle: masculine vocative plural pluperfect active
+urn:cite:morph:form.pc04251,ptcpl,participle: masculine vocative plural pluperfect middle
+urn:cite:morph:form.pc04252,ptcpl,participle: masculine vocative plural pluperfect passive
+urn:cite:morph:form.pc10000,ptcpl,participle: feminine nominative singular present active
+urn:cite:morph:form.pc10001,ptcpl,participle: feminine nominative singular present middle
+urn:cite:morph:form.pc10002,ptcpl,participle: feminine nominative singular present passive
+urn:cite:morph:form.pc10010,ptcpl,participle: feminine nominative singular imperfect active
+urn:cite:morph:form.pc10011,ptcpl,participle: feminine nominative singular imperfect middle
+urn:cite:morph:form.pc10012,ptcpl,participle: feminine nominative singular imperfect passive
+urn:cite:morph:form.pc10020,ptcpl,participle: feminine nominative singular future active
+urn:cite:morph:form.pc10021,ptcpl,participle: feminine nominative singular future middle
+urn:cite:morph:form.pc10022,ptcpl,participle: feminine nominative singular future passive
+urn:cite:morph:form.pc10030,ptcpl,participle: feminine nominative singular aorist active
+urn:cite:morph:form.pc10031,ptcpl,participle: feminine nominative singular aorist middle
+urn:cite:morph:form.pc10032,ptcpl,participle: feminine nominative singular aorist passive
+urn:cite:morph:form.pc10040,ptcpl,participle: feminine nominative singular perfect active
+urn:cite:morph:form.pc10041,ptcpl,participle: feminine nominative singular perfect middle
+urn:cite:morph:form.pc10042,ptcpl,participle: feminine nominative singular perfect passive
+urn:cite:morph:form.pc10050,ptcpl,participle: feminine nominative singular pluperfect active
+urn:cite:morph:form.pc10051,ptcpl,participle: feminine nominative singular pluperfect middle
+urn:cite:morph:form.pc10052,ptcpl,participle: feminine nominative singular pluperfect passive
+urn:cite:morph:form.pc10100,ptcpl,participle: feminine nominative dual present active
+urn:cite:morph:form.pc10101,ptcpl,participle: feminine nominative dual present middle
+urn:cite:morph:form.pc10102,ptcpl,participle: feminine nominative dual present passive
+urn:cite:morph:form.pc10110,ptcpl,participle: feminine nominative dual imperfect active
+urn:cite:morph:form.pc10111,ptcpl,participle: feminine nominative dual imperfect middle
+urn:cite:morph:form.pc10112,ptcpl,participle: feminine nominative dual imperfect passive
+urn:cite:morph:form.pc10120,ptcpl,participle: feminine nominative dual future active
+urn:cite:morph:form.pc10121,ptcpl,participle: feminine nominative dual future middle
+urn:cite:morph:form.pc10122,ptcpl,participle: feminine nominative dual future passive
+urn:cite:morph:form.pc10130,ptcpl,participle: feminine nominative dual aorist active
+urn:cite:morph:form.pc10131,ptcpl,participle: feminine nominative dual aorist middle
+urn:cite:morph:form.pc10132,ptcpl,participle: feminine nominative dual aorist passive
+urn:cite:morph:form.pc10140,ptcpl,participle: feminine nominative dual perfect active
+urn:cite:morph:form.pc10141,ptcpl,participle: feminine nominative dual perfect middle
+urn:cite:morph:form.pc10142,ptcpl,participle: feminine nominative dual perfect passive
+urn:cite:morph:form.pc10150,ptcpl,participle: feminine nominative dual pluperfect active
+urn:cite:morph:form.pc10151,ptcpl,participle: feminine nominative dual pluperfect middle
+urn:cite:morph:form.pc10152,ptcpl,participle: feminine nominative dual pluperfect passive
+urn:cite:morph:form.pc10200,ptcpl,participle: feminine nominative plural present active
+urn:cite:morph:form.pc10201,ptcpl,participle: feminine nominative plural present middle
+urn:cite:morph:form.pc10202,ptcpl,participle: feminine nominative plural present passive
+urn:cite:morph:form.pc10210,ptcpl,participle: feminine nominative plural imperfect active
+urn:cite:morph:form.pc10211,ptcpl,participle: feminine nominative plural imperfect middle
+urn:cite:morph:form.pc10212,ptcpl,participle: feminine nominative plural imperfect passive
+urn:cite:morph:form.pc10220,ptcpl,participle: feminine nominative plural future active
+urn:cite:morph:form.pc10221,ptcpl,participle: feminine nominative plural future middle
+urn:cite:morph:form.pc10222,ptcpl,participle: feminine nominative plural future passive
+urn:cite:morph:form.pc10230,ptcpl,participle: feminine nominative plural aorist active
+urn:cite:morph:form.pc10231,ptcpl,participle: feminine nominative plural aorist middle
+urn:cite:morph:form.pc10232,ptcpl,participle: feminine nominative plural aorist passive
+urn:cite:morph:form.pc10240,ptcpl,participle: feminine nominative plural perfect active
+urn:cite:morph:form.pc10241,ptcpl,participle: feminine nominative plural perfect middle
+urn:cite:morph:form.pc10242,ptcpl,participle: feminine nominative plural perfect passive
+urn:cite:morph:form.pc10250,ptcpl,participle: feminine nominative plural pluperfect active
+urn:cite:morph:form.pc10251,ptcpl,participle: feminine nominative plural pluperfect middle
+urn:cite:morph:form.pc10252,ptcpl,participle: feminine nominative plural pluperfect passive
+urn:cite:morph:form.pc11000,ptcpl,participle: feminine genitive singular present active
+urn:cite:morph:form.pc11001,ptcpl,participle: feminine genitive singular present middle
+urn:cite:morph:form.pc11002,ptcpl,participle: feminine genitive singular present passive
+urn:cite:morph:form.pc11010,ptcpl,participle: feminine genitive singular imperfect active
+urn:cite:morph:form.pc11011,ptcpl,participle: feminine genitive singular imperfect middle
+urn:cite:morph:form.pc11012,ptcpl,participle: feminine genitive singular imperfect passive
+urn:cite:morph:form.pc11020,ptcpl,participle: feminine genitive singular future active
+urn:cite:morph:form.pc11021,ptcpl,participle: feminine genitive singular future middle
+urn:cite:morph:form.pc11022,ptcpl,participle: feminine genitive singular future passive
+urn:cite:morph:form.pc11030,ptcpl,participle: feminine genitive singular aorist active
+urn:cite:morph:form.pc11031,ptcpl,participle: feminine genitive singular aorist middle
+urn:cite:morph:form.pc11032,ptcpl,participle: feminine genitive singular aorist passive
+urn:cite:morph:form.pc11040,ptcpl,participle: feminine genitive singular perfect active
+urn:cite:morph:form.pc11041,ptcpl,participle: feminine genitive singular perfect middle
+urn:cite:morph:form.pc11042,ptcpl,participle: feminine genitive singular perfect passive
+urn:cite:morph:form.pc11050,ptcpl,participle: feminine genitive singular pluperfect active
+urn:cite:morph:form.pc11051,ptcpl,participle: feminine genitive singular pluperfect middle
+urn:cite:morph:form.pc11052,ptcpl,participle: feminine genitive singular pluperfect passive
+urn:cite:morph:form.pc11100,ptcpl,participle: feminine genitive dual present active
+urn:cite:morph:form.pc11101,ptcpl,participle: feminine genitive dual present middle
+urn:cite:morph:form.pc11102,ptcpl,participle: feminine genitive dual present passive
+urn:cite:morph:form.pc11110,ptcpl,participle: feminine genitive dual imperfect active
+urn:cite:morph:form.pc11111,ptcpl,participle: feminine genitive dual imperfect middle
+urn:cite:morph:form.pc11112,ptcpl,participle: feminine genitive dual imperfect passive
+urn:cite:morph:form.pc11120,ptcpl,participle: feminine genitive dual future active
+urn:cite:morph:form.pc11121,ptcpl,participle: feminine genitive dual future middle
+urn:cite:morph:form.pc11122,ptcpl,participle: feminine genitive dual future passive
+urn:cite:morph:form.pc11130,ptcpl,participle: feminine genitive dual aorist active
+urn:cite:morph:form.pc11131,ptcpl,participle: feminine genitive dual aorist middle
+urn:cite:morph:form.pc11132,ptcpl,participle: feminine genitive dual aorist passive
+urn:cite:morph:form.pc11140,ptcpl,participle: feminine genitive dual perfect active
+urn:cite:morph:form.pc11141,ptcpl,participle: feminine genitive dual perfect middle
+urn:cite:morph:form.pc11142,ptcpl,participle: feminine genitive dual perfect passive
+urn:cite:morph:form.pc11150,ptcpl,participle: feminine genitive dual pluperfect active
+urn:cite:morph:form.pc11151,ptcpl,participle: feminine genitive dual pluperfect middle
+urn:cite:morph:form.pc11152,ptcpl,participle: feminine genitive dual pluperfect passive
+urn:cite:morph:form.pc11200,ptcpl,participle: feminine genitive plural present active
+urn:cite:morph:form.pc11201,ptcpl,participle: feminine genitive plural present middle
+urn:cite:morph:form.pc11202,ptcpl,participle: feminine genitive plural present passive
+urn:cite:morph:form.pc11210,ptcpl,participle: feminine genitive plural imperfect active
+urn:cite:morph:form.pc11211,ptcpl,participle: feminine genitive plural imperfect middle
+urn:cite:morph:form.pc11212,ptcpl,participle: feminine genitive plural imperfect passive
+urn:cite:morph:form.pc11220,ptcpl,participle: feminine genitive plural future active
+urn:cite:morph:form.pc11221,ptcpl,participle: feminine genitive plural future middle
+urn:cite:morph:form.pc11222,ptcpl,participle: feminine genitive plural future passive
+urn:cite:morph:form.pc11230,ptcpl,participle: feminine genitive plural aorist active
+urn:cite:morph:form.pc11231,ptcpl,participle: feminine genitive plural aorist middle
+urn:cite:morph:form.pc11232,ptcpl,participle: feminine genitive plural aorist passive
+urn:cite:morph:form.pc11240,ptcpl,participle: feminine genitive plural perfect active
+urn:cite:morph:form.pc11241,ptcpl,participle: feminine genitive plural perfect middle
+urn:cite:morph:form.pc11242,ptcpl,participle: feminine genitive plural perfect passive
+urn:cite:morph:form.pc11250,ptcpl,participle: feminine genitive plural pluperfect active
+urn:cite:morph:form.pc11251,ptcpl,participle: feminine genitive plural pluperfect middle
+urn:cite:morph:form.pc11252,ptcpl,participle: feminine genitive plural pluperfect passive
+urn:cite:morph:form.pc12000,ptcpl,participle: feminine dative singular present active
+urn:cite:morph:form.pc12001,ptcpl,participle: feminine dative singular present middle
+urn:cite:morph:form.pc12002,ptcpl,participle: feminine dative singular present passive
+urn:cite:morph:form.pc12010,ptcpl,participle: feminine dative singular imperfect active
+urn:cite:morph:form.pc12011,ptcpl,participle: feminine dative singular imperfect middle
+urn:cite:morph:form.pc12012,ptcpl,participle: feminine dative singular imperfect passive
+urn:cite:morph:form.pc12020,ptcpl,participle: feminine dative singular future active
+urn:cite:morph:form.pc12021,ptcpl,participle: feminine dative singular future middle
+urn:cite:morph:form.pc12022,ptcpl,participle: feminine dative singular future passive
+urn:cite:morph:form.pc12030,ptcpl,participle: feminine dative singular aorist active
+urn:cite:morph:form.pc12031,ptcpl,participle: feminine dative singular aorist middle
+urn:cite:morph:form.pc12032,ptcpl,participle: feminine dative singular aorist passive
+urn:cite:morph:form.pc12040,ptcpl,participle: feminine dative singular perfect active
+urn:cite:morph:form.pc12041,ptcpl,participle: feminine dative singular perfect middle
+urn:cite:morph:form.pc12042,ptcpl,participle: feminine dative singular perfect passive
+urn:cite:morph:form.pc12050,ptcpl,participle: feminine dative singular pluperfect active
+urn:cite:morph:form.pc12051,ptcpl,participle: feminine dative singular pluperfect middle
+urn:cite:morph:form.pc12052,ptcpl,participle: feminine dative singular pluperfect passive
+urn:cite:morph:form.pc12100,ptcpl,participle: feminine dative dual present active
+urn:cite:morph:form.pc12101,ptcpl,participle: feminine dative dual present middle
+urn:cite:morph:form.pc12102,ptcpl,participle: feminine dative dual present passive
+urn:cite:morph:form.pc12110,ptcpl,participle: feminine dative dual imperfect active
+urn:cite:morph:form.pc12111,ptcpl,participle: feminine dative dual imperfect middle
+urn:cite:morph:form.pc12112,ptcpl,participle: feminine dative dual imperfect passive
+urn:cite:morph:form.pc12120,ptcpl,participle: feminine dative dual future active
+urn:cite:morph:form.pc12121,ptcpl,participle: feminine dative dual future middle
+urn:cite:morph:form.pc12122,ptcpl,participle: feminine dative dual future passive
+urn:cite:morph:form.pc12130,ptcpl,participle: feminine dative dual aorist active
+urn:cite:morph:form.pc12131,ptcpl,participle: feminine dative dual aorist middle
+urn:cite:morph:form.pc12132,ptcpl,participle: feminine dative dual aorist passive
+urn:cite:morph:form.pc12140,ptcpl,participle: feminine dative dual perfect active
+urn:cite:morph:form.pc12141,ptcpl,participle: feminine dative dual perfect middle
+urn:cite:morph:form.pc12142,ptcpl,participle: feminine dative dual perfect passive
+urn:cite:morph:form.pc12150,ptcpl,participle: feminine dative dual pluperfect active
+urn:cite:morph:form.pc12151,ptcpl,participle: feminine dative dual pluperfect middle
+urn:cite:morph:form.pc12152,ptcpl,participle: feminine dative dual pluperfect passive
+urn:cite:morph:form.pc12200,ptcpl,participle: feminine dative plural present active
+urn:cite:morph:form.pc12201,ptcpl,participle: feminine dative plural present middle
+urn:cite:morph:form.pc12202,ptcpl,participle: feminine dative plural present passive
+urn:cite:morph:form.pc12210,ptcpl,participle: feminine dative plural imperfect active
+urn:cite:morph:form.pc12211,ptcpl,participle: feminine dative plural imperfect middle
+urn:cite:morph:form.pc12212,ptcpl,participle: feminine dative plural imperfect passive
+urn:cite:morph:form.pc12220,ptcpl,participle: feminine dative plural future active
+urn:cite:morph:form.pc12221,ptcpl,participle: feminine dative plural future middle
+urn:cite:morph:form.pc12222,ptcpl,participle: feminine dative plural future passive
+urn:cite:morph:form.pc12230,ptcpl,participle: feminine dative plural aorist active
+urn:cite:morph:form.pc12231,ptcpl,participle: feminine dative plural aorist middle
+urn:cite:morph:form.pc12232,ptcpl,participle: feminine dative plural aorist passive
+urn:cite:morph:form.pc12240,ptcpl,participle: feminine dative plural perfect active
+urn:cite:morph:form.pc12241,ptcpl,participle: feminine dative plural perfect middle
+urn:cite:morph:form.pc12242,ptcpl,participle: feminine dative plural perfect passive
+urn:cite:morph:form.pc12250,ptcpl,participle: feminine dative plural pluperfect active
+urn:cite:morph:form.pc12251,ptcpl,participle: feminine dative plural pluperfect middle
+urn:cite:morph:form.pc12252,ptcpl,participle: feminine dative plural pluperfect passive
+urn:cite:morph:form.pc13000,ptcpl,participle: feminine accusative singular present active
+urn:cite:morph:form.pc13001,ptcpl,participle: feminine accusative singular present middle
+urn:cite:morph:form.pc13002,ptcpl,participle: feminine accusative singular present passive
+urn:cite:morph:form.pc13010,ptcpl,participle: feminine accusative singular imperfect active
+urn:cite:morph:form.pc13011,ptcpl,participle: feminine accusative singular imperfect middle
+urn:cite:morph:form.pc13012,ptcpl,participle: feminine accusative singular imperfect passive
+urn:cite:morph:form.pc13020,ptcpl,participle: feminine accusative singular future active
+urn:cite:morph:form.pc13021,ptcpl,participle: feminine accusative singular future middle
+urn:cite:morph:form.pc13022,ptcpl,participle: feminine accusative singular future passive
+urn:cite:morph:form.pc13030,ptcpl,participle: feminine accusative singular aorist active
+urn:cite:morph:form.pc13031,ptcpl,participle: feminine accusative singular aorist middle
+urn:cite:morph:form.pc13032,ptcpl,participle: feminine accusative singular aorist passive
+urn:cite:morph:form.pc13040,ptcpl,participle: feminine accusative singular perfect active
+urn:cite:morph:form.pc13041,ptcpl,participle: feminine accusative singular perfect middle
+urn:cite:morph:form.pc13042,ptcpl,participle: feminine accusative singular perfect passive
+urn:cite:morph:form.pc13050,ptcpl,participle: feminine accusative singular pluperfect active
+urn:cite:morph:form.pc13051,ptcpl,participle: feminine accusative singular pluperfect middle
+urn:cite:morph:form.pc13052,ptcpl,participle: feminine accusative singular pluperfect passive
+urn:cite:morph:form.pc13100,ptcpl,participle: feminine accusative dual present active
+urn:cite:morph:form.pc13101,ptcpl,participle: feminine accusative dual present middle
+urn:cite:morph:form.pc13102,ptcpl,participle: feminine accusative dual present passive
+urn:cite:morph:form.pc13110,ptcpl,participle: feminine accusative dual imperfect active
+urn:cite:morph:form.pc13111,ptcpl,participle: feminine accusative dual imperfect middle
+urn:cite:morph:form.pc13112,ptcpl,participle: feminine accusative dual imperfect passive
+urn:cite:morph:form.pc13120,ptcpl,participle: feminine accusative dual future active
+urn:cite:morph:form.pc13121,ptcpl,participle: feminine accusative dual future middle
+urn:cite:morph:form.pc13122,ptcpl,participle: feminine accusative dual future passive
+urn:cite:morph:form.pc13130,ptcpl,participle: feminine accusative dual aorist active
+urn:cite:morph:form.pc13131,ptcpl,participle: feminine accusative dual aorist middle
+urn:cite:morph:form.pc13132,ptcpl,participle: feminine accusative dual aorist passive
+urn:cite:morph:form.pc13140,ptcpl,participle: feminine accusative dual perfect active
+urn:cite:morph:form.pc13141,ptcpl,participle: feminine accusative dual perfect middle
+urn:cite:morph:form.pc13142,ptcpl,participle: feminine accusative dual perfect passive
+urn:cite:morph:form.pc13150,ptcpl,participle: feminine accusative dual pluperfect active
+urn:cite:morph:form.pc13151,ptcpl,participle: feminine accusative dual pluperfect middle
+urn:cite:morph:form.pc13152,ptcpl,participle: feminine accusative dual pluperfect passive
+urn:cite:morph:form.pc13200,ptcpl,participle: feminine accusative plural present active
+urn:cite:morph:form.pc13201,ptcpl,participle: feminine accusative plural present middle
+urn:cite:morph:form.pc13202,ptcpl,participle: feminine accusative plural present passive
+urn:cite:morph:form.pc13210,ptcpl,participle: feminine accusative plural imperfect active
+urn:cite:morph:form.pc13211,ptcpl,participle: feminine accusative plural imperfect middle
+urn:cite:morph:form.pc13212,ptcpl,participle: feminine accusative plural imperfect passive
+urn:cite:morph:form.pc13220,ptcpl,participle: feminine accusative plural future active
+urn:cite:morph:form.pc13221,ptcpl,participle: feminine accusative plural future middle
+urn:cite:morph:form.pc13222,ptcpl,participle: feminine accusative plural future passive
+urn:cite:morph:form.pc13230,ptcpl,participle: feminine accusative plural aorist active
+urn:cite:morph:form.pc13231,ptcpl,participle: feminine accusative plural aorist middle
+urn:cite:morph:form.pc13232,ptcpl,participle: feminine accusative plural aorist passive
+urn:cite:morph:form.pc13240,ptcpl,participle: feminine accusative plural perfect active
+urn:cite:morph:form.pc13241,ptcpl,participle: feminine accusative plural perfect middle
+urn:cite:morph:form.pc13242,ptcpl,participle: feminine accusative plural perfect passive
+urn:cite:morph:form.pc13250,ptcpl,participle: feminine accusative plural pluperfect active
+urn:cite:morph:form.pc13251,ptcpl,participle: feminine accusative plural pluperfect middle
+urn:cite:morph:form.pc13252,ptcpl,participle: feminine accusative plural pluperfect passive
+urn:cite:morph:form.pc14000,ptcpl,participle: feminine vocative singular present active
+urn:cite:morph:form.pc14001,ptcpl,participle: feminine vocative singular present middle
+urn:cite:morph:form.pc14002,ptcpl,participle: feminine vocative singular present passive
+urn:cite:morph:form.pc14010,ptcpl,participle: feminine vocative singular imperfect active
+urn:cite:morph:form.pc14011,ptcpl,participle: feminine vocative singular imperfect middle
+urn:cite:morph:form.pc14012,ptcpl,participle: feminine vocative singular imperfect passive
+urn:cite:morph:form.pc14020,ptcpl,participle: feminine vocative singular future active
+urn:cite:morph:form.pc14021,ptcpl,participle: feminine vocative singular future middle
+urn:cite:morph:form.pc14022,ptcpl,participle: feminine vocative singular future passive
+urn:cite:morph:form.pc14030,ptcpl,participle: feminine vocative singular aorist active
+urn:cite:morph:form.pc14031,ptcpl,participle: feminine vocative singular aorist middle
+urn:cite:morph:form.pc14032,ptcpl,participle: feminine vocative singular aorist passive
+urn:cite:morph:form.pc14040,ptcpl,participle: feminine vocative singular perfect active
+urn:cite:morph:form.pc14041,ptcpl,participle: feminine vocative singular perfect middle
+urn:cite:morph:form.pc14042,ptcpl,participle: feminine vocative singular perfect passive
+urn:cite:morph:form.pc14050,ptcpl,participle: feminine vocative singular pluperfect active
+urn:cite:morph:form.pc14051,ptcpl,participle: feminine vocative singular pluperfect middle
+urn:cite:morph:form.pc14052,ptcpl,participle: feminine vocative singular pluperfect passive
+urn:cite:morph:form.pc14100,ptcpl,participle: feminine vocative dual present active
+urn:cite:morph:form.pc14101,ptcpl,participle: feminine vocative dual present middle
+urn:cite:morph:form.pc14102,ptcpl,participle: feminine vocative dual present passive
+urn:cite:morph:form.pc14110,ptcpl,participle: feminine vocative dual imperfect active
+urn:cite:morph:form.pc14111,ptcpl,participle: feminine vocative dual imperfect middle
+urn:cite:morph:form.pc14112,ptcpl,participle: feminine vocative dual imperfect passive
+urn:cite:morph:form.pc14120,ptcpl,participle: feminine vocative dual future active
+urn:cite:morph:form.pc14121,ptcpl,participle: feminine vocative dual future middle
+urn:cite:morph:form.pc14122,ptcpl,participle: feminine vocative dual future passive
+urn:cite:morph:form.pc14130,ptcpl,participle: feminine vocative dual aorist active
+urn:cite:morph:form.pc14131,ptcpl,participle: feminine vocative dual aorist middle
+urn:cite:morph:form.pc14132,ptcpl,participle: feminine vocative dual aorist passive
+urn:cite:morph:form.pc14140,ptcpl,participle: feminine vocative dual perfect active
+urn:cite:morph:form.pc14141,ptcpl,participle: feminine vocative dual perfect middle
+urn:cite:morph:form.pc14142,ptcpl,participle: feminine vocative dual perfect passive
+urn:cite:morph:form.pc14150,ptcpl,participle: feminine vocative dual pluperfect active
+urn:cite:morph:form.pc14151,ptcpl,participle: feminine vocative dual pluperfect middle
+urn:cite:morph:form.pc14152,ptcpl,participle: feminine vocative dual pluperfect passive
+urn:cite:morph:form.pc14200,ptcpl,participle: feminine vocative plural present active
+urn:cite:morph:form.pc14201,ptcpl,participle: feminine vocative plural present middle
+urn:cite:morph:form.pc14202,ptcpl,participle: feminine vocative plural present passive
+urn:cite:morph:form.pc14210,ptcpl,participle: feminine vocative plural imperfect active
+urn:cite:morph:form.pc14211,ptcpl,participle: feminine vocative plural imperfect middle
+urn:cite:morph:form.pc14212,ptcpl,participle: feminine vocative plural imperfect passive
+urn:cite:morph:form.pc14220,ptcpl,participle: feminine vocative plural future active
+urn:cite:morph:form.pc14221,ptcpl,participle: feminine vocative plural future middle
+urn:cite:morph:form.pc14222,ptcpl,participle: feminine vocative plural future passive
+urn:cite:morph:form.pc14230,ptcpl,participle: feminine vocative plural aorist active
+urn:cite:morph:form.pc14231,ptcpl,participle: feminine vocative plural aorist middle
+urn:cite:morph:form.pc14232,ptcpl,participle: feminine vocative plural aorist passive
+urn:cite:morph:form.pc14240,ptcpl,participle: feminine vocative plural perfect active
+urn:cite:morph:form.pc14241,ptcpl,participle: feminine vocative plural perfect middle
+urn:cite:morph:form.pc14242,ptcpl,participle: feminine vocative plural perfect passive
+urn:cite:morph:form.pc14250,ptcpl,participle: feminine vocative plural pluperfect active
+urn:cite:morph:form.pc14251,ptcpl,participle: feminine vocative plural pluperfect middle
+urn:cite:morph:form.pc14252,ptcpl,participle: feminine vocative plural pluperfect passive
+urn:cite:morph:form.pc20000,ptcpl,participle: neuter nominative singular present active
+urn:cite:morph:form.pc20001,ptcpl,participle: neuter nominative singular present middle
+urn:cite:morph:form.pc20002,ptcpl,participle: neuter nominative singular present passive
+urn:cite:morph:form.pc20010,ptcpl,participle: neuter nominative singular imperfect active
+urn:cite:morph:form.pc20011,ptcpl,participle: neuter nominative singular imperfect middle
+urn:cite:morph:form.pc20012,ptcpl,participle: neuter nominative singular imperfect passive
+urn:cite:morph:form.pc20020,ptcpl,participle: neuter nominative singular future active
+urn:cite:morph:form.pc20021,ptcpl,participle: neuter nominative singular future middle
+urn:cite:morph:form.pc20022,ptcpl,participle: neuter nominative singular future passive
+urn:cite:morph:form.pc20030,ptcpl,participle: neuter nominative singular aorist active
+urn:cite:morph:form.pc20031,ptcpl,participle: neuter nominative singular aorist middle
+urn:cite:morph:form.pc20032,ptcpl,participle: neuter nominative singular aorist passive
+urn:cite:morph:form.pc20040,ptcpl,participle: neuter nominative singular perfect active
+urn:cite:morph:form.pc20041,ptcpl,participle: neuter nominative singular perfect middle
+urn:cite:morph:form.pc20042,ptcpl,participle: neuter nominative singular perfect passive
+urn:cite:morph:form.pc20050,ptcpl,participle: neuter nominative singular pluperfect active
+urn:cite:morph:form.pc20051,ptcpl,participle: neuter nominative singular pluperfect middle
+urn:cite:morph:form.pc20052,ptcpl,participle: neuter nominative singular pluperfect passive
+urn:cite:morph:form.pc20100,ptcpl,participle: neuter nominative dual present active
+urn:cite:morph:form.pc20101,ptcpl,participle: neuter nominative dual present middle
+urn:cite:morph:form.pc20102,ptcpl,participle: neuter nominative dual present passive
+urn:cite:morph:form.pc20110,ptcpl,participle: neuter nominative dual imperfect active
+urn:cite:morph:form.pc20111,ptcpl,participle: neuter nominative dual imperfect middle
+urn:cite:morph:form.pc20112,ptcpl,participle: neuter nominative dual imperfect passive
+urn:cite:morph:form.pc20120,ptcpl,participle: neuter nominative dual future active
+urn:cite:morph:form.pc20121,ptcpl,participle: neuter nominative dual future middle
+urn:cite:morph:form.pc20122,ptcpl,participle: neuter nominative dual future passive
+urn:cite:morph:form.pc20130,ptcpl,participle: neuter nominative dual aorist active
+urn:cite:morph:form.pc20131,ptcpl,participle: neuter nominative dual aorist middle
+urn:cite:morph:form.pc20132,ptcpl,participle: neuter nominative dual aorist passive
+urn:cite:morph:form.pc20140,ptcpl,participle: neuter nominative dual perfect active
+urn:cite:morph:form.pc20141,ptcpl,participle: neuter nominative dual perfect middle
+urn:cite:morph:form.pc20142,ptcpl,participle: neuter nominative dual perfect passive
+urn:cite:morph:form.pc20150,ptcpl,participle: neuter nominative dual pluperfect active
+urn:cite:morph:form.pc20151,ptcpl,participle: neuter nominative dual pluperfect middle
+urn:cite:morph:form.pc20152,ptcpl,participle: neuter nominative dual pluperfect passive
+urn:cite:morph:form.pc20200,ptcpl,participle: neuter nominative plural present active
+urn:cite:morph:form.pc20201,ptcpl,participle: neuter nominative plural present middle
+urn:cite:morph:form.pc20202,ptcpl,participle: neuter nominative plural present passive
+urn:cite:morph:form.pc20210,ptcpl,participle: neuter nominative plural imperfect active
+urn:cite:morph:form.pc20211,ptcpl,participle: neuter nominative plural imperfect middle
+urn:cite:morph:form.pc20212,ptcpl,participle: neuter nominative plural imperfect passive
+urn:cite:morph:form.pc20220,ptcpl,participle: neuter nominative plural future active
+urn:cite:morph:form.pc20221,ptcpl,participle: neuter nominative plural future middle
+urn:cite:morph:form.pc20222,ptcpl,participle: neuter nominative plural future passive
+urn:cite:morph:form.pc20230,ptcpl,participle: neuter nominative plural aorist active
+urn:cite:morph:form.pc20231,ptcpl,participle: neuter nominative plural aorist middle
+urn:cite:morph:form.pc20232,ptcpl,participle: neuter nominative plural aorist passive
+urn:cite:morph:form.pc20240,ptcpl,participle: neuter nominative plural perfect active
+urn:cite:morph:form.pc20241,ptcpl,participle: neuter nominative plural perfect middle
+urn:cite:morph:form.pc20242,ptcpl,participle: neuter nominative plural perfect passive
+urn:cite:morph:form.pc20250,ptcpl,participle: neuter nominative plural pluperfect active
+urn:cite:morph:form.pc20251,ptcpl,participle: neuter nominative plural pluperfect middle
+urn:cite:morph:form.pc20252,ptcpl,participle: neuter nominative plural pluperfect passive
+urn:cite:morph:form.pc21000,ptcpl,participle: neuter genitive singular present active
+urn:cite:morph:form.pc21001,ptcpl,participle: neuter genitive singular present middle
+urn:cite:morph:form.pc21002,ptcpl,participle: neuter genitive singular present passive
+urn:cite:morph:form.pc21010,ptcpl,participle: neuter genitive singular imperfect active
+urn:cite:morph:form.pc21011,ptcpl,participle: neuter genitive singular imperfect middle
+urn:cite:morph:form.pc21012,ptcpl,participle: neuter genitive singular imperfect passive
+urn:cite:morph:form.pc21020,ptcpl,participle: neuter genitive singular future active
+urn:cite:morph:form.pc21021,ptcpl,participle: neuter genitive singular future middle
+urn:cite:morph:form.pc21022,ptcpl,participle: neuter genitive singular future passive
+urn:cite:morph:form.pc21030,ptcpl,participle: neuter genitive singular aorist active
+urn:cite:morph:form.pc21031,ptcpl,participle: neuter genitive singular aorist middle
+urn:cite:morph:form.pc21032,ptcpl,participle: neuter genitive singular aorist passive
+urn:cite:morph:form.pc21040,ptcpl,participle: neuter genitive singular perfect active
+urn:cite:morph:form.pc21041,ptcpl,participle: neuter genitive singular perfect middle
+urn:cite:morph:form.pc21042,ptcpl,participle: neuter genitive singular perfect passive
+urn:cite:morph:form.pc21050,ptcpl,participle: neuter genitive singular pluperfect active
+urn:cite:morph:form.pc21051,ptcpl,participle: neuter genitive singular pluperfect middle
+urn:cite:morph:form.pc21052,ptcpl,participle: neuter genitive singular pluperfect passive
+urn:cite:morph:form.pc21100,ptcpl,participle: neuter genitive dual present active
+urn:cite:morph:form.pc21101,ptcpl,participle: neuter genitive dual present middle
+urn:cite:morph:form.pc21102,ptcpl,participle: neuter genitive dual present passive
+urn:cite:morph:form.pc21110,ptcpl,participle: neuter genitive dual imperfect active
+urn:cite:morph:form.pc21111,ptcpl,participle: neuter genitive dual imperfect middle
+urn:cite:morph:form.pc21112,ptcpl,participle: neuter genitive dual imperfect passive
+urn:cite:morph:form.pc21120,ptcpl,participle: neuter genitive dual future active
+urn:cite:morph:form.pc21121,ptcpl,participle: neuter genitive dual future middle
+urn:cite:morph:form.pc21122,ptcpl,participle: neuter genitive dual future passive
+urn:cite:morph:form.pc21130,ptcpl,participle: neuter genitive dual aorist active
+urn:cite:morph:form.pc21131,ptcpl,participle: neuter genitive dual aorist middle
+urn:cite:morph:form.pc21132,ptcpl,participle: neuter genitive dual aorist passive
+urn:cite:morph:form.pc21140,ptcpl,participle: neuter genitive dual perfect active
+urn:cite:morph:form.pc21141,ptcpl,participle: neuter genitive dual perfect middle
+urn:cite:morph:form.pc21142,ptcpl,participle: neuter genitive dual perfect passive
+urn:cite:morph:form.pc21150,ptcpl,participle: neuter genitive dual pluperfect active
+urn:cite:morph:form.pc21151,ptcpl,participle: neuter genitive dual pluperfect middle
+urn:cite:morph:form.pc21152,ptcpl,participle: neuter genitive dual pluperfect passive
+urn:cite:morph:form.pc21200,ptcpl,participle: neuter genitive plural present active
+urn:cite:morph:form.pc21201,ptcpl,participle: neuter genitive plural present middle
+urn:cite:morph:form.pc21202,ptcpl,participle: neuter genitive plural present passive
+urn:cite:morph:form.pc21210,ptcpl,participle: neuter genitive plural imperfect active
+urn:cite:morph:form.pc21211,ptcpl,participle: neuter genitive plural imperfect middle
+urn:cite:morph:form.pc21212,ptcpl,participle: neuter genitive plural imperfect passive
+urn:cite:morph:form.pc21220,ptcpl,participle: neuter genitive plural future active
+urn:cite:morph:form.pc21221,ptcpl,participle: neuter genitive plural future middle
+urn:cite:morph:form.pc21222,ptcpl,participle: neuter genitive plural future passive
+urn:cite:morph:form.pc21230,ptcpl,participle: neuter genitive plural aorist active
+urn:cite:morph:form.pc21231,ptcpl,participle: neuter genitive plural aorist middle
+urn:cite:morph:form.pc21232,ptcpl,participle: neuter genitive plural aorist passive
+urn:cite:morph:form.pc21240,ptcpl,participle: neuter genitive plural perfect active
+urn:cite:morph:form.pc21241,ptcpl,participle: neuter genitive plural perfect middle
+urn:cite:morph:form.pc21242,ptcpl,participle: neuter genitive plural perfect passive
+urn:cite:morph:form.pc21250,ptcpl,participle: neuter genitive plural pluperfect active
+urn:cite:morph:form.pc21251,ptcpl,participle: neuter genitive plural pluperfect middle
+urn:cite:morph:form.pc21252,ptcpl,participle: neuter genitive plural pluperfect passive
+urn:cite:morph:form.pc22000,ptcpl,participle: neuter dative singular present active
+urn:cite:morph:form.pc22001,ptcpl,participle: neuter dative singular present middle
+urn:cite:morph:form.pc22002,ptcpl,participle: neuter dative singular present passive
+urn:cite:morph:form.pc22010,ptcpl,participle: neuter dative singular imperfect active
+urn:cite:morph:form.pc22011,ptcpl,participle: neuter dative singular imperfect middle
+urn:cite:morph:form.pc22012,ptcpl,participle: neuter dative singular imperfect passive
+urn:cite:morph:form.pc22020,ptcpl,participle: neuter dative singular future active
+urn:cite:morph:form.pc22021,ptcpl,participle: neuter dative singular future middle
+urn:cite:morph:form.pc22022,ptcpl,participle: neuter dative singular future passive
+urn:cite:morph:form.pc22030,ptcpl,participle: neuter dative singular aorist active
+urn:cite:morph:form.pc22031,ptcpl,participle: neuter dative singular aorist middle
+urn:cite:morph:form.pc22032,ptcpl,participle: neuter dative singular aorist passive
+urn:cite:morph:form.pc22040,ptcpl,participle: neuter dative singular perfect active
+urn:cite:morph:form.pc22041,ptcpl,participle: neuter dative singular perfect middle
+urn:cite:morph:form.pc22042,ptcpl,participle: neuter dative singular perfect passive
+urn:cite:morph:form.pc22050,ptcpl,participle: neuter dative singular pluperfect active
+urn:cite:morph:form.pc22051,ptcpl,participle: neuter dative singular pluperfect middle
+urn:cite:morph:form.pc22052,ptcpl,participle: neuter dative singular pluperfect passive
+urn:cite:morph:form.pc22100,ptcpl,participle: neuter dative dual present active
+urn:cite:morph:form.pc22101,ptcpl,participle: neuter dative dual present middle
+urn:cite:morph:form.pc22102,ptcpl,participle: neuter dative dual present passive
+urn:cite:morph:form.pc22110,ptcpl,participle: neuter dative dual imperfect active
+urn:cite:morph:form.pc22111,ptcpl,participle: neuter dative dual imperfect middle
+urn:cite:morph:form.pc22112,ptcpl,participle: neuter dative dual imperfect passive
+urn:cite:morph:form.pc22120,ptcpl,participle: neuter dative dual future active
+urn:cite:morph:form.pc22121,ptcpl,participle: neuter dative dual future middle
+urn:cite:morph:form.pc22122,ptcpl,participle: neuter dative dual future passive
+urn:cite:morph:form.pc22130,ptcpl,participle: neuter dative dual aorist active
+urn:cite:morph:form.pc22131,ptcpl,participle: neuter dative dual aorist middle
+urn:cite:morph:form.pc22132,ptcpl,participle: neuter dative dual aorist passive
+urn:cite:morph:form.pc22140,ptcpl,participle: neuter dative dual perfect active
+urn:cite:morph:form.pc22141,ptcpl,participle: neuter dative dual perfect middle
+urn:cite:morph:form.pc22142,ptcpl,participle: neuter dative dual perfect passive
+urn:cite:morph:form.pc22150,ptcpl,participle: neuter dative dual pluperfect active
+urn:cite:morph:form.pc22151,ptcpl,participle: neuter dative dual pluperfect middle
+urn:cite:morph:form.pc22152,ptcpl,participle: neuter dative dual pluperfect passive
+urn:cite:morph:form.pc22200,ptcpl,participle: neuter dative plural present active
+urn:cite:morph:form.pc22201,ptcpl,participle: neuter dative plural present middle
+urn:cite:morph:form.pc22202,ptcpl,participle: neuter dative plural present passive
+urn:cite:morph:form.pc22210,ptcpl,participle: neuter dative plural imperfect active
+urn:cite:morph:form.pc22211,ptcpl,participle: neuter dative plural imperfect middle
+urn:cite:morph:form.pc22212,ptcpl,participle: neuter dative plural imperfect passive
+urn:cite:morph:form.pc22220,ptcpl,participle: neuter dative plural future active
+urn:cite:morph:form.pc22221,ptcpl,participle: neuter dative plural future middle
+urn:cite:morph:form.pc22222,ptcpl,participle: neuter dative plural future passive
+urn:cite:morph:form.pc22230,ptcpl,participle: neuter dative plural aorist active
+urn:cite:morph:form.pc22231,ptcpl,participle: neuter dative plural aorist middle
+urn:cite:morph:form.pc22232,ptcpl,participle: neuter dative plural aorist passive
+urn:cite:morph:form.pc22240,ptcpl,participle: neuter dative plural perfect active
+urn:cite:morph:form.pc22241,ptcpl,participle: neuter dative plural perfect middle
+urn:cite:morph:form.pc22242,ptcpl,participle: neuter dative plural perfect passive
+urn:cite:morph:form.pc22250,ptcpl,participle: neuter dative plural pluperfect active
+urn:cite:morph:form.pc22251,ptcpl,participle: neuter dative plural pluperfect middle
+urn:cite:morph:form.pc22252,ptcpl,participle: neuter dative plural pluperfect passive
+urn:cite:morph:form.pc23000,ptcpl,participle: neuter accusative singular present active
+urn:cite:morph:form.pc23001,ptcpl,participle: neuter accusative singular present middle
+urn:cite:morph:form.pc23002,ptcpl,participle: neuter accusative singular present passive
+urn:cite:morph:form.pc23010,ptcpl,participle: neuter accusative singular imperfect active
+urn:cite:morph:form.pc23011,ptcpl,participle: neuter accusative singular imperfect middle
+urn:cite:morph:form.pc23012,ptcpl,participle: neuter accusative singular imperfect passive
+urn:cite:morph:form.pc23020,ptcpl,participle: neuter accusative singular future active
+urn:cite:morph:form.pc23021,ptcpl,participle: neuter accusative singular future middle
+urn:cite:morph:form.pc23022,ptcpl,participle: neuter accusative singular future passive
+urn:cite:morph:form.pc23030,ptcpl,participle: neuter accusative singular aorist active
+urn:cite:morph:form.pc23031,ptcpl,participle: neuter accusative singular aorist middle
+urn:cite:morph:form.pc23032,ptcpl,participle: neuter accusative singular aorist passive
+urn:cite:morph:form.pc23040,ptcpl,participle: neuter accusative singular perfect active
+urn:cite:morph:form.pc23041,ptcpl,participle: neuter accusative singular perfect middle
+urn:cite:morph:form.pc23042,ptcpl,participle: neuter accusative singular perfect passive
+urn:cite:morph:form.pc23050,ptcpl,participle: neuter accusative singular pluperfect active
+urn:cite:morph:form.pc23051,ptcpl,participle: neuter accusative singular pluperfect middle
+urn:cite:morph:form.pc23052,ptcpl,participle: neuter accusative singular pluperfect passive
+urn:cite:morph:form.pc23100,ptcpl,participle: neuter accusative dual present active
+urn:cite:morph:form.pc23101,ptcpl,participle: neuter accusative dual present middle
+urn:cite:morph:form.pc23102,ptcpl,participle: neuter accusative dual present passive
+urn:cite:morph:form.pc23110,ptcpl,participle: neuter accusative dual imperfect active
+urn:cite:morph:form.pc23111,ptcpl,participle: neuter accusative dual imperfect middle
+urn:cite:morph:form.pc23112,ptcpl,participle: neuter accusative dual imperfect passive
+urn:cite:morph:form.pc23120,ptcpl,participle: neuter accusative dual future active
+urn:cite:morph:form.pc23121,ptcpl,participle: neuter accusative dual future middle
+urn:cite:morph:form.pc23122,ptcpl,participle: neuter accusative dual future passive
+urn:cite:morph:form.pc23130,ptcpl,participle: neuter accusative dual aorist active
+urn:cite:morph:form.pc23131,ptcpl,participle: neuter accusative dual aorist middle
+urn:cite:morph:form.pc23132,ptcpl,participle: neuter accusative dual aorist passive
+urn:cite:morph:form.pc23140,ptcpl,participle: neuter accusative dual perfect active
+urn:cite:morph:form.pc23141,ptcpl,participle: neuter accusative dual perfect middle
+urn:cite:morph:form.pc23142,ptcpl,participle: neuter accusative dual perfect passive
+urn:cite:morph:form.pc23150,ptcpl,participle: neuter accusative dual pluperfect active
+urn:cite:morph:form.pc23151,ptcpl,participle: neuter accusative dual pluperfect middle
+urn:cite:morph:form.pc23152,ptcpl,participle: neuter accusative dual pluperfect passive
+urn:cite:morph:form.pc23200,ptcpl,participle: neuter accusative plural present active
+urn:cite:morph:form.pc23201,ptcpl,participle: neuter accusative plural present middle
+urn:cite:morph:form.pc23202,ptcpl,participle: neuter accusative plural present passive
+urn:cite:morph:form.pc23210,ptcpl,participle: neuter accusative plural imperfect active
+urn:cite:morph:form.pc23211,ptcpl,participle: neuter accusative plural imperfect middle
+urn:cite:morph:form.pc23212,ptcpl,participle: neuter accusative plural imperfect passive
+urn:cite:morph:form.pc23220,ptcpl,participle: neuter accusative plural future active
+urn:cite:morph:form.pc23221,ptcpl,participle: neuter accusative plural future middle
+urn:cite:morph:form.pc23222,ptcpl,participle: neuter accusative plural future passive
+urn:cite:morph:form.pc23230,ptcpl,participle: neuter accusative plural aorist active
+urn:cite:morph:form.pc23231,ptcpl,participle: neuter accusative plural aorist middle
+urn:cite:morph:form.pc23232,ptcpl,participle: neuter accusative plural aorist passive
+urn:cite:morph:form.pc23240,ptcpl,participle: neuter accusative plural perfect active
+urn:cite:morph:form.pc23241,ptcpl,participle: neuter accusative plural perfect middle
+urn:cite:morph:form.pc23242,ptcpl,participle: neuter accusative plural perfect passive
+urn:cite:morph:form.pc23250,ptcpl,participle: neuter accusative plural pluperfect active
+urn:cite:morph:form.pc23251,ptcpl,participle: neuter accusative plural pluperfect middle
+urn:cite:morph:form.pc23252,ptcpl,participle: neuter accusative plural pluperfect passive
+urn:cite:morph:form.pc24000,ptcpl,participle: neuter vocative singular present active
+urn:cite:morph:form.pc24001,ptcpl,participle: neuter vocative singular present middle
+urn:cite:morph:form.pc24002,ptcpl,participle: neuter vocative singular present passive
+urn:cite:morph:form.pc24010,ptcpl,participle: neuter vocative singular imperfect active
+urn:cite:morph:form.pc24011,ptcpl,participle: neuter vocative singular imperfect middle
+urn:cite:morph:form.pc24012,ptcpl,participle: neuter vocative singular imperfect passive
+urn:cite:morph:form.pc24020,ptcpl,participle: neuter vocative singular future active
+urn:cite:morph:form.pc24021,ptcpl,participle: neuter vocative singular future middle
+urn:cite:morph:form.pc24022,ptcpl,participle: neuter vocative singular future passive
+urn:cite:morph:form.pc24030,ptcpl,participle: neuter vocative singular aorist active
+urn:cite:morph:form.pc24031,ptcpl,participle: neuter vocative singular aorist middle
+urn:cite:morph:form.pc24032,ptcpl,participle: neuter vocative singular aorist passive
+urn:cite:morph:form.pc24040,ptcpl,participle: neuter vocative singular perfect active
+urn:cite:morph:form.pc24041,ptcpl,participle: neuter vocative singular perfect middle
+urn:cite:morph:form.pc24042,ptcpl,participle: neuter vocative singular perfect passive
+urn:cite:morph:form.pc24050,ptcpl,participle: neuter vocative singular pluperfect active
+urn:cite:morph:form.pc24051,ptcpl,participle: neuter vocative singular pluperfect middle
+urn:cite:morph:form.pc24052,ptcpl,participle: neuter vocative singular pluperfect passive
+urn:cite:morph:form.pc24100,ptcpl,participle: neuter vocative dual present active
+urn:cite:morph:form.pc24101,ptcpl,participle: neuter vocative dual present middle
+urn:cite:morph:form.pc24102,ptcpl,participle: neuter vocative dual present passive
+urn:cite:morph:form.pc24110,ptcpl,participle: neuter vocative dual imperfect active
+urn:cite:morph:form.pc24111,ptcpl,participle: neuter vocative dual imperfect middle
+urn:cite:morph:form.pc24112,ptcpl,participle: neuter vocative dual imperfect passive
+urn:cite:morph:form.pc24120,ptcpl,participle: neuter vocative dual future active
+urn:cite:morph:form.pc24121,ptcpl,participle: neuter vocative dual future middle
+urn:cite:morph:form.pc24122,ptcpl,participle: neuter vocative dual future passive
+urn:cite:morph:form.pc24130,ptcpl,participle: neuter vocative dual aorist active
+urn:cite:morph:form.pc24131,ptcpl,participle: neuter vocative dual aorist middle
+urn:cite:morph:form.pc24132,ptcpl,participle: neuter vocative dual aorist passive
+urn:cite:morph:form.pc24140,ptcpl,participle: neuter vocative dual perfect active
+urn:cite:morph:form.pc24141,ptcpl,participle: neuter vocative dual perfect middle
+urn:cite:morph:form.pc24142,ptcpl,participle: neuter vocative dual perfect passive
+urn:cite:morph:form.pc24150,ptcpl,participle: neuter vocative dual pluperfect active
+urn:cite:morph:form.pc24151,ptcpl,participle: neuter vocative dual pluperfect middle
+urn:cite:morph:form.pc24152,ptcpl,participle: neuter vocative dual pluperfect passive
+urn:cite:morph:form.pc24200,ptcpl,participle: neuter vocative plural present active
+urn:cite:morph:form.pc24201,ptcpl,participle: neuter vocative plural present middle
+urn:cite:morph:form.pc24202,ptcpl,participle: neuter vocative plural present passive
+urn:cite:morph:form.pc24210,ptcpl,participle: neuter vocative plural imperfect active
+urn:cite:morph:form.pc24211,ptcpl,participle: neuter vocative plural imperfect middle
+urn:cite:morph:form.pc24212,ptcpl,participle: neuter vocative plural imperfect passive
+urn:cite:morph:form.pc24220,ptcpl,participle: neuter vocative plural future active
+urn:cite:morph:form.pc24221,ptcpl,participle: neuter vocative plural future middle
+urn:cite:morph:form.pc24222,ptcpl,participle: neuter vocative plural future passive
+urn:cite:morph:form.pc24230,ptcpl,participle: neuter vocative plural aorist active
+urn:cite:morph:form.pc24231,ptcpl,participle: neuter vocative plural aorist middle
+urn:cite:morph:form.pc24232,ptcpl,participle: neuter vocative plural aorist passive
+urn:cite:morph:form.pc24240,ptcpl,participle: neuter vocative plural perfect active
+urn:cite:morph:form.pc24241,ptcpl,participle: neuter vocative plural perfect middle
+urn:cite:morph:form.pc24242,ptcpl,participle: neuter vocative plural perfect passive
+urn:cite:morph:form.pc24250,ptcpl,participle: neuter vocative plural pluperfect active
+urn:cite:morph:form.pc24251,ptcpl,participle: neuter vocative plural pluperfect middle
+urn:cite:morph:form.pc24252,ptcpl,participle: neuter vocative plural pluperfect passive
+urn:cite:morph:form.no000,noun,noun: masculine nominative singular
+urn:cite:morph:form.no001,noun,noun: masculine nominative dual
+urn:cite:morph:form.no002,noun,noun: masculine nominative plural
+urn:cite:morph:form.no010,noun,noun: masculine genitive singular
+urn:cite:morph:form.no011,noun,noun: masculine genitive dual
+urn:cite:morph:form.no012,noun,noun: masculine genitive plural
+urn:cite:morph:form.no020,noun,noun: masculine dative singular
+urn:cite:morph:form.no021,noun,noun: masculine dative dual
+urn:cite:morph:form.no022,noun,noun: masculine dative plural
+urn:cite:morph:form.no030,noun,noun: masculine accusative singular
+urn:cite:morph:form.no031,noun,noun: masculine accusative dual
+urn:cite:morph:form.no032,noun,noun: masculine accusative plural
+urn:cite:morph:form.no040,noun,noun: masculine vocative singular
+urn:cite:morph:form.no041,noun,noun: masculine vocative dual
+urn:cite:morph:form.no042,noun,noun: masculine vocative plural
+urn:cite:morph:form.no100,noun,noun: feminine nominative singular
+urn:cite:morph:form.no101,noun,noun: feminine nominative dual
+urn:cite:morph:form.no102,noun,noun: feminine nominative plural
+urn:cite:morph:form.no110,noun,noun: feminine genitive singular
+urn:cite:morph:form.no111,noun,noun: feminine genitive dual
+urn:cite:morph:form.no112,noun,noun: feminine genitive plural
+urn:cite:morph:form.no120,noun,noun: feminine dative singular
+urn:cite:morph:form.no121,noun,noun: feminine dative dual
+urn:cite:morph:form.no122,noun,noun: feminine dative plural
+urn:cite:morph:form.no130,noun,noun: feminine accusative singular
+urn:cite:morph:form.no131,noun,noun: feminine accusative dual
+urn:cite:morph:form.no132,noun,noun: feminine accusative plural
+urn:cite:morph:form.no140,noun,noun: feminine vocative singular
+urn:cite:morph:form.no141,noun,noun: feminine vocative dual
+urn:cite:morph:form.no142,noun,noun: feminine vocative plural
+urn:cite:morph:form.no200,noun,noun: neuter nominative singular
+urn:cite:morph:form.no201,noun,noun: neuter nominative dual
+urn:cite:morph:form.no202,noun,noun: neuter nominative plural
+urn:cite:morph:form.no210,noun,noun: neuter genitive singular
+urn:cite:morph:form.no211,noun,noun: neuter genitive dual
+urn:cite:morph:form.no212,noun,noun: neuter genitive plural
+urn:cite:morph:form.no220,noun,noun: neuter dative singular
+urn:cite:morph:form.no221,noun,noun: neuter dative dual
+urn:cite:morph:form.no222,noun,noun: neuter dative plural
+urn:cite:morph:form.no230,noun,noun: neuter accusative singular
+urn:cite:morph:form.no231,noun,noun: neuter accusative dual
+urn:cite:morph:form.no232,noun,noun: neuter accusative plural
+urn:cite:morph:form.no240,noun,noun: neuter vocative singular
+urn:cite:morph:form.no241,noun,noun: neuter vocative dual
+urn:cite:morph:form.no242,noun,noun: neuter vocative plural
+urn:cite:morph:form.aj0000,adj,adjective: masculine nominative singular positive
+urn:cite:morph:form.aj0001,adj,adjective: masculine nominative singular comparative
+urn:cite:morph:form.aj0002,adj,adjective: masculine nominative singular superlative
+urn:cite:morph:form.aj0010,adj,adjective: masculine nominative dual positive
+urn:cite:morph:form.aj0011,adj,adjective: masculine nominative dual comparative
+urn:cite:morph:form.aj0012,adj,adjective: masculine nominative dual superlative
+urn:cite:morph:form.aj0020,adj,adjective: masculine nominative plural positive
+urn:cite:morph:form.aj0021,adj,adjective: masculine nominative plural comparative
+urn:cite:morph:form.aj0022,adj,adjective: masculine nominative plural superlative
+urn:cite:morph:form.aj0100,adj,adjective: masculine genitive singular positive
+urn:cite:morph:form.aj0101,adj,adjective: masculine genitive singular comparative
+urn:cite:morph:form.aj0102,adj,adjective: masculine genitive singular superlative
+urn:cite:morph:form.aj0110,adj,adjective: masculine genitive dual positive
+urn:cite:morph:form.aj0111,adj,adjective: masculine genitive dual comparative
+urn:cite:morph:form.aj0112,adj,adjective: masculine genitive dual superlative
+urn:cite:morph:form.aj0120,adj,adjective: masculine genitive plural positive
+urn:cite:morph:form.aj0121,adj,adjective: masculine genitive plural comparative
+urn:cite:morph:form.aj0122,adj,adjective: masculine genitive plural superlative
+urn:cite:morph:form.aj0200,adj,adjective: masculine dative singular positive
+urn:cite:morph:form.aj0201,adj,adjective: masculine dative singular comparative
+urn:cite:morph:form.aj0202,adj,adjective: masculine dative singular superlative
+urn:cite:morph:form.aj0210,adj,adjective: masculine dative dual positive
+urn:cite:morph:form.aj0211,adj,adjective: masculine dative dual comparative
+urn:cite:morph:form.aj0212,adj,adjective: masculine dative dual superlative
+urn:cite:morph:form.aj0220,adj,adjective: masculine dative plural positive
+urn:cite:morph:form.aj0221,adj,adjective: masculine dative plural comparative
+urn:cite:morph:form.aj0222,adj,adjective: masculine dative plural superlative
+urn:cite:morph:form.aj0300,adj,adjective: masculine accusative singular positive
+urn:cite:morph:form.aj0301,adj,adjective: masculine accusative singular comparative
+urn:cite:morph:form.aj0302,adj,adjective: masculine accusative singular superlative
+urn:cite:morph:form.aj0310,adj,adjective: masculine accusative dual positive
+urn:cite:morph:form.aj0311,adj,adjective: masculine accusative dual comparative
+urn:cite:morph:form.aj0312,adj,adjective: masculine accusative dual superlative
+urn:cite:morph:form.aj0320,adj,adjective: masculine accusative plural positive
+urn:cite:morph:form.aj0321,adj,adjective: masculine accusative plural comparative
+urn:cite:morph:form.aj0322,adj,adjective: masculine accusative plural superlative
+urn:cite:morph:form.aj0400,adj,adjective: masculine vocative singular positive
+urn:cite:morph:form.aj0401,adj,adjective: masculine vocative singular comparative
+urn:cite:morph:form.aj0402,adj,adjective: masculine vocative singular superlative
+urn:cite:morph:form.aj0410,adj,adjective: masculine vocative dual positive
+urn:cite:morph:form.aj0411,adj,adjective: masculine vocative dual comparative
+urn:cite:morph:form.aj0412,adj,adjective: masculine vocative dual superlative
+urn:cite:morph:form.aj0420,adj,adjective: masculine vocative plural positive
+urn:cite:morph:form.aj0421,adj,adjective: masculine vocative plural comparative
+urn:cite:morph:form.aj0422,adj,adjective: masculine vocative plural superlative
+urn:cite:morph:form.aj1000,adj,adjective: feminine nominative singular positive
+urn:cite:morph:form.aj1001,adj,adjective: feminine nominative singular comparative
+urn:cite:morph:form.aj1002,adj,adjective: feminine nominative singular superlative
+urn:cite:morph:form.aj1010,adj,adjective: feminine nominative dual positive
+urn:cite:morph:form.aj1011,adj,adjective: feminine nominative dual comparative
+urn:cite:morph:form.aj1012,adj,adjective: feminine nominative dual superlative
+urn:cite:morph:form.aj1020,adj,adjective: feminine nominative plural positive
+urn:cite:morph:form.aj1021,adj,adjective: feminine nominative plural comparative
+urn:cite:morph:form.aj1022,adj,adjective: feminine nominative plural superlative
+urn:cite:morph:form.aj1100,adj,adjective: feminine genitive singular positive
+urn:cite:morph:form.aj1101,adj,adjective: feminine genitive singular comparative
+urn:cite:morph:form.aj1102,adj,adjective: feminine genitive singular superlative
+urn:cite:morph:form.aj1110,adj,adjective: feminine genitive dual positive
+urn:cite:morph:form.aj1111,adj,adjective: feminine genitive dual comparative
+urn:cite:morph:form.aj1112,adj,adjective: feminine genitive dual superlative
+urn:cite:morph:form.aj1120,adj,adjective: feminine genitive plural positive
+urn:cite:morph:form.aj1121,adj,adjective: feminine genitive plural comparative
+urn:cite:morph:form.aj1122,adj,adjective: feminine genitive plural superlative
+urn:cite:morph:form.aj1200,adj,adjective: feminine dative singular positive
+urn:cite:morph:form.aj1201,adj,adjective: feminine dative singular comparative
+urn:cite:morph:form.aj1202,adj,adjective: feminine dative singular superlative
+urn:cite:morph:form.aj1210,adj,adjective: feminine dative dual positive
+urn:cite:morph:form.aj1211,adj,adjective: feminine dative dual comparative
+urn:cite:morph:form.aj1212,adj,adjective: feminine dative dual superlative
+urn:cite:morph:form.aj1220,adj,adjective: feminine dative plural positive
+urn:cite:morph:form.aj1221,adj,adjective: feminine dative plural comparative
+urn:cite:morph:form.aj1222,adj,adjective: feminine dative plural superlative
+urn:cite:morph:form.aj1300,adj,adjective: feminine accusative singular positive
+urn:cite:morph:form.aj1301,adj,adjective: feminine accusative singular comparative
+urn:cite:morph:form.aj1302,adj,adjective: feminine accusative singular superlative
+urn:cite:morph:form.aj1310,adj,adjective: feminine accusative dual positive
+urn:cite:morph:form.aj1311,adj,adjective: feminine accusative dual comparative
+urn:cite:morph:form.aj1312,adj,adjective: feminine accusative dual superlative
+urn:cite:morph:form.aj1320,adj,adjective: feminine accusative plural positive
+urn:cite:morph:form.aj1321,adj,adjective: feminine accusative plural comparative
+urn:cite:morph:form.aj1322,adj,adjective: feminine accusative plural superlative
+urn:cite:morph:form.aj1400,adj,adjective: feminine vocative singular positive
+urn:cite:morph:form.aj1401,adj,adjective: feminine vocative singular comparative
+urn:cite:morph:form.aj1402,adj,adjective: feminine vocative singular superlative
+urn:cite:morph:form.aj1410,adj,adjective: feminine vocative dual positive
+urn:cite:morph:form.aj1411,adj,adjective: feminine vocative dual comparative
+urn:cite:morph:form.aj1412,adj,adjective: feminine vocative dual superlative
+urn:cite:morph:form.aj1420,adj,adjective: feminine vocative plural positive
+urn:cite:morph:form.aj1421,adj,adjective: feminine vocative plural comparative
+urn:cite:morph:form.aj1422,adj,adjective: feminine vocative plural superlative
+urn:cite:morph:form.aj2000,adj,adjective: neuter nominative singular positive
+urn:cite:morph:form.aj2001,adj,adjective: neuter nominative singular comparative
+urn:cite:morph:form.aj2002,adj,adjective: neuter nominative singular superlative
+urn:cite:morph:form.aj2010,adj,adjective: neuter nominative dual positive
+urn:cite:morph:form.aj2011,adj,adjective: neuter nominative dual comparative
+urn:cite:morph:form.aj2012,adj,adjective: neuter nominative dual superlative
+urn:cite:morph:form.aj2020,adj,adjective: neuter nominative plural positive
+urn:cite:morph:form.aj2021,adj,adjective: neuter nominative plural comparative
+urn:cite:morph:form.aj2022,adj,adjective: neuter nominative plural superlative
+urn:cite:morph:form.aj2100,adj,adjective: neuter genitive singular positive
+urn:cite:morph:form.aj2101,adj,adjective: neuter genitive singular comparative
+urn:cite:morph:form.aj2102,adj,adjective: neuter genitive singular superlative
+urn:cite:morph:form.aj2110,adj,adjective: neuter genitive dual positive
+urn:cite:morph:form.aj2111,adj,adjective: neuter genitive dual comparative
+urn:cite:morph:form.aj2112,adj,adjective: neuter genitive dual superlative
+urn:cite:morph:form.aj2120,adj,adjective: neuter genitive plural positive
+urn:cite:morph:form.aj2121,adj,adjective: neuter genitive plural comparative
+urn:cite:morph:form.aj2122,adj,adjective: neuter genitive plural superlative
+urn:cite:morph:form.aj2200,adj,adjective: neuter dative singular positive
+urn:cite:morph:form.aj2201,adj,adjective: neuter dative singular comparative
+urn:cite:morph:form.aj2202,adj,adjective: neuter dative singular superlative
+urn:cite:morph:form.aj2210,adj,adjective: neuter dative dual positive
+urn:cite:morph:form.aj2211,adj,adjective: neuter dative dual comparative
+urn:cite:morph:form.aj2212,adj,adjective: neuter dative dual superlative
+urn:cite:morph:form.aj2220,adj,adjective: neuter dative plural positive
+urn:cite:morph:form.aj2221,adj,adjective: neuter dative plural comparative
+urn:cite:morph:form.aj2222,adj,adjective: neuter dative plural superlative
+urn:cite:morph:form.aj2300,adj,adjective: neuter accusative singular positive
+urn:cite:morph:form.aj2301,adj,adjective: neuter accusative singular comparative
+urn:cite:morph:form.aj2302,adj,adjective: neuter accusative singular superlative
+urn:cite:morph:form.aj2310,adj,adjective: neuter accusative dual positive
+urn:cite:morph:form.aj2311,adj,adjective: neuter accusative dual comparative
+urn:cite:morph:form.aj2312,adj,adjective: neuter accusative dual superlative
+urn:cite:morph:form.aj2320,adj,adjective: neuter accusative plural positive
+urn:cite:morph:form.aj2321,adj,adjective: neuter accusative plural comparative
+urn:cite:morph:form.aj2322,adj,adjective: neuter accusative plural superlative
+urn:cite:morph:form.aj2400,adj,adjective: neuter vocative singular positive
+urn:cite:morph:form.aj2401,adj,adjective: neuter vocative singular comparative
+urn:cite:morph:form.aj2402,adj,adjective: neuter vocative singular superlative
+urn:cite:morph:form.aj2410,adj,adjective: neuter vocative dual positive
+urn:cite:morph:form.aj2411,adj,adjective: neuter vocative dual comparative
+urn:cite:morph:form.aj2412,adj,adjective: neuter vocative dual superlative
+urn:cite:morph:form.aj2420,adj,adjective: neuter vocative plural positive
+urn:cite:morph:form.aj2421,adj,adjective: neuter vocative plural comparative
+urn:cite:morph:form.aj2422,adj,adjective: neuter vocative plural superlative
+urn:cite:morph:form.av0,adv,adverb: positive
+urn:cite:morph:form.av1,adv,adverb: comparative
+urn:cite:morph:form.av2,adv,adverb: superlative
