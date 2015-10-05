@@ -44,7 +44,11 @@ task testVerbAcceptor(dependsOn: ':fst:setupCoreTests') {
   description = "Tests verb acceptor"
 }
 testVerbAcceptor.doLast {
-  def testList = ["${projectDir}/acceptors/1stpp"] //, "2ndpp", "3rdpp", "4thpp", "5thpp", "6thpp"]
+  def testList = [
+    "${projectDir}/acceptors/1stpp",
+    "${projectDir}/acceptors/2ndpp"
+  ]
+    //, "2ndpp", "3rdpp", "4thpp", "5thpp", "6thpp"]
   assessTests(testList)
 }
 
