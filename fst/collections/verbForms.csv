@@ -8,9 +8,6 @@ urn:cite:morph:form.cv00012,1st,singular,present,subjunctive,passive
 urn:cite:morph:form.cv00020,1st,singular,present,optative,active
 urn:cite:morph:form.cv00021,1st,singular,present,optative,middle
 urn:cite:morph:form.cv00022,1st,singular,present,optative,passive
-urn:cite:morph:form.cv00030,1st,singular,present,imperative,active
-urn:cite:morph:form.cv00031,1st,singular,present,imperative,middle
-urn:cite:morph:form.cv00032,1st,singular,present,imperative,passive
 urn:cite:morph:form.cv00100,1st,singular,imperfect,indicative,active
 urn:cite:morph:form.cv00101,1st,singular,imperfect,indicative,middle
 urn:cite:morph:form.cv00102,1st,singular,imperfect,indicative,passive
@@ -23,9 +20,6 @@ urn:cite:morph:form.cv00212,1st,singular,future,subjunctive,passive
 urn:cite:morph:form.cv00220,1st,singular,future,optative,active
 urn:cite:morph:form.cv00221,1st,singular,future,optative,middle
 urn:cite:morph:form.cv00222,1st,singular,future,optative,passive
-urn:cite:morph:form.cv00230,1st,singular,future,imperative,active
-urn:cite:morph:form.cv00231,1st,singular,future,imperative,middle
-urn:cite:morph:form.cv00232,1st,singular,future,imperative,passive
 urn:cite:morph:form.cv00300,1st,singular,aorist,indicative,active
 urn:cite:morph:form.cv00301,1st,singular,aorist,indicative,middle
 urn:cite:morph:form.cv00302,1st,singular,aorist,indicative,passive
@@ -35,9 +29,6 @@ urn:cite:morph:form.cv00312,1st,singular,aorist,subjunctive,passive
 urn:cite:morph:form.cv00320,1st,singular,aorist,optative,active
 urn:cite:morph:form.cv00321,1st,singular,aorist,optative,middle
 urn:cite:morph:form.cv00322,1st,singular,aorist,optative,passive
-urn:cite:morph:form.cv00330,1st,singular,aorist,imperative,active
-urn:cite:morph:form.cv00331,1st,singular,aorist,imperative,middle
-urn:cite:morph:form.cv00332,1st,singular,aorist,imperative,passive
 urn:cite:morph:form.cv00400,1st,singular,perfect,indicative,active
 urn:cite:morph:form.cv00401,1st,singular,perfect,indicative,middle
 urn:cite:morph:form.cv00402,1st,singular,perfect,indicative,passive
@@ -47,9 +38,6 @@ urn:cite:morph:form.cv00412,1st,singular,perfect,subjunctive,passive
 urn:cite:morph:form.cv00420,1st,singular,perfect,optative,active
 urn:cite:morph:form.cv00421,1st,singular,perfect,optative,middle
 urn:cite:morph:form.cv00422,1st,singular,perfect,optative,passive
-urn:cite:morph:form.cv00430,1st,singular,perfect,imperative,active
-urn:cite:morph:form.cv00431,1st,singular,perfect,imperative,middle
-urn:cite:morph:form.cv00432,1st,singular,perfect,imperative,passive
 urn:cite:morph:form.cv00500,1st,singular,pluperfect,indicative,active
 urn:cite:morph:form.cv00501,1st,singular,pluperfect,indicative,middle
 urn:cite:morph:form.cv00502,1st,singular,pluperfect,indicative,passive
@@ -59,9 +47,6 @@ urn:cite:morph:form.cv00512,1st,singular,pluperfect,subjunctive,passive
 urn:cite:morph:form.cv00520,1st,singular,pluperfect,optative,active
 urn:cite:morph:form.cv00521,1st,singular,pluperfect,optative,middle
 urn:cite:morph:form.cv00522,1st,singular,pluperfect,optative,passive
-urn:cite:morph:form.cv00530,1st,singular,pluperfect,imperative,active
-urn:cite:morph:form.cv00531,1st,singular,pluperfect,imperative,middle
-urn:cite:morph:form.cv00532,1st,singular,pluperfect,imperative,passive
 urn:cite:morph:form.cv01000,1st,dual,present,indicative,active
 urn:cite:morph:form.cv01001,1st,dual,present,indicative,middle
 urn:cite:morph:form.cv01002,1st,dual,present,indicative,passive
@@ -71,9 +56,6 @@ urn:cite:morph:form.cv01012,1st,dual,present,subjunctive,passive
 urn:cite:morph:form.cv01020,1st,dual,present,optative,active
 urn:cite:morph:form.cv01021,1st,dual,present,optative,middle
 urn:cite:morph:form.cv01022,1st,dual,present,optative,passive
-urn:cite:morph:form.cv01030,1st,dual,present,imperative,active
-urn:cite:morph:form.cv01031,1st,dual,present,imperative,middle
-urn:cite:morph:form.cv01032,1st,dual,present,imperative,passive
 urn:cite:morph:form.cv01100,1st,dual,imperfect,indicative,active
 urn:cite:morph:form.cv01101,1st,dual,imperfect,indicative,middle
 urn:cite:morph:form.cv01102,1st,dual,imperfect,indicative,passive
@@ -86,9 +68,6 @@ urn:cite:morph:form.cv01212,1st,dual,future,subjunctive,passive
 urn:cite:morph:form.cv01220,1st,dual,future,optative,active
 urn:cite:morph:form.cv01221,1st,dual,future,optative,middle
 urn:cite:morph:form.cv01222,1st,dual,future,optative,passive
-urn:cite:morph:form.cv01230,1st,dual,future,imperative,active
-urn:cite:morph:form.cv01231,1st,dual,future,imperative,middle
-urn:cite:morph:form.cv01232,1st,dual,future,imperative,passive
 urn:cite:morph:form.cv01300,1st,dual,aorist,indicative,active
 urn:cite:morph:form.cv01301,1st,dual,aorist,indicative,middle
 urn:cite:morph:form.cv01302,1st,dual,aorist,indicative,passive
@@ -98,9 +77,6 @@ urn:cite:morph:form.cv01312,1st,dual,aorist,subjunctive,passive
 urn:cite:morph:form.cv01320,1st,dual,aorist,optative,active
 urn:cite:morph:form.cv01321,1st,dual,aorist,optative,middle
 urn:cite:morph:form.cv01322,1st,dual,aorist,optative,passive
-urn:cite:morph:form.cv01330,1st,dual,aorist,imperative,active
-urn:cite:morph:form.cv01331,1st,dual,aorist,imperative,middle
-urn:cite:morph:form.cv01332,1st,dual,aorist,imperative,passive
 urn:cite:morph:form.cv01400,1st,dual,perfect,indicative,active
 urn:cite:morph:form.cv01401,1st,dual,perfect,indicative,middle
 urn:cite:morph:form.cv01402,1st,dual,perfect,indicative,passive
@@ -110,9 +86,6 @@ urn:cite:morph:form.cv01412,1st,dual,perfect,subjunctive,passive
 urn:cite:morph:form.cv01420,1st,dual,perfect,optative,active
 urn:cite:morph:form.cv01421,1st,dual,perfect,optative,middle
 urn:cite:morph:form.cv01422,1st,dual,perfect,optative,passive
-urn:cite:morph:form.cv01430,1st,dual,perfect,imperative,active
-urn:cite:morph:form.cv01431,1st,dual,perfect,imperative,middle
-urn:cite:morph:form.cv01432,1st,dual,perfect,imperative,passive
 urn:cite:morph:form.cv01500,1st,dual,pluperfect,indicative,active
 urn:cite:morph:form.cv01501,1st,dual,pluperfect,indicative,middle
 urn:cite:morph:form.cv01502,1st,dual,pluperfect,indicative,passive
@@ -122,9 +95,6 @@ urn:cite:morph:form.cv01512,1st,dual,pluperfect,subjunctive,passive
 urn:cite:morph:form.cv01520,1st,dual,pluperfect,optative,active
 urn:cite:morph:form.cv01521,1st,dual,pluperfect,optative,middle
 urn:cite:morph:form.cv01522,1st,dual,pluperfect,optative,passive
-urn:cite:morph:form.cv01530,1st,dual,pluperfect,imperative,active
-urn:cite:morph:form.cv01531,1st,dual,pluperfect,imperative,middle
-urn:cite:morph:form.cv01532,1st,dual,pluperfect,imperative,passive
 urn:cite:morph:form.cv02000,1st,plural,present,indicative,active
 urn:cite:morph:form.cv02001,1st,plural,present,indicative,middle
 urn:cite:morph:form.cv02002,1st,plural,present,indicative,passive
@@ -134,9 +104,6 @@ urn:cite:morph:form.cv02012,1st,plural,present,subjunctive,passive
 urn:cite:morph:form.cv02020,1st,plural,present,optative,active
 urn:cite:morph:form.cv02021,1st,plural,present,optative,middle
 urn:cite:morph:form.cv02022,1st,plural,present,optative,passive
-urn:cite:morph:form.cv02030,1st,plural,present,imperative,active
-urn:cite:morph:form.cv02031,1st,plural,present,imperative,middle
-urn:cite:morph:form.cv02032,1st,plural,present,imperative,passive
 urn:cite:morph:form.cv02100,1st,plural,imperfect,indicative,active
 urn:cite:morph:form.cv02101,1st,plural,imperfect,indicative,middle
 urn:cite:morph:form.cv02102,1st,plural,imperfect,indicative,passive
@@ -149,9 +116,6 @@ urn:cite:morph:form.cv02212,1st,plural,future,subjunctive,passive
 urn:cite:morph:form.cv02220,1st,plural,future,optative,active
 urn:cite:morph:form.cv02221,1st,plural,future,optative,middle
 urn:cite:morph:form.cv02222,1st,plural,future,optative,passive
-urn:cite:morph:form.cv02230,1st,plural,future,imperative,active
-urn:cite:morph:form.cv02231,1st,plural,future,imperative,middle
-urn:cite:morph:form.cv02232,1st,plural,future,imperative,passive
 urn:cite:morph:form.cv02300,1st,plural,aorist,indicative,active
 urn:cite:morph:form.cv02301,1st,plural,aorist,indicative,middle
 urn:cite:morph:form.cv02302,1st,plural,aorist,indicative,passive
@@ -161,9 +125,6 @@ urn:cite:morph:form.cv02312,1st,plural,aorist,subjunctive,passive
 urn:cite:morph:form.cv02320,1st,plural,aorist,optative,active
 urn:cite:morph:form.cv02321,1st,plural,aorist,optative,middle
 urn:cite:morph:form.cv02322,1st,plural,aorist,optative,passive
-urn:cite:morph:form.cv02330,1st,plural,aorist,imperative,active
-urn:cite:morph:form.cv02331,1st,plural,aorist,imperative,middle
-urn:cite:morph:form.cv02332,1st,plural,aorist,imperative,passive
 urn:cite:morph:form.cv02400,1st,plural,perfect,indicative,active
 urn:cite:morph:form.cv02401,1st,plural,perfect,indicative,middle
 urn:cite:morph:form.cv02402,1st,plural,perfect,indicative,passive
@@ -173,9 +134,6 @@ urn:cite:morph:form.cv02412,1st,plural,perfect,subjunctive,passive
 urn:cite:morph:form.cv02420,1st,plural,perfect,optative,active
 urn:cite:morph:form.cv02421,1st,plural,perfect,optative,middle
 urn:cite:morph:form.cv02422,1st,plural,perfect,optative,passive
-urn:cite:morph:form.cv02430,1st,plural,perfect,imperative,active
-urn:cite:morph:form.cv02431,1st,plural,perfect,imperative,middle
-urn:cite:morph:form.cv02432,1st,plural,perfect,imperative,passive
 urn:cite:morph:form.cv02500,1st,plural,pluperfect,indicative,active
 urn:cite:morph:form.cv02501,1st,plural,pluperfect,indicative,middle
 urn:cite:morph:form.cv02502,1st,plural,pluperfect,indicative,passive
@@ -185,9 +143,6 @@ urn:cite:morph:form.cv02512,1st,plural,pluperfect,subjunctive,passive
 urn:cite:morph:form.cv02520,1st,plural,pluperfect,optative,active
 urn:cite:morph:form.cv02521,1st,plural,pluperfect,optative,middle
 urn:cite:morph:form.cv02522,1st,plural,pluperfect,optative,passive
-urn:cite:morph:form.cv02530,1st,plural,pluperfect,imperative,active
-urn:cite:morph:form.cv02531,1st,plural,pluperfect,imperative,middle
-urn:cite:morph:form.cv02532,1st,plural,pluperfect,imperative,passive
 urn:cite:morph:form.cv10000,2nd,singular,present,indicative,active
 urn:cite:morph:form.cv10001,2nd,singular,present,indicative,middle
 urn:cite:morph:form.cv10002,2nd,singular,present,indicative,passive

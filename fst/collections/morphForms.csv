@@ -9,9 +9,6 @@ urn:cite:morph:form.cv00012,conjverb,conjugated verb: 1st singular present subju
 urn:cite:morph:form.cv00020,conjverb,conjugated verb: 1st singular present optative active
 urn:cite:morph:form.cv00021,conjverb,conjugated verb: 1st singular present optative middle
 urn:cite:morph:form.cv00022,conjverb,conjugated verb: 1st singular present optative passive
-urn:cite:morph:form.cv00030,conjverb,conjugated verb: 1st singular present imperative active
-urn:cite:morph:form.cv00031,conjverb,conjugated verb: 1st singular present imperative middle
-urn:cite:morph:form.cv00032,conjverb,conjugated verb: 1st singular present imperative passive
 urn:cite:morph:form.cv00100,conjverb,conjugated verb: 1st singular imperfect indicative active
 urn:cite:morph:form.cv00101,conjverb,conjugated verb: 1st singular imperfect indicative middle
 urn:cite:morph:form.cv00102,conjverb,conjugated verb: 1st singular imperfect indicative passive
@@ -24,9 +21,6 @@ urn:cite:morph:form.cv00212,conjverb,conjugated verb: 1st singular future subjun
 urn:cite:morph:form.cv00220,conjverb,conjugated verb: 1st singular future optative active
 urn:cite:morph:form.cv00221,conjverb,conjugated verb: 1st singular future optative middle
 urn:cite:morph:form.cv00222,conjverb,conjugated verb: 1st singular future optative passive
-urn:cite:morph:form.cv00230,conjverb,conjugated verb: 1st singular future imperative active
-urn:cite:morph:form.cv00231,conjverb,conjugated verb: 1st singular future imperative middle
-urn:cite:morph:form.cv00232,conjverb,conjugated verb: 1st singular future imperative passive
 urn:cite:morph:form.cv00300,conjverb,conjugated verb: 1st singular aorist indicative active
 urn:cite:morph:form.cv00301,conjverb,conjugated verb: 1st singular aorist indicative middle
 urn:cite:morph:form.cv00302,conjverb,conjugated verb: 1st singular aorist indicative passive
@@ -36,9 +30,6 @@ urn:cite:morph:form.cv00312,conjverb,conjugated verb: 1st singular aorist subjun
 urn:cite:morph:form.cv00320,conjverb,conjugated verb: 1st singular aorist optative active
 urn:cite:morph:form.cv00321,conjverb,conjugated verb: 1st singular aorist optative middle
 urn:cite:morph:form.cv00322,conjverb,conjugated verb: 1st singular aorist optative passive
-urn:cite:morph:form.cv00330,conjverb,conjugated verb: 1st singular aorist imperative active
-urn:cite:morph:form.cv00331,conjverb,conjugated verb: 1st singular aorist imperative middle
-urn:cite:morph:form.cv00332,conjverb,conjugated verb: 1st singular aorist imperative passive
 urn:cite:morph:form.cv00400,conjverb,conjugated verb: 1st singular perfect indicative active
 urn:cite:morph:form.cv00401,conjverb,conjugated verb: 1st singular perfect indicative middle
 urn:cite:morph:form.cv00402,conjverb,conjugated verb: 1st singular perfect indicative passive
@@ -48,9 +39,6 @@ urn:cite:morph:form.cv00412,conjverb,conjugated verb: 1st singular perfect subju
 urn:cite:morph:form.cv00420,conjverb,conjugated verb: 1st singular perfect optative active
 urn:cite:morph:form.cv00421,conjverb,conjugated verb: 1st singular perfect optative middle
 urn:cite:morph:form.cv00422,conjverb,conjugated verb: 1st singular perfect optative passive
-urn:cite:morph:form.cv00430,conjverb,conjugated verb: 1st singular perfect imperative active
-urn:cite:morph:form.cv00431,conjverb,conjugated verb: 1st singular perfect imperative middle
-urn:cite:morph:form.cv00432,conjverb,conjugated verb: 1st singular perfect imperative passive
 urn:cite:morph:form.cv00500,conjverb,conjugated verb: 1st singular pluperfect indicative active
 urn:cite:morph:form.cv00501,conjverb,conjugated verb: 1st singular pluperfect indicative middle
 urn:cite:morph:form.cv00502,conjverb,conjugated verb: 1st singular pluperfect indicative passive
@@ -60,9 +48,6 @@ urn:cite:morph:form.cv00512,conjverb,conjugated verb: 1st singular pluperfect su
 urn:cite:morph:form.cv00520,conjverb,conjugated verb: 1st singular pluperfect optative active
 urn:cite:morph:form.cv00521,conjverb,conjugated verb: 1st singular pluperfect optative middle
 urn:cite:morph:form.cv00522,conjverb,conjugated verb: 1st singular pluperfect optative passive
-urn:cite:morph:form.cv00530,conjverb,conjugated verb: 1st singular pluperfect imperative active
-urn:cite:morph:form.cv00531,conjverb,conjugated verb: 1st singular pluperfect imperative middle
-urn:cite:morph:form.cv00532,conjverb,conjugated verb: 1st singular pluperfect imperative passive
 urn:cite:morph:form.cv01000,conjverb,conjugated verb: 1st dual present indicative active
 urn:cite:morph:form.cv01001,conjverb,conjugated verb: 1st dual present indicative middle
 urn:cite:morph:form.cv01002,conjverb,conjugated verb: 1st dual present indicative passive
@@ -72,9 +57,6 @@ urn:cite:morph:form.cv01012,conjverb,conjugated verb: 1st dual present subjuncti
 urn:cite:morph:form.cv01020,conjverb,conjugated verb: 1st dual present optative active
 urn:cite:morph:form.cv01021,conjverb,conjugated verb: 1st dual present optative middle
 urn:cite:morph:form.cv01022,conjverb,conjugated verb: 1st dual present optative passive
-urn:cite:morph:form.cv01030,conjverb,conjugated verb: 1st dual present imperative active
-urn:cite:morph:form.cv01031,conjverb,conjugated verb: 1st dual present imperative middle
-urn:cite:morph:form.cv01032,conjverb,conjugated verb: 1st dual present imperative passive
 urn:cite:morph:form.cv01100,conjverb,conjugated verb: 1st dual imperfect indicative active
 urn:cite:morph:form.cv01101,conjverb,conjugated verb: 1st dual imperfect indicative middle
 urn:cite:morph:form.cv01102,conjverb,conjugated verb: 1st dual imperfect indicative passive
@@ -87,9 +69,6 @@ urn:cite:morph:form.cv01212,conjverb,conjugated verb: 1st dual future subjunctiv
 urn:cite:morph:form.cv01220,conjverb,conjugated verb: 1st dual future optative active
 urn:cite:morph:form.cv01221,conjverb,conjugated verb: 1st dual future optative middle
 urn:cite:morph:form.cv01222,conjverb,conjugated verb: 1st dual future optative passive
-urn:cite:morph:form.cv01230,conjverb,conjugated verb: 1st dual future imperative active
-urn:cite:morph:form.cv01231,conjverb,conjugated verb: 1st dual future imperative middle
-urn:cite:morph:form.cv01232,conjverb,conjugated verb: 1st dual future imperative passive
 urn:cite:morph:form.cv01300,conjverb,conjugated verb: 1st dual aorist indicative active
 urn:cite:morph:form.cv01301,conjverb,conjugated verb: 1st dual aorist indicative middle
 urn:cite:morph:form.cv01302,conjverb,conjugated verb: 1st dual aorist indicative passive
@@ -99,9 +78,6 @@ urn:cite:morph:form.cv01312,conjverb,conjugated verb: 1st dual aorist subjunctiv
 urn:cite:morph:form.cv01320,conjverb,conjugated verb: 1st dual aorist optative active
 urn:cite:morph:form.cv01321,conjverb,conjugated verb: 1st dual aorist optative middle
 urn:cite:morph:form.cv01322,conjverb,conjugated verb: 1st dual aorist optative passive
-urn:cite:morph:form.cv01330,conjverb,conjugated verb: 1st dual aorist imperative active
-urn:cite:morph:form.cv01331,conjverb,conjugated verb: 1st dual aorist imperative middle
-urn:cite:morph:form.cv01332,conjverb,conjugated verb: 1st dual aorist imperative passive
 urn:cite:morph:form.cv01400,conjverb,conjugated verb: 1st dual perfect indicative active
 urn:cite:morph:form.cv01401,conjverb,conjugated verb: 1st dual perfect indicative middle
 urn:cite:morph:form.cv01402,conjverb,conjugated verb: 1st dual perfect indicative passive
@@ -111,9 +87,6 @@ urn:cite:morph:form.cv01412,conjverb,conjugated verb: 1st dual perfect subjuncti
 urn:cite:morph:form.cv01420,conjverb,conjugated verb: 1st dual perfect optative active
 urn:cite:morph:form.cv01421,conjverb,conjugated verb: 1st dual perfect optative middle
 urn:cite:morph:form.cv01422,conjverb,conjugated verb: 1st dual perfect optative passive
-urn:cite:morph:form.cv01430,conjverb,conjugated verb: 1st dual perfect imperative active
-urn:cite:morph:form.cv01431,conjverb,conjugated verb: 1st dual perfect imperative middle
-urn:cite:morph:form.cv01432,conjverb,conjugated verb: 1st dual perfect imperative passive
 urn:cite:morph:form.cv01500,conjverb,conjugated verb: 1st dual pluperfect indicative active
 urn:cite:morph:form.cv01501,conjverb,conjugated verb: 1st dual pluperfect indicative middle
 urn:cite:morph:form.cv01502,conjverb,conjugated verb: 1st dual pluperfect indicative passive
@@ -123,9 +96,6 @@ urn:cite:morph:form.cv01512,conjverb,conjugated verb: 1st dual pluperfect subjun
 urn:cite:morph:form.cv01520,conjverb,conjugated verb: 1st dual pluperfect optative active
 urn:cite:morph:form.cv01521,conjverb,conjugated verb: 1st dual pluperfect optative middle
 urn:cite:morph:form.cv01522,conjverb,conjugated verb: 1st dual pluperfect optative passive
-urn:cite:morph:form.cv01530,conjverb,conjugated verb: 1st dual pluperfect imperative active
-urn:cite:morph:form.cv01531,conjverb,conjugated verb: 1st dual pluperfect imperative middle
-urn:cite:morph:form.cv01532,conjverb,conjugated verb: 1st dual pluperfect imperative passive
 urn:cite:morph:form.cv02000,conjverb,conjugated verb: 1st plural present indicative active
 urn:cite:morph:form.cv02001,conjverb,conjugated verb: 1st plural present indicative middle
 urn:cite:morph:form.cv02002,conjverb,conjugated verb: 1st plural present indicative passive
@@ -135,9 +105,6 @@ urn:cite:morph:form.cv02012,conjverb,conjugated verb: 1st plural present subjunc
 urn:cite:morph:form.cv02020,conjverb,conjugated verb: 1st plural present optative active
 urn:cite:morph:form.cv02021,conjverb,conjugated verb: 1st plural present optative middle
 urn:cite:morph:form.cv02022,conjverb,conjugated verb: 1st plural present optative passive
-urn:cite:morph:form.cv02030,conjverb,conjugated verb: 1st plural present imperative active
-urn:cite:morph:form.cv02031,conjverb,conjugated verb: 1st plural present imperative middle
-urn:cite:morph:form.cv02032,conjverb,conjugated verb: 1st plural present imperative passive
 urn:cite:morph:form.cv02100,conjverb,conjugated verb: 1st plural imperfect indicative active
 urn:cite:morph:form.cv02101,conjverb,conjugated verb: 1st plural imperfect indicative middle
 urn:cite:morph:form.cv02102,conjverb,conjugated verb: 1st plural imperfect indicative passive
@@ -150,9 +117,6 @@ urn:cite:morph:form.cv02212,conjverb,conjugated verb: 1st plural future subjunct
 urn:cite:morph:form.cv02220,conjverb,conjugated verb: 1st plural future optative active
 urn:cite:morph:form.cv02221,conjverb,conjugated verb: 1st plural future optative middle
 urn:cite:morph:form.cv02222,conjverb,conjugated verb: 1st plural future optative passive
-urn:cite:morph:form.cv02230,conjverb,conjugated verb: 1st plural future imperative active
-urn:cite:morph:form.cv02231,conjverb,conjugated verb: 1st plural future imperative middle
-urn:cite:morph:form.cv02232,conjverb,conjugated verb: 1st plural future imperative passive
 urn:cite:morph:form.cv02300,conjverb,conjugated verb: 1st plural aorist indicative active
 urn:cite:morph:form.cv02301,conjverb,conjugated verb: 1st plural aorist indicative middle
 urn:cite:morph:form.cv02302,conjverb,conjugated verb: 1st plural aorist indicative passive
@@ -162,9 +126,6 @@ urn:cite:morph:form.cv02312,conjverb,conjugated verb: 1st plural aorist subjunct
 urn:cite:morph:form.cv02320,conjverb,conjugated verb: 1st plural aorist optative active
 urn:cite:morph:form.cv02321,conjverb,conjugated verb: 1st plural aorist optative middle
 urn:cite:morph:form.cv02322,conjverb,conjugated verb: 1st plural aorist optative passive
-urn:cite:morph:form.cv02330,conjverb,conjugated verb: 1st plural aorist imperative active
-urn:cite:morph:form.cv02331,conjverb,conjugated verb: 1st plural aorist imperative middle
-urn:cite:morph:form.cv02332,conjverb,conjugated verb: 1st plural aorist imperative passive
 urn:cite:morph:form.cv02400,conjverb,conjugated verb: 1st plural perfect indicative active
 urn:cite:morph:form.cv02401,conjverb,conjugated verb: 1st plural perfect indicative middle
 urn:cite:morph:form.cv02402,conjverb,conjugated verb: 1st plural perfect indicative passive
@@ -174,9 +135,6 @@ urn:cite:morph:form.cv02412,conjverb,conjugated verb: 1st plural perfect subjunc
 urn:cite:morph:form.cv02420,conjverb,conjugated verb: 1st plural perfect optative active
 urn:cite:morph:form.cv02421,conjverb,conjugated verb: 1st plural perfect optative middle
 urn:cite:morph:form.cv02422,conjverb,conjugated verb: 1st plural perfect optative passive
-urn:cite:morph:form.cv02430,conjverb,conjugated verb: 1st plural perfect imperative active
-urn:cite:morph:form.cv02431,conjverb,conjugated verb: 1st plural perfect imperative middle
-urn:cite:morph:form.cv02432,conjverb,conjugated verb: 1st plural perfect imperative passive
 urn:cite:morph:form.cv02500,conjverb,conjugated verb: 1st plural pluperfect indicative active
 urn:cite:morph:form.cv02501,conjverb,conjugated verb: 1st plural pluperfect indicative middle
 urn:cite:morph:form.cv02502,conjverb,conjugated verb: 1st plural pluperfect indicative passive
@@ -186,9 +144,6 @@ urn:cite:morph:form.cv02512,conjverb,conjugated verb: 1st plural pluperfect subj
 urn:cite:morph:form.cv02520,conjverb,conjugated verb: 1st plural pluperfect optative active
 urn:cite:morph:form.cv02521,conjverb,conjugated verb: 1st plural pluperfect optative middle
 urn:cite:morph:form.cv02522,conjverb,conjugated verb: 1st plural pluperfect optative passive
-urn:cite:morph:form.cv02530,conjverb,conjugated verb: 1st plural pluperfect imperative active
-urn:cite:morph:form.cv02531,conjverb,conjugated verb: 1st plural pluperfect imperative middle
-urn:cite:morph:form.cv02532,conjverb,conjugated verb: 1st plural pluperfect imperative passive
 urn:cite:morph:form.cv10000,conjverb,conjugated verb: 2nd singular present indicative active
 urn:cite:morph:form.cv10001,conjverb,conjugated verb: 2nd singular present indicative middle
 urn:cite:morph:form.cv10002,conjverb,conjugated verb: 2nd singular present indicative passive
