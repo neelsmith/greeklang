@@ -2,9 +2,6 @@ Urn,Gender,Case,Number,Tense,Voice
 urn:cite:morph:form.pc00000,masculine,nominative,singular,present,active
 urn:cite:morph:form.pc00001,masculine,nominative,singular,present,middle
 urn:cite:morph:form.pc00002,masculine,nominative,singular,present,passive
-urn:cite:morph:form.pc00010,masculine,nominative,singular,imperfect,active
-urn:cite:morph:form.pc00011,masculine,nominative,singular,imperfect,middle
-urn:cite:morph:form.pc00012,masculine,nominative,singular,imperfect,passive
 urn:cite:morph:form.pc00020,masculine,nominative,singular,future,active
 urn:cite:morph:form.pc00021,masculine,nominative,singular,future,middle
 urn:cite:morph:form.pc00022,masculine,nominative,singular,future,passive
@@ -17,9 +14,6 @@ urn:cite:morph:form.pc00042,masculine,nominative,singular,perfect,passive
 urn:cite:morph:form.pc00100,masculine,nominative,dual,present,active
 urn:cite:morph:form.pc00101,masculine,nominative,dual,present,middle
 urn:cite:morph:form.pc00102,masculine,nominative,dual,present,passive
-urn:cite:morph:form.pc00110,masculine,nominative,dual,imperfect,active
-urn:cite:morph:form.pc00111,masculine,nominative,dual,imperfect,middle
-urn:cite:morph:form.pc00112,masculine,nominative,dual,imperfect,passive
 urn:cite:morph:form.pc00120,masculine,nominative,dual,future,active
 urn:cite:morph:form.pc00121,masculine,nominative,dual,future,middle
 urn:cite:morph:form.pc00122,masculine,nominative,dual,future,passive
@@ -32,9 +26,6 @@ urn:cite:morph:form.pc00142,masculine,nominative,dual,perfect,passive
 urn:cite:morph:form.pc00200,masculine,nominative,plural,present,active
 urn:cite:morph:form.pc00201,masculine,nominative,plural,present,middle
 urn:cite:morph:form.pc00202,masculine,nominative,plural,present,passive
-urn:cite:morph:form.pc00210,masculine,nominative,plural,imperfect,active
-urn:cite:morph:form.pc00211,masculine,nominative,plural,imperfect,middle
-urn:cite:morph:form.pc00212,masculine,nominative,plural,imperfect,passive
 urn:cite:morph:form.pc00220,masculine,nominative,plural,future,active
 urn:cite:morph:form.pc00221,masculine,nominative,plural,future,middle
 urn:cite:morph:form.pc00222,masculine,nominative,plural,future,passive
@@ -47,9 +38,6 @@ urn:cite:morph:form.pc00242,masculine,nominative,plural,perfect,passive
 urn:cite:morph:form.pc01000,masculine,genitive,singular,present,active
 urn:cite:morph:form.pc01001,masculine,genitive,singular,present,middle
 urn:cite:morph:form.pc01002,masculine,genitive,singular,present,passive
-urn:cite:morph:form.pc01010,masculine,genitive,singular,imperfect,active
-urn:cite:morph:form.pc01011,masculine,genitive,singular,imperfect,middle
-urn:cite:morph:form.pc01012,masculine,genitive,singular,imperfect,passive
 urn:cite:morph:form.pc01020,masculine,genitive,singular,future,active
 urn:cite:morph:form.pc01021,masculine,genitive,singular,future,middle
 urn:cite:morph:form.pc01022,masculine,genitive,singular,future,passive
@@ -62,9 +50,6 @@ urn:cite:morph:form.pc01042,masculine,genitive,singular,perfect,passive
 urn:cite:morph:form.pc01100,masculine,genitive,dual,present,active
 urn:cite:morph:form.pc01101,masculine,genitive,dual,present,middle
 urn:cite:morph:form.pc01102,masculine,genitive,dual,present,passive
-urn:cite:morph:form.pc01110,masculine,genitive,dual,imperfect,active
-urn:cite:morph:form.pc01111,masculine,genitive,dual,imperfect,middle
-urn:cite:morph:form.pc01112,masculine,genitive,dual,imperfect,passive
 urn:cite:morph:form.pc01120,masculine,genitive,dual,future,active
 urn:cite:morph:form.pc01121,masculine,genitive,dual,future,middle
 urn:cite:morph:form.pc01122,masculine,genitive,dual,future,passive
@@ -77,9 +62,6 @@ urn:cite:morph:form.pc01142,masculine,genitive,dual,perfect,passive
 urn:cite:morph:form.pc01200,masculine,genitive,plural,present,active
 urn:cite:morph:form.pc01201,masculine,genitive,plural,present,middle
 urn:cite:morph:form.pc01202,masculine,genitive,plural,present,passive
-urn:cite:morph:form.pc01210,masculine,genitive,plural,imperfect,active
-urn:cite:morph:form.pc01211,masculine,genitive,plural,imperfect,middle
-urn:cite:morph:form.pc01212,masculine,genitive,plural,imperfect,passive
 urn:cite:morph:form.pc01220,masculine,genitive,plural,future,active
 urn:cite:morph:form.pc01221,masculine,genitive,plural,future,middle
 urn:cite:morph:form.pc01222,masculine,genitive,plural,future,passive
@@ -92,9 +74,6 @@ urn:cite:morph:form.pc01242,masculine,genitive,plural,perfect,passive
 urn:cite:morph:form.pc02000,masculine,dative,singular,present,active
 urn:cite:morph:form.pc02001,masculine,dative,singular,present,middle
 urn:cite:morph:form.pc02002,masculine,dative,singular,present,passive
-urn:cite:morph:form.pc02010,masculine,dative,singular,imperfect,active
-urn:cite:morph:form.pc02011,masculine,dative,singular,imperfect,middle
-urn:cite:morph:form.pc02012,masculine,dative,singular,imperfect,passive
 urn:cite:morph:form.pc02020,masculine,dative,singular,future,active
 urn:cite:morph:form.pc02021,masculine,dative,singular,future,middle
 urn:cite:morph:form.pc02022,masculine,dative,singular,future,passive
@@ -107,9 +86,6 @@ urn:cite:morph:form.pc02042,masculine,dative,singular,perfect,passive
 urn:cite:morph:form.pc02100,masculine,dative,dual,present,active
 urn:cite:morph:form.pc02101,masculine,dative,dual,present,middle
 urn:cite:morph:form.pc02102,masculine,dative,dual,present,passive
-urn:cite:morph:form.pc02110,masculine,dative,dual,imperfect,active
-urn:cite:morph:form.pc02111,masculine,dative,dual,imperfect,middle
-urn:cite:morph:form.pc02112,masculine,dative,dual,imperfect,passive
 urn:cite:morph:form.pc02120,masculine,dative,dual,future,active
 urn:cite:morph:form.pc02121,masculine,dative,dual,future,middle
 urn:cite:morph:form.pc02122,masculine,dative,dual,future,passive
@@ -122,9 +98,6 @@ urn:cite:morph:form.pc02142,masculine,dative,dual,perfect,passive
 urn:cite:morph:form.pc02200,masculine,dative,plural,present,active
 urn:cite:morph:form.pc02201,masculine,dative,plural,present,middle
 urn:cite:morph:form.pc02202,masculine,dative,plural,present,passive
-urn:cite:morph:form.pc02210,masculine,dative,plural,imperfect,active
-urn:cite:morph:form.pc02211,masculine,dative,plural,imperfect,middle
-urn:cite:morph:form.pc02212,masculine,dative,plural,imperfect,passive
 urn:cite:morph:form.pc02220,masculine,dative,plural,future,active
 urn:cite:morph:form.pc02221,masculine,dative,plural,future,middle
 urn:cite:morph:form.pc02222,masculine,dative,plural,future,passive
@@ -137,9 +110,6 @@ urn:cite:morph:form.pc02242,masculine,dative,plural,perfect,passive
 urn:cite:morph:form.pc03000,masculine,accusative,singular,present,active
 urn:cite:morph:form.pc03001,masculine,accusative,singular,present,middle
 urn:cite:morph:form.pc03002,masculine,accusative,singular,present,passive
-urn:cite:morph:form.pc03010,masculine,accusative,singular,imperfect,active
-urn:cite:morph:form.pc03011,masculine,accusative,singular,imperfect,middle
-urn:cite:morph:form.pc03012,masculine,accusative,singular,imperfect,passive
 urn:cite:morph:form.pc03020,masculine,accusative,singular,future,active
 urn:cite:morph:form.pc03021,masculine,accusative,singular,future,middle
 urn:cite:morph:form.pc03022,masculine,accusative,singular,future,passive
@@ -152,9 +122,6 @@ urn:cite:morph:form.pc03042,masculine,accusative,singular,perfect,passive
 urn:cite:morph:form.pc03100,masculine,accusative,dual,present,active
 urn:cite:morph:form.pc03101,masculine,accusative,dual,present,middle
 urn:cite:morph:form.pc03102,masculine,accusative,dual,present,passive
-urn:cite:morph:form.pc03110,masculine,accusative,dual,imperfect,active
-urn:cite:morph:form.pc03111,masculine,accusative,dual,imperfect,middle
-urn:cite:morph:form.pc03112,masculine,accusative,dual,imperfect,passive
 urn:cite:morph:form.pc03120,masculine,accusative,dual,future,active
 urn:cite:morph:form.pc03121,masculine,accusative,dual,future,middle
 urn:cite:morph:form.pc03122,masculine,accusative,dual,future,passive
@@ -167,9 +134,6 @@ urn:cite:morph:form.pc03142,masculine,accusative,dual,perfect,passive
 urn:cite:morph:form.pc03200,masculine,accusative,plural,present,active
 urn:cite:morph:form.pc03201,masculine,accusative,plural,present,middle
 urn:cite:morph:form.pc03202,masculine,accusative,plural,present,passive
-urn:cite:morph:form.pc03210,masculine,accusative,plural,imperfect,active
-urn:cite:morph:form.pc03211,masculine,accusative,plural,imperfect,middle
-urn:cite:morph:form.pc03212,masculine,accusative,plural,imperfect,passive
 urn:cite:morph:form.pc03220,masculine,accusative,plural,future,active
 urn:cite:morph:form.pc03221,masculine,accusative,plural,future,middle
 urn:cite:morph:form.pc03222,masculine,accusative,plural,future,passive
@@ -182,9 +146,6 @@ urn:cite:morph:form.pc03242,masculine,accusative,plural,perfect,passive
 urn:cite:morph:form.pc04000,masculine,vocative,singular,present,active
 urn:cite:morph:form.pc04001,masculine,vocative,singular,present,middle
 urn:cite:morph:form.pc04002,masculine,vocative,singular,present,passive
-urn:cite:morph:form.pc04010,masculine,vocative,singular,imperfect,active
-urn:cite:morph:form.pc04011,masculine,vocative,singular,imperfect,middle
-urn:cite:morph:form.pc04012,masculine,vocative,singular,imperfect,passive
 urn:cite:morph:form.pc04020,masculine,vocative,singular,future,active
 urn:cite:morph:form.pc04021,masculine,vocative,singular,future,middle
 urn:cite:morph:form.pc04022,masculine,vocative,singular,future,passive
@@ -197,9 +158,6 @@ urn:cite:morph:form.pc04042,masculine,vocative,singular,perfect,passive
 urn:cite:morph:form.pc04100,masculine,vocative,dual,present,active
 urn:cite:morph:form.pc04101,masculine,vocative,dual,present,middle
 urn:cite:morph:form.pc04102,masculine,vocative,dual,present,passive
-urn:cite:morph:form.pc04110,masculine,vocative,dual,imperfect,active
-urn:cite:morph:form.pc04111,masculine,vocative,dual,imperfect,middle
-urn:cite:morph:form.pc04112,masculine,vocative,dual,imperfect,passive
 urn:cite:morph:form.pc04120,masculine,vocative,dual,future,active
 urn:cite:morph:form.pc04121,masculine,vocative,dual,future,middle
 urn:cite:morph:form.pc04122,masculine,vocative,dual,future,passive
@@ -212,9 +170,6 @@ urn:cite:morph:form.pc04142,masculine,vocative,dual,perfect,passive
 urn:cite:morph:form.pc04200,masculine,vocative,plural,present,active
 urn:cite:morph:form.pc04201,masculine,vocative,plural,present,middle
 urn:cite:morph:form.pc04202,masculine,vocative,plural,present,passive
-urn:cite:morph:form.pc04210,masculine,vocative,plural,imperfect,active
-urn:cite:morph:form.pc04211,masculine,vocative,plural,imperfect,middle
-urn:cite:morph:form.pc04212,masculine,vocative,plural,imperfect,passive
 urn:cite:morph:form.pc04220,masculine,vocative,plural,future,active
 urn:cite:morph:form.pc04221,masculine,vocative,plural,future,middle
 urn:cite:morph:form.pc04222,masculine,vocative,plural,future,passive
@@ -227,9 +182,6 @@ urn:cite:morph:form.pc04242,masculine,vocative,plural,perfect,passive
 urn:cite:morph:form.pc10000,feminine,nominative,singular,present,active
 urn:cite:morph:form.pc10001,feminine,nominative,singular,present,middle
 urn:cite:morph:form.pc10002,feminine,nominative,singular,present,passive
-urn:cite:morph:form.pc10010,feminine,nominative,singular,imperfect,active
-urn:cite:morph:form.pc10011,feminine,nominative,singular,imperfect,middle
-urn:cite:morph:form.pc10012,feminine,nominative,singular,imperfect,passive
 urn:cite:morph:form.pc10020,feminine,nominative,singular,future,active
 urn:cite:morph:form.pc10021,feminine,nominative,singular,future,middle
 urn:cite:morph:form.pc10022,feminine,nominative,singular,future,passive
@@ -242,9 +194,6 @@ urn:cite:morph:form.pc10042,feminine,nominative,singular,perfect,passive
 urn:cite:morph:form.pc10100,feminine,nominative,dual,present,active
 urn:cite:morph:form.pc10101,feminine,nominative,dual,present,middle
 urn:cite:morph:form.pc10102,feminine,nominative,dual,present,passive
-urn:cite:morph:form.pc10110,feminine,nominative,dual,imperfect,active
-urn:cite:morph:form.pc10111,feminine,nominative,dual,imperfect,middle
-urn:cite:morph:form.pc10112,feminine,nominative,dual,imperfect,passive
 urn:cite:morph:form.pc10120,feminine,nominative,dual,future,active
 urn:cite:morph:form.pc10121,feminine,nominative,dual,future,middle
 urn:cite:morph:form.pc10122,feminine,nominative,dual,future,passive
@@ -257,9 +206,6 @@ urn:cite:morph:form.pc10142,feminine,nominative,dual,perfect,passive
 urn:cite:morph:form.pc10200,feminine,nominative,plural,present,active
 urn:cite:morph:form.pc10201,feminine,nominative,plural,present,middle
 urn:cite:morph:form.pc10202,feminine,nominative,plural,present,passive
-urn:cite:morph:form.pc10210,feminine,nominative,plural,imperfect,active
-urn:cite:morph:form.pc10211,feminine,nominative,plural,imperfect,middle
-urn:cite:morph:form.pc10212,feminine,nominative,plural,imperfect,passive
 urn:cite:morph:form.pc10220,feminine,nominative,plural,future,active
 urn:cite:morph:form.pc10221,feminine,nominative,plural,future,middle
 urn:cite:morph:form.pc10222,feminine,nominative,plural,future,passive
@@ -272,9 +218,6 @@ urn:cite:morph:form.pc10242,feminine,nominative,plural,perfect,passive
 urn:cite:morph:form.pc11000,feminine,genitive,singular,present,active
 urn:cite:morph:form.pc11001,feminine,genitive,singular,present,middle
 urn:cite:morph:form.pc11002,feminine,genitive,singular,present,passive
-urn:cite:morph:form.pc11010,feminine,genitive,singular,imperfect,active
-urn:cite:morph:form.pc11011,feminine,genitive,singular,imperfect,middle
-urn:cite:morph:form.pc11012,feminine,genitive,singular,imperfect,passive
 urn:cite:morph:form.pc11020,feminine,genitive,singular,future,active
 urn:cite:morph:form.pc11021,feminine,genitive,singular,future,middle
 urn:cite:morph:form.pc11022,feminine,genitive,singular,future,passive
@@ -287,9 +230,6 @@ urn:cite:morph:form.pc11042,feminine,genitive,singular,perfect,passive
 urn:cite:morph:form.pc11100,feminine,genitive,dual,present,active
 urn:cite:morph:form.pc11101,feminine,genitive,dual,present,middle
 urn:cite:morph:form.pc11102,feminine,genitive,dual,present,passive
-urn:cite:morph:form.pc11110,feminine,genitive,dual,imperfect,active
-urn:cite:morph:form.pc11111,feminine,genitive,dual,imperfect,middle
-urn:cite:morph:form.pc11112,feminine,genitive,dual,imperfect,passive
 urn:cite:morph:form.pc11120,feminine,genitive,dual,future,active
 urn:cite:morph:form.pc11121,feminine,genitive,dual,future,middle
 urn:cite:morph:form.pc11122,feminine,genitive,dual,future,passive
@@ -302,9 +242,6 @@ urn:cite:morph:form.pc11142,feminine,genitive,dual,perfect,passive
 urn:cite:morph:form.pc11200,feminine,genitive,plural,present,active
 urn:cite:morph:form.pc11201,feminine,genitive,plural,present,middle
 urn:cite:morph:form.pc11202,feminine,genitive,plural,present,passive
-urn:cite:morph:form.pc11210,feminine,genitive,plural,imperfect,active
-urn:cite:morph:form.pc11211,feminine,genitive,plural,imperfect,middle
-urn:cite:morph:form.pc11212,feminine,genitive,plural,imperfect,passive
 urn:cite:morph:form.pc11220,feminine,genitive,plural,future,active
 urn:cite:morph:form.pc11221,feminine,genitive,plural,future,middle
 urn:cite:morph:form.pc11222,feminine,genitive,plural,future,passive
@@ -317,9 +254,6 @@ urn:cite:morph:form.pc11242,feminine,genitive,plural,perfect,passive
 urn:cite:morph:form.pc12000,feminine,dative,singular,present,active
 urn:cite:morph:form.pc12001,feminine,dative,singular,present,middle
 urn:cite:morph:form.pc12002,feminine,dative,singular,present,passive
-urn:cite:morph:form.pc12010,feminine,dative,singular,imperfect,active
-urn:cite:morph:form.pc12011,feminine,dative,singular,imperfect,middle
-urn:cite:morph:form.pc12012,feminine,dative,singular,imperfect,passive
 urn:cite:morph:form.pc12020,feminine,dative,singular,future,active
 urn:cite:morph:form.pc12021,feminine,dative,singular,future,middle
 urn:cite:morph:form.pc12022,feminine,dative,singular,future,passive
@@ -332,9 +266,6 @@ urn:cite:morph:form.pc12042,feminine,dative,singular,perfect,passive
 urn:cite:morph:form.pc12100,feminine,dative,dual,present,active
 urn:cite:morph:form.pc12101,feminine,dative,dual,present,middle
 urn:cite:morph:form.pc12102,feminine,dative,dual,present,passive
-urn:cite:morph:form.pc12110,feminine,dative,dual,imperfect,active
-urn:cite:morph:form.pc12111,feminine,dative,dual,imperfect,middle
-urn:cite:morph:form.pc12112,feminine,dative,dual,imperfect,passive
 urn:cite:morph:form.pc12120,feminine,dative,dual,future,active
 urn:cite:morph:form.pc12121,feminine,dative,dual,future,middle
 urn:cite:morph:form.pc12122,feminine,dative,dual,future,passive
@@ -347,9 +278,6 @@ urn:cite:morph:form.pc12142,feminine,dative,dual,perfect,passive
 urn:cite:morph:form.pc12200,feminine,dative,plural,present,active
 urn:cite:morph:form.pc12201,feminine,dative,plural,present,middle
 urn:cite:morph:form.pc12202,feminine,dative,plural,present,passive
-urn:cite:morph:form.pc12210,feminine,dative,plural,imperfect,active
-urn:cite:morph:form.pc12211,feminine,dative,plural,imperfect,middle
-urn:cite:morph:form.pc12212,feminine,dative,plural,imperfect,passive
 urn:cite:morph:form.pc12220,feminine,dative,plural,future,active
 urn:cite:morph:form.pc12221,feminine,dative,plural,future,middle
 urn:cite:morph:form.pc12222,feminine,dative,plural,future,passive
@@ -362,9 +290,6 @@ urn:cite:morph:form.pc12242,feminine,dative,plural,perfect,passive
 urn:cite:morph:form.pc13000,feminine,accusative,singular,present,active
 urn:cite:morph:form.pc13001,feminine,accusative,singular,present,middle
 urn:cite:morph:form.pc13002,feminine,accusative,singular,present,passive
-urn:cite:morph:form.pc13010,feminine,accusative,singular,imperfect,active
-urn:cite:morph:form.pc13011,feminine,accusative,singular,imperfect,middle
-urn:cite:morph:form.pc13012,feminine,accusative,singular,imperfect,passive
 urn:cite:morph:form.pc13020,feminine,accusative,singular,future,active
 urn:cite:morph:form.pc13021,feminine,accusative,singular,future,middle
 urn:cite:morph:form.pc13022,feminine,accusative,singular,future,passive
@@ -377,9 +302,6 @@ urn:cite:morph:form.pc13042,feminine,accusative,singular,perfect,passive
 urn:cite:morph:form.pc13100,feminine,accusative,dual,present,active
 urn:cite:morph:form.pc13101,feminine,accusative,dual,present,middle
 urn:cite:morph:form.pc13102,feminine,accusative,dual,present,passive
-urn:cite:morph:form.pc13110,feminine,accusative,dual,imperfect,active
-urn:cite:morph:form.pc13111,feminine,accusative,dual,imperfect,middle
-urn:cite:morph:form.pc13112,feminine,accusative,dual,imperfect,passive
 urn:cite:morph:form.pc13120,feminine,accusative,dual,future,active
 urn:cite:morph:form.pc13121,feminine,accusative,dual,future,middle
 urn:cite:morph:form.pc13122,feminine,accusative,dual,future,passive
@@ -392,9 +314,6 @@ urn:cite:morph:form.pc13142,feminine,accusative,dual,perfect,passive
 urn:cite:morph:form.pc13200,feminine,accusative,plural,present,active
 urn:cite:morph:form.pc13201,feminine,accusative,plural,present,middle
 urn:cite:morph:form.pc13202,feminine,accusative,plural,present,passive
-urn:cite:morph:form.pc13210,feminine,accusative,plural,imperfect,active
-urn:cite:morph:form.pc13211,feminine,accusative,plural,imperfect,middle
-urn:cite:morph:form.pc13212,feminine,accusative,plural,imperfect,passive
 urn:cite:morph:form.pc13220,feminine,accusative,plural,future,active
 urn:cite:morph:form.pc13221,feminine,accusative,plural,future,middle
 urn:cite:morph:form.pc13222,feminine,accusative,plural,future,passive
@@ -407,9 +326,6 @@ urn:cite:morph:form.pc13242,feminine,accusative,plural,perfect,passive
 urn:cite:morph:form.pc14000,feminine,vocative,singular,present,active
 urn:cite:morph:form.pc14001,feminine,vocative,singular,present,middle
 urn:cite:morph:form.pc14002,feminine,vocative,singular,present,passive
-urn:cite:morph:form.pc14010,feminine,vocative,singular,imperfect,active
-urn:cite:morph:form.pc14011,feminine,vocative,singular,imperfect,middle
-urn:cite:morph:form.pc14012,feminine,vocative,singular,imperfect,passive
 urn:cite:morph:form.pc14020,feminine,vocative,singular,future,active
 urn:cite:morph:form.pc14021,feminine,vocative,singular,future,middle
 urn:cite:morph:form.pc14022,feminine,vocative,singular,future,passive
@@ -422,9 +338,6 @@ urn:cite:morph:form.pc14042,feminine,vocative,singular,perfect,passive
 urn:cite:morph:form.pc14100,feminine,vocative,dual,present,active
 urn:cite:morph:form.pc14101,feminine,vocative,dual,present,middle
 urn:cite:morph:form.pc14102,feminine,vocative,dual,present,passive
-urn:cite:morph:form.pc14110,feminine,vocative,dual,imperfect,active
-urn:cite:morph:form.pc14111,feminine,vocative,dual,imperfect,middle
-urn:cite:morph:form.pc14112,feminine,vocative,dual,imperfect,passive
 urn:cite:morph:form.pc14120,feminine,vocative,dual,future,active
 urn:cite:morph:form.pc14121,feminine,vocative,dual,future,middle
 urn:cite:morph:form.pc14122,feminine,vocative,dual,future,passive
@@ -437,9 +350,6 @@ urn:cite:morph:form.pc14142,feminine,vocative,dual,perfect,passive
 urn:cite:morph:form.pc14200,feminine,vocative,plural,present,active
 urn:cite:morph:form.pc14201,feminine,vocative,plural,present,middle
 urn:cite:morph:form.pc14202,feminine,vocative,plural,present,passive
-urn:cite:morph:form.pc14210,feminine,vocative,plural,imperfect,active
-urn:cite:morph:form.pc14211,feminine,vocative,plural,imperfect,middle
-urn:cite:morph:form.pc14212,feminine,vocative,plural,imperfect,passive
 urn:cite:morph:form.pc14220,feminine,vocative,plural,future,active
 urn:cite:morph:form.pc14221,feminine,vocative,plural,future,middle
 urn:cite:morph:form.pc14222,feminine,vocative,plural,future,passive
@@ -452,9 +362,6 @@ urn:cite:morph:form.pc14242,feminine,vocative,plural,perfect,passive
 urn:cite:morph:form.pc20000,neuter,nominative,singular,present,active
 urn:cite:morph:form.pc20001,neuter,nominative,singular,present,middle
 urn:cite:morph:form.pc20002,neuter,nominative,singular,present,passive
-urn:cite:morph:form.pc20010,neuter,nominative,singular,imperfect,active
-urn:cite:morph:form.pc20011,neuter,nominative,singular,imperfect,middle
-urn:cite:morph:form.pc20012,neuter,nominative,singular,imperfect,passive
 urn:cite:morph:form.pc20020,neuter,nominative,singular,future,active
 urn:cite:morph:form.pc20021,neuter,nominative,singular,future,middle
 urn:cite:morph:form.pc20022,neuter,nominative,singular,future,passive
@@ -467,9 +374,6 @@ urn:cite:morph:form.pc20042,neuter,nominative,singular,perfect,passive
 urn:cite:morph:form.pc20100,neuter,nominative,dual,present,active
 urn:cite:morph:form.pc20101,neuter,nominative,dual,present,middle
 urn:cite:morph:form.pc20102,neuter,nominative,dual,present,passive
-urn:cite:morph:form.pc20110,neuter,nominative,dual,imperfect,active
-urn:cite:morph:form.pc20111,neuter,nominative,dual,imperfect,middle
-urn:cite:morph:form.pc20112,neuter,nominative,dual,imperfect,passive
 urn:cite:morph:form.pc20120,neuter,nominative,dual,future,active
 urn:cite:morph:form.pc20121,neuter,nominative,dual,future,middle
 urn:cite:morph:form.pc20122,neuter,nominative,dual,future,passive
@@ -482,9 +386,6 @@ urn:cite:morph:form.pc20142,neuter,nominative,dual,perfect,passive
 urn:cite:morph:form.pc20200,neuter,nominative,plural,present,active
 urn:cite:morph:form.pc20201,neuter,nominative,plural,present,middle
 urn:cite:morph:form.pc20202,neuter,nominative,plural,present,passive
-urn:cite:morph:form.pc20210,neuter,nominative,plural,imperfect,active
-urn:cite:morph:form.pc20211,neuter,nominative,plural,imperfect,middle
-urn:cite:morph:form.pc20212,neuter,nominative,plural,imperfect,passive
 urn:cite:morph:form.pc20220,neuter,nominative,plural,future,active
 urn:cite:morph:form.pc20221,neuter,nominative,plural,future,middle
 urn:cite:morph:form.pc20222,neuter,nominative,plural,future,passive
@@ -497,9 +398,6 @@ urn:cite:morph:form.pc20242,neuter,nominative,plural,perfect,passive
 urn:cite:morph:form.pc21000,neuter,genitive,singular,present,active
 urn:cite:morph:form.pc21001,neuter,genitive,singular,present,middle
 urn:cite:morph:form.pc21002,neuter,genitive,singular,present,passive
-urn:cite:morph:form.pc21010,neuter,genitive,singular,imperfect,active
-urn:cite:morph:form.pc21011,neuter,genitive,singular,imperfect,middle
-urn:cite:morph:form.pc21012,neuter,genitive,singular,imperfect,passive
 urn:cite:morph:form.pc21020,neuter,genitive,singular,future,active
 urn:cite:morph:form.pc21021,neuter,genitive,singular,future,middle
 urn:cite:morph:form.pc21022,neuter,genitive,singular,future,passive
@@ -512,9 +410,6 @@ urn:cite:morph:form.pc21042,neuter,genitive,singular,perfect,passive
 urn:cite:morph:form.pc21100,neuter,genitive,dual,present,active
 urn:cite:morph:form.pc21101,neuter,genitive,dual,present,middle
 urn:cite:morph:form.pc21102,neuter,genitive,dual,present,passive
-urn:cite:morph:form.pc21110,neuter,genitive,dual,imperfect,active
-urn:cite:morph:form.pc21111,neuter,genitive,dual,imperfect,middle
-urn:cite:morph:form.pc21112,neuter,genitive,dual,imperfect,passive
 urn:cite:morph:form.pc21120,neuter,genitive,dual,future,active
 urn:cite:morph:form.pc21121,neuter,genitive,dual,future,middle
 urn:cite:morph:form.pc21122,neuter,genitive,dual,future,passive
@@ -527,9 +422,6 @@ urn:cite:morph:form.pc21142,neuter,genitive,dual,perfect,passive
 urn:cite:morph:form.pc21200,neuter,genitive,plural,present,active
 urn:cite:morph:form.pc21201,neuter,genitive,plural,present,middle
 urn:cite:morph:form.pc21202,neuter,genitive,plural,present,passive
-urn:cite:morph:form.pc21210,neuter,genitive,plural,imperfect,active
-urn:cite:morph:form.pc21211,neuter,genitive,plural,imperfect,middle
-urn:cite:morph:form.pc21212,neuter,genitive,plural,imperfect,passive
 urn:cite:morph:form.pc21220,neuter,genitive,plural,future,active
 urn:cite:morph:form.pc21221,neuter,genitive,plural,future,middle
 urn:cite:morph:form.pc21222,neuter,genitive,plural,future,passive
@@ -542,9 +434,6 @@ urn:cite:morph:form.pc21242,neuter,genitive,plural,perfect,passive
 urn:cite:morph:form.pc22000,neuter,dative,singular,present,active
 urn:cite:morph:form.pc22001,neuter,dative,singular,present,middle
 urn:cite:morph:form.pc22002,neuter,dative,singular,present,passive
-urn:cite:morph:form.pc22010,neuter,dative,singular,imperfect,active
-urn:cite:morph:form.pc22011,neuter,dative,singular,imperfect,middle
-urn:cite:morph:form.pc22012,neuter,dative,singular,imperfect,passive
 urn:cite:morph:form.pc22020,neuter,dative,singular,future,active
 urn:cite:morph:form.pc22021,neuter,dative,singular,future,middle
 urn:cite:morph:form.pc22022,neuter,dative,singular,future,passive
@@ -557,9 +446,6 @@ urn:cite:morph:form.pc22042,neuter,dative,singular,perfect,passive
 urn:cite:morph:form.pc22100,neuter,dative,dual,present,active
 urn:cite:morph:form.pc22101,neuter,dative,dual,present,middle
 urn:cite:morph:form.pc22102,neuter,dative,dual,present,passive
-urn:cite:morph:form.pc22110,neuter,dative,dual,imperfect,active
-urn:cite:morph:form.pc22111,neuter,dative,dual,imperfect,middle
-urn:cite:morph:form.pc22112,neuter,dative,dual,imperfect,passive
 urn:cite:morph:form.pc22120,neuter,dative,dual,future,active
 urn:cite:morph:form.pc22121,neuter,dative,dual,future,middle
 urn:cite:morph:form.pc22122,neuter,dative,dual,future,passive
@@ -572,9 +458,6 @@ urn:cite:morph:form.pc22142,neuter,dative,dual,perfect,passive
 urn:cite:morph:form.pc22200,neuter,dative,plural,present,active
 urn:cite:morph:form.pc22201,neuter,dative,plural,present,middle
 urn:cite:morph:form.pc22202,neuter,dative,plural,present,passive
-urn:cite:morph:form.pc22210,neuter,dative,plural,imperfect,active
-urn:cite:morph:form.pc22211,neuter,dative,plural,imperfect,middle
-urn:cite:morph:form.pc22212,neuter,dative,plural,imperfect,passive
 urn:cite:morph:form.pc22220,neuter,dative,plural,future,active
 urn:cite:morph:form.pc22221,neuter,dative,plural,future,middle
 urn:cite:morph:form.pc22222,neuter,dative,plural,future,passive
@@ -587,9 +470,6 @@ urn:cite:morph:form.pc22242,neuter,dative,plural,perfect,passive
 urn:cite:morph:form.pc23000,neuter,accusative,singular,present,active
 urn:cite:morph:form.pc23001,neuter,accusative,singular,present,middle
 urn:cite:morph:form.pc23002,neuter,accusative,singular,present,passive
-urn:cite:morph:form.pc23010,neuter,accusative,singular,imperfect,active
-urn:cite:morph:form.pc23011,neuter,accusative,singular,imperfect,middle
-urn:cite:morph:form.pc23012,neuter,accusative,singular,imperfect,passive
 urn:cite:morph:form.pc23020,neuter,accusative,singular,future,active
 urn:cite:morph:form.pc23021,neuter,accusative,singular,future,middle
 urn:cite:morph:form.pc23022,neuter,accusative,singular,future,passive
@@ -602,9 +482,6 @@ urn:cite:morph:form.pc23042,neuter,accusative,singular,perfect,passive
 urn:cite:morph:form.pc23100,neuter,accusative,dual,present,active
 urn:cite:morph:form.pc23101,neuter,accusative,dual,present,middle
 urn:cite:morph:form.pc23102,neuter,accusative,dual,present,passive
-urn:cite:morph:form.pc23110,neuter,accusative,dual,imperfect,active
-urn:cite:morph:form.pc23111,neuter,accusative,dual,imperfect,middle
-urn:cite:morph:form.pc23112,neuter,accusative,dual,imperfect,passive
 urn:cite:morph:form.pc23120,neuter,accusative,dual,future,active
 urn:cite:morph:form.pc23121,neuter,accusative,dual,future,middle
 urn:cite:morph:form.pc23122,neuter,accusative,dual,future,passive
@@ -617,9 +494,6 @@ urn:cite:morph:form.pc23142,neuter,accusative,dual,perfect,passive
 urn:cite:morph:form.pc23200,neuter,accusative,plural,present,active
 urn:cite:morph:form.pc23201,neuter,accusative,plural,present,middle
 urn:cite:morph:form.pc23202,neuter,accusative,plural,present,passive
-urn:cite:morph:form.pc23210,neuter,accusative,plural,imperfect,active
-urn:cite:morph:form.pc23211,neuter,accusative,plural,imperfect,middle
-urn:cite:morph:form.pc23212,neuter,accusative,plural,imperfect,passive
 urn:cite:morph:form.pc23220,neuter,accusative,plural,future,active
 urn:cite:morph:form.pc23221,neuter,accusative,plural,future,middle
 urn:cite:morph:form.pc23222,neuter,accusative,plural,future,passive
@@ -632,9 +506,6 @@ urn:cite:morph:form.pc23242,neuter,accusative,plural,perfect,passive
 urn:cite:morph:form.pc24000,neuter,vocative,singular,present,active
 urn:cite:morph:form.pc24001,neuter,vocative,singular,present,middle
 urn:cite:morph:form.pc24002,neuter,vocative,singular,present,passive
-urn:cite:morph:form.pc24010,neuter,vocative,singular,imperfect,active
-urn:cite:morph:form.pc24011,neuter,vocative,singular,imperfect,middle
-urn:cite:morph:form.pc24012,neuter,vocative,singular,imperfect,passive
 urn:cite:morph:form.pc24020,neuter,vocative,singular,future,active
 urn:cite:morph:form.pc24021,neuter,vocative,singular,future,middle
 urn:cite:morph:form.pc24022,neuter,vocative,singular,future,passive
@@ -647,9 +518,6 @@ urn:cite:morph:form.pc24042,neuter,vocative,singular,perfect,passive
 urn:cite:morph:form.pc24100,neuter,vocative,dual,present,active
 urn:cite:morph:form.pc24101,neuter,vocative,dual,present,middle
 urn:cite:morph:form.pc24102,neuter,vocative,dual,present,passive
-urn:cite:morph:form.pc24110,neuter,vocative,dual,imperfect,active
-urn:cite:morph:form.pc24111,neuter,vocative,dual,imperfect,middle
-urn:cite:morph:form.pc24112,neuter,vocative,dual,imperfect,passive
 urn:cite:morph:form.pc24120,neuter,vocative,dual,future,active
 urn:cite:morph:form.pc24121,neuter,vocative,dual,future,middle
 urn:cite:morph:form.pc24122,neuter,vocative,dual,future,passive
@@ -662,9 +530,6 @@ urn:cite:morph:form.pc24142,neuter,vocative,dual,perfect,passive
 urn:cite:morph:form.pc24200,neuter,vocative,plural,present,active
 urn:cite:morph:form.pc24201,neuter,vocative,plural,present,middle
 urn:cite:morph:form.pc24202,neuter,vocative,plural,present,passive
-urn:cite:morph:form.pc24210,neuter,vocative,plural,imperfect,active
-urn:cite:morph:form.pc24211,neuter,vocative,plural,imperfect,middle
-urn:cite:morph:form.pc24212,neuter,vocative,plural,imperfect,passive
 urn:cite:morph:form.pc24220,neuter,vocative,plural,future,active
 urn:cite:morph:form.pc24221,neuter,vocative,plural,future,middle
 urn:cite:morph:form.pc24222,neuter,vocative,plural,future,passive
