@@ -26,3 +26,7 @@ subprojects {
     testCompile 'junit:junit:4.8.2'
   }
 }
+
+project(":fst:core_tests") {
+  apply from: "${rootProject.rootDir}/fst/fstconf.gradle"
+}

@@ -282,3 +282,9 @@ analyzeFSTTests.doLast {
   System.err.println "Analyzed results of FST testing"
 }
 */
+
+
+task setupCoreTests(type: Copy, dependsOn: 'fst') {
+  from ("${buildDir}")
+  into "core_tests/build"
+}
