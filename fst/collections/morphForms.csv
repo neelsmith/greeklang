@@ -15,9 +15,6 @@ urn:cite:morph:form.cv00102,conjverb,conjugated verb: 1st singular imperfect ind
 urn:cite:morph:form.cv00200,conjverb,conjugated verb: 1st singular future indicative active
 urn:cite:morph:form.cv00201,conjverb,conjugated verb: 1st singular future indicative middle
 urn:cite:morph:form.cv00202,conjverb,conjugated verb: 1st singular future indicative passive
-urn:cite:morph:form.cv00210,conjverb,conjugated verb: 1st singular future subjunctive active
-urn:cite:morph:form.cv00211,conjverb,conjugated verb: 1st singular future subjunctive middle
-urn:cite:morph:form.cv00212,conjverb,conjugated verb: 1st singular future subjunctive passive
 urn:cite:morph:form.cv00220,conjverb,conjugated verb: 1st singular future optative active
 urn:cite:morph:form.cv00221,conjverb,conjugated verb: 1st singular future optative middle
 urn:cite:morph:form.cv00222,conjverb,conjugated verb: 1st singular future optative passive
@@ -63,9 +60,6 @@ urn:cite:morph:form.cv01102,conjverb,conjugated verb: 1st dual imperfect indicat
 urn:cite:morph:form.cv01200,conjverb,conjugated verb: 1st dual future indicative active
 urn:cite:morph:form.cv01201,conjverb,conjugated verb: 1st dual future indicative middle
 urn:cite:morph:form.cv01202,conjverb,conjugated verb: 1st dual future indicative passive
-urn:cite:morph:form.cv01210,conjverb,conjugated verb: 1st dual future subjunctive active
-urn:cite:morph:form.cv01211,conjverb,conjugated verb: 1st dual future subjunctive middle
-urn:cite:morph:form.cv01212,conjverb,conjugated verb: 1st dual future subjunctive passive
 urn:cite:morph:form.cv01220,conjverb,conjugated verb: 1st dual future optative active
 urn:cite:morph:form.cv01221,conjverb,conjugated verb: 1st dual future optative middle
 urn:cite:morph:form.cv01222,conjverb,conjugated verb: 1st dual future optative passive
@@ -111,9 +105,6 @@ urn:cite:morph:form.cv02102,conjverb,conjugated verb: 1st plural imperfect indic
 urn:cite:morph:form.cv02200,conjverb,conjugated verb: 1st plural future indicative active
 urn:cite:morph:form.cv02201,conjverb,conjugated verb: 1st plural future indicative middle
 urn:cite:morph:form.cv02202,conjverb,conjugated verb: 1st plural future indicative passive
-urn:cite:morph:form.cv02210,conjverb,conjugated verb: 1st plural future subjunctive active
-urn:cite:morph:form.cv02211,conjverb,conjugated verb: 1st plural future subjunctive middle
-urn:cite:morph:form.cv02212,conjverb,conjugated verb: 1st plural future subjunctive passive
 urn:cite:morph:form.cv02220,conjverb,conjugated verb: 1st plural future optative active
 urn:cite:morph:form.cv02221,conjverb,conjugated verb: 1st plural future optative middle
 urn:cite:morph:form.cv02222,conjverb,conjugated verb: 1st plural future optative passive
@@ -162,9 +153,6 @@ urn:cite:morph:form.cv10102,conjverb,conjugated verb: 2nd singular imperfect ind
 urn:cite:morph:form.cv10200,conjverb,conjugated verb: 2nd singular future indicative active
 urn:cite:morph:form.cv10201,conjverb,conjugated verb: 2nd singular future indicative middle
 urn:cite:morph:form.cv10202,conjverb,conjugated verb: 2nd singular future indicative passive
-urn:cite:morph:form.cv10210,conjverb,conjugated verb: 2nd singular future subjunctive active
-urn:cite:morph:form.cv10211,conjverb,conjugated verb: 2nd singular future subjunctive middle
-urn:cite:morph:form.cv10212,conjverb,conjugated verb: 2nd singular future subjunctive passive
 urn:cite:morph:form.cv10220,conjverb,conjugated verb: 2nd singular future optative active
 urn:cite:morph:form.cv10221,conjverb,conjugated verb: 2nd singular future optative middle
 urn:cite:morph:form.cv10222,conjverb,conjugated verb: 2nd singular future optative passive
@@ -225,9 +213,6 @@ urn:cite:morph:form.cv11102,conjverb,conjugated verb: 2nd dual imperfect indicat
 urn:cite:morph:form.cv11200,conjverb,conjugated verb: 2nd dual future indicative active
 urn:cite:morph:form.cv11201,conjverb,conjugated verb: 2nd dual future indicative middle
 urn:cite:morph:form.cv11202,conjverb,conjugated verb: 2nd dual future indicative passive
-urn:cite:morph:form.cv11210,conjverb,conjugated verb: 2nd dual future subjunctive active
-urn:cite:morph:form.cv11211,conjverb,conjugated verb: 2nd dual future subjunctive middle
-urn:cite:morph:form.cv11212,conjverb,conjugated verb: 2nd dual future subjunctive passive
 urn:cite:morph:form.cv11220,conjverb,conjugated verb: 2nd dual future optative active
 urn:cite:morph:form.cv11221,conjverb,conjugated verb: 2nd dual future optative middle
 urn:cite:morph:form.cv11222,conjverb,conjugated verb: 2nd dual future optative passive
@@ -288,9 +273,6 @@ urn:cite:morph:form.cv12102,conjverb,conjugated verb: 2nd plural imperfect indic
 urn:cite:morph:form.cv12200,conjverb,conjugated verb: 2nd plural future indicative active
 urn:cite:morph:form.cv12201,conjverb,conjugated verb: 2nd plural future indicative middle
 urn:cite:morph:form.cv12202,conjverb,conjugated verb: 2nd plural future indicative passive
-urn:cite:morph:form.cv12210,conjverb,conjugated verb: 2nd plural future subjunctive active
-urn:cite:morph:form.cv12211,conjverb,conjugated verb: 2nd plural future subjunctive middle
-urn:cite:morph:form.cv12212,conjverb,conjugated verb: 2nd plural future subjunctive passive
 urn:cite:morph:form.cv12220,conjverb,conjugated verb: 2nd plural future optative active
 urn:cite:morph:form.cv12221,conjverb,conjugated verb: 2nd plural future optative middle
 urn:cite:morph:form.cv12222,conjverb,conjugated verb: 2nd plural future optative passive
@@ -351,9 +333,6 @@ urn:cite:morph:form.cv20102,conjverb,conjugated verb: 3rd singular imperfect ind
 urn:cite:morph:form.cv20200,conjverb,conjugated verb: 3rd singular future indicative active
 urn:cite:morph:form.cv20201,conjverb,conjugated verb: 3rd singular future indicative middle
 urn:cite:morph:form.cv20202,conjverb,conjugated verb: 3rd singular future indicative passive
-urn:cite:morph:form.cv20210,conjverb,conjugated verb: 3rd singular future subjunctive active
-urn:cite:morph:form.cv20211,conjverb,conjugated verb: 3rd singular future subjunctive middle
-urn:cite:morph:form.cv20212,conjverb,conjugated verb: 3rd singular future subjunctive passive
 urn:cite:morph:form.cv20220,conjverb,conjugated verb: 3rd singular future optative active
 urn:cite:morph:form.cv20221,conjverb,conjugated verb: 3rd singular future optative middle
 urn:cite:morph:form.cv20222,conjverb,conjugated verb: 3rd singular future optative passive
@@ -414,9 +393,6 @@ urn:cite:morph:form.cv21102,conjverb,conjugated verb: 3rd dual imperfect indicat
 urn:cite:morph:form.cv21200,conjverb,conjugated verb: 3rd dual future indicative active
 urn:cite:morph:form.cv21201,conjverb,conjugated verb: 3rd dual future indicative middle
 urn:cite:morph:form.cv21202,conjverb,conjugated verb: 3rd dual future indicative passive
-urn:cite:morph:form.cv21210,conjverb,conjugated verb: 3rd dual future subjunctive active
-urn:cite:morph:form.cv21211,conjverb,conjugated verb: 3rd dual future subjunctive middle
-urn:cite:morph:form.cv21212,conjverb,conjugated verb: 3rd dual future subjunctive passive
 urn:cite:morph:form.cv21220,conjverb,conjugated verb: 3rd dual future optative active
 urn:cite:morph:form.cv21221,conjverb,conjugated verb: 3rd dual future optative middle
 urn:cite:morph:form.cv21222,conjverb,conjugated verb: 3rd dual future optative passive
@@ -477,9 +453,6 @@ urn:cite:morph:form.cv22102,conjverb,conjugated verb: 3rd plural imperfect indic
 urn:cite:morph:form.cv22200,conjverb,conjugated verb: 3rd plural future indicative active
 urn:cite:morph:form.cv22201,conjverb,conjugated verb: 3rd plural future indicative middle
 urn:cite:morph:form.cv22202,conjverb,conjugated verb: 3rd plural future indicative passive
-urn:cite:morph:form.cv22210,conjverb,conjugated verb: 3rd plural future subjunctive active
-urn:cite:morph:form.cv22211,conjverb,conjugated verb: 3rd plural future subjunctive middle
-urn:cite:morph:form.cv22212,conjverb,conjugated verb: 3rd plural future subjunctive passive
 urn:cite:morph:form.cv22220,conjverb,conjugated verb: 3rd plural future optative active
 urn:cite:morph:form.cv22221,conjverb,conjugated verb: 3rd plural future optative middle
 urn:cite:morph:form.cv22222,conjverb,conjugated verb: 3rd plural future optative passive
