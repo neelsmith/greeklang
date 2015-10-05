@@ -81,7 +81,18 @@ task testAcceptors(dependsOn: [testOmegaVerbAcceptor, testInfinAcceptor]) {
   description = "Tests all acceptor transducers"
 }
 
-task testCoreFst(dependsOn: [testAcceptors]) {
+task testTokens(dependsOn: ':fst:setupCoreTests'){
+  description = "Tests final morphological token transducer"
+}
+testTokens.doLast {
+  String morphTransducer = "${buildDir}/fst/morphology.a"
+  def testList = [
+    "${projectDir}/tokens"
+  ]
+  assessTests(morphTransducer, testList)
+}
+
+task testCoreFst(dependsOn: [testAcceptors, testTokens]) {
   description = "Tests integration of transducers"
 }
 testCoreFst.doLast {
