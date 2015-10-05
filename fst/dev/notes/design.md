@@ -164,7 +164,7 @@ Process:
 1. √ harness for multiple kinds of tests, as described above
 2. √ infinitives. Complete development of separate stem generator
 3. complete conjugated forms of Smyth #308
-4. compound verbs
+4. compound verbs, with all forms of augment
 5. ptcpls
 6. adjs: regular formation of comp, superl
 7. advs: degree
