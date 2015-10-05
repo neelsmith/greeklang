@@ -23,13 +23,14 @@ String readSubmission(File f) {
 void assessTests(ArrayList testList) {
   String verbAcceptor = "${buildDir}/fst/acceptors/verb.a"
   File testForms = new File("${buildDir}/coreforms.txt")
+  String cmd = "${FSTINFL} ${verbAcceptor} ${testForms}"
+  System.err.println "Running  " + cmd + " with data from:"
 
   testList.each { fname ->
+    System.err.println "\t" + fname
     File testData = new File("${fname}_submission.txt")
     testForms.setText(readSubmission(testData))
     String expectedReply = new File("${fname}_expected.txt").getText()
-    def cmd = "${FSTINFL} ${verbAcceptor} ${testForms}"
-    System.err.println "Run cmd " + cmd
     Process process = cmd.execute()
     def out = new StringBuffer()
     def err = new StringBuffer()
@@ -41,20 +42,22 @@ void assessTests(ArrayList testList) {
 }
 
 
-task testVerbAcceptor(dependsOn: ':fst:setupCoreTests') {
+task testOmegaVerbAcceptor(dependsOn: ':fst:setupCoreTests') {
   description = "Tests verb acceptor"
 }
-testVerbAcceptor.doLast {
+testOmegaVerbAcceptor.doLast {
   def testList = [
     "${projectDir}/acceptors/1stpp",
     "${projectDir}/acceptors/2ndpp",
-    "${projectDir}/acceptors/3rdpp"
+    "${projectDir}/acceptors/3rdpp",
+    "${projectDir}/acceptors/4thpp",
+    "${projectDir}/acceptors/5thpp",
+    "${projectDir}/acceptors/6thpp"
   ]
-    //, "2ndpp", "3rdpp", "4thpp", "5thpp", "6thpp"]
   assessTests(testList)
 }
 
-task testAcceptors(dependsOn: [testVerbAcceptor]) {
+task testAcceptors(dependsOn: [testOmegaVerbAcceptor]) {
   description = "Tests all acceptor transducers"
 }
 

@@ -3,3 +3,4 @@
 %
 % 6th principal part:
 <n64316><#>luq<verb><w_regular>::<w_regular>hsomai<1st><sg><fut><indic><pass>
+<n64316><#>e)luq<verb><w_regular>::<w_regular>hn<1st><sg><aor><indic><pass>
