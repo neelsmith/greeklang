@@ -1,4 +1,4 @@
-% Extend stem with sigma:
+% infin_2nd-3rd.fst
 % Extend stem of infinitive with sigma in 2nd and 3rd principal parts
 %
 #include "@workdir@symbols.fst"

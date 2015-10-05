@@ -8,4 +8,4 @@
 % modifies the stem accordingly.
 %
 
-"<@workdir@acceptors/infinitive/infin_2nd-3rd.a>" || "<@workdir@acceptors/infinitive/infin_4th-5th.a>"
+"<@workdir@acceptors/infinitive/infin_2nd-3rd.a>" || "<@workdir@acceptors/infinitive/infin_4th-5th.a>" || "<@workdir@acceptors/infinitive/infin_6th.a>"
