@@ -1,0 +1,6 @@
+> <n64316><#>e)lus<verb><w_regular>::<w_regular>a<1st><sg><aor><indic><act>
+<n64316><#>lu<verb><w_regular>::<w_regular>a<1st><sg><aor><indic><act>
+> <n64316><#>e)lus<verb><w_regular>::<w_regular>amhn<1st><sg><aor><indic><mid>
+<n64316><#>lu<verb><w_regular>::<w_regular>amhn<1st><sg><aor><indic><mid>
+> <n64316><#>lus<verb><w_regular>::<w_regular>w<1st><sg><aor><subj><act>
+<n64316><#>lu<verb><w_regular>::<w_regular>w<1st><sg><aor><subj><act>

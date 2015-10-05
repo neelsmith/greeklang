@@ -1,0 +1,9 @@
+% Tests for transducer integrating all valid forms of conjugated verbs
+% test 1st sg indic in all tense/voice combinations.
+%
+% 3nd principal part:
+<n64316><#>e)lus<verb><w_regular>::<w_regular>a<1st><sg><aor><indic><act>
+<n64316><#>e)lus<verb><w_regular>::<w_regular>amhn<1st><sg><aor><indic><mid>
+%
+% Also test subj to see if we correctly apply augment onlyh to indic forms:
+<n64316><#>lus<verb><w_regular>::<w_regular>w<1st><sg><aor><subj><act>
