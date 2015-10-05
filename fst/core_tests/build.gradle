@@ -1,20 +1,7 @@
-import org.apache.tools.ant.filters.ReplaceTokens
-import org.apache.commons.io.FilenameUtils
-
 
 apply plugin: "groovy"
 apply plugin: "java"
-apply from: "fstconf.gradle"
 
-
-buildscript {
-  repositories {
-    mavenCentral()
-  }
-  dependencies {
-    classpath group: 'org.apache.commons', name: 'commons-io', version: '1.3.2'
-  }
-}
 
 // Reads data to submit:
 String readSubmission(File f) {
@@ -33,26 +20,14 @@ String readSubmission(File f) {
   return data.toString()
 }
 
-
-
-task checkBuildDir() {
-  outputs.dir buildDir
-  if (! buildDir.exists()) {
-    buildDir.mkdir()
-  }
-}
-task testVerbAcceptor(dependsOn: checkBuildDir) {
-  description = "Tests verb acceptor"
-}
-testVerbAcceptor.doLast {
+void assessTests(ArrayList testList) {
   String verbAcceptor = "${buildDir}/fst/acceptors/verb.a"
   File testForms = new File("${buildDir}/coreforms.txt")
 
-  def testList = ["1stpp"] //, "2ndpp", "3rdpp", "4thpp", "5thpp", "6thpp"]
   testList.each { fname ->
-    File testData = new File("core_tests/acceptors/${fname}_submission.txt")
+    File testData = new File("${fname}_submission.txt")
     testForms.setText(readSubmission(testData))
-    String expectedReply = new File("core_tests/acceptors/${fname}_expected.txt").getText()
+    String expectedReply = new File("${fname}_expected.txt").getText()
     def cmd = "${FSTINFL} ${verbAcceptor} ${testForms}"
     System.err.println "Run cmd " + cmd
     Process process = cmd.execute()
@@ -64,13 +39,22 @@ testVerbAcceptor.doLast {
   }
 }
 
+
+task testVerbAcceptor(dependsOn: ':fst:setupCoreTests') {
+  description = "Tests verb acceptor"
+}
+testVerbAcceptor.doLast {
+  def testList = ["${projectDir}/acceptors/1stpp"] //, "2ndpp", "3rdpp", "4thpp", "5thpp", "6thpp"]
+  assessTests(testList)
+}
+
 task testAcceptors(dependsOn: [testVerbAcceptor]) {
   description = "Tests all acceptor transducers"
 }
 
-task testCore(dependsOn: [testAcceptors]) {
+task testCoreFst(dependsOn: [testAcceptors]) {
   description = "Tests integration of transducers"
 }
-testCore.doLast {
+testCoreFst.doLast {
   System.err.println "Completed integration tests on all transducers"
 }
