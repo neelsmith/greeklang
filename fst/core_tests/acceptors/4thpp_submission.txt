@@ -3,3 +3,4 @@
 %
 % 4th principal part:
 <n64316><#>leluk<verb><w_regular>::<w_regular>a<1st><sg><pft><indic><act>
+<n64316><#>e)leluk<verb><w_regular>::<w_regular>h<1st><sg><plupft><indic><act>
