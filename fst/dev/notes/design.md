@@ -162,7 +162,7 @@ Process:
 ## development sequence
 
 1. √ harness for multiple kinds of tests, as described above
-2. infinitives. Complete development of separate stem generator
+2. √ infinitives. Complete development of separate stem generator
 3. complete conjugated forms of Smyth #308
 4. compound verbs
 5. ptcpls
