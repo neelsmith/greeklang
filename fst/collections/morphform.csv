@@ -693,24 +693,24 @@ urn:cite:morph:form.va232,verbal adjective: neuter accusative plural
 urn:cite:morph:form.va240,verbal adjective: neuter vocative singular
 urn:cite:morph:form.va241,verbal adjective: neuter vocative dual
 urn:cite:morph:form.va242,verbal adjective: neuter vocative plural
-urn:cite:morph:form.ifpresentactive,infintive: 0 0
-urn:cite:morph:form.ifpresentmiddle,infintive: 0 1
-urn:cite:morph:form.ifpresentpassive,infintive: 0 2
-urn:cite:morph:form.ifimperfectactive,infintive: 1 0
-urn:cite:morph:form.ifimperfectmiddle,infintive: 1 1
-urn:cite:morph:form.ifimperfectpassive,infintive: 1 2
-urn:cite:morph:form.iffutureactive,infintive: 2 0
-urn:cite:morph:form.iffuturemiddle,infintive: 2 1
-urn:cite:morph:form.iffuturepassive,infintive: 2 2
-urn:cite:morph:form.ifaoristactive,infintive: 3 0
-urn:cite:morph:form.ifaoristmiddle,infintive: 3 1
-urn:cite:morph:form.ifaoristpassive,infintive: 3 2
-urn:cite:morph:form.ifperfectactive,infintive: 4 0
-urn:cite:morph:form.ifperfectmiddle,infintive: 4 1
-urn:cite:morph:form.ifperfectpassive,infintive: 4 2
-urn:cite:morph:form.ifpluperfectactive,infintive: 5 0
-urn:cite:morph:form.ifpluperfectmiddle,infintive: 5 1
-urn:cite:morph:form.ifpluperfectpassive,infintive: 5 2
+urn:cite:morph:form.if00,infintive: present active
+urn:cite:morph:form.if01,infintive: present middle
+urn:cite:morph:form.if02,infintive: present passive
+urn:cite:morph:form.if10,infintive: imperfect active
+urn:cite:morph:form.if11,infintive: imperfect middle
+urn:cite:morph:form.if12,infintive: imperfect passive
+urn:cite:morph:form.if20,infintive: future active
+urn:cite:morph:form.if21,infintive: future middle
+urn:cite:morph:form.if22,infintive: future passive
+urn:cite:morph:form.if30,infintive: aorist active
+urn:cite:morph:form.if31,infintive: aorist middle
+urn:cite:morph:form.if32,infintive: aorist passive
+urn:cite:morph:form.if40,infintive: perfect active
+urn:cite:morph:form.if41,infintive: perfect middle
+urn:cite:morph:form.if42,infintive: perfect passive
+urn:cite:morph:form.if50,infintive: pluperfect active
+urn:cite:morph:form.if51,infintive: pluperfect middle
+urn:cite:morph:form.if52,infintive: pluperfect passive
 urn:cite:morph:form.pc00000,participle: masculine nominative singular present active
 urn:cite:morph:form.pc00001,participle: masculine nominative singular present middle
 urn:cite:morph:form.pc00002,participle: masculine nominative singular present passive
