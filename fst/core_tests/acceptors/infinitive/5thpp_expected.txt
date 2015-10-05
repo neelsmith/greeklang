@@ -1,0 +1,4 @@
+> <n64316><#>lelu<verb><w_regular>::<infin>sqai<pft><mid><penacc>
+<n64316><#>lu<verb><w_regular>::<infin>sqai<pft><mid><penacc>
+> <n64316><#>lelu<verb><w_regular>::<infin>sqai<pft><pass><penacc>
+<n64316><#>lu<verb><w_regular>::<infin>sqai<pft><pass><penacc>

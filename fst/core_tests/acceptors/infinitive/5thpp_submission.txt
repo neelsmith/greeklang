@@ -1,0 +1,6 @@
+% Tests for transducer integrating all valid forms of infinitive verbs
+% test all tense/voice combinations.
+%
+% 5th principal part:
+<n64316><#>lelu<verb><w_regular>::<infin>sqai<pft><mid><penacc>
+<n64316><#>lelu<verb><w_regular>::<infin>sqai<pft><pass><penacc>
