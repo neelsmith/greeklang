@@ -5,7 +5,7 @@
 % "Parts of speech": not traditional definition, but distinguished by
 % analytical pattern.  E.g., <infin> has distinct pattern that is neither
 % noun nor verb.
-#pos# = <noun><adj><verb><vadj><infin><ptcpl>
+#pos# = <noun><adj><verb><vadj><infin><ptcpl><adv>
 #verbparts# = <verb><vadj><infin><ptcpl>
 %
 % 1. Noun morphology:
@@ -28,9 +28,6 @@
 
 
 #morphtag# = #pos# #gender# #case# #number# #person# #tense# #mood# #voice# #degree#
-
-
-
 
 
 % Consider whether those belong here or elsewhere...?
