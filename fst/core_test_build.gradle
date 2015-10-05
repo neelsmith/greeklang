@@ -10,42 +10,67 @@ apply from: "fstconf.gradle"
 buildscript {
   repositories {
     mavenCentral()
-    maven {
-      url "http://beta.hpcc.uh.edu/nexus/content/repositories/papyriinfo/"
-    }
   }
   dependencies {
     classpath group: 'org.apache.commons', name: 'commons-io', version: '1.3.2'
-    classpath group : 'edu.unc.epidoc', name: 'transcoder', version : '1.2-SNAPSHOT'
   }
 }
 
-task testVerbAcceptor() {
+// Reads data to submit:
+String readSubmission(File f) {
+  StringBuilder data = new StringBuilder()
+  f.eachLine { ln ->
+    if (ln.size() < 1) {
+      // empty
+    } else if (ln[0] == "%") {
+      // comment
+    } else if (ln ==~ /^[\s]*$/) {
+      // no data
+    } else {
+      data.append(ln + "\n")
+    }
+  }
+  return data.toString()
+}
+
+
+
+task checkBuildDir() {
+  outputs.dir buildDir
+  if (! buildDir.exists()) {
+    buildDir.mkdir()
+  }
+}
+task testVerbAcceptor(dependsOn: checkBuildDir) {
   description = "Tests verb acceptor"
 }
 testVerbAcceptor.doLast {
   String verbAcceptor = "${buildDir}/fst/acceptors/verb.a"
-  String tokens = "core_tests/acceptors/verb_analyses.txt"
-  def cmd = "${FSTINFL} ${verbAcceptor} ${tokens}"
-  Process process = cmd.execute()
-  def out = new StringBuffer()
-  def err = new StringBuffer()
-  process.consumeProcessOutput( out, err )
-  process.waitFor()
-  String expectedAnalysis =
-    """> <n64316><#>lu<verb><w_regular>::<w_regular>w<1st><sg><pres><indic><act>
-<n64316><#>lu<verb><w_regular>::<w_regular>w<1st><sg><pres><indic><act>
-"""
-  assert out.toString() == expectedAnalysis
+  File testForms = new File("${buildDir}/coreforms.txt")
+
+  def testList = ["1stpp"] //, "2ndpp", "3rdpp", "4thpp", "5thpp", "6thpp"]
+  testList.each { fname ->
+    File testData = new File("core_tests/acceptors/${fname}_submission.txt")
+    testForms.setText(readSubmission(testData))
+    String expectedReply = new File("core_tests/acceptors/${fname}_expected.txt").getText()
+    def cmd = "${FSTINFL} ${verbAcceptor} ${testForms}"
+    System.err.println "Run cmd " + cmd
+    Process process = cmd.execute()
+    def out = new StringBuffer()
+    def err = new StringBuffer()
+    process.consumeProcessOutput( out, err )
+    process.waitFor()
+    assert out.toString() == expectedReply
+  }
 }
 
 task testAcceptors(dependsOn: [testVerbAcceptor]) {
   description = "Tests all acceptor transducers"
 }
 
-task testIntegratedTransducers(dependsOn: [testAcceptors]) {
+task testCore(dependsOn: [testAcceptors]) {
   description = "Tests integration of transducers"
 }
-testIntegratedTransducers.doLast {
+testCore.doLast {
   System.err.println "Completed integration tests on all transducers"
 }

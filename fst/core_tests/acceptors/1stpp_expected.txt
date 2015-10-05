@@ -1,0 +1,10 @@
+> <n64316><#>lu<verb><w_regular>::<w_regular>w<1st><sg><pres><indic><act>
+<n64316><#>lu<verb><w_regular>::<w_regular>w<1st><sg><pres><indic><act>
+> <n64316><#>lu<verb><w_regular>::<w_regular>w<1st><sg><pres><indic><mid>
+<n64316><#>lu<verb><w_regular>::<w_regular>w<1st><sg><pres><indic><mid>
+> <n64316><#>lu<verb><w_regular>::<w_regular>w<1st><sg><pres><indic><pass>
+<n64316><#>lu<verb><w_regular>::<w_regular>w<1st><sg><pres><indic><pass>
+> <n64316><#>e)lu<verb><w_regular>::<w_regular>on<1st><sg><impft><indic><act>
+<n64316><#>lu<verb><w_regular>::<w_regular>on<1st><sg><impft><indic><act>
+> <n64316><#>lus<verb><w_regular>::<w_regular>w<1st><sg><fut><indic><act>
+<n64316><#>lu<verb><w_regular>::<w_regular>w<1st><sg><fut><indic><act>

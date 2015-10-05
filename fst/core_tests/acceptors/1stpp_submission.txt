@@ -1,0 +1,14 @@
+% Tests for transducer integrating all valid forms of conjugated verbs
+% test 1st sg indic in all tense/voice combinations.
+%
+% 1st principal part:
+% Pres indic
+<n64316><#>lu<verb><w_regular>::<w_regular>w<1st><sg><pres><indic><act>
+<n64316><#>lu<verb><w_regular>::<w_regular>w<1st><sg><pres><indic><mid>
+<n64316><#>lu<verb><w_regular>::<w_regular>w<1st><sg><pres><indic><pass>
+% Impft
+<n64316><#>e)lu<verb><w_regular>::<w_regular>on<1st><sg><impft><indic><act>
+%
+% 2nd principal part:
+<n64316><#>lus<verb><w_regular>::<w_regular>w<1st><sg><fut><indic><act>
+%<n64316><#>lus<verb><w_regular>::<w_regular>omai<1st><sg><fut><mid><act>
