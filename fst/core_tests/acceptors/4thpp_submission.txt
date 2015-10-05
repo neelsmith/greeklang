@@ -1,0 +1,5 @@
+% Tests for transducer integrating all valid forms of conjugated verbs
+% test 1st sg indic in all tense/voice combinations.
+%
+% 4th principal part:
+<n64316><#>leluk<verb><w_regular>::<w_regular>a<1st><sg><pft><indic><act>
