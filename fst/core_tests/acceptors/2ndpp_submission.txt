@@ -1,0 +1,6 @@
+% Tests for transducer integrating all valid forms of conjugated verbs
+% test 1st sg indic in all tense/voice combinations.
+%
+% 2nd principal part:
+<n64316><#>lus<verb><w_regular>::<w_regular>w<1st><sg><fut><indic><act>
+%<n64316><#>lus<verb><w_regular>::<w_regular>omai<1st><sg><fut><mid><act>
