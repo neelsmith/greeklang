@@ -6,14 +6,13 @@ import static groovy.test.GroovyAssert.shouldFail
 
 class TestInflRead {
 
-  File dataFile = new File("testdata/inflreports/inflrept1.txt")
+  File dataFile = new File("junit/inflreports/inflrept1.txt")
 
   @Test
   void TestInflReader() {
     FstInflReader fstReader = new FstInflReader()
     def analyses = fstReader.readFstInflFile(dataFile)
-    analyses.keySet().each { k ->
-      println k + " -> " + analyses[k]
-    }
+    Integer expectedAnalyses = 6
+    assert analyses.size() == expectedAnalyses
   }
 }
