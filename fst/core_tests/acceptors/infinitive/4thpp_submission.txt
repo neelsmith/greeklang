@@ -1,0 +1,5 @@
+% Tests for transducer integrating all valid forms of infinitive verbs
+% test all tense/voice combinations.
+%
+% 4th principal part:
+<n64316><#>leluk<verb><w_regular>::<infin>enai<pft><act><penacc>
