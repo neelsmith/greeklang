@@ -40,26 +40,16 @@ $6th_pp$ = {[#=ltr#]}:{[#=ltr#]q} ^-> ([#urn#][#stemchars#]+ __ <verb><w_regular
 
 
 %%%%% 4th and 5th principal parts %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Add reduplication:
-ALPHABET = [#letter#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extratag#][#persistacc#]
-$redupe$ = {[#=ltr#]}:{[#=ltr#]e[#=ltr#]} ^-> ([#urn#][<#>]* __ [#stemchars#]+<verb><w_regular>[#extratag#]*[\:]+<infin>[#letter#]+[#4th_5th_tense#])
-
-
-
-
-%%%%% 4th principal part only  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Extend stem with kappa:
-ALPHABET = [#letter#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extratag#][#persistacc#]
-$kappa$ = {[#=ltr#]}:{[#=ltr#]k} ^-> ([#urn#][#stemchars#]+ __ <verb><w_regular>[#extratag#]*[\:]+<infin>[#letter#]+[#4th_5th_tense#]<act>)
-
-
-% Complete processing of 4th and 5th principal parts:
-$4th_5th_pp$ =  $redupe$ || $kappa$
-
+% Add reduplication on both, and extend stem with kappa in 4th part:
+$redupe$ = "<infinredup.a>"
+$kappa$ = "<infinkappa.a>"
+$4th_5th_pp$ = $redupe$ || $kappa$
 
 % Final transducer. (NB: leaves stem untouched for 1st principal part.)
-$2nd_3rd_pp$ || $4th_5th_pp$  || $6th_pp$
+% $2nd_3rd_pp$ || $4th_5th_pp$  || $6th_pp$
 
+
+$4th_5th_pp$
 
 % model
 % % <n64316><#>lu<verb><w_regular>::<infin>ein<pres><act><penacc>

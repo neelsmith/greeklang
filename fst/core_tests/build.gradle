@@ -69,7 +69,9 @@ testInfinAcceptor.doLast {
   String infinitiveAcceptor = "${buildDir}/fst/acceptors/infinitive.a"
   def testList = [
     "${projectDir}/acceptors/infinitive/1stpp",
-    "${projectDir}/acceptors/infinitive/4thpp"
+    "${projectDir}/acceptors/infinitive/3rdpp",
+    "${projectDir}/acceptors/infinitive/4thpp",
+    "${projectDir}/acceptors/infinitive/5thpp"
   ]
   assessTests(infinitiveAcceptor, testList)
 }

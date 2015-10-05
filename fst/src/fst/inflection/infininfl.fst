@@ -6,7 +6,7 @@ $inf_ending$ = <infin> (\
   ai<aor><act><penacc> |\
   enai<pft><act><penacc> |\
   \
-  esqai[<pres><fut>][<mid>pass]<antacc> |\
+  esqai[<pres><fut>][<mid><pass>]<antacc> |\
   asqai<aor><mid><antacc> |\
   sqai<pft>[<mid><pass>]<antacc> |\
   \

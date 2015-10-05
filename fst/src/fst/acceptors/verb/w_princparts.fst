@@ -1,5 +1,5 @@
 % w_princparts.fst
-% A transducer to generate principal part stems for w_regular verbs.
+% A transducer to generate principal part stems for inflected forms of w_regular verbs.
 %
 % The 1st principal part is passed through unchanged since the lexicon already has
 % the correct stem for it.  The transducer filters the analysis by appropriate
