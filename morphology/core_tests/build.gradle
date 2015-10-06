@@ -63,7 +63,7 @@ void assessTests(String transducer, ArrayList testList) {
   }
 }
 
-task testOmegaVerbAcceptor(dependsOn: ':fst:setupCoreTests') {
+task testOmegaVerbAcceptor(dependsOn: ':morphology:setupCoreTests') {
   description = "Tests verb acceptor"
 }
 testOmegaVerbAcceptor.doLast {
@@ -80,7 +80,7 @@ testOmegaVerbAcceptor.doLast {
 }
 
 
-task testInfinAcceptor(dependsOn: ':fst:setupCoreTests') {
+task testInfinAcceptor(dependsOn: ':morphology:setupCoreTests') {
   description = "Tests infinitive acceptor"
 }
 testInfinAcceptor.doLast {
@@ -99,7 +99,7 @@ task testAcceptors(dependsOn: [testOmegaVerbAcceptor, testInfinAcceptor]) {
   description = "Tests all acceptor transducers"
 }
 
-task testTokens(dependsOn: ':fst:setupCoreTests'){
+task testTokens(dependsOn: ':morphology:setupCoreTests'){
   description = "Tests final morphological token transducer"
 }
 testTokens.doLast {
