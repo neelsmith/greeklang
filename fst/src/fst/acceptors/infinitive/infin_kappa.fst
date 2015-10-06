@@ -7,5 +7,5 @@
 % Extend stem with kappa:
 #=ltr# = a-z
 ALPHABET = [#letter#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extratag#][#persistacc#]
-$kappa$ = {[#=ltr#]}:{[#=ltr#]k} ^-> ([#urn#][#stemchars#]+ __ <verb><w_regular>[#extratag#]*[\:]+<infin>[#letter#]+[<pft><plupft><futpft>]<act>)
+$kappa$ = {[#=ltr#]}:{[#=ltr#]k} ^-> ([#urn#]+[#stemchars#]+ __ <verb><w_regular>[#extratag#]*[\:]+<infin>[#letter#]+[<pft><plupft><futpft>]<act>)
 $kappa$

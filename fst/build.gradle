@@ -133,7 +133,7 @@ task cpStems (type: Copy) {
 
 task cpTags (type: Copy) {
     description = "Filters and copies directory with taxonomic tags to build area."
-    from ("tags") {
+    from ("urnregistry") {
       include ('**/*.fst')
     }
     into "${buildDir}/fst"

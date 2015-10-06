@@ -6,7 +6,7 @@
 #include "@workdir@symbols.fst"
 
 
-$infinacceptor$ = [#urn#][#stemchars#]+<verb>[#verbclass#][#extratag#]*\:\:<infin>[#stemchars#]+[#tense#][#voice#][#persistacc#]
+$infinacceptor$ = [#urn#]+[#stemchars#]+<verb>[#verbclass#][#extratag#]*\:\:<infin>[#stemchars#]+[#tense#][#voice#][#persistacc#]
 
 
 
@@ -16,4 +16,4 @@ $princparts$ = "<@workdir@acceptors/infinitive/w_infin_princparts.a>"
 $princparts$ || $infinacceptor$
 
 % Example:
-% <n64316><#>lu<verb><w_regular>::<infin>ein<pres><act><penacc>
+% <coretests.n64316_0><lextent.n64316><#>lu<verb><w_regular>::<infin>ein<pres><act><penacc>

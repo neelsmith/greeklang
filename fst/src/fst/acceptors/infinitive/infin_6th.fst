@@ -5,5 +5,5 @@
 
 #=ltr# = a-z
 ALPHABET = [#letter#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extratag#][#persistacc#]
-$6th_pp$ = {[#=ltr#]}:{[#=ltr#]q} ^-> ([#urn#][#stemchars#]+ __ <verb><w_regular>[#extratag#]*[\:]+<infin>[#letter#]+[<aor><fut>]<pass>[#persistacc#])
+$6th_pp$ = {[#=ltr#]}:{[#=ltr#]q} ^-> ([#urn#]+[#stemchars#]+ __ <verb><w_regular>[#extratag#]*[\:]+<infin>[#letter#]+[<aor><fut>]<pass>[#persistacc#])
 $6th_pp$

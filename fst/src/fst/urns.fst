@@ -1,7 +1,8 @@
 % urns.fst
 
-#lexicon# =<n47950><n71065><n19546><n50824><n67485><n84494><n64316>
-#persname#=<null_pn>
+#lexicon# =<lextent.n47950><lextent.n71065><lextent.n19546><lextent.n50824><lextent.n67485><lextent.n84494><lextent.n64316>
+#persname#=<pn.null_pn>
 
+#stemurn# = <coretests.n64316_0>
 
-#urn# = #lexicon# | #persname#
+#urn# = #lexicon# | #persname# | #stemurn#
