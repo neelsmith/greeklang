@@ -1,16 +1,15 @@
 package edu.holycross.shot.greekutils
 
-
-import static org.junit.Assert.*
 import org.junit.Test
+import static groovy.test.GroovyAssert.shouldFail
 
 
-class TestSyllables extends GroovyTestCase {
+class TestSyllables {
 
 
 
 
-  void testSimple() {
+  @Test void testSimple() {
     String testString = "mh=nin"
     def expected = ["mh=", "nin"]
 
@@ -20,7 +19,7 @@ class TestSyllables extends GroovyTestCase {
     assert gkstr.getSyllables() == expected
   }
 
-  void testBreathingDiphthSeq() {
+  @Test void testBreathingDiphthSeq() {
     String testString = "a)/eide"
     def expected = ["a)/", "ei", "de"]
 
@@ -30,7 +29,7 @@ class TestSyllables extends GroovyTestCase {
     assert gkstr.getSyllables() == expected
   }
 
-  void testBreathingSeq() {
+  @Test void testBreathingSeq() {
     String testString = "qea/"
     def expected = ["qe", "a/"]
 

@@ -1,22 +1,21 @@
 package edu.holycross.shot.greekutils
 
-
-import static org.junit.Assert.*
 import org.junit.Test
+import static groovy.test.GroovyAssert.shouldFail
 
 
-class TestCompounds extends GroovyTestCase {
+class TestCompounds  {
 
 
   String compound = "δ' " + 'β ιβ"'
 
 
-
+  @Test
   void  testSimpleFracts() {
     MilesianString ms = new MilesianString(compound)
     println "Transcription is " + ms.xscribe()
   }
 
-  
+
 
 }

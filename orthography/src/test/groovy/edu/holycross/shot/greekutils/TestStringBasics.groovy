@@ -1,16 +1,14 @@
 package edu.holycross.shot.greekutils
 
-
-import static org.junit.Assert.*
 import org.junit.Test
+import static groovy.test.GroovyAssert.shouldFail
+
+class TestStringBasics {
 
 
-class TestStringBasics extends GroovyTestCase {
 
 
-
-
-  void testStaticMethods() {
+  @Test void testStaticMethods() {
 
     assert GreekString.vowel.size() == 8
     GreekString.vowel.each { v ->
@@ -58,8 +56,8 @@ class TestStringBasics extends GroovyTestCase {
 
     String testString = "mh=nin"
     assert GreekString.containsVowel(testString)
-    
-    
+
+
   }
 
 

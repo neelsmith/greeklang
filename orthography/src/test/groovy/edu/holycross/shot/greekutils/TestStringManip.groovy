@@ -1,21 +1,16 @@
 package edu.holycross.shot.greekutils
 
-
-import static org.junit.Assert.*
 import org.junit.Test
+import static groovy.test.GroovyAssert.shouldFail
 
 
-class TestStringManip extends GroovyTestCase {
+class TestStringManip {
 
-  void testUnicode() {
+  @Test void testUnicode() {
     String src = "mh=nin"
     String expected = "mhnin"
     assert GreekString.stripAccents(src) == expected
   }
-
-  void testDefault() {
-  }
-
 
 
 }

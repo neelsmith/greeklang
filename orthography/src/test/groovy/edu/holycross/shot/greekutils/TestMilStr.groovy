@@ -1,15 +1,13 @@
 package edu.holycross.shot.greekutils
 
-
-import static org.junit.Assert.*
 import org.junit.Test
+import static groovy.test.GroovyAssert.shouldFail
 
-
-class TestMilStr extends GroovyTestCase {
+class TestMilStr {
 
   String highVal = "𐅵"
   String one = "α"
-  void  testConstr() {
+  @Test void  testConstr() {
 
     MilesianString msOne = new MilesianString(one)
     println "Got MilStr for one"

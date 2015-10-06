@@ -1,9 +1,7 @@
 package edu.holycross.shot.greekutils
 
-
-import static org.junit.Assert.*
 import org.junit.Test
-
+import static groovy.test.GroovyAssert.shouldFail
 
 class TestSubstr extends GroovyTestCase {
 
@@ -12,8 +10,8 @@ class TestSubstr extends GroovyTestCase {
   String longStr = '𐅵 δ"'
 
 
-  void analyzeString(String s) {
-    int max = s.codePointCount(0, s.length() ) 
+  @Test void analyzeString(String s) {
+    int max = s.codePointCount(0, s.length() )
     println "Number code points in ${s} = " + max
 
     int idx = 0
@@ -30,14 +28,14 @@ class TestSubstr extends GroovyTestCase {
     }
   }
 
-  
-  void  testLongFract() {
+
+  @Test void  testLongFract() {
     println "Analyze " + third
     analyzeString(third)
 
     println "Analyze " + longStr
     analyzeString(longStr)
-    
+
   }
 
 }

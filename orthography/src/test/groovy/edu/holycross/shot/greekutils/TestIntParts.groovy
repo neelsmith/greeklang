@@ -1,17 +1,16 @@
 package edu.holycross.shot.greekutils
 
-
-import static org.junit.Assert.*
 import org.junit.Test
+import static groovy.test.GroovyAssert.shouldFail
 
 
-class TestIntParts extends GroovyTestCase {
+class TestIntParts {
 
 
   String third = 'γ"'
   String longStr = '𐅵 δ"'
 
-  void  testSimpleFract() {
+  @Test void  testSimpleFract() {
     System.err.println "\n\n-->"
     System.err.println "third has " + third.codePointCount(0,third.length()) + " code points for length " + third.length()
 
@@ -20,10 +19,10 @@ class TestIntParts extends GroovyTestCase {
     System.err.println "And constructs properly"
   }
 
-  void  testLongFract() {
+  @Test void  testLongFract() {
     System.err.println "longStr has " + longStr.codePointCount(0,longStr.length()) + " code points for length " + longStr.length()
-    
-    
+
+
     MilesianString msLong = new MilesianString(longStr)
     assert msLong.getFractionPart() == longStr
   }

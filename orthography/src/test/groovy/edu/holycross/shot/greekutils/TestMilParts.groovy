@@ -1,22 +1,22 @@
 package edu.holycross.shot.greekutils
 
 
-import static org.junit.Assert.*
 import org.junit.Test
+import static groovy.test.GroovyAssert.shouldFail
 
 /** Class tests extracting integer and fraction
  * components of a MilesianString.
  */
-class TestMilParts extends GroovyTestCase {
+class TestMilParts {
 
   String longStr = "ε' 𐅵 δ" + '"'
   String fract = '𐅵 δ"'
-  
+
   String intStr = "ε'"
   String shortStr = "ε"
 
   /** Tests string with both integer and fraction components*/
-  void testLongStr() {
+  @Test void testLongStr() {
     MilesianString multiPart = new MilesianString(longStr)
     assert  multiPart.getIntegerPart() == intStr
     assert  multiPart.getFractionPart() == fract
@@ -24,24 +24,24 @@ class TestMilParts extends GroovyTestCase {
 
 
   /** Tests string with fraction component only.*/
-  void testFractStr() {
+  @Test void testFractStr() {
     MilesianString fractPart = new MilesianString(fract)
     assert fractPart.getFractionPart() == fract
   }
 
-  
+
   /** Tests string with integer value only, no
    * explicit terminator. */
-  void  testShortStr() {
+  @Test void  testShortStr() {
     MilesianString onePart = new MilesianString(shortStr)
     assert onePart.getIntegerPart() == 'ε'
   }
 
 
 
-  /** Tests string with integer value only, 
+  /** Tests string with integer value only,
    * explicit terminator and no trailing space. */
-  void  testIntStr () {
+  @Test void  testIntStr () {
     MilesianString onePart = new MilesianString(intStr)
     assert onePart.getIntegerPart() ==  "ε'"
   }

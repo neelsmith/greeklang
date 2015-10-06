@@ -1,16 +1,14 @@
 package edu.holycross.shot.greekutils
 
-
-import static org.junit.Assert.*
 import org.junit.Test
+import static groovy.test.GroovyAssert.shouldFail
 
-
-class TestWordContents extends GroovyTestCase {
+class TestWordContents {
 
 
   String testString = "mh=nin"
 
-  void testConstructor() {
+  @Test void testConstructor() {
     GreekWord gkstr = new GreekWord(testString)
 
     assert shouldFail {

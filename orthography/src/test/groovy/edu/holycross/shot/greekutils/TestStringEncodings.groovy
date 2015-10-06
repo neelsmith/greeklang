@@ -1,15 +1,13 @@
 package edu.holycross.shot.greekutils
 
-
-import static org.junit.Assert.*
 import org.junit.Test
+import static groovy.test.GroovyAssert.shouldFail
+
+class TestStringEncodings {
 
 
-class TestStringEncodings extends GroovyTestCase {
 
-
-
-  void testUnicode() {
+  @Test void testUnicode() {
     String testUnicode = "μῆνιν"
     String testBeta = "mh=nin"
 
@@ -19,7 +17,7 @@ class TestStringEncodings extends GroovyTestCase {
     assert uniGreek.toString() == betaGreek.toString()
   }
 
-  void testLimits() {
+  @Test void testLimits() {
     String notGreek = "αλφα = 1"
 
     assert shouldFail {

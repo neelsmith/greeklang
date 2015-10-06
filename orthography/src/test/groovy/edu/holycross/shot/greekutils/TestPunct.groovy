@@ -1,17 +1,15 @@
 package edu.holycross.shot.greekutils
 
-
-import static org.junit.Assert.*
 import org.junit.Test
+import static groovy.test.GroovyAssert.shouldFail
 
-
-class TestPunct extends GroovyTestCase {
+class TestPunct {
 
   // the four standard punctuation marks:
   String asciiPunct = ".;:,a"
   String uniPunct = ".;·,α"
-  
-  void testPunctuation() {
+
+  @Test void testPunctuation() {
     GreekString asciiGreek = new GreekString(asciiPunct)
     GreekString uniGreek = new GreekString(uniPunct,"Unicode")
 
@@ -27,6 +25,6 @@ class TestPunct extends GroovyTestCase {
 
 
 
-  
+
 
 }

@@ -1,42 +1,36 @@
 package edu.holycross.shot.greekutils
 
-
-import static org.junit.Assert.*
 import org.junit.Test
+import static groovy.test.GroovyAssert.shouldFail
 
 /** Class tests extracting integer and fraction
  * components of a MilesianString.
  */
-class TestMsPunct extends GroovyTestCase {
+class TestMsPunct {
 
 
 
-  void testStaticPunctSigns() {
+  @Test void testStaticPunctSigns() {
     [ "\u0387", "⁑" , "⁚", "‡"].each { punctSign ->
       assert GreekMsString.isMsPunctuation(punctSign)
       assert GreekMsString.isValidMsChar(punctSign)
     }
   }
 
-  void testStaticBreathQuant() {
+  @Test void testStaticBreathQuant() {
     ["\u0300", "\u0304", "\u0306", "\u0308"].each { mark ->
       assert GreekMsString.isMsQuantityOrBreathing(mark)
       assert GreekMsString.isValidMsChar(mark)
     }
   }
-  
-  
-  void testBadPunctSigns() {
+
+
+  @Test void testBadPunctSigns() {
     // Arabic hamza not allowed:
     String hamza = "ء"
     assert GreekMsString.isMsPunctuation(hamza) == false
     assert GreekMsString.isValidChar(hamza) == false
   }
-  
 
-
-  void testConverting() {
-  }
-  
 
 }

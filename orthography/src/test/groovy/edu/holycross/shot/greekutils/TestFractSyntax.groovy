@@ -1,21 +1,20 @@
 package edu.holycross.shot.greekutils
 
-
-import static org.junit.Assert.*
 import org.junit.Test
+import static groovy.test.GroovyAssert.shouldFail
 
 
-class TestFractSyntax extends GroovyTestCase {
+class TestFractSyntax {
 
   String half = '𐅵"'
 
 
-  void  testAbbr() {
+  @Test void  testAbbr() {
     MilesianString ms = new MilesianString(half)
     System.err.println  "\n\nNOW GET HALF:"
     //assert ms.getFractionPart() == half
   }
 
-  
+
 
 }

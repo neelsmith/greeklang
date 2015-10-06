@@ -1,20 +1,19 @@
 package edu.holycross.shot.greekutils
 
-
-import static org.junit.Assert.*
 import org.junit.Test
+import static groovy.test.GroovyAssert.shouldFail
 
 
-class TestLookAhead extends GroovyTestCase {
+class TestLookAhead {
 
 
 
 
-  void testSimple() {
+  @Test void testSimple() {
     String testString = "mh=nin"
     GreekWord gkstr = new GreekWord(testString)
 
-    
+
     assert GreekWord.countToInclude(testString,1) == 1
     assert gkstr.countToInclude(1) == 1
 

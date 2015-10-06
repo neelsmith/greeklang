@@ -1,11 +1,10 @@
 package edu.holycross.shot.greekutils
 
-
-import static org.junit.Assert.*
 import org.junit.Test
+import static groovy.test.GroovyAssert.shouldFail
 
 
-class TestFractParts extends GroovyTestCase {
+class TestFractParts {
 
 
   String seven12ths = 'β ιβ"'
@@ -13,7 +12,7 @@ class TestFractParts extends GroovyTestCase {
   String third = 'γ"'
 
 
-  void  testSimpleFracts() {
+  @Test void  testSimpleFracts() {
     MilesianString ms = new MilesianString(seven12ths)
     assert ms.getFractionPart() == seven12ths
     def pieces =  ms.mFract.unitFracts
@@ -26,6 +25,6 @@ class TestFractParts extends GroovyTestCase {
     assert ms.mFract.unitFracts.size() == 1
   }
 
-  
+
 
 }
