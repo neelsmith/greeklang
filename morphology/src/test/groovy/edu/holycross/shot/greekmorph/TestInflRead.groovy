@@ -1,4 +1,4 @@
-package edu.holycross.shot.fstio
+package edu.holycross.shot.greekmorph
 
 import org.junit.Test
 import static groovy.test.GroovyAssert.shouldFail

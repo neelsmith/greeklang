@@ -1,4 +1,4 @@
-package edu.holycross.shot.fstio
+package edu.holycross.shot.greekmorph
 
 // import edu.unc.epidoc.transcoder.TransCoder
 
@@ -8,7 +8,7 @@ package edu.holycross.shot.fstio
 class FstToken {
 
   //TransCoder utf2beta = new TransCoder()
-  
+
   // Use a GreekString for input?
   String utf8Str
   String fstStr

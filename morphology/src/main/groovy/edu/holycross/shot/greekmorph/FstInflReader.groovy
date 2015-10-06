@@ -1,4 +1,4 @@
-package edu.holycross.shot.fstio
+package edu.holycross.shot.greekmorph
 
 /**
 * Class for reading output of SFST toolkit's fst-infl parser.
