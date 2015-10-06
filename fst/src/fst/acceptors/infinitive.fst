@@ -16,4 +16,4 @@ $princparts$ = "<@workdir@acceptors/infinitive/w_infin_princparts.a>"
 $princparts$ || $infinacceptor$
 
 % Example:
-% <coretests.n64316_0><lextent.n64316><#>lu<verb><w_regular>::<infin>ein<pres><act><penacc>
+% <coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<infin>ein<pres><act><penacc>

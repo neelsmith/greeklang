@@ -51,12 +51,12 @@ task testOmegaVerbAcceptor(dependsOn: ':fst:setupCoreTests') {
 testOmegaVerbAcceptor.doLast {
   String verbAcceptor = "${buildDir}/fst/acceptors/verb.a"
   def testList = [
-    "${projectDir}/acceptors/w_verb/1stpp",
+    "${projectDir}/acceptors/w_verb/1stpp" /*,
     "${projectDir}/acceptors/w_verb/2ndpp",
     "${projectDir}/acceptors/w_verb/3rdpp",
     "${projectDir}/acceptors/w_verb/4thpp",
     "${projectDir}/acceptors/w_verb/5thpp",
-    "${projectDir}/acceptors/w_verb/6thpp"
+    "${projectDir}/acceptors/w_verb/6thpp"*/
   ]
   assessTests(verbAcceptor, testList)
 }
