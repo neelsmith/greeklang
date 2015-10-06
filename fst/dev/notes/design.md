@@ -47,7 +47,30 @@ So we can always say "This concrete passage is form X of lexent. Y."
 We break out the components of the morphId object into symbols for the FST so it can work with them directly.
 
 
-## Bigger overview
+## Implementing two-tier analysis
+
+1. Analysis request produces (zero or more) pairs of URNs:  the first is a lexical entity, the second a morphological form.  Conceptually, this declarative pairing is the Example: one pairing resulting from analyzing λύω (attested by some CTS URN) is  `urn:cite:shot:lexent.n64316` `urn:cite:morph:form.cv00000`
+2. For each of these pairs, there is a further associated pair.  The first URN identifies a morphological stem that is associated with the lexical entity;  the second identifies an inflectional pattern linked to the morphological form.  Conceptually, this documents *how we derived* the high-level analysis by applying a uniquely identified rule to a uniquely identified object in our morphological lexicon.  Example:  `urn:cite:morph:coretests.n64316_0` `urn:cite:morph:w_indicative.1`
+
+
+###Two kinds of ambiguity
+
+There can be more than one lexical entity-analysis pairing for a given token.  This reflects *ambiguity in morphological analysis*.  Example:  δῶρον might be analyzed as either nominative or accusative singular.
+
+There can also be more than one stem-inflection pairing for a given lexical entity-analysis pair.  This reflects *ambiguity in morphological generation*.  Example: to generate a valid genitive singular form of θεός  in Homeric Greek, we might generate either θεοῦ or θεοῖο.
+
+
+
+
+### More data
+
+Of course the top-level, conceptual URN values are keys to further information.   The URN `urn:cite:shot:lexent.n64316` could be used to retrieve a dictionary definition, or to search for occurrences of a form in a corpus, or for any other purpose for which you would want to identify a lexical entity.  The URN `urn:cite:morph:form.cv00000` has a property for analytical category ("part of speech"), and (since that happens to be a conjugated verb, it has further properties person, number, tense, mood and voice.
+
+
+
+## Bigger overvie`urn:cite:morph:coretests.n64316_0`w `urn:cite:morph:w_indicative.1`
+
+
 
 This project assumes a corpus-linguistic approach to the study of historical languages.
 
