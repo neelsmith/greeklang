@@ -3,8 +3,7 @@ import org.apache.commons.io.FilenameUtils
 import edu.unc.epidoc.transcoder.TransCoder
 
 
-//apply plugin: "groovy"
-apply from: "fstconf.gradle"
+
 
 buildscript {
   repositories {
