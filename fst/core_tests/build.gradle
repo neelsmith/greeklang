@@ -21,6 +21,20 @@ String readSubmission(File f) {
 }
 
 
+void showDiff(String actual, String expected) {
+  def max = actual.size() - 1
+  if (expected.size() < max) {
+    max = expected.size() - 1
+  }
+  System.err.println "Cf ${expected.size()} expected with ${actual.size()} actual:"
+  for (i in 0..(max)){
+    if (expected[i] != actual[i]) {
+      System.err.println "at char ${i} expected ${expected[i]} but got ${actual[i]}"
+    }
+  }
+}
+
+
 // Runs a compiled transducer over a test list of statements
 // and compares actual results to expected results.
 void assessTests(String transducer, ArrayList testList) {
@@ -39,6 +53,10 @@ void assessTests(String transducer, ArrayList testList) {
     process.consumeProcessOutput( out, err )
     process.waitFor()
 
+    if (out.toString() != expectedReply) {
+      showDiff(out.toString(), expectedReply)
+    }
+
     System.err.println "Expected " + expectedReply.size() + ", received " + out.toString().size()
     assert out.toString() == expectedReply
     testForms.setText("")
@@ -51,8 +69,8 @@ task testOmegaVerbAcceptor(dependsOn: ':fst:setupCoreTests') {
 testOmegaVerbAcceptor.doLast {
   String verbAcceptor = "${buildDir}/fst/acceptors/verb.a"
   def testList = [
-    "${projectDir}/acceptors/w_verb/1stpp" /*,
-    "${projectDir}/acceptors/w_verb/2ndpp",
+    "${projectDir}/acceptors/w_verb/1stpp" ,
+    "${projectDir}/acceptors/w_verb/2ndpp"/*,
     "${projectDir}/acceptors/w_verb/3rdpp",
     "${projectDir}/acceptors/w_verb/4thpp",
     "${projectDir}/acceptors/w_verb/5thpp",

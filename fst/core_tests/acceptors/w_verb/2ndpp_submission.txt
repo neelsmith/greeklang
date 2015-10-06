@@ -2,5 +2,4 @@
 % test 1st sg indic in all tense/voice combinations.
 %
 % 2nd principal part:
-<n64316><#>lus<verb><w_regular>::<w_regular>w<1st><sg><fut><indic><act>
-<n64316><#>lus<verb><w_regular>::<w_regular>omai<1st><sg><fut><indic><mid>
+<coretests.n64316_0><lexent.n64316><#>lus<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><fut><indic><act>
