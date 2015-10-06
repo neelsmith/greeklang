@@ -4,3 +4,9 @@
 % 1st principal part:
 % Pres indic
 <coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>
+<coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<w_regular><w_indicative.7>omai<1st><sg><pres><indic><mid>
+<coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<w_regular><w_indicative.7>omai<1st><sg><pres><indic><pass>
+% Impft
+<coretests.n64316_0><lexent.n64316><#>e)lu<verb><w_regular>::<w_regular><w_indicative.13>on<1st><sg><impft><indic><act>
+<coretests.n64316_0><lexent.n64316><#>e)lu<verb><w_regular>::<w_regular><w_indicative.19>omhn<1st><sg><impft><indic><mid>
+<coretests.n64316_0><lexent.n64316><#>e)lu<verb><w_regular>::<w_regular><w_indicative.19>omhn<1st><sg><impft><indic><pass>
