@@ -1,2 +1,4 @@
-include 'fst'
-include 'fst:core_tests'
+include 'morphology'
+include 'morphology:fst_tests'
+include 'orthography'
+

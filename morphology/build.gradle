@@ -286,5 +286,5 @@ analyzeFSTTests.doLast {
 
 task setupCoreTests(type: Copy, dependsOn: 'fst') {
   from ("${buildDir}")
-  into "core_tests/build"
+  into "fst_tests/build"
 }

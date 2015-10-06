@@ -27,6 +27,6 @@ subprojects {
   }
 }
 
-project(":fst:core_tests") {
-  apply from: "${rootProject.rootDir}/fst/fstconf.gradle"
+project(":morphology:fst_tests") {
+  apply from: "${rootProject.rootDir}/morphology/fstconf.gradle"
 }

@@ -1,7 +1,7 @@
 
 # morphology and Greek lang. work
 
-## Accents: joinging MorphAnalysis object to FST
+## Accents: joining MorphAnalysis object to FST
 
 - either of morph stem or inflectional pattern can carry accent tag
 - (in case of ending, if appropriate, encode accent directly?)
