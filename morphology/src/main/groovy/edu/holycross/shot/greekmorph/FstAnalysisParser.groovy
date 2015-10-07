@@ -54,7 +54,7 @@ class FstAnalysisParser {
           pos = "<verb>"
         }
       }
-      morphAnalysis = computeMorphAnalysis()
+      //morphAnalysis = getMorphForm()
       //  "<coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>"
   }
 

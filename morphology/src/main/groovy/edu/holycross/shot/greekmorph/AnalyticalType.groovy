@@ -11,7 +11,7 @@ public enum AnalyticalType {
   ADVERB("adverb", "<adv>"),
   INDECLINABLE("indeclinable form", "<indecl>")
 
-  
+
   private String fstToken
   private String label
   static final Map codeMap
@@ -36,8 +36,13 @@ public enum AnalyticalType {
     return label
   }
 
+  public String toString() {
+    return label
+  }
+
+
   static getByToken(String fstToken) {
     return codeMap[fstToken]
   }
-  
+
 }

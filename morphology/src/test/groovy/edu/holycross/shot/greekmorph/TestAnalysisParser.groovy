@@ -18,8 +18,7 @@ class TestAnalysisParser {
     assert fap.getPos() == "<verb>"
 
     MorphForm mf = fap.getMorphForm()
-    println mf.toString()
-
+    assert mf.toString() == "conjugated verb: first person singular present indicative active"
     //assert fap.getMorphAnalysis() == "urn:cite:morph:form.cv00000"
 
 
