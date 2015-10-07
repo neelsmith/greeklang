@@ -14,8 +14,11 @@ class FstAnalysisParser {
   String stem
   String inflectionalPattern
   String pos
+
   // to derive from tags:
   String morphAnalysis
+  MorphForm MorphForm
+
   //
   def stemTags
   def inflTags
@@ -55,8 +58,30 @@ class FstAnalysisParser {
       //  "<coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>"
   }
 
-  String computeMorphAnalysis() {
+
+
+  MorphForm getMorphForm() {
+    MorphForm mf  = null
     String urnBase = "urn:cite:morph:form"
+    def analyticalType = AnalyticalType.getByToken(pos)
+    System.err.println "Analyzing ${stemString} and ${inflectionString} as " + analyticalType
+    switch (pos) {
+      case "<verb>":
+      def person = Person.getByToken(inflTags[2])
+      def num = GrammaticalNumber.getByToken(inflTags[3])
+      def tense = Tense.getByToken(inflTags[4])
+      def mood = Mood.getByToken(inflTags[5])
+      def voice = Voice.getByToken(inflTags[6])
+      VerbForm verb = new VerbForm(person, num, tense, mood, voice)
+      mf = new MorphForm(analyticalType, verb)
+      break
+
+      default:
+      System.err.println "Unimplemented analytical type: " + analyticalType
+      break
+      return
+    }
+    /*
     switch (pos) {
       case "<verb>":
       System.err.println "Analyze verb"
@@ -67,7 +92,8 @@ class FstAnalysisParser {
       default:
       System.err.println "Don't know how to parse PoS " + pos
       break
-    }
+    }*/
+
   }
 
 

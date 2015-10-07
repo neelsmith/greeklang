@@ -16,7 +16,12 @@ class TestAnalysisParser {
     assert fap.getLexicalEntity() == "<lexent.n64316>"
     assert fap.getInflectionalPattern() == "<w_indicative.1>" ///"<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>"
     assert fap.getPos() == "<verb>"
-    assert fap.getMorphAnalysis() == "urn:cite:morph:form.cv00000"
+
+    MorphForm mf = fap.getMorphForm()
+    println mf.toString()
+
+    //assert fap.getMorphAnalysis() == "urn:cite:morph:form.cv00000"
+
 
   }
 }

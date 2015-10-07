@@ -8,6 +8,18 @@ public enum Person {
 
   private String fstToken
   private String label
+  static final Map codeMap
+
+  static {
+    codeMap = [:] as TreeMap
+    values().each{ atype ->
+      codeMap.put(atype.fstToken, atype)
+    }
+  }
+
+  static getByToken(String fstToken) {
+    return codeMap[fstToken]
+  }
 
   private Person(String label, String token) {
     this.fstToken = token

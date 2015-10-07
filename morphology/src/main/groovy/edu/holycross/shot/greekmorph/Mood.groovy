@@ -14,7 +14,19 @@ public enum Mood {
     this.fstToken = token
     this.label = label
   }
+  static final Map codeMap
 
+  static {
+    codeMap = [:] as TreeMap
+    values().each{ atype ->
+      codeMap.put(atype.fstToken, atype)
+    }
+  }
+
+  static getByToken(String fstToken) {
+    return codeMap[fstToken]
+  }
+  
   public String getToken() {
     return fstToken
   }

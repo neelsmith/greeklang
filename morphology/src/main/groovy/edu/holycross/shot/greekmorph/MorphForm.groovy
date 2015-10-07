@@ -31,5 +31,7 @@ class MorphForm {
     }
   }
 
-
+  String toString() {
+    return analyticalType.toString() + ": " + analysis.toString()
+  }
 }

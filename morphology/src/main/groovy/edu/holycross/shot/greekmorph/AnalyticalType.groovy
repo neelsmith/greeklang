@@ -9,21 +9,19 @@ public enum AnalyticalType {
   NOUN("noun", "<noun>"),
   ADJECTIVE("adjective", "<adj>"),
   ADVERB("adverb", "<adv>"),
-  INDECLINABLE("indeclinable form", "<indecl>"),
+  INDECLINABLE("indeclinable form", "<indecl>")
 
-
+  
   private String fstToken
   private String label
   static final Map codeMap
+
   static {
-        codeMap = [:] as TreeMap
-        values().each{ atype ->
-
-            codeMap.put(atype.fstToken, atype)
-        }
-
+    codeMap = [:] as TreeMap
+    values().each{ atype ->
+      codeMap.put(atype.fstToken, atype)
     }
-
+  }
 
   private AnalyticalType(String label, String token) {
     this.fstToken = token
@@ -41,4 +39,5 @@ public enum AnalyticalType {
   static getByToken(String fstToken) {
     return codeMap[fstToken]
   }
+  
 }
