@@ -7,12 +7,16 @@ package edu.holycross.shot.greekmorph
 class FstParser {
 
   String FSTINFL = "/usr/bin/fst-infl"
-  String parser
+  String ECHO = "/bin/echo"
+  String SH = "/bin/sh"
+
+  String fstParser
+
   /** Constructor.
   * @param parserPath Full path to compiled SFST parser (.a file).
   */
   FstParser(String parserPath) {
-    parser = parserPath
+    fstParser = parserPath
   }
 
   /** Parses fstStr with the SFST parser.
@@ -21,13 +25,18 @@ class FstParser {
   */
   ArrayList parseToken(String fstStr) {
     def analyses = []
-    // 1. run fstStr through FSTINFL
-    // 2. parse the results and construct appropriate analysis objects
 
+    def out = new StringBuffer()
+    def err = new StringBuffer()
+
+    def proc = [SH, "-c",  "${ECHO} ${fstStr} | ${FSTINFL} ${fstParser}"].execute()
+    proc.consumeProcessOutput(out, err)
+    proc.waitFor()
+    analyses.add(out.toString())
     return analyses
   }
 
-  /** Parses A list of tokens, one per line, with the SFST parser.
+  /** Parses a list of tokens, one per line, with the SFST parser.
   * @param tokenList A list of tokens, one per line, in the format required for this project.
   * @returns A map of zero or more morphological analysis objects for each token.
   */
