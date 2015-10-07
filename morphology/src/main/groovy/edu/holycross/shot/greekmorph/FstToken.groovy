@@ -1,5 +1,6 @@
 package edu.holycross.shot.greekmorph
 
+import edu.holycross.shot.greekutils.GreekString
 import edu.unc.epidoc.transcoder.TransCoder
 
 /**
@@ -10,15 +11,15 @@ class FstToken {
   TransCoder utf2beta = new TransCoder()
 
   // Use a GreekString for input?
-  String utf8Str
-  String fstStr
+  GreekString utf8Str
+  GreekString fstStr
 
   /** Constructor. */
-  FstToken(String s) {
+  FstToken(GreekString s) {
     utf8Str = s
     utf2beta.setParser("Unicode")
     utf2beta.setConverter("BetaCode")
-    fstStr = utf2beta.getString(s).replaceAll(/[=\\/\\\\]/,"").toLowerCase()
+    fstStr = new GreekString(utf2beta.getString(s.toString(true)).replaceAll(/[=\\/\\\\]/,"").toLowerCase())
   }
 
 }
