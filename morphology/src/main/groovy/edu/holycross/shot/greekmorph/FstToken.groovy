@@ -10,11 +10,15 @@ class FstToken {
 
   TransCoder utf2beta = new TransCoder()
 
-  // Use a GreekString for input?
+
   GreekString utf8Str
   GreekString fstStr
 
-  /** Constructor. */
+  /** Constructor accepts a Unicode GreekString, and converts to an ASCII
+  * Greek string with accents stripped out, for analysis by the
+  * morphological FST.
+  * @param s A GreekString in Unicode format.
+  */
   FstToken(GreekString s) {
     utf8Str = s
     utf2beta.setParser("Unicode")
