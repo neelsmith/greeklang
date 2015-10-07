@@ -24,25 +24,23 @@ class FstParser {
   * @param fstStr A single token in the format required for this project.
   * @returns A list of zero or more morphological analysis objects.
   */
-  ArrayList parseToken(FstToken fstToken) {
-    return parseTokenStr(fstToken.getFstStr())
+  String parseToken(FstToken fstToken) {
+    return parseTokenStr(fstToken.getFstStr().toString())
   }
 
   /** Parses fstStr with the SFST parser.
   * @param fstStr A single token in the format required for this project.
-  * @returns A list of zero or more morphological analysis objects.
+  * @returns Raw string output of fst-infl.
   */
-  ArrayList parseTokenStr(String fstStr) {
-    def analyses = []
-
+  String parseTokenStr(String fstStr) {
     def out = new StringBuffer()
     def err = new StringBuffer()
 
-    def proc = [SH, "-c",  "${ECHO} ${fstStr} | ${FSTINFL} ${fstParser}"].execute()
+    def procList = [SH, "-c",  "${ECHO} ${fstStr} | ${FSTINFL} ${fstParser}"]
+    def proc = procList.execute()
     proc.consumeProcessOutput(out, err)
     proc.waitFor()
-    analyses.add(out.toString())
-    return analyses
+    return out.toString()
   }
 
   /** Parses a list of tokens, one per line, with the SFST parser.

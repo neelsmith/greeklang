@@ -1,7 +1,7 @@
 package edu.holycross.shot.greekmorph
 
 /**
-* Class for parsing output of SFST toolkit's fst-infl parser.
+* Class for parsing output of SFST toolkit's fst-infl.
 */
 class FstAnalysisParser {
 
@@ -24,13 +24,6 @@ class FstAnalysisParser {
   def inflTags
 
 
-  // move this into separate abstract class...
-
-  def pers = ["<1st>": 0]
-  def num = ["<sg>": 0]
-  def tense = ["<pres>": 0]
-  def mood = ["<indic>": 0]
-  def voice = ["<act>": 0]
 
 
   /** Constructor. */
@@ -79,20 +72,8 @@ class FstAnalysisParser {
       default:
       System.err.println "Unimplemented analytical type: " + analyticalType
       break
-      return
+      return mf
     }
-    /*
-    switch (pos) {
-      case "<verb>":
-      System.err.println "Analyze verb"
-      // check size of inflTags...
-      return "${urnBase}.cv" + pers[inflTags[2]] + num[inflTags[3]] + tense[inflTags[4]] + mood[inflTags[5]] + voice[inflTags[6]]
-      break
-
-      default:
-      System.err.println "Don't know how to parse PoS " + pos
-      break
-    }*/
 
   }
 
