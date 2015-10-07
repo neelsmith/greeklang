@@ -16,4 +16,13 @@ class TestAnalyticalTypeEnum {
       assert n.getLabel() == expectedLabels[i]
     }
   }
+
+  @Test
+  void testIndex() {
+    println AnalyticalType.codeMap
+    def verbType = AnalyticalType.getByToken("<verb>")
+    assert verbType.getLabel() == "conjugated verb"
+
+  }
+
 }

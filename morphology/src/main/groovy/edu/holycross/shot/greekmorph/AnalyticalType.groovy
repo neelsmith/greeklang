@@ -14,6 +14,16 @@ public enum AnalyticalType {
 
   private String fstToken
   private String label
+  static final Map codeMap
+  static {
+        codeMap = [:] as TreeMap
+        values().each{ atype ->
+
+            codeMap.put(atype.fstToken, atype)
+        }
+
+    }
+
 
   private AnalyticalType(String label, String token) {
     this.fstToken = token
@@ -26,5 +36,9 @@ public enum AnalyticalType {
 
   public String getLabel() {
     return label
+  }
+
+  static getByToken(String fstToken) {
+    return codeMap[fstToken]
   }
 }
