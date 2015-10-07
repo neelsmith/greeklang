@@ -18,8 +18,11 @@ class MorphologicalParser {
     fstParser = new FstParser(fstBinary)
   }
 
-
-  def parseGreekString(GreekString gkStr) {
+  /** Gets a morphological analysis for a greek string.
+  * @param gkStr The string to analyze.
+  * @returns a MorphologicalAnalysis.
+  */
+  MorphologicalAnalysis parseGreekString(GreekString gkStr) {
     def analysisList  = []
     FstToken fstToken = new FstToken(gkStr)
     String parseOutput = fstParser.parseToken(fstToken)
@@ -32,9 +35,6 @@ class MorphologicalParser {
         FstAnalysisParser fsp = new FstAnalysisParser(l)
         analysisList.add(fsp.getMorphForm())
       }
-    }
-    analysisList.each { analysis ->
-      System.err.println "Got a " + analysis.getClass()
     }
     return( new MorphologicalAnalysis(gkStr, analysisList))
   }

@@ -57,7 +57,6 @@ class FstAnalysisParser {
     MorphForm mf  = null
     String urnBase = "urn:cite:morph:form"
     def analyticalType = AnalyticalType.getByToken(pos)
-    System.err.println "Analyzing ${stemString} and ${inflectionString} as " + analyticalType
     switch (pos) {
       case "<verb>":
       def person = Person.getByToken(inflTags[2])

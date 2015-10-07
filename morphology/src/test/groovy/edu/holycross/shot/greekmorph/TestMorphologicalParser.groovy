@@ -16,7 +16,16 @@ class TestMorphologicalParser {
   @Test
   void testMorphologicalParser() {
     GreekString s1 = new GreekString("λύω", "Unicode")
-    
-    mp.parseGreekString(s1)
+    MorphologicalAnalysis morph = mp.parseGreekString(s1)
+
+    def expectedAnalyses = [
+    "conjugated verb: first person singular present indicative active",
+    "conjugated verb: first person singular present subjunctive active",
+    "conjugated verb: first person singular perfect subjunctive active"
+    ]
+    assert morph.analyses.size() == expectedAnalyses.size()
+    morph.analyses.each {
+      assert expectedAnalyses.contains(it.toString())
+    }
   }
 }
