@@ -28,12 +28,17 @@ subprojects {
     compile group: 'org.codehaus.groovy', name: 'groovy-all', version: versionMap['groovy']
     compile group : 'edu.unc.epidoc', name: 'transcoder', version : '1.2-SNAPSHOT'
 
+    testCompile group : 'edu.unc.epidoc', name: 'transcoder', version : '1.2-SNAPSHOT'
     testCompile 'junit:junit:4.8.2'
   }
 }
 
 project(":morphology") {
   apply from: "${rootProject.rootDir}/morphology/fstconf.gradle"
+    dependencies {
+      compile project(':orthography')
+      testCompile project(':orthography')
+    }
 }
 
 project(":morphology:fst_tests") {
