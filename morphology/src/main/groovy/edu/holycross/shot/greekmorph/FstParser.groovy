@@ -23,7 +23,7 @@ class FstParser {
   * @param fstStr A single token in the format required for this project.
   * @returns A list of zero or more morphological analysis objects.
   */
-  ArrayList parseToken(String fstStr) {
+  ArrayList parseTokenStr(String fstStr) {
     def analyses = []
 
     def out = new StringBuffer()

@@ -11,7 +11,7 @@ class TestTokenParser {
   void testParser() {
     String fstToken = "luw"
     FstParser fst = new FstParser(parser)
-    def analyses = fst.parseToken(fstToken)
+    def analyses = fst.parseTokenStr(fstToken)
     analyses.each {
       println it
     }
