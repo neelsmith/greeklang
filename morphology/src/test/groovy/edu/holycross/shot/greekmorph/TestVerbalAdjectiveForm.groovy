@@ -3,12 +3,12 @@ package edu.holycross.shot.greekmorph
 import org.junit.Test
 import static groovy.test.GroovyAssert.shouldFail
 
-class TestNounForm {
+class TestVerbalAdjectiveForm {
 
   @Test
-  void testNounForm () {
-    NounForm noun =  new NounForm(Gender.MASCULINE, GrammaticalCase.NOMINATIVE, GrammaticalNumber.SINGULAR)
-    assert noun.toString() == "masculine nominative singular"
+  void testVerbalAdjectiveForm () {
+    VerbalAdjectiveForm vadj =  new VerbalAdjectiveForm(Gender.MASCULINE, GrammaticalCase.NOMINATIVE, GrammaticalNumber.SINGULAR)
+    assert vadj.toString() == "masculine nominative singular"
   }
 
 }
