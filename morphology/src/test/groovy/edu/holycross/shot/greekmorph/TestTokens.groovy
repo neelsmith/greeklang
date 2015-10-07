@@ -10,7 +10,7 @@ class TestTokens {
     String surface = "λύω"
     String expectedFst = "luw"
     FstToken fstToken = new FstToken(surface)
-
     assert fstToken.getFstStr() == expectedFst
   }
+  
 }
