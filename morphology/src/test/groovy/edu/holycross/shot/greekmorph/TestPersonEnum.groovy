@@ -16,4 +16,13 @@ class TestPersonEnum {
       assert n.getLabel() == expectedLabels[i]
     }
   }
+
+
+    @Test
+    void testIndex() {
+      assert Person.getByToken("<1st>") == Person.FIRST
+      assert Person.getByToken("<2nd>") == Person.SECOND
+      assert Person.getByToken("<3rd>") == Person.THIRD
+
+    }
 }

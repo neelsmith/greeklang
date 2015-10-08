@@ -16,4 +16,11 @@ class TestVoiceEnum {
       assert n.getLabel() == expectedLabels[i]
     }
   }
+  @Test
+  void testIndex() {
+    assert Voice.getByToken("<act>") == Voice.ACTIVE
+    assert Voice.getByToken("<mid>") == Voice.MIDDLE
+    assert Voice.getByToken("<pass>") == Voice.PASSIVE
+
+  }
 }

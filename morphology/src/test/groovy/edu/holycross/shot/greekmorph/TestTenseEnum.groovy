@@ -16,4 +16,14 @@ class TestTenseEnum {
       assert n.getLabel() == expectedLabels[i]
     }
   }
+
+    @Test
+    void testIndex() {
+      assert Tense.getByToken("<pres>") == Tense.PRESENT
+      assert Tense.getByToken("<impft>") == Tense.IMPERFECT
+      assert Tense.getByToken("<fut>") == Tense.FUTURE
+      assert Tense.getByToken("<aor>") == Tense.AORIST
+      assert Tense.getByToken("<pft>") == Tense.PERFECT
+      assert Tense.getByToken("<plupft>") == Tense.PLUPERFECT
+    }
 }

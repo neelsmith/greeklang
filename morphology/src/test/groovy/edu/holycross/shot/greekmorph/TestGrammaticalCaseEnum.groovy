@@ -16,4 +16,15 @@ class TestGrammaticalCaseEnum {
       assert n.getLabel() == expectedLabels[i]
     }
   }
+
+  @Test
+  void testIndex() {
+    assert GrammaticalCase.getByToken("<nom>") == GrammaticalCase.NOMINATIVE
+    assert GrammaticalCase.getByToken("<gen>") == GrammaticalCase.GENITIVE
+    assert GrammaticalCase.getByToken("<dat>") == GrammaticalCase.DATIVE
+    assert GrammaticalCase.getByToken("<acc>") == GrammaticalCase.ACCUSATIVE
+    assert GrammaticalCase.getByToken("<voc>") == GrammaticalCase.VOCATIVE
+
+  }
+
 }

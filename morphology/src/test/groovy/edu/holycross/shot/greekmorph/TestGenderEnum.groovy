@@ -16,4 +16,11 @@ class TestGenderEnum {
       assert n.getLabel() == expectedLabels[i]
     }
   }
+
+  @Test
+  void testIndex() {
+    assert Gender.getByToken("<masc>") == Gender.MASCULINE
+    assert Gender.getByToken("<fem>") == Gender.FEMININE
+    assert Gender.getByToken("<neut>") == Gender.NEUTER
+  }
 }

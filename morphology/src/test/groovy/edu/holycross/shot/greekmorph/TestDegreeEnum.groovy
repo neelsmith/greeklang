@@ -16,4 +16,10 @@ class TestDegreeEnum {
       assert n.getLabel() == expectedLabels[i]
     }
   }
+  @Test
+  void testIndex() {
+    assert Degree.getByToken("<pos>") == Degree.POSITIVE
+    assert Degree.getByToken("<comp>") == Degree.COMPARATIVE
+    assert Degree.getByToken("<superl>") == Degree.SUPERLATIVE
+  }
 }

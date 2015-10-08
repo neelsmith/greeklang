@@ -16,4 +16,13 @@ class TestMoodEnum {
       assert n.getLabel() == expectedLabels[i]
     }
   }
+
+  @Test
+  void testIndex() {
+    assert Mood.getByToken("<indic>") == Mood.INDICATIVE
+    assert Mood.getByToken("<subj>") == Mood.SUBJUNCTIVE
+    assert Mood.getByToken("<opt>") == Mood.OPTATIVE
+    assert Mood.getByToken("<imptv>") == Mood.IMPERATIVE
+  }
+
 }

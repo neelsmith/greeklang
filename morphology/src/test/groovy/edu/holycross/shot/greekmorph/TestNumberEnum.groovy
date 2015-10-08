@@ -9,15 +9,18 @@ class TestNumberEnum {
   def expectedLabels = ["singular", "dual", "plural"]
   @Test
   void testNumberEnum() {
-
-    //ArrayList nums = TinyNumber.values()  as ArrayList
     ArrayList nums = GrammaticalNumber.values()  as ArrayList
     println nums
     nums.eachWithIndex { n, i ->
-      print i
-      println "  " + n.getToken()
       assert n.getToken() == expectedTokens[i]
       assert n.getLabel() == expectedLabels[i]
     }
+  }
+
+  @Test
+  void testIndex() {
+    assert GrammaticalNumber.getByToken("<sg>") == GrammaticalNumber.SINGULAR
+    assert GrammaticalNumber.getByToken("<dual>") == GrammaticalNumber.DUAL
+    assert GrammaticalNumber.getByToken("<pl>") == GrammaticalNumber.PLURAL
   }
 }
