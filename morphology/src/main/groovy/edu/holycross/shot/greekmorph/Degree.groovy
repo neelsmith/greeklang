@@ -18,6 +18,7 @@ public enum Degree {
     return fstToken
   }
 
+
   public String getLabel() {
     return label
   }

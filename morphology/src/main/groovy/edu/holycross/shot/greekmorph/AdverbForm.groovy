@@ -7,6 +7,8 @@ import edu.harvard.chs.cite.CiteUrn
  */
 class AdverbForm implements CitableForm {
 
+
+  static String urnBase = "urn:cite:morph:form.av"
   Degree degree
 
 
@@ -15,8 +17,8 @@ class AdverbForm implements CitableForm {
   }
 
   CiteUrn getUrn() {
-    System.err.println "getUrn() method not yet implemented"
-    return null
+    String urnStr = urnBase + degree.ordinal()
+    return new CiteUrn(urnStr)
   }
 
   String toString() {
