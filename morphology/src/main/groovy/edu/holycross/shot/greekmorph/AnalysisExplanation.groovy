@@ -9,6 +9,6 @@ class AnalysisExplanation {
 
   AnalysisExplanation(CiteUrn stem, CiteUrn inflectionalPattern) {
     this.stem = stem
-    this.inflection = inflectionalPatterns
+    this.inflection = inflectionalPattern
   }
 }

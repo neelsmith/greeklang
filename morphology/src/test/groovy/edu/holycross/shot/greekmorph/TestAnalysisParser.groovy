@@ -14,15 +14,14 @@ class TestAnalysisParser {
 
     FstAnalysisParser fap = new FstAnalysisParser(conjverb)
 
-    
-    //assert fap.getStem() == "<coretests.n64316_0>"
-    //assert fap.getLexicalEntity() == "<lexent.n64316>"
-    //assert fap.getInflectionalPattern() == "<w_indicative.1>" ///"<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>"
-    //assert fap.getPos() == "<verb>"
+    assert fap.analysisPattern == AnalyticalType.CVERB
+    assert fap.explanation.stem.toString() ==  "urn:cite:morph:coretests.n64316_0"
+    assert fap.explanation.inflection.toString() ==  "urn:cite:morph:w_indicative.1"
+    assert fap.lexicalEntity.toString() == "urn:cite:shot:lexent.n64316"
 
     MorphForm mf = fap.getMorphForm()
     assert mf.toString() == "conjugated verb: first person singular present indicative active"
-    //assert fap.getMorphAnalysis() == "urn:cite:morph:form.cv00000"
+    
 
 
   }

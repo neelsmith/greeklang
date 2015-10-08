@@ -2,6 +2,19 @@
 apply plugin: "groovy"
 apply plugin: "java"
 
+buildscript {
+  repositories {
+    mavenCentral()
+    maven {
+      url "http://beta.hpcc.uh.edu/nexus/content/groups/public"
+    }
+  }
+  dependencies {
+    classpath project(':morphology')
+  }
+}
+
+//import edu.holycross.shot.greekmorph.MorphologicalParser
 
 // Reads data to submit:
 String readSubmission(File f) {
@@ -70,7 +83,9 @@ testOmegaVerbAcceptor.doLast {
   String verbAcceptor = "${buildDir}/fst/acceptors/verb.a"
   def testList = [
     "${projectDir}/acceptors/w_verb/1stpp" ,
-    "${projectDir}/acceptors/w_verb/2ndpp"/*,
+    "${projectDir}/acceptors/w_verb/2ndpp",
+    "${projectDir}/acceptors/w_verb/6thpp"
+    /*,
     "${projectDir}/acceptors/w_verb/3rdpp",
     "${projectDir}/acceptors/w_verb/4thpp",
     "${projectDir}/acceptors/w_verb/5thpp",
@@ -103,7 +118,7 @@ task testTokens(dependsOn: ':morphology:setupCoreTests'){
   description = "Tests final morphological token transducer"
 }
 testTokens.doLast {
-  String morphTransducer = "${buildDir}/fst/morphology.a"
+  String morphTransducer = "${buildDir}/fst/greek.a"
   def testList = [
     "${projectDir}/tokens"
   ]
@@ -114,5 +129,16 @@ task testCoreFst(dependsOn: [testAcceptors, testTokens]) {
   description = "Tests integration of transducers"
 }
 testCoreFst.doLast {
+
   System.err.println "Completed integration tests on all transducers"
+}
+
+
+task words (dependsOn: ":morphology:fst") {
+  description = "Runs parser on wordlist"
+}
+words.doLast {
+  String fst = "${rootProject.projectDir}/morphology/build/fst/greek.a"
+  //MorphologicalParser mp = new MorphologicalParser(fst)
+  System.err.println "Finished parsing word list with fst ${fst}."
 }

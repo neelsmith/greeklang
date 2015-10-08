@@ -13,21 +13,34 @@ import edu.harvard.chs.cite.CiteUrn
 */
 class FstAnalysisParser {
 
+  // These should be dynamically acquired from a URN registry:
+  String stemUrnBase = "urn:cite:morph:"
+  String inflUrnBase = "urn:cite:morph:"
+  String lexEntUrnBase = "urn:cite:shot:"
 
+  /// The two halves of the FST output string:
   /** Stem component of FST analysis string.*/
   String stemString
   /** Component of FST analysis string with inflectional pattern.*/
   String inflectionString
 
-  /** String codes identifying the analytical pattern to apply to
-  * FST analytical string. */
-  String analysisPattern
 
-  /*
-  String lexicalEntity
-  String stem // urn for stem
-  String inflectionalPattern
-*/
+  /** Form of analysis to extract from this string.
+  * ("Part of speech")
+  */
+  AnalyticalType analysisPattern
+
+  //// Content extracted from raw FST output string
+  /** URN of the lexical entity of the analysis. */
+  CiteUrn lexicalEntity
+
+  /** The grammatical form of the analysis */
+  MorphForm morphForm
+
+  /** The explanation for the analysis. */
+  AnalysisExplanation explanation
+
+
 
   /** Ordered list of multicharacter symbols in the stem component. */
   ArrayList stemTags = []
@@ -46,39 +59,48 @@ class FstAnalysisParser {
        stemTags = stemString.findAll(/<[^>]+>/)
        inflTags = inflectionString.findAll(/<[^>]+>/)
 
-       /*
-      stem = stemTags[0]
-      lexicalEntity = stemTags[1]
-      inflectionalPattern  = inflTags[1]
-      */
+       String lexEntUrnStr = lexEntUrnBase + stemTags[1].replaceAll(/[<>]/,"")
+       System.err.println "Lex Ent urn str" + lexEntUrnStr
+       lexicalEntity = new CiteUrn(lexEntUrnStr)
+
+       String stemUrnStr = stemUrnBase + stemTags[0].replaceAll(/[<>]/,"")
+       System.err.println "Stem urn str " + stemUrnStr
+       CiteUrn stem = new CiteUrn(stemUrnStr)
+
+       String inflUrnStr = inflUrnBase + inflTags[1].replaceAll(/[<>]/,"")
+       System.err.println "Infl urn str " + inflUrnStr
+       CiteUrn inflectionalPattern  = new CiteUrn(inflUrnStr)
+
+       explanation = new AnalysisExplanation(stem, inflectionalPattern)
+
       if (stemTags[2] != "<#>") {
-        analysisPattern = stemTags[2]
+        analysisPattern = AnalyticalType.getByToken(stemTags[2])
       } else {
         if (["<infin>", "<ptcpl>","<vadj>"].contains(inflTags[1])) {
-          analysisPattern = inflTags[1]
+          analysisPattern = AnalyticalType.getByToken(inflTags[1])
         } else {
-          analysisPattern = "<verb>"
+          analysisPattern = AnalyticalType.CVERB
         }
       }
-
+      morphForm = computeMorphForm()
       //  "<coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>"
   }
 
 
   /** Creates a MorphForm object
   */
-  MorphForm getMorphForm() {
+  MorphForm computeMorphForm() {
     MorphForm mf  = null
-    AnalyticalType analyticalType = AnalyticalType.getByToken(analysisPattern)
+    //AnalyticalType analyticalType = AnalyticalType.getByToken(analysisPattern)
     switch (analysisPattern) {
-      case "<verb>":
+      case AnalyticalType.CVERB:
       def person = Person.getByToken(inflTags[2])
       def num = GrammaticalNumber.getByToken(inflTags[3])
       def tense = Tense.getByToken(inflTags[4])
       def mood = Mood.getByToken(inflTags[5])
       def voice = Voice.getByToken(inflTags[6])
       VerbForm verb = new VerbForm(person, num, tense, mood, voice)
-      mf = new MorphForm(analyticalType, verb)
+      mf = new MorphForm(analysisPattern, verb)
       break
 
       default:
@@ -88,22 +110,9 @@ class FstAnalysisParser {
     }
   }
 
-  AnalysisExplanation getExplanation() {
-
-  }
-
-  CiteUrn getLexicalEntityUrn() {
-
-  }
-  CiteUrn getStemUrn() {
-
-  }
-  CiteUrn getInflectionalPatternUrn() {
-
-  }
 
   String getAccentTag() {
-    
+
   }
 
 

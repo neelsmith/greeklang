@@ -9,7 +9,7 @@ buildscript {
   repositories {
     mavenCentral()
     maven {
-      url "http://beta.hpcc.uh.edu/nexus/content/repositories/papyriinfo/"
+      url "http://beta.hpcc.uh.edu/nexus/content/groups/public"
     }
   }
   dependencies {
