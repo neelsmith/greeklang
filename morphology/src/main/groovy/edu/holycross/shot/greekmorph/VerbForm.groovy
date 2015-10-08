@@ -1,11 +1,12 @@
 package edu.holycross.shot.greekmorph
 
 
+import edu.harvard.chs.cite.CiteUrn
 
 /**
  * A class identifying a morphological form.
  */
-class VerbForm {
+class VerbForm implements CitableForm {
 
   Person person
   GrammaticalNumber num
@@ -30,6 +31,10 @@ class VerbForm {
 
   }
 
+  CiteUrn getUrn() {
+    System.err.println "getUrn() method not yet implemented"
+    return null
+  }
   String toString() {
     def labels = [person.getLabel(), num.getLabel(), tense.getLabel(), mood.getLabel(), voice.getLabel()]
     return labels.join(" ")

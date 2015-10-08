@@ -5,7 +5,7 @@ import static groovy.test.GroovyAssert.shouldFail
 
 class TestTokenParser {
 
-  String parser = "build/fst/morphology.a"
+  String parser = "build/fst/greek.a"
 
   @Test
   void testParser() {

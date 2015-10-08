@@ -9,7 +9,7 @@ class TestMorphologicalParser {
 
 
 
-  String fstBinary = "build/fst/morphology.a"
+  String fstBinary = "build/fst/greek.a"
   MorphologicalParser mp = new MorphologicalParser(fstBinary)
 
 
