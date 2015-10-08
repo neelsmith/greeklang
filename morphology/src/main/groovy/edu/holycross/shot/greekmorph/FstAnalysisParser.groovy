@@ -45,7 +45,7 @@ class FstAnalysisParser {
       // check that strings are not null before doing findAll
        stemTags = stemString.findAll(/<[^>]+>/)
        inflTags = inflectionString.findAll(/<[^>]+>/)
-       
+
        /*
       stem = stemTags[0]
       lexicalEntity = stemTags[1]
@@ -88,13 +88,24 @@ class FstAnalysisParser {
     }
   }
 
+  AnalysisExplanation getExplanation() {
+
+  }
+
   CiteUrn getLexicalEntityUrn() {
 
   }
   CiteUrn getStemUrn() {
 
   }
-  CiteUrn getInflectionalPatternUrn() {}
+  CiteUrn getInflectionalPatternUrn() {
+
+  }
+
+  String getAccentTag() {
+    
+  }
+
 
 
 }

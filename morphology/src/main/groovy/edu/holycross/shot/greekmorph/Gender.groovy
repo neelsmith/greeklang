@@ -8,6 +8,17 @@ public enum Gender {
 
   private String fstToken
   private String label
+  static final Map codeMap
+  static {
+    codeMap = [:] as TreeMap
+    values().each{ atype ->
+      codeMap.put(atype.fstToken, atype)
+    }
+  }
+
+  static getByToken(String fstToken) {
+    return codeMap[fstToken]
+  }
 
   private Gender(String label, String token) {
     this.fstToken = token

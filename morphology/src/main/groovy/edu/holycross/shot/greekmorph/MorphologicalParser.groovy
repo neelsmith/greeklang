@@ -23,7 +23,9 @@ class MorphologicalParser {
   * @returns a MorphologicalAnalysis.
   */
   MorphologicalAnalysis parseGreekString(GreekString gkStr) {
-    def analysisList  = []
+    ArrayList analysisList  = []
+    ArrayList explanationList = []
+
     FstToken fstToken = new FstToken(gkStr)
     String parseOutput = fstParser.parseToken(fstToken)
     parseOutput.eachLine { l ->
@@ -34,9 +36,10 @@ class MorphologicalParser {
       } else {
         FstAnalysisParser fsp = new FstAnalysisParser(l)
         analysisList.add(fsp.getMorphForm())
+        explanationList.add(fsp.getExplanation())
       }
     }
-    return( new MorphologicalAnalysis(gkStr, analysisList))
+    return( new MorphologicalAnalysis(gkStr, analysisList, explanationList))
   }
 
 }

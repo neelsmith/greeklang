@@ -26,7 +26,7 @@ public enum Mood {
   static getByToken(String fstToken) {
     return codeMap[fstToken]
   }
-  
+
   public String getToken() {
     return fstToken
   }
