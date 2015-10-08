@@ -7,6 +7,8 @@ import edu.harvard.chs.cite.CiteUrn
  */
 class NounForm implements CitableForm {
 
+
+  static String urnBase = "urn:cite:morph:form.no"
   Gender gender
   GrammaticalCase cas
   GrammaticalNumber num
@@ -20,8 +22,8 @@ class NounForm implements CitableForm {
   }
 
   CiteUrn getUrn() {
-    System.err.println "getUrn() method not yet implemented"
-    return null
+    String urnStr = urnBase + gender.ordinal() + cas.ordinal() + num.ordinal()
+    return new CiteUrn(urnStr)
   }
 
   String toString() {

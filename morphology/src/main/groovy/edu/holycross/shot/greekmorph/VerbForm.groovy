@@ -8,6 +8,9 @@ import edu.harvard.chs.cite.CiteUrn
  */
 class VerbForm implements CitableForm {
 
+
+  static String baseUrn = "urn:cite:morph:form.cv"
+
   Person person
   GrammaticalNumber num
   Tense tense
@@ -32,8 +35,8 @@ class VerbForm implements CitableForm {
   }
 
   CiteUrn getUrn() {
-    System.err.println "getUrn() method not yet implemented"
-    return null
+    String urnStr = baseUrn + person.ordinal() + num.ordinal() + tense.ordinal() + mood.ordinal() + voice.ordinal()
+    return new CiteUrn(urnStr)
   }
   String toString() {
     def labels = [person.getLabel(), num.getLabel(), tense.getLabel(), mood.getLabel(), voice.getLabel()]

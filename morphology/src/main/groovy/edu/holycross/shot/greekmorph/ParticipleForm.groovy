@@ -1,12 +1,14 @@
 package edu.holycross.shot.greekmorph
 
-
+import edu.harvard.chs.cite.CiteUrn
 
 /**
  * A class identifying a morphological form.
  */
-class ParticipleForm {
+class ParticipleForm implements CitableForm {
 
+
+  static String urnBase = "urn:cite:morph:form.pc"
   Tense tense
   Voice voice
   Gender gender
@@ -19,6 +21,11 @@ class ParticipleForm {
     gender = g
     cas = c
     num = n
+  }
+
+  CiteUrn getUrn() {
+    String urnStr = urnBase + tense.ordinal() + voice.ordinal() + gender.ordinal() + cas.ordinal() + num.ordinal()
+    return new CiteUrn(urnStr)
   }
 
   String toString() {

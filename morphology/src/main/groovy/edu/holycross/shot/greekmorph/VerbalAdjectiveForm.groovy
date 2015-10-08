@@ -7,6 +7,7 @@ import edu.harvard.chs.cite.CiteUrn
  */
 class VerbalAdjectiveForm implements CitableForm {
 
+  static String baseUrn = "urn:cite:morph:form.va"
   Gender gender
   GrammaticalCase cas
   GrammaticalNumber num
@@ -20,8 +21,8 @@ class VerbalAdjectiveForm implements CitableForm {
   }
 
   CiteUrn getUrn() {
-    System.err.println "getUrn() method not yet implemented"
-    return null
+    String urnStr = baseUrn + gender.ordinal() + cas.ordinal() + num.ordinal()
+    return new CiteUrn(urnStr)
   }
 
   String toString() {

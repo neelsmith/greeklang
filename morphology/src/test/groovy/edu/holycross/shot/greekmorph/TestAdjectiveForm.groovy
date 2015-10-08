@@ -11,4 +11,10 @@ class TestAdjectiveForm {
     assert adj.toString() == "masculine nominative singular positive"
   }
 
+
+  @Test
+  void testUrns() {
+    AdjectiveForm adj =  new AdjectiveForm(Gender.MASCULINE, GrammaticalCase.NOMINATIVE, GrammaticalNumber.SINGULAR, Degree.POSITIVE)
+    assert adj.getUrn().toString() == "urn:cite:morph:form.aj0000"
+  }
 }

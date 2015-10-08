@@ -8,6 +8,9 @@ import edu.harvard.chs.cite.CiteUrn
  */
 class InfinitiveForm implements CitableForm {
 
+
+  static String urnBase = "urn:cite:morph:form.if"
+
   Tense tense
   Voice voice
 
@@ -19,10 +22,10 @@ class InfinitiveForm implements CitableForm {
   }
 
   CiteUrn getUrn() {
-    System.err.println "getUrn() method not yet implemented"
-    return null
+    String urnStr = urnBase + tense.ordinal() + voice.ordinal()
+    return new CiteUrn(urnStr)
   }
-  
+
   String toString() {
     def labels = [tense.getLabel(), voice.getLabel()]
     return labels.join(" ")

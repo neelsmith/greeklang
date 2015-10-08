@@ -11,4 +11,9 @@ class TestVerbForm {
     assert verb.toString() == "first person singular present indicative active"
   }
 
+  @Test
+  void testUrns () {
+    VerbForm verb =  new VerbForm(Person.FIRST, GrammaticalNumber.SINGULAR, Tense.PRESENT, Mood.INDICATIVE, Voice.ACTIVE)
+    assert verb.getUrn().toString() == "urn:cite:morph:form.cv00000" 
+  }
 }

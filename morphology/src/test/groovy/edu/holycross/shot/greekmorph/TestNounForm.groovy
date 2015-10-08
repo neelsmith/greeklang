@@ -11,4 +11,9 @@ class TestNounForm {
     assert noun.toString() == "masculine nominative singular"
   }
 
+  @Test
+  void testUrns() {
+    NounForm noun =  new NounForm(Gender.MASCULINE, GrammaticalCase.NOMINATIVE, GrammaticalNumber.SINGULAR)
+    assert noun.getUrn().toString() == "urn:cite:morph:form.no000"
+  }
 }
