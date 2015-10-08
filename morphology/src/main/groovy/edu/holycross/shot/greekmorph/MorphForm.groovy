@@ -1,5 +1,6 @@
 package edu.holycross.shot.greekmorph
 
+import edu.harvard.chs.cite.CiteUrn
 
 
 /**
@@ -8,10 +9,10 @@ package edu.holycross.shot.greekmorph
 class MorphForm {
 
   AnalyticalType analyticalType
-  Object analysis
+  CitableForm analysis
 
 
-  MorphForm(AnalyticalType analyticalType, Object analysis) {
+  MorphForm(AnalyticalType analyticalType, CitableForm analysis) {
     this.analyticalType = analyticalType
     // should really check that type and object are in sync...
     switch (analysis.class) {
@@ -31,6 +32,15 @@ class MorphForm {
     }
   }
 
+  /** Computes the CiteUrn for a given form.
+  */
+  CiteUrn urnForForm() {
+    analysis.getUrn()
+  }
+
+  /** Formats human-readable analysis.
+  * @returns Human-readable analysis.
+  */
   String toString() {
     return analyticalType.toString() + ": " + analysis.toString()
   }
