@@ -1,63 +1,76 @@
 package edu.holycross.shot.greekmorph
 
+import edu.harvard.chs.cite.CiteUrn
+
 /**
-* Class for parsing output of SFST toolkit's fst-infl.
+* Class for parsing structured text output of SFST toolkit's fst-infl.
+* Lines beginning with '>' identify surface strings.  Following non-empty
+* lines provide underlying analyses.  Lines beginning "No result" identify
+* surface strings that could not be identified.
+*
+* Analyses are composed of a stem component and an inflectional pattern,
+* separated by "::"
 */
 class FstAnalysisParser {
 
 
+  /** Stem component of FST analysis string.*/
   String stemString
+  /** Component of FST analysis string with inflectional pattern.*/
   String inflectionString
 
-  // all URNs, really
+  /** String codes identifying the analytical pattern to apply to
+  * FST analytical string. */
+  String analysisPattern
+
+  /*
   String lexicalEntity
-  String stem
+  String stem // urn for stem
   String inflectionalPattern
-  String pos
+*/
 
-  // to derive from tags:
-  String morphAnalysis
-  MorphForm MorphForm
+  /** Ordered list of multicharacter symbols in the stem component. */
+  ArrayList stemTags = []
+  /** Ordered list of multicharacter symbols in the inflectional pattern component. */
+  ArrayList inflTags = []
 
-  //
-  def stemTags
-  def inflTags
-
-
-
-
-  /** Constructor. */
+  /** Constructor determines the analytical pattern for the analysis string.
+  * @param analysisStr Output of fst-infl.
+  */
   FstAnalysisParser(String analysisStr) {
       def cols = analysisStr.split(/::/)
       stemString = cols[0]
       inflectionString = cols[1]
+
       // check that strings are not null before doing findAll
        stemTags = stemString.findAll(/<[^>]+>/)
        inflTags = inflectionString.findAll(/<[^>]+>/)
-
+       
+       /*
       stem = stemTags[0]
       lexicalEntity = stemTags[1]
       inflectionalPattern  = inflTags[1]
+      */
       if (stemTags[2] != "<#>") {
-        pos = stemTags[2]
+        analysisPattern = stemTags[2]
       } else {
         if (["<infin>", "<ptcpl>","<vadj>"].contains(inflTags[1])) {
-          pos = inflTags[1]
+          analysisPattern = inflTags[1]
         } else {
-          pos = "<verb>"
+          analysisPattern = "<verb>"
         }
       }
-      //morphAnalysis = getMorphForm()
+
       //  "<coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>"
   }
 
 
-
+  /** Creates a MorphForm object
+  */
   MorphForm getMorphForm() {
     MorphForm mf  = null
-    String urnBase = "urn:cite:morph:form"
-    def analyticalType = AnalyticalType.getByToken(pos)
-    switch (pos) {
+    AnalyticalType analyticalType = AnalyticalType.getByToken(analysisPattern)
+    switch (analysisPattern) {
       case "<verb>":
       def person = Person.getByToken(inflTags[2])
       def num = GrammaticalNumber.getByToken(inflTags[3])
@@ -73,9 +86,15 @@ class FstAnalysisParser {
       break
       return mf
     }
-
   }
 
+  CiteUrn getLexicalEntityUrn() {
+
+  }
+  CiteUrn getStemUrn() {
+
+  }
+  CiteUrn getInflectionalPatternUrn() {}
 
 
 }
