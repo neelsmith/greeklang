@@ -14,28 +14,17 @@ class MorphForm {
 
   MorphForm(AnalyticalType analyticalType, CitableForm analysis) {
     this.analyticalType = analyticalType
-    // should really check that type and object are in sync...
-    switch (analysis.class) {
-      case edu.holycross.shot.greekmorph.VerbForm:
-      case edu.holycross.shot.greekmorph.ParticipleForm:
-      case edu.holycross.shot.greekmorph.InfinitiveForm:
-      case edu.holycross.shot.greekmorph.VerbalAdjectiveForm:
-      case edu.holycross.shot.greekmorph.NounForm:
-      case edu.holycross.shot.greekmorph.AdjectiveForm:
-      case edu.holycross.shot.greekmorph.AdverbForm:
-      this.analysis = analysis
-      break
-
-      default:
-      throw new Exception("MorphForm: unrecognized class ${analysis.class}")
-      break
-    }
+    this.analysis = analysis
   }
 
   /** Computes the CiteUrn for a given form.
   */
   CiteUrn urnForForm() {
     analysis.getUrn()
+  }
+
+  CiteUrn getLexicalEntity() {
+    
   }
 
   /** Formats human-readable analysis.
