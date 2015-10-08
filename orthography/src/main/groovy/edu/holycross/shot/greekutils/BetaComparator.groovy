@@ -41,7 +41,9 @@ public abstract class BetaComparator implements Comparator<String> {
     * @param s2 Second String to compare.
     * @return  -1 if s1 < s2, 0 if s1 == s2, 1 if s1 > s2
     */
-    public static int compare(Object s1, Object s2) 
+
+    /*
+    public static int compare(Object s1, Object s2)
 	throws Exception {
 	//System.err.println ("Params ${s1.getClass()} :  ${s1}");
 	//System.err.println ("and ${s2.getClass()} : ${s2}");
@@ -52,12 +54,12 @@ public abstract class BetaComparator implements Comparator<String> {
 	    int idx = 0
 	    int maxChars = 0
 	    if (s1.size() > s2.size()) {
-	      maxChars = s2.size() 
+	      maxChars = s2.size()
 	    } else {
 	      maxChars = s1.size()
 	    }
 	    boolean done = false
-	
+
 	    System.err.println "comparing ${s1} and ${s2}:  maxchars = ??"// + maxChars
 	    while (!done) {
 	      def cComp = charComp(s1[idx],s2[idx])
@@ -73,7 +75,7 @@ public abstract class BetaComparator implements Comparator<String> {
 	    // two tokens matched for all chars, but
 	    // if one is longer, it sorts later:
 	    if (s1.size() > s2.size()) {
-	      return 1 
+	      return 1
 	    } else if (s1.size() == s2.size()) {
 	      return 0
 	    } else {
@@ -84,5 +86,5 @@ public abstract class BetaComparator implements Comparator<String> {
 	    throw new Exception("BetaCompare:  compare method onlh compares Strings.");
 	}
 
-    }
+    }*/
 }
