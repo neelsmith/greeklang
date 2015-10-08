@@ -148,9 +148,9 @@ cpAll.doLast {
 }
 
 task fst(type:Exec, dependsOn: cpAll) {
-  description = "Builds binary Finite State Transducer in ${buildDir}/fst/morphology.a"
+  description = "Builds binary Finite State Transducer in ${buildDir}/fst/greek.a"
 
-  outputs.file "${buildDir}/fst/morphology.a".toString()
+  outputs.file "${buildDir}/fst/greek.a".toString()
   inputs.dir "${buildDir}/fst"
 
   commandLine =  [MAKE, "-f", "${buildDir}/fst/makefile".toString()]
@@ -158,7 +158,7 @@ task fst(type:Exec, dependsOn: cpAll) {
 
 
 task fstgen(type:Exec, dependsOn: cpAll) {
-  description = "Builds binary Finite State Transducer in ${buildDir}/fst/morphology.a and 'switched' FST (for bulk generation of surface symbols) in ${buildDir}/fst/bulkgen.a"
+  description = "Builds binary Finite State Transducer in ${buildDir}/fst/greek.a and 'switched' FST (for bulk generation of surface symbols) in ${buildDir}/fst/bulkgen.a"
 
   outputs.file "${buildDir}/fst/bulkgen.a".toString()
   inputs.dir "${buildDir}/fst"
@@ -256,7 +256,7 @@ testFST.doLast{
   def tokensDir = file("${buildDir}/tests/tokens")
   StringBuffer rept = new StringBuffer()
   tokensDir.eachFileMatch(~/.*.txt/) { tokens ->
-    def cmd = "${FSTINFL} ${buildDir}/fst/morphology.a ${tokens}"
+    def cmd = "${FSTINFL} ${buildDir}/fst/greek.a ${tokens}"
     Process process = cmd.execute()
     def out = new StringBuffer()
     def err = new StringBuffer()
@@ -286,4 +286,9 @@ analyzeFSTTests.doLast {
 task setupCoreTests(type: Copy, dependsOn: 'fst') {
   from ("${buildDir}")
   into "fst_tests/build"
+}
+
+
+task install() {
+  description = "Install binary fst parser and CLI scripts in /usr/local"
 }

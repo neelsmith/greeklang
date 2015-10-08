@@ -1,10 +1,11 @@
-#Build corpus-specific parsers for Greek morphology #
+# Build corpus-specific parsers for Greek morphology #
 
 
 ## Prerequisites
 
 - A POSIX-like environment with `sh`, `echo` and `make`.
 - [gradle](http://gradle.org/) (which in turn requires a Java JDK or JRE)
+- [groovy](http://www.groovy-lang.org/)
 - [Stuttgart FST toolbox](http://www.cis.uni-muenchen.de/~schmid/tools/SFST/).  If not installed in `/usr/bin`, edit `fstconf.grade` with the full path to `fst-compiler`.
 
 
