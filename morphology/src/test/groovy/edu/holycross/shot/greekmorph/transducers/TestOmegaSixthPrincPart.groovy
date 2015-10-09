@@ -19,9 +19,11 @@ class TestOmegaSixthPrincPart {
     "<coretests.n64316_0><lexent.n64316><#>lus<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><fut><indic><act>": [
       "conjugated verb: first person singular future indicative active"
     ],
+    /*
+    THIS IS WRONG!  FIX ENDING FOR IND PASS
     "<coretests.n64316_0><lexent.n64316><#>luq<verb><w_regular>::<w_regular><w_indicative.7>omai<1st><sg><fut><indic><pass>":
     ["conjugated verb: first person singular future indicative passive"],
-
+*/
 
     "<coretests.n64316_0><lexent.n64316><#>lus<verb><w_regular>::<w_regular><w_indicative.7>omai<1st><sg><fut><indic><mid>":
     [ "conjugated verb: first person singular future indicative middle" ]
