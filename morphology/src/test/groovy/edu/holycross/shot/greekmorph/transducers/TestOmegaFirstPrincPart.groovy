@@ -52,6 +52,15 @@ class TestOmegaFirstPrincPart {
     "<coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><subj><act>":
     ["conjugated verb: first person singular present subjunctive active"],
 
+    "<coretests.n64316_0><lexent.n64316><#>e)lu<verb><w_regular>::<w_regular><w_indicative.13>on<1st><sg><impft><indic><act>":
+    ["conjugated verb: first person singular imperfect indicative active"],
+
+    "<coretests.n64316_0><lexent.n64316><#>e)lu<verb><w_regular>::<w_regular><w_indicative.19>omhn<1st><sg><impft><indic><mid>":
+    ["conjugated verb: first person singular imperfect indicative middle"],
+
+    "<coretests.n64316_0><lexent.n64316><#>e)lu<verb><w_regular>::<w_regular><w_indicative.19>omhn<1st><sg><impft><indic><pass>":
+    ["conjugated verb: first person singular imperfect indicative passive"]
+
     ]
 
     testMap.each { wd ->
