@@ -4,14 +4,28 @@ package edu.holycross.shot.greekmorph
 import org.junit.Test
 import static groovy.test.GroovyAssert.shouldFail
 
+/** Tests transducer in acceptors/verb.a for hanlding
+* of formation of second princ part of omega verbs
+*/
 class TestOmegaSecondPrincPart {
-
-
 
   String fstinfl = "/usr/bin/fst-infl"
   String transducer = "build/fst/acceptors/verb.a"
   File testFile = new File("build/testInput.txt")
   String cmd = "${fstinfl} ${transducer} ${testFile}"
+
+  // Maps submitted FST string to expected value of morphform.toString()
+  def testMap = [
+  "<coretests.n64316_0><lexent.n64316><#>lus<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><fut><indic><act>": [
+    "conjugated verb: first person singular future indicative active"
+  ],
+
+  "<coretests.n64316_0><lexent.n64316><#>lus<verb><w_regular>::<w_regular><w_indicative.7>omai<1st><sg><fut><indic><mid>": [
+    "conjugated verb: first person singular future indicative middle"
+  ]
+
+  ]
+
 
   ArrayList getAnalysisStrings() {
     def analysisStrings = []
@@ -37,18 +51,6 @@ class TestOmegaSecondPrincPart {
 
   @Test
   void testVerbAcceptor() {
-    // map submitted FST string to expected morphform.toString()
-    def testMap = [
-    "<coretests.n64316_0><lexent.n64316><#>lus<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><fut><indic><act>": [
-      "conjugated verb: first person singular future indicative active"
-    ],
-    
-    "<coretests.n64316_0><lexent.n64316><#>lus<verb><w_regular>::<w_regular><w_indicative.7>omai<1st><sg><fut><indic><mid>": [
-      "conjugated verb: first person singular future indicative middle"
-    ]
-
-    ]
-
     testMap.each { wd ->
       testFile.setText(wd.key)
       def actualReplies = getAnalysisStrings()
