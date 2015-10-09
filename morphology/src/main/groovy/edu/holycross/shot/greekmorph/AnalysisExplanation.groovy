@@ -11,4 +11,8 @@ class AnalysisExplanation {
     this.stem = stem
     this.inflection = inflectionalPattern
   }
+
+  String toString() {
+    return "stem ${stem}, inflection ${inflection}"
+  }
 }

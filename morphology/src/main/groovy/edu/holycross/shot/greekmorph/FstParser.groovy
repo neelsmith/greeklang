@@ -10,6 +10,7 @@ class FstParser {
   String ECHO = "/bin/echo"
   String SH = "/bin/sh"
 
+  /** Path to binary transducer. */
   String fstParser
 
   /** Constructor.
