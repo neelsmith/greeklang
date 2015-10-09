@@ -4,7 +4,7 @@ package edu.holycross.shot.greekmorph
 import org.junit.Test
 import static groovy.test.GroovyAssert.shouldFail
 
-class TestOmegaVerbAcceptor {
+class TestOmegaFirstPrincPart {
 
 
 
@@ -37,6 +37,7 @@ class TestOmegaVerbAcceptor {
 
   @Test
   void testVerbAcceptor() {
+    // map submitted FST string to expected morphform.toString()
     def testMap = [
     "<coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>":
     ["conjugated verb: first person singular present indicative active"],
@@ -45,7 +46,11 @@ class TestOmegaVerbAcceptor {
     ["conjugated verb: first person singular present indicative middle"],
 
     "<coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<w_regular><w_indicative.7>omai<1st><sg><pres><indic><pass>":
-    ["conjugated verb: first person singular present indicative passive"]
+    ["conjugated verb: first person singular present indicative passive"],
+
+
+    "<coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><subj><act>":
+    ["conjugated verb: first person singular present subjunctive active"],
 
     ]
 
