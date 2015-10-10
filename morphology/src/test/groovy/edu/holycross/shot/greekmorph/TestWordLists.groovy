@@ -14,6 +14,7 @@ class TestWordLists {
 
   @Test
   void testWords() {
+    def totalsByFile = [:]
     srcDir.eachFileMatch(~/.*.txt/) { wordList ->
       println "Scoring word list ${wordList}"
       Integer success = 0
@@ -35,7 +36,13 @@ class TestWordLists {
           }
         }
       }
-      println "${success} successes, ${failed} failed\n"
+      String summ =  "${success} successes, ${failed} failed"
+      println summ + "\n"
+      totalsByFile[wordList] = summ
+    }
+    println "\n\nSummary by file:"
+    totalsByFile.each {
+      println "${it.key}: ${it.value}"
     }
   }
 }
