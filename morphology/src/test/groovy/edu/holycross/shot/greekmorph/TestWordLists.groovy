@@ -20,8 +20,9 @@ class TestWordLists {
       Integer success = 0
       Integer failed = 0
       wordList.readLines().each { w ->
-        if (w[0] == "%") {
-          // comment
+
+        if ((w.size() < 1) ||  (w[0] == "%")) {
+          // comment or empty line
         } else {
           GreekString gs = new GreekString(w, "Unicode")
           System.out.print "Analyzing ${w} ... "
