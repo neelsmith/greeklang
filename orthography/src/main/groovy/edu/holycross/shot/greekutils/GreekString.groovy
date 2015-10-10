@@ -96,7 +96,7 @@ class GreekString {
     Integer count = 0
     String betaString = xcoder.getString(srcString).toLowerCase()
     betaString = betaString.replaceAll("s1","s")
-    System.err.println "Analyze " + srcString + " as " + greekMapping + " (len ${betaString} = " + betaString.length() + ")"
+    if (debugLevel > 0) { System.err.println "Analyze " + srcString + " as " + greekMapping + " (len ${betaString} = " + betaString.length() + ")" }
 
     while (count < betaString.length()) {
       if (!(isValidChar(betaString.substring(count,count+1)))) {
