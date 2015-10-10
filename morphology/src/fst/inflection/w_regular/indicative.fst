@@ -15,13 +15,19 @@ $w_presfut_indic_ending$ = <w_regular> ( \
     <w_indicative.5>ete<2nd><pl>[<pres><fut>]<indic><act> |\
     <w_indicative.6>ousi<3rd><pl>[<pres><fut>]<indic><act> |\
     \
-    <w_indicative.7>omai<1st><sg>[<pres><fut>]<indic>[<mid><pass>] |\
-    <w_indicative.8>ei<2nd><sg>[<pres><fut>]<indic>[<mid><pass>] |\
-    <w_indicative.9>etai<3rd><sg>[<pres><fut>]indic>[<mid><pass>] |\
-    <w_indicative.10>omeqa<1st><pl>[<pres><fut>]<indic>[<mid><pass>] |\
-    <w_indicative.11>esqe<2nd><pl>[<pres><fut>]<indic>[<mid><pass>] |\
-    <w_indicative.12>ontai<3rd><pl>[<pres><fut>]<indic>[<mid><pass>]  \
+    <w_indicative.7>omai<1st><sg>[<pres><fut>]<indic><mid> |\
+    <w_indicative.8>ei<2nd><sg>[<pres><fut>]<indic><mid> |\
+    <w_indicative.9>etai<3rd><sg>[<pres><fut>]indic><mid> |\
+    <w_indicative.10>omeqa<1st><pl>[<pres><fut>]<indic><mid> |\
+    <w_indicative.11>esqe<2nd><pl>[<pres><fut>]<indic><mid> |\
+    <w_indicative.12>ontai<3rd><pl>[<pres><fut>]<indic><mid>  |\
     \
+    <w_indicative.67>hsomai<1st><sg>[<pres><fut>]<indic><mid> |\
+    <w_indicative.68>hsei<2nd><sg>[<pres><fut>]<indic><mid> |\
+    <w_indicative.69>hsetai<3rd><sg>[<pres><fut>]indic><mid> |\
+    <w_indicative.70>hsomeqa<1st><pl>[<pres><fut>]<indic><mid> |\
+    <w_indicative.71>hsesqe<2nd><pl>[<pres><fut>]<indic><mid> |\
+    <w_indicative.72>hsontai<3rd><pl>[<pres><fut>]<indic><mid> \
 )
 
 % Imperfect indicative:

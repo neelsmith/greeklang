@@ -13,6 +13,8 @@ import edu.harvard.chs.cite.CiteUrn
 */
 class FstAnalysisParser {
 
+  Integer debug = 1
+
   // These should be dynamically acquired from a URN registry:
   String stemUrnBase = "urn:cite:morph:"
   String inflUrnBase = "urn:cite:morph:"
@@ -54,21 +56,30 @@ class FstAnalysisParser {
       def cols = analysisStr.split(/::/)
       stemString = cols[0]
       inflectionString = cols[1]
-
+      if (debug > 1) {
+        System.err.println "FstAP: Analyzing " + analysisStr
+        System.err.println "Preparing to compute parts with\t stemstr ${stemString}\n\tinfl string ${inflectionString}"
+      }
       // check that strings are not null before doing findAll
        stemTags = stemString.findAll(/<[^>]+>/)
        inflTags = inflectionString.findAll(/<[^>]+>/)
 
        String lexEntUrnStr = lexEntUrnBase + stemTags[1].replaceAll(/[<>]/,"")
-       System.err.println "Lex Ent urn str" + lexEntUrnStr
-       lexicalEntity = new CiteUrn(lexEntUrnStr)
 
        String stemUrnStr = stemUrnBase + stemTags[0].replaceAll(/[<>]/,"")
-       System.err.println "Stem urn str " + stemUrnStr
-       CiteUrn stem = new CiteUrn(stemUrnStr)
 
        String inflUrnStr = inflUrnBase + inflTags[1].replaceAll(/[<>]/,"")
-       System.err.println "Infl urn str " + inflUrnStr
+
+
+       if (debug > 0 ) {
+         System.err.println "FstAP: analyze as URNs:"
+         System.err.println "\tLex Ent urn str" + lexEntUrnStr
+         System.err.println "\tStem urn str " + stemUrnStr
+         System.err.println "\tInfl urn str " + inflUrnStr
+       }
+
+       lexicalEntity = new CiteUrn(lexEntUrnStr)
+       CiteUrn stem = new CiteUrn(stemUrnStr)
        CiteUrn inflectionalPattern  = new CiteUrn(inflUrnStr)
 
        explanation = new AnalysisExplanation(stem, inflectionalPattern)
@@ -82,6 +93,8 @@ class FstAnalysisParser {
           analysisPattern = AnalyticalType.CVERB
         }
       }
+
+
       morphForm = computeMorphForm()
       //  "<coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>"
   }
@@ -94,6 +107,9 @@ class FstAnalysisParser {
     //AnalyticalType analyticalType = AnalyticalType.getByToken(analysisPattern)
     switch (analysisPattern) {
       case AnalyticalType.CVERB:
+      if (debug > 1) {
+        System.err.println "FAP creating MorphForm wth inflTags ${inflTags} from inflectionSTring ${inflectionString}"
+      }
       def person = Person.getByToken(inflTags[2])
       def num = GrammaticalNumber.getByToken(inflTags[3])
       def tense = Tense.getByToken(inflTags[4])
