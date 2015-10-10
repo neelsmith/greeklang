@@ -1,8 +1,3 @@
 CollectionId,CollectionUrn,Label
-lexent,"urn:cite:shot:lexent","Greek lexical entities."
-w_indicative,"urn:cite:morph:w_indicative"
-
-
-
-String stemUrnBase = "urn:cite:morph:"
-String inflUrnBase = "urn:cite:morph:"
+lexent,urn:cite:shot:lexent,"Greek lexical entities."
+w_indicative,urn:cite:morph:w_indicative,"Inflectional patterns for indicative of omega verbs"
