@@ -6,7 +6,7 @@ import static groovy.test.GroovyAssert.shouldFail
 
 class TestInflRead {
 
-  File dataFile = new File("junit/inflreports/inflrept1.txt")
+  File dataFile = new File("unit_tests_data/inflreports/inflrept1.txt")
 
   @Test
   void TestInflReader() {
