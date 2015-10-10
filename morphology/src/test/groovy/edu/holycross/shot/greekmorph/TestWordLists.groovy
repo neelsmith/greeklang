@@ -27,7 +27,7 @@ class TestWordLists {
           try {
             MorphologicalAnalysis morph = mp.parseGreekString(gs)
             println "success."
-            sucess++
+            success++
           } catch (Exception e) {
             println "failed:"
             println "\t" + e
