@@ -1,0 +1,31 @@
+% leipw1s.txt
+% Synopsis in 1st.sing. indic., by tense, of
+% verb with 2nd aor and irregular principal parts.
+%
+
+% indicative. %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% pres.
+λείπω
+λείπομαι
+%
+% future
+λείψω
+λείψομαι
+λειφθήσομαι
+%
+% imperf
+ἔλειπον
+ἐλειπόμην
+%
+% aorist
+ἔλιπον
+ἐλιπόμην
+ἐλείφθην
+%
+% perfect
+λέλοιπα
+λέλειμμαι
+%
+% pluperfect
+ἐλελοίπη
+%

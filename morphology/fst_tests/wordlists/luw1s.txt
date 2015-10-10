@@ -1,5 +1,6 @@
-% luw.txt
-% Synopsis in 1st.sing., by mood and tense:
+% luw1s.txt
+% Synopsis in 1st.sing., by mood and tense, of
+% regular omega verb.
 %
 % indicative. %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % pres.
