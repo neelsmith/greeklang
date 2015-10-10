@@ -8,9 +8,9 @@ import java.text.Normalizer.Form
  * A class for working with text in Greek.  Instances may
  * be initialized with any encoding of Greek that Hugh Cayless'
  * transcoder recognizes;  static methods expect beta code strings.
- * Valid Greek characters are limited to the small set that can be 
+ * Valid Greek characters are limited to the small set that can be
  * used to construct valid morphologically parseable lexical tokens, plus punctuation characters.
- * If your representation of Greek text includes other characaters, such 
+ * If your representation of Greek text includes other characaters, such
  * as numeric characters, or more exotic kinds of punctuatio, you will
  * have to strip those out before creating a GreekString object.
  */
@@ -21,8 +21,8 @@ class GreekString {
   Integer WARN =  1
   Integer DEBUG = 2
   Integer VERBOSE = 3
-  
-  Integer debugLevel = 5
+
+  Integer debugLevel = 0
 
 
   /** Immutable set of consonant characters. */
@@ -84,7 +84,7 @@ class GreekString {
    * for a GreekString's underlying beta-code representation.
    * @param srcString Greek string, in beta code.
    * @param System for mapping Greek onto Unicode.  String value may
-   * be any of the values for "sourceEncoding" supported by the 
+   * be any of the values for "sourceEncoding" supported by the
    * epidoc transcoder, such as "Unicode".
    * @throws Exception if not all characters in betaString are valid.
    */
@@ -92,12 +92,12 @@ class GreekString {
     TransCoder xcoder = new TransCoder()
     xcoder.setParser(greekMapping)
     xcoder.setConverter("BetaCode")
-    
+
     Integer count = 0
     String betaString = xcoder.getString(srcString).toLowerCase()
     betaString = betaString.replaceAll("s1","s")
     System.err.println "Analyze " + srcString + " as " + greekMapping + " (len ${betaString} = " + betaString.length() + ")"
-    
+
     while (count < betaString.length()) {
       if (!(isValidChar(betaString.substring(count,count+1)))) {
 	System.err.println "Error parsing ${betaString}: failed on ${betaString.substring(count,count+1)} (char ${count})"
@@ -114,7 +114,7 @@ class GreekString {
     TransCoder xcoder = new TransCoder()
     xcoder.setParser(greekMapping)
     xcoder.setConverter("BetaCode")
-    
+
     Integer count = 0
     String betaString = xcoder.getString(srcString).toLowerCase()
     betaString = betaString.replaceAll("s1","s")
@@ -126,7 +126,7 @@ class GreekString {
    * @param srcString Greek string, in beta code.
    * @throws Exception if not all characters in betaString are valid.
    */
-  GreekString(String srcString) 
+  GreekString(String srcString)
   throws Exception {
     Integer count = 0
     String betaString = srcString.toLowerCase()
@@ -151,15 +151,15 @@ class GreekString {
    * character.
    * @param ch String to check.
    * @returns true if character is valid, otherwise false.
-   */ 
+   */
   static boolean isValidChar(String ch) {
     Integer debug = 0
     if (debug> 0) {
       System.err.println "GreekString: check " + ch
     }
     if (
-      (GreekString.isAlphabetic(ch)) 
-      || (GreekString.isAccentOrBreathing(ch)) 
+      (GreekString.isAlphabetic(ch))
+      || (GreekString.isAccentOrBreathing(ch))
       || (GreekString.isQuantity(ch))
       || (GreekString.isPunctuation(ch))
       || (GreekString.isWhiteSpace(ch))
@@ -178,7 +178,7 @@ class GreekString {
    * character.
    * @param ch String to check.
    * @returns true if character is alphabetic, otherwise false.
-   */ 
+   */
   static boolean isAlphabetic(String ch) {
     if (
       (GreekString.consonant.contains(ch))
@@ -186,7 +186,7 @@ class GreekString {
     ) {
       return true
     } else  {
-      return false 
+      return false
     }
   }
 
@@ -194,7 +194,7 @@ class GreekString {
    * or breathing character.
    * @param ch String to check.
    * @returns true if character is accent or breathing, otherwise false.
-   */   
+   */
   static boolean isAccentOrBreathing(ch) {
     if (
       (breathing.contains(ch))
@@ -202,7 +202,7 @@ class GreekString {
     ) {
       return true
     } else  {
-      return false 
+      return false
     }
   }
 
@@ -210,7 +210,7 @@ class GreekString {
   /** Determines if a one-character long string is an accent.
    * @param ch String to check.
    * @returns true if character is accent, otherwise false.
-   */   
+   */
   static boolean isAccent(ch) {
     return (accent.contains(ch))
   }
@@ -219,7 +219,7 @@ class GreekString {
   /** Determines if a one-character long string is a breathing.
    * @param ch String to check.
    * @returns true if character is a breathing, otherwise false.
-   */   
+   */
   static boolean isBreathing(ch) {
     return (breathing.contains(ch))
   }
@@ -315,7 +315,7 @@ class GreekString {
 
 
 
-  /** Removes accent characters from a String. 
+  /** Removes accent characters from a String.
    * @param s String to modify.
    * @returns The string with all accent characters removed.
    */
@@ -335,7 +335,7 @@ class GreekString {
     return tokens
   }
 
-  
+
   /** Overrides default implementation of toString.
    * @returns ASCII-only version of a Greek word.
    */
@@ -366,7 +366,7 @@ class GreekString {
       if (debugLevel > 1) {
 	System.err.println "After check " + u
       }
-      
+
       return u
     } else {
       return this.greekString
