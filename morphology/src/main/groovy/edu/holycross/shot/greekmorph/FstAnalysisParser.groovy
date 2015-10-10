@@ -16,9 +16,13 @@ class FstAnalysisParser {
   Integer debug = 1
 
   // These should be dynamically acquired from a URN registry:
+  UrnManager urnMgr
+  /*
   String stemUrnBase = "urn:cite:morph:"
   String inflUrnBase = "urn:cite:morph:"
+
   String lexEntUrnBase = "urn:cite:shot:"
+*/
 
   /** Regex pattern for multicharacter symbols in FST string */
   java.util.regex.Pattern allTags = ~/<[^>]+>/
@@ -67,7 +71,8 @@ class FstAnalysisParser {
   * analysis from an FST analysis string.
   * @param analysisStr Output of fst-infl.
   */
-  FstAnalysisParser(String analysisStr) {
+  FstAnalysisParser(String analysisStr, UrnManager umgr) {
+      this.urnMgr = umgr
       def cols = analysisStr.split(/::/)
       stemString = cols[0]
       inflectionString = cols[1]
@@ -79,9 +84,9 @@ class FstAnalysisParser {
       stemTags = stemString.findAll(allTags)
       inflTags = inflectionString.findAll(allTags)
 
-      String lexEntUrnStr = lexEntUrnBase + stemTags[1].replaceAll(/[<>]/,"")
-      String stemUrnStr = stemUrnBase + stemTags[0].replaceAll(/[<>]/,"")
-      String inflUrnStr = inflUrnBase + inflTags[1].replaceAll(/[<>]/,"")
+      String lexEntUrnStr = resolveUrn(stemTags[1])
+      String stemUrnStr = resolveUrn(stemTags[0])
+      String inflUrnStr = resolveUrn(inflTags[1])
 
        if (debug > 0 ) {
          System.err.println "FstAP: analyze as URNs:"
@@ -117,6 +122,21 @@ class FstAnalysisParser {
       // Example of conjugated verb:  "<coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>"
   }
 
+
+  /** Expands an abbreviated reference to a full URN string.
+  * @param s String in format Collection.Object
+  * @returns A String that validates as a CiteUrn.
+  */
+  String resolveUrn(String s) {
+    String objectStr = s.replaceAll(/[<>]/,"")
+    def refParts = objectStr.split(/\./)
+    if  (refParts.size() == 2) {
+      String urnStr =  urnMgr.getUrn(refParts[0]).toString() + "." + refParts[1]
+      return urnStr
+    } else {
+      throw new Exception ("FAP: can't resolve URN from ${s} with parts ${refParts}")
+    }
+  }
 
   /** Creates a MorphForm object from tags in the FST analysis string.
   */
