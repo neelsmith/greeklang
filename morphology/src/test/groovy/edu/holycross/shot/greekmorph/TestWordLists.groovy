@@ -15,17 +15,27 @@ class TestWordLists {
   @Test
   void testWords() {
     srcDir.eachFileMatch(~/.*.txt/) { wordList ->
+      println "Scoring word list ${wordList}"
+      Integer success = 0
+      Integer failed = 0
       wordList.readLines().each { w ->
-        GreekString gs = new GreekString(w, "Unicode")
-        System.out.print "Analyzing ${w} ... "
-        try {
-          MorphologicalAnalysis morph = mp.parseGreekString(gs)
-          println "success."
-        } catch (Exception e) {
-          println "failed."
-          println e
+        if (w[0] == "%") {
+          // comment
+        } else {
+          GreekString gs = new GreekString(w, "Unicode")
+          System.out.print "Analyzing ${w} ... "
+          try {
+            MorphologicalAnalysis morph = mp.parseGreekString(gs)
+            println "success."
+            sucess++
+          } catch (Exception e) {
+            println "failed:"
+            println "\t" + e
+            failed++
+          }
         }
       }
+      println "${success} successes, ${failed} failed\n"
     }
   }
 }
