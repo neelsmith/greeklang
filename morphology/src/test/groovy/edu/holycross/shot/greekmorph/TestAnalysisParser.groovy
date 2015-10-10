@@ -21,8 +21,11 @@ class TestAnalysisParser {
 
     MorphForm mf = fap.getMorphForm()
     assert mf.toString() == "conjugated verb: first person singular present indicative active"
-    
 
+
+    assert fap.getSurfaceStem() == "<#>lu"
+    assert fap.getSurfaceInflection() == "w"
+    assert fap.getSurface() == "lu-w"
 
   }
 }

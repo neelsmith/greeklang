@@ -20,19 +20,32 @@ class FstAnalysisParser {
   String inflUrnBase = "urn:cite:morph:"
   String lexEntUrnBase = "urn:cite:shot:"
 
+  /** Regex pattern for multicharacter symbols in FST string */
+  java.util.regex.Pattern allTags = ~/<[^>]+>/
+  /** Regex pattern for analytical symbols in FST string,
+  * omitting <#> since that's valid in stem char sequences before we
+  * add accent.  */
+  java.util.regex.Pattern semanticTags = ~/<[a-z0-9_\.]+>/
+
   /// The two halves of the FST output string:
   /** Stem component of FST analysis string.*/
   String stemString
   /** Component of FST analysis string with inflectional pattern.*/
   String inflectionString
 
+  /// Ordered lists of tags in each half of the FST string:
+  /** Ordered list of multicharacter symbols in the stem component. */
+  ArrayList stemTags = []
+  /** Ordered list of multicharacter symbols in the inflectional pattern component. */
+  ArrayList inflTags = []
 
-  /** Form of analysis to extract from this string.
+  //// Content extracted from raw FST output string
+  //
+  /** Form of analysis extracted from this string.
   * ("Part of speech")
   */
   AnalyticalType analysisPattern
 
-  //// Content extracted from raw FST output string
   /** URN of the lexical entity of the analysis. */
   CiteUrn lexicalEntity
 
@@ -42,14 +55,16 @@ class FstAnalysisParser {
   /** The explanation for the analysis. */
   AnalysisExplanation explanation
 
+  /** Stem part of surface string */
+  String surfaceStem
+
+  /** Inflectional part of surface string */
+  String surfaceInflection
 
 
-  /** Ordered list of multicharacter symbols in the stem component. */
-  ArrayList stemTags = []
-  /** Ordered list of multicharacter symbols in the inflectional pattern component. */
-  ArrayList inflTags = []
 
-  /** Constructor determines the analytical pattern for the analysis string.
+  /** Constructor builds an object representation of information in a morphological
+  * analysis from an FST analysis string.
   * @param analysisStr Output of fst-infl.
   */
   FstAnalysisParser(String analysisStr) {
@@ -61,15 +76,12 @@ class FstAnalysisParser {
         System.err.println "Preparing to compute parts with\t stemstr ${stemString}\n\tinfl string ${inflectionString}"
       }
       // check that strings are not null before doing findAll
-       stemTags = stemString.findAll(/<[^>]+>/)
-       inflTags = inflectionString.findAll(/<[^>]+>/)
+      stemTags = stemString.findAll(allTags)
+      inflTags = inflectionString.findAll(allTags)
 
-       String lexEntUrnStr = lexEntUrnBase + stemTags[1].replaceAll(/[<>]/,"")
-
-       String stemUrnStr = stemUrnBase + stemTags[0].replaceAll(/[<>]/,"")
-
-       String inflUrnStr = inflUrnBase + inflTags[1].replaceAll(/[<>]/,"")
-
+      String lexEntUrnStr = lexEntUrnBase + stemTags[1].replaceAll(/[<>]/,"")
+      String stemUrnStr = stemUrnBase + stemTags[0].replaceAll(/[<>]/,"")
+      String inflUrnStr = inflUrnBase + inflTags[1].replaceAll(/[<>]/,"")
 
        if (debug > 0 ) {
          System.err.println "FstAP: analyze as URNs:"
@@ -83,7 +95,11 @@ class FstAnalysisParser {
        CiteUrn inflectionalPattern  = new CiteUrn(inflUrnStr)
 
        explanation = new AnalysisExplanation(stem, inflectionalPattern)
-
+       // Verbs include a morpheme boundary marker <#>, and have
+       // "part of speech" in tag 3.  Other types have part of speech
+       // in tag 2.
+       //
+       // analysisPattern must be defined before invoking computeMorphForm()
       if (stemTags[2] != "<#>") {
         analysisPattern = AnalyticalType.getByToken(stemTags[2])
       } else {
@@ -93,28 +109,29 @@ class FstAnalysisParser {
           analysisPattern = AnalyticalType.CVERB
         }
       }
-
-
       morphForm = computeMorphForm()
-      //  "<coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>"
+
+      surfaceStem = stemString.replaceAll(semanticTags, "")
+      surfaceInflection = inflectionString.replaceAll(semanticTags, "")
+
+      // Example of conjugated verb:  "<coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>"
   }
 
 
-  /** Creates a MorphForm object
+  /** Creates a MorphForm object from tags in the FST analysis string.
   */
   MorphForm computeMorphForm() {
     MorphForm mf  = null
-    //AnalyticalType analyticalType = AnalyticalType.getByToken(analysisPattern)
     switch (analysisPattern) {
       case AnalyticalType.CVERB:
       if (debug > 1) {
         System.err.println "FAP creating MorphForm wth inflTags ${inflTags} from inflectionSTring ${inflectionString}"
       }
-      def person = Person.getByToken(inflTags[2])
-      def num = GrammaticalNumber.getByToken(inflTags[3])
-      def tense = Tense.getByToken(inflTags[4])
-      def mood = Mood.getByToken(inflTags[5])
-      def voice = Voice.getByToken(inflTags[6])
+      Person person = Person.getByToken(inflTags[2])
+      GrammaticalNumber num = GrammaticalNumber.getByToken(inflTags[3])
+      Tense tense = Tense.getByToken(inflTags[4])
+      Mood mood = Mood.getByToken(inflTags[5])
+      Voice voice = Voice.getByToken(inflTags[6])
       VerbForm verb = new VerbForm(person, num, tense, mood, voice)
       mf = new MorphForm(analysisPattern, verb)
       break
@@ -126,6 +143,13 @@ class FstAnalysisParser {
     }
   }
 
+  /** Gets a human-readable presentation of surface form.
+  * @returns String formatted as stem-inflection.  Morpheme
+  * boundary markers are stripped out.
+  */
+  String getSurface() {
+    return surfaceStem.replaceFirst(/<#>/,"") + "-" + surfaceInflection
+  }
 
   String getAccentTag() {
 
