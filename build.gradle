@@ -21,26 +21,32 @@ subprojects {
   repositories {
      mavenCentral()
      maven {
-       url "http://beta.hpcc.uh.edu/nexus/content/repositories/papyriinfo/"
+       url "http://beta.hpcc.uh.edu/nexus/content/groups/public"
      }
   }
   dependencies {
     compile group: 'org.codehaus.groovy', name: 'groovy-all', version: versionMap['groovy']
-    compile group : 'edu.unc.epidoc', name: 'transcoder', version : '1.2-SNAPSHOT'
 
-    testCompile group : 'edu.unc.epidoc', name: 'transcoder', version : '1.2-SNAPSHOT'
-    testCompile 'junit:junit:4.8.2'
+    compile group : 'edu.unc.epidoc', name: 'transcoder', version: versionMap['epidoc']
+    compile group: 'edu.harvard.chs', name : 'cite' , version: versionMap['cite'] //"+"
+
+    testCompile group : 'edu.unc.epidoc', name: 'transcoder', version: versionMap['epidoc']
+    testCompile group: 'junit', name: 'junit', version: versionMap['junit']
   }
 }
 
 project(":morphology") {
   apply from: "${rootProject.rootDir}/morphology/fstconf.gradle"
-    dependencies {
-      compile project(':orthography')
-      testCompile project(':orthography')
-    }
+  dependencies {
+    compile project(':orthography')
+    testCompile project(':orthography')
+  }
 }
 
 project(":morphology:fst_tests") {
   apply from: "${rootProject.rootDir}/morphology/fstconf.gradle"
+  dependencies {
+    compile project(':morphology')
+    testCompile project(':morphology')
+  }
 }
