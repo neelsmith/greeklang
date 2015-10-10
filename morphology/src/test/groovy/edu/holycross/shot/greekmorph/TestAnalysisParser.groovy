@@ -7,11 +7,14 @@ import static groovy.test.GroovyAssert.shouldFail
 
 class TestAnalysisParser {
 
-  File csvAbbrSource = new File("src/fst/collectionAbbreviations.csv")
-  UrnManager umgr = new UrnManager(csvAbbrSource)
+  File inflCsvSource = new File("src/fst/collectionAbbreviations.csv")
+  UrnManager umgr = new UrnManager(inflCsvSource)
 
   @Test
   void testParser() {
+    // defines coretests collection:
+    File lexCsvSource = new File("sampledata/userconfig/extraDatasets.csv")
+    umgr.addCsvFile(lexCsvSource)
     String conjverb = "<coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>"
 
 
