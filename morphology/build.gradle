@@ -202,12 +202,12 @@ utils.doLast {
   System.err.println "Utilities compiled."
 }
 
-
+/*
 
 task cpTestLists (type: Copy) {
   description = "Copies word lists for tests to work area"
   from ("testing/wordlists") {
-    include ('**/*.txt')
+    include ('** / *.txt')
   }
   into "${buildDir}/tests/wordlists"
 }
@@ -270,6 +270,7 @@ testFST.doLast{
   File reptFile = new File("${buildDir}/tests/report.txt")
   reptFile.setText(rept.toString())
 }
+*/
 
 // To do this dynamically we need to invoke the
 // jvm classes compiled for this subproject
@@ -292,3 +293,5 @@ task setupCoreTests(type: Copy, dependsOn: 'fst') {
 task install() {
   description = "Install binary fst parser and CLI scripts in /usr/local"
 }
+
+test.dependsOn fst
