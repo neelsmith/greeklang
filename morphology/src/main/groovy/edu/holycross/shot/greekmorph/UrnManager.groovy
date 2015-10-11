@@ -59,9 +59,15 @@ class UrnManager {
   * a unique Collection ID value.
   * @param abbr Collection ID to look up.
   * @returns CiteUrn object for the collection.
+  * @throws Exception if collection is not
+  * registered.
   */
   CiteUrn getUrn(String abbr) {
-    return abbrToUrnMap[abbr]
+    if (abbrToUrnMap[abbr]) {
+      return abbrToUrnMap[abbr]
+    } else {
+      throw new Exception ("UrnManager: no entry for collection ${abbr}.")
+    }
   }
 
 

@@ -11,11 +11,14 @@ class MorphologicalParser {
   * in a finite state transducer. */
   FstParser fstParser
 
+  UrnManager urnManager
+
   /** Constructor with location of sfst binary.
   * @param Full path to binary sfst (.a) file
   */
-  MorphologicalParser(String fstBinary) {
+  MorphologicalParser(String fstBinary, UrnManager umgr) {
     fstParser = new FstParser(fstBinary)
+    urnManager = umgr
   }
 
   /** Gets a morphological analysis for a greek string.
@@ -34,7 +37,7 @@ class MorphologicalParser {
       } else if (l ==~ /No result.+/) {
         // omit
       } else {
-        FstAnalysisParser fsp = new FstAnalysisParser(l)
+        FstAnalysisParser fsp = new FstAnalysisParser(l, urnManager)
         analysisList.add(fsp.getMorphForm())
         explanationList.add(fsp.getExplanation())
       }
