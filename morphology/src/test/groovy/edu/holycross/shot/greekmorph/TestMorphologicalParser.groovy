@@ -10,11 +10,18 @@ class TestMorphologicalParser {
 
 
   String fstBinary = "build/fst/greek.a"
-  MorphologicalParser mp = new MorphologicalParser(fstBinary)
-
+  File inflCsvSource = new File("src/fst/collectionAbbreviations.csv")
+  UrnManager umgr = new UrnManager(inflCsvSource)
 
   @Test
   void testMorphologicalParser() {
+
+    // defines coretests collection:
+    File lexCsvSource = new File("sampledata/userconfig/extraDatasets.csv")
+    umgr.addCsvFile(lexCsvSource)
+    MorphologicalParser mp = new MorphologicalParser(fstBinary, umgr)
+
+
     GreekString s1 = new GreekString("λύω", "Unicode")
     MorphologicalAnalysis morph = mp.parseGreekString(s1)
 

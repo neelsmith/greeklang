@@ -6,10 +6,7 @@ import static groovy.test.GroovyAssert.shouldFail
 
 class TestOmegaFirstPrincPart {
 
-  String fstinfl = "/usr/bin/fst-infl"
-  String transducer = "build/fst/acceptors/verb.a"
-  File testFile = new File("build/testInput.txt")
-  String cmd = "${fstinfl} ${transducer} ${testFile}"
+
 
   // Maps submitted FST string to expected value of morphform.toString()
   def testMap = [
@@ -37,7 +34,12 @@ class TestOmegaFirstPrincPart {
 
   ]
 
-  ArrayList getAnalysisStrings() {
+
+  File inflCsvSource = new File("src/fst/collectionAbbreviations.csv")
+  File lexCsvSource = new File("sampledata/userconfig/extraDatasets.csv")
+
+
+  ArrayList getAnalysisStrings(String cmd, UrnManager urnManager) {
     def analysisStrings = []
     Process process = cmd.execute()
     def out = new StringBuffer()
@@ -50,7 +52,7 @@ class TestOmegaFirstPrincPart {
       } else if (l ==~ /No result.+/) {
         // omit
       } else {
-        FstAnalysisParser fsp = new FstAnalysisParser(l)
+        FstAnalysisParser fsp = new FstAnalysisParser(l, urnManager)
         MorphForm morphForm = fsp.getMorphForm()
         //AnalysisExplanation explanation = fsp.getExplanation()
         analysisStrings.add(morphForm.toString())
@@ -60,11 +62,25 @@ class TestOmegaFirstPrincPart {
   }
 
   @Test
-  void testVerbAcceptor() {
-    testMap.each { wd ->
+  void testVerbTransducers() {
+    UrnManager umgr = new UrnManager(inflCsvSource)
+    umgr.addCsvFile(lexCsvSource)
+    String fstinfl = "/usr/bin/fst-infl"
+    File testFile = new File("build/testInput.txt")
+    def transducers = [
+    "build/fst/acceptors/verb/w_princparts.a",
+    "build/fst/acceptors/verb.a",
+    "build/fst/acceptor.a"
+    ]
+
+    transducers.each { t ->
+      String cmd = "${fstinfl} ${t} ${testFile}"
+      testMap.each { wd ->
       testFile.setText(wd.key)
-      def actualReplies = getAnalysisStrings()
-      assert actualReplies as Set ==  wd.value as Set
+      def actualReplies = getAnalysisStrings(cmd, umgr)
+        assert actualReplies as Set ==  wd.value as Set
+      }
     }
+
   }
 }
