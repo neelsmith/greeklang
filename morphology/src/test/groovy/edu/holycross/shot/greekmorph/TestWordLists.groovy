@@ -21,7 +21,7 @@ class TestWordLists {
     MorphologicalParser mp  = new MorphologicalParser(transducer, umgr)
 
     def totalsByFile = [:]
-    File srcDir = new File("fst_tests/wordlists")
+    File srcDir = new File("unit_tests_data/wordlists")
     srcDir.eachFileMatch(~/.*.txt/) { wordList ->
       println "Scoring word list ${wordList}"
       Integer success = 0
