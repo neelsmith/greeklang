@@ -74,6 +74,9 @@ class FstAnalysisParser {
   FstAnalysisParser(String analysisStr, UrnManager umgr) {
       this.urnMgr = umgr
       def cols = analysisStr.split(/::/)
+      if (cols.size() != 2) {
+        throw new Exception("FstAnalysisParser: could not parse ${analysisStr}")
+      }
       stemString = cols[0]
       inflectionString = cols[1]
       if (debug > 1) {

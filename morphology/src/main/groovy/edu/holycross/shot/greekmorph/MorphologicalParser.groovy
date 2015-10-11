@@ -7,6 +7,8 @@ import edu.holycross.shot.greekutils.GreekString
 */
 class MorphologicalParser {
 
+  Integer debug  = 1
+
   /** Implementation of accent-free Greek morphology
   * in a finite state transducer. */
   FstParser fstParser
@@ -30,11 +32,12 @@ class MorphologicalParser {
     ArrayList explanationList = []
 
     FstToken fstToken = new FstToken(gkStr)
+    if (debug > 0) {System.err.println "MorphologicalAnalysis: submit ${fstToken}"}
     String parseOutput = fstParser.parseToken(fstToken)
     parseOutput.eachLine { l ->
       if (l[0] == ">") {
         // omit
-      } else if (l ==~ /No result.+/) {
+      } else if (l ==~ /[Nn]o result.+/) {
         // omit
       } else {
         FstAnalysisParser fsp = new FstAnalysisParser(l, urnManager)

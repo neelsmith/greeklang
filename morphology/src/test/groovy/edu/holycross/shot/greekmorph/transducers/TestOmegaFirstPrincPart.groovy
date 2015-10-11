@@ -6,8 +6,21 @@ import static groovy.test.GroovyAssert.shouldFail
 
 class TestOmegaFirstPrincPart {
 
-  // Maps submitted FST string to expected value of morphform.toString()
   def testMap = [
+  "<coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>" :
+  ["conjugated verb: first person singular present indicative active"],
+
+  "<coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<w_regular><w_indicative.7>omai<1st><sg><pres><indic><mid>":
+  ["conjugated verb: first person singular present indicative middle"],
+
+    "<coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<w_regular><w_indicative.7>omai<1st><sg><pres><indic><pass>":
+    ["conjugated verb: first person singular present indicative passive"]
+
+  ]
+
+
+  // Maps submitted FST string to expected value of morphform.toString()
+  def testMapx = [
   "<coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>":
   ["conjugated verb: first person singular present indicative active"],
 
@@ -69,7 +82,7 @@ class TestOmegaFirstPrincPart {
     "build/fst/acceptors/verb.a",
     "build/fst/acceptor.a"
     ]
-
+    def transducerspassing = ["build/fst/acceptors/verb.a"]
     transducers.each { t ->
       String cmd = "${fstinfl} ${t} ${testFile}"
       testMap.each { wd ->

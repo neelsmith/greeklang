@@ -6,6 +6,8 @@ package edu.holycross.shot.greekmorph
 */
 class FstParser {
 
+  Integer debug = 1
+
   String FSTINFL = "/usr/bin/fst-infl"
   String ECHO = "/bin/echo"
   String SH = "/bin/sh"
@@ -37,7 +39,11 @@ class FstParser {
     def out = new StringBuffer()
     def err = new StringBuffer()
 
-    def procList = [SH, "-c",  "${ECHO} ${fstStr} | ${FSTINFL} ${fstParser}"]
+    String protectedStr  = fstStr.replaceFirst(/[)]/, '\\\\)')
+    protectedStr = protectedStr.replaceFirst(/[(]/, '\\\\(')
+    // RIGHT HERE: NEED TO PROTECT ) or (
+    def procList = [SH, "-c",  "${ECHO} ${protectedStr} | ${FSTINFL} ${fstParser}"]
+    if (debug > 0) {System.err.println "FstParser: " + procList}
     def proc = procList.execute()
     proc.consumeProcessOutput(out, err)
     proc.waitFor()

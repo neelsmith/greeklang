@@ -12,9 +12,16 @@ class TestTokenParser {
     String fstToken = "luw"
     FstParser fst = new FstParser(parser)
     def analyses = fst.parseTokenStr(fstToken)
-    analyses.each {
-      println it
-    }
+    println "Analysis of ${fstToken}: " + analyses
+    
   }
 
+
+  @Test
+  void testBreathing() {
+    String fstToken = "e)lusa"
+    FstParser fst = new FstParser(parser)
+    def analyses = fst.parseTokenStr(fstToken)
+    println "Analysis of ${fstToken}: " + analyses
+  }
 }

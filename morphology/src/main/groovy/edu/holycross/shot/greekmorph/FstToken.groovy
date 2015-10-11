@@ -26,4 +26,8 @@ class FstToken {
     fstStr = new GreekString(utf2beta.getString(s.toString(true)).replaceAll(/[=\\/\\\\]/,"").toLowerCase())
   }
 
+  String toString() {
+    return "${utf8Str}-${fstStr}"
+  }
+
 }

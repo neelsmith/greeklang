@@ -16,4 +16,13 @@ class TestTokens {
     assert fstToken.getFstStr().toString() == expectedFst.toString()
   }
 
+  @Test
+  void testBreathing() {
+    GreekString surface = new GreekString("ἔλυσα","Unicode")
+    String expectedFst = new GreekString("e)lusa")
+    FstToken fstToken = new FstToken(surface)
+
+    assert fstToken.getFstStr().toString() == expectedFst.toString()
+  }
+
 }
