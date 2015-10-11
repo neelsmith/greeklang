@@ -8,13 +8,20 @@ import edu.holycross.shot.greekutils.GreekString
 
 class TestWordLists {
 
-  File srcDir = new File("fst_tests/wordlists")
   String transducer = "build/fst/greek.a"
-  MorphologicalParser mp  = new MorphologicalParser(transducer)
+  File inflCsvSource = new File("src/fst/collectionAbbreviations.csv")
+  UrnManager umgr = new UrnManager(inflCsvSource)
+
 
   @Test
   void testWords() {
+    File lexCsvSource = new File("sampledata/userconfig/extraDatasets.csv")
+    umgr.addCsvFile(lexCsvSource)
+
+    MorphologicalParser mp  = new MorphologicalParser(transducer, umgr)
+
     def totalsByFile = [:]
+    File srcDir = new File("fst_tests/wordlists")
     srcDir.eachFileMatch(~/.*.txt/) { wordList ->
       println "Scoring word list ${wordList}"
       Integer success = 0
