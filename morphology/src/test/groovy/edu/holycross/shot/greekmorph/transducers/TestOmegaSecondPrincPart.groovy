@@ -85,8 +85,8 @@ class TestOmegaSecondPrincPart {
       UrnManager umgr = new UrnManager(inflCsvSource)
       umgr.addCsvFile(lexCsvSource)
 
-
       def transducers = [
+      "build/fst/acceptors/verb/2nd_3rd_pp.a",
       "build/fst/acceptors/verb/w_princparts.a",
       "build/fst/acceptors/verb.a",
       "build/fst/acceptor.a",
