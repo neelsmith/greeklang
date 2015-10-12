@@ -7,7 +7,4 @@
 % modifies the stem accordingly.
 %
 
-"<@workdir@acceptors/verb/2nd_3rd_pp.a>"
-
-% Final transducer. (NB: leaves stem untouched for 1st principal part.)
-%$2nd_3rd_pp$ || $4th_5th_pp$  || $6th_pp$
+"<@workdir@acceptors/verb/2nd_3rd_pp.a>" || "<@workdir@acceptors/verb/6th_pp.a>" || "<@workdir@acceptors/verb/4th_5th_pp.a>"
