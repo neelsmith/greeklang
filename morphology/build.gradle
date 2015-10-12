@@ -60,20 +60,16 @@ String lexiconFstStatement(File dir) {
 // Generates appropriate SFST-PL statements for including
 // compiled inflectional rules.
 String rulesFstStatement(File dir) {
-  StringBuilder stmt = new StringBuilder()
+  StringBuilder stmt = new StringBuilder(" ")
   def fileList = []
   dir.eachFileMatch(~/.*.fst/) { fstFile ->
     String compiledFile = fstFile.getName().replaceFirst(/fst$/, "a")
     fileList.add ('"<' + "${buildDir}/fst/${compiledFile}".toString() + '>"')
   }
   fileList.eachWithIndex { f, i ->
-    if (i < (fileList.size() - 1)) {
-      stmt.append( f + ' | ')
-    } else {
-      stmt.append( f )
-    }
-
+    stmt.append(' | ' + f)
   }
+
   return stmt.toString()
 }
 
@@ -105,7 +101,7 @@ task cpSrc (type: Copy) {
       "workdir" : buildDir.toString() + "/fst/",
       "lexica": lexiconFstStatement(new File("${projectDir}/${stemsdir}")),
       "makelexica": lexiconMakeStatement(new File("${projectDir}/${stemsdir}")),
-      "extrafstrules": rulesFstStatement(new File("${projectDir}/${rulesdir}")),
+      "fstrules": rulesFstStatement(new File("${projectDir}/${rulesdir}")),
       "extramakerules": rulesMakeStatement(new File("${projectDir}/${rulesdir}"))
      ])
 }

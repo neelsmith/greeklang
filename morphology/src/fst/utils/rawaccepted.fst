@@ -7,7 +7,7 @@
 $stems$ = @lexica@
 %
 % Dynamically loaded inflectional rules:
-$ends$ =  "<@workdir@inflection.a>" | @extrafstrules@
+$ends$ = "<@workdir@inflection.a>" @fstrules@
 %
 % Morphology data is the crossing of stems and endings:
 $morph$ = $stems$ \:\: $ends$
@@ -17,4 +17,4 @@ $morph$ = $stems$ \:\: $ends$
 $acceptor$ = "<@workdir@acceptor.a>"
 
 
-$morph$ || $acceptor$ 
+$morph$ || $acceptor$
