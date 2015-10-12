@@ -140,7 +140,20 @@ task cpAll (dependsOn: [cpTags, cpStems, cpRules, cpSrc]){
   description = "Copies all source material to build area"
 }
 cpAll.doLast {
-  System.err.println "All source files copied to build area."
+  // check that at least one stems lexicon was copied.
+
+  Integer lexicaCount = 0
+  File stemsDir = new File(projectDir,"stems")
+  stemsDir.eachFileMatch(~/.*.fst/) {
+    lexicaCount++
+  }
+  if (lexicaCount == 0) {
+    System.err.println ("cpAll: no lexica of stems found in directory 'stems'.")
+    throw new Exception("cpAll: no lexica of stems found in directory 'stems'.")
+  } else {
+    System.err.println "All source files copied to build area."
+  }
+
 }
 
 task fst(type:Exec, dependsOn: cpAll) {
@@ -151,7 +164,6 @@ task fst(type:Exec, dependsOn: cpAll) {
 
   commandLine =  [MAKE, "-f", "${buildDir}/fst/makefile".toString()]
 }
-
 
 task fstgen(type:Exec, dependsOn: cpAll) {
   description = "Builds binary Finite State Transducer in ${buildDir}/fst/greek.a and 'switched' FST (for bulk generation of surface symbols) in ${buildDir}/fst/bulkgen.a"
@@ -164,130 +176,54 @@ task fstgen(type:Exec, dependsOn: cpAll) {
 
 
 
+
+/* ***********  Utility transducers, used in testing, helpful in  debugging  *** */
 task rawlex(type:Exec, dependsOn: fst) {
   description = "Builds binary Finite State Transducer in ${buildDir}/fst/rawlex.a"
 
-  outputs.file "${buildDir}/fst/rawlex.a".toString()
+  outputs.file "${buildDir}/fst/utils/rawlex.a".toString()
   inputs.file "${buildDir}/fst/fst.a"
 
-  commandLine =  [FSTCOMPILER, "${buildDir}/fst/rawlex.fst".toString(), "${buildDir}/fst/rawlex.a".toString()]
+  commandLine =  [FSTCOMPILER, "${buildDir}/fst/utils/rawlex.fst".toString(), "${buildDir}/fst/utils/rawlex.a".toString()]
 }
 
 task rawmorph(type:Exec, dependsOn: fst) {
   description = "Builds binary Finite State Transducer in ${buildDir}/fst/rawmorph.a"
 
-  outputs.file "${buildDir}/fst/rawmorph.a".toString()
+  outputs.file "${buildDir}/fst/utils/rawmorph.a".toString()
   inputs.file "${buildDir}/fst/fst.a"
 
-  commandLine =  [FSTCOMPILER, "${buildDir}/fst/rawmorph.fst".toString(), "${buildDir}/fst/rawmorph.a".toString()]
+  commandLine =  [FSTCOMPILER, "${buildDir}/fst/utils/rawmorph.fst".toString(), "${buildDir}/fst/utils/rawmorph.a".toString()]
 }
 
 task rawaccepted(type:Exec, dependsOn: fst) {
   description = "Builds binary Finite State Transducer in ${buildDir}/fst/rawaccepted.a"
 
-  outputs.file "${buildDir}/fst/rawaccepted.a".toString()
+  outputs.file "${buildDir}/fst/utils/rawaccepted.a".toString()
   inputs.file "${buildDir}/fst/fst.a"
 
-  commandLine =  [FSTCOMPILER, "${buildDir}/fst/rawaccepted.fst".toString(), "${buildDir}/fst/rawaccepted.a".toString()]
+  commandLine =  [FSTCOMPILER, "${buildDir}/fst/utils/rawaccepted.fst".toString(), "${buildDir}/fst/utils/rawaccepted.a".toString()]
 }
 
 task utils(dependsOn: [rawlex, rawmorph, rawaccepted]) {
   description = "Compiles utility transducers useful for debugging"
 }
 utils.doLast {
-  System.err.println "Utilities compiled."
-}
-
-/*
-
-task cpTestLists (type: Copy) {
-  description = "Copies word lists for tests to work area"
-  from ("testing/wordlists") {
-    include ('** / *.txt')
-  }
-  into "${buildDir}/tests/wordlists"
-}
-cpTestLists.doLast {
-  System.err.println "Word lists for tests copied to work area"
-}
-
-task buildTestTokens(dependsOn: [cpTestLists]) {
-  description = "Convert UTF-8 word lists to FST tokens"
-  inputs.dir file("${buildDir}/tests/wordlists")
-  outputs.dir file("${buildDir}/tests/tokens")
-}
-buildTestTokens.doLast {
-  TransCoder utf2beta = new TransCoder()
-  utf2beta.setParser("Unicode")
-  utf2beta.setConverter("BetaCode")
-
-
-  def tokensDir = new File("${buildDir}/test/tokens")
-  if (! tokensDir.exists()) {
-    tokensDir.mkdir()
-  }
-  def listsDir = file("${buildDir}/tests/wordlists")
-  listsDir.eachFileMatch(~/.*.txt/) { utf8file ->
-    String listText = utf8file.getText("UTF-8")
-    String tokenized = utf2beta.getString(listText).replaceAll(/[=\\/\\\\]/,"").toLowerCase()
-    String baseName = FilenameUtils.getName(utf8file.toString())
-    File tokensFile = new File(
-      "${buildDir}/tests/tokens/${baseName}"
-      )
-    tokensFile.setText(tokenized)
-    System.err.println "Added tokens for ${baseName}"
-  }
-
+  System.err.println "Three utility transducers compiled."
 }
 
 
 
-task testFST(dependsOn: buildTestTokens) {
-  description = "Runs FST on test word lists and analyzes results."
-  //outputs.file "${buildDir}/fst/bulkgen.a".toString()
-  inputs.dir file("${buildDir}/tests/tokens")
-  outputs.file file("${buildDir}/tests/report.txt")
+// IMPLEMENT THIS:
+task install() {
+  description = "Install binary fst parser and CLI scripts in /usr/local"
 }
-testFST.doLast{
-  def tokensDir = file("${buildDir}/tests/tokens")
-  StringBuffer rept = new StringBuffer()
-  tokensDir.eachFileMatch(~/.*.txt/) { tokens ->
-    def cmd = "${FSTINFL} ${buildDir}/fst/greek.a ${tokens}"
-    Process process = cmd.execute()
-    def out = new StringBuffer()
-    def err = new StringBuffer()
-    process.consumeProcessOutput( out, err )
-    process.waitFor()
-    System.err.println "Analyze file: ${tokens}"
-    rept.append(out.toString())
-
-  }
-
-  File reptFile = new File("${buildDir}/tests/report.txt")
-  reptFile.setText(rept.toString())
-}
-*/
-
-// To do this dynamically we need to invoke the
-// jvm classes compiled for this subproject
-/*
-task analyzeFSTTests(dependsOn: testFST){
-  description = "Reads output of testFST task and generates analytical report"
-}
-analyzeFSTTests.doLast {
-  System.err.println "Analyzed results of FST testing"
-}
-*/
+test.dependsOn fst
 
 
+
+// GET RID OF THESE:
 task setupCoreTests(type: Copy, dependsOn: 'fst') {
   from ("${buildDir}")
   into "fst_tests/build"
 }
-
-
-task install() {
-  description = "Install binary fst parser and CLI scripts in /usr/local"
-}
-
-test.dependsOn fst
