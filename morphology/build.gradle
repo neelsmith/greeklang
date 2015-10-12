@@ -223,7 +223,7 @@ test.dependsOn fst
 
 
 // GET RID OF THESE:
-task setupCoreTests(type: Copy, dependsOn: 'fst') {
+task setupCoreTests(type: Copy, dependsOn: 'utils') {
   from ("${buildDir}")
   into "fst_tests/build"
 }
