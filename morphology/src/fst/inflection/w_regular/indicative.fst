@@ -22,12 +22,12 @@ $w_presfut_indic_ending$ = <w_regular> ( \
     <w_indicative.11>esqe<2nd><pl>[<pres><fut>]<indic><mid> |\
     <w_indicative.12>ontai<3rd><pl>[<pres><fut>]<indic><mid>  |\
     \
-    <w_indicative.67>hsomai<1st><sg>[<pres><fut>]<indic><mid> |\
-    <w_indicative.68>hsei<2nd><sg>[<pres><fut>]<indic><mid> |\
-    <w_indicative.69>hsetai<3rd><sg>[<pres><fut>]indic><mid> |\
-    <w_indicative.70>hsomeqa<1st><pl>[<pres><fut>]<indic><mid> |\
-    <w_indicative.71>hsesqe<2nd><pl>[<pres><fut>]<indic><mid> |\
-    <w_indicative.72>hsontai<3rd><pl>[<pres><fut>]<indic><mid> \
+    <w_indicative.67>hsomai<1st><sg><fut><indic><pass> |\
+    <w_indicative.68>hsei<2nd><sg><fut><indic><pass> |\
+    <w_indicative.69>hsetai<3rd><sg><fut><indic><pass> |\
+    <w_indicative.70>hsomeqa<1st><pl><fut><indic><pass> |\
+    <w_indicative.71>hsesqe<2nd><pl><fut><indic><pass> |\
+    <w_indicative.72>hsontai<3rd><pl><fut><indic><pass> \
 )
 
 % Imperfect indicative:

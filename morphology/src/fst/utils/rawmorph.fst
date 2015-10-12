@@ -1,4 +1,5 @@
-%% morphology.fst : a Finite State Transducer for ancient Greek morphology
+%% rawmorph.fst :
+% unmodified combinations of stems+inflectional patterns
 %
 % All symbols used in the FST:
 #include "@workdir@symbols.fst"
@@ -10,18 +11,12 @@ $stems$ = @lexica@
 $ends$ = "<@workdir@inflection.a>" @fstrules@
 %
 % Morphology data is the crossing of stems and endings:
-$morph$ = $stems$ \:\: $ends$
+$morph$ = $stems$  $separator$ $separator$ $ends$
 
 $morph$
 
 
-% Examples of valid formats. (These can be screened by the `acceptor.a` transducer.)
+% Examples of combinations of stem+ending pairings that will pass screening by the `acceptor.a` transducer:
 %
-% noun: <n67485>mhn<noun><fem><is_ios>::<is_ios>is<fem><nom><sg>
-%
-% conjugated verb: <n64316><#>lu<verb><w_regular>::<w_regular>w<1st><sg><pres><indic><act>
-% verbal adjective: <n64316><#>lu<verb><w_regular>::<vadj>teon<neut><nom><sg><penacc>
-%
-% FAILING: infinitive
-%<n64316><#>lu<verb><w_regular>::<infin>ein<pres><act><penacc>
-%
+% conjugated verb:
+% <coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>

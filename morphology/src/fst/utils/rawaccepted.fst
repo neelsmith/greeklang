@@ -1,16 +1,7 @@
 
+
 %
-% All symbols used in the FST:
-#include "@workdir@symbols.fst"
-%
-% Dynamically loaded lexica of stems:
-$stems$ = @lexica@
-%
-% Dynamically loaded inflectional rules:
-$ends$ = "<@workdir@inflection.a>" @fstrules@
-%
-% Morphology data is the crossing of stems and endings:
-$morph$ = $stems$ \:\: $ends$
+$morph$ = "<@workdir@utils/rawmorph.a>"
 
 %
 % Acceptor filters for content satisfying requirements for morphological analysis

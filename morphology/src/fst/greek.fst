@@ -7,7 +7,6 @@
 $stems$ = @lexica@
 %
 % Dynamically loaded inflectional rules:
-%$ends$ =  "<@workdir@inflection.a>" | @extrafstrules@
 $ends$ = "<@workdir@inflection.a>" @fstrules@
 
 %
