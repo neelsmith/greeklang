@@ -10,7 +10,7 @@ The first step the is to build a parser for your corpus.  You do this by:
 
 ## Minimal example
 
-Here is a valid, complete lexicon of morphological stems, comprised of one record, from a `.tsv` file (but tabs are removed here...).  
+Here is a valid, complete lexicon of morphological stems, comprised of one record, from a `.tsv` file (but tabs are not displayed here...).  
 
     <coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>
 
@@ -18,11 +18,11 @@ Its five columns record
 
 1. URN (abbreviated as Collection.Object) for this morphological stem.  (The `coretests` collection must appear in the registry of URN abbreviations.)
 2. Abbreviated URN for the Greek lexical entity.  (References to the `lexent` collection are automatically expanded to full URN values.)
-3. The stem `<#>lu` including a morpheme boundary marker (required for verbs so augment can be correctly placed in compound forms, e.g., a stem could look like `a)na<#>lu`)
+3. The stem `<#>lu` (including a morpheme boundary marker required for verbs so augment can be correctly placed in compound forms, e.g., a stem could look like `a)na<#>lu`)
 4. The part of speech of the entity
 5. An inflectional category
 
-Here is a corresponding valid, complete URN registry from a `.csv` file.
+Here is a valid, complete URN registry from a `.csv` file that makes all vocabulary in the `coretests` collection accessible to the parser:
 
     coretests,urn:cite:morph:coretests,"Lexicon of stems used in testing core morphological engine"
 
@@ -32,6 +32,16 @@ Its three columns record
 2. Valid collection-level CITE URN for the collection.
 3. Human-readable label identifying the collection.
 
+
+## Integrating a dynamically built parser into  workflows
+
+This architecture makes it straightforward to integrate a dynamically built parser into a variety of workflows such as the HMT project's HMT MOM validation system.
+
+A project could
+
+- maintain a set of tabular files with lexica of stems in a shared version control repository
+- automatically incorporate those files in the build task compiling a corpus-specific parser
+- apply the freshly compiled parser to a set of tokens to analyze
 
 ## Testing the core system
 
