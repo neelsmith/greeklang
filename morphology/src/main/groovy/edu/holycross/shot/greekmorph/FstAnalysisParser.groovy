@@ -13,7 +13,7 @@ import edu.harvard.chs.cite.CiteUrn
 */
 class FstAnalysisParser {
 
-  Integer debug = 1
+  Integer debug = 0
 
   // These should be dynamically acquired from a URN registry:
   UrnManager urnMgr
@@ -129,15 +129,21 @@ class FstAnalysisParser {
   /** Expands an abbreviated reference to a full URN string.
   * @param s String in format Collection.Object
   * @returns A String that validates as a CiteUrn.
+  * @throws Exception if s is not formatted properly, or if
+  * cannot resolve s to a URN.
   */
   String resolveUrn(String s) {
     String objectStr = s.replaceAll(/[<>]/,"")
     def refParts = objectStr.split(/\./)
-    if  (refParts.size() == 2) {
+    if  (refParts.size() != 2) {
+      throw new Exception ("FAP: can't resolve URN from ${s} with parts ${refParts}")
+    }
+    try {
       String urnStr =  urnMgr.getUrn(refParts[0]).toString() + "." + refParts[1]
       return urnStr
-    } else {
-      throw new Exception ("FAP: can't resolve URN from ${s} with parts ${refParts}")
+    } catch(Exception e) {
+      System.err.println "FstAnalysisParser: failed to get urn for ${s}"
+      throw e
     }
   }
 
@@ -167,15 +173,21 @@ class FstAnalysisParser {
   }
 
   /** Gets a human-readable presentation of surface form.
-  * @returns String formatted as stem-inflection.  Morpheme
+  * @returns String formatted as STEM-INFLECTION with morpheme
   * boundary markers are stripped out.
   */
   String getSurface() {
     return surfaceStem.replaceFirst(/<#>/,"") + "-" + surfaceInflection
   }
 
-  String getAccentTag() {
 
+  /** Finds accentuation for this ID.  When accent is not explicitly
+  * given by a FST multicharacter symbol, it is treated as recessive.
+  * @returns Appropriate AccentTag object.
+  */
+  AccentTag getAccentTag() {
+    System.err.println "FstAnalysisParser:getAccentTag: not yet implemented."
+    return null
   }
 
 

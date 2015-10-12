@@ -23,6 +23,12 @@ class MorphologicalParser {
     urnManager = umgr
   }
 
+
+  // TO BE IMPLEMENTED.  GENERATE ACCENTED FORM AND COMPARE TO SUBMITTED FORM.
+  boolean checkAccent(GreekString utf8String, FstAnalysisParser analysisInfo) {
+    return true
+  }
+
   /** Gets a morphological analysis for a greek string.
   * @param gkStr The string to analyze.
   * @returns a MorphologicalAnalysis.
@@ -41,8 +47,10 @@ class MorphologicalParser {
         // omit
       } else {
         FstAnalysisParser fsp = new FstAnalysisParser(l, urnManager)
-        analysisList.add(fsp.getMorphForm())
-        explanationList.add(fsp.getExplanation())
+        if (checkAccent(gkStr,fsp)) {
+          analysisList.add(fsp.getMorphForm())
+          explanationList.add(fsp.getExplanation())
+        }
       }
     }
     return( new MorphologicalAnalysis(gkStr, analysisList, explanationList))
