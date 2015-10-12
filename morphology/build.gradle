@@ -196,7 +196,7 @@ task rawmorph(type:Exec, dependsOn: fst) {
   commandLine =  [FSTCOMPILER, "${buildDir}/fst/utils/rawmorph.fst".toString(), "${buildDir}/fst/utils/rawmorph.a".toString()]
 }
 
-task rawaccepted(type:Exec, dependsOn: fst) {
+task rawaccepted(type:Exec, dependsOn: rawmorph) {
   description = "Builds binary Finite State Transducer in ${buildDir}/fst/rawaccepted.a"
 
   outputs.file "${buildDir}/fst/utils/rawaccepted.a".toString()
@@ -213,12 +213,13 @@ utils.doLast {
 }
 
 
+test.dependsOn utils
 
 // IMPLEMENT THIS:
 task install() {
   description = "Install binary fst parser and CLI scripts in /usr/local"
 }
-test.dependsOn fst
+
 
 
 
