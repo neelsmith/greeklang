@@ -8,26 +8,37 @@ import edu.unc.epidoc.transcoder.TransCoder
 */
 class FstToken {
 
+  /** An epidoc trancoder. */
   TransCoder utf2beta = new TransCoder()
 
+  /** A GreekString to analyze. */
+  GreekString greekStr
+  /** An ASCII string in the format processed by the
+  * morphological parser's FST. */
+  String fstStr
 
-  GreekString utf8Str
-  GreekString fstStr
-
-  /** Constructor accepts a Unicode GreekString, and converts to an ASCII
-  * Greek string with accents stripped out, for analysis by the
-  * morphological FST.
-  * @param s A GreekString in Unicode format.
+  /** Constructor accepts a GreekString, and derives an ASCII
+  * string for analysis by the morphological FST.  Accents are
+  * stripped out, and some characters are converted to FST
+  * multicharacter symbols.
+  * @param s A GreekString to analyze.
   */
   FstToken(GreekString s) {
-    utf8Str = s
+    greekStr = s
     utf2beta.setParser("Unicode")
     utf2beta.setConverter("BetaCode")
-    fstStr = new GreekString(utf2beta.getString(s.toString(true)).replaceAll(/[=\\/\\\\]/,"").toLowerCase())
+    fstStr = utf2beta.getString(greekStr.toString(true)).replaceAll(/[=\\/\\\\]/,"").toLowerCase()
+    // CONVERT:
+    // breathings () to <ro><sm>
+    // quantity ^_ to <sh><lo>
   }
 
+  /** Formats token for intelligible reading.
+  * @returns String juxtaposing unicode form of GreekString
+  * with ASCII token in FST format.
+  */
   String toString() {
-    return "${utf8Str}-${fstStr}"
+    return "${greekStr.toString(true)}-${fstStr}"
   }
 
 }

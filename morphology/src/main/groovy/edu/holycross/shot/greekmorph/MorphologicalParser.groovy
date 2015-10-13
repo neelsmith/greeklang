@@ -13,10 +13,14 @@ class MorphologicalParser {
   * in a finite state transducer. */
   FstParser fstParser
 
+  /** Manager for expanding collection IDs to full CITE URNs. */
   UrnManager urnManager
 
-  /** Constructor with location of sfst binary.
-  * @param Full path to binary sfst (.a) file
+  /** Constructor with location of sfst binary and
+  * a system for expanding abbreviated URN references.
+  * @param fstBinary Full path to binary sfst (.a) file.
+  * @param umgr UrnManager configured for collections cited
+  * in stem lexica for this corpus.
   */
   MorphologicalParser(String fstBinary, UrnManager umgr) {
     fstParser = new FstParser(fstBinary)
@@ -25,13 +29,14 @@ class MorphologicalParser {
 
 
   // TO BE IMPLEMENTED.  GENERATE ACCENTED FORM AND COMPARE TO SUBMITTED FORM.
+  /** NOT YET IMPLEMENTED */
   boolean checkAccent(GreekString utf8String, FstAnalysisParser analysisInfo) {
     return true
   }
 
-  /** Gets a morphological analysis for a greek string.
+  /** Gets a morphological analysis for a Greek string.
   * @param gkStr The string to analyze.
-  * @returns a MorphologicalAnalysis.
+  * @returns A MorphologicalAnalysis.
   */
   MorphologicalAnalysis parseGreekString(GreekString gkStr) {
     ArrayList analysisList  = []

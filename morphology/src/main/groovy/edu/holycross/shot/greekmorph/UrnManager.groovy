@@ -6,7 +6,7 @@ import edu.harvard.chs.cite.CiteUrn
 /**
 * A class for managing abbreviations and fully expanded URNs.
 * Note that collection ID values must be unique in the context of the
-* UrnManager, note merely unique within the context of the
+* UrnManager, not merely unique within the context of the
 * CITE namespace.
 */
 class UrnManager {

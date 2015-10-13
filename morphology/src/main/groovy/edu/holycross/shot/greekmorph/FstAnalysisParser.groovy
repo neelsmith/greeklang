@@ -15,14 +15,8 @@ class FstAnalysisParser {
 
   Integer debug = 0
 
-  // These should be dynamically acquired from a URN registry:
+  /** UrnManager expands collection abbreviations to full CITE URNs. */
   UrnManager urnMgr
-  /*
-  String stemUrnBase = "urn:cite:morph:"
-  String inflUrnBase = "urn:cite:morph:"
-
-  String lexEntUrnBase = "urn:cite:shot:"
-*/
 
   /** Regex pattern for multicharacter symbols in FST string */
   java.util.regex.Pattern allTags = ~/<[^>]+>/
@@ -43,7 +37,7 @@ class FstAnalysisParser {
   /** Ordered list of multicharacter symbols in the inflectional pattern component. */
   ArrayList inflTags = []
 
-  //// Content extracted from raw FST output string
+  //// Content extracted from raw FST output string //////////////////
   //
   /** Form of analysis extracted from this string.
   * ("Part of speech")
@@ -166,7 +160,7 @@ class FstAnalysisParser {
       break
 
       default:
-      System.err.println "Unimplemented analytical type: " + analyticalType
+      System.err.println "Unimplemented analytical type: " + analysisPattern
       break
       return mf
     }

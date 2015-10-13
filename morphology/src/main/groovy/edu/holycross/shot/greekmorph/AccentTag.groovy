@@ -1,13 +1,23 @@
 package edu.holycross.shot.greekmorph
 
+/** A class enumerating the accent quality of a form.
+* Enumerated values may be expressed with human-readable
+* labels, or in the multicharacter symbols used in the
+* morphological parser's FST engine.
+*/
 public enum AccentTag {
 
+  /** Recessive accent or persistent accent on antepenult. */
   RECESSIVE ("recessive accent or persistent accent on antepenult", "<antacc>"),
+  /** Persistent accent on penult. */
   PENULT("persistent accent on penult", "<penacc>"),
-  UTLIMA("persistent accent on ultima", "<ultacc>")
+  /** Persistent accent on ultima. */
+  ULTIMA("persistent accent on ultima", "<ultacc>")
 
   private String fstToken
   private String label
+
+  /** Map of symbols used in FST to enumerated value. */
   static final Map codeMap
 
   static {
@@ -21,11 +31,23 @@ public enum AccentTag {
     this.label = label
   }
 
+  /** Gets the enumerated value identified
+  * by a FST token.
+  * @param fstToken FST string for an
+  * enumerated value.
+  * @returns The enumerated value.
+  */
+  static getByToken(String fstToken) {
+    return codeMap[fstToken]
+  }
+
+
+  /** Gets the symbol for this value used in FST string. */
   public String getToken() {
     return fstToken
   }
 
-
+  /** Gets a human-readable label for this value. */
   public String getLabel() {
     return label
   }

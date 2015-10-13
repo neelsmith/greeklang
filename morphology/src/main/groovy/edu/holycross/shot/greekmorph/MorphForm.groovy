@@ -8,10 +8,14 @@ import edu.harvard.chs.cite.CiteUrn
  */
 class MorphForm {
 
+  /** The analytical pattern that applies to this analysis. */
   AnalyticalType analyticalType
+
+  /** The type-specific analysis. */
   CitableForm analysis
 
-  /** Constructor verifies that analysis data are appropriate for type of analysis.
+  /** Constructor verifies that analysis data are appropriate for
+  * the specified type of analysis.
   * @param analyticalType The type of this analysis.
   * @param analysis The analysis data.
   * @throws Exception if analysisType is not consistent with the class of analysis.
@@ -24,7 +28,6 @@ class MorphForm {
       PARTICIPLE
       ININITIVE
       VERBAL_ADJECTIVE
-      NOUN
       ADJECTIVE
       ADVERB
       INDECLINABLE
@@ -34,6 +37,12 @@ class MorphForm {
         if (analysis instanceof VerbForm) {
         } else {
           throw new Exception("MorphForm: ${analyticalType} not consistent with analysis of class VerbForm")
+        }
+      break
+      case AnalyticalType.NOUN:
+        if (analysis instanceof NounForm) {
+        } else {
+          throw new Exception("MorphForm: ${analyticalType} not consistent with analysis of class NounForm")
         }
       break
 

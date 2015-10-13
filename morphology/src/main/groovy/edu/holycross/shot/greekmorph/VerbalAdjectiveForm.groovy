@@ -7,12 +7,26 @@ import edu.harvard.chs.cite.CiteUrn
  */
 class VerbalAdjectiveForm implements CitableForm {
 
+  /** Verbal adjectives are identified by predictable URNs in the
+  * urn:cite:morph:form collection.  The object ID is formed
+  * from the string "va" concatenated with digits for each of
+  * the adjectival identifiers gender, case, and number.
+  */
   static String baseUrn = "urn:cite:morph:form.va"
+
+  /** Gender of the form. */
   Gender gender
+  /** Case of the form. */
   GrammaticalCase cas
+  /** Number of the form. */
   GrammaticalNumber num
 
-
+  /** Constructor with full morphological identificaion of a
+  * verbal adjective.
+  * @param g Gender of the form.
+  * @param c Case of the form.
+  * @param n Number of the form.
+  */
   VerbalAdjectiveForm(Gender g, GrammaticalCase c, GrammaticalNumber n) {
     gender = g
     cas = c
@@ -20,11 +34,17 @@ class VerbalAdjectiveForm implements CitableForm {
 
   }
 
+  /** Gets a CITE URN corresponding to this identification.
+  * @returns CiteUrn for this identification.
+  */
   CiteUrn getUrn() {
     String urnStr = baseUrn + gender.ordinal() + cas.ordinal() + num.ordinal()
     return new CiteUrn(urnStr)
   }
 
+  /** Formats a label for the form.
+  * @returns A human-readable label for this form.
+  */
   String toString() {
     def labels = [gender.getLabel(), cas.getLabel(), num.getLabel()]
     return labels.join(" ")

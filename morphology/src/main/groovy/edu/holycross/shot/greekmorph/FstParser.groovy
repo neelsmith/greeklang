@@ -8,8 +8,11 @@ class FstParser {
 
   Integer debug = 1
 
+  /** Path to FST toolkit's fst-infl parser. */
   String FSTINFL = "/usr/bin/fst-infl"
+  /** Path to echo. */
   String ECHO = "/bin/echo"
+  /** Path to sh. */
   String SH = "/bin/sh"
 
   /** Path to binary transducer. */
@@ -23,16 +26,17 @@ class FstParser {
   }
 
 
-  /** Parses fstStr with the SFST parser.
-  * @param fstStr A single token in the format required for this project.
+  /** Parses a token with the SFST parser.
+  * @param fstStr A single token.
   * @returns A list of zero or more morphological analysis objects.
   */
   String parseToken(FstToken fstToken) {
     return parseTokenStr(fstToken.getFstStr().toString())
   }
 
-  /** Parses fstStr with the SFST parser.
-  * @param fstStr A single token in the format required for this project.
+  /** Parses a literal string with the SFST parser.
+  * @param fstStr A String in the format required
+  * to form a FstToken.
   * @returns Raw string output of fst-infl.
   */
   String parseTokenStr(String fstStr) {
@@ -51,12 +55,13 @@ class FstParser {
   }
 
   /** Parses a list of tokens, one per line, with the SFST parser.
-  * @param tokenList A list of tokens, one per line, in the format required for this project.
+  * @param tokenList A list of strings, one per line, in the format required
+  * to form a FstToken.
   * @returns A map of zero or more morphological analysis objects for each token.
   */
   LinkedHashMap parseTokens(String tokenList) {
-    //   Fasterr to submit whole string list to fst-infl, and
-    // parse out results?
+    // Certainly would be faster to submit whole string list to fst-infl,
+    // and then parse out results.
     ArrayList tokens = []
     tokenList.eachLine {
       tokens.add(it)
@@ -66,7 +71,8 @@ class FstParser {
 
 
   /** Parses A list of tokens, one per line, with the SFST parser.
-  * @param tokenList A list of tokens in the format required for this project.
+  * @param tokenList A list of tokens in the format required
+  * to form a FstToken.
   * @returns A map of zero or more morphological analysis objects for each token.
   */
   LinkedHashMap parseTokens(ArrayList tokenList) {

@@ -5,10 +5,6 @@ package edu.holycross.shot.greekmorph
 */
 class FstInflReader {
 
-  ArrayList accentedForms = []
-  ArrayList fstTokens = []
-
-  LinkedHashMap analyses = [:]
 
   /** Constructor. */
   FstInflReader() {
@@ -30,18 +26,16 @@ class FstInflReader {
     String currentToken = ""
     fstInflFile.eachLine { ln ->
       if (ln[0] == '>') {
-	if (currentToken != "") {
-	  analyses[currentToken] = currentAnalyses
-	  // .clear() won't work!  Need a new ArrayList()
-	  //currentAnalyses.clear()
-	  currentAnalyses = new ArrayList()
-	}
-	currentToken = ln.replaceFirst(/> /, "")
-
+        if (currentToken != "") {
+          analyses[currentToken] = currentAnalyses
+          // currentAnalyses.clear() does not work!
+          currentAnalyses = new ArrayList()
+        }
+        currentToken = ln.replaceFirst(/> /, "")
       } else if (ln ==~ /no result.+/) {
-	// failed to analyze token
+        // failed to analyze token
       } else {
-	currentAnalyses.add(ln)
+        currentAnalyses.add(ln)
       }
     }
     return analyses
