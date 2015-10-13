@@ -34,3 +34,6 @@ $morph$ || $acceptor$  || $striptags$
 %
 % input:  luw
 % output: <coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>
+%
+%
+% <coretests.n6949_0><lexent.n6949>a)na<#>lu<long><verb><w_regular>::<w_regular><w_indicative.43>a<1st><sg><pres><indic><act>
