@@ -7,7 +7,7 @@
 % Characters for Greek character set:
 #consonant# = bgdzqklmncprstfxy
 #vowel# = aeiouhw\|
-#breathing# = \(\)
+#breathing# = <sm><ro>
 #letter# = #consonant# #vowel# #breathing#
 
 #diaeresis# = \+
@@ -19,9 +19,11 @@ $character$ = [#character#]
 
 % Additional editorial symbols used in stem files:
 #morpheme# = <#>
-#vowelquant# = <long><short>
+#vowelquant# = <lo><sh>
 #persistacc# = <ultacc><penacc><antacc>
 #editorial# = #vowelquant# #morpheme# #persistacc#
+
+
 % All valid chars used in stem file:
 #stemchars# = #character# #editorial#
 
