@@ -2,5 +2,4 @@
 % test 1st sg indic in all tense/voice combinations.
 %
 % 6th principal part:
-<n64316><#>luq<verb><w_regular>::<w_regular>hsomai<1st><sg><fut><indic><pass>
-<n64316><#>e)luq<verb><w_regular>::<w_regular>hn<1st><sg><aor><indic><pass>
+<coretests.n64316_0><lexent.n64316><#>luq<verb><w_regular>::<w_regular><w_indicative.7>omai<1st><sg><fut><indic><pass>
