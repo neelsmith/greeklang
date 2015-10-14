@@ -13,7 +13,7 @@ import edu.harvard.chs.cite.CiteUrn
 */
 class FstAnalysisParser {
 
-  Integer debug = 0
+  Integer debug = 2
 
   /** UrnManager expands collection abbreviations to full CITE URNs. */
   UrnManager urnMgr
@@ -81,8 +81,8 @@ class FstAnalysisParser {
       stemTags = stemString.findAll(allTags)
       inflTags = inflectionString.findAll(allTags)
 
-      String lexEntUrnStr = resolveUrn(stemTags[1])
       String stemUrnStr = resolveUrn(stemTags[0])
+      String lexEntUrnStr = resolveUrn(stemTags[1])
       String inflUrnStr = resolveUrn(inflTags[1])
 
        if (debug > 0 ) {

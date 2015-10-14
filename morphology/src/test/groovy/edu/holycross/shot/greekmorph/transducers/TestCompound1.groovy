@@ -22,23 +22,23 @@ class TestCompound1 {
 
   "<coretests.n64316_0><lexent.n64316><#>lus<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><fut><indic><act>": ["conjugated verb: first person singular future indicative active"],
 
-"<coretests.n6949_0><lexent.n6949>a<sm>na<#>lus<lo><verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>":
-["conjugated verb: first person singular future indicative active"],
-
-  "<coretests.n6949_0><lexent.n6949>a<sm>na<#>lus<lo><verb><w_regular>::<w_regular><w_indicative.43>a<1st><sg><fut><indic><act>" :
+  "<coretests.n6949_0><lexent.n6949>a<sm>na<#>lus<lo><verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><fut><indic><act>" :
   ["conjugated verb: first person singular future indicative active"]
 
   ]
 
   def testFstStrings = [
   "luw":
-  ["conjugated verb: first person singular present indicative active"]
+  ["conjugated verb: first person singular present indicative active",
+  "conjugated verb: first person singular present subjunctive active"
+  ]
   ]
 
 
   def testUnicodeInput = [
   "λύω":
-  ["conjugated verb: first person singular present indicative active"]
+  ["conjugated verb: first person singular present indicative active",
+  "conjugated verb: first person singular present subjunctive active"]
   ]
 
   /** Runs a given command a returns a list with FST strings for each analysis.
@@ -69,16 +69,15 @@ class TestCompound1 {
       UrnManager umgr = new UrnManager(inflCsvSource)
       umgr.addCsvFile(lexCsvSource)
       def transducers = [
-        "build/fst/acceptors/verb/2nd_3rd_pp.a"
-      /*
+        "build/fst/acceptors/verb/2nd_3rd_pp.a",
       "build/fst/acceptors/verb/w_princparts.a",
       "build/fst/acceptors/verb.a",
       "build/fst/acceptor.a",
-      "build/fst/utils/rawaccepted.a"*/
+      "build/fst/utils/rawaccepted.a"
       ]
       transducers.each { t ->
         String cmd = "${fstinfl} ${t} ${testFile}"
-        System.err.println "Testing second princ part on ${t}"
+        System.err.println "Testing second princ part on transducer ${t}"
         testTransducers.each { wd ->
           testFile.setText(wd.key)
           def actualReplies = getAnalysisStrings(cmd, umgr)
@@ -95,7 +94,7 @@ class TestCompound1 {
 
       UrnManager umgr = new UrnManager(inflCsvSource)
       umgr.addCsvFile(lexCsvSource)
-      System.err.println "second princ part on ${parser}"
+      System.err.println "second princ part on  final parser ${parser}"
       testFstStrings.each { wd ->
         testFile.setText(wd.key)
         def actualReplies = getAnalysisStrings(cmd, umgr)
