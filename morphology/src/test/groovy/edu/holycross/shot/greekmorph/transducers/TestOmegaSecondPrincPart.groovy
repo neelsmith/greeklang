@@ -37,7 +37,7 @@ class TestOmegaSecondPrincPart {
   "lusomai": [
   "conjugated verb: first person singular future indicative middle"
   ],
-  "e)lusa":[
+  "e<sm>lusa":[
   "conjugated verb: first person singular aorist indicative active"
   ]
 

@@ -19,7 +19,7 @@ class FstToken {
 
   /** Constructor accepts a GreekString, and derives an ASCII
   * string for analysis by the morphological FST.  Accents are
-  * stripped out, and some characters are converted to FST
+  * stripped out; breathing and vowel quantity characters are converted to FST
   * multicharacter symbols.
   * @param s A GreekString to analyze.
   */
@@ -27,10 +27,11 @@ class FstToken {
     greekStr = s
     utf2beta.setParser("Unicode")
     utf2beta.setConverter("BetaCode")
-    fstStr = utf2beta.getString(greekStr.toString(true)).replaceAll(/[=\\/\\\\]/,"").toLowerCase()
-    // CONVERT:
-    // breathings () to <ro><sm>
-    // quantity ^_ to <sh><lo>
+    String convertedStr = utf2beta.getString(greekStr.toString(true)).replaceAll(/[=\\/\\\\]/,"").toLowerCase()
+    convertedStr = convertedStr.replaceAll(/\^/, "<sh>")
+    convertedStr = convertedStr.replaceAll("_", "<lo>")
+    convertedStr = convertedStr.replaceAll(/\(/, "<ro>")
+    fstStr = convertedStr.replaceAll(/\)/, "<sm>")
   }
 
   /** Formats token for intelligible reading.

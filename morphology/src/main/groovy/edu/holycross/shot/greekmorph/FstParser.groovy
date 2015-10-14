@@ -43,9 +43,10 @@ class FstParser {
     def out = new StringBuffer()
     def err = new StringBuffer()
 
-    String protectedStr  = fstStr.replaceFirst(/[)]/, '\\\\)')
-    protectedStr = protectedStr.replaceFirst(/[(]/, '\\\\(')
-    // RIGHT HERE: NEED TO PROTECT ) or (
+    // Protect angle brackets in FST multicharacter symbols
+    // before submitting to sh:
+    String protectedStr  = fstStr.replaceFirst(/[>]/, '\\\\>')
+    protectedStr = protectedStr.replaceFirst(/[<]/, '\\\\<')
     def procList = [SH, "-c",  "${ECHO} ${protectedStr} | ${FSTINFL} ${fstParser}"]
     if (debug > 0) {System.err.println "FstParser: " + procList}
     def proc = procList.execute()
