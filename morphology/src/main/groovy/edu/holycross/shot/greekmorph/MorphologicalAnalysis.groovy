@@ -11,7 +11,7 @@ import edu.holycross.shot.greekutils.GreekString
 class MorphologicalAnalysis {
 
   /** The analyzed string. */
-  GreekString s
+  GreekString greekString
 
   /** A (possibly empty) ordered list of analyses, as MorphForm objects. */
   ArrayList analyses = []
@@ -28,7 +28,7 @@ class MorphologicalAnalysis {
   * the list of analyses.
   */
   MorphologicalAnalysis(GreekString s, ArrayList analyses, ArrayList explanations) {
-    str = s
+    this.greekString = s
     this.analyses = analyses
     this.explanations = explanations
   }
