@@ -89,9 +89,14 @@ String rulesMakeStatement(File dir) {
 }
 
 
+// Convert this to use dynamically computed list
+String tagsFstStatement() {
+  return "#extratag# = <epic><hmt><ml>"
+}
+
 
 task cpSrc (type: Copy) {
-    description = "Filters and copies src directory to build area."
+    description = "Filters and copies FST src directory to build area."
     from ("src/fst") {
       include ("makefile", "**/*.fst")
     }
@@ -102,13 +107,14 @@ task cpSrc (type: Copy) {
       "lexica": lexiconFstStatement(new File("${projectDir}/${stemsdir}")),
       "makelexica": lexiconMakeStatement(new File("${projectDir}/${stemsdir}")),
       "fstrules": rulesFstStatement(new File("${projectDir}/${rulesdir}")),
-      "extramakerules": rulesMakeStatement(new File("${projectDir}/${rulesdir}"))
+      "extramakerules": rulesMakeStatement(new File("${projectDir}/${rulesdir}")),
+      "extratags": tagsFstStatement()
      ])
 }
 
 task cpRules (type: Copy) {
     description = "Filters and copies directory with additional inflectional rules to build area."
-    from ("rules") {
+    from ("${projectDir}/${rulesdir}") {
       include ("**/*.fst")
     }
     into "${buildDir}/fst"
@@ -156,7 +162,7 @@ buildStems.doLast {
 
 task cpStems (type: Copy, dependsOn: "buildStems") {
     description = "Filters adn copies directory with lexica of stems to build area."
-    from ("stems") {
+    from ("${projectDir}/${stemsdir}") {
       include ('**/*.fst')
     }
     into "${buildDir}/fst"
@@ -164,34 +170,23 @@ task cpStems (type: Copy, dependsOn: "buildStems") {
 }
 
 
-task cpTags (type: Copy) {
-    description = "Filters and copies directory with taxonomic tags to build area."
-    from ("userconfig") {
-      include ('**/*.fst')
-    }
-    into "${buildDir}/fst"
-    filter(ReplaceTokens, tokens: ["workdir" : "${buildDir}/fst/".toString()])
-}
 
-
-task cpAll (dependsOn: [cpTags, cpStems, cpRules, cpSrc]){
+task cpAll (dependsOn: [ cpStems, cpRules, cpSrc]){
   description = "Copies all source material to build area"
 }
 cpAll.doLast {
   // check that at least one stems lexicon was copied.
-
   Integer lexicaCount = 0
-  File stemsDir = new File(projectDir,"stems")
+  File stemsDir = new File(projectDir,stemsdir)
   stemsDir.eachFileMatch(~/.*.fst/) {
     lexicaCount++
   }
   if (lexicaCount == 0) {
-    System.err.println ("cpAll: no lexica of stems found in directory 'stems'.")
-    throw new Exception("cpAll: no lexica of stems found in directory 'stems'.")
+    System.err.println ("cpAll: no lexica of stems found in directory ${stemsdir}.")
+    throw new Exception("cpAll: no lexica of stems found in directory ${stemsdir}.")
   } else {
     System.err.println "All source files copied to build area."
   }
-
 }
 
 task fst(type:Exec, dependsOn: cpAll) {

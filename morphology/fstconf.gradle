@@ -6,6 +6,6 @@ ext {
 
 
   installdir = "/usr/local"
-  stemsdir = "stems"
-  rulesdir = "rules"
+  stemsdir = "data/stems-fst"
+  rulesdir = "data/rules-fst"
 }
