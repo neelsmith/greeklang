@@ -4,9 +4,25 @@ ext {
   FSTINFL = "/usr/bin/fst-infl"
   MAKE = "/usr/bin/make"
 
-
   installdir = "/usr/local"
+
+  ////////////////////////////////////////////////////////////
+  // Source directories for required and optional data used in
+  // building a corpus-specific parser.
+  //
+  // Required:  one or more .fst files with stems.
   stemsdir = "data/stems-fst"
-  rulesdir = "data/rules-fst"
+  // Required:  one or more .csv files definiing expansion of
+  // Collection.Id to full URNs:
+  urnregdir = "data/urn-registries"
+
+  // Optional:  one or more tabular files used to generate
+  // .fst data for stemsdir
   stemssrcdir = "data/stems-lexica"
+  // Optional:  one or more .fst files definining inflectional
+  // patterns
+  rulesdir = "data/rules-fst"
+  // Optional: one or more tabular files with collections of
+  // analytical tags
+  tagsdir = "data/tags"
 }
