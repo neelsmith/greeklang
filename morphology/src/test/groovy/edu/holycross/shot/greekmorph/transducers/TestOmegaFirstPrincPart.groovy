@@ -47,7 +47,7 @@ class TestOmegaFirstPrincPart {
 
 
   File inflCsvSource = new File("src/fst/collectionAbbreviations.csv")
-  File lexCsvSource = new File("sampledata/userconfig/extraDatasets.csv")
+  File lexCsvSource = new File("sampledata/urn-registries/datasets.csv")
 
   ArrayList getAnalysisStrings(String cmd, UrnManager urnManager) {
     def analysisStrings = []

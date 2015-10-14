@@ -15,7 +15,7 @@ class TestWordLists {
 
   @Test
   void testWords() {
-    File lexCsvSource = new File("sampledata/userconfig/extraDatasets.csv")
+    File lexCsvSource = new File("sampledata/urn-registries/datasets.csv")
     umgr.addCsvFile(lexCsvSource)
 
     MorphologicalParser mp  = new MorphologicalParser(transducer, umgr)

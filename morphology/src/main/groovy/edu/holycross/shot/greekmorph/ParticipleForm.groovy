@@ -8,11 +8,11 @@ import edu.harvard.chs.cite.CiteUrn
 class ParticipleForm implements CitableForm {
 
   /** Participles are identified by predictable URNs in the
-  * urn:cite:morph:form collection.  The object ID is formed
+  * urn:cite:gmorph:form collection.  The object ID is formed
   * from the string "pc" concatenated with digits for each of
   * the adjectival identifiers tense, voice, gender, case, and number.
   */
-  static String urnBase = "urn:cite:morph:form.pc"
+  static String urnBase = "urn:cite:gmorph:form.pc"
 
   /** Tense of the form. */
   Tense tense

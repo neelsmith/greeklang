@@ -14,7 +14,7 @@ class TestOmegaSixthPrincPart {
 
   String fstinfl = "/usr/bin/fst-infl"
   File inflCsvSource = new File("src/fst/collectionAbbreviations.csv")
-  File lexCsvSource = new File("sampledata/userconfig/extraDatasets.csv")
+  File lexCsvSource = new File("sampledata/urn-registries/datasets.csv")
   File testFile = new File("build/testInput.txt")
 
   // Maps submitted FST string to expected value of morphform.toString()

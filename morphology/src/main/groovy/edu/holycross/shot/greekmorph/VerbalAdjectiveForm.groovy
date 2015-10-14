@@ -8,11 +8,11 @@ import edu.harvard.chs.cite.CiteUrn
 class VerbalAdjectiveForm implements CitableForm {
 
   /** Verbal adjectives are identified by predictable URNs in the
-  * urn:cite:morph:form collection.  The object ID is formed
+  * urn:cite:gmorph:form collection.  The object ID is formed
   * from the string "va" concatenated with digits for each of
   * the adjectival identifiers gender, case, and number.
   */
-  static String baseUrn = "urn:cite:morph:form.va"
+  static String baseUrn = "urn:cite:gmorph:form.va"
 
   /** Gender of the form. */
   Gender gender

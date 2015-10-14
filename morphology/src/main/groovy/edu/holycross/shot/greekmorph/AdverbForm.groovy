@@ -8,11 +8,11 @@ import edu.harvard.chs.cite.CiteUrn
 class AdverbForm implements CitableForm {
 
   /** Adverbs are identified by predictable URNs in the
-  * urn:cite:morph:form collection.  The object ID is formed
+  * urn:cite:gmorph:form collection.  The object ID is formed
   * from the string "av" concatenated with a digit for
   * the identified degee.
   */
-  static String urnBase = "urn:cite:morph:form.av"
+  static String urnBase = "urn:cite:gmorph:form.av"
 
   /** Degree of the adverb. */
   Degree degree

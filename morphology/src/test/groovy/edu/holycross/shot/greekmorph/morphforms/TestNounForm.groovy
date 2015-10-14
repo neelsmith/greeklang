@@ -14,6 +14,6 @@ class TestNounForm {
   @Test
   void testUrns() {
     NounForm noun =  new NounForm(Gender.MASCULINE, GrammaticalCase.NOMINATIVE, GrammaticalNumber.SINGULAR)
-    assert noun.getUrn().toString() == "urn:cite:morph:form.no000"
+    assert noun.getUrn().toString() == "urn:cite:gmorph:form.no000"
   }
 }

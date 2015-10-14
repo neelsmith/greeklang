@@ -8,11 +8,11 @@ import edu.harvard.chs.cite.CiteUrn
 class NounForm implements CitableForm {
 
   /** Nouns are identified by predictable URNs in the
-  * urn:cite:morph:form collection.  The object ID is formed
+  * urn:cite:gmorph:form collection.  The object ID is formed
   * from the string "no" concatenated with digits for each of
   * the nominal identifiers gender, case, and number.
   */
-  static String urnBase = "urn:cite:morph:form.no"
+  static String urnBase = "urn:cite:gmorph:form.no"
 
 
   /** Gender of the form. */

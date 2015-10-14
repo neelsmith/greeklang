@@ -17,7 +17,7 @@ class TestMorphologicalParser {
   void testMorphologicalParser() {
 
     // defines coretests collection:
-    File lexCsvSource = new File("sampledata/userconfig/extraDatasets.csv")
+    File lexCsvSource = new File("sampledata/urn-registries/datasets.csv")
     umgr.addCsvFile(lexCsvSource)
     MorphologicalParser mp = new MorphologicalParser(fstBinary, umgr)
 

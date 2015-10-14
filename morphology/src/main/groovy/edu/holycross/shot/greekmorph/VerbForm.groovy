@@ -9,11 +9,11 @@ import edu.harvard.chs.cite.CiteUrn
 class VerbForm implements CitableForm {
 
   /** Adjectives are identified by predictable URNs in the
-  * urn:cite:morph:form collection.  The object ID is formed
+  * urn:cite:gmorph:form collection.  The object ID is formed
   * from the string "aj" concatenated with digits for each of
   * the adjectival identifiers gender, case, number and degee.
   */
-  static String baseUrn = "urn:cite:morph:form.cv"
+  static String baseUrn = "urn:cite:gmorph:form.cv"
 
   /** Person of the form. */
   Person person

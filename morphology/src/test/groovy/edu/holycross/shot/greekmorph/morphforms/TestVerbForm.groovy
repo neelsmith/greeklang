@@ -14,6 +14,6 @@ class TestVerbForm {
   @Test
   void testUrns () {
     VerbForm verb =  new VerbForm(Person.FIRST, GrammaticalNumber.SINGULAR, Tense.PRESENT, Mood.INDICATIVE, Voice.ACTIVE)
-    assert verb.getUrn().toString() == "urn:cite:morph:form.cv00000" 
+    assert verb.getUrn().toString() == "urn:cite:gmorph:form.cv00000" 
   }
 }

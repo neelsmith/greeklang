@@ -19,6 +19,8 @@ buildscript {
 }
 
 
+// Methods generating statement to include in makefile ////////////////////////
+//
 // Generates appropriate statement to add to makefile dependencies
 // for lexica.
 String lexiconMakeStatement(File dir) {
@@ -30,6 +32,40 @@ String lexiconMakeStatement(File dir) {
   fileList.each { f ->
     stmt.append(f + " ")
   }
+  return stmt.toString()
+}
+
+// Generates appropriate statements for makefile
+// dependencies on compiled inflectional rules.
+String rulesMakeStatement(File dir) {
+  StringBuilder stmt = new StringBuilder()
+  def fileList = []
+  dir.eachFileMatch(~/.*.fst/) { fstFile ->
+    String compiledFile = fstFile.getName().replaceFirst(/fst$/, "a")
+    fileList.add ("${buildDir}/fst/${compiledFile}".toString())
+  }
+  fileList.each { f ->
+    stmt.append(f + " ")
+  }
+  return stmt.toString()
+}
+
+
+// Methods generating statement to include in FST files ////////////////////////
+//
+// Generates appropriate SFST-PL statements for including
+// compiled files with predefined inflectional rules.
+String rulesFstStatement(File dir) {
+  StringBuilder stmt = new StringBuilder(" ")
+  def fileList = []
+  dir.eachFileMatch(~/.*.fst/) { fstFile ->
+    String compiledFile = fstFile.getName().replaceFirst(/fst$/, "a")
+    fileList.add ('"<' + "${buildDir}/fst/${compiledFile}".toString() + '>"')
+  }
+  fileList.eachWithIndex { f, i ->
+    stmt.append(' | ' + f)
+  }
+
   return stmt.toString()
 }
 
@@ -54,42 +90,8 @@ String lexiconFstStatement(File dir) {
   return stmt.toString()
 }
 
-
-
-
-// Generates appropriate SFST-PL statements for including
-// compiled inflectional rules.
-String rulesFstStatement(File dir) {
-  StringBuilder stmt = new StringBuilder(" ")
-  def fileList = []
-  dir.eachFileMatch(~/.*.fst/) { fstFile ->
-    String compiledFile = fstFile.getName().replaceFirst(/fst$/, "a")
-    fileList.add ('"<' + "${buildDir}/fst/${compiledFile}".toString() + '>"')
-  }
-  fileList.eachWithIndex { f, i ->
-    stmt.append(' | ' + f)
-  }
-
-  return stmt.toString()
-}
-
-// Generates appropriate statements for makefile
-// dependencies on compiled inflectional rules.
-String rulesMakeStatement(File dir) {
-  StringBuilder stmt = new StringBuilder()
-  def fileList = []
-  dir.eachFileMatch(~/.*.fst/) { fstFile ->
-    String compiledFile = fstFile.getName().replaceFirst(/fst$/, "a")
-    fileList.add ("${buildDir}/fst/${compiledFile}".toString())
-  }
-  fileList.each { f ->
-    stmt.append(f + " ")
-  }
-  return stmt.toString()
-}
-
-
-// Convert this to use dynamically computed list
+// Generates  SFST-PL statement to add taxonomic tags
+// to FST alphabet of symbols.
 String tagsFstStatement() {
   return "#extratag# = <epic><hmt><ml>"
 }
@@ -127,36 +129,27 @@ task buildStems() {
 }
 buildStems.doLast {
   System.err.println "buildStems not yet implemented."
+  System.err.print "Work with files in " + stemssrcdir
+}
+
+task exploreSource() {}
+exploreSource.doLast {
   System.err.println "Looking for cp.  Here's runtime: "  //sourceSets.main.runtimeClasspath.getFiles().each {
     //System.err.println  it
   //}
   sourceSets {
-
           main {
-
               println "java.srcDirs = ${java.srcDirs}"
-
               println "resources.srcDirs = ${resources.srcDirs}"
-
               println "java.files = ${java.files.name}"
-
               println "allJava.files = ${allJava.files.name}"
-
               println "resources.files = ${resources.files.name}"
-
               println "allSource.files = ${allSource.files.name}"
-
               println "output.classesDir = ${output.classesDir}"
-
               println "output.resourcesDir = ${output.resourcesDir}"
-
               println "output.files = ${output.files}"
-
           }
-
       }
-
-
 }
 
 

@@ -13,7 +13,7 @@ class TestAnalysisParser {
   @Test
   void testParser() {
     // defines coretests collection:
-    File lexCsvSource = new File("sampledata/userconfig/extraDatasets.csv")
+    File lexCsvSource = new File("sampledata/urn-registries/datasets.csv")
     umgr.addCsvFile(lexCsvSource)
     String conjverb = "<coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>"
 
@@ -21,8 +21,8 @@ class TestAnalysisParser {
     FstAnalysisParser fap = new FstAnalysisParser(conjverb, umgr)
 
     assert fap.analysisPattern == AnalyticalType.CVERB
-    assert fap.explanation.stem.toString() ==  "urn:cite:morph:coretests.n64316_0"
-    assert fap.explanation.inflection.toString() ==  "urn:cite:morph:w_indicative.1"
+    assert fap.explanation.stem.toString() ==  "urn:cite:gmorph:coretests.n64316_0"
+    assert fap.explanation.inflection.toString() ==  "urn:cite:gmorph:w_indicative.1"
     assert fap.lexicalEntity.toString() == "urn:cite:shot:lexent.n64316"
 
     MorphForm mf = fap.getMorphForm()

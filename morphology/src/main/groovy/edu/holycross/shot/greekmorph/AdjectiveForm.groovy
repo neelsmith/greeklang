@@ -9,11 +9,11 @@ class AdjectiveForm implements CitableForm {
 
 
   /** Adjectives are identified by predictable URNs in the
-  * urn:cite:morph:form collection.  The object ID is formed
+  * urn:cite:gmorph:form collection.  The object ID is formed
   * from the string "aj" concatenated with digits for each of
   * the adjectival identifiers gender, case, number and degee.
   */
-  static String urnBase = "urn:cite:morph:form.aj"
+  static String urnBase = "urn:cite:gmorph:form.aj"
 
 
 

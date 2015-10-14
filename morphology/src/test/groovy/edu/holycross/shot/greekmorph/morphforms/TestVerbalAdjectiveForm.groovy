@@ -14,6 +14,6 @@ class TestVerbalAdjectiveForm {
   @Test
   void testUrns() {
     VerbalAdjectiveForm vadj =  new VerbalAdjectiveForm(Gender.MASCULINE, GrammaticalCase.NOMINATIVE, GrammaticalNumber.SINGULAR)
-    assert vadj.getUrn().toString() == "urn:cite:morph:form.va000" 
+    assert vadj.getUrn().toString() == "urn:cite:gmorph:form.va000" 
   }
 }

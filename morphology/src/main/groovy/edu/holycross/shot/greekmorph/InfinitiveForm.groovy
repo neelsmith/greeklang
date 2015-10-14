@@ -10,11 +10,11 @@ import edu.harvard.chs.cite.CiteUrn
 class InfinitiveForm implements CitableForm {
 
   /** Infinitive verb forms are identified by predictable URNs in the
-  * urn:cite:morph:form collection.  The object ID is formed
+  * urn:cite:gmorph:form collection.  The object ID is formed
   * from the string "if" concatenated with digits for each of
   * the identifiers tense and voice.
   */
-  static String urnBase = "urn:cite:morph:form.if"
+  static String urnBase = "urn:cite:gmorph:form.if"
 
   /** Tense of the form. */
   Tense tense

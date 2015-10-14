@@ -14,6 +14,6 @@ class TestParticipleForm {
   @Test
   void testUrns() {
     ParticipleForm ptcpl =  new ParticipleForm(Tense.PRESENT, Voice.ACTIVE, Gender.MASCULINE, GrammaticalCase.NOMINATIVE, GrammaticalNumber.SINGULAR)
-    assert ptcpl.getUrn().toString() == "urn:cite:morph:form.pc00000"
+    assert ptcpl.getUrn().toString() == "urn:cite:gmorph:form.pc00000"
   }
 }

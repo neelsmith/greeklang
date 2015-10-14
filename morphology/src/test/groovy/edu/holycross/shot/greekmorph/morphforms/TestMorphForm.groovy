@@ -20,7 +20,7 @@ class TestMorphForm {
   void testUrns() {
     AdverbForm advForm =  new AdverbForm(Degree.POSITIVE)
     MorphForm mf = new MorphForm(AnalyticalType.ADVERB, advForm)
-    assert mf.urnForForm().toString() == "urn:cite:morph:form.av0"
+    assert mf.urnForForm().toString() == "urn:cite:gmorph:form.av0"
   }
 
 }

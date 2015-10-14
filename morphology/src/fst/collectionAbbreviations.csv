@@ -1,6 +1,6 @@
 CollectionId,CollectionUrn,Label
 lexent,urn:cite:shot:lexent,"Greek lexical entities."
-w_indicative,urn:cite:morph:w_indicative,"Inflectional patterns for indicative of omega verbs"
-w_subjunctive,urn:cite:morph:w_subjunctive,"Inflectional patterns for subjunctive of omega verbs"
-w_optative,urn:cite:morph:w_optative,"Inflectional patterns for optative of omega verbs"
-w_imperative,urn:cite:morph:w_imperative,"Inflectional patterns for imperative of omega verbs"
+w_indicative,urn:cite:gmorph:w_indicative,"Inflectional patterns for indicative of omega verbs"
+w_subjunctive,urn:cite:gmorph:w_subjunctive,"Inflectional patterns for subjunctive of omega verbs"
+w_optative,urn:cite:gmorph:w_optative,"Inflectional patterns for optative of omega verbs"
+w_imperative,urn:cite:gmorph:w_imperative,"Inflectional patterns for imperative of omega verbs"
