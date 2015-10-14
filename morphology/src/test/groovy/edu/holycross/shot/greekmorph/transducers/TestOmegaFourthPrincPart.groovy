@@ -20,19 +20,26 @@ class TestOmegaFourthPrincPart {
   // Maps submitted FST string to expected value of morphform.toString()
   def testTransducers = [
   "<coretests.n64316_0><lexent.n64316><#>leluk<verb><w_regular>::<w_regular><w_indicative.43>a<1st><sg><pft><indic><act>":
-  ["conjugated verb: first person singular perfect indicative active"]
+  ["conjugated verb: first person singular perfect indicative active"],
+
+  "<coretests.n64316_0><lexent.n64316><#>e<sm>leluk<verb><w_regular>::<w_regular><w_indicative.55>h<1st><sg><plupft><indic><act>":
+    ["conjugated verb: first person singular pluperfect indicative active"]
 
   ]
 
   def testFstStrings = [
   "leluka":
-  ["conjugated verb: first person singular perfect indicative active"]
-  ]
+  ["conjugated verb: first person singular perfect indicative active"],
+  "e<sm>lelukh":
+  ["conjugated verb: first person singular pluperfect indicative active"]
+]
 
 
   def testUnicodeInput = [
   "λέλυκα":
-  ["conjugated verb: first person singular perfect indicative active"]
+  ["conjugated verb: first person singular perfect indicative active"],
+  "ἐλελύκη":
+  ["conjugated verb: first person singular pluperfect indicative active"]
   ]
 
   /** Runs a given command a returns a list with FST strings for each analysis.
