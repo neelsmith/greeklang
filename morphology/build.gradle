@@ -116,7 +116,45 @@ task cpRules (type: Copy) {
 }
 
 
-task cpStems (type: Copy) {
+task buildStems() {
+  description = "Builds .fst files from tabular source in stems_lexicon"
+}
+buildStems.doLast {
+  System.err.println "buildStems not yet implemented."
+  System.err.println "Looking for cp.  Here's runtime: "  //sourceSets.main.runtimeClasspath.getFiles().each {
+    //System.err.println  it
+  //}
+  sourceSets {
+
+          main {
+
+              println "java.srcDirs = ${java.srcDirs}"
+
+              println "resources.srcDirs = ${resources.srcDirs}"
+
+              println "java.files = ${java.files.name}"
+
+              println "allJava.files = ${allJava.files.name}"
+
+              println "resources.files = ${resources.files.name}"
+
+              println "allSource.files = ${allSource.files.name}"
+
+              println "output.classesDir = ${output.classesDir}"
+
+              println "output.resourcesDir = ${output.resourcesDir}"
+
+              println "output.files = ${output.files}"
+
+          }
+
+      }
+
+
+}
+
+
+task cpStems (type: Copy, dependsOn: "buildStems") {
     description = "Filters adn copies directory with lexica of stems to build area."
     from ("stems") {
       include ('**/*.fst')
