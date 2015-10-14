@@ -87,6 +87,7 @@ class TestOmegaSecondPrincPart {
       } else {
 
         // PROTECT SEMANTIC TAGS
+
         FstAnalysisParser fsp = new FstAnalysisParser(l, urnManager)
         MorphForm morphForm = fsp.getMorphForm()
         //AnalysisExplanation explanation = fsp.getExplanation()
