@@ -29,5 +29,4 @@ $2nd_3rd_pp$ = {[#=ltr#]}:{[#=ltr#]s} ^-> ([#urn#]+[#stemchars#]+ __ [#vowelquan
 $2nd_3rd_pp$
 
 
-%%% SUCCEEDED running directly from .a file before making multichar for smooth breathing ie using ")"
-% <coretests.n64316_0><lexent.n64316>a<smooth>na<#>lu<long><verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><fut><indic><act>
+% <coretests.n64316_0><lexent.n64316>a<sm>na<#>lu<lo><verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><fut><indic><act>
