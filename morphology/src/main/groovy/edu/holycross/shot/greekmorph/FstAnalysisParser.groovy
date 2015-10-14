@@ -59,7 +59,7 @@ class FstAnalysisParser {
   /** Inflectional part of surface string */
   String surfaceInflection
 
-
+  static ArrayList editorialTags = ["<#>", "<lo>", "<sh>", "<ro>", "<sm>"]
 
   /** Constructor builds an object representation of information in a morphological
   * analysis from an FST analysis string.
@@ -102,6 +102,22 @@ class FstAnalysisParser {
        // in tag 2.
        //
        // analysisPattern must be defined before invoking computeMorphForm()
+
+       // Need to read past editorial symbols:
+
+       boolean posFound = false
+       Integer idx = 2
+       while ((idx < stemTags.size()) && (! posFound)) {
+         if (editorialTags.contains(stemTags[idx])) {
+           idx++
+         } else {
+           analysisPattern = AnalyticalType.getByToken(stemTags[idx])
+           posFound = true
+         }
+
+       }
+
+       /*
       if (stemTags[2] != "<#>") {
         analysisPattern = AnalyticalType.getByToken(stemTags[2])
       } else {
@@ -110,13 +126,16 @@ class FstAnalysisParser {
         } else {
           analysisPattern = AnalyticalType.CVERB
         }
-      }
+      }*/
       morphForm = computeMorphForm()
 
       surfaceStem = stemString.replaceAll(semanticTags, "")
       surfaceInflection = inflectionString.replaceAll(semanticTags, "")
 
       // Example of conjugated verb:  "<coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>"
+      // Example of compound form with quantity symbol:
+      //  "<coretests.n6949_0><lexent.n6949>a<sm>na<#>lus<lo><verb><w_regular>
+      // ::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>"
   }
 
 
