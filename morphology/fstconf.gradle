@@ -8,4 +8,5 @@ ext {
   installdir = "/usr/local"
   stemsdir = "data/stems-fst"
   rulesdir = "data/rules-fst"
+  stemssrcdir = "data/stems-lexica"
 }
