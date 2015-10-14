@@ -27,10 +27,6 @@ public enum AnalyticalType {
 
   private String fstToken
   private String label
-  private AnalyticalType(String label, String token) {
-    this.fstToken = token
-    this.label = label
-  }
 
 
   /** Map of symbols used in FST to enumerated value. */
@@ -41,6 +37,11 @@ public enum AnalyticalType {
       codeMap.put(atype.fstToken, atype)
     }
   }
+  private AnalyticalType(String label, String token) {
+    this.fstToken = token
+    this.label = label
+  }
+
 
   /** Gets the enumerated value identified
   * by a FST token.
@@ -59,6 +60,11 @@ public enum AnalyticalType {
 
   /** Gets a human-readable label for this value. */
   public String getLabel() {
+    return label
+  }
+
+  /** Gets a human-readable label for this value. */
+  public String toString() {
     return label
   }
 

@@ -22,6 +22,7 @@ class TestAnalyticalTypeEnum {
     println AnalyticalType.codeMap
     def verbType = AnalyticalType.getByToken("<verb>")
     assert verbType.getLabel() == "conjugated verb"
+    assert verbType.toString() == verbType.getLabel()
 
   }
 
