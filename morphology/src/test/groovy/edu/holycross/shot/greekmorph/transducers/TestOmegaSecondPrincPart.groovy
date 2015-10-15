@@ -28,7 +28,10 @@ class TestOmegaSecondPrincPart {
   ],
 
   "<coretests.n6949_0><lexent.n6949>a<sm>na<#>lus<lo><verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><fut><indic><act>" :
-  ["conjugated verb: first person singular future indicative active"]
+  ["conjugated verb: first person singular future indicative active"],
+
+  "<coretests.n6949_0><lexent.n6949>a<sm>na<#>lu<lo><verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>" :
+  ["conjugated verb: first person singular present indicative active"]
 
   ]
 
@@ -44,7 +47,7 @@ class TestOmegaSecondPrincPart {
   "conjugated verb: first person singular aorist indicative active"
   ],
 
-  "a<sm>na<#>lusw":
+  "a<sm>nalusw":
   ["conjugated verb: first person singular future indicative active",
   "conjugated verb: first person singular aorist subjunctive active"]
 
