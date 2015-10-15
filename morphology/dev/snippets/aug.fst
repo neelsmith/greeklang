@@ -17,8 +17,8 @@ $augmented$ = {[#=ltr#]}:{e<sm>[#=ltr#]} ^-> ([#urn#]+[#stemchars#]*<#> __ [#ste
 
 $augmented$
 
-// Wrong b/c it doesn't check for consonant following;
-//<coretests.n6949_0><lexent.n6949>a<sm>na<#>e<sm>lu<lo><verb><w_regular>::<w_regular><w_indicative.14>es<2nd><sg><impft><indic><act>
+% Wrong b/c it doesn't check for consonant following;
+%<coretests.n6949_0><lexent.n6949>a<sm>na<#>e<sm>lu<lo><verb><w_regular>::<w_regular><w_indicative.14>es<2nd><sg><impft><indic><act>
 
 
 %%% EXAMPLES

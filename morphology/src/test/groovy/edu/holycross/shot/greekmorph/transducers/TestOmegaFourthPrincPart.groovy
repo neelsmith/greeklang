@@ -5,7 +5,6 @@ import edu.holycross.shot.greekutils.GreekString
 import org.junit.Test
 import static groovy.test.GroovyAssert.shouldFail
 
-// add: λύσωμαι λύσοιμι λυσοίμην λύσαιμι λυσαίμην
 
 /** Tests transducer in acceptors/verb.a for hanlding
 * of formation of second princ part of omega verbs
@@ -22,9 +21,14 @@ class TestOmegaFourthPrincPart {
   "<coretests.n64316_0><lexent.n64316><#>leluk<verb><w_regular>::<w_regular><w_indicative.43>a<1st><sg><pft><indic><act>":
   ["conjugated verb: first person singular perfect indicative active"],
 
-  "<coretests.n64316_0><lexent.n64316><#>e<sm>leluk<verb><w_regular>::<w_regular><w_indicative.55>h<1st><sg><plupft><indic><act>":
+  // Note that augment on pluperfect is applied in subsequent transducer.
+  // Therefore need to test it separately lower-tier transducers and in
+  // verb.a where integration with augment changes the relation of
+  // generated to analysis.
+  /*
+  "<coretests.n64316_0><lexent.n64316><#>leluk<verb><w_regular>::<w_regular><w_indicative.55>h<1st><sg><plupft><indic><act>":
     ["conjugated verb: first person singular pluperfect indicative active"]
-
+    */
   ]
 
   def testFstStrings = [
@@ -78,7 +82,7 @@ class TestOmegaFourthPrincPart {
       ]
       transducers.each { t ->
         String cmd = "${fstinfl} ${t} ${testFile}"
-        System.err.println "Testing second princ part on ${t}"
+        System.err.println "Testing fourth-fifth princ parts on ${t}"
         testTransducers.each { wd ->
           testFile.setText(wd.key)
           def actualReplies = getAnalysisStrings(cmd, umgr)
@@ -95,7 +99,7 @@ class TestOmegaFourthPrincPart {
 
       UrnManager umgr = new UrnManager(inflCsvSource)
       umgr.addCsvFile(lexCsvSource)
-      System.err.println "second princ part on ${parser}"
+      System.err.println "fourth-fifth princ parts on final ${parser}"
       testFstStrings.each { wd ->
         testFile.setText(wd.key)
         def actualReplies = getAnalysisStrings(cmd, umgr)
@@ -111,7 +115,7 @@ class TestOmegaFourthPrincPart {
 
       String fstBinary = "build/fst/greek.a"
       MorphologicalParser mp = new MorphologicalParser(fstBinary, umgr)
-      System.err.println "second princ part on Morphological parser configured wtih  ${fstBinary}"
+      System.err.println "testing fourth-fifth princ part on Morphological parser configured wtih  ${fstBinary}"
       testUnicodeInput.each { wd ->
         GreekString s = new GreekString(wd.key, "Unicode")
         MorphologicalAnalysis morph = mp.parseGreekString(s)
