@@ -6,7 +6,7 @@ package edu.holycross.shot.greekmorph
 */
 class FstParser {
 
-  Integer debug = 1
+  Integer debug = 0
 
   /** Path to FST toolkit's fst-infl parser. */
   String FSTINFL = "/usr/bin/fst-infl"
