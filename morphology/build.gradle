@@ -2,9 +2,6 @@ import org.apache.tools.ant.filters.ReplaceTokens
 import org.apache.commons.io.FilenameUtils
 import edu.unc.epidoc.transcoder.TransCoder
 
-
-
-
 buildscript {
   repositories {
     mavenCentral()
@@ -97,6 +94,14 @@ String tagsFstStatement() {
 }
 
 
+String getStemUrns() {
+  return "<coretests.n64316_0><coretests.n6949_0><coretests.n81672_0><coretests.n88464_0><coretests.n87956_0><coretests.n786_0>"
+}
+
+String getLexEntUrns() {
+  return "<lexent.n47950><lexent.n71065><lexent.n19546><lexent.n50824><lexent.n67485><lexent.n84494><lexent.n64316><lexent.n6949><lexent.n81672><lexent.n88464><lexent.n87956><lexent.n786>"
+}
+
 task cpSrc (type: Copy) {
     description = "Filters and copies FST src directory to build area."
     from ("src/fst") {
@@ -110,7 +115,10 @@ task cpSrc (type: Copy) {
       "makelexica": lexiconMakeStatement(new File("${projectDir}/${stemsdir}")),
       "fstrules": rulesFstStatement(new File("${projectDir}/${rulesdir}")),
       "extramakerules": rulesMakeStatement(new File("${projectDir}/${rulesdir}")),
-      "extratags": tagsFstStatement()
+      "extratags": tagsFstStatement(),
+      "morphstem": getStemUrns(),
+      "lexicon": getLexEntUrns()
+
      ])
 }
 
