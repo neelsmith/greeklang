@@ -1,14 +1,10 @@
-% 4th_5th_pp.sft
+% Get these strings past pp6:
 %
-#include "@workdir@symbols.fst"
-
-% Tense/voice combinations for fourth-fifth principal parts
-%
-% For regular omega verbs,  reduplicate in all voices.
-% In perfect active, extend stem with kappa.
-% In pluperfect, augment is taken care of separately?
 %
 
+
+%%%%
+#include "../../build/fst/symbols.fst"
 
 #4th_5th_tense# = <pft><plupft>
 
@@ -41,4 +37,17 @@ $4th_5th_pp$ =   $kappa$ || $redupe$
 $4th_5th_pp$
 
 
-%<coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><fut><indic><act>
+
+
+
+
+%% Strings to test:
+%
+% Pass through a first part (unmodified stem):
+% <coretests.n6949_0><lexent.n6949>a<sm>na<#>lu<lo><verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>
+%
+% FOURTH AND FIFTH PARTS:
+%
+%<coretests.n64316_0><lexent.n64316><#>leluk<verb><w_regular>::<w_regular><w_indicative.43>a<1st><sg><pft><indic><act>
+%
+% <coretests.n6949_0><lexent.n6949>a<sm>na<#>leluk<verb><w_regular>::<w_regular><w_indicative.43>a<1st><sg><pft><indic><act>

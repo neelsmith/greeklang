@@ -51,6 +51,9 @@ class TestUnitTransducers {
 
     // map of input FST string to analyses:
     def secondPartDataMap = [
+    "<coretests.n6949_0><lexent.n6949>a<sm>na<#>lu<lo><verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>" :
+    ["conjugated verb: first person singular present indicative active"],
+
     "<coretests.n64316_0><lexent.n64316><#>lus<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><fut><indic><act>": [
       "conjugated verb: first person singular future indicative active"
     ],
@@ -64,6 +67,7 @@ class TestUnitTransducers {
 
     ]
 
+    System.err.println "Testing transducer for 2nd pp:"
     // analyze each entry in data map:
     secondPartDataMap.each { wd ->
       testFile.setText(wd.key)
@@ -87,6 +91,9 @@ class TestUnitTransducers {
 
     // map of input FST string to analyses:
     def sixthPartDataMap = [
+    "<coretests.n6949_0><lexent.n6949>a<sm>na<#>lu<lo><verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>" :
+    ["conjugated verb: first person singular present indicative active"],
+
     "<coretests.n64316_0><lexent.n64316><#>luq<verb><w_regular>::<w_regular><w_indicative.67>hsomai<1st><sg><fut><indic><pass>":
     ["conjugated verb: first person singular future indicative passive"],
 
@@ -94,7 +101,7 @@ class TestUnitTransducers {
     ["conjugated verb: first person singular future indicative passive"]
 
     ]
-
+    System.err.println "Testing transducer for 6th pp:"
     // analyze each entry in data map:
     sixthPartDataMap.each { wd ->
       testFile.setText(wd.key)
@@ -104,5 +111,34 @@ class TestUnitTransducers {
     }
   }
 
+
+
+  /** Tests forms built on second and third principal part. */
+  @Test
+  void testFourthPart() {
+    String transducer =   "build/fst/acceptors/verb/4th_5th_pp.a"
+    String cmd = "${fstinfl} ${transducer} ${testFile}"
+    UrnManager umgr = new UrnManager(inflCsvSource)
+    umgr.addCsvFile(lexCsvSource)
+
+
+    // map of input FST string to analyses:
+    def fourthPartDataMap = [
+    "<coretests.n6949_0><lexent.n6949>a<sm>na<#>lu<lo><verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>" :
+    ["conjugated verb: first person singular present indicative active"],
+
+    "<coretests.n64316_0><lexent.n64316><#>leluk<verb><w_regular>::<w_regular><w_indicative.43>a<1st><sg><pft><indic><act>":
+    ["conjugated verb: first person singular perfect indicative active"]
+
+    ]
+    System.err.println "Testing transducer for 4th-5th pp:"
+    // analyze each entry in data map:
+    fourthPartDataMap.each { wd ->
+      testFile.setText(wd.key)
+      def actualReplies = getAnalysisStrings(cmd, umgr)
+      System.err.println "\tFor ${wd.key}, got \n${actualReplies}\n"
+      assert actualReplies as Set ==  wd.value as Set
+    }
+  }
 
 }

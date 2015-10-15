@@ -22,4 +22,4 @@ $2nd_3rd_pp$ = {[#=ltr#]}:{[#=ltr#]s} ^-> ([#urn#]+[#stemchars#]+ __ [#vowelquan
 $2nd_3rd_pp$
 
 
-% <coretests.n64316_0><lexent.n64316>a<sm>na<#>lu<lo><verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><fut><indic><act>
+%  <coretests.n64316_0><lexent.n64316>a<sm>na<#>lu<lo><verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><fut><indic><act>
