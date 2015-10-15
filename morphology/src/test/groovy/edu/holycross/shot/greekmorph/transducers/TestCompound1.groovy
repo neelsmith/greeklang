@@ -20,9 +20,9 @@ class TestCompound1 {
   // Maps submitted FST string to expected value of morphform.toString()
   def testTransducers = [
 
-  "<coretests.n64316_0><lexent.n64316><#>lus<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><fut><indic><act>": ["conjugated verb: first person singular future indicative active"],
+  "<coretests.n64316_0><lexent.n64316><#>lu<lo>s<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><fut><indic><act>": ["conjugated verb: first person singular future indicative active"],
 
-  "<coretests.n6949_0><lexent.n6949>a<sm>na<#>lus<lo><verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><fut><indic><act>" :
+  "<coretests.n6949_0><lexent.n6949>a<sm>na<#>lu<lo>s<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><fut><indic><act>" :
   ["conjugated verb: first person singular future indicative active"]
 
   ]

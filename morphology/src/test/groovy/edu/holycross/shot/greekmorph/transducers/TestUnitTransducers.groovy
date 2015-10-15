@@ -54,15 +54,15 @@ class TestUnitTransducers {
     "<coretests.n6949_0><lexent.n6949>a<sm>na<#>lu<lo><verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>" :
     ["conjugated verb: first person singular present indicative active"],
 
-    "<coretests.n64316_0><lexent.n64316><#>lus<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><fut><indic><act>": [
+    "<coretests.n64316_0><lexent.n64316><#>lu<lo>s<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><fut><indic><act>": [
       "conjugated verb: first person singular future indicative active"
     ],
 
-    "<coretests.n64316_0><lexent.n64316><#>lus<verb><w_regular>::<w_regular><w_indicative.7>omai<1st><sg><fut><indic><mid>": [
+    "<coretests.n64316_0><lexent.n64316><#>lu<lo>s<verb><w_regular>::<w_regular><w_indicative.7>omai<1st><sg><fut><indic><mid>": [
       "conjugated verb: first person singular future indicative middle"
     ],
 
-    "<coretests.n6949_0><lexent.n6949>a<sm>na<#>lus<lo><verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><fut><indic><act>" :
+    "<coretests.n6949_0><lexent.n6949>a<sm>na<#>lu<lo>s<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><fut><indic><act>" :
     ["conjugated verb: first person singular future indicative active"]
 
     ]

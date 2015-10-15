@@ -26,6 +26,7 @@ $character$ = [#character#]
 
 % All valid chars used in stem file:
 #stemchars# = #character# #editorial#
+#inmorpheme# = #character# #vowelquant# #persistacc#
 
 % Other:
 #separator# = \:

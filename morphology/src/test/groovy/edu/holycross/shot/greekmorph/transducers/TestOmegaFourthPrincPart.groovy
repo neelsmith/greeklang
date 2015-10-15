@@ -18,8 +18,8 @@ class TestOmegaFourthPrincPart {
 
   // Maps submitted FST string to expected value of morphform.toString()
   def testTransducers = [
-  "<coretests.n64316_0><lexent.n64316><#>leluk<verb><w_regular>::<w_regular><w_indicative.43>a<1st><sg><pft><indic><act>":
-  ["conjugated verb: first person singular perfect indicative active"],
+  "<coretests.n64316_0><lexent.n64316><#>lelu<lo>k<verb><w_regular>::<w_regular><w_indicative.43>a<1st><sg><pft><indic><act>":
+  ["conjugated verb: first person singular perfect indicative active"]
 
   // Note that augment on pluperfect is applied in subsequent transducer.
   // Therefore need to test it separately lower-tier transducers and in

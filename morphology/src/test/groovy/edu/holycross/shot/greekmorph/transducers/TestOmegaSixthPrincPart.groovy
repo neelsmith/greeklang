@@ -19,10 +19,10 @@ class TestOmegaSixthPrincPart {
 
   // Maps submitted FST string to expected value of morphform.toString()
   def testTransducers = [
-  "<coretests.n64316_0><lexent.n64316><#>luq<verb><w_regular>::<w_regular><w_indicative.67>hsomai<1st><sg><fut><indic><pass>":
+  "<coretests.n64316_0><lexent.n64316><#>lu<lo>q<verb><w_regular>::<w_regular><w_indicative.67>hsomai<1st><sg><fut><indic><pass>":
   ["conjugated verb: first person singular future indicative passive"],
 
-  "<coretests.n64316_0><lexent.n64316><#>e<sm>luq<verb><w_regular>::<w_regular><w_indicative.37>hn<1st><sg><aor><indic><pass>":
+  "<coretests.n64316_0><lexent.n64316><#>e<sm>lu<lo>q<verb><w_regular>::<w_regular><w_indicative.37>hn<1st><sg><aor><indic><pass>":
   ["conjugated verb: first person singular aorist indicative passive"]
 
   ]
