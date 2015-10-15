@@ -1,42 +1,30 @@
-% princpart.fst
-% How to use a "replace" construction with the ^-> operator
 %
 
-
-
-
-#ltr# = a-z
-#urn# = <n64316>
-#tag# = <pres><impft><aor><pft><plupft><fut><futpft>
-#smooth# =  \)
-#rough# = \(
-#breathing# = #smooth# #rough#
+#include "../../build/fst/symbols.fst"
 
 #augmenttense# = <aor><impft><plupft>
-#not_augmented# = <pres><fut><pft><futpft>
-
-#tense# = #tag#
 
 
-%%%%%%%%%%%%%%%%%%%% Handle augment as needed %%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Use an agreement variable to expand stem with augment
-% when followed by tag for augmenting tense
+%%%%% Add augment %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 #=ltr# = a-z
-ALPHABET = [#ltr#] [#tag#] [#urn#] [#breathing#]
-$augmented$ = {[#=ltr#]}:{e\)[#=ltr#]} ^-> ([#urn#] __ [a-z]+ [#augmenttense#])
-
-% Pass other tenses through unchanged.
-ALPHABET = [#ltr#] [#breathing#][#tag#] [#urn#]
-$unaugmented$ = [#urn#] [#ltr#]+ [#not_augmented#]
-
-$augment$ = ($augmented$ | $unaugmented$)
+ALPHABET = [#letter#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extratag#] [#vowelquant#]
+$augmented$ = {[#=ltr#]}:{e<sm>[#=ltr#]} ^-> ([#urn#]+[#stemchars#]*<#> __ [#stemchars#]+<verb><w_regular>[#extratag#]*[\:]+<w_regular>[#urn#][#letter#]*[#person#][#number#][#augmenttense#]<indic>[#voice#])
 
 
-% Format for final display:
-ALPHABET = [#ltr#] [#breathing#] [#tag#]:<> [#urn#]:<>
-$striptag$ = .*
 
 
-$toylexicon$ = <n64316>lu[#tense#]
-$toylexicon$  || $augment$ || $striptag$
+
+$augmented$
+
+// Wrong b/c it doesn't check for consonant following;
+//<coretests.n6949_0><lexent.n6949>a<sm>na<#>e<sm>lu<lo><verb><w_regular>::<w_regular><w_indicative.14>es<2nd><sg><impft><indic><act>
+
+
+%%% EXAMPLES
+% First-part to pass through unchanged
+%<coretests.n6949_0><lexent.n6949>a<sm>na<#>lu<lo><verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>
+%
+% AUGMENTED
+%
+%<coretests.n64316_0><lexent.n64316><#>e<sm>lu<verb><w_regular>::<w_regular><w_indicative.14>es<2nd><sg><impft><indic><act>
