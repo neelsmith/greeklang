@@ -84,11 +84,13 @@ class TestOmegaFirstPrincPart {
     ]
     def transducerspassing = ["build/fst/acceptors/verb.a"]
     transducers.each { t ->
+      System.err.println "Testing first princ part with ${t}"
       String cmd = "${fstinfl} ${t} ${testFile}"
       testMap.each { wd ->
       testFile.setText(wd.key)
       def actualReplies = getAnalysisStrings(cmd, umgr)
-        assert actualReplies as Set ==  wd.value as Set
+      System.err.println "\tFor ${wd.key}, got \n${actualReplies}\n"
+      assert actualReplies as Set ==  wd.value as Set
       }
     }
 
