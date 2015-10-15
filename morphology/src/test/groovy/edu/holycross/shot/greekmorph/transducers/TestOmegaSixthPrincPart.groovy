@@ -76,8 +76,7 @@ class TestOmegaSixthPrincPart {
       "build/fst/acceptors/verb/6th_pp.a",
       "build/fst/acceptors/verb/w_princparts.a",
       "build/fst/acceptors/verb.a",
-      "build/fst/acceptor.a",
-      "build/fst/utils/rawaccepted.a"
+      "build/fst/acceptor.a"
       ]
       transducers.each { t ->
         String cmd = "${fstinfl} ${t} ${testFile}"

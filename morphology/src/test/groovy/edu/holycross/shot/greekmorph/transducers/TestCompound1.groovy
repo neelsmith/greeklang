@@ -19,7 +19,7 @@ class TestCompound1 {
   // Maps submitted FST string to expected value of morphform.toString()
   def testTransducers = [
   "<coretests.n64316_0><lexent.n64316><#>lu<lo>s<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><fut><indic><act>": [ "conjugated verb: first person singular future indicative active"],
-  
+
   "<coretests.n64316_0><lexent.n64316><#>lu<lo>s<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><fut><indic><act>": ["conjugated verb: first person singular future indicative active"],
 
   "<coretests.n6949_0><lexent.n6949>a<sm>na<#>lu<lo>s<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><fut><indic><act>" :
@@ -72,8 +72,7 @@ class TestCompound1 {
         "build/fst/acceptors/verb/2nd_3rd_pp.a",
       "build/fst/acceptors/verb/w_princparts.a",
       "build/fst/acceptors/verb.a",
-      "build/fst/acceptor.a",
-      "build/fst/utils/rawaccepted.a"
+      "build/fst/acceptor.a"
       ]
       transducers.each { t ->
         String cmd = "${fstinfl} ${t} ${testFile}"
