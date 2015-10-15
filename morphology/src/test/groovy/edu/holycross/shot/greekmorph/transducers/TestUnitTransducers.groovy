@@ -80,7 +80,7 @@ class TestUnitTransducers {
 
 
 
-  /** Tests forms built on second and third principal part. */
+  /** Tests forms built on sixth principal part. */
   @Test
   void testSixthPart() {
     String transducer =   "build/fst/acceptors/verb/6th_pp.a"
@@ -113,7 +113,7 @@ class TestUnitTransducers {
 
 
 
-  /** Tests forms built on second and third principal part. */
+  /** Tests forms built on fourth and fifth principal part. */
   @Test
   void testFourthPart() {
     String transducer =   "build/fst/acceptors/verb/4th_5th_pp.a"
@@ -141,4 +141,32 @@ class TestUnitTransducers {
     }
   }
 
+
+  /** Tests forms built on second and third principal part. */
+  @Test
+  void testAugment() {
+    String transducer =   "build/fst/acceptors/verb/augment.a"
+    String cmd = "${fstinfl} ${transducer} ${testFile}"
+    UrnManager umgr = new UrnManager(inflCsvSource)
+    umgr.addCsvFile(lexCsvSource)
+
+
+    // map of input FST string to analyses:
+    def augmentDataMap = [
+    "<coretests.n6949_0><lexent.n6949>a<sm>na<#>lu<lo><verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>" :
+    ["conjugated verb: first person singular present indicative active"],
+
+    "<coretests.n64316_0><lexent.n64316><#>e<sm>lu<verb><w_regular>::<w_regular><w_indicative.14>es<2nd><sg><impft><indic><act>":
+    ["conjugated verb: second person singular imperfect indicative active"]
+
+    ]
+    System.err.println "Testing transducer for augment:"
+    // analyze each entry in data map:
+    augmentDataMap.each { wd ->
+      testFile.setText(wd.key)
+      def actualReplies = getAnalysisStrings(cmd, umgr)
+      System.err.println "\tFor ${wd.key}, got \n${actualReplies}\n"
+      assert actualReplies as Set ==  wd.value as Set
+    }
+  }
 }

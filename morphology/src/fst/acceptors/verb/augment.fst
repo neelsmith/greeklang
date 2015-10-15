@@ -8,15 +8,15 @@
 
 #augmenttense# = <aor><impft><plupft>
 
+
+%%%%% Add augment %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 #=ltr# = a-z
-ALPHABET = [#letter#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extratag#]
-$augmented$ = {[#=ltr#]}:{e<sm>[#=ltr#]} ^-> (<#> __ [#letter#]+<verb><w_regular>[#extratag#]*\:\:<w_regular>[#urn#][#letter#]*[#person#][#number#][#augmenttense#]<indic>)
+ALPHABET = [#letter#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extratag#] [#vowelquant#]
+$augmented$ = {[#=ltr#]}:{e<sm>[#=ltr#]} ^-> ([#urn#]+[#stemchars#]*<#> __ [#stemchars#]+<verb><w_regular>[#extratag#]*[\:]+<w_regular>[#urn#][#letter#]*[#person#][#number#][#augmenttense#]<indic>[#voice#])
+
 
  $augmented$
-
-% Model to process
-%<coretests.n64316_0><lexent.n64316>a<sm>na<#>lu<lo><verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><fut><indic><act>
-
 
 
 %% Account for these VC patterns:
