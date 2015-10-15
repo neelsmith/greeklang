@@ -6,7 +6,10 @@
 %
 % For morphological categories, we're only ever working with individual values or
 % sets of values we construct on the fly, I think.
-%s
+%
+% We also work with URNs for forms, but these are deterministcally generated on the fly
+% when the FST analysis string is parsed, and not part of the FST analysis string.
+%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
