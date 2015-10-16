@@ -1,13 +1,14 @@
 package edu.holycross.shot.greekmorph
 
 import edu.holycross.shot.greekutils.GreekString
+import edu.harvard.chs.cite.CiteUrn
+import edu.harvard.chs.cite.CtsUrn
 
-/**
 * A Greek morphological parser.
 */
 class MorphologicalParser {
 
-  Integer debug  = 1
+  Integer debug  = 0
 
   /** Implementation of accent-free Greek morphology
   * in a finite state transducer. */
@@ -60,5 +61,10 @@ class MorphologicalParser {
     }
     return( new MorphologicalAnalysis(gkStr, analysisList, explanationList))
   }
+
+  String toRdf(GreekString gkStr, CtsUrn ctsUrn) {
+
+  }
+
 
 }
