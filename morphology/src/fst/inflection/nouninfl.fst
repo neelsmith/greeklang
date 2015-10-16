@@ -46,15 +46,15 @@ $decl2noun_ending$ = $os_ou_ending$
 %
 % Third declension patterns:
 %
-$is_ios_ending$ = <is_ios> (is[<masc><fem>]<nom><sg><abburn>is_ios.1</abburn> |\
-  ios[<masc><fem>]<gen><sg><abburn>is_ios.2</abburn> |\
-  i[<masc><fem>]<dat><sg><abburn>is_ios.3</abburn> |\
-  in[<masc><fem>]<acc><sg><abburn>is_ios.4</abburn> |\
-  i[<masc><fem>]<voc><sg><abburn>is_ios.5</abburn> |\
-  ies[<masc><fem>]<nom><pl><abburn>is_ios.6</abburn> |\
-  iwn[<masc><fem>]<gen><pl><abburn>is_ios.7</abburn> |\
-  isi[<masc><fem>]<dat><pl><abburn>is_ios.8</abburn> |\
-  ies[<masc><fem>]<acc><pl><abburn>is_ios.9</abburn> \
+$is_ios_ending$ = <is_ios> (is[<masc><fem>]<nom><sg><abburn>is_ios\.1</abburn> |\
+  ios[<masc><fem>]<gen><sg><abburn>is_ios\.2</abburn> |\
+  i[<masc><fem>]<dat><sg><abburn>is_ios\.3</abburn> |\
+  in[<masc><fem>]<acc><sg><abburn>is_ios\.4</abburn> |\
+  i[<masc><fem>]<voc><sg><abburn>is_ios\.5</abburn> |\
+  ies[<masc><fem>]<nom><pl><abburn>is_ios\.6</abburn> |\
+  iwn[<masc><fem>]<gen><pl><abburn>is_ios\.7</abburn> |\
+  isi[<masc><fem>]<dat><pl><abburn>is_ios\.8</abburn> |\
+  ies[<masc><fem>]<acc><pl><abburn>is_ios\.9</abburn> \
 )
 
 

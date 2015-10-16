@@ -28,6 +28,13 @@ $character$ = [#character#]
 #stemchars# = #character# #editorial#
 #inmorpheme# = #character# #vowelquant# #persistacc#
 
-% Other:
+% Other editorial tags:
 #separator# = \:
 $separator$ = [#separator#]
+
+% URNs:
+#urnchar# = a-z 0-9 _
+#urntag# = <abburn> </abburn>
+#period# = \.
+
+$period$ = [#period#]
