@@ -18,7 +18,7 @@ class TestNouns {
 
   // Maps submitted FST string to expected value of morphform.toString()
   def testTransducers = [
-  "<u>coretests.n67485_0</u><u>lexent.n67485</u>mhn<noun><fem><is_ios>::<is_ios>is<fem><nom><sg><u>is_ios.1</u>": [
+  "<u>coretests.n67485_0</u><u>lexent.n67485</u>mhn<noun><fem><is_ios>::<u>is_ios.1</u><is_ios>is<fem><nom><sg>": [
     "conjugated verb: first person singular future indicative active"
   ]
   ]
