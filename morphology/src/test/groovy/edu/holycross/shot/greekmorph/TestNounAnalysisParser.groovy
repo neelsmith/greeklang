@@ -18,20 +18,24 @@ class TestNounAnalysisParser {
 
 
     FstAnalysisParser fap = new FstAnalysisParser(noun, umgr)
+
+
+    // Analysis type, lexical entity and form:
     assert fap.analysisPattern == AnalyticalType.NOUN
-    /*
-    assert fap.explanation.stem.toString() ==  "urn:cite:gmorph:coretests.n64316_0"
-    assert fap.explanation.inflection.toString() ==  "urn:cite:gmorph:w_indicative.1"
-    assert fap.lexicalEntity.toString() == "urn:cite:shot:lexent.n64316"
-
+    assert fap.lexicalEntity.toString() == "urn:cite:shot:lexent.n67485"
     MorphForm mf = fap.getMorphForm()
-    assert mf.toString() == "conjugated verb: first person singular present indicative active"
+    assert mf.toString() == "noun: feminine nominative singular"
+
+    // Explanations for analysis:
+    assert fap.explanation.stem.toString() ==  "urn:cite:gmorph:coretests.n67485_0"
+    assert fap.explanation.inflection.toString() ==  "urn:cite:gmorph:nouninfl.is_ios1"
+
+    // Surface representation of stem-ending
+    assert fap.getSurfaceStem() == "mhn"
+    assert fap.getSurfaceInflection() == "is"
+    assert fap.getSurface() == "mhn-is"
 
 
-    assert fap.getSurfaceStem() == "<#>lu"
-    assert fap.getSurfaceInflection() == "w"
-    assert fap.getSurface() == "lu-w"
-*/
   }
 
 }
