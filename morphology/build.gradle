@@ -163,7 +163,7 @@ exploreSource.doLast {
 
 
 task cpStems (type: Copy, dependsOn: "buildStems") {
-    description = "Filters adn copies directory with lexica of stems to build area."
+    description = "Filters and copies directory with lexica of stems to build area."
     from ("${projectDir}/${stemsdir}") {
       include ('**/*.fst')
     }
