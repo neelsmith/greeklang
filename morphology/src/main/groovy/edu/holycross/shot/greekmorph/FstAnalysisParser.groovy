@@ -25,6 +25,9 @@ class FstAnalysisParser {
   * add accent.  */
   java.util.regex.Pattern semanticTags = ~/<[a-z0-9_\.]+>/
 
+  /** Regex pattern for URN values wrapped in <u>..</u> symbols in FST string */
+  java.util.regex.Pattern urnTags = ~/<u>[^<]+<\/u>/
+
   /// The two halves of the FST output string:
   /** Stem component of FST analysis string.*/
   String stemString
@@ -77,12 +80,22 @@ class FstAnalysisParser {
         System.err.println "FstAP: Analyzing " + analysisStr
         System.err.println "Preparing to compute parts with\t stemstr ${stemString}\n\tinfl string ${inflectionString}"
       }
+
+      // Before doing this, extract URNs from stem.
+      //STEM: <u>coretests.n67485_0</u><u>lexent.n67485</u>mhn<noun><fem><is_ios>
+      //NOUNINFL: <is_ios>is<fem><nom><sg><u>is_ios.1</u>
+      def stemUrns = stemString.findAll(urnTags)
+      //  check size ...
+      String stemAbbrUrn = stemUrns[0].replaceFirst('<u>',"").replaceFirst('</u>',"")
+      String inflAbbrUrn = stemUrns[1].replaceFirst('<u>',"").replaceFirst('</u>',"")
+
+      stemUrns = stemString.findAll(urnTags)
       // check that strings are not null before doing findAll
       stemTags = stemString.findAll(allTags)
       inflTags = inflectionString.findAll(allTags)
 
-      String stemUrnStr = resolveUrn(stemTags[0])
-      String lexEntUrnStr = resolveUrn(stemTags[1])
+      String stemUrnStr = resolveUrn(stemAbbrUrn)
+      String lexEntUrnStr = resolveUrn(inflAbbrUrn)
       String inflUrnStr = resolveUrn(inflTags[1])
 
        if (debug > 0 ) {
@@ -110,9 +123,11 @@ class FstAnalysisParser {
        while ((idx < stemTags.size()) && (! posFound)) {
          if (editorialTags.contains(stemTags[idx])) {
            idx++
-         } else {
+         } else if (stemTags[idx] == "<noun>") {
            analysisPattern = AnalyticalType.getByToken(stemTags[idx])
            posFound = true
+         } else {
+           //...
          }
 
        }
