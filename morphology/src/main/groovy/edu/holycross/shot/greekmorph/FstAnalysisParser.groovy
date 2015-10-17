@@ -13,7 +13,7 @@ import edu.harvard.chs.cite.CiteUrn
 */
 class FstAnalysisParser {
 
-  Integer debug = 0
+  Integer debug = 1
 
   /** UrnManager expands collection abbreviations to full CITE URNs. */
   UrnManager urnMgr
