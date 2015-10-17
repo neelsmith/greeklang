@@ -34,7 +34,7 @@ $separator$ = [#separator#]
 
 % URNs:
 #urnchar# = a-z 0-9 _
-#urntag# = <abburn> </abburn>
+#urntag# = <u> </u>
 #period# = \.
 
 $period$ = [#period#]

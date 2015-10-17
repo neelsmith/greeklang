@@ -5,33 +5,27 @@
 
 
 % TARGET LEXICON ENTRY:
-%  <abburn>coretests.n67485_0</abburn><abburn>lexent.n67485</abburn>mhn<noun><fem><is_ios>::<is_ios>is<fem><nom><sg><abburn>is_ios.1</abburn>
+%  <u>coretests.n67485_0</u><u>lexent.n67485</u>mhn<noun><fem><is_ios>::<is_ios>is<fem><nom><sg><u>is_ios.1</u>
 %
 %% As variable with protected chars:
-$target$ = <abburn>coretests\.n67485_0</abburn><abburn>lexent\.n67485</abburn>mhn<noun><fem><is_ios>\:\:<is_ios>is<fem><nom><sg><abburn>is_ios\.1</abburn>
+$target$ = <u>coretests\.n67485_0</u><u>lexent\.n67485</u>mhn<noun><fem><is_ios>\:\:<is_ios>is<fem><nom><sg><u>is_ios\.1</u>
 
 
 
 
-%
-%%%%%%%%%%%%%%%%%%% ADD THESE TO GLOBAL SYMBOLS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-#urnchar# = a-z 0-9 _
-#urntag# = <abburn> </abburn>
-#period# = \.
 
-$period$ = [#period#]
 
 %
 %%%%%%%%%%%%%%%%%%%%%%%% NOUN ACCEPTOR %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 $=nounclass$ = [#nounclass#]
-$noun$ = <abburn>[#urnchar#]+ [#period#] [#urnchar#]+</abburn><abburn>lexent[#period#][#urnchar#]+</abburn>[#stemchars#]+<noun>$=gender$ $=nounclass$ $separator$+ $=nounclass$ [#stemchars#]* $=gender$ $case$ $number$ <abburn>[#urnchar#]+[#period#][#urnchar#]+</abburn>
+$noun$ = <u>[#urnchar#]+ [#period#] [#urnchar#]+</u><u>lexent[#period#][#urnchar#]+</u>[#stemchars#]+<noun>$=gender$ $=nounclass$ $separator$+ $=nounclass$ [#stemchars#]* $=gender$ $case$ $number$ <u>[#urnchar#]+[#period#][#urnchar#]+</u>
 
 
 %
 %%%%%%%%%%%%%%%%%%%% STRIP OUT VALUE STRINGS FROM URNS %%%%%%%%%%%%%%%%%%%%%%%%
 %
-$squashurn$ = <abburn>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</abburn> <abburn>{lexent}:<>\.:<>[#urnchar#]:<>+</abburn>[#stemchars#]+<noun>$=gender$ $=nounclass$  $separator$+ $=nounclass$ [#stemchars#]* $=gender$ $case$ $number$ <abburn>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</abburn>
+$squashurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+<noun>$=gender$ $=nounclass$  $separator$+ $=nounclass$ [#stemchars#]* $=gender$ $case$ $number$ <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u>
 
 %
 %%%%%%%%%%%%%%%%%%%% STRIP OUT ALL TAGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
