@@ -8,7 +8,10 @@
 % 2. ASCII representation of polytonic Greek
 #include "@workdir@symbols/phonology.fst"
 %
-% 3. Other data symbols:
+% 3. Editorial symbols
+#include "@workdir@symbols/markup.fst"
+%
+% 4. Other data symbols:
 % taxonomic tagging
 %#include "@workdir@extratags.fst"
 

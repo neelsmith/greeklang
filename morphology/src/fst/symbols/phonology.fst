@@ -27,14 +27,3 @@ $character$ = [#character#]
 % All valid chars used in stem file:
 #stemchars# = #character# #editorial#
 #inmorpheme# = #character# #vowelquant# #persistacc#
-
-% Other editorial tags:
-#separator# = \:
-$separator$ = [#separator#]
-
-% URNs:
-#urnchar# = a-z 0-9 _
-#urntag# = <u> </u>
-#period# = \.
-
-$period$ = [#period#]
