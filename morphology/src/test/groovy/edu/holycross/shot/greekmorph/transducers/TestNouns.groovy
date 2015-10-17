@@ -16,23 +16,28 @@ class TestNouns {
   File testFile = new File("build/testInput.txt")
 
 
+// OK IN inflections.a:
+// <is_ios><u>nouninfl.is_ios1</u>is<fem><nom><sg>
+
   // Maps submitted FST string to expected value of morphform.toString()
   def testTransducers = [
-  "<u>coretests.n67485_0</u><u>lexent.n67485</u>mhn<noun><fem><is_ios>::<u>is_ios.1</u><is_ios>is<fem><nom><sg>": [
-    "conjugated verb: first person singular future indicative active"
+  /*
+  "mhnin": [
+    "noun: feminine accusative singular"
   ]
+  */
   ]
 
   def testFstStrings = [
   "mhnin": [
-  "conjugated verb: first person singular future indicative active"
+  "noun: feminine accusative singular"
   ]
   ]
 
 
   def testUnicodeInput = [
   "μῆνιν": [
-  "conjugated verb: first person singular future indicative active"
+  "noun: feminine accusative singular"
   ]
   ]
 

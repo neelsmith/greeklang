@@ -189,13 +189,9 @@ class FstAnalysisParser {
 
       case AnalyticalType.NOUN:
       //NOUNINFL: <u>is_ios.1</u><is_ios>is<fem><nom><sg>
-      System.err.println "NOUN with infltags " + inflTags
       Gender gender = Gender.getByToken(inflTags[3])
-      System.err.println gender.toString()
       GrammaticalCase cas = GrammaticalCase.getByToken(inflTags[4])
-      System.err.println gender.toString()
       GrammaticalNumber num = GrammaticalNumber.getByToken(inflTags[5])
-      System.err.println gender.toString()
       NounForm noun = new NounForm(gender, cas, num)
       mf = new MorphForm(analysisPattern, noun)
       break
