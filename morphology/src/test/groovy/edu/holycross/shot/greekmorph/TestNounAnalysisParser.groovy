@@ -14,11 +14,10 @@ class TestNounAnalysisParser {
     // defines coretests collection:
     File lexCsvSource = new File("sampledata/urn-registries/datasets.csv")
     umgr.addCsvFile(lexCsvSource)
-    String noun = "<u>coretests.n67485_0</u><u>lexent.n67485</u>mhn<noun><fem><is_ios>::<is_ios>is<fem><nom><sg><u>is_ios.1</u>"
+    String noun = "<u>coretests.n67485_0</u><u>lexent.n67485</u>mhn<noun><fem><is_ios>::<u>nouninfl.is_ios1</u><is_ios>is<fem><nom><sg>"
 
 
     FstAnalysisParser fap = new FstAnalysisParser(noun, umgr)
-
     assert fap.analysisPattern == AnalyticalType.NOUN
     /*
     assert fap.explanation.stem.toString() ==  "urn:cite:gmorph:coretests.n64316_0"

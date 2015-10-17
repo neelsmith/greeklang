@@ -82,12 +82,14 @@ class FstAnalysisParser {
       }
 
       // Before doing this, extract URNs from stem.
-      //STEM: <u>coretests.n67485_0</u><u>lexent.n67485</u>mhn<noun><fem><is_ios>
-      //NOUNINFL: <is_ios>is<fem><nom><sg><u>is_ios.1</u>
+      //NOUNSTEM: <u>coretests.n67485_0</u><u>lexent.n67485</u>mhn<noun><fem><is_ios>
+      //NOUNINFL: <u>is_ios.1</u><is_ios>is<fem><nom><sg>
       def stemUrns = stemString.findAll(urnTags)
+      def inflUrns = inflectionString.findAll(urnTags)
       //  check size ...
       String stemAbbrUrn = stemUrns[0].replaceFirst('<u>',"").replaceFirst('</u>',"")
-      String inflAbbrUrn = stemUrns[1].replaceFirst('<u>',"").replaceFirst('</u>',"")
+      String lexEntAbbrUrn = stemUrns[1].replaceFirst('<u>',"").replaceFirst('</u>',"")
+      String inflAbbrUrn =  inflUrns[0].replaceFirst('<u>',"").replaceFirst('</u>',"")
 
       stemUrns = stemString.findAll(urnTags)
       // check that strings are not null before doing findAll
@@ -95,8 +97,8 @@ class FstAnalysisParser {
       inflTags = inflectionString.findAll(allTags)
 
       String stemUrnStr = resolveUrn(stemAbbrUrn)
-      String lexEntUrnStr = resolveUrn(inflAbbrUrn)
-      String inflUrnStr = resolveUrn(inflTags[1])
+      String lexEntUrnStr = resolveUrn(lexEntAbbrUrn)
+      String inflUrnStr = resolveUrn(inflAbbrUrn)
 
        if (debug > 0 ) {
          System.err.println "FstAP: analyze as URNs:"
@@ -105,11 +107,11 @@ class FstAnalysisParser {
          System.err.println "\tInfl urn str " + inflUrnStr
        }
 
-       lexicalEntity = new CiteUrn(lexEntUrnStr)
+       this.lexicalEntity = new CiteUrn(lexEntUrnStr)
+
        CiteUrn stem = new CiteUrn(stemUrnStr)
        CiteUrn inflectionalPattern  = new CiteUrn(inflUrnStr)
-
-       explanation = new AnalysisExplanation(stem, inflectionalPattern)
+       this.explanation = new AnalysisExplanation(stem, inflectionalPattern)
        // Verbs include a morpheme boundary marker <#>, and have
        // "part of speech" in tag 3.  Other types have part of speech
        // in tag 2.
@@ -128,6 +130,7 @@ class FstAnalysisParser {
            posFound = true
          } else {
            //...
+          idx++
          }
 
        }
@@ -193,6 +196,10 @@ class FstAnalysisParser {
       mf = new MorphForm(analysisPattern, verb)
       break
 
+
+      case AnalyticalType.NOUN:
+      System.err.println "ANALYTICAL TYPE IS NOUN"
+      break
       default:
       System.err.println "Unimplemented analytical type: " + analysisPattern
       break
