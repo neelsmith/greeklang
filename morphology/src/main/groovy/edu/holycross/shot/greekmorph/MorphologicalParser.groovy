@@ -4,7 +4,7 @@ import edu.holycross.shot.greekutils.GreekString
 import edu.harvard.chs.cite.CiteUrn
 import edu.harvard.chs.cite.CtsUrn
 
-* A Greek morphological parser.
+/** A Greek morphological parser.
 */
 class MorphologicalParser {
 
