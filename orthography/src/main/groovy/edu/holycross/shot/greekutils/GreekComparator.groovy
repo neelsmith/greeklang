@@ -4,9 +4,9 @@ import java.util.Comparator;
 
 /**
 * An implementation of the Comparator interface that sorts Greek Strings
-* in beta code according to the logic of Greek.
+* in ascii according to the logic of Greek.
 */
-public abstract class BetaComparator implements Comparator<String> {
+public abstract class GreekComparator implements Comparator<String> {
     /** Ordered map of beta-code alphabetic characters for use in comparator */
   static HashMap betaOrder = [ 0 : 'a',
 1: 'b',2:'g',3:'d',4:'e',5:'z',6:'h',7:'q',8:'i',9:'k',

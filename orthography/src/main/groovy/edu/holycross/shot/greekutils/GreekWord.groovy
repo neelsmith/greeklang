@@ -17,7 +17,7 @@ class GreekWord {
 
 
   /** The word in beta code form.*/
-  GreekString betaCodeWord
+  GreekString asciiWord
 
 
   /** Constructor verifies that
@@ -25,13 +25,13 @@ class GreekWord {
    * @param srcString Greek string, in beta code.
    * @throws Exception if not all characters in betaString are valid.
    */
-  GreekWord(String srcString) 
+  GreekWord(String srcString)
   throws Exception {
     Integer count = 0
-    this.betaCodeWord = new GreekString(srcString)
+    this.asciiWord = new GreekString(srcString)
   }
 
-  /**  Scans from a vowel within betaCodeWord to see how many 
+  /**  Scans from a vowel within asciiWord to see how many
    * further characters belong in the same syllable.
    * @param startFrom Index of character to start scanning from.
    * @returns Number of following characters belonging to the same
@@ -39,12 +39,12 @@ class GreekWord {
    * @throws Exception if the indexed starting character is not
    * a vowel.
    */
-  Integer countToInclude(Integer startFrom) 
+  Integer countToInclude(Integer startFrom)
   throws Exception {
-    return countToInclude(this.betaCodeWord.toString(), startFrom)
+    return countToInclude(this.asciiWord.toString(), startFrom)
   }
 
-  /**  Scans from a vowel within a word to see how many 
+  /**  Scans from a vowel within a word to see how many
    * further characters belong in the same syllable.
    * @param s The word to scan.
    * @param startFrom Index of character to start scanning from.
@@ -53,7 +53,7 @@ class GreekWord {
    * @throws Exception if the indexed starting character is not
    * a vowel.
    */
-  static Integer countToInclude(String s, Integer startFrom) 
+  static Integer countToInclude(String s, Integer startFrom)
   throws Exception {
     String startChar = s.substring(startFrom,startFrom + 1)
     if (! GreekString.isVowel(startChar)) {
@@ -110,7 +110,7 @@ class GreekWord {
 
 
 
-  /** Breaks up betaCodeWord into syllables.
+  /** Breaks up asciiWord into syllables.
    * Syllables must have a vowel, so we scan the string from left to
    * right,  and whenever we see a vowel, determine how many subsequent
    * characters belong to the same syllable.
@@ -118,7 +118,7 @@ class GreekWord {
    * @returns An ArrayList of beta-code strings, one per syllable.
    */
   ArrayList getSyllables() {
-    return getSyllables(this.betaCodeWord.toString())
+    return getSyllables(this.asciiWord.toString())
   }
 
 
@@ -149,7 +149,7 @@ class GreekWord {
 	//if (debugLevel > WARN) { println "append ${appendCount}, so appending  " + ch + " to get " + syllable }
 	appendCount--
 	//if (debugLevel > WARN) { println "Decrement appendcount  to " + appendCount}
-	
+
 
 	if (appendCount == 0) {
 	  syllables.add(syllable.toString())
@@ -175,7 +175,7 @@ class GreekWord {
 	  // so end of syll!
 	  syllables.add(syllable.toString())
 	  syllable.setLength(0)
-	  syllable.append(ch)	  
+	  syllable.append(ch)
 	  vowelSeen = false
 	}
       }
@@ -185,7 +185,7 @@ class GreekWord {
       count++
     }
 
-    // Add any left-over letters to end of 
+    // Add any left-over letters to end of
     // last syllable:
     if (syllable.toString().size() > 0 ) {
       if (GreekString.containsVowel(syllable)){
@@ -204,16 +204,16 @@ class GreekWord {
    * @returns Beta-code version of a Greek word.
    */
   String toString() {
-    return this.betaCodeWord.toString()
+    return this.asciiWord.toString()
   }
 
    String toString(boolean asUnicode) {
      if (asUnicode) {
-       GreekString s = new GreekString(this.betaCodeWord.toString())
+       GreekString s = new GreekString(this.asciiWord.toString())
        System.err.println ("GreekWord: Got ${s}, as uni = " + s.toString(asUnicode))
        return s.toString(asUnicode)
     } else {
-       return this.betaCodeWord.toString()
+       return this.asciiWord.toString()
     }
    }
 

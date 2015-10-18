@@ -7,7 +7,7 @@ import java.text.Normalizer.Form
 /**
  * A class for working with text in Greek.  Instances may
  * be initialized with any encoding of Greek that Hugh Cayless'
- * transcoder recognizes;  static methods expect beta code strings.
+ * transcoder recognizes;  static methods expect ascii strings.
  * Valid Greek characters are limited to the small set that can be
  * used to construct valid morphologically parseable lexical tokens, plus punctuation characters.
  * If your representation of Greek text includes other characaters, such
@@ -52,10 +52,10 @@ class GreekString {
   /** Immutable set of vowel quantity markers. */
   static quantity = ['_','^']
 
-  /** Diaeresis in beta code. */
+  /** Diaeresis in ascii. */
   static String diaeresis = "+"
 
-  /** Beta code marker for upper case. */
+  /** Ascii marker for upper case. */
   static String asterisk = "*"
 
   /** Pairs of vowels forming diphthongs. */
@@ -76,17 +76,17 @@ class GreekString {
   ]
 
 
-  /** The string in beta code form.*/
+  /** The string in ascii form.*/
   String greekString
 
   /** Constructor verifies that srcSring, supplied in an identified
    * system for encoding Greek, contains only valid characters
-   * for a GreekString's underlying beta-code representation.
-   * @param srcString Greek string, in beta code.
+   * for a GreekString's underlying ascii representation.
+   * @param srcString Greek string, in ascii.
    * @param System for mapping Greek onto Unicode.  String value may
    * be any of the values for "sourceEncoding" supported by the
    * epidoc transcoder, such as "Unicode".
-   * @throws Exception if not all characters in betaString are valid.
+   * @throws Exception if not all characters in srcString are valid.
    */
   GreekString(String srcString, String greekMapping)  {
     TransCoder xcoder = new TransCoder()
@@ -94,19 +94,19 @@ class GreekString {
     xcoder.setConverter("BetaCode")
 
     Integer count = 0
-    String betaString = xcoder.getString(srcString).toLowerCase()
-    betaString = betaString.replaceAll("s1","s")
-    if (debugLevel > 0) { System.err.println "Analyze " + srcString + " as " + greekMapping + " (len ${betaString} = " + betaString.length() + ")" }
+    String asciiString = xcoder.getString(srcString).toLowerCase()
+    asciiString = asciiString.replaceAll("s1","s")
+    if (debugLevel > 0) { System.err.println "Analyze " + srcString + " as " + greekMapping + " (len ${asciiString} = " + asciiString.length() + ")" }
 
-    while (count < betaString.length()) {
-      if (!(isValidChar(betaString.substring(count,count+1)))) {
-	System.err.println "Error parsing ${betaString}: failed on ${betaString.substring(count,count+1)} (char ${count})"
-	System.err.println "GreekString:constructor with ${greekMapping} invalid character at position ${count}:  '" + betaString.substring(count,count+1) + "'"
-	throw new Exception("GreekString:constructor with ${greekMapping} invalid character at position ${count}:  '" + betaString.substring(count,count+1) + "'")
+    while (count < asciiString.length()) {
+      if (!(isValidChar(asciiString.substring(count,count+1)))) {
+	System.err.println "Error parsing ${asciiString}: failed on ${asciiString.substring(count,count+1)} (char ${count})"
+	System.err.println "GreekString:constructor with ${greekMapping} invalid character at position ${count}:  '" + asciiString.substring(count,count+1) + "'"
+	throw new Exception("GreekString:constructor with ${greekMapping} invalid character at position ${count}:  '" + asciiString.substring(count,count+1) + "'")
       }
       count++
     }
-    this.greekString = betaString
+    this.greekString = asciiString
 
   }
 
@@ -116,28 +116,28 @@ class GreekString {
     xcoder.setConverter("BetaCode")
 
     Integer count = 0
-    String betaString = xcoder.getString(srcString).toLowerCase()
-    betaString = betaString.replaceAll("s1","s")
-    this.greekString = betaString
+    String asciiString = xcoder.getString(srcString).toLowerCase()
+    asciiString = asciiString.replaceAll("s1","s")
+    this.greekString = asciiString
   }
 
   /** Constructor verifies that srcSring contains only valid characters
-   * for beta-code representation.
-   * @param srcString Greek string, in beta code.
-   * @throws Exception if not all characters in betaString are valid.
+   * for ascii representation.
+   * @param srcString Greek string, in ascii.
+   * @throws Exception if not all characters in srcString are valid.
    */
   GreekString(String srcString)
   throws Exception {
     Integer count = 0
-    String betaString = srcString.toLowerCase()
-    while (count < betaString.length() ) {
-      if (!(isValidChar(betaString.substring(count,count+1)))) {
-	System.err.println "Error parsing ${betaString}: failed on ${betaString.substring(count,count+1)} (char ${count})"
-	throw new Exception("GreekString: invalid characer ${betaString.substring(count,count+1)}")
+    String asciiString = srcString.toLowerCase()
+    while (count < asciiString.length() ) {
+      if (!(isValidChar(asciiString.substring(count,count+1)))) {
+	System.err.println "Error parsing ${asciiString}: failed on ${asciiString.substring(count,count+1)} (char ${count})"
+	throw new Exception("GreekString: invalid characer ${asciiString.substring(count,count+1)}")
       }
       count++
     }
-    this.greekString = betaString
+    this.greekString = asciiString
   }
 
 
@@ -169,7 +169,7 @@ class GreekString {
       if (debug > 0) { System.err.println "${ch} is OK!" }
       return true
     } else {
-      System.err.println("GreekString: invalid beta code character ${ch}")
+      System.err.println("GreekString: invalid ascii character ${ch}")
       return false
     }
   }
