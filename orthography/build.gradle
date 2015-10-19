@@ -1,4 +1,22 @@
 
+import com.github.rjeschke.txtmark.*
+
+
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath group: 'com.github.rjeschke', name: 'txtmark', version: '0.11'
+  }
+}
+
+task proc (dependsOn: cpSpecs) {
+}
+proc.doLast {
+  File inFile = new File("build/specs/md/orthography/Tokens.md")
+  String body = Processor.process(inFile.getText("UTF-8"),Configuration.DEFAULT)
+}
 
 task hello {
   description = "Greet from subproject."

@@ -8,6 +8,7 @@ version = '0.0.23'
 
 
 apply from: "versions.gradle"
+apply from: "conf.gradle"
 
 allprojects {
   task printInfo << {
@@ -16,8 +17,10 @@ allprojects {
 }
 
 subprojects {
+
   apply plugin: "groovy"
   apply plugin: "java"
+  
   repositories {
      mavenCentral()
      maven {
@@ -32,6 +35,73 @@ subprojects {
 
     testCompile group : 'edu.unc.epidoc', name: 'transcoder', version: versionMap['epidoc']
     testCompile group: 'junit', name: 'junit', version: versionMap['junit']
+  }
+  task cpSpecs(type: Copy) {
+    description "Copies specification source into build area."
+    from "specs"
+    into "${buildDir}/specs"
+  }
+  test {
+      systemProperties 'concordion.output.dir': file("${buildDir}/concordion-results")
+  }
+  sourceSets {
+      main {
+          java {
+              srcDir 'src'
+          }
+          resources {
+              srcDir 'src'
+          }
+      }
+      test {
+          java {
+              srcDir "specs/java"
+          }
+          resources {
+              srcDir "${buildDir}/specs"
+          }
+      }
+  }
+
+  task convertSpecs (dependsOn: cpSpecs) {
+    description "Converts markdown source to HTML concordion can process."
+  }
+  convertSpecs.doLast {
+    println "READING FILE TREE FROM " + mdSrc + " DIRECTORY"
+    FileTree tree = fileTree(mdSrc) {
+      include "**/*.md"
+    }
+    tree.visit { f ->
+      if (f.relativePath.isFile()) {
+        File inFile = new File("${mdSrc}/${f.relativePath}")
+        println "Need to work on " + inFile
+        def segs = f.relativePath.getSegments()
+        String treePath = "${buildDir}/specs"
+        Integer limit =  segs.size() - 1
+        segs.eachWithIndex { s, i ->
+  	if (i < limit) {
+  	  treePath = "${treePath}/${s}"
+  	  File nxtDir = new File(treePath)
+  	  if (! nxtDir.exists()) {
+  	    nxtDir.mkdir()
+  	  }
+  	}
+        }
+        File outDir = new File(treePath)
+        String htmlFileName = f.relativePath.getLastName().replaceFirst(/.md$/,".html")
+        File htmlFile = new File(outDir, htmlFileName)
+        println "Created ${htmlFile}"
+
+        try {
+  	String body = Processor.process(inFile.getText("UTF-8"),Configuration.DEFAULT)
+  	htmlFile.setText("${htmlPreface}${body}${htmlEnd}", "UTF-8")
+        } catch (Exception e) {
+  	System.err.println "Oops.  convertResources task unable to convert markdown source to HTML!"
+  	System.err.println e
+        }
+
+      }
+    }
   }
 }
 
