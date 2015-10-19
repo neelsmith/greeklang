@@ -1,4 +1,4 @@
-include 'morphology'
-include 'morphology:fst_tests'
 include 'orthography'
+include 'phonology'
+include 'morphology'
 
