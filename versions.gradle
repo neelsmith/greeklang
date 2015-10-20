@@ -4,14 +4,14 @@ ext {
     "cite" : "0.98j7.0",
     "epidoc": "1.2-SNAPSHOT",
 
-    "groovy" : '[2.0,)', //"2.0.6",
+    "groovy" : '[2.0,)',
 
-    "concordion" : "1.4.4",
+    "concordion" : "1.5.1",
 
     "sqlite" :  '3.7.2',
     "opencsv"	: '2.0',
 
-    "junit" : '4.11',
+    "junit" : '4.12',
     "xmlunit" : '1.3'
 
 
