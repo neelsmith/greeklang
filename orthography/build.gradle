@@ -11,26 +11,15 @@ buildscript {
   }
 }
 
-task proc (dependsOn: cpSpecs) {
-}
-proc.doLast {
-  File inFile = new File("build/specs/md/orthography/Tokens.md")
-  String body = Processor.process(inFile.getText("UTF-8"),Configuration.DEFAULT)
-  println "Converted text = " + body
-}
-
-task convertSpecs (dependsOn: cpSpecs) {
-  description "Converts markdown source to HTML concordion can process."
-}
 convertSpecs.doLast {
-  println "READING FILE TREE FROM " + mdSrc + " DIRECTORY"
-  FileTree tree = fileTree(mdSrc) {
+  println "Converting markdown specifications in specs"
+  FileTree tree = fileTree("specs/md") {
     include "**/*.md"
   }
   tree.visit { f ->
     if (f.relativePath.isFile()) {
-      File inFile = new File("${mdSrc}/${f.relativePath}")
-      println "Need to work on " + inFile
+      File inFile = new File("${buildDir}/specs/md/${f.relativePath}")
+      println "Converting " + inFile
       def segs = f.relativePath.getSegments()
       String treePath = "${buildDir}/specs"
       Integer limit =  segs.size() - 1
@@ -59,5 +48,3 @@ convertSpecs.doLast {
     }
   }
 }
-
-test.dependsOn convertSpecs
