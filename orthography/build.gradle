@@ -13,7 +13,7 @@ buildscript {
 
 convertSpecs.doLast {
   println "Converting markdown specifications in specs"
-  FileTree tree = fileTree("specs/md") {
+  FileTree tree = fileTree("${projectDir}/specs/md") {
     include "**/*.md"
   }
   tree.visit { f ->
@@ -24,13 +24,13 @@ convertSpecs.doLast {
       String treePath = "${buildDir}/specs"
       Integer limit =  segs.size() - 1
       segs.eachWithIndex { s, i ->
-  	if (i < limit) {
-  	  treePath = "${treePath}/${s}"
-  	  File nxtDir = new File(treePath)
-  	  if (! nxtDir.exists()) {
-  	    nxtDir.mkdir()
-  	  }
-  	}
+    if (i < limit) {
+      treePath = "${treePath}/${s}"
+      File nxtDir = new File(treePath)
+      if (! nxtDir.exists()) {
+        nxtDir.mkdir()
+      }
+    }
       }
       File outDir = new File(treePath)
       String htmlFileName = f.relativePath.getLastName().replaceFirst(/.md$/,".html")
@@ -38,11 +38,11 @@ convertSpecs.doLast {
       println "Created ${htmlFile}"
 
       try {
-  	String body = Processor.process(inFile.getText("UTF-8"),Configuration.DEFAULT)
-  	htmlFile.setText("${htmlPreface}${body}${htmlEnd}", "UTF-8")
+    String body = Processor.process(inFile.getText("UTF-8"),Configuration.DEFAULT)
+    htmlFile.setText("${htmlPreface}${body}${htmlEnd}", "UTF-8")
       } catch (Exception e) {
-  	System.err.println "Oops.  convertResources task unable to convert markdown source to HTML!"
-  	System.err.println e
+    System.err.println "Oops.  convertResources task unable to convert markdown source to HTML!"
+    System.err.println e
       }
 
     }
