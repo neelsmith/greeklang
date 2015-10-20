@@ -94,10 +94,12 @@ String tagsFstStatement() {
 }
 
 
+// should read all .fst files in stemsdir and read list of stem URNs
 String getStemUrns() {
   return "<coretests.n64316_0><coretests.n6949_0><coretests.n81672_0><coretests.n88464_0><coretests.n87956_0><coretests.n786_0>"
 }
 
+// should read all .fst files in stemsdir and compile list of unique lexent URNs
 String getLexEntUrns() {
   return "<lexent.n47950><lexent.n71065><lexent.n19546><lexent.n50824><lexent.n67485><lexent.n84494><lexent.n64316><lexent.n6949><lexent.n81672><lexent.n88464><lexent.n87956><lexent.n786>"
 }
@@ -118,7 +120,6 @@ task cpSrc (type: Copy) {
       "extratags": tagsFstStatement(),
       "stemurn": getStemUrns(),
       "lexicon": getLexEntUrns()
-
      ])
 }
 
@@ -162,7 +163,7 @@ exploreSource.doLast {
 
 
 task cpStems (type: Copy, dependsOn: "buildStems") {
-    description = "Filters adn copies directory with lexica of stems to build area."
+    description = "Filters and copies directory with lexica of stems to build area."
     from ("${projectDir}/${stemsdir}") {
       include ('**/*.fst')
     }

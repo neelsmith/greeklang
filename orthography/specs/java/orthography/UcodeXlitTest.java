@@ -1,10 +1,12 @@
-package greek.tokens;
+package orthography;
 
 import edu.holycross.shot.greekutils.GreekString;
 
-import org.concordion.integration.junit3.ConcordionTestCase;
+import org.concordion.integration.junit4.ConcordionRunner;
+import org.junit.runner.RunWith;
 
-public class UcodeXlitTest extends ConcordionTestCase {
+@RunWith(ConcordionRunner.class)
+public class UcodeXlitTest {
 
         public String asUnicode(String str) {
 	GreekString gs;
@@ -18,7 +20,7 @@ public class UcodeXlitTest extends ConcordionTestCase {
 
     }
 
-    
+
         public String getBetaForUnicode(String str) {
 	GreekString gs;
 	try {

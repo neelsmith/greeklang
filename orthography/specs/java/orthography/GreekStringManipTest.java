@@ -1,15 +1,13 @@
-package greek.tokens;
+package orthography;
 
-//import org.concordion.integration.junit4.ConcordionRunner;
-//import org.junit.runner.RunWith;
-import org.concordion.integration.junit3.ConcordionTestCase;
 
 import edu.holycross.shot.greekutils.GreekString;
 
-/* Run this class as a JUnit test. */
+import org.concordion.integration.junit4.ConcordionRunner;
+import org.junit.runner.RunWith;
 
-//@RunWith(ConcordionRunner.class)
-public class GreekStringManipTest extends ConcordionTestCase {
+@RunWith(ConcordionRunner.class)
+public class GreekStringManipTest {
 
 
     public boolean isAlphabetic(String str) {
@@ -19,7 +17,7 @@ public class GreekStringManipTest extends ConcordionTestCase {
     public boolean isConsonant(String str) {
 	return GreekString.isConsonant(str);
     }
-    
+
     public boolean isVowel(String str) {
 	return GreekString.isVowel(str);
     }

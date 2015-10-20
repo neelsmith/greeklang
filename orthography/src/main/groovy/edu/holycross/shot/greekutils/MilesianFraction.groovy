@@ -11,7 +11,7 @@ class MilesianFraction {
 
   Integer debug = 0
 
-  
+
   // Temporary constructs for debugging:
   Integer SILENT = 0
   Integer WARN =  1
@@ -35,8 +35,8 @@ class MilesianFraction {
    * expressed as integers giving the denominator.
    */
   ArrayList unitFracts = []
-  
-  /** The string in beta code form.*/
+
+  /** The string in ascii form.*/
   String milesianString
 
 
@@ -47,10 +47,10 @@ class MilesianFraction {
   /** Decimal value of the fraction expression. */
   BigDecimal fractionValue
 
-  
+
   /** Constructor verifies that srcString, supplied in an identified
    * system for encoding Greek, contains only valid characters
-   * for a MilesianString's underlying beta-code representation.
+   * for a MilesianString's underlying ascii representation.
    */
 /*  MilesianFraction(String srcString, String greekMapping)  {
     // to be added...
@@ -61,16 +61,16 @@ class MilesianFraction {
   }
 
   /** Formats decimal value of the fraction
-   * to the default of 3 significant digits. 
+   * to the default of 3 significant digits.
    */
   BigDecimal getFractionValue()
   throws Exception {
-    return getFractionValue(3)  
+    return getFractionValue(3)
   }
 
 
   /** Formats decimal value of the fraction
-   * to a specified number of significant places. 
+   * to a specified number of significant places.
    * @param places Number of places to round to.
    * @returns A BigDecimal rounded to places number
    * of digits.
@@ -84,13 +84,13 @@ class MilesianFraction {
     }
     return (Math.round(fractionValue * placeFactor) / placeFactor)
   }
-  
+
   /** Constructor verifies that srcSring contains only valid characters
-   * for beta-code representation.
-   * @param srcString Greek string, in beta code.
-   * @throws Exception if not all characters in betaString are valid.
+   * for ascii representation.
+   * @param srcString Greek string, in ascii.
+   * @throws Exception if not all characters in srcString are valid.
    */
-  MilesianFraction(String srcString) 
+  MilesianFraction(String srcString)
   throws Exception {
     this.transcription = ""
     // check for initialize abbr. char
@@ -101,12 +101,12 @@ class MilesianFraction {
       switch (cp) {
       case 65909:
       if (debug > 0) { System.err.println "Initial char is 1/2"}
-      
+
       initializeString = "β "
       transcription = "1/2"
       fractionValue = 0 // 1 / 2
       break
-      
+
       case 65911:
       initializeString = "β ϛ "
       transcription = "1/2 + 1/6"
@@ -117,15 +117,15 @@ class MilesianFraction {
       // throw Exception
       break
       }
-      
+
       // offset to second code point:
       int startIdx = srcString.offsetByCodePoints(0,1)
       initializeString = initializeString + srcString.subSequence(startIdx,srcString.length())
-      
+
     } else {
       initializeString = srcString
     }
-    
+
 
     this.unitFracts = initializeString.split(/[ ]+/)
     // throw out " marker
@@ -134,7 +134,7 @@ class MilesianFraction {
     unitFracts.each { unit ->
 
       unit = unit.replaceAll('"', '')
-      
+
       if (debug > 0) { System.err.println "MilesianFraction: checking unit #" + unit + "#; try to make int"}
       if (unit.size() > 0) {
 	MilesianInteger mInt = new MilesianInteger(unit)
@@ -143,14 +143,14 @@ class MilesianFraction {
 	  System.err.println ", curr transcriptoin is #"  + transcription + "# and xcr size is " + transcription.size()
 	}
 
-      
+
 	if (transcription.size() == 0) {
 	  if (debug > 0) {System.err.println "Int val is " + mInt.integerValue	}
 	  transcription = "1/${mInt.integerValue}"
 	  fractionValue = 1 / mInt.integerValue
 
 	  if (debug > 0) {"Initializing fractionValue as ${ 1 / mInt.integerValue} to ${fractionValue}"}
-	
+
 	} else {
 	  transcription = transcription + " + 1/${mInt.integerValue}"
 	  if (debug > 0) {"Adding ${ 1 / mInt.integerValue} to ${fractionValue}"}

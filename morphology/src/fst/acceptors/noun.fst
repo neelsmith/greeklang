@@ -4,16 +4,27 @@
 #include "@workdir@symbols.fst"
 
 % #extratag# is defined in "extratags.fst"
-$extratag$ = [#extratag#]
-% #character# is defined in "phonology.fst"
-#nonmorph# = #character# #extratag#
-$nonmorph$ = [#nonmorph#]
+% $extratag$ = [#extratag#]
 
-$urn$ = [#urn#]
-% #nounclass# is the set of stemtypes for nouns,
-% defined in stemtypes.fst
+%
+%%%%%%%%%%%%%%%%%%%%%%%% NOUN ACCEPTOR %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
 $=nounclass$ = [#nounclass#]
-$nounacceptor$ =  $urn$ $nonmorph$+ <noun> $=gender$ $=nounclass$ $extratag$* $separator$+ $=nounclass$  $nonmorph$* $=gender$ $=case$ $=number$ $nonmorph$*
+$noun$ = <u>[#urnchar#]+ [#period#] [#urnchar#]+</u><u>lexent[#period#][#urnchar#]+</u>[#stemchars#]+<noun>$=gender$ $=nounclass$ $separator$+ $=nounclass$ <u>[#urnchar#]+[#period#][#urnchar#]+</u>[#stemchars#]* $=gender$ $case$ $number$
+%
+%%%%%%%%%%%%%%%%%%%% STRIP OUT VALUE STRINGS FROM URNS %%%%%%%%%%%%%%%%%%%%%%%%
+%
+$squashurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+<noun>$=gender$ $=nounclass$  $separator$+ $=nounclass$ <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> [#stemchars#]* $=gender$ $case$ $number$
+%
+%%%%%%%%%%%%%%%%%%%% STRIP OUT ALL TAGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+#analysissymbol# = #urn# #editorial# #morphtag# #stemtype# #separator# #urntag#
+#surfacesymbol# = #character#
+ALPHABET = [#surfacesymbol#] [#analysissymbol#]:<>
+$striptag$ = .*
 
 
+
+
+$nounacceptor$ =  $noun$ || $squashurn$ || $striptag$
 $nounacceptor$

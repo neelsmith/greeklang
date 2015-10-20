@@ -1,16 +1,19 @@
-package greek.tokens;
+package orthography;
 
 
-import org.concordion.integration.junit3.ConcordionTestCase;
 
 import edu.holycross.shot.greekutils.GreekString;
 
-public class GreekStringTest extends ConcordionTestCase {
+import org.concordion.integration.junit4.ConcordionRunner;
+import org.junit.runner.RunWith;
+
+@RunWith(ConcordionRunner.class)
+public class GreekStringTest  {
 
 
 
-    
-    public String getBetaString(String str) {
+
+    public String getAsciiString(String str) {
 	GreekString gs;
 	try {
 	    gs = new GreekString(str);

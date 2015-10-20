@@ -1,53 +1,49 @@
-package greek.tokens.milesian;
+package orthography.milesian;
 
 
 import org.concordion.integration.junit3.ConcordionTestCase;
 
-import edu.holycross.shot.greekutils.MilesianInteger;
 import edu.holycross.shot.greekutils.MilesianString;
-import java.math.BigDecimal;
 
-public class MilesianCompoundTest extends ConcordionTestCase {
+public class MilesianSyntaxTest extends ConcordionTestCase {
 
+    public boolean isDigit(String str) {
+	return MilesianString.isDigit(str);
+    }
 
-    public String xscribe (String s)
+    public String toStr(String s)
     throws Exception {
+	    MilesianString ms = new MilesianString(s);
+	    return ms.toString();
+    }
+
+
+    public String toBetaCode(String s)
+    throws Exception {
+	    MilesianString ms = new MilesianString(s);
+	    return ms.toString(true);
+    }
+
+    public boolean isValid(String s) {
 	try {
 	    MilesianString ms = new MilesianString(s);
-	    return ms.xscribe();
+	    return true;
 	} catch (Exception e) {
-	    throw e;
+	    return false;
 	}
     }
 
 
-    public BigDecimal toDecimal(String s)
-	throws Exception {
-	try {
-	    MilesianString ms = new MilesianString(s);
-	    return ms.toDecimal();
-	} catch (Exception e) {
-	    throw e;
-	}
-    }
-
-
-    public BigDecimal toDecimal(String s, Integer digits)
-	throws Exception {
-	try {
-	    MilesianString ms = new MilesianString(s);
-	    return ms.toDecimal(digits);
-	} catch (Exception e) {
-	    throw e;
-	}
+    public boolean hasIntegerPart(String s)
+    throws Exception {
+	MilesianString ms = new MilesianString(s);
+	return ms.hasIntegerPart();
     }
 
 
 
-    
-    
     public String getIntegerPart(String s)
-	throws Exception {
+    throws Exception {
 	MilesianString ms = new MilesianString(s);
 	return ms.getIntegerPart();
     }
@@ -59,6 +55,4 @@ public class MilesianCompoundTest extends ConcordionTestCase {
 	return ms.getFractionPart();
     }
 
-    
-    
 }

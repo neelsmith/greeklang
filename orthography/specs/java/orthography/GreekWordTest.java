@@ -1,18 +1,17 @@
-package greek.tokens;
+package orthography;
 
-//import org.concordion.integration.junit4.ConcordionRunner;
-//import org.junit.runner.RunWith;
-import org.concordion.integration.junit3.ConcordionTestCase;
+
 import edu.holycross.shot.greekutils.GreekWord;
 import edu.holycross.shot.greekutils.GreekString;
 
 import java.util.ArrayList;
 
 
-/* Run this class as a JUnit test. */
+import org.concordion.integration.junit4.ConcordionRunner;
+import org.junit.runner.RunWith;
 
-//@RunWith(ConcordionRunner.class)
-public class GreekWordTest extends ConcordionTestCase {
+@RunWith(ConcordionRunner.class)
+public class GreekWordTest  {
 
 
 
@@ -29,7 +28,7 @@ public class GreekWordTest extends ConcordionTestCase {
 	}
     }
 
-    
+
     public String getString(String str)   {
 	GreekWord gw;
 	try {

@@ -13,7 +13,7 @@ import edu.harvard.chs.cite.CiteUrn
 */
 class FstAnalysisParser {
 
-  Integer debug = 0
+  Integer debug = 1
 
   /** UrnManager expands collection abbreviations to full CITE URNs. */
   UrnManager urnMgr
@@ -24,6 +24,11 @@ class FstAnalysisParser {
   * omitting <#> since that's valid in stem char sequences before we
   * add accent.  */
   java.util.regex.Pattern semanticTags = ~/<[a-z0-9_\.]+>/
+  /**Regex pattern for everything to the left of the first URN, inclusive. */
+  java.util.regex.Pattern leftmostUrn = ~/.+<\/u>/
+
+  /** Regex pattern for URN values wrapped in <u>..</u> symbols in FST string */
+  java.util.regex.Pattern urnTags = ~/<u>[^<]+<\/u>/
 
   /// The two halves of the FST output string:
   /** Stem component of FST analysis string.*/
@@ -53,12 +58,13 @@ class FstAnalysisParser {
   /** The explanation for the analysis. */
   AnalysisExplanation explanation
 
-  /** Stem part of surface string */
+  /** Surface string for stem part.*/
   String surfaceStem
 
-  /** Inflectional part of surface string */
+  /** Surface string for inflectional part. */
   String surfaceInflection
 
+  /** Multicharacter symbols that can appear in stem strings.  */
   static ArrayList editorialTags = ["<#>", "<lo>", "<sh>", "<ro>", "<sm>"]
 
   /** Constructor builds an object representation of information in a morphological
@@ -77,13 +83,25 @@ class FstAnalysisParser {
         System.err.println "FstAP: Analyzing " + analysisStr
         System.err.println "Preparing to compute parts with\t stemstr ${stemString}\n\tinfl string ${inflectionString}"
       }
+
+      // Before doing this, extract URNs from stem.
+      //NOUNSTEM: <u>coretests.n67485_0</u><u>lexent.n67485</u>mhn<noun><fem><is_ios>
+      //NOUNINFL: <u>is_ios.1</u><is_ios>is<fem><nom><sg>
+      def stemUrns = stemString.findAll(urnTags)
+      def inflUrns = inflectionString.findAll(urnTags)
+      //  check size before indexing...
+      String stemAbbrUrn = stemUrns[0].replaceFirst('<u>',"").replaceFirst('</u>',"")
+      String lexEntAbbrUrn = stemUrns[1].replaceFirst('<u>',"").replaceFirst('</u>',"")
+      String inflAbbrUrn =  inflUrns[0].replaceFirst('<u>',"").replaceFirst('</u>',"")
+
       // check that strings are not null before doing findAll
+      stemUrns = stemString.findAll(urnTags)
       stemTags = stemString.findAll(allTags)
       inflTags = inflectionString.findAll(allTags)
 
-      String stemUrnStr = resolveUrn(stemTags[0])
-      String lexEntUrnStr = resolveUrn(stemTags[1])
-      String inflUrnStr = resolveUrn(inflTags[1])
+      String stemUrnStr = resolveUrn(stemAbbrUrn)
+      String lexEntUrnStr = resolveUrn(lexEntAbbrUrn)
+      String inflUrnStr = resolveUrn(inflAbbrUrn)
 
        if (debug > 0 ) {
          System.err.println "FstAP: analyze as URNs:"
@@ -92,45 +110,35 @@ class FstAnalysisParser {
          System.err.println "\tInfl urn str " + inflUrnStr
        }
 
-       lexicalEntity = new CiteUrn(lexEntUrnStr)
+       this.lexicalEntity = new CiteUrn(lexEntUrnStr)
+
        CiteUrn stem = new CiteUrn(stemUrnStr)
        CiteUrn inflectionalPattern  = new CiteUrn(inflUrnStr)
+       this.explanation = new AnalysisExplanation(stem, inflectionalPattern)
 
-       explanation = new AnalysisExplanation(stem, inflectionalPattern)
-       // Verbs include a morpheme boundary marker <#>, and have
-       // "part of speech" in tag 3.  Other types have part of speech
-       // in tag 2.
-       //
-       // analysisPattern must be defined before invoking computeMorphForm()
 
-       // Need to read past editorial symbols:
 
+
+       // Ignore symbols for editorial content in stem.
+       // First tag beyond stem is Part Of Speech.
        boolean posFound = false
-       Integer idx = 2
+       Integer idx = 4
        while ((idx < stemTags.size()) && (! posFound)) {
+          if (debug > 0) {System.err.println "Examine tag " + stemTags[idx]}
          if (editorialTags.contains(stemTags[idx])) {
+           // ignore
            idx++
+
          } else {
            analysisPattern = AnalyticalType.getByToken(stemTags[idx])
            posFound = true
          }
-
        }
 
-       /*
-      if (stemTags[2] != "<#>") {
-        analysisPattern = AnalyticalType.getByToken(stemTags[2])
-      } else {
-        if (["<infin>", "<ptcpl>","<vadj>"].contains(inflTags[1])) {
-          analysisPattern = AnalyticalType.getByToken(inflTags[1])
-        } else {
-          analysisPattern = AnalyticalType.CVERB
-        }
-      }*/
       morphForm = computeMorphForm()
-
-      surfaceStem = stemString.replaceAll(semanticTags, "")
-      surfaceInflection = inflectionString.replaceAll(semanticTags, "")
+      // Strip out all tags from surface form except <#>
+      surfaceStem = stemString.replaceAll(leftmostUrn,"").replaceAll(leftmostUrn,"").replaceAll(semanticTags, "")
+      surfaceInflection = inflectionString.replaceAll(leftmostUrn,"").replaceAll(semanticTags, "")
 
       // Example of conjugated verb:  "<coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>"
       // Example of compound form with quantity symbol:
@@ -178,11 +186,23 @@ class FstAnalysisParser {
       mf = new MorphForm(analysisPattern, verb)
       break
 
+
+      case AnalyticalType.NOUN:
+      //NOUNINFL: <u>is_ios.1</u><is_ios>is<fem><nom><sg>
+      Gender gender = Gender.getByToken(inflTags[3])
+      GrammaticalCase cas = GrammaticalCase.getByToken(inflTags[4])
+      GrammaticalNumber num = GrammaticalNumber.getByToken(inflTags[5])
+      NounForm noun = new NounForm(gender, cas, num)
+      mf = new MorphForm(analysisPattern, noun)
+      break
+
+
       default:
       System.err.println "Unimplemented analytical type: " + analysisPattern
       break
-      return mf
+
     }
+    return mf
   }
 
   /** Gets a human-readable presentation of surface form.

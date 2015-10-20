@@ -1,4 +1,4 @@
-package greek.tokens.milesian;
+package orthography.milesian;
 
 
 import org.concordion.integration.junit3.ConcordionTestCase;
@@ -41,7 +41,7 @@ public class MilesianTest extends ConcordionTestCase {
     }
 
 
-    
+
     public String getIntegerPart(String s)
     throws Exception {
 	MilesianString ms = new MilesianString(s);
@@ -54,5 +54,5 @@ public class MilesianTest extends ConcordionTestCase {
 	MilesianString ms = new MilesianString(s);
 	return ms.getFractionPart();
     }
-	
+
 }

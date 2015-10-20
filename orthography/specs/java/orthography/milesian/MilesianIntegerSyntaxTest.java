@@ -1,11 +1,11 @@
-package greek.tokens.milesian;
+package orthography.milesian;
 
 
 import org.concordion.integration.junit3.ConcordionTestCase;
 
 import edu.holycross.shot.greekutils.MilesianString;
 
-public class MilesianFractionSyntaxTest extends ConcordionTestCase {
+public class MilesianIntegerSyntaxTest extends ConcordionTestCase {
 
     public boolean isDigit(String str) {
 	return MilesianString.isDigit(str);
@@ -41,7 +41,7 @@ public class MilesianFractionSyntaxTest extends ConcordionTestCase {
     }
 
 
-    
+
     public String getIntegerPart(String s)
     throws Exception {
 	MilesianString ms = new MilesianString(s);
@@ -54,5 +54,5 @@ public class MilesianFractionSyntaxTest extends ConcordionTestCase {
 	MilesianString ms = new MilesianString(s);
 	return ms.getFractionPart();
     }
-	
+
 }

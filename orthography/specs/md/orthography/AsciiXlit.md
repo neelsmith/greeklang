@@ -11,11 +11,11 @@ Iota subscript is treated as a distinct character, and is represented by the ver
 @openex@
 
 ### Examples: lower-case characters ###
- 
-The mapping of ASCII to Unicode Greek transcriptions can be illustrated by 
+
+The mapping of ASCII to Unicode Greek transcriptions can be illustrated by
 creating a GreekString from an ASCII source, and then converting the GreekString to Unicode in NFC form.
 
-<table concordion:execute="#result = uForBeta(#src2)">
+<table concordion:execute="#result = uForAscii(#src2)">
 
 <tr>
    <th concordion:set="#src2">Source String</th>
@@ -55,7 +55,7 @@ creating a GreekString from an ASCII source, and then converting the GreekString
 ### Examples: iota subscript ###
 
 
-<table concordion:execute="#result = uForBeta(#src2)">
+<table concordion:execute="#result = uForAscii(#src2)">
 
 <tr>
    <th concordion:set="#src2">Source String</th>
@@ -72,7 +72,7 @@ creating a GreekString from an ASCII source, and then converting the GreekString
 
 ### Examples: case insensitivity ###
 
-<table concordion:execute="#result = getBetaString(#src)">
+<table concordion:execute="#result = getAsciiString(#src)">
 	<tr>
 	  <th concordion:set="#src">Source String</th>
 	  <th concordion:assertEquals="#result">GreekString</th>
@@ -84,8 +84,8 @@ creating a GreekString from an ASCII source, and then converting the GreekString
 	<tr><td>*mh=nin</td><td>*mh=nin</td></tr>
 
       </table>
-      
-<table concordion:execute="#result = uForBeta(#src)">
+
+<table concordion:execute="#result = uForAscii(#src)">
 	<tr>
 	  <th concordion:set="#src">Source String</th>
 	  <th concordion:assertEquals="#result">GreekString as Unicode</th>
@@ -105,7 +105,7 @@ creating a GreekString from an ASCII source, and then converting the GreekString
 
 ## Breathings, accents and diaeresis ##
 
-Breathings, accents and diaeresis are all treated as distinct characters.  Rough and smooth breathing are represented by opening and closing parenthesis characters, respectively (Unicode 28 and 29).  Acute, grave and circumflex accents are represented by the solidus (Unicode 47), reverse solidus (Unicode 92), and equals sign (Unicode 61), respectively.  The diaeresis is represented by the plus sign (Unicode 43).  
+Breathings, accents and diaeresis are all treated as distinct characters.  Rough and smooth breathing are represented by opening and closing parenthesis characters, respectively (Unicode 28 and 29).  Acute, grave and circumflex accents are represented by the solidus (Unicode 47), reverse solidus (Unicode 92), and equals sign (Unicode 61), respectively.  The diaeresis is represented by the plus sign (Unicode 43).
 
 Individual breathings, accents and diaeresis follow the vowel over which they are traditionally written.
 
@@ -115,15 +115,15 @@ Individual breathings, accents and diaeresis follow the vowel over which they ar
 ### Examples ###
 
 
-The grave accent in <strong concordion:set="#grave">qea\\</strong> is valid.  Formatting this as a Unicode string produces <strong concordion:assertEquals="uForBeta(#grave)">θεὰ</strong>.
+The grave accent in <strong concordion:set="#grave">qea\\</strong> is valid.  Formatting this as a Unicode string produces <strong concordion:assertEquals="uForAscii(#grave)">θεὰ</strong>.
 
 
-The acute accent in <strong concordion:set="#acute">ou)lome/nhn</strong> is valid. Formatting this as a Unicode string produces <strong concordion:assertEquals="uForBeta(#acute)">οὐλομένην</strong>.
+The acute accent in <strong concordion:set="#acute">ou)lome/nhn</strong> is valid. Formatting this as a Unicode string produces <strong concordion:assertEquals="uForAscii(#acute)">οὐλομένην</strong>.
 
-The circumflex accent in <strong concordion:set="#circ">mh=nin</strong> is valid.  Formatting this as a Unicode string produces <strong concordion:assertEquals="uForBeta(#circ)">μῆνιν</strong>.
+The circumflex accent in <strong concordion:set="#circ">mh=nin</strong> is valid.  Formatting this as a Unicode string produces <strong concordion:assertEquals="uForAscii(#circ)">μῆνιν</strong>.
 
-The diaresis character in <strong concordion:set="#diaer">basilh=i+</strong> is valid.  Formatting this as a Unicode string produces <strong concordion:assertEquals="uForBeta(#diaer)">βασιλῆϊ</strong>.
- 
+The diaresis character in <strong concordion:set="#diaer">basilh=i+</strong> is valid.  Formatting this as a Unicode string produces <strong concordion:assertEquals="uForAscii(#diaer)">βασιλῆϊ</strong>.
+
 @closeex@
 
 
@@ -138,14 +138,14 @@ GreekStrings may include any of the following "white space" characters: space (U
 
 If we intialize a GreekString from the source string <strong concordion:set="#white">*Mh=nin a)/eide</strong>, then converting it back to an ASCII string will preserve the white space:
 
-<pre concordion:assertEquals="getBetaString(#white)">*mh=nin a)/eide</pre>
+<pre concordion:assertEquals="getAsciiString(#white)">*mh=nin a)/eide</pre>
 
 
 @closeex@
 
 ## Punctuation ##
 
-The following punctuation marks are valid 
+The following punctuation marks are valid
 
 
 - period
@@ -179,7 +179,7 @@ The sequence breathing, accent, and diaeresis *follows* lower-case vowels.  When
 ### Examples: sequences of breathing, accent and diaeresis ###
 
 
-<table concordion:execute="#result = uForBeta(#src)">
+<table concordion:execute="#result = uForAscii(#src)">
 	<tr>
 	  <th concordion:set="#src">Source String</th>
 	  <th concordion:assertEquals="#result">GreekString as Unicode</th>
@@ -200,7 +200,7 @@ The sequence breathing, accent, and diaeresis *follows* lower-case vowels.  When
 	<td>ἐϋκνήμιδες</td>
 		<td>not a diphthong (due to diaeresis), so breathing follows first vowel</td>
 	</tr>
-	
+
 
 
 <tr>
@@ -214,12 +214,12 @@ The sequence breathing, accent, and diaeresis *follows* lower-case vowels.  When
 	<td>Ἔνθʼ</td>
 		<td>upper case vowel with breathing and accent</td>
 	</tr>
-	
+
 
 
 	</table>
 
- 
+
 
 
 
