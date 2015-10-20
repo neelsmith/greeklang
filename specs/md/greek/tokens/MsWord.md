@@ -1,2 +1,0 @@
-# Manuscript tokens (MS words)
-
