@@ -29,15 +29,15 @@ $decl1noun_ending$ = $a_as_ending$ | $hs_ou_ending$
 % Second declension patterns:
 %
 
-$os_ou_ending$ = <os_ou> (os[<masc><fem>]<nom><sg> |\
-  ou[<masc><fem>]<gen><sg> |\
-  w\|[<masc><fem>]<dat><sg> |\
-  on[<masc><fem>]<acc><sg> |\
-  e[<masc><fem>]<voc><sg> |\
-  oi[<masc><fem>]<nom><pl> |\
-  wn[<masc><fem>]<gen><pl> |\
-  ois[<masc><fem>]<dat><pl> |\
-  ous[<masc><fem>]<acc><pl> \
+$os_ou_ending$ = <os_ou> (<u>nouninfl\.os\_ou1</u>os[<masc><fem>]<nom><sg> |\
+  <u>nouninfl\.os\_ou2</u>ou[<masc><fem>]<gen><sg> |\
+  <u>nouninfl\.os\_ou3</u>w\|[<masc><fem>]<dat><sg> |\
+  <u>nouninfl\.os\_ou4</u>on[<masc><fem>]<acc><sg> |\
+  <u>nouninfl\.os\_ou5</u>e[<masc><fem>]<voc><sg> |\
+  <u>nouninfl\.os\_ou6</u>oi[<masc><fem>]<nom><pl> |\
+  <u>nouninfl\.os\_ou7</u>wn[<masc><fem>]<gen><pl> |\
+  <u>nouninfl\.os\_ou8</u>ois[<masc><fem>]<dat><pl> |\
+  <u>nouninfl\.os\_ou9</u>ous[<masc><fem>]<acc><pl> \
 )
 
 $decl2noun_ending$ = $os_ou_ending$
