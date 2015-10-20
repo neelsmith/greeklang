@@ -6,9 +6,11 @@ apply plugin:  "maven"
 group = "edu.holycross.shot"
 version = '0.0.23'
 
-
 apply from: "versions.gradle"
 apply from: "conf.gradle"
+
+import com.github.rjeschke.txtmark.*
+import org.apache.tools.ant.filters.*
 
 allprojects {
   task printInfo << {
@@ -31,21 +33,32 @@ subprojects {
     compile group: 'org.codehaus.groovy', name: 'groovy-all', version: versionMap['groovy']
 
     compile group : 'edu.unc.epidoc', name: 'transcoder', version: versionMap['epidoc']
-    compile group: 'edu.harvard.chs', name : 'cite' , version: versionMap['cite'] //"+"
+    compile group: 'edu.harvard.chs', name : 'cite' , version: versionMap['cite']
 
     testCompile group : 'edu.unc.epidoc', name: 'transcoder', version: versionMap['epidoc']
     testCompile group: 'junit', name: 'junit', version: versionMap['junit']
     testCompile group: 'org.concordion', name : 'concordion', version: versionMap['concordion']
   }
+
   task cpSpecs(type: Copy) {
-    description "Copies specification source into build area."
+    description "Copies all source for concordion tests to build area."
     from "specs"
     into "${buildDir}/specs"
   }
-  test {
-      systemProperties 'concordion.output.dir': file("${buildDir}/concordion-results")
+  task convertSpecs(dependsOn : [cpSpecs]) {
+    description "Converts markdown source for concordion tests to HTML"
   }
 
+  test {
+      systemProperties 'concordion.output.dir': file("${buildDir}/concordion-unfiltered")
+  }
+  test.dependsOn convertSpecs
+  task conc(type: Copy, dependsOn: test) {
+    description "Filter-copies concordion output for final formatting"
+    from "${buildDir}/concordion-unfiltered"
+    into "${buildDir}/concordion-formatted"
+    filter(ReplaceTokens, tokens: tokenMap)
+  }
   sourceSets {
       main {
           java {
