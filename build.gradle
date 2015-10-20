@@ -12,6 +12,7 @@ apply from: "conf.gradle"
 import com.github.rjeschke.txtmark.*
 import org.apache.tools.ant.filters.*
 
+
 allprojects {
   task printInfo << {
     println "This is ${project.name}"
