@@ -12,20 +12,25 @@ class Syllabifier {
     // Regular expressions to split up succesive vowels:
     //
 
-    /** Diphthong is split from a following vowel. */
+    /** Diphthong is split from a following vowel.  Breathing on
+    * diphthong possible if word-initial. */
     static java.util.regex.Pattern diphthong_vowel = ~/(ai[\)\(]?|oi[\)\(]?|ei[\)\(]?|au[\)\(]?|eu[\)\(]?|ou[\)\(]?|hu[\)\(]?|wu[\)\(]?|ui[\)\(]?)([aeiouhw])/
 
-    /** Vowel is split from a following diphthong. */
+    /** Vowel is split from a following diphthong. Breathing on
+    * vowel possible if word-initial. */
     static java.util.regex.Pattern vowel_diphthong = ~/([\)\(aeiouhw])(ai|oi|ei|au|eu|ou|hu|wu|ui)/
 
-    /** Vowel short by nature is split form a following vowel other than [iu]. */
-    static java.util.regex.Pattern shortv_vowel = ~/([aeo][\)\(]?)([aehow])/
+    /** Short vowel is split form a following vowel other than [iu].
+    * Breathing on vowel possible if word-initial. */
+    static java.util.regex.Pattern shortv_vowel = ~/([aeio][\)\(]?)([aehow])/
 
-    /** Vowel long by nature followed by a vowel other than u. */
-    static java.util.regex.Pattern longv_vowel = ~/([hw[\)\(]?])([aehiow])/
+    /** Vowel long by nature followed by a vowel other than u.
+    * Breathing on vowel possible if word-initial. */
+    static java.util.regex.Pattern longv_vowel = ~/([hw][\)\(]?)([aehiow])/
 
-    /** Upsilon followed by a vowel other than iota. */
-    static java.util.regex.Pattern upsilon_vowel = ~/u([aehouw])/
+    /** Upsilon followed by a vowel other than iota.
+    * Breathing on upsilon possible if word-initial. */
+    static java.util.regex.Pattern upsilon_vowel = ~/(u[\)\(])([aehouw])/
 
     //
     // Regular expressions to split up consonant-vowel combinations.
@@ -42,14 +47,14 @@ class Syllabifier {
     /**  Double consonants are split. */
     static java.util.regex.Pattern double_consonant = ~/(b{2}|g{2}|d{2}|z{2}|q{2}|k{2}|l{2}|m{2}|n{2}|p{2}|r{2}|s{2}|t{2}|f{2}|x{2})/
 
+    /** Other consonant clusters stay together. This regex *must*
+    * be applied later in the pipeline than the preceding regexes
+    * spliting on consonant patterns!*/
+    static java.util.regex.Pattern consonant_cluster = ~/([\)\(aeiouhw\|\+])([bgdzqkpcstfxy][mnbgdzqklcprstfxy]+)/
 
-
-
-
-    // other consonant clusters stay together.  Apply this rule later in pipline!
-    java.util.regex.Pattern consclust = ~/([\)\(aeiouhw\|\+])([bgdzqkpcstfxy][mnbgdzqklcprstfxy]+)/
-    // vowel-consonant-vowel
-    java.util.regex.Pattern vcv = ~/([\)\(aeiouhw\|\+])([bgdzqklmncprstfxy][aeiouhw])/
+    /** In pattern vowel-consonant-vowel, consonant begins
+    * a new syllable. */
+    static java.util.regex.Pattern vowel_consonantvowel = ~/([\)\(aeiouhw\|\+])([bgdzqklmncprstfxy][aeiouhw])/
 
 
     /** Splits a GreekWord into syllabes.
@@ -87,46 +92,38 @@ class Syllabifier {
     syllabic = syllabic.replaceAll(vowel_diphthong) {fullMatch, vow, dipth ->
       vow + "#" + dipth
     }
-    println "Before shortv: " + syllabic
     // split short vowel followed by non-diphthong
     syllabic = syllabic.replaceAll(shortv_vowel) {fullMatch, v1, v2 ->
       v1 + "#" + v2
     }
-    println "After shortv: " + syllabic
-  /*
-  if (verbose) { println "\tafter sv " + sylls }
-  // long followed by non-diphthong
-  sylls = sylls.replaceAll(lv) {fullMatch, v1, v2 ->
+    // split long vowel followed by non-diphthong
+    syllabic = syllabic.replaceAll(longv_vowel) {fullMatch, v1, v2 ->
     v1 + "#" + v2
-  }
-  // upsilon followed by non-diphthong
-  sylls = sylls.replaceAll(uv) {fullMatch, v ->
-    "u#" + v
-  }
+    }
+    // split upsilon followed by non-diphthong
+    syllabic = syllabic.replaceAll(upsilon_vowel) {fullMatch, u, v ->
+      u + "#" + v
+    }
+    // double consonants split
+    syllabic = syllabic.replaceAll(double_consonant) { fullMatch, doubled ->
+      doubled[0] + "#" + doubled[1]
+    }
 
-  // double consonants split
-  sylls = sylls.replaceAll(dubble) { fullMatch, doubled ->
-    doubled[0] + "#" + doubled[1]
-  }
-  if (verbose) { println "\tafter dubble " + sylls }
+
 
   // Otherwise, consonant clusters start a syllable
-  sylls = sylls.replaceAll(consclust) { fullMatch, v, cons ->
+  syllabic = syllabic.replaceAll(consonant_cluster) { fullMatch, v, cons ->
       v + "#" + cons
   }
-  if (verbose) { println "\tafter consclust " + sylls }
 
   // In 2 passes, replace vowel-consonant-vowel pattern
-  sylls = sylls.replaceAll(vcv) { fullMatch, v, cv ->
+  syllabic = syllabic.replaceAll(vowel_consonantvowel) { fullMatch, v, cv ->
     v + "#" + cv
   }
-  sylls = sylls.replaceAll(vcv) { fullMatch, v, cv ->
+  syllabic = syllabic.replaceAll(vowel_consonantvowel) { fullMatch, v, cv ->
     v + "#" + cv
   }
-  if (verbose) { println "\tafter 2 passes of vcv " + sylls }
 
-
-*/
     return syllabic
   }
 
