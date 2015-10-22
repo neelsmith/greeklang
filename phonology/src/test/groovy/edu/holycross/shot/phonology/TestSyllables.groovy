@@ -10,7 +10,13 @@ class TestSyllables {
 
   // map of input strings to expected values
   def testMap = [
-  "poios"  : "poi#os"
+  "poios"  : "poi#os",
+  //"o)i+w" : " o)#i+#w",
+  "oi)w" : "oi)#w",
+  "limnh" : "li#mnh",
+  "a)nqos" : "a)n#qos",
+  "e)lpis" : "e)l#pis",
+  "e)rgma" : "e)r#gma",
   ]
 
   @Test
