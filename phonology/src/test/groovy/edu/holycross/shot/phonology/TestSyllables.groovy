@@ -17,6 +17,11 @@ class TestSyllables {
   "a)nqos" : "a)n#qos",
   "e)lpis" : "e)l#pis",
   "e)rgma" : "e)r#gma",
+  "a)ei" : "a)#ei",
+  //"dia" : "di#a",
+  //"die" : "di#e",
+  //"eu)+" : "e#u)+",
+  "r(ea" : "r(e#a"
   ]
 
   @Test
