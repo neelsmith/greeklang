@@ -62,8 +62,8 @@ class TestSyllables {
       GreekWord gw = new GreekWord(m.key)
       //assert Syllabifier.getSyllablicString(gw) == m.value
 
-      if (Syllabifier.getSyllablicString(gw) != m.value) {
-        System.err.println "Failed on ${m.value.toString()} : got " + Syllabifier.getSyllablicString(gw)
+      if (Syllable.getSyllablicString(gw) != m.value) {
+        System.err.println "Failed on ${m.value.toString()} : got " + Syllable.getSyllablicString(gw)
       }
     }
   }
