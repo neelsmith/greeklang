@@ -9,9 +9,13 @@ class Syllabifier {
     // Regular expressions implementing the definition of syllables
     // in Smyth parag. 140.
     //
+    // Diaeresis is the one editorial mark that explicitly identifies
+    // puncutation
+    /** Split vowel with diaeresis from preceding vowel. */
+    static java.util.regex.Pattern diaeresis =  ~/([aeiouhw][\)\(]?)([iu][\)\(]?\+)/
+
     // Regular expressions to split up succesive vowels:
     //
-
     /** Diphthong is split from a following vowel.  Breathing on
     * diphthong possible if word-initial. */
     static java.util.regex.Pattern diphthong_vowel = ~/(ai[\)\(]?|oi[\)\(]?|ei[\)\(]?|au[\)\(]?|eu[\)\(]?|ou[\)\(]?|hu[\)\(]?|wu[\)\(]?|ui[\)\(]?)([aeiouhw])/
@@ -35,22 +39,21 @@ class Syllabifier {
     //
     // Regular expressions to split up consonant-vowel combinations.
     //
-
     /** Preceded by a vowel, the sequence mu-nu always starts a syllable. */
     static java.util.regex.Pattern mu_nu = ~/([\)\(aeiouhw\|\+])mn/
 
     /** Other than mu-nu, a liquid-consonant combination is split up
     * when it follows a vowel.
     */
-    static java.util.regex.Pattern liquid_consonant = ~/([\)\(aeiouhw\|\+])([lmnr])([bgdzqkcprstfxy]+)/
+    static java.util.regex.Pattern liquid_consonant = ~/([\)\(aeiouhw\|\+])([lmnr])([bgdzqkcprstfxy]+)([^'])/
 
     /**  Double consonants are split. */
-    static java.util.regex.Pattern double_consonant = ~/(b{2}|g{2}|d{2}|z{2}|q{2}|k{2}|l{2}|m{2}|n{2}|p{2}|r{2}|s{2}|t{2}|f{2}|x{2})/
+    static java.util.regex.Pattern double_consonant = ~/(b{2}|g{2}|d{2}|z{2}|q{2}|k{2}|l{2}|m{2}|n{2}|p{2}|r{2}|s{2}|t{2}|f{2}|x{2})([^'])/
 
     /** Other consonant clusters stay together. This regex *must*
     * be applied later in the pipeline than the preceding regexes
     * spliting on consonant patterns!*/
-    static java.util.regex.Pattern consonant_cluster = ~/([\)\(aeiouhw\|\+])([bgdzqkpcstfxy][mnbgdzqklcprstfxy]+)/
+    static java.util.regex.Pattern consonant_cluster = ~/([\)\(aeiouhw\|\+])([bgdzqkpcstfxy][mnbgdzqklcprstfxy]+)([^'])/
 
     /** In pattern vowel-consonant-vowel, consonant begins
     * a new syllable. */
@@ -76,13 +79,18 @@ class Syllabifier {
   static String getSyllablicString(GreekWord gw) {
     String syllabic = gw.toString()
 
+    // respect diaeresis
+    syllabic = syllabic.replaceAll(diaeresis) { fullMatch, v1, v2 ->
+      v1 + "#" + v2
+    }
+
     // mu-nu always starts a syllable
     syllabic = syllabic.replaceAll(mu_nu) { fullMatch, vow ->
       vow + "#mn"
     }
     // otherwise split liquids and consonants
-    syllabic = syllabic.replaceAll(liquid_consonant) { fullMatch, vow, liq, stopcons ->
-      vow +  liq + "#" +stopcons
+    syllabic = syllabic.replaceAll(liquid_consonant) { fullMatch, vow, liq, stopcons, trail ->
+      vow +  liq + "#" + stopcons + trail
     }
     // dipthong-vowel splits
     syllabic = syllabic.replaceAll(diphthong_vowel) { fullMatch, dipth, vow ->
@@ -105,15 +113,15 @@ class Syllabifier {
       u + "#" + v
     }
     // double consonants split
-    syllabic = syllabic.replaceAll(double_consonant) { fullMatch, doubled ->
-      doubled[0] + "#" + doubled[1]
+    syllabic = syllabic.replaceAll(double_consonant) { fullMatch, doubled, trail ->
+      doubled[0] + "#" + doubled[1] + trail
     }
 
 
 
   // Otherwise, consonant clusters start a syllable
-  syllabic = syllabic.replaceAll(consonant_cluster) { fullMatch, v, cons ->
-      v + "#" + cons
+  syllabic = syllabic.replaceAll(consonant_cluster) { fullMatch, v, cons, trail ->
+      v + "#" + cons + trail
   }
 
   // In 2 passes, replace vowel-consonant-vowel pattern
