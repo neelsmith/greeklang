@@ -16,14 +16,14 @@ class GreekWord {
 
 
 
-  /** The word in beta code form.*/
+  /** The word in ascii format.*/
   GreekString asciiWord
 
 
   /** Constructor verifies that
    * String contains only valid characters.
-   * @param srcString Greek string, in beta code.
-   * @throws Exception if not all characters in betaString are valid.
+   * @param srcString Greek string, in ascii.
+   * @throws Exception if not all characters in srcString are valid.
    */
   GreekWord(String srcString)
   throws Exception {
@@ -114,20 +114,20 @@ class GreekWord {
    * Syllables must have a vowel, so we scan the string from left to
    * right,  and whenever we see a vowel, determine how many subsequent
    * characters belong to the same syllable.
-   * @param wd A single Greek word in beta code.
-   * @returns An ArrayList of beta-code strings, one per syllable.
+   * @param wd A single Greek word in ascii encoding.
+   * @returns An ArrayList of ascii strings, one per syllable.
    */
   ArrayList getSyllables() {
     return getSyllables(this.asciiWord.toString())
   }
 
 
-  /** Breaks up a Greek word in beta-code into syllables.
+  /** Breaks up a Greek word in ascii into syllables.
    * Syllables must have a vowel, so we scan the string from left to
    * right,  and whenever we see a vowel, determine how many subsequent
    * characters belong to the same syllable.
-   * @param wd A single Greek word in beta code.
-   * @returns An ArrayList of beta-code strings, one per syllable.
+   * @param wd A single Greek word in ascii encoding.
+   * @returns An ArrayList of ascii strings, one per syllable.
    */
   static ArrayList getSyllables(String wd) {
     def syllables = []
@@ -201,7 +201,7 @@ class GreekWord {
 
 
   /** Overrides default implementation of toString.
-   * @returns Beta-code version of a Greek word.
+   * @returns ASCII version of a Greek word.
    */
   String toString() {
     return this.asciiWord.toString()

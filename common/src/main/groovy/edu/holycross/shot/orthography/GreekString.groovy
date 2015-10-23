@@ -4,6 +4,9 @@ import edu.unc.epidoc.transcoder.TransCoder
 import java.text.Normalizer
 import java.text.Normalizer.Form
 
+
+import edu.holycross.shot.phonology.Phonology
+
 /**
  * A class for working with text in Greek.  Instances may
  * be initialized with any encoding of Greek that Hugh Cayless'
@@ -25,47 +28,6 @@ class GreekString {
   Integer debugLevel = 0
 
 
-  /** Immutable set of consonant characters. */
-  static consonant = [
-    'b','g','d',
-    'z','q','k',
-    'l','m','n',
-    'c','p','r',
-    's','t','f',
-    'x','y'
-  ]
-
-  /** Immutable set of vowel characters. */
-  static vowel = [
-    'a', 'e','h',
-    'i','o','u',
-    'w','|'
-  ]
-
-  /** Immutable set of breathing characters. */
-  static breathing = [')','(']
-
-  /** Immutable set of accent characters. */
-  static accent = ['/','\\','=']
-
-  // these are not really orthographic, are they?
-  /** Immutable set of vowel quantity markers. */
-  static quantity = ['_','^']
-
-  /** Diaeresis in ascii. */
-  static String diaeresis = "+"
-
-  /** Ascii marker for upper case. */
-  static String asterisk = "*"
-
-  /** Pairs of vowels forming diphthongs. */
-  static diphthong = [
-    "ai", "ei","oi",
-    "a|", "h|", "w|",
-    "au","eu", "ou",
-    "hu", "ui"
-  ]
-
   /** Immutable set of punctuation characters. */
   static punctuation = [
     ".",
@@ -75,6 +37,8 @@ class GreekString {
     "'"
   ]
 
+  /** Ascii marker for upper case in epidoc transcoder. */
+  static String asterisk = "*"
 
   /** The string in ascii form.*/
   String greekString
@@ -197,8 +161,8 @@ class GreekString {
    */
   static boolean isAccentOrBreathing(ch) {
     if (
-      (breathing.contains(ch))
-      || (accent.contains(ch))
+      (Phonology.isBreathing(ch))
+      || (Phonology.isAccent(ch))
     ) {
       return true
     } else  {
@@ -212,7 +176,7 @@ class GreekString {
    * @returns true if character is accent, otherwise false.
    */
   static boolean isAccent(ch) {
-    return (accent.contains(ch))
+    return (Phonology.isAccent(ch))
   }
 
 
@@ -221,7 +185,7 @@ class GreekString {
    * @returns true if character is a breathing, otherwise false.
    */
   static boolean isBreathing(ch) {
-    return (breathing.contains(ch))
+    return (Phonology.isBreathing(ch))
   }
 
 
@@ -231,7 +195,7 @@ class GreekString {
    * @returns True if ch is a consonant.
    */
   static boolean isConsonant (String ch) {
-    return consonant.contains(ch)
+    return Phonology.isConsonant(ch)
   }
 
 
@@ -241,9 +205,27 @@ class GreekString {
    * @returns True if ch is a vowel.
    */
   static boolean isVowel (String ch) {
-    return vowel.contains(ch)
+    return Phonology.isVowel(ch)
   }
 
+
+  /** Determines if a single-character String
+   * is a vowel-quantity character.
+   * @param ch Character to examine.
+   * @returns True if ch is a vowel quantity character.
+   */
+  static boolean isQuantity (String ch) {
+    return Phonology.isQuantity(ch)
+  }
+
+
+  /** Determines if a String is a diphthong.
+   * @param s String to examine.
+   * @returns True if s is a diphthong.
+   */
+  static boolean isDiphthong (String s) {
+    return Phonology.isDiphthong(s)
+  }
 
   /** Determines if a single-character String
    * is a punctuation character.
@@ -261,25 +243,6 @@ class GreekString {
     //punctuation.contains(ch)
   }
 
-
-  /** Determines if a single-character String
-   * is a vowel-quantity character.
-   * @param ch Character to examine.
-   * @returns True if ch is a vowel quantity character.
-   */
-  static boolean isQuantity (String ch) {
-    return quantity.contains(ch)
-  }
-
-
-
-  /** Determines if a String is a diphthong.
-   * @param s String to examine.
-   * @returns True if s is a diphthong.
-   */
-  static boolean isDiphthong (String s) {
-    return diphthong.contains(s)
-  }
 
   //
   //  ************  END METHODS IDENTIFYING CHARACTER CLASSES   **************************

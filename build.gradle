@@ -4,7 +4,7 @@ apply plugin:  "java"
 apply plugin:  "maven"
 
 group = "edu.holycross.shot"
-version = '0.0.23'
+version = '1.0.0'
 
 apply from: "versions.gradle"
 apply from: "conf.gradle"
@@ -47,54 +47,9 @@ subprojects {
     into "${buildDir}/specs"
   }
 
-  task convertSpecs(dependsOn : [cpSpecs]) {
-    description "Converts markdown source for concordion tests to HTML"
-  }
-/*
-convertSpecs.doLast {
-  println "Converting markdown specifications in specs"
-  FileTree tree = fileTree("${projectDir}/specs/md") {
-    include "** / *.md"
-  }
-  tree.visit { f ->
-    if (f.relativePath.isFile()) {
-      File inFile = new File("${buildDir}/specs/md/${f.relativePath}")
-      println "Converting " + inFile
-      def segs = f.relativePath.getSegments()
-      String treePath = "${buildDir}/specs"
-      Integer limit =  segs.size() - 1
-      segs.eachWithIndex { s, i ->
-    if (i < limit) {
-      treePath = "${treePath}/${s}"
-      File nxtDir = new File(treePath)
-      if (! nxtDir.exists()) {
-        nxtDir.mkdir()
-      }
-    }
-      }
-      File outDir = new File(treePath)
-      String htmlFileName = f.relativePath.getLastName().replaceFirst(/.md$/,".html")
-      File htmlFile = new File(outDir, htmlFileName)
-      println "Created ${htmlFile}"
-
-      try {
-    String body = Processor.process(inFile.getText("UTF-8"),Configuration.DEFAULT)
-    htmlFile.setText("${htmlPreface}${body}${htmlEnd}", "UTF-8")
-      } catch (Exception e) {
-    System.err.println "Oops.  convertResources task unable to convert markdown source to HTML!"
-    System.err.println e
-      }
-
-    }
-  }
-}*/
-  test {
-      systemProperties 'concordion.output.dir': file("${buildDir}/concordion-unfiltered")
-  }
-  test.dependsOn convertSpecs
   task conc(type: Copy, dependsOn: test) {
     description "Filter-copies concordion output for final formatting"
-    from "${buildDir}/concordion-unfiltered"
+    from "${buildDir}/specs"
     into "${buildDir}/concordion-formatted"
     filter(ReplaceTokens, tokens: tokenMap)
   }
@@ -123,7 +78,7 @@ convertSpecs.doLast {
 project(":morphology") {
   apply from: "${rootProject.rootDir}/morphology/fstconf.gradle"
   dependencies {
-    compile project(':orthography')
-    testCompile project(':orthography')
+    compile project(':common')
+    testCompile project(':common')
   }
 }
