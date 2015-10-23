@@ -277,7 +277,7 @@ class GreekString {
   static boolean containsVowel (String s) {
     boolean vowelSeen = false
     s.each { ch ->
-      if (vowel.contains(ch)) {
+      if (isVowel(ch)) {
 	vowelSeen = true
       }
     }

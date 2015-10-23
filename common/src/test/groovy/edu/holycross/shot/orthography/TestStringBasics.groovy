@@ -52,7 +52,7 @@ class TestStringBasics {
 
 
 
-    Phonology.punctuation.each { punct ->
+    GreekString.punctuation.each { punct ->
       assert GreekString.isPunctuation(punct)
     }
 
