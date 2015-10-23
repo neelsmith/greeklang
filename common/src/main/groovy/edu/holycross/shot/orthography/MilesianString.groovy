@@ -1,4 +1,4 @@
-package edu.holycross.shot.greekutils
+package edu.holycross.shot.orthography
 
 import edu.unc.epidoc.transcoder.TransCoder
 import java.text.Normalizer

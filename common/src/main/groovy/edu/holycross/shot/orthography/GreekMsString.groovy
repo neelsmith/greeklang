@@ -1,4 +1,4 @@
-package edu.holycross.shot.greekutils
+package edu.holycross.shot.orthography
 
 import edu.unc.epidoc.transcoder.TransCoder
 import java.text.Normalizer
@@ -14,7 +14,7 @@ class GreekMsString extends GreekString {
   Integer debugLevel = 0
 
   static evilImpostorStopCodePoint = 183
-  
+
   static highStop = "\u0387" // should be good in GreekString, too?
   static twoDots = "\u205A"
   static endOfScholion = "\u2051"
@@ -22,7 +22,7 @@ class GreekMsString extends GreekString {
   static combiningMacron = "\u0304"
   static combiningBreve = "\u0306"
   static combiningDiaeresis = "\u0308"
-  
+
   /** Immutable set of punctuation characters allowed in MSS. */
   static msPunctuation = [
     highStop, endOfScholion , twoDots, beginSection
@@ -50,7 +50,7 @@ class GreekMsString extends GreekString {
   String msUnicodeString
 
 
-  
+
   /** Converts from Unicode transcription to ASCII transcription.
    * @param uniString String in Unicode transcription.
    * @param Greek mapping String.
@@ -61,18 +61,18 @@ class GreekMsString extends GreekString {
     // decompose UniString:
     String decomposed = Normalizer.normalize(uniString, Form.NFD)
 
-    
+
     TransCoder xcoder = new TransCoder()
     xcoder.setParser(mapping)
     xcoder.setConverter("BetaCode")
-    
+
     Integer count = 0
     String asciiString = xcoder.getString(decomposed).toLowerCase()
     asciiString = asciiString.replaceAll("s1","s")
     // other substitutions: ms Puncts ...
 
     StringBuilder cleanString = new StringBuilder()
-        
+
     if (asciiString.size() > 0) {
       int max = asciiString.codePointCount(0, asciiString.size() - 1)
       int idx = 0
@@ -90,20 +90,20 @@ class GreekMsString extends GreekString {
 	    cleanString.append("+")
 
 
-	    
+
 	  } else if (GreekString.isValidChar(s)) {
 	    cleanString.append(s)
 	  }
 	}
-	idx = asciiString.offsetByCodePoints(idx,1)	
+	idx = asciiString.offsetByCodePoints(idx,1)
       }
     } else {
       System.err.println "GreekMsString:warning: 0-length ascii form for " + uniString
     }
     return cleanString.toString()
   }
-  
-  
+
+
   GreekMsString(String srcString, String greekMapping)  {
     super(srcString, greekMapping, true)
 
@@ -120,7 +120,7 @@ class GreekMsString extends GreekString {
 
     this.msUnicodeString = srcString
     this.msAsciiString = asciifyUnicode(srcString, greekMapping)
-    
+
 
     if (debug > 0) {
       System.err.println "GreekMsString: ${srcString} -> ascii ${asciiString}"
@@ -146,7 +146,7 @@ class GreekMsString extends GreekString {
 	validPunct = true
       }
     }
-    
+
     return validPunct
   }
 
@@ -174,12 +174,12 @@ class GreekMsString extends GreekString {
    */
   static boolean isValidMsChar(String ch) {
     if (
-      (GreekString.isAlphabetic(ch)) 
-      || (GreekString.isAccentOrBreathing(ch)) 
+      (GreekString.isAlphabetic(ch))
+      || (GreekString.isAccentOrBreathing(ch))
       || (GreekString.isQuantity(ch))
       || (GreekString.isPunctuation(ch))
       || (GreekString.isWhiteSpace(ch))
-      || (ch == GreekString.diaeresis)
+      || (ch == GreekString.isDiaeresis(ch))
       || (ch == GreekString.asterisk)
       // Additional tests specific to MS orthography:
       || (GreekMsString.isMsPunctuation(ch))

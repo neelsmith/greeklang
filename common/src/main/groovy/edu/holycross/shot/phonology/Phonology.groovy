@@ -1,7 +1,7 @@
 package edu.holycross.shot.phonology
 
-import edu.holycross.shot.greekutils.GreekWord
-import edu.holycross.shot.greekutils.GreekString
+import edu.holycross.shot.orthography.GreekWord
+import edu.holycross.shot.orthography.GreekString
 
 /** A class for working with the phonology of GreekWords. */
 class Phonology {

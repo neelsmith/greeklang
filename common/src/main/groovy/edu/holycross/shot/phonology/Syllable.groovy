@@ -1,6 +1,6 @@
 package edu.holycross.shot.phonology
 
-import edu.holycross.shot.greekutils.GreekWord
+import edu.holycross.shot.orthography.GreekWord
 
 /** A class for working with the syllables of GreekWords. */
 class Syllable {

@@ -3,8 +3,8 @@ package orthography.milesian;
 
 import org.concordion.integration.junit3.ConcordionTestCase;
 
-import edu.holycross.shot.greekutils.MilesianInteger;
-import edu.holycross.shot.greekutils.MilesianString;
+import edu.holycross.shot.orthography.MilesianInteger;
+import edu.holycross.shot.orthography.MilesianString;
 import java.lang.StringBuffer;
 
 public class MilesianIntegerTest extends ConcordionTestCase {

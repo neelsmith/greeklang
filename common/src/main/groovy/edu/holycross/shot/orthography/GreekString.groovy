@@ -1,4 +1,4 @@
-package edu.holycross.shot.greekutils
+package edu.holycross.shot.orthography
 
 import edu.unc.epidoc.transcoder.TransCoder
 import java.text.Normalizer
@@ -127,7 +127,7 @@ class GreekString {
       || (GreekString.isQuantity(ch))
       || (GreekString.isPunctuation(ch))
       || (GreekString.isWhiteSpace(ch))
-      || (ch == GreekString.diaeresis)
+      || (ch == Phonology.diaeresis)
       || (ch == GreekString.asterisk)
     )  {
       if (debug > 0) { System.err.println "${ch} is OK!" }
@@ -145,8 +145,8 @@ class GreekString {
    */
   static boolean isAlphabetic(String ch) {
     if (
-      (GreekString.consonant.contains(ch))
-      || (GreekString.vowel.contains(ch))
+      (GreekString.isConsonant(ch))
+      || (GreekString.isVowel(ch))
     ) {
       return true
     } else  {
@@ -225,6 +225,14 @@ class GreekString {
    */
   static boolean isDiphthong (String s) {
     return Phonology.isDiphthong(s)
+  }
+
+  /** Determines if a one-character long string is diaeresis.
+   * @param ch String to check.
+   * @returns true if character is diaeresis, otherwise false.
+   */
+  static boolean isDiaeresis(ch) {
+    return (ch == Phonology.diaeresis)
   }
 
   /** Determines if a single-character String

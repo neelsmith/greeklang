@@ -3,7 +3,7 @@ package orthography.milesian;
 
 import org.concordion.integration.junit3.ConcordionTestCase;
 
-import edu.holycross.shot.greekutils.MilesianString;
+import edu.holycross.shot.orthography.MilesianString;
 
 public class MilesianIntegerSyntaxTest extends ConcordionTestCase {
 

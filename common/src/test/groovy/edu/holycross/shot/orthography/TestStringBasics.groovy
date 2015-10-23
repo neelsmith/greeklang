@@ -1,7 +1,10 @@
-package edu.holycross.shot.greekutils
+package edu.holycross.shot.orthography
 
 import org.junit.Test
 import static groovy.test.GroovyAssert.shouldFail
+
+import edu.holycross.shot.phonology.Phonology
+
 
 class TestStringBasics {
 
@@ -10,46 +13,46 @@ class TestStringBasics {
 
   @Test void testStaticMethods() {
 
-    assert GreekString.vowel.size() == 8
-    GreekString.vowel.each { v ->
+    assert Phonology.vowel.size() == 8
+    Phonology.vowel.each { v ->
       assert GreekString.isAlphabetic(v)
       assert GreekString.isVowel(v)
       assert GreekString.containsVowel(v)
     }
 
-    assert GreekString.consonant.size() == 17
-    GreekString.consonant.each { c ->
+    assert Phonology.consonant.size() == 17
+    Phonology.consonant.each { c ->
       assert GreekString.isAlphabetic(c)
     }
 
-    assert GreekString.breathing.size() == 2
-    GreekString.breathing.each { breath ->
+    assert Phonology.breathing.size() == 2
+    Phonology.breathing.each { breath ->
       assert GreekString.isAccentOrBreathing(breath)
       assert GreekString.isAlphabetic(breath) == false
     }
 
 
-    assert GreekString.accent.size() == 3
-    GreekString.accent.each { acc ->
+    assert Phonology.accent.size() == 3
+    Phonology.accent.each { acc ->
       assert GreekString.isAccentOrBreathing(acc)
       assert GreekString.isAlphabetic(acc) == false
     }
 
 
-    assert GreekString.diphthong.size() == 11
-    GreekString.diphthong.each { dip ->
+    assert Phonology.diphthong.size() == 11
+    Phonology.diphthong.each { dip ->
       assert GreekString.isDiphthong(dip)
     }
 
 
-    assert GreekString.quantity.size() == 2
-    GreekString.quantity.each { q ->
+    assert Phonology.quantity.size() == 2
+    Phonology.quantity.each { q ->
       assert GreekString.isQuantity(q)
     }
 
 
 
-    GreekString.punctuation.each { punct ->
+    Phonology.punctuation.each { punct ->
       assert GreekString.isPunctuation(punct)
     }
 

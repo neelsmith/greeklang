@@ -1,4 +1,4 @@
-package edu.holycross.shot.greekutils
+package edu.holycross.shot.orthography
 
 import edu.unc.epidoc.transcoder.TransCoder
 import java.text.Normalizer
@@ -10,7 +10,7 @@ import java.text.Normalizer.Form
 class MilesianInteger {
 
   public Integer debug = 0
-  
+
   // Temporary constructs for debugging:
   Integer SILENT = 0
   Integer WARN =  1
@@ -45,7 +45,7 @@ class MilesianInteger {
       codePoint = str.codePointAt(idx)
       if ((codePoint == MilesianString.space) || (codePoint == MilesianString.singleq)) {
 	// ignore
-	  
+
       } else if (MilesianString.isDigit(codePoint) || (codePoint == MilesianString.comma ) )  {
 	codePoints.add(codePoint)
       } else {
@@ -66,10 +66,10 @@ class MilesianInteger {
       System.err.println("MilesianInteger: exception forming integer from code points ${codePoints}")
       throw e
     }
-    
+
   }
 
-  
+
   /** Constructor building from a MilesianString. */
   MilesianInteger(MilesianString milStr)
   throws Exception {
@@ -102,13 +102,13 @@ class MilesianInteger {
   /** Converts the value of the MilesianInteger
    * to an Integer for values in the range 1..19,999.
    * @returns The integer value of the MilesianInteger.
-   * @throws 
+   * @throws
    */
   public Integer toInteger() {
     return MilesianInteger.toInteger(this.codePoints)
   }
 
-  
+
   /** Converts value of an ArrayList of codepoints to
    * an Integer for values in range 1..19,999 .
    */
@@ -119,15 +119,15 @@ class MilesianInteger {
       System.err.println "Converting cpList ${cpList} to integer"
     }
     def columns = ["myriad": false,"thousands": false,"hundreds": false ,"tens": false, "ones": false]
-    
+
     Integer total = -1
     boolean inThousands = cpList.contains(MilesianString.comma)
-    
+
     cpList.each { cp ->
-      if (debug > 0) { System.err.println "examine cp ${cp} w total " + total + ", in thousands? " + inThousands} 
+      if (debug > 0) { System.err.println "examine cp ${cp} w total " + total + ", in thousands? " + inThousands}
 
       switch (cp) {
-	
+
       case myriad:
       total = 10000;
       if (columns["myriad"] || columns["thousands"] || columns["hundreds"] || columns["tens"] || columns["ones"]) {
@@ -135,7 +135,7 @@ class MilesianInteger {
       }
       columns["myriad"] = true
       break
-      
+
       case MilesianString.comma:
       inThousands = false
       break
@@ -158,14 +158,14 @@ class MilesianInteger {
 	if (cpValue > 99) {
 	  if (debug > 0) {
 	    System.err.println "cpValue > 0, so test expr: "
-	    System.err.println "true? " +   (columns["hundreds"] || columns["tens"] || columns["ones"]) 
+	    System.err.println "true? " +   (columns["hundreds"] || columns["tens"] || columns["ones"])
 	}
 	  if (columns["hundreds"] || columns["tens"] || columns["ones"]) {
 	    if (debug > 0) { System.err.println "Throw an EXCEPTION!"}
 	    throw new Exception("MilesianInteger: invalid syntax")
 	  }
 	  columns["hundreds"] = true
-	
+
 	} else if (cpValue > 9) {
 	  if (columns["tens"] || columns["ones"]) {
 	    throw new Exception("MilesianInteger: invalid syntax")
@@ -190,24 +190,24 @@ class MilesianInteger {
       break
       }
     }
-      
+
     if (total == -1) {
       throw new Exception("MilesianString: not a valid integer value.")
     } else {
       return total
     }
   }
-    
+
 
   /** Determines Integer value for a single
    * digit character identified by Unicode
    * codepoint number in decimal numbers.
-   * @param digit Codepoint of the character to 
+   * @param digit Codepoint of the character to
    * look at.
    * @returns Integer value of this character in
    * the Milesian notation.
    * @throws Exception if digit is not the
-   * codepoint for a valid MilesianInteger digit. 
+   * codepoint for a valid MilesianInteger digit.
    */
   static Integer getDigitValue(int digit)
   throws Exception {
@@ -215,108 +215,108 @@ class MilesianInteger {
     case 924:
     return 10000
     break
-    
+
     case 927:
     return 0
     break
-    
+
     case 945:
     return 1
     break
-    
+
     case 946:
     return 2
     break
-    
+
     case 947:
     return 3
     break
-    
+
     case 948:
     return 4
     break
-    
+
     case 949:
     return 5
     break
-    
+
     case 950:
     return 7
     break
     case 951:
     return 8
     break
-    
+
     case 952:
     return 9
     break
-    
+
     case 953:
     return 10
     break
-    
+
     case 954:
     return 20
     break
-    
+
     case 955:
     return 30
     break
-    
+
     case 956:
     return 40
     break
-    
+
     case 957:
     return 50
     break
-    
+
     case 958:
     return 60
     break
-    
+
     case 959:
     return 70
     break
-    
+
     case 960:
     return 80
     break
-    
+
     case 961:
     return 100
     break
-    
+
     case 963:
     return 200
     break
-    
+
     case 964:
     return 300
     break
-    
+
     case 965:
     return 400
     break
-    
+
     case 966:
     return 500
     break
-    
+
     case 967:
     return 600
     break
-    
+
     case 968:
     return 700
     break
-    
+
     case 969:
     return 800
     break
 
     // 3db
-    case 987: 
+    case 987:
     return 6
     break
 
@@ -334,7 +334,7 @@ class MilesianInteger {
     default:
     throw new Exception("MilesianInteger: ${digit} is not a valid codepoint.")
     break
-    
+
     }
   }
 

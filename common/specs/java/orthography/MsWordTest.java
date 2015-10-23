@@ -1,8 +1,8 @@
 package orthography;
 
 
-import edu.holycross.shot.greekutils.GreekWord;
-import edu.holycross.shot.greekutils.GreekString;
+import edu.holycross.shot.orthography.GreekWord;
+import edu.holycross.shot.orthography.GreekString;
 
 import java.util.ArrayList;
 

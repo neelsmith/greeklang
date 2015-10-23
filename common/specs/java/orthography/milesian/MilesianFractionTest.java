@@ -5,7 +5,7 @@ import org.concordion.integration.junit3.ConcordionTestCase;
 
 import java.math.BigDecimal;
 
-import edu.holycross.shot.greekutils.MilesianFraction;
+import edu.holycross.shot.orthography.MilesianFraction;
 
 
 public class MilesianFractionTest extends ConcordionTestCase {

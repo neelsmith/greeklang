@@ -4,8 +4,8 @@ package edu.holycross.shot.phonology
 import org.junit.Test
 import static groovy.test.GroovyAssert.shouldFail
 
-import edu.holycross.shot.greekutils.GreekWord
-import edu.holycross.shot.greekutils.GreekString
+import edu.holycross.shot.orthography.GreekWord
+import edu.holycross.shot.orthography.GreekString
 class TestPhonology {
 
 

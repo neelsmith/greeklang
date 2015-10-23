@@ -2,7 +2,7 @@ package orthography;
 
 
 
-import edu.holycross.shot.greekutils.GreekString;
+import edu.holycross.shot.orthography.GreekString;
 
 import org.concordion.integration.junit4.ConcordionRunner;
 import org.junit.runner.RunWith;
