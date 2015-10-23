@@ -59,11 +59,8 @@ class TestSyllables {
   @Test
   void testSyllables() {
     testMap.each { m ->
-      GreekWord gw = new GreekWord(m.key)
-      //assert Syllabifier.getSyllablicString(gw) == m.value
-
-      if (Syllable.getSyllablicString(gw) != m.value) {
-        System.err.println "Failed on ${m.value.toString()} : got " + Syllable.getSyllablicString(gw)
+      if (Syllable.getSyllablicString(m.key) != m.value) {
+        System.err.println "Failed on ${m.value.toString()} : got " + Syllable.getSyllablicString(m.key)
       }
     }
   }
