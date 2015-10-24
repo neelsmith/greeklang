@@ -67,12 +67,22 @@ subprojects {
       from "specs/md"
       into "${buildDir}/specs/md"
   }
+  test.dependsOn prepareConc
   task conc(type: Copy, dependsOn: test) {
     description "Filter-copies concordion output for final formatting"
-    from "${buildDir}/specs"
+    from "${buildDir}/concordion-unfiltered"
     into "${buildDir}/concordion-formatted"
     filter(ReplaceTokens, tokens: tokenMap)
   }
+  test {
+    systemProperties 'concordion.output.dir': file("${buildDir}/concordion-unfiltered")
+  }
+
+  conc.doLast {
+    println "\nFormatted output is in ${buildDir}/concordion-formatted"
+  }
+
+
   sourceSets {
       main {
           java {
@@ -88,11 +98,13 @@ subprojects {
               srcDir "specs/java"
           }
           resources {
-            srcDir "${buildDir}/specs"
+            srcDir "${buildDir}/specs/md"
             //srcDir "specs/md"
           }
       }
   }
+
+
 }
 
 project(":morphology") {
