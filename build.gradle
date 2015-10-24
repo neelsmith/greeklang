@@ -4,14 +4,28 @@ apply plugin:  "java"
 apply plugin:  "maven"
 
 group = "edu.holycross.shot"
-version = '1.0.0'
+ext {
+  utilsversion = '1.0.0'
+}
+
 
 apply from: "versions.gradle"
 apply from: "conf.gradle"
+apply plugin: 'edu.holycross.shot.concmd'
 
 import com.github.rjeschke.txtmark.*
 import org.apache.tools.ant.filters.*
-
+buildscript {
+  repositories {
+    mavenCentral()
+    maven {
+  	  url "http://beta.hpcc.uh.edu/nexus/content/groups/public"
+  	}
+  }
+  dependencies {
+    classpath group: "edu.holycross.shot", name: "concmd", version: "1.0.2", classifier: "all"
+  }
+}
 
 allprojects {
   task printInfo << {
@@ -39,6 +53,8 @@ subprojects {
     testCompile group : 'edu.unc.epidoc', name: 'transcoder', version: versionMap['epidoc']
     testCompile group: 'junit', name: 'junit', version: versionMap['junit']
     testCompile group: 'org.concordion', name : 'concordion', version: versionMap['concordion']
+
+
   }
 
   task cpSpecs(type: Copy) {
@@ -46,7 +62,11 @@ subprojects {
     from "specs"
     into "${buildDir}/specs"
   }
-
+  task prepareConc(type: edu.holycross.shot.ConcMdTask, dependsOn: cpSpecs) {
+      description "Converts source MD to HTML"
+      from "specs/md"
+      into "${buildDir}/specs/md"
+  }
   task conc(type: Copy, dependsOn: test) {
     description "Filter-copies concordion output for final formatting"
     from "${buildDir}/specs"
