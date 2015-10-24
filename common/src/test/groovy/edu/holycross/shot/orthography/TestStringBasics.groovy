@@ -60,7 +60,6 @@ class TestStringBasics {
     String testString = "mh=nin"
     assert GreekString.containsVowel(testString)
 
-
   }
 
 
