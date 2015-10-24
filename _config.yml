@@ -7,7 +7,7 @@ permalink:        pretty
 
 # Setup
 title:            A computational system for ancient Greek
-tagline:          'Automated verification of orthography, morphology, and epic hexameter'
+tagline:          'Greek orthography, phonology, morphology, and epic hexameter'
 description:      'Specification of a computational system for working with ancient Greek, and implementations of the specification in code libraries for the JVM'
 baseurl: '/greeklang/'
 
@@ -20,14 +20,12 @@ paginate:         5
 
 
 links:
-  - title: Release notes
-    url: releases
-  - title: Live specifications
-    url: http://neelsmith.github.io/greeklang/specs/greek/Greek.html
-    external: true
-  - title: API documentation
-    url: http://neelsmith.github.io/greeklang/api
-    external: true
+  - title: Foundational libraries
+    url: basics
+  - title: Morphology
+    url: morphology
+  - title: Hexameter
+    url: hexameter
   - title: Github project
     url: https://github.com/neelsmith/greeklang
     external: true
