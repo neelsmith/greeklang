@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?><html xmlns:concordion="http://www.concordion.org/2007/concordion"><head><style>* {
+  font-family: Arial;
+}
+body {
+  padding: 32px;  
+}
+pre {
+  padding: 6px 28px 6px 28px;
+  background-color: #E8EEF7;
+}
+pre, pre *, code, code *, kbd {
+  font-family: Courier New, Courier;
+  font-size: 10pt;
+}
+h1, h1 * {
+  font-size: 24pt;	
+}
+p, td, th, li, .breadcrumbs {
+  font-size: 10pt;
+}
+p, li {
+  line-height: 140%;
+  max-width: 720px;
+}
+table {
+  border-collapse: collapse;
+  empty-cells: show;
+  margin: 8px 0px 8px 0px;
+}
+th, td {
+  border: 1px solid black;
+  padding: 3px;
+}
+td {
+  background-color: white;
+  vertical-align: top;
+}
+th {
+  background-color: #C3D9FF;
+}
+li {
+  margin-top: 6px;
+  margin-bottom: 6px; 
+}
+
+.example {
+  padding: 6px 16px 6px 16px;
+  border: 1px solid #C3D9FF;
+  margin: 6px 0px 28px 0px;
+  background-color: #F5F9FD;
+}
+.example h3 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 12pt;
+}
+
+p.success {
+  padding: 2px;
+}
+.success, .success * {
+  background-color: #afa !important;
+}
+.success pre {
+  background-color: #bbffbb;
+}
+.failure, .failure * {
+  background-color: #ffb0b0;
+  padding: 1px;
+}
+.failure .expected {
+  text-decoration: line-through;
+  color: #bb5050;
+}
+.ignored, .ignored * {
+  background-color: #f0f0f0 !important;	
+}
+
+ins {
+  text-decoration: none;	
+}
+
+.exceptionMessage {
+  background-color: #fdd;
+  font-family: Courier New, Courier, Monospace;
+  font-size: 10pt;
+  display: block;
+  font-weight: normal;
+  padding: 4px;
+  text-decoration: none !important;
+}
+.stackTrace, .stackTrace * {
+  font-weight: normal;
+}
+.stackTrace {
+  display: none;
+  padding: 1px 4px 4px 4px;
+  background-color: #fdd;
+  border-top: 1px dotted black;
+}
+.stackTraceExceptionMessage {
+  display: block;
+  font-family: Courier New, Courier, Monospace;
+  font-size: 8pt;
+  white-space: wrap;
+  padding: 1px 0px 1px 0px;
+}
+.stackTraceEntry {
+  white-space: nowrap;
+  font-family: Courier New, Courier, Monospace;
+  display: block;
+  font-size: 8pt;
+  padding: 1px 0px 1px 32px;
+}
+.stackTraceButton {
+  font-size: 8pt;
+  margin: 2px 8px 2px 0px;
+  font-weight: normal;
+  font-family: Arial;
+}
+
+.special {
+  font-style: italic;
+}
+.missing, .missing * {
+  background-color: #ff9999;
+  color:#bb5050;
+  text-decoration: line-through;
+}
+.surplus, .surplus * {
+  background-color: #ff9999;
+}
+.footer {
+  text-align: right;
+  margin-top: 40px;
+  font-size: 8pt;
+  width: 100%;
+  color: #999;
+}
+.footer .testTime {
+  padding: 2px 10px 0px 0px;
+}
+
+.idea {
+  font-size: 9pt;
+  color: #888;
+  font-style: italic;	
+}
+.tight li {
+  margin-top: 1px;
+  margin-bottom: 1px; 
+}
+.commentary {
+  float: right;
+  width: 200px;
+  background-color: #ffffd0;
+  padding:8px;
+  border: 3px solid #eeeeb0;	 
+  margin: 10px 0px 10px 10px;	 
+}
+.commentary, .commentary * {
+  font-size: 8pt;
+}
+</style><meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+</head><body><span class="breadcrumbs"><a href="Orthography.html">Orthography package, version 1.0.0</a> &gt;</span>
+<h1>Lexical tokens (Greek words)</h1>
+<p>Lexical tokens are composed only of valid Greek characters <a href="GreekString.html">as specified for Greek strings</a>, except white-space characters.   Lexical tokens may be created directly from strings, and converted back to strings, following the same rules as for Greek strings.</p>
+<p><div class='example'></p>
+<h3>Examples</h3>
+<p>Create a lexical token from a string, and convert it back to a string:</p>
+ <table concordion:execute="#result = getString(#wd)">
+    <tr>
+      <th concordion:set="#wd">Source string</th>
+      <th concordion:assertEquals="#result">Token as a String</th>
+    </tr>
+
+<tr><td>MH=NIN</td><td class="success">mh=nin</td></tr>
+<tr><td>mh=nin</td><td class="success">mh=nin</td></tr>
+<tr><td>Mh=nin</td><td class="success">mh=nin</td></tr>
+<tr><td>*mh=nin</td><td class="success">*mh=nin</td></tr>
+
+   </table>
+<p></div></p>
+<h2>Tokenization</h2>
+<p>A Greek string may comprise more than one lexical token.  White space characters that are permitted in GreekStrings but not in Greek words delimit tokens within a String. The GreekString class can create a list of Greek Words from a Greek String.</p>
+<p><div class='example'></p>
+<p>Tokenizing the following Unicode string</p>
+<pre concordion:set="#raw">Ζεὺς δ' Ἔριδα προΐαλλε θοὰς ἐπὶ νῆας Ἀχαιῶν
+</pre>
+<p>yields  this ordered list of GreekWords:</p>
+ <table concordion:verifyRows="#token : getTokensInString(#raw)">
+<tr><th concordion:assertEquals="#token">Verb (with abbreviated prefix)</th></tr>
+
+<tr><td class="success">*zeu\s</td></tr>
+<tr><td class="success">d'</td></tr>
+<tr><td class="success">*)/erida</td></tr>
+<tr><td class="success">proi+/alle</td></tr>
+<tr><td class="success">qoa\s</td></tr>
+<tr><td class="success">e)pi\</td></tr>
+<tr><td class="success">nh=as</td></tr>
+<tr><td class="success">*)axaiw=n</td></tr>
+</table>
+<p></div></p>
+<p>Like GreekStrings, GreekWords can be represented as Unicode strings in NFC form.</p>
+<p><div class='example'></p>
+ <table concordion:execute="#to = toUnicode(#from)">
+
+<tr>
+      <th concordion:set="#from">Source string</th>
+      <th concordion:assertEquals="#to">As Unicode</th>
+    </tr>
+<tr><td>*zeu\s</td><td class="success">Ζεὺς</td></tr>
+<tr><td>d'</td><td class="success">δʼ</td></tr>
+<tr><td>*)/erida</td><td class="success">Ἔριδα</td></tr>
+<tr><td>proi+/alle</td><td class="success">προΐαλλε</td></tr>
+<tr><td>qoa\s</td><td class="success">θοὰς</td></tr>
+<tr><td>e)pi\</td><td class="success">ἐπὶ</td></tr>
+<tr><td>nh=as</td><td class="success">νῆας</td></tr>
+<tr><td>*)axaiw=n</td><td class="success">Ἀχαιῶν</td></tr>
+</table>
+<div class="footer">Results generated by <a href="http://www.concordion.org" style="font-weight: bold; text-decoration: none; color: #89C;">Concordion</a><div class="testTime">in 132 ms on 24-Oct-2015 at 10:29:49 EDT</div></div></body>
+</html>
