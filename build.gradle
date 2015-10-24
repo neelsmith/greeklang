@@ -67,21 +67,30 @@ subprojects {
       from "specs/md"
       into "${buildDir}/specs/md"
   }
-  test.dependsOn prepareConc
-  task conc(type: Copy, dependsOn: test) {
+
+
+
+  task addVersion(){
+    description "Adds project version to list of filterable tokens"
+  }
+  addVersion.doLast {
+    tokenMap["version"] = version
+  }
+
+  task conc(type: Copy, dependsOn: [test, addVersion]) {
     description "Filter-copies concordion output for final formatting"
     from "${buildDir}/concordion-unfiltered"
     into "${buildDir}/concordion-formatted"
     filter(ReplaceTokens, tokens: tokenMap)
   }
-  test {
-    systemProperties 'concordion.output.dir': file("${buildDir}/concordion-unfiltered")
-  }
-
   conc.doLast {
     println "\nFormatted output is in ${buildDir}/concordion-formatted"
   }
 
+  test.dependsOn prepareConc
+  test {
+    systemProperties 'concordion.output.dir': file("${buildDir}/concordion-unfiltered")
+  }
 
   sourceSets {
       main {
