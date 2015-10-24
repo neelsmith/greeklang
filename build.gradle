@@ -19,6 +19,18 @@ apply from: "versions.gradle"
 apply from: "conf.gradle"
 apply plugin: "edu.holycross.shot.concmd"
 
+if (hasProperty('pub')) {
+  System.err.print "Using configuration data from ${pub}"
+  File confFile = new File(pub)
+  if (! confFile.exists()) {
+      throw new Exception("No publication configuration file ${pub} found.")
+  } else {
+      apply from: pub
+  }
+} else {
+  apply from: "${rootProject.rootDir}/pub.gradle"
+}
+
 import com.github.rjeschke.txtmark.*
 import org.apache.tools.ant.filters.*
 
@@ -37,8 +49,9 @@ buildscript {
 allprojects {
   task info << {
     println "This is ${project.name}, version ${project.version}"
+    println "Set to publish as ${nexusUser} with password ${nexusPassword}"
   }
-  info.description "Show name and version of each project"
+  info.description "Show name, version, and pubinfo of each project"
 }
 
 subprojects {
@@ -46,17 +59,7 @@ subprojects {
   apply plugin: "java"
   apply plugin: "maven"
 
-  if (hasProperty('pub')) {
-    System.err.print "Using configuration data from ${pub}"
-    File confFile = new File(pub)
-    if (! confFile.exists()) {
-        throw new Exception("No publication configuration file ${pub} found.")
-    } else {
-        apply from: pub
-    }
-  } else {
-    apply from: "${rootProject.rootDir}/pub.gradle"
-  }
+
 
   repositories {
      mavenCentral()
