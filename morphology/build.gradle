@@ -251,9 +251,10 @@ utils.doLast {
 test.dependsOn utils
 
 // IMPLEMENT THIS:
+/*
 task install() {
   description = "Install binary fst parser and CLI scripts in /usr/local"
-}
+}*/
 
 
 

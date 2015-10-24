@@ -6,6 +6,7 @@ apply plugin:  "maven"
 group = "edu.holycross.shot"
 ext {
   utilsversion = '1.0.0'
+  morphversion = "0.1.0"
 }
 
 
@@ -28,8 +29,8 @@ buildscript {
 }
 
 allprojects {
-  task printInfo << {
-    println "This is ${project.name}"
+  task info << {
+    println "This is ${project.name}, version ${project.version}"
   }
 }
 
@@ -68,8 +69,6 @@ subprojects {
       into "${buildDir}/specs/md"
   }
 
-
-
   task addVersion(){
     description "Adds project version to list of filterable tokens"
   }
@@ -103,12 +102,10 @@ subprojects {
       }
       test {
           java {
-              //srcDir "${project.projectDir}/specs/java"
               srcDir "specs/java"
           }
           resources {
             srcDir "${buildDir}/specs/md"
-            //srcDir "specs/md"
           }
       }
   }
@@ -117,9 +114,15 @@ subprojects {
 }
 
 project(":morphology") {
+  version = morphversion
   apply from: "${rootProject.rootDir}/morphology/fstconf.gradle"
   dependencies {
     compile project(':common')
     testCompile project(':common')
   }
+}
+
+
+project(":common") {
+  version = utilsversion
 }
