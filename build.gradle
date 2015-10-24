@@ -4,18 +4,24 @@ apply plugin:  "java"
 apply plugin:  "maven"
 
 group = "edu.holycross.shot"
+// maintain separate version numbers formatting
+// individual subprojects, and their specs.
 ext {
   utilsversion = '1.0.0'
+  utilsspec = '0.1.0'
   morphversion = "0.1.0"
+  morphspec = '0.1.0'
+  hexameterversion = "0.1.0"
+  hexameterspec = '0.1.0'
 }
-
 
 apply from: "versions.gradle"
 apply from: "conf.gradle"
-apply plugin: 'edu.holycross.shot.concmd'
+apply plugin: "edu.holycross.shot.concmd"
 
 import com.github.rjeschke.txtmark.*
 import org.apache.tools.ant.filters.*
+
 buildscript {
   repositories {
     mavenCentral()
@@ -32,12 +38,25 @@ allprojects {
   task info << {
     println "This is ${project.name}, version ${project.version}"
   }
+  info.description "Show name and version of each project"
 }
 
 subprojects {
-
   apply plugin: "groovy"
   apply plugin: "java"
+  apply plugin: "maven"
+
+  if (hasProperty('pub')) {
+    System.err.print "Using configuration data from ${pub}"
+    File confFile = new File(pub)
+    if (! confFile.exists()) {
+        throw new Exception("No publication configuration file ${pub} found.")
+    } else {
+        apply from: pub
+    }
+  } else {
+    apply from: "${rootProject.rootDir}/pub.gradle"
+  }
 
   repositories {
      mavenCentral()
@@ -54,8 +73,6 @@ subprojects {
     testCompile group : 'edu.unc.epidoc', name: 'transcoder', version: versionMap['epidoc']
     testCompile group: 'junit', name: 'junit', version: versionMap['junit']
     testCompile group: 'org.concordion', name : 'concordion', version: versionMap['concordion']
-
-
   }
 
   task cpSpecs(type: Copy) {
@@ -74,6 +91,7 @@ subprojects {
   }
   addVersion.doLast {
     tokenMap["version"] = version
+    tokenMap["specversion"] = specversion
   }
 
   task conc(type: Copy, dependsOn: [test, addVersion]) {
@@ -110,11 +128,22 @@ subprojects {
       }
   }
 
-
+  uploadArchives {
+    description "Standard task to publish archives to nexus repository."
+    repositories.mavenDeployer {
+      repository(url: nexusRepo) {
+        authentication (userName: nexusUser, password: nexusPassword)
+      }
+    }
+  }
 }
 
 project(":morphology") {
   version = morphversion
+  ext {
+    specversion = morphspec
+  }
+  // set defaults for FST compilation:
   apply from: "${rootProject.rootDir}/morphology/fstconf.gradle"
   dependencies {
     compile project(':common')
@@ -122,7 +151,12 @@ project(":morphology") {
   }
 }
 
-
 project(":common") {
   version = utilsversion
+  ext {
+    specversion = utilsspec
+  }
+  jar {
+    baseName = "greeklang"
+  }
 }
