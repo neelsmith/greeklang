@@ -14,14 +14,14 @@ baseurl: '/greeklang/'
 
 author:
   name:           'Neel Smith'
- 
+
 
 paginate:         5
 
 
-version:          0.12.0
-
 links:
+  - title: Release notes
+    url: releases
   - title: Live specifications
     url: http://neelsmith.github.io/greeklang/specs/greek/Greek.html
     external: true
