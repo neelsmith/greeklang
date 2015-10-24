@@ -1,4 +1,6 @@
-# Digital representation of Greek text
+# Orthography package, version @version@
+
+## Digital representation of Greek text
 
 The specifications linked below define a system for representing meaningful tokens in the standard alphabetic writing system used in manuscripts and printed editions of ancient Greek texts. They do not address the problem of representing epichoric Greek alphabets, which are unknown to Unicode.
 
@@ -26,4 +28,3 @@ The "Milesian" system of numeric notation borrowed glyphs from the alphabetic wr
 ## Specifications for other symbolic notation  (**TBA**) ##
 
 - Valid astronomical symbols
-
