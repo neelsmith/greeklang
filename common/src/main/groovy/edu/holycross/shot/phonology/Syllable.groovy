@@ -72,8 +72,8 @@ class Syllable {
   */
   static ArrayList getSyllables(GreekWord gw) {
     ArrayList syllables = []
-    
-    String s = Syllable.getSyllablicString(gw.toString())
+
+    String s = Syllable.getSyllablicString(gw.stripAccents().toString())
     s.split(/#/).each {
       syllables.add(new GreekWord(it))
     }
