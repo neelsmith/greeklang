@@ -36,6 +36,6 @@ The Foot object has methods that in turn can resolve the foot's string to syllab
 
 So we have three levels of alignment:
 
-1. GreekString/list of GreekWords -> a Hexameter object
-2. String -> FootMeter
-3. String -> SyllableMeter
+1. Text content of a hexameter, represented as a GreekString or list of GreekWords -> a Hexameter object
+2. Text content of a foot, represented as a String -> FootMeter (dactyl, spondee, anceps)
+3. Text content of a syllable, represented as a String -> SyllableMeter (long, short, anceps)
