@@ -81,7 +81,7 @@ creating a GreekString from an ASCII source, and then converting the GreekString
 	<tr><td>MH=NIN</td><td>mh=nin</td></tr>
 	<tr><td>mh=nin</td><td>mh=nin</td></tr>
 	<tr><td>Mh=nin</td><td>mh=nin</td></tr>
-	<tr><td>*mh=nin</td><td>*mh=nin</td></tr>
+
 
       </table>
 
@@ -94,7 +94,7 @@ creating a GreekString from an ASCII source, and then converting the GreekString
 	<tr><td>MH=NIN</td><td>μῆνιν</td></tr>
 	<tr><td>mh=nin</td><td>μῆνιν</td></tr>
 	<tr><td>Mh=nin</td><td>μῆνιν</td></tr>
-	<tr><td>*mh=nin</td><td>Μῆνιν</td></tr>
+
 
       </table>
 
@@ -136,9 +136,9 @@ GreekStrings may include any of the following "white space" characters: space (U
 
 ### Example ###
 
-If we intialize a GreekString from the source string <strong concordion:set="#white">*Mh=nin a)/eide</strong>, then converting it back to an ASCII string will preserve the white space:
+If we intialize a GreekString from the source string <strong concordion:set="#white">Mh=nin a)/eide</strong>, then converting it back to an ASCII string will preserve the white space:
 
-<pre concordion:assertEquals="getAsciiString(#white)">*mh=nin a)/eide</pre>
+<pre concordion:assertEquals="getAsciiString(#white)">mh=nin a)/eide</pre>
 
 
 @closeex@
@@ -204,14 +204,14 @@ The sequence breathing, accent, and diaeresis *follows* lower-case vowels.  When
 
 
 <tr>
-	<td>*)axilh=os</td>
-	<td>Ἀχιλῆος</td>
+	<td>a)xilh=os</td>
+	<td>ἀχιλῆος</td>
 		<td>upper case vowel with breathing</td>
 	</tr>
 
 <tr>
-	<td>*)/enq'</td>
-	<td>Ἔνθʼ</td>
+	<td>e)/nq'</td>
+	<td>ἔνθʼ</td>
 		<td>upper case vowel with breathing and accent</td>
 	</tr>
 

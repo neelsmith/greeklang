@@ -57,7 +57,7 @@ The mapping of ASCII to Unicode Greek transcriptions can be illustrated by creat
 
 
 
-A GreekString may be individual Greek vowel characters together with the combining Unicode codepoint for smooth or rough breathing,  the three accent characters, iota subscript and diaeresis.  Alternatively, a GreekString may use the equivalent Unicode precombined characters. 
+A GreekString may be individual Greek vowel characters together with the combining Unicode codepoint for smooth or rough breathing,  the three accent characters, iota subscript and diaeresis.  Alternatively, a GreekString may use the equivalent Unicode precombined characters.
 @openex@
 
 ###Examples: transcription with combining and precombined codepoints
@@ -79,7 +79,7 @@ A GreekString may be individual Greek vowel characters together with the combini
 <tr>
 	  <td>combining</td>
 	  <td>Μῆνιν</td>
-	  <td>*mh=nin</td>
+	  <td>mh=nin</td>
 	</tr>
 
 <tr>
@@ -87,13 +87,13 @@ A GreekString may be individual Greek vowel characters together with the combini
 	  <td>μῆνιν</td>
 	  <td>mh=nin</td>
 	</tr>
-	  
+
 <tr>
 	  <td>precombined</td>
 	  <td>Μῆνιν</td>
-	  <td>*mh=nin</td>
+	  <td>mh=nin</td>
 	</tr>
-	
+
 </table>
 
 
@@ -178,10 +178,9 @@ The elision character is transcribed in both ASCII and Unicode Greek transcripti
 ### Examples:  conversion to NFC Unicode ###
 
 
-The ASCII string <strong concordion:set="#beta1">*mh=nin</strong> converts to the NFC Unicode string <strong concordion:assertEquals="asUnicode(#beta1)">Μῆνιν</strong>.
+The ASCII string <strong concordion:set="#beta1">mh=nin</strong> converts to the NFC Unicode string <strong concordion:assertEquals="asUnicode(#beta1)">μῆνιν</strong>.
 
 
-The Unicode string <strong concordion:set="#u1">ἐπίρρημα</strong> converts to ASCII string <strong concordion:assertEquals="getBetaForUnicode(#u1)">e)pi/rrhma</strong> and NFC Unicode string 
+The Unicode string <strong concordion:set="#u1">ἐπίρρημα</strong> converts to ASCII string <strong concordion:assertEquals="getBetaForUnicode(#u1)">e)pi/rrhma</strong> and NFC Unicode string
 <strong concordion:assertEquals="uForU(#u1)">ἐπίρρημα</strong>
 @closeex@
-

@@ -33,11 +33,10 @@ class GreekString {
     ".",
     ";",
     ",",
-    ":",
-    "'"
+    ":"
   ]
 
-  static punctuationRE = ~/[\.;,:\']+/
+  static punctuationRE = ~/[\.;,:]+/
 
   /** Ascii marker for upper case in epidoc transcoder. */
   static String asterisk = "*"
@@ -130,7 +129,7 @@ class GreekString {
       || (GreekString.isPunctuation(ch))
       || (GreekString.isWhiteSpace(ch))
       || (ch == Phonology.diaeresis)
-      || (ch == GreekString.asterisk)
+      || (ch == Phonology.elision)
     )  {
       if (debug > 0) { System.err.println "${ch} is OK!" }
       return true

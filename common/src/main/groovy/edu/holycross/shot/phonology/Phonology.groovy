@@ -36,6 +36,8 @@ class Phonology {
   /** Diaeresis in ascii. */
   static String diaeresis = "+"
 
+  /** Elision mark in ascii. */
+  static String elision = "'"
 
 
   /** Pairs of vowels forming diphthongs. */
@@ -45,6 +47,12 @@ class Phonology {
     "au","eu", "ou",
     "hu", "ui"
   ]
+
+
+
+  static boolean isElision(String ch) {
+    return ch == elision
+  }
 
   static boolean isBreathing(String ch) {
     return breathing.contains(ch)
