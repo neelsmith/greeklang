@@ -1,6 +1,6 @@
 package edu.holycross.shot.greekmorph
 
-import edu.holycross.shot.greekutils.GreekString
+import edu.holycross.shot.orthography.GreekString
 
 import org.junit.Test
 import static groovy.test.GroovyAssert.shouldFail

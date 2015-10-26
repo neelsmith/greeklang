@@ -4,7 +4,7 @@ package edu.holycross.shot.greekmorph
 import org.junit.Test
 import static groovy.test.GroovyAssert.shouldFail
 
-import edu.holycross.shot.greekutils.GreekString
+import edu.holycross.shot.orthography.GreekString
 
 class TestWordLists {
 
