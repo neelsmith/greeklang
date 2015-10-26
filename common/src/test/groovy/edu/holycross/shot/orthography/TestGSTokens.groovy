@@ -12,6 +12,7 @@ class TestGSTokens {
     println "GreekString ${gs}"
     def expectedTokens = ["mh=nin", "a)/eide", "qea/", "phlhi+a/dew", "a)xilh=os"]
     ArrayList tokens = gs.tokenize()
+    println "tokenizes as " + tokens
     tokens.eachWithIndex { t, i ->
       assert t.toString() == expectedTokens[i]
     }

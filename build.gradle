@@ -3,7 +3,7 @@ apply plugin:  "groovy"
 apply plugin:  "java"
 apply plugin:  "maven"
 
-group = "edu.holycross.shot"
+
 // maintain separate version numbers formatting
 // individual subprojects, and their specs.
 ext {
@@ -58,7 +58,8 @@ subprojects {
   apply plugin: "groovy"
   apply plugin: "java"
   apply plugin: "maven"
-
+  
+  group = "edu.holycross.shot"
 
 
   repositories {
