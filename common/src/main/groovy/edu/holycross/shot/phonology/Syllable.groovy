@@ -1,6 +1,7 @@
 package edu.holycross.shot.phonology
 
 import edu.holycross.shot.orthography.GreekWord
+import edu.holycross.shot.orthography.GreekString
 
 /** A class for working with the syllables of GreekWords. */
 class Syllable {
@@ -17,8 +18,8 @@ class Syllable {
 
   // Regular expressions to split up succesive vowels:
   //
-  /** Diphthong is split from a following vowel.  Breathing on
-  * diphthong possible if word-initial. */
+  /** Diphthong is split from a following vowel.  Note breathing on
+  * a diphthong is possible if word-initial. */
   static java.util.regex.Pattern diphthong_vowel = ~/(ai[\)\(]?|oi[\)\(]?|ei[\)\(]?|au[\)\(]?|eu[\)\(]?|ou[\)\(]?|hu[\)\(]?|wu[\)\(]?|ui[\)\(]?)([aeiouhw])/
 
   /** Vowel is split from a following diphthong. Breathing on
@@ -56,10 +57,14 @@ class Syllable {
   * spliting on consonant patterns!*/
   static java.util.regex.Pattern consonant_cluster = ~/([\)\(aeiouhw\|\+])([bgdzqkpcstfxy][mnbgdzqklcprstfxy]+)([^'])/
 
-  /** In pattern vowel-consonant-vowel, consonant begins
+  /** In the pattern vowel-consonant-vowel, consonant begins
   * a new syllable. */
   static java.util.regex.Pattern vowel_consonantvowel = ~/([\)\(aeiouhw\|\+])([bgdzqklmncprstfxy][aeiouhw])/
 
+
+
+  static ArrayList getSyllables(GreekString gs) {
+  }
 
   /** Splits a GreekWord into syllabes.
   * @param gw The GreekWord to syllabify.

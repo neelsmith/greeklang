@@ -37,6 +37,8 @@ class GreekString {
     "'"
   ]
 
+  static punctuationRE = ~/[\.;,:\']+/
+
   /** Ascii marker for upper case in epidoc transcoder. */
   static String asterisk = "*"
 
@@ -58,7 +60,7 @@ class GreekString {
     xcoder.setConverter("BetaCode")
 
     Integer count = 0
-    String asciiString = xcoder.getString(srcString).toLowerCase()
+    String asciiString = xcoder.getString(srcString.toLowerCase()).toLowerCase()
     asciiString = asciiString.replaceAll("s1","s")
     if (debugLevel > 0) { System.err.println "Analyze " + srcString + " as " + greekMapping + " (len ${asciiString} = " + asciiString.length() + ")" }
 
@@ -301,8 +303,23 @@ class GreekString {
   }
 
 
+  ArrayList tokenize() {
+    return GreekString.tokenize(this)
+  }
+
+  /** Splits a GreekString object into an ordered
+  * list of white-space-delimited GreekStrings.
+  * @param s The GreekString to split up.
+  * @returns List of GreekStrings.
+  */
   static ArrayList tokenize(GreekString s) {
-    ArrayList tokens = s.greekString.split(/\s/)
+    ArrayList tokens = []
+    System.err.println "Tokenize source string " + s
+    System.err.println "Splits to " + s.greekString.split(/\s+/)
+    s.greekString.split(/\s+/).each {
+      String token = it.toString().replaceAll(punctuationRE, '')
+      tokens.add(new GreekString(token))
+    }
     return tokens
   }
 
