@@ -80,7 +80,13 @@ class Phonology {
 
   static GreekString stripAccents(GreekString gs) {
     return new GreekString(gs.toString().findAll {
-      ! Phonology.isBreathing(it)
+      ! Phonology.isAccent(it)
+      }.join(''))
+  }
+
+  static GreekWord stripAccents(GreekWord gs) {
+    return new GreekWord(gs.toString().findAll {
+      ! Phonology.isAccent(it)
       }.join(''))
   }
 

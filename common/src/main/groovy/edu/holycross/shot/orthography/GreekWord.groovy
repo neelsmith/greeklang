@@ -1,5 +1,7 @@
 package edu.holycross.shot.orthography
 
+import edu.holycross.shot.phonology.Syllable
+import edu.holycross.shot.phonology.Phonology
 
 /**
  * A class for working with a Greek word.
@@ -35,9 +37,13 @@ class GreekWord {
   /**
    */
   ArrayList getSyllables() {
-    return getSyllables(Syllable.getSyllables(this.asciiWord.toString()))
+    return Syllable.getSyllables(this)
   }
 
+
+  GreekWord stripAccents() {
+    return Phonology.stripAccents(this)
+  }
 
   /** Overrides default implementation of toString.
    * @returns ASCII version of a Greek word.
