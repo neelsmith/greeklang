@@ -42,7 +42,7 @@ buildscript {
   	}
   }
   dependencies {
-    classpath group: "edu.holycross.shot", name: "concmd", version: "1.0.2", classifier: "all"
+    classpath group: "edu.holycross.shot", name: "concmd", version: "1.0.3", classifier: "all"
   }
 }
 
@@ -58,7 +58,7 @@ subprojects {
   apply plugin: "groovy"
   apply plugin: "java"
   apply plugin: "maven"
-  
+
   group = "edu.holycross.shot"
 
 
@@ -154,6 +154,19 @@ project(":morphology") {
     testCompile project(':common')
   }
 }
+
+
+project(":hexameter") {
+  version = morphversion
+  ext {
+    specversion = hexameterspec
+  }
+  dependencies {
+    compile project(':common')
+    testCompile project(':common')
+  }
+}
+
 
 project(":common") {
   version = utilsversion
