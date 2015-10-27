@@ -7,11 +7,9 @@ import java.text.Normalizer.Form
 class GreekMsString extends GreekString {
 
   // Temporary constructs for debugging:
-  Integer SILENT = 0
-  Integer WARN =  1
-  Integer DEBUG = 2
-  Integer VERBOSE = 3
-  Integer debugLevel = 0
+  Integer debug = 0
+
+
 
   static evilImpostorStopCodePoint = 183
 
@@ -107,7 +105,7 @@ class GreekMsString extends GreekString {
   GreekMsString(String srcString, String greekMapping)  {
     super(srcString, greekMapping, true)
 
-    Integer debug = 0
+
 
     int lastCp = srcString.codePointCount(0, srcString.size() - 1)
     if (debug > 0) {
@@ -195,10 +193,21 @@ class GreekMsString extends GreekString {
 
 
 
+  /** Defaults to displaying GreekMsString with
+  * Unicode representaion.
+  * @returns String representation of the GreekMsString.
+  */
   String toString() {
     return this.msUnicodeString
   }
 
+
+  /** Displays GreekMsString in either
+  * ASCII or Unicode representaion.
+  * @param asUnicode True to display as Unicode,
+  * false for ASCII.
+  * @returns String representation of the GreekMsString.
+  */
   String toString(boolean asUnicode) {
     if (asUnicode) {
       return this.msUnicodeString

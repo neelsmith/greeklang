@@ -109,7 +109,10 @@ class MilesianString {
    * fractional components individually.
    */
   BigDecimal toDecimal() {
-    Integer intVal = MilesianInteger.toInteger(mInt.codePoints)
+    Integer intVal = 0
+    if (mInt != null) {
+      intVal = MilesianInteger.toInteger(mInt.codePoints)
+    }
     if (mFract == null ) {
       return intVal
     } else {
