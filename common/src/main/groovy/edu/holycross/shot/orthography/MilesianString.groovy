@@ -136,20 +136,7 @@ class MilesianString {
    * @returns True if the number includes a fractional component.
    */
   boolean hasFraction() {
-    boolean fractionSeen = false
-
-    int idx = 0
-    int codePoint = milesianString.codePointAt(idx)
-    int count = 0
-    while (count < cpMax) {
-      codePoint = milesianString.codePointAt(idx)
-      if (codePoint == doubleq) {
-	fractionSeen = true
-      }
-      idx = milesianString.offsetByCodePoints(idx, 1)
-      count++
-    }
-    return fractionSeen
+    return (mFract != null )
   }
 
 
