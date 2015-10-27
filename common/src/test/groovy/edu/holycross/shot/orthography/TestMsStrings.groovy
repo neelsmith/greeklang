@@ -22,15 +22,18 @@ class TestMsStrings {
   @Test void testCombos() {
     String macronCombo = "ἀ̄λλ'"
     GreekMsString greekMacronCombo = new GreekMsString(macronCombo, "Unicode")
-    println "${macronCombo} -> ${greekMacronCombo.toString(false)} "
-    //   assert greekMacronCombo.toString() == macronCombo
+    String expectedAscii = "a)_ll'"
+    assert greekMacronCombo.toString(false) == expectedAscii
   }
 
   @Test void testAwfulHighStops() {
+    // valid Greek Ano Teleia:
     String high = "δίῳ·"
     GreekMsString greekHigh = new GreekMsString(high, "Unicode")
-    println "${high} -> ${greekHigh.toString(false)} "
+    String expectedAscii = "di/w|:"
+    assert greekHigh.toString(false) == expectedAscii
 
+    // Latin high stop pointlessly equated with Greek Ano Teleia.
     String evilImpostor = "πυκίλαι·"
     assert shouldFail {
       GreekMsString dotless = new GreekMsString(evilImpostor, "Unicode")
@@ -41,9 +44,8 @@ class TestMsStrings {
   @Test void testWordString() {
     String verbForm = "κλονέονται"
     GreekMsString msVerbForm = new GreekMsString(verbForm, "Unicode")
-    println "${msVerbForm} -> ${msVerbForm.toString(false)} "
-
-
+    String expectedAscii = "klone/ontai"
+    assert msVerbForm.toString(false) == expectedAscii
   }
 
 
