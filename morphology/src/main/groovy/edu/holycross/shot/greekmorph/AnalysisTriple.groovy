@@ -4,14 +4,20 @@ import edu.holycross.shot.orthography.GreekString
 import edu.harvard.chs.cite.CiteUrn
 
 class AnalysisTriple {
+  CiteUrn lexicalEntity
   MorphForm morphForm
   AnalysisExplanation analysisExplanation
-  CiteUrn lexicalEntity
+
 
   AnalysisTriple(CiteUrn lexEnt, MorphForm form, AnalysisExplanation explanation) {
     lexicalEntity = lexEnt
     morphForm = form
     analysisExplanation = explanation
+  }
+
+
+  String toString() {
+    return "from ${lexicalEntity}, ${morphForm} (${analysisExplanation})"
   }
 
 }
