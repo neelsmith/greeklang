@@ -5,7 +5,7 @@ import edu.harvard.chs.cite.CiteUrn
 /**
  * A class identifying a morphological form.
  */
-class VerbalAdjectiveForm implements CitableForm {
+class VerbalAdjectiveForm implements CitableId {
 
   /** Verbal adjectives are identified by predictable URNs in the
   * urn:cite:gmorph:form collection.  The object ID is formed

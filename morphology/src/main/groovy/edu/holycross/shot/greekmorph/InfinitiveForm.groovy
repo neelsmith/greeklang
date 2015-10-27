@@ -7,7 +7,7 @@ import edu.harvard.chs.cite.CiteUrn
  * A class identifying the morphological form of a verb
  * in the infintive.
  */
-class InfinitiveForm implements CitableForm {
+class InfinitiveForm implements CitableId {
 
   /** Infinitive verb forms are identified by predictable URNs in the
   * urn:cite:gmorph:form collection.  The object ID is formed

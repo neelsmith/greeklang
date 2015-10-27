@@ -13,11 +13,9 @@ class MorphologicalAnalysis {
   /** The analyzed string. */
   GreekString greekString
 
-  /** A (possibly empty) ordered list of analyses, as MorphForm objects. */
-  ArrayList analyses = []
+  /** A (possibly empty) list of AnalysisTriple objects. */
+  ArrayList analyses
 
-  /** A (possibly empty) ordered list of explanations, as AnalysisExplanation objects. */
-  ArrayList explanations = []
 
 
   /** Constructor with all required components.
@@ -27,10 +25,9 @@ class MorphologicalAnalysis {
   * @param explanations The list of explanations, one for each form in
   * the list of analyses.
   */
-  MorphologicalAnalysis(GreekString s, ArrayList analyses, ArrayList explanations) {
+  MorphologicalAnalysis(GreekString s, ArrayList analyses) {
     this.greekString = s
     this.analyses = analyses
-    this.explanations = explanations
   }
 
 }

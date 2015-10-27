@@ -5,7 +5,7 @@ import edu.harvard.chs.cite.CiteUrn
 /**
  * A class identifying the morphological form of an adjective.
  */
-class AdjectiveForm implements CitableForm {
+class AdjectiveForm implements CitableId {
 
 
   /** Adjectives are identified by predictable URNs in the

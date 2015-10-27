@@ -5,7 +5,7 @@ import edu.harvard.chs.cite.CiteUrn
 /**
  * A class identifying the morphological form of an adverb.
  */
-class AdverbForm implements CitableForm {
+class AdverbForm implements CitableId {
 
   /** Adverbs are identified by predictable URNs in the
   * urn:cite:gmorph:form collection.  The object ID is formed

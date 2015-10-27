@@ -5,7 +5,7 @@ import edu.harvard.chs.cite.CiteUrn
 /**
  * A class identifying the morphological form of a participle.
  */
-class ParticipleForm implements CitableForm {
+class ParticipleForm implements CitableId {
 
   /** Participles are identified by predictable URNs in the
   * urn:cite:gmorph:form collection.  The object ID is formed

@@ -12,7 +12,7 @@ class MorphForm {
   AnalyticalType analyticalType
 
   /** The type-specific analysis. */
-  CitableForm analysis
+  CitableId analysis
 
   /** Constructor verifies that analysis data are appropriate for
   * the specified type of analysis.
@@ -20,7 +20,7 @@ class MorphForm {
   * @param analysis The analysis data.
   * @throws Exception if analysisType is not consistent with the class of analysis.
   */
-  MorphForm(AnalyticalType analyticalType, CitableForm analysis)
+  MorphForm(AnalyticalType analyticalType, CitableId analysis)
   throws Exception {
     switch(analyticalType) {
       // other AnalyticalType values to check:

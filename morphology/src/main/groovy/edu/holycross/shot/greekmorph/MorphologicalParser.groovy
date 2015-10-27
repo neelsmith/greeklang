@@ -41,7 +41,7 @@ class MorphologicalParser {
   */
   MorphologicalAnalysis parseGreekString(GreekString gkStr) {
     ArrayList analysisList  = []
-    ArrayList explanationList = []
+
 
     FstToken fstToken = new FstToken(gkStr)
     if (debug > 0) {System.err.println "MorphologicalAnalysis: submit ${fstToken}"}
@@ -52,14 +52,18 @@ class MorphologicalParser {
       } else if (l ==~ /[Nn]o result.+/) {
         // omit
       } else {
-        FstAnalysisParser fsp = new FstAnalysisParser(l, urnManager)
-        if (checkAccent(gkStr,fsp)) {
-          analysisList.add(fsp.getMorphForm())
-          explanationList.add(fsp.getExplanation())
+        FstAnalysisParser fap = new FstAnalysisParser(l, urnManager)
+        if (checkAccent(gkStr,fap)) {
+          analysisList.add(fap.getTriple())
+          /*
+          AnalysisTriple triple = new AnalysisTriple()
+          analysisList.add(fap.getMorphForm())
+          explanationList.add(fap.getExplanation())
+          */
         }
       }
     }
-    return( new MorphologicalAnalysis(gkStr, analysisList, explanationList))
+    return( new MorphologicalAnalysis(gkStr, analysisList))
   }
 
   String toRdf(GreekString gkStr, CtsUrn ctsUrn) {

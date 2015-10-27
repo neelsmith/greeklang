@@ -5,7 +5,7 @@ import edu.harvard.chs.cite.CiteUrn
 /**
  * A class identifying the morphological form of a noun.
  */
-class NounForm implements CitableForm {
+class NounForm implements CitableId {
 
   /** Nouns are identified by predictable URNs in the
   * urn:cite:gmorph:form collection.  The object ID is formed

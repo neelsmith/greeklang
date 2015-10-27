@@ -47,6 +47,8 @@ class FstParser {
     // before submitting to sh:
     String protectedStr  = fstStr.replaceFirst(/[>]/, '\\\\>')
     protectedStr = protectedStr.replaceFirst(/[<]/, '\\\\<')
+
+    if (debug > 0) {System.err.println "FstParser: run ${ECHO} ${protectedStr} | ${FSTINFL} ${fstParser}"}
     def procList = [SH, "-c",  "${ECHO} ${protectedStr} | ${FSTINFL} ${fstParser}"]
     if (debug > 0) {System.err.println "FstParser: " + procList}
     def proc = procList.execute()

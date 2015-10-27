@@ -2,9 +2,9 @@ package edu.holycross.shot.greekmorph
 
 import edu.harvard.chs.cite.CiteUrn
 
-/** Interface for a CitableForm.
+/** Interface for a CitableId.
 */
-public interface CitableForm {
+public interface CitableId {
 
   /** Gets a CITE URN corresponding to the identification.
   * @returns CiteUrn for the identification.
