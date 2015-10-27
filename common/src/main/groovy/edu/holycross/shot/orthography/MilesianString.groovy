@@ -9,15 +9,9 @@ import java.text.Normalizer.Form
  */
 class MilesianString {
 
-
+  // Temporary constructs for debugging:
   Integer debug = 0
 
-  // Temporary constructs for debugging:
-  Integer SILENT = 0
-  Integer WARN =  1
-  Integer DEBUG = 2
-  Integer VERBOSE = 3
-  Integer debugLevel = 0
 
 
   /** Immutable set of digit characters, identified
@@ -116,7 +110,11 @@ class MilesianString {
    */
   BigDecimal toDecimal() {
     Integer intVal = MilesianInteger.toInteger(mInt.codePoints)
-    return (intVal + mFract.getFractionValue())
+    if (mFract == null ) {
+      return intVal
+    } else {
+      return (intVal + mFract.getFractionValue())
+    }
   }
 
 
@@ -144,7 +142,7 @@ class MilesianString {
     int codePoint = milesianString.codePointAt(idx)
     int count = 0
     while (count < cpMax) {
-      codePoint = sb.codePointAt(idx)
+      codePoint = milesianString.codePointAt(idx)
       if (codePoint == doubleq) {
 	fractionSeen = true
       }
@@ -190,9 +188,13 @@ class MilesianString {
 
 
 
-  /** Extracts fraction component from a MilesianString.
+  /** Extracts the fraction component from a MilesianString.
+   * In a compound expression, the fraction component is set off
+   * from the integer component by a single quote character.
+   *
    */
   String getFractionPart() {
+    // Index where fractional part begins:
     int substrIdx = -1
     int idx = 0
     int codePoint = milesianString.codePointAt(idx)
@@ -204,19 +206,20 @@ class MilesianString {
       if (debug > 0) { System.err.println "getFractionPart: get cp at " + idx + " for count " + count }
 
       codePoint = milesianString.codePointAt(idx)
-
       if (debug > 0) { System.err.println "getFractionPart: codepoint " + codePoint + " at idx " + idx + " w max " + cpMax }
 
       if (codePoint == MilesianString.singleq) {
-	if (debug > 0) { System.err.println "\tfound s quote, so make substr idx " + idx}
-
-
+	if (debug > 0) { System.err.println "\tfound s quote, so make substr ${idx + 1}"}
 	substrIdx = idx + 1
 	// skip leading spaces
 	while (milesianString.codePointAt(substrIdx) == MilesianString.space) {
 	  substrIdx++
 	}
+      } else if (fract.contains(codePoint) ) {
+	substrIdx = idx
+	if (debug > 0) { System.err.println "\tfound a fract, so make substr idx " + idx}
       }
+
 
       if (codePoint == MilesianString.doubleq) {
 	if (substrIdx == - 1) {
@@ -229,14 +232,13 @@ class MilesianString {
       if (debug > 0)  { System.err.println idx}
       count++
     }
+
     if (substrIdx == -1) {
       if (debug > 0) { System.err.println "NO fraction part, so throw Exception."}
       throw new Exception("MilesianString: no fraction part")
+
     } else {
       if (debug  > 0) { System.err.println "getFrationPart: returning " + milesianString.substring(substrIdx, milesianString.length() )}
-
-
-
       return (milesianString.substring(substrIdx, milesianString.length() ))
     }
   }
@@ -298,6 +300,7 @@ class MilesianString {
     } catch (Exception e) {
       mInt = null
     }
+    if (debug > 0) {System.err.println "Consructor:assign integer part ${mInt}"}
     try {
       String fpart = this.getFractionPart()
       mFract = new MilesianFraction( fpart)
@@ -385,16 +388,16 @@ class MilesianString {
   String xscribe() {
     String xcription = ""
     if (this.mInt) {
-      System.err.println "Have an integer component, so get xcr..."
+      if (debug > 0 ) {System.err.println "Have an integer component, so get xcr..."}
       xcription = "${MilesianInteger.toInteger(this.mInt.codePoints)} "
-      System.err.println "Now at " + xcription
+      if (debug > 0 ) { System.err.println "Now at " + xcription }
     }
     if (this.mFract) {
-      System.err.println "Have a fraction component, so get xcr..."
+      if (debug > 0 ) { System.err.println "Have a fraction component, so get xcr..." }
       xcription += this.mFract.xscribe()
-      System.err.println "Now at " + xcription
+      if (debug > 0 ) { System.err.println "Now at " + xcription}
     } else {
-      System.err.println "\n\n-->NO FRACTION"
+      if (debug > 0 ) { System.err.println "\n\n-->NO FRACTION" }
     }
     return  xcription.replaceFirst(/[ ]+$/, '')
   }
