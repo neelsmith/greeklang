@@ -13,7 +13,8 @@ class TestCompounds  {
   @Test
   void  testSimpleFracts() {
     MilesianString ms = new MilesianString(compound)
-    println "Transcription is " + ms.xscribe()
+    String expectedXscript = "4 1/2 + 1/12"
+    assert ms.xscribe() == expectedXscript
   }
 
 

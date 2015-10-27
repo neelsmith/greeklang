@@ -52,9 +52,6 @@ class TestMacraBrevia {
     String expectedAscii = "kw/ku_sen"
     String actualAscii =  msString.toString(false).replaceAll("\n","")
 
-    println "Expected #${expectedAscii}#"
-    println "Actual #${actualAscii}#"
-
   }
 
 

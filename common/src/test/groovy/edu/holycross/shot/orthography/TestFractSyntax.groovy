@@ -11,8 +11,9 @@ class TestFractSyntax {
 
   @Test void  testAbbr() {
     MilesianString ms = new MilesianString(half)
-    System.err.println  "\n\nNOW GET HALF:"
-    //assert ms.getFractionPart() == half
+    // fractional value without integer component,
+    // so fraction part should == original input string:
+    assert ms.getFractionPart() == half
   }
 
 

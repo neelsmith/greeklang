@@ -7,12 +7,20 @@ class TestMilStr {
 
   String highVal = "𐅵"
   String one = "α"
-  @Test void  testConstr() {
-
+/*
+  @Test
+  void testIntConstr() {
     MilesianString msOne = new MilesianString(one)
-    println "Got MilStr for one"
-    //    MilesianString msHigh = new MilesianString(highVal)
-    // println "Got MilStr for 1/2"
+    assert msOne.hasFraction() == false
+    assert msOne.toDecimal() == 1
+  }
+*/
+
+
+  @Test void testUniBMP() {
+    System.err.println "Testing Unicode BMP"
+    MilesianString msHigh = new MilesianString(highVal)
+    println "Got MilStr for 1/2"
   }
 
 }
