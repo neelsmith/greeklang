@@ -6,7 +6,7 @@ import org.junit.Test
 import static groovy.test.GroovyAssert.shouldFail
 
 
-/** Tests transducer in acceptors/noun.a
+/** Tests demonstrating parsing of nouns from Unicode string.
 */
 class TestNounsPretty {
 
@@ -17,6 +17,8 @@ class TestNounsPretty {
   File lexCsvSource = new File("sampledata/urn-registries/datasets.csv")
   File inflCsvSource = new File("src/fst/collectionAbbreviations.csv")
 
+  //  A word to test:
+  String testWord = "μῆνιν"
 
   @Test
   void testParserDidactically() {
@@ -32,7 +34,7 @@ class TestNounsPretty {
     MorphologicalParser mp = new MorphologicalParser(fstBinary, umgr)
 
     // MorphologicalParsers can operate on GreekString objects:
-    String testWord = "μῆνιν"
+
     GreekString s = new GreekString(testWord, "Unicode")
 
     // Parsing a GreekString gets you 0 or more analyses
@@ -71,7 +73,7 @@ class TestNounsPretty {
 
       // Of course there are various stringifications:
       assert form.toString() == "noun: feminine accusative singular"
-      assert explanation.toString() == "stem urn:cite:gmorph:coretests.n67485_0, inflection   urn:cite:gmorph:nouninfl.is_ios4"
+      assert explanation.toString() == "stem urn:cite:gmorph:coretests.n67485_0, inflection urn:cite:gmorph:nouninfl.is_ios4"
       assert morphAnalysis.toString() == "from urn:cite:shot:lexent.n67485, noun: feminine accusative singular (stem urn:cite:gmorph:coretests.n67485_0, inflection urn:cite:gmorph:nouninfl.is_ios4)"
 
     }
