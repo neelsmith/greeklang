@@ -7,7 +7,12 @@
   % <u>coretests.n67485_0</u><u>lexent.n67485</u>mhn<noun><fem><is_ios>::<is_ios><u>nouninfl.is_ios1</u>is<fem><nom><sg>
 
 % As variable with protected chars:
-$target$ = <u>coretests\.n67485\_0</u><u>lexent\.n67485</u>mhn<noun><fem><is\_ios>\:\:<is\_ios><u>nouninfl\.is\_ios1</u>is<fem><nom><sg>
+$target$ = <u>coretests\.n67485\_0</u><u>lexent\.n67485</u>mhn<noun><fem><is\_ios><stemultacc>\:\:<is\_ios><u>nouninfl\.is\_ios1</u>is<fem><nom><sg>
+
+
+
+%%%% ADD TAG FOR ACC CHARACTERISTIC TO NOUNS STEM LEXICON %%%%
+% <u>coretests.n67485_0</u><u>lexent.n67485</u>mhn<noun><fem><is_ios><stemultacc>::<is_ios><u>nouninfl.is_ios1</u>is<fem><nom><sg>
 
 
 
@@ -17,13 +22,13 @@ $target$ = <u>coretests\.n67485\_0</u><u>lexent\.n67485</u>mhn<noun><fem><is\_io
 %%%%%%%%%%%%%%%%%%%%%%%% NOUN ACCEPTOR %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 $=nounclass$ = [#nounclass#]
-$noun$ = <u>[#urnchar#]+ [#period#] [#urnchar#]+</u><u>lexent[#period#][#urnchar#]+</u>[#stemchars#]+<noun>$=gender$ $=nounclass$ $separator$+ $=nounclass$ <u>[#urnchar#]+[#period#][#urnchar#]+</u>[#stemchars#]* $=gender$ $case$ $number$
+$noun$ = <u>[#urnchar#]+ [#period#] [#urnchar#]+</u><u>lexent[#period#][#urnchar#]+</u>[#stemchars#]+ <noun>$=gender$ $=nounclass$ [#persistacc#] $separator$+ $=nounclass$ <u>[#urnchar#]+[#period#][#urnchar#]+</u> [#stemchars#]* $=gender$ $case$ $number$
 
 
 %
 %%%%%%%%%%%%%%%%%%%% STRIP OUT VALUE STRINGS FROM URNS %%%%%%%%%%%%%%%%%%%%%%%%
 %
-$squashurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+<noun>$=gender$ $=nounclass$  $separator$+ $=nounclass$ <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> [#stemchars#]* $=gender$ $case$ $number$
+$squashurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+<noun>$=gender$ $=nounclass$  [#persistacc#]  $separator$+ $=nounclass$ <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> [#stemchars#]* $=gender$ $case$ $number$
 
 %
 %%%%%%%%%%%%%%%%%%%% STRIP OUT ALL TAGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -40,7 +45,8 @@ $striptag$ = .*
 %% $noun$ || $squashurn$ || $striptag$
 
 % Test with data:
- $target$ || $noun$    || $squashurn$    || $striptag$
+$target$ || $noun$    || $squashurn$    || $striptag$
+
 
 
 
