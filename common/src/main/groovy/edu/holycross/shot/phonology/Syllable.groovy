@@ -63,6 +63,7 @@ class Syllable {
 
 
 
+  // treat this as source for an array of GreekWord objects?
   static ArrayList getSyllables(GreekString gs) {
   }
 
@@ -141,4 +142,20 @@ class Syllable {
 
     return syllabic
   }
+
+
+
+  static getFinalAccentQuantities(GreekWord gw) {
+    return getFinalAccentQuantities(gw, false)
+  }
+
+  static getFinalAccentQuantities(GreekWord gw, boolean forceFinalShort) {
+    // list of final quantities from last backwards,
+    // up to three total
+    ArrayList quantities = []
+  }
+
+  
+
+
 }

@@ -1,11 +1,11 @@
-package edu.holycross.shot.greekmorph
+package edu.holycross.shot.phonology
 
 /** A class enumerating the accent quality of a form.
 * Enumerated values may be expressed with human-readable
 * labels, or in the multicharacter symbols used in the
 * morphological parser's FST engine.
 */
-public enum AccentTag {
+public enum AccentPattern {
 
   /** Recessive accent or persistent accent on antepenult. */
   RECESSIVE ("recessive accent or persistent accent on antepenult", "<antacc>"),
