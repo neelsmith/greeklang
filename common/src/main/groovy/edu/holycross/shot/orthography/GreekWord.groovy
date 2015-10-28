@@ -2,19 +2,13 @@ package edu.holycross.shot.orthography
 
 import edu.holycross.shot.phonology.Syllable
 import edu.holycross.shot.phonology.Phonology
+import edu.holycross.shot.phonology.AccentPattern
+import edu.holycross.shot.phonology.Accent
 
 /**
  * A class for working with a Greek word.
  */
 class GreekWord {
-
-  // Temporary constructs for debugging:
-  Integer SILENT = 0
-  Integer WARN =  1
-  Integer DEBUG = 2
-  Integer VERBOSE = 3
-  Integer debugLevel = 0
-
 
 
 
@@ -34,16 +28,33 @@ class GreekWord {
   }
 
 
-  /**
-   */
+  /** Splits word into syllabes.
+  * @returns An ordered list of GreekStrings.
+  */
   ArrayList getSyllables() {
     return Syllable.getSyllables(this)
   }
 
 
+  /** Removes accents from a word.
+  * @returns A GreekWord with accents removed.
+  */
   GreekWord stripAccents() {
-    return Phonology.stripAccents(this)
+    return Accent.stripAccents(this)
+
+
   }
+
+
+  ArrayList getFinalAccentQuantities() {
+
+    return Syllable.getFinalAccentQuantities(this)
+  }
+
+  GreekWord addAccent(ArrayList syllables, AccentPattern accent) {
+
+  }
+
 
   /** Overrides default implementation of toString.
    * @returns ASCII version of a Greek word.

@@ -6,9 +6,8 @@ import edu.holycross.shot.orthography.GreekString
 /** A class for working with the movable accent of GreekWords. */
 class Accent {
 
-
-
-
+  /** Regex to check string representation of a syllable for diphthong or long vowel. */
+  static java.util.regex.Pattern syllLongByNature =  ~/.*(ai|oi|ei|au|eu|ou|hu|wu|ui|[hw]).*/
 
   /** Removes accents from a GreekString.
   * @param gs GreekString to strip accents from.
@@ -53,8 +52,6 @@ class Accent {
           Integer nextIndex = index + 1
           accentedSyllable = syllable[0..index] + accentChar + syllable[nextIndex..max]
         }
-
-
         noAccent = false
       }
       index--
@@ -66,9 +63,49 @@ class Accent {
     }
   }
 
+  /** Adds recessive accent to a GreekWord.
+  * @param gw Unaccented form to accent.
+  * @returns A GreekWord with accent added.
+  */
+  static GreekWord addRecessiveAccent(GreekWord gw) {
+    def syllables = gw.getSyllables()
+    Integer lastIndex = syllables.size() - 1
+    String lastSyll = syllables[lastIndex]
+    // last syllable long:
+    if (lastSyll ==~ syllLongByNature) {
+      switch(lastIndex) {
+        case 0:
+        syllables[lastIndex] = accentSyllable(syllables[lastIndex], "=")
+        break
+
+        default:
+        Integer penultIdx = lastIndex - 1
+        syllables[penultIdx] = accentSyllable(syllables[penultIdx], "/")
+        break
+      }
+
+
+    } else {
+      // syllable not long by nature:
+
+      /*
+      if (lastSyll  > 1 ) {
+
+      syllables[antepenultIdex] = accentSyllable(syllables[antepenultIdex], "/")
+      */
+    }
+
+    return new GreekWord(syllables.join(""))
+  }
+
   // makes best guess at what accent to apply to what syllable
   // based on accent pattern and string content of greekword
   static GreekWord accentWord(GreekWord gw, AccentPattern acc) {
+    switch (acc) {
+      case AccentPattern.RECESSIVE:
+      return addRecessiveAccent(gw)
+      break
+    }
   }
 
 }
