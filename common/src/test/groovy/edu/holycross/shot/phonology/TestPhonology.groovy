@@ -12,6 +12,7 @@ class TestPhonology {
   @Test
   void testAcc() {
     GreekString s = new GreekString("μῆνιν", "Unicode")
-    println Phonology.stripAccents(s)
+    GreekString noAccent = Accent.stripAccents(s)
+    assert noAccent.toString() == "mhnin"
   }
 }
