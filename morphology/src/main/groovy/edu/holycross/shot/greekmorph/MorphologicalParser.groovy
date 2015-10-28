@@ -32,6 +32,7 @@ class MorphologicalParser {
   // TO BE IMPLEMENTED.  GENERATE ACCENTED FORM AND COMPARE TO SUBMITTED FORM.
   /** NOT YET IMPLEMENTED */
   boolean checkAccent(GreekString utf8String, FstAnalysisParser analysisInfo) {
+    
     return true
   }
 
@@ -55,11 +56,6 @@ class MorphologicalParser {
         FstAnalysisParser fap = new FstAnalysisParser(l, urnManager)
         if (checkAccent(gkStr,fap)) {
           analysisList.add(fap.getTriple())
-          /*
-          AnalysisTriple triple = new AnalysisTriple()
-          analysisList.add(fap.getMorphForm())
-          explanationList.add(fap.getExplanation())
-          */
         }
       }
     }

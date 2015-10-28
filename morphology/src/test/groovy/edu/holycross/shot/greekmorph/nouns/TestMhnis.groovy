@@ -8,7 +8,7 @@ import static groovy.test.GroovyAssert.shouldFail
 
 /** Tests demonstrating parsing of nouns from Unicode string.
 */
-class TestNounsPretty {
+class TestMhnis {
 
   // External files used in didactic tests:
   // FST toolkit's batch parser:

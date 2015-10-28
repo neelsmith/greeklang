@@ -16,8 +16,8 @@ class TestNouns {
   File testFile = new File("build/testInput.txt")
 
 
-// OK IN inflections.a:
-// <is_ios><u>nouninfl.is_ios1</u>is<fem><nom><sg>
+  // OK IN inflections.a:
+  // <is_ios><u>nouninfl.is_ios1</u>is<fem><nom><sg>
 
   // Maps submitted FST string to expected value of morphform.toString()
   def testTransducers = [

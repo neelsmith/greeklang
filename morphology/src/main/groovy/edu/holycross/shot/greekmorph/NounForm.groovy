@@ -21,6 +21,8 @@ class NounForm implements CitableId {
   GrammaticalCase cas
   /** Number of the form. */
   GrammaticalNumber num
+  /** */
+  PersistentAccent persistentAccent
 
 
   /** Constructor with full morphological identificaion of a noun.
@@ -28,10 +30,11 @@ class NounForm implements CitableId {
   * @param c Case of the form.
   * @param n Number of the form.
   */
-  NounForm(Gender g, GrammaticalCase c, GrammaticalNumber n) {
+  NounForm(Gender g, GrammaticalCase c, GrammaticalNumber n, PersistentAccent pa) {
     gender = g
     cas = c
     num = n
+    persistentAccent = pa
 
   }
 

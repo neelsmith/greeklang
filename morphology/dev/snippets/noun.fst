@@ -11,7 +11,7 @@ $target$ = <u>coretests\.n67485\_0</u><u>lexent\.n67485</u>mhn<noun><fem><is\_io
 
 
 
-%%%% ADD TAG FOR ACC CHARACTERISTIC TO NOUNS STEM LEXICON %%%%
+%%%% ADD TAG FOR ACCENT CHARACTERISTIC TO NOUNS STEM LEXICON %%%%
 % <u>coretests.n67485_0</u><u>lexent.n67485</u>mhn<noun><fem><is_ios><stemultacc>::<is_ios><u>nouninfl.is_ios1</u>is<fem><nom><sg>
 
 

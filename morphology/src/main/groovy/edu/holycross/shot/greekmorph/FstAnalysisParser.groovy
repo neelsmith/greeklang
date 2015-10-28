@@ -188,11 +188,18 @@ class FstAnalysisParser {
 
 
       case AnalyticalType.NOUN:
+      // CATCH PERSISTENT ACCENT HERE, AND
+      // ADD TO noun() CONSTRUCTOR
+
       //NOUNINFL: <u>is_ios.1</u><is_ios>is<fem><nom><sg>
+      // FROM STEMS: <noun><fem><is_ios><stemultacc>:
+      //System.err.println "PARSING NOUN: ${}stem tags: " + stemTags
+
       Gender gender = Gender.getByToken(inflTags[3])
       GrammaticalCase cas = GrammaticalCase.getByToken(inflTags[4])
       GrammaticalNumber num = GrammaticalNumber.getByToken(inflTags[5])
-      NounForm noun = new NounForm(gender, cas, num)
+      PersistentAccent accent = PersistentAccent.getByToken(stemTags[7])
+      NounForm noun = new NounForm(gender, cas, num, accent)
       mf = new MorphForm(analysisPattern, noun)
       break
 
@@ -216,9 +223,9 @@ class FstAnalysisParser {
 
   /** Finds accentuation for this ID.  When accent is not explicitly
   * given by a FST multicharacter symbol, it is treated as recessive.
-  * @returns Appropriate AccentTag object.
+  * @returns Appropriate PersistentAccent object.
   */
-  AccentTag getAccentTag() {
+  PersistentAccent getAccent() {
     System.err.println "FstAnalysisParser:getAccentTag: not yet implemented."
     return null
   }
