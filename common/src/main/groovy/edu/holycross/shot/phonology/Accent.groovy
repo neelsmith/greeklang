@@ -45,7 +45,7 @@ class Accent {
     Integer max = index
     while ((index >= 0) && (noAccent)) {
       String ch = syllable[index]
-      if ((Phonology.isVowel(ch)) || (Phonology.isBreathing(ch))) {
+      if ((Phonology.isVowel(ch)) || (Phonology.isBreathing(ch)) || Phonology.isQuantity(ch)) {
         if (index == syllable.size() - 1) {
           accentedSyllable = syllable  + accentChar
         } else {
@@ -62,6 +62,23 @@ class Accent {
       return accentedSyllable
     }
   }
+
+  /** Adds persistent accent on penult to a GreekWord.
+  * @param gw Unaccented form to accent.
+  * @returns A GreekWord with accent added.
+  * @throws Exception if gw does not have at least two syllables.
+  */
+  static GreekWord addPenultAccent(GreekWord gw) {
+    def syllables = gw.getSyllables()
+    if (syllables.size() < 2){
+      throw new Exception("Accent: cannot accent penult of ${gw}. Too few syllables.")
+    }
+
+    Integer lastIndex = syllables.size() - 1
+    String lastSyll = syllables[lastIndex]
+  }
+
+
 
   /** Adds recessive accent to a GreekWord.
   * @param gw Unaccented form to accent.
@@ -84,15 +101,29 @@ class Accent {
         break
       }
 
-
     } else {
-      // syllable not long by nature:
+      // last syllable short
+      switch(lastIndex) {
+        case 0:
+        syllables[lastIndex] = accentSyllable(syllables[lastIndex], "/")
+        break
 
-      /*
-      if (lastSyll  > 1 ) {
+        case 1:
 
-      syllables[antepenultIdex] = accentSyllable(syllables[antepenultIdex], "/")
-      */
+        Integer penultIdx = lastIndex - 1
+        String penult = syllables[penultIdx]
+        if (penult ==~ syllLongByNature ) {
+          syllables[penultIdx] = accentSyllable(syllables[penultIdx], "=")
+        } else {
+          syllables[penultIdx] = accentSyllable(syllables[penultIdx], "/")
+        }
+        break
+
+        default:
+        Integer antepenultIdx = lastIndex - 2
+        syllables[antepenultIdx] = accentSyllable(syllables[antepenultIdx], "/")
+        break
+      }
     }
 
     return new GreekWord(syllables.join(""))
@@ -104,6 +135,10 @@ class Accent {
     switch (acc) {
       case AccentPattern.RECESSIVE:
       return addRecessiveAccent(gw)
+      break
+
+      case AccentPattern.PENULT:
+      return addPenultAccent(gw)
       break
     }
   }
