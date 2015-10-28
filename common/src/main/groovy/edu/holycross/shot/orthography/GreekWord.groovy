@@ -55,6 +55,25 @@ class GreekWord {
 
   }
 
+  GreekWord accent(AccentPattern acc) {
+
+    return Accent.accentWord(this, acc)
+    /*
+    GreekWord accented
+
+    System.err.println "Add accent following pattern " + acc
+    switch (acc) {
+      case AccentPattern.RECESSIVE:
+      accented = Accent.addRecessiveAccent(this)
+      break
+
+      case AccentPattern.PENULT:
+      accented = Accent.addPenultAccent(this)
+      break
+    }
+
+    return accented*/
+  }
 
   /** Overrides default implementation of toString.
    * @returns ASCII version of a Greek word.

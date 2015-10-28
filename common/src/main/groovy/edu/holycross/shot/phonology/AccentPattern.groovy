@@ -26,7 +26,7 @@ public enum AccentPattern {
       codeMap.put(atype.fstToken, atype)
     }
   }
-  private AccentTag(String label, String token) {
+  private AccentPattern(String label, String token) {
     this.fstToken = token
     this.label = label
   }

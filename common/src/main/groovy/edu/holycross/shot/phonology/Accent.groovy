@@ -132,6 +132,7 @@ class Accent {
 
   // makes best guess at what accent to apply to what syllable
   // based on accent pattern and string content of greekword
+
   static GreekWord accentWord(GreekWord gw, AccentPattern acc) {
     switch (acc) {
       case AccentPattern.RECESSIVE:
