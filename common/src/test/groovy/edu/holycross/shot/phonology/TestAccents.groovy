@@ -30,6 +30,11 @@ class TestAccents {
     GreekWord penult =  Accent.addRecessiveAccent(paroxytone)
     assert penult.toString() == expectedParoxytone
 
+
+    GreekWord paroxytone2 = new GreekWord("h(ra_")
+    String expectedParoxytone2 = "h(/ra_"
+    GreekWord penult2 =  Accent.addRecessiveAccent(paroxytone2)
+    assert penult2.toString() == expectedParoxytone2
   }
 
 }

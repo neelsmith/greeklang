@@ -7,7 +7,7 @@ import edu.holycross.shot.orthography.GreekString
 class Accent {
 
   /** Regex to check string representation of a syllable for diphthong or long vowel. */
-  static java.util.regex.Pattern syllLongByNature =  ~/.*(ai|oi|ei|au|eu|ou|hu|wu|ui|[hw]).*/
+  static java.util.regex.Pattern syllLongByNature =  ~/.*(ai|oi|ei|au|eu|ou|hu|wu|ui|[hw_]).*/
 
   /** Removes accents from a GreekString.
   * @param gs GreekString to strip accents from.
