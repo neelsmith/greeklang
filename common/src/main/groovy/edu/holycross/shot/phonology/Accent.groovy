@@ -78,8 +78,6 @@ class Accent {
     String lastSyll = syllables[lastIndex]
   }
 
-
-
   /** Adds recessive accent to a GreekWord.
   * @param gw Unaccented form to accent.
   * @returns A GreekWord with accent added.
@@ -88,6 +86,9 @@ class Accent {
     def syllables = gw.getSyllables()
     Integer lastIndex = syllables.size() - 1
     String lastSyll = syllables[lastIndex]
+
+
+    println "No. syllables in ${gw}: " + syllables.size()
     // last syllable long:
     if (lastSyll ==~ syllLongByNature) {
       switch(lastIndex) {

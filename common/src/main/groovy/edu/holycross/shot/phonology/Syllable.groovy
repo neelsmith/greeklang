@@ -13,8 +13,9 @@ class Syllable {
   //
   // Diaeresis is the one editorial mark that explicitly identifies
   // puncutation
-  /** Split vowel with diaeresis from preceding vowel. */
-  static java.util.regex.Pattern diaeresis =  ~/([aeiouhw][\)\(]?)([iu][\)\(]?\+)/
+  /** Split vowel with diaeresis from preceding vowel, and capture possible
+  * following vowel. */
+  static java.util.regex.Pattern diaeresis =  ~/([aeiouhw][\)\(]?)([iu][\)\(]?\+)([aeiouhw]?)/
 
   // Regular expressions to split up succesive vowels:
   //
@@ -28,11 +29,12 @@ class Syllable {
 
   /** Short vowel is split form a following vowel other than [iu].
   * Breathing on vowel possible if word-initial. */
-  static java.util.regex.Pattern shortv_vowel = ~/([aeio][\)\(]?)([aehow])/
+  static java.util.regex.Pattern shortv_vowel = ~/([aeio][\^+]?[\)\(]?)([aehow])/
 
   /** Vowel long by nature followed by a vowel other than u.
   * Breathing on vowel possible if word-initial. */
-  static java.util.regex.Pattern longv_vowel = ~/([hw][\)\(]?)([aehiow])/
+  static java.util.regex.Pattern longv_vowel = ~/([hw][\)\(\|]?)([aehiow])/
+  static java.util.regex.Pattern vowelwmacron_vowel = ~/([aui][_][\)\(\|]?)([aehiow])/
 
   /** Upsilon followed by a vowel other than iota.
   * Breathing on upsilon possible if word-initial. */
@@ -89,8 +91,12 @@ class Syllable {
   */
   static String getSyllablicString(String syllabic) {
     // respect diaeresis
-    syllabic = syllabic.replaceAll(diaeresis) { fullMatch, v1, v2 ->
-      v1 + "#" + v2
+    syllabic = syllabic.replaceAll(diaeresis) { fullMatch, v1, v2, trail ->
+      if (trail) {
+        v1 + "#" + v2 + "#" + trail
+      } else {
+        v1 + "#" + v2
+      }
     }
 
     // mu-nu always starts a syllable
@@ -113,8 +119,17 @@ class Syllable {
     syllabic = syllabic.replaceAll(shortv_vowel) {fullMatch, v1, v2 ->
       v1 + "#" + v2
     }
-    // split long vowel followed by non-diphthong
+    // apply twice because regex matches overlap if there are 3 successive vowels.
+    syllabic = syllabic.replaceAll(shortv_vowel) {fullMatch, v1, v2 ->
+      v1 + "#" + v2
+    }
+
+    // split long vowel by nature followed by non-diphthong
     syllabic = syllabic.replaceAll(longv_vowel) {fullMatch, v1, v2 ->
+    v1 + "#" + v2
+    }
+    // split long vowel marked with macron followed by non-diphthong
+    syllabic = syllabic.replaceAll(vowelwmacron_vowel) {fullMatch, v1, v2 ->
     v1 + "#" + v2
     }
     // split upsilon followed by non-diphthong
@@ -155,7 +170,7 @@ class Syllable {
     ArrayList quantities = []
   }
 
-  
+
 
 
 }
