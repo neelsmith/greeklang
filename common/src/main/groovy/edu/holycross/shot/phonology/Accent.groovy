@@ -45,7 +45,7 @@ class Accent {
     Integer max = index
     while ((index >= 0) && (noAccent)) {
       String ch = syllable[index]
-      if (Phonology.isVowel(ch)) {
+      if ((Phonology.isVowel(ch)) || (Phonology.isBreathing(ch))) {
         if (index == syllable.size() - 1) {
           accentedSyllable = syllable  + accentChar
         } else {
