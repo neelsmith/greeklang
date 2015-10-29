@@ -5,6 +5,6 @@ Must include:
 - URN for stem
 - URN for lexical entity
 - stem
-- the symbol `<noun>` or `<adj>`
+- gender
 - an inflectional class (see full list elsewhere)
 - symbol for persistent accent
