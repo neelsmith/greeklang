@@ -1,7 +1,8 @@
-StemUrn,LexicalEntity,Stem,Gender,InflClass,Accent
-coretests.n67485_0,lexent.n67485,mhn,fem,is_ios,stemultacc
-coretests.n115887_0,lexent.n115887,yux,fem,h_hs,inflacc
-coretests.n46456_0,lexent.n46456,zwn,fem,h_hs,stemultacc
-coretests.n29828_0,lexent.n29828,dwr,neut,os_ou,stemultacc
-coretests.n272092_0,lexent.n272092,o(d,fem,os_ou,inflacc
-coretests.n8909_0,lexent.n8909,a)nqrwp,masc,os_ou,stempenacc
+StemUrn,LexicalEntity,Stem,Gender,InflClass,Accent,Tags
+coretests.n67485_0,lexent.n67485,mhn,fem,is_ios,stemultacc,
+coretests.n115887_0,lexent.n115887,yux,fem,h_hs,inflacc,
+coretests.n46456_0,lexent.n46456,zwn,fem,h_hs,stemultacc,
+coretests.n29828_0,lexent.n29828,dwr,neut,os_ou,stemultacc,
+coretests.n272092_0,lexent.n272092,o(d,fem,os_ou,inflacc,
+coretests.n8909_0,lexent.n8909,a)nqrwp,masc,os_ou,stempenacc,
+X,X,xa_ris,neut,ma_matos,stemultacc,
