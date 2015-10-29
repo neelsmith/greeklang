@@ -1,5 +1,5 @@
 StemUrn,LexicalEntity,Stem,Gender,InflClass,Accent
-coretests.n67485_0,lexent.n67485,mhn,noun,fem,is_ios,stemultacc
+coretests.n67485_0,lexent.n67485,mhn,fem,is_ios,stemultacc
 coretests.n115887_0,lexent.n115887,yux,fem,h_hs,inflacc
 coretests.n46456_0,lexent.n46456,zwn,fem,h_hs,stemultacc
 coretests.n29828_0,lexent.n29828,dwr,neut,os_ou,stemultacc
