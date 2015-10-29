@@ -73,10 +73,26 @@ class Accent {
     if (syllables.size() < 2){
       throw new Exception("Accent: cannot accent penult of ${gw}. Too few syllables.")
     }
-
+    //println "No. syllables in ${gw}: " + syllables.size()
     Integer lastIndex = syllables.size() - 1
     String lastSyll = syllables[lastIndex]
+    Integer penultIdx = lastIndex - 1
+    String penult = syllables[penultIdx]
+
+    // last syllable long:
+    if (lastSyll ==~ syllLongByNature) {
+      syllables[penultIdx] = accentSyllable(penult, "/")
+    } else {
+      // last syllable short: check length of penult
+      if (penult ==~ syllLongByNature ) {
+	syllables[penultIdx] = accentSyllable(penult, "/")
+      } else
+      syllables[penultIdx] = accentSyllable(syllables[penultIdx], "=")
+    }
+    return new GreekWord(syllables.join(""))
   }
+
+
 
   /** Adds recessive accent to a GreekWord.
   * @param gw Unaccented form to accent.
@@ -87,8 +103,6 @@ class Accent {
     Integer lastIndex = syllables.size() - 1
     String lastSyll = syllables[lastIndex]
 
-
-    println "No. syllables in ${gw}: " + syllables.size()
     // last syllable long:
     if (lastSyll ==~ syllLongByNature) {
       switch(lastIndex) {

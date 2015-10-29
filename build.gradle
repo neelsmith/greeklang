@@ -149,6 +149,9 @@ project(":morphology") {
   }
   // set defaults for FST compilation:
   apply from: "${rootProject.rootDir}/morphology/fstconf.gradle"
+
+  // eventually convert to dependency on a published
+  // version of this library
   dependencies {
     compile project(':common')
     testCompile project(':common')

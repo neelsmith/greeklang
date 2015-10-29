@@ -201,9 +201,10 @@ class FstAnalysisParser {
 
 
       Integer lastTag = stemTags.size() - 1
-      System.err.println "Tag 7 = " + stemTags[7]
+      /*System.err.println "Tag 7 = " + stemTags[7]
       System.err.println "As acc == " +  PersistentAccent.getByToken(stemTags[7])
       System.err.println "All tags == " + stemTags
+      */
       PersistentAccent accent = PersistentAccent.getByToken(stemTags[lastTag])
       NounForm noun = new NounForm(gender, cas, num, accent)
       mf = new MorphForm(analysisPattern, noun)
