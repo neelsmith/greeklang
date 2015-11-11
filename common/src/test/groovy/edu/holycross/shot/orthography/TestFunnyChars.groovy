@@ -11,7 +11,7 @@ class TestFunnyChars {
     String testUnicode = "λόγῳ"
     String testBeta = "lo/gw|"
 
-    GreekString uniGreek = new GreekString(testUnicode, "Unicode")
+    GreekString uniGreek = new GreekString(testUnicode,true)
     GreekString betaGreek = new GreekString(testBeta)
     assert uniGreek.toString() == betaGreek.toString()
   }
@@ -23,7 +23,7 @@ class TestFunnyChars {
     String testUnicode = "πηληϊάδεω"
     String testBeta = "phlhi+a/dew"
 
-    GreekString uniGreek = new GreekString(testUnicode, "Unicode")
+    GreekString uniGreek = new GreekString(testUnicode,true)
     GreekString betaGreek = new GreekString(testBeta)
     assert uniGreek.toString() == betaGreek.toString()
   }

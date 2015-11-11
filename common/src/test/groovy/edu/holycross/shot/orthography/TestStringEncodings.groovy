@@ -11,7 +11,7 @@ class TestStringEncodings {
     String testUnicode = "μῆνιν"
     String testBeta = "mh=nin"
 
-    GreekString uniGreek = new GreekString(testUnicode, "Unicode")
+    GreekString uniGreek = new GreekString(testUnicode, true)
     GreekString betaGreek = new GreekString(testBeta)
 
     assert uniGreek.toString() == betaGreek.toString()
@@ -21,7 +21,7 @@ class TestStringEncodings {
     String notGreek = "αλφα = 1"
 
     assert shouldFail {
-      GreekString badString = new GreekString(notGreek, "Unicode")
+      GreekString badString = new GreekString(notGreek, true)
     }
 
   }

@@ -12,7 +12,7 @@ class TestMsFloats {
 
 
   @Test void testConverting() {
-    GreekMsString msString = new GreekMsString("ἀ̄λλ'", "Unicode")
+    GreekMsString msString = new GreekMsString("ἀ̄λλ'", true)
     String expectedAscii = "a)_ll'"
     assert msString.toString(false) == expectedAscii
   }

@@ -14,8 +14,8 @@ class TestMacraBrevia {
     String macron = "κώκῡσεν"
     String expectedAscii = "kw/ku_sen"
 
-    GreekMsString macronString = new GreekMsString(macron, "Unicode")
-    assert macronString.toString(false) ==  GreekMsString.asciifyUnicode(macron, "Unicode")
+    GreekMsString macronString = new GreekMsString(macron, true)
+    assert macronString.toString(false) ==  GreekMsString.asciifyUnicode(macron)
 
     assert macronString.toString(false) == expectedAscii
 
@@ -27,8 +27,8 @@ class TestMacraBrevia {
     String expectedAscii = "pi/^qesqe/"
 
 
-    GreekMsString breveString = new GreekMsString(breve, "Unicode")
-    assert breveString.toString(false) ==  GreekMsString.asciifyUnicode(breve, "Unicode")
+    GreekMsString breveString = new GreekMsString(breve, true)
+    assert breveString.toString(false) ==  GreekMsString.asciifyUnicode(breve)
 
     assert breveString.toString(false) == expectedAscii
 
@@ -38,8 +38,8 @@ class TestMacraBrevia {
     String diaeresis = "ί̈σχειν"
     String expectedAscii = "i+/sxein"
 
-    GreekMsString diaeresisString = new GreekMsString(diaeresis, "Unicode")
-    assert diaeresisString.toString(false) ==  GreekMsString.asciifyUnicode(diaeresis, "Unicode")
+    GreekMsString diaeresisString = new GreekMsString(diaeresis, true)
+    assert diaeresisString.toString(false) ==  GreekMsString.asciifyUnicode(diaeresis)
     assert diaeresisString.toString(false) == expectedAscii
 
   }
@@ -47,7 +47,7 @@ class TestMacraBrevia {
   @Test void testPrecomposed() {
     File precomposed = new File("testdata/strings/kwkcombo.txt")
     String nfcStr = precomposed.getText("UTF-8")
-    GreekMsString msString = new GreekMsString(nfcStr, "Unicode")
+    GreekMsString msString = new GreekMsString(nfcStr, true)
 
     String expectedAscii = "kw/ku_sen"
     String actualAscii =  msString.toString(false).replaceAll("\n","")

@@ -11,7 +11,7 @@ class TestPunct {
 
   @Test void testPunctuation() {
     GreekString asciiGreek = new GreekString(asciiPunct)
-    GreekString uniGreek = new GreekString(uniPunct,"Unicode")
+    GreekString uniGreek = new GreekString(uniPunct,true)
 
     // Test 1: both inputs yield identical ascii-only
     // transcription:

@@ -8,7 +8,7 @@ class TestGSTokens {
 
   @Test
   void testTokenize() {
-    GreekString gs = new GreekString("μῆνιν ἄειδε, θεά, Πηληϊάδεω Ἀχιλῆος", "Unicode")
+    GreekString gs = new GreekString("μῆνιν ἄειδε, θεά, Πηληϊάδεω Ἀχιλῆος", true)
     def expectedTokens = ["mh=nin", "a)/eide", "qea/", "phlhi+a/dew", "a)xilh=os"]
     ArrayList tokens = gs.tokenize()
     tokens.eachWithIndex { t, i ->

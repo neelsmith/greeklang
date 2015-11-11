@@ -13,7 +13,7 @@ class TestMsStrings {
 
   @Test void testInstance() {
     String eoSchol = "⁑"
-    GreekMsString greekEoSchol = new GreekMsString(eoSchol, "Unicode")
+    GreekMsString greekEoSchol = new GreekMsString(eoSchol, true)
     assert greekEoSchol.toString() == eoSchol
   }
 
@@ -21,7 +21,7 @@ class TestMsStrings {
 
   @Test void testCombos() {
     String macronCombo = "ἀ̄λλ'"
-    GreekMsString greekMacronCombo = new GreekMsString(macronCombo, "Unicode")
+    GreekMsString greekMacronCombo = new GreekMsString(macronCombo, true)
     String expectedAscii = "a)_ll'"
     assert greekMacronCombo.toString(false) == expectedAscii
   }
@@ -29,21 +29,21 @@ class TestMsStrings {
   @Test void testAwfulHighStops() {
     // valid Greek Ano Teleia:
     String high = "δίῳ·"
-    GreekMsString greekHigh = new GreekMsString(high, "Unicode")
+    GreekMsString greekHigh = new GreekMsString(high, true)
     String expectedAscii = "di/w|:"
     assert greekHigh.toString(false) == expectedAscii
 
     // Latin high stop pointlessly equated with Greek Ano Teleia.
     String evilImpostor = "πυκίλαι·"
     assert shouldFail {
-      GreekMsString dotless = new GreekMsString(evilImpostor, "Unicode")
+      GreekMsString dotless = new GreekMsString(evilImpostor, true)
     }
   }
 
 
   @Test void testWordString() {
     String verbForm = "κλονέονται"
-    GreekMsString msVerbForm = new GreekMsString(verbForm, "Unicode")
+    GreekMsString msVerbForm = new GreekMsString(verbForm, true)
     String expectedAscii = "klone/ontai"
     assert msVerbForm.toString(false) == expectedAscii
   }
