@@ -20,10 +20,6 @@ import edu.holycross.shot.phonology.Phonology
 class GreekString {
 
   // Temporary constructs for debugging:
-  Integer SILENT = 0
-  Integer WARN =  1
-  Integer DEBUG = 2
-  Integer VERBOSE = 3
 
   Integer debugLevel = 0
 
@@ -36,6 +32,7 @@ class GreekString {
     ":"
   ]
 
+  /** Regex matching GreekString punctuation characters. */
   static punctuationRE = ~/[\.;,:]+/
 
   /** Ascii marker for upper case in epidoc transcoder. */
@@ -53,37 +50,41 @@ class GreekString {
    * epidoc transcoder, such as "Unicode".
    * @throws Exception if not all characters in srcString are valid.
    */
-  GreekString(String srcString, String greekMapping)  {
-    TransCoder xcoder = new TransCoder()
-    xcoder.setParser(greekMapping)
-    xcoder.setConverter("BetaCode")
-
+  GreekString(String srcString, boolean inUnicode)  {
     Integer count = 0
-    String asciiString = xcoder.getString(srcString.toLowerCase()).toLowerCase()
-    asciiString = asciiString.replaceAll("s1","s")
-    if (debugLevel > 0) { System.err.println "Analyze " + srcString + " as " + greekMapping + " (len ${asciiString} = " + asciiString.length() + ")" }
+    String asciiString = ""
 
+    if (inUnicode) {
+      TransCoder xcoder = new TransCoder()
+      xcoder.setParser("Unicode")
+      xcoder.setConverter("BetaCode")
+      asciiString = xcoder.getString(srcString.toLowerCase()).toLowerCase().replaceAll("s1","s")
+      if (debugLevel > 0) { System.err.println "Analyze " + srcString + ". In Unicode? " + inUnicode + " (len ${asciiString} = " + asciiString.length() + ")" }
+    } else {
+      asciiString = srcString
+    }
     while (count < asciiString.length()) {
       if (!(isValidChar(asciiString.substring(count,count+1)))) {
 	System.err.println "Error parsing ${asciiString}: failed on ${asciiString.substring(count,count+1)} (char ${count})"
-	System.err.println "GreekString:constructor with ${greekMapping} invalid character at position ${count}:  '" + asciiString.substring(count,count+1) + "'"
-	throw new Exception("GreekString:constructor with ${greekMapping} invalid character at position ${count}:  '" + asciiString.substring(count,count+1) + "'")
+	System.err.println "GreekString:constructor with Unicode = ${inUnicode} invalid character at position ${count}:  '" + asciiString.substring(count,count+1) + "'"
+	throw new Exception("GreekString:constructor with Unicode = ${inUnicode} invalid character at position ${count}:  '" + asciiString.substring(count,count+1) + "'")
       }
       count++
     }
-    this.greekString = asciiString
+    this.greekString = asciiString.replaceAll(/\s+/," ")
 
   }
 
-  GreekString(String srcString, String greekMapping, boolean ignoreInvalid)  {
-    TransCoder xcoder = new TransCoder()
-    xcoder.setParser(greekMapping)
-    xcoder.setConverter("BetaCode")
-
+  GreekString(String srcString, boolean inUnicode, boolean ignoreInvalid)  {
+    if (inUnicode) {
+      TransCoder xcoder = new TransCoder()
+      xcoder.setParser("Unicode")
+      xcoder.setConverter("BetaCode")
+    }
     Integer count = 0
     String asciiString = xcoder.getString(srcString).toLowerCase()
     asciiString = asciiString.replaceAll("s1","s")
-    this.greekString = asciiString
+    this.greekString = asciiString.replaceAll(/\s+/," ")
   }
 
   /** Constructor verifies that srcSring contains only valid characters
@@ -102,7 +103,7 @@ class GreekString {
       }
       count++
     }
-    this.greekString = asciiString
+    this.greekString = asciiString.replaceAll(/\s+/," ")
   }
 
 

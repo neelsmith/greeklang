@@ -18,7 +18,7 @@ public class MsWordTest  {
     throws Exception {
 	ArrayList<String> tokens = new ArrayList<String> ();
 	try {
-	    GreekString s = new GreekString(raw, "Unicode");
+	    GreekString s = new GreekString(raw, true);
 	    tokens = GreekString.tokenize(s);
 	    return tokens;
 	} catch (Exception e) {

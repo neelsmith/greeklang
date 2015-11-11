@@ -24,7 +24,7 @@ public class UcodeXlitTest {
         public String getBetaForUnicode(String str) {
 	GreekString gs;
 	try {
-	    gs = new GreekString(str, "Unicode");
+	    gs = new GreekString(str, true);
 	    return gs.toString();
 	} catch (Exception e) {
 	    System.err.println("Exception in test: " + e.toString());
@@ -37,7 +37,7 @@ public class UcodeXlitTest {
         public String uForU(String str) {
 	GreekString gs;
 	try {
-	    gs = new GreekString(str, "Unicode");
+	    gs = new GreekString(str,true);
 	    return gs.toString(true);
 	} catch (Exception e) {
 	    System.err.println("Exception in test: " + e.toString());

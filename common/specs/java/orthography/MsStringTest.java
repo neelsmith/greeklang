@@ -41,7 +41,7 @@ public class MsStringTest  {
     public String getAsciiForUnicode(String str) {
 	GreekString gs;
 	try {
-	    gs = new GreekString(str, "Unicode");
+	    gs = new GreekString(str, true);
 	    return gs.toString();
 	} catch (Exception e) {
 	    System.err.println("Exception in test: " + e.toString());
