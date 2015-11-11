@@ -51,7 +51,7 @@ class GreekNode {
    * Constructs a GreekNode object from the XML representation of
    * contents, using default values for character encoding
    * and node namespace.
-   * @param content A strin of well-formed XML.
+   * @param content A string of well-formed XML.
    * @param True if text nodes of XML document represent GreekStrings in Unicode mapping,
    * false if text nodes represent Greek in ASCII mapping.
    * @throws Exception if content could not be parsed.
@@ -67,6 +67,22 @@ class GreekNode {
     }
     xmlGreekInUnicode = xmlUnicode
   }
+
+
+  /** Single method to assign values to all settings defining
+  * behavior of magic node.
+  * @param ns XML namespace for magic node.
+  * @param Local name of magic node.
+  * @param Name of magic attribute.
+  * @param Value of magic attribute.
+  */
+  void setMagic(String ns, String nodeName, String attrName, String attrValue) {
+     magicNs = ns
+     magicNode = nodeName
+     magicAttrName = attrName
+     magicAttrValue = attrValue
+  }
+
 
   /** Recursively walks through all descendants of an XML node
    * and collects the content of text nodes.

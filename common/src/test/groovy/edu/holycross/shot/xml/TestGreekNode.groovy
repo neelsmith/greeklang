@@ -21,7 +21,7 @@ class TestGreekNode {
     </div>
     """
     GreekNode gn  = new GreekNode(xmlSrc, true)
-System.err.println "ALL TEXT: " + gn.collectText().toString(true)
+
     Integer expectedWords = 11
     String expectedFirst = "mh=nin"
     GreekString nodeTxt = gn.collectText()
@@ -29,9 +29,17 @@ System.err.println "ALL TEXT: " + gn.collectText().toString(true)
     def asciiWordList =  nodeTxt.toString().replaceFirst(/^[ ]/,"").split(/\s/)
     assert expectedWords == asciiWordList.size()
     assert asciiWordList[0] == expectedFirst
-    
+
     def unicodeWordList = nodeTxt.toString(true).replaceFirst(/^[ ]/,"").split(/\s/)
     assert expectedWords == unicodeWordList.size()
 
+  }
+
+  @Test
+  void testBadXml() {
+    String xmlSrc = "<open>Text context."
+    assert shouldFail {
+      GreekNode gn  = new GreekNode(xmlSrc)
+    }
   }
 }
