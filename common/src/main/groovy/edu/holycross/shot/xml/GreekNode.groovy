@@ -14,8 +14,20 @@ class GreekNode {
   boolean debug = 0
 
 
-  /** XML namespace for the node.  Default is TEI. */
-  //groovy.xml.Namespace nodeNamespace = new groovy.xml.Namespace("http://www.tei-c.org/ns/1.0")
+
+  /* Values defining a magic element wrapping word tokens potentially including
+  further markup that extraction needs to burrow through
+  */
+
+  /** If non-null, magic element must be in this namespace */
+  String magicNs = ""
+  /** If non-null, local name of magic word wrapping element. */
+  String magicNode = ""
+  /** If non-null, name of an attribute that must be present on magicNode. */
+  String magicAttrName = ""
+  /** If non-null, required value for magic attribute named by magicAttrName. */
+  String magicAttrValue = ""
+
 
   /** The root of the XML content as a parsed groovy.util.Node */
   def parsedNode = null
@@ -97,7 +109,7 @@ class GreekNode {
 	//  if (!inWord) {
 	allText = new GreekString(allText.toString() + " ")
 	//  }
-  
+
   if (allText.toString()) {
 	   allText = collectText(child, new GreekString(allText.toString()),inWord)
    } else {
@@ -112,16 +124,6 @@ class GreekNode {
   }
 
 
-  /** Gathers text content from the object's parsed node,
-    * squeezes runs of white space to a single space.
-    * @return A String with the text content of the object node.
-    */
-  /*
-    String greekTextContent() {
-        def res = this.collectText(parsedNode)
-        return res.replaceAll(/\s+/,' ')
-    }
-  */
 
   /** Creates a String of well-formed XML with Greek text in encoding toEncoding.
    * @param n A node resulting from XmlParser's output, which could be either

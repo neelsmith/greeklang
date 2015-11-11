@@ -76,14 +76,15 @@ class GreekString {
   }
 
   GreekString(String srcString, boolean inUnicode, boolean ignoreInvalid)  {
+    String asciiString = ""
     if (inUnicode) {
       TransCoder xcoder = new TransCoder()
       xcoder.setParser("Unicode")
       xcoder.setConverter("BetaCode")
+      asciiString = xcoder.getString(srcString).toLowerCase().replaceAll("s1","s")
+    } else {
+      asciiString = srcString
     }
-    Integer count = 0
-    String asciiString = xcoder.getString(srcString).toLowerCase()
-    asciiString = asciiString.replaceAll("s1","s")
     this.greekString = asciiString.replaceAll(/\s+/," ")
   }
 

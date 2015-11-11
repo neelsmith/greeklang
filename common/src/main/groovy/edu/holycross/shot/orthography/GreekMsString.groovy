@@ -51,17 +51,16 @@ class GreekMsString extends GreekString {
 
   /** Converts from Unicode transcription to ASCII transcription.
    * @param uniString String in Unicode transcription.
-   * @param Greek mapping String.
    * @returns String in ASCII transcription.
    */
-  static String asciifyUnicode (String uniString, String mapping) {
+  static String asciifyUnicode (String uniString) {
 
     // decompose UniString:
     String decomposed = Normalizer.normalize(uniString, Form.NFD)
 
 
     TransCoder xcoder = new TransCoder()
-    xcoder.setParser(mapping)
+    xcoder.setParser("Unicode")
     xcoder.setConverter("BetaCode")
 
     Integer count = 0
@@ -102,10 +101,8 @@ class GreekMsString extends GreekString {
   }
 
 
-  GreekMsString(String srcString, String greekMapping)  {
-    super(srcString, greekMapping, true)
-
-
+  GreekMsString(String srcString, boolean inUnicode)  {
+    super(srcString, inUnicode, true)
 
     int lastCp = srcString.codePointCount(0, srcString.size() - 1)
     if (debug > 0) {
@@ -117,8 +114,7 @@ class GreekMsString extends GreekString {
     }
 
     this.msUnicodeString = srcString
-    this.msAsciiString = asciifyUnicode(srcString, greekMapping)
-
+    this.msAsciiString = asciifyUnicode(srcString)
 
     if (debug > 0) {
       System.err.println "GreekMsString: ${srcString} -> ascii ${asciiString}"
