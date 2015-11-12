@@ -1,4 +1,12 @@
 package edu.holycross.shot.xml
+/*
+def rootElementName = docRoot.name()
+
+println "Document root's name is an object of " + rootElementName.getClass()
+println "Document root is named " + rootElementName + " with:"
+println "\tlocal name is " + rootElementName.getLocalPart()
+println "\tnamespace is " + rootElementName.getNamespaceURI()
+*/
 
 
 import edu.holycross.shot.orthography.GreekString
@@ -141,39 +149,25 @@ class GreekNode {
 
 
 
-  /** Creates a String of well-formed XML with Greek text in encoding toEncoding.
-   * @param n A node resulting from XmlParser's output, which could be either
-   * a groovy.util.Node object or a String object.
-   * @param fromEncoding Encoding used for node n.
-   * @param toEncoding Encoding for result.
-   * @param allText The String of previously accumulated text content,
-   * to which the content of any further text nodes will be added.
-   * @return A String of well-formed XML with Greek in encoding toEncoding.
-   * @throws Exception if value of enc is not in encodingsList.
-   */
-  String transcodeXml(Object n, GreekString accumulatedText) {
-
+  /** Recursively converts a parsed node with Greek in ASCII encoding
+  * into Unicode mapping of Greek.
+  * @param n The parsed node to convert.
+  * @param accumulatedText Previously accumulated text.
+  * @returns A String of well-formed XML with text nodes
+  * representing Greek in Unicode mapping.
+  */
+  String getUnicodeXml(Object n, String accumulatedText) {
     if (n.getClass().getName() == "java.lang.String") {
-      /*
-      switch (toEncoding) {
-
-      if (toEncoding == "beta") {
-      allText = allText + xc.getString(n).toLowerCase()
-      } else {
-      allText = allText + xc.getString(n).toLowerCase()
+      GreekString gs = new GreekString(n)
+      accumulatedText = accumulatedText +  gs.toString(true)
+    } else {
+      accumulatedText += "<${n.name()}" + collectAttrs(n) + ">"
+      n.children().each { child ->
+        accumulatedText = getUnicodeXml(child, accumulatedText)
       }
-
-        } else {
-            allText += "<${n.name()}" + collectAttrs(n) + ">"
-            n.children().each { child ->
-                allText = transcodeXml(child, fromEncoding, toEncoding, allText)
-            }
-            allText+= "</${n.name()}>"
-	    }
-      */
-
-      return allText
-    }
+      accumulatedText+= "</${n.name()}>"
+	  }
+    return accumulatedText
   }
 
 
@@ -183,20 +177,10 @@ class GreekNode {
    * @return A String of well-formed XML with Greek in encoding toEncoding.
    * @throws Exception if value of enc is not in encodingsList.
    */
-  String transcodeXml(String toEncoding) {
-
-    if (toEncoding in encodingList) {
-      if (this.charEnc == toEncoding) {
-	System.err.println "Not transcoding string:  already in target character encoding ${this.charEnc}"
-	return this.toXml()
-      } else {
-	transcodeXml(parsedNode, this.charEnc,toEncoding, "")
-      }
-
-    } else {
-      throw new Exception("transcodeXml: encoding ${toEncoding} not recognized")
-    }
+  String getUnicodeXml() {
+	   getUnicodeXml(parsedNode, "")
   }
+
 
   /** Serializes the object's parsedNode as an XML String.
    * This serialization does not include any XML or namespace declarations.
