@@ -25,6 +25,7 @@ class TestGreekNode {
     Integer expectedWords = 11
     String expectedFirst = "mh=nin"
     String nodeTxt = gn.collectText()
+
     // rm any leading space before splitting:
     //def asciiWordList =  nodeTxt.replaceFirst(/^[ ]/,"").split(/\s/)
     //assert expectedWords == asciiWordList.size()
@@ -32,14 +33,15 @@ class TestGreekNode {
 
 
     def asciiWordList =  nodeTxt.split(/\s/)
+    System.err.println "TestGreekNode: word list is " + asciiWordList
     //def unicodeWordList = nodeTxt.toString(true).replaceFirst(/^[ ]/,"").split(/\s/)
     //assert expectedWords == unicodeWordList.size()
 
   }
 
   @Test
-  void testBadXml() {
-    String xmlSrc = "<open>Text context."
+  void testBadContent() {
+    String xmlSrc = "<p>Throw in punctuation that is not valid in GreekString >[]@%</p>"
     assert shouldFail {
       GreekNode gn  = new GreekNode(xmlSrc)
     }
