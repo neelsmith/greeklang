@@ -17,7 +17,7 @@ import edu.holycross.shot.phonology.Phonology
  * as numeric characters, or more exotic kinds of punctuatio, you will
  * have to strip those out before creating a GreekString object.
  */
-class GreekString {
+class GreekString implements Comparable<GreekString>{
 
   // Temporary constructs for debugging:
 
@@ -38,10 +38,81 @@ class GreekString {
   /** Ascii marker for upper case in epidoc transcoder. */
   static String asterisk = "*"
 
+
+  /** Ordered map of beta-code alphabetic characters for use in comparator */
+  static HashMap asciiOrder = [
+    0:'a',1:'b',2:'g',3:'d',4:'e',
+    5:'z',6:'h',7:'q',8:'i',9:'k',
+    10:'l',11:'m',12:'n',13:'c',14:'o',
+    15:'p',16:'r',17:'s',18:'t',19:'u',
+    20:'f',21:'x',22:'y',23:'w'
+  ]
+
   /** The string in ascii form.*/
   String greekString
 
-  /** Constructor verifies that srcSring, supplied in an identified
+
+
+  /** Compares a pair of one-character long Strings using the
+  * ordered map in asciiOrder.
+  * @return  -1 if s1 < s2, 0 if s1 == s2, 1 if s1 > s2
+  */
+  static private int charComp (String s1, String s2) {
+    def mapEntry1 =   asciiOrder.find {it.value == s1.toLowerCase()}
+    def mapEntry2 =   asciiOrder.find{it.value == s2.toLowerCase()}
+    System.err.println "${s1} vs ${s2} == ${mapEntry1} vs ${mapEntry2}"
+    if ((!mapEntry1) || (!mapEntry2)) {
+      // non-comparing character:  ignore
+      // by treating as equal
+      return 0
+    }
+    if (mapEntry1.key == mapEntry2.key) {
+      return 0
+    } else if (mapEntry1.key > mapEntry2.key) {
+      return 1
+    } else {
+      return -1
+    }
+  }
+
+  @Override
+  int compareTo(GreekString gs2)
+  throws Exception {
+    String s2 = gs2.toString()
+    int idx = 0
+    int maxChars = 0
+    if (greekString.size() > s2.size()) {
+      maxChars = s2.size()
+    } else {
+      maxChars = greekString.size()
+    }
+    boolean done = false
+
+    while (!done) {
+      def cComp = charComp(greekString[idx],s2[idx])
+      if (cComp != 0) {
+	return cComp
+      } else {
+	idx++;
+      }
+      if (idx == maxChars - 1) {
+	done = true
+      }
+    }
+    // two tokens matched for all chars, but
+    // if one is longer, it sorts later:
+    if (greekString.size() > s2.size()) {
+      return 1
+    } else if (greekString.size() == s2.size()) {
+      return 0
+    } else {
+      return -1
+    }
+  }
+
+
+
+  /** Constructor verifies that scSring, supplied in an identified
    * system for encoding Greek, contains only valid characters
    * for a GreekString's underlying ascii representation.
    * @param srcString Greek string, in ascii.
