@@ -176,7 +176,11 @@ project(":common") {
   ext {
     specversion = utilsspec
   }
+  dependencies {
+    compile  group: 'edu.holycross.shot', name: 'groovyXmlUtils', version: versionMap['xmlutils']
+  }
   jar {
     baseName = "greeklang"
   }
+
 }

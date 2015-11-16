@@ -1,7 +1,7 @@
 package orthography;
 
 
-import edu.holycross.shot.orthography.GreekComparator;
+//import edu.holycross.shot.orthography.GreekComparator;
 
 import org.concordion.integration.junit4.ConcordionRunner;
 import org.junit.runner.RunWith;
