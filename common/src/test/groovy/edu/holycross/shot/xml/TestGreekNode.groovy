@@ -26,10 +26,12 @@ class TestGreekNode {
     String expectedFirst = "mh=nin"
     String nodeTxt = gn.collectText()
     // rm any leading space before splitting:
-    def asciiWordList =  nodeTxt.replaceFirst(/^[ ]/,"").split(/\s/)
+    //def asciiWordList =  nodeTxt.replaceFirst(/^[ ]/,"").split(/\s/)
     //assert expectedWords == asciiWordList.size()
     //assert asciiWordList[0] == expectedFirst
 
+
+    def asciiWordList =  nodeTxt.split(/\s/)
     //def unicodeWordList = nodeTxt.toString(true).replaceFirst(/^[ ]/,"").split(/\s/)
     //assert expectedWords == unicodeWordList.size()
 
