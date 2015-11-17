@@ -46,11 +46,33 @@ class GreekNode extends XmlNode {
   }
 
 
+  /**
+   * Constructs a GreekNode object from the XML representation of
+   * contents in ASCII encoding of Greek.
+   * @param content A string of well-formed XML.
+   * @throws Exception if content could not be parsed.
+   */
+  GreekNode (String content)
+  throws Exception {
+    super(content)
+    xmlGreekInUnicode = false
+    if (! verifyGreek()) {
+      throw new Exception("GreekNode:  invalid content in parsed Node.")
+    }
+  }
+
+  /** Determines if text nodes are valid content for GreekStrings.
+  * @returns True if all text nodes are valid.
+  */
   boolean verifyGreek() {
     return verifyGreek(this.parsedNode)
   }
 
 
+  /** Determines if text nodes contained by a given node are valid content for GreekStrings.
+  * @param n The node to check.
+  * @returns True if all text nodes are valid.
+  */
   boolean verifyGreek(Object n) {
     boolean valid
     if (n instanceof java.lang.String) {
@@ -66,10 +88,9 @@ class GreekNode extends XmlNode {
 	valid = verifyGreek(child)
       }
     }
-    System.err.println "Valid? {valid} for: ${n}"
     return valid
   }
-  
+
   /** Recursively converts a parsed node with Greek in ASCII encoding
   * into Unicode mapping of Greek.
   * @param n The parsed node to convert.

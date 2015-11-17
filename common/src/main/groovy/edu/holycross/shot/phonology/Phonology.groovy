@@ -91,6 +91,15 @@ class Phonology {
   }
 
 
+  static boolean isAlpha(String ch) {
+    if (isVowel(ch) || isConsonant(ch) ) {
+      return true
+    } else {
+      return false
+    }
+  }
+
+
   /** Determines if a string is a diphthong.
   * @param ch String to check.
   * @returns True if s is a diphthong.

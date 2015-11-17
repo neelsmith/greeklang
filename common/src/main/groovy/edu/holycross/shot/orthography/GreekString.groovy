@@ -60,7 +60,6 @@ class GreekString implements Comparable<GreekString>{
   static private int charComp (String s1, String s2) {
     def mapEntry1 =   asciiOrder.find {it.value == s1.toLowerCase()}
     def mapEntry2 =   asciiOrder.find{it.value == s2.toLowerCase()}
-    System.err.println "${s1} vs ${s2} == ${mapEntry1} vs ${mapEntry2}"
     if ((!mapEntry1) || (!mapEntry2)) {
       // non-comparing character:  ignore
       // by treating as equal
@@ -79,26 +78,46 @@ class GreekString implements Comparable<GreekString>{
   int compareTo(GreekString gs2)
   throws Exception {
     String s2 = gs2.toString()
-    int idx = 0
+
+    int idx1 = 0
+    int idx2 = 0
     int maxChars = 0
     if (greekString.size() > s2.size()) {
       maxChars = s2.size()
     } else {
       maxChars = greekString.size()
     }
-    boolean done = false
 
+    boolean done = false
     while (!done) {
-      def cComp = charComp(greekString[idx],s2[idx])
+      // skip over non-alphabetic chars:
+      while (
+      (! GreekString.isAlphabetic(greekString[idx1])) &&
+      (idx1 < (maxChars -1))
+      ) {
+        idx1++
+      }
+      while (
+      (! GreekString.isAlphabetic(s2[idx2])) &&
+      (idx2 < (maxChars - 1))
+      ) {
+        idx2++
+      }
+
+      // compare pair of alphabetic chars:
+      def cComp = charComp(greekString[idx1],s2[idx2])
       if (cComp != 0) {
 	return cComp
       } else {
-	idx++;
+	idx1++;
+	idx2++;
       }
-      if (idx == maxChars - 1) {
+      if ((idx1 >= (maxChars - 1) ) || (idx2 >= (maxChars -1))) {
 	done = true
       }
     }
+
+
     // two tokens matched for all chars, but
     // if one is longer, it sorts later:
     if (greekString.size() > s2.size()) {
