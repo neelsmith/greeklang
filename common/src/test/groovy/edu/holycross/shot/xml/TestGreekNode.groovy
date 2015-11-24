@@ -43,7 +43,8 @@ class TestGreekNode {
     "ἄειδε", "ἄλγε'", "Ἀχαιοῖς", "Ἀχιλῆος", "ἔθηκεν·",
     "ἡ"]
     def rationalGreekStringSort=  [
-    "a)xaioi=s","a)/eide", "a)xilh=os", "a)/lge'","e)/qhken:",
+    "a)/eide","a)/lge'",
+    "a)xaioi=s", "a)xilh=os", "e)/qhken:",
     "h(", "qea\\", "mh=nin", "muri/'","ou)lome/nhn:",
     "phlhi+a/dew"]
 
