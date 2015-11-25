@@ -25,7 +25,7 @@ class TestDwron {
   @Test
   void testParserDidactically() {
     String testWord = "δώρου"
-    GreekString s = new GreekString(testWord, "Unicode")
+    GreekString s = new GreekString(testWord,true)
 
     // A URN manager configured with CITE collection abbreviations
     // for both inflectional patterns and lexicon of stems:
@@ -68,7 +68,7 @@ class TestDwron {
   @Test
   void testMultiAnalyses() {
     String testWord = "δώρον"
-    GreekString s = new GreekString(testWord, "Unicode")
+    GreekString s = new GreekString(testWord,true)
     // A URN manager configured with CITE collection abbreviations
     // for both inflectional patterns and lexicon of stems:
     UrnManager umgr = new UrnManager(inflCsvSource)
