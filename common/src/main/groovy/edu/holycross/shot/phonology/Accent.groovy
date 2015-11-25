@@ -45,14 +45,17 @@ class Accent {
     Integer max = index
     while ((index >= 0) && (noAccent)) {
       String ch = syllable[index]
+      
       if ((Phonology.isVowel(ch)) || (Phonology.isBreathing(ch)) || Phonology.isQuantity(ch)) {
-        if (index == syllable.size() - 1) {
-          accentedSyllable = syllable  + accentChar
-        } else {
-          Integer nextIndex = index + 1
-          accentedSyllable = syllable[0..index] + accentChar + syllable[nextIndex..max]
-        }
-        noAccent = false
+	if (ch != "|") {
+	  if (index == syllable.size() - 1) {
+	    accentedSyllable = syllable  + accentChar
+	  } else {
+	    Integer nextIndex = index + 1
+	    accentedSyllable = syllable[0..index] + accentChar + syllable[nextIndex..max]
+	  }
+	  noAccent = false
+	}
       }
       index--
     }
