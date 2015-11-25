@@ -1,6 +1,7 @@
 package edu.holycross.shot.greekmorph
 
 import edu.holycross.shot.orthography.GreekString
+import edu.harvard.chs.cite.CiteUrn
 
 import org.junit.Test
 import static groovy.test.GroovyAssert.shouldFail
@@ -20,6 +21,7 @@ class TestMhnis {
   //  A word to test:
   String testWord = "μῆνιν"
 
+
   @Test
   void testParserDidactically() {
     // You build a MorphologicalParser with a FST
@@ -34,8 +36,7 @@ class TestMhnis {
     MorphologicalParser mp = new MorphologicalParser(fstBinary, umgr)
 
     // MorphologicalParsers can operate on GreekString objects:
-
-    GreekString s = new GreekString(testWord, "Unicode")
+    GreekString s = new GreekString(testWord, true)
 
     // Parsing a GreekString gets you 0 or more analyses
     MorphologicalAnalysis morph = mp.parseGreekString(s)
@@ -46,7 +47,8 @@ class TestMhnis {
       // Individual analyses of a word have three components.
       // (1) The lexical entity :
       String urnForMenis = "urn:cite:shot:lexent.n67485"
-      assert morphAnalysis.getLexicalEntity().toString() == urnForMenis
+      CiteUrn lexicalEntity = morphAnalysis.getLexicalEntity()
+      assert lexicalEntity.toString() == urnForMenis
 
       // (2) a form:
       MorphForm form = morphAnalysis.getMorphForm()

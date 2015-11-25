@@ -13,7 +13,7 @@ import edu.harvard.chs.cite.CiteUrn
 */
 class FstAnalysisParser {
 
-  Integer debug = 0
+  Integer debug = 10
 
   /** UrnManager expands collection abbreviations to full CITE URNs. */
   UrnManager urnMgr
@@ -108,6 +108,7 @@ class FstAnalysisParser {
          System.err.println "\tLex Ent urn str" + lexEntUrnStr
          System.err.println "\tStem urn str " + stemUrnStr
          System.err.println "\tInfl urn str " + inflUrnStr
+         System.err.println "Check 1st infl tag : " + inflTags[0]
        }
 
        this.lexicalEntity = new CiteUrn(lexEntUrnStr)
@@ -115,6 +116,7 @@ class FstAnalysisParser {
        CiteUrn stem = new CiteUrn(stemUrnStr)
        CiteUrn inflectionalPattern  = new CiteUrn(inflUrnStr)
        this.explanation = new AnalysisExplanation(stem, inflectionalPattern)
+
 
 
 
@@ -137,8 +139,12 @@ class FstAnalysisParser {
 
       morphForm = computeMorphForm()
       // Strip out all tags from surface form except <#>
-      surfaceStem = stemString.replaceAll(leftmostUrn,"").replaceAll(leftmostUrn,"").replaceAll(semanticTags, "")
-      surfaceInflection = inflectionString.replaceAll(leftmostUrn,"").replaceAll(semanticTags, "")
+      System.err.println "RAW MORPHFORM has surface " + stemString + "-" + inflectionString
+      surfaceStem = stemString.replaceFirst("<ro>", "(")
+      surfaceInflection = inflectionString.replaceFirst("<ro>", "(")
+
+      surfaceStem = surfaceStem.replaceAll(leftmostUrn,"").replaceAll(leftmostUrn,"").replaceAll(semanticTags, "")
+      surfaceInflection = surfaceInflection.replaceAll(leftmostUrn,"").replaceAll(semanticTags, "")
 
       // Example of conjugated verb:  "<coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>"
       // Example of compound form with quantity symbol:
@@ -239,6 +245,11 @@ class FstAnalysisParser {
 
   AnalysisTriple getTriple() {
     return new AnalysisTriple(lexicalEntity, morphForm, explanation)
+  }
+
+
+  String toString() {
+    return "${surfaceStem}-${surfaceInflection} < ${lexicalEntity} ${morphForm}"
   }
 
 }

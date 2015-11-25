@@ -32,30 +32,68 @@ class MorphologicalParser {
   }
 
 
+  GreekWord addNounUltima(GreekWord gw, NounForm nounForm, CiteUrn inflectionClass) {
+    System.err.println "Add ultimate to " + gw + ", type " + inflectionClass + ", form " + nounForm
+
+
+  }
+
   // TO BE IMPLEMENTED.  GENERATE ACCENTED FORM AND COMPARE TO SUBMITTED FORM.
-  /** NOT YET IMPLEMENTED */
+  /** NOT YET FULLY IMPLEMENTED */
   boolean checkAccent(GreekString utf8String, FstAnalysisParser analysisInfo) {
+
+    System.err.println "Check accent on " + utf8String
     // depends on type of analysis.
     // with only a handful of exceptions, conjugated verbs are recessive.
     // nouns have persistent accent property to consider.
     GreekWord unaccented = new GreekWord(analysisInfo.getSurfaceStem() + analysisInfo.getSurfaceInflection())
+
     GreekWord accented
     AnalysisTriple triple = analysisInfo.getTriple()
     MorphForm form = triple.getMorphForm()
+
+    AnalysisExplanation explanation = triple.getAnalysisExplanation()
+
+    if (debug > 0) {
+      System.err.println "Checking unaccented " + unaccented + " with " + form.getAnalyticalType()
+
+    }
     switch (form.getAnalyticalType()) {
       case AnalyticalType.NOUN:
       NounForm nounAnalysis = form.getAnalysis()
-      //System.err.println "Decide about ${unaccented} with pers.acc. " + nounAnalysis.getPersistentAccent()
+      if (debug > 0) {
+        System.err.println "Checking  persistent accent " + nounAnalysis.getPersistentAccent()
+
+      }
+
 
       switch (nounAnalysis.getPersistentAccent()) {
         case PersistentAccent.STEM_PENULT:
-        accented = Accent.accentWord(unaccented, AccentPattern.RECESSIVE)
-        System.err.println "Compare accented ${accented} with source ${utf8String}"
+        accented = unaccented.accent(AccentPattern.RECESSIVE)
         break
+
         case PersistentAccent.STEM_ULTIMA:
-        accented = Accent.accentWord(unaccented, AccentPattern.PENULT)
-        System.err.println "Compare accented ${accented} with source ${utf8String}"
+        accented =  unaccented.accent(AccentPattern.PENULT)
         break
+
+        case PersistentAccent.INFLECTIONAL_ENDING:
+        // explaation.inflection
+        accented = addNounUltima(unaccented, nounAnalysis, explanation.inflection)
+        // need to know form!
+        // for nouns:  oblique are =, nom/acc are /
+        /* - Final -αι -οι are normally short , but are LONG IN OPTATIVE and in locative οἴκοι (S. 169)
+
+        1. Accent is generally *persistent* (Smyth 205)
+        2. First, second decl. oxytone:  perispomenon in gen, dat
+        3. First decl:  all gen plural are perispomenon
+
+        */
+
+        /*
+        Third declension is complicated
+        */
+        break
+
       }
       break
 
@@ -85,6 +123,7 @@ class MorphologicalParser {
         // omit
       } else {
         FstAnalysisParser fap = new FstAnalysisParser(l, urnManager)
+        if (debug > 0) {System.err.println "FAP: " + fap}
         if (checkAccent(gkStr,fap)) {
           analysisList.add(fap.getTriple())
         }

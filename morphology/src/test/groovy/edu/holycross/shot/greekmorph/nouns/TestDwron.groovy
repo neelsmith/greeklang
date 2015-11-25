@@ -1,6 +1,7 @@
 package edu.holycross.shot.greekmorph
 
 import edu.holycross.shot.orthography.GreekString
+import edu.harvard.chs.cite.CiteUrn
 
 import org.junit.Test
 import static groovy.test.GroovyAssert.shouldFail
@@ -40,11 +41,12 @@ class TestDwron {
     assert morph.analyses.size() == 1
     morph.analyses.each { morphAnalysis ->
       // Individual analyses of a word have three components.
-      // (1) The lexical entity :
+      // (1) The lexical entity (a CiteUrn):
       String urnForForm = "urn:cite:shot:lexent.n29828"
-      assert morphAnalysis.getLexicalEntity().toString() == urnForForm
+      CiteUrn lexicalEntity = morphAnalysis.getLexicalEntity()
+      assert lexicalEntity.toString() == urnForForm
 
-      // (2) a form:
+      // (2) a form (a MorphForm):
       MorphForm form = morphAnalysis.getMorphForm()
       assert form.getAnalyticalType() == AnalyticalType.NOUN
 
@@ -55,7 +57,7 @@ class TestDwron {
       // we can also find its persistent accent:
       assert formIdentification.getPersistentAccent() == PersistentAccent.STEM_ULTIMA
 
-      // and (3) an explanation for the analysis
+      // and (3) an explanation for the analysis (an AnalysisExplanation)
       AnalysisExplanation explanation = morphAnalysis.getAnalysisExplanation()
       String expectedStemExplanation =  "urn:cite:gmorph:coretests.n29828_0"
       assert explanation.stem.toString() == expectedStemExplanation
@@ -67,7 +69,7 @@ class TestDwron {
 
   @Test
   void testMultiAnalyses() {
-    String testWord = "δώρον"
+    String testWord = "δῶρον"
     GreekString s = new GreekString(testWord,true)
     // A URN manager configured with CITE collection abbreviations
     // for both inflectional patterns and lexicon of stems:

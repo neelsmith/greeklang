@@ -24,7 +24,7 @@ class TestAnqrwpos {
   @Test
   void testParserDidactically() {
     String testWord = "ἀνθρώπου"
-    GreekString s = new GreekString(testWord, "Unicode")
+    GreekString s = new GreekString(testWord, true)
 
     // A URN manager configured with CITE collection abbreviations
     // for both inflectional patterns and lexicon of stems:

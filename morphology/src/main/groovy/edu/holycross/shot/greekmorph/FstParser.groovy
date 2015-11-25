@@ -31,7 +31,7 @@ class FstParser {
   * @returns A list of zero or more morphological analysis objects.
   */
   String parseToken(FstToken fstToken) {
-    return parseTokenStr(fstToken.getFstStr().toString())
+    return parseTokenStr(fstToken.getFstStr()) //.toString())
   }
 
   /** Parses a literal string with the SFST parser.
@@ -47,6 +47,7 @@ class FstParser {
     // before submitting to sh:
     String protectedStr  = fstStr.replaceFirst(/[>]/, '\\\\>')
     protectedStr = protectedStr.replaceFirst(/[<]/, '\\\\<')
+    protectedStr = protectedStr.replaceFirst(/[|]/, '\\\\|')
 
     if (debug > 0) {System.err.println "FstParser: run ${ECHO} ${protectedStr} | ${FSTINFL} ${fstParser}"}
     def procList = [SH, "-c",  "${ECHO} ${protectedStr} | ${FSTINFL} ${fstParser}"]

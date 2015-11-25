@@ -24,13 +24,16 @@ class TestHodos {
   @Test
   void testParserDidactically() {
     String testWord = "ὁδῷ"
-    GreekString s = new GreekString(testWord, "Unicode")
+    GreekString s = new GreekString(testWord, true)
 
     // A URN manager configured with CITE collection abbreviations
     // for both inflectional patterns and lexicon of stems:
     UrnManager umgr = new UrnManager(inflCsvSource)
     umgr.addCsvFile(lexCsvSource)
     MorphologicalParser mp = new MorphologicalParser(fstBinary, umgr)
+    mp.debug = 10
+    mp.fstParser.debug = 10
+
 
     // Parsing a GreekString gets you 0 or more analyses
     MorphologicalAnalysis morph = mp.parseGreekString(s)
@@ -65,7 +68,7 @@ class TestHodos {
       // the inflectional rule applied to the stem
       String expectedInflectionExplanation = "urn:cite:gmorph:nouninfl.is_ios4"
       //assert explanation.inflection.toString() == expectedInflectionExplanation
-      System.err.println "antth. inf expl: " + explanation.inflection.toString
+      System.err.println "antth. inf expl: " + explanation.inflection.toString()
 
 
     }
