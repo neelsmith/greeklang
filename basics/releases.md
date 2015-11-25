@@ -3,6 +3,8 @@ title: "Foundational libraries: release notes"
 layout: page
 ---
 
+**2.2.0** New functionality: serialization of `GreekNode` objects as XML.
+
 **2.1.0** Fixes a bug in sorting `GreekString` objects where accents and breathings were being properly indexed.
 
 **2.0.0** Changes breaking backward compatibility: new signatures to constructors for `GreekString`s in unicode.  New functionality:  `GreekString` class now implements `Comparable` interface allowing comparison based on logic of Greek alphabetic order.  `GreekNode` adds utilities for working with `GreekString` content in XML documents.

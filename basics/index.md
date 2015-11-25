@@ -7,7 +7,7 @@ layout: page
 
 A library for working with Greek orthography and phonology.
 
-- version: **2.1.0**. [Release notes](releases).
+- version: **2.2.0**. [Release notes](releases).
 - requires: java version >= 7
 - [live specifications](specs/GreekLang.html)
 - [API docs](api)
