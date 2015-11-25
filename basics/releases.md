@@ -3,6 +3,9 @@ title: "Foundational libraries: release notes"
 layout: page
 ---
 
+
+**2.2.1** Fixes a bug in the `Accent` class placing accents on syllables containing an iota subscript.
+
 **2.2.0** New functionality: serialization of `GreekNode` objects as XML.
 
 **2.1.0** Fixes a bug in sorting `GreekString` objects where accents and breathings were being properly indexed.
