@@ -103,7 +103,7 @@ class GreekNode extends XmlNode {
   String getUnicodeXml(Object n, String accumulatedText)
   throws Exception {
     if (n instanceof java.lang.String) {
-      GreekString gs = new GreekString(n)
+      GreekString gs  = new GreekString(n, xmlGreekInUnicode)  
       accumulatedText = accumulatedText +  gs.toString(true)
     } else {
       accumulatedText += "<${n.name()}" + collectAttrs(n) + ">"
