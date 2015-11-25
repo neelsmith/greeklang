@@ -32,10 +32,63 @@ class MorphologicalParser {
   }
 
 
-  GreekWord addNounUltima(GreekWord gw, NounForm nounForm, CiteUrn inflectionClass) {
-    System.err.println "Add ultimate to " + gw + ", type " + inflectionClass + ", form " + nounForm
+  boolean isFirstDeclension(String inflectionClass) {
+    switch (inflectionClass) {
 
+      default:
+      return false
+      break
+    }
+  }
+  boolean isSecondDeclension(String inflectionClass) {
+    switch (inflectionClass) {
+      case "os_ou":
+      return true
+      break
+      default:
+      return false
+      break
+    }
+  }
+  GreekWord addNounUltima(GreekWord gw, NounForm nounForm, String inflectionClass) {
+    System.err.println "Accent ultima of " + gw + ", type " + inflectionClass + ", form " + nounForm
 
+    def syllables = gw.getSyllables()
+    Integer lastIndex = syllables.size() - 1
+    String lastSyll = syllables[lastIndex]
+
+    // need to know form!
+    // for nouns:  oblique are =, nom/acc are /
+    /* - Final -αι -οι are normally short , but are LONG IN OPTATIVE and in locative οἴκοι (S. 169)
+
+    1. Accent is generally *persistent* (Smyth 205)
+    2. First, second decl. oxytone:  perispomenon in gen, dat
+    3. First decl:  all gen plural are perispomenon
+
+    */
+
+    if ((isFirstDeclension(inflectionClass)) || (isSecondDeclension(inflectionClass)) ) {
+      System.err.println "IS 1-2 DECL"
+      switch (nounForm.cas) {
+        case GrammaticalCase.GENITIVE:
+        case GrammaticalCase.DATIVE:
+
+        syllables[lastIndex] = Accent.accentSyllable(lastSyll, "=")
+        System.err.println "accented last syll "  + syllables
+        break
+        default :
+        syllables[lastIndex] = Accent.accentSyllable(lastSyll, "/")
+        break
+      }
+
+    }
+
+    /*
+    Third declension is complicated
+    */
+    GreekWord resultWord = new GreekWord(syllables.join(""))
+    System.err.println "Word with ultima = " + resultWord
+    return  resultWord
   }
 
   // TO BE IMPLEMENTED.  GENERATE ACCENTED FORM AND COMPARE TO SUBMITTED FORM.
@@ -77,21 +130,7 @@ class MorphologicalParser {
         break
 
         case PersistentAccent.INFLECTIONAL_ENDING:
-        // explaation.inflection
-        accented = addNounUltima(unaccented, nounAnalysis, explanation.inflection)
-        // need to know form!
-        // for nouns:  oblique are =, nom/acc are /
-        /* - Final -αι -οι are normally short , but are LONG IN OPTATIVE and in locative οἴκοι (S. 169)
-
-        1. Accent is generally *persistent* (Smyth 205)
-        2. First, second decl. oxytone:  perispomenon in gen, dat
-        3. First decl:  all gen plural are perispomenon
-
-        */
-
-        /*
-        Third declension is complicated
-        */
+        accented = addNounUltima(unaccented, nounAnalysis, analysisInfo.getInflectionTag())
         break
 
       }

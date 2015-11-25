@@ -64,6 +64,9 @@ class FstAnalysisParser {
   /** Surface string for inflectional part. */
   String surfaceInflection
 
+  String inflectionTag
+
+
   /** Multicharacter symbols that can appear in stem strings.  */
   static ArrayList editorialTags = ["<#>", "<lo>", "<sh>", "<ro>", "<sm>"]
 
@@ -111,6 +114,7 @@ class FstAnalysisParser {
          System.err.println "Check 1st infl tag : " + inflTags[0]
        }
 
+       this.inflectionTag = inflTags[0].replaceFirst(">","").replaceFirst("<","")
        this.lexicalEntity = new CiteUrn(lexEntUrnStr)
 
        CiteUrn stem = new CiteUrn(stemUrnStr)

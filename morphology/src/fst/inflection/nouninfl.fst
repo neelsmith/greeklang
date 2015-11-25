@@ -1,6 +1,16 @@
 %%% Noun declensions
 %
 % First declension patterns:
+$h_hs_ending$ = <h\_hs> (<u>nouninfl\.h\_hs1</u>h[<masc><fem>]<nom><sg> |\
+<u>nouninfl\.h\_hs2</u>hs[<masc><fem>]<gen><sg> |\
+<u>nouninfl\.h\_hs3</u>h|[<masc><fem>]<dat><sg> |\
+<u>nouninfl\.h\_hs4</u>hn[<masc><fem>]<acc><sg> |\
+<u>nouninfl\.h\_hs5</u>h[<masc><fem>]<voc><sg> |\
+<u>nouninfl\.h\_hs6</u>ai[<masc><fem>]<nom><pl> |\
+<u>nouninfl\.h\_hs7</u>wn[<masc><fem>]<gen><pl> |\
+<u>nouninfl\.h\_hs8</u>ais[<masc><fem>]<dat><pl> |\
+<u>nouninfl\.h\_hs9</u>as[<masc><fem>]<acc><pl> \
+)
 %
 $a_as_ending$ = <a_as> (a<fem><nom><sg> |\
   as<fem><gen><sg> |\
@@ -23,7 +33,7 @@ $hs_ou_ending$ = <hs_ou> (hs[<masc>][<nom><voc>]<sg> |\
   as[<masc>]<acc><pl> \
 )
 
-$decl1noun_ending$ = $a_as_ending$ | $hs_ou_ending$
+$decl1noun_ending$ = $a_as_ending$ | h_hs_ending | $hs_ou_ending$
 
 %
 % Second declension patterns:
@@ -39,7 +49,7 @@ $os_ou_ending$ = <os_ou> (<u>nouninfl\.os\_ou1</u>os[<masc><fem>]<nom><sg> |\
   <u>nouninfl\.os\_ou7</u>wn[<masc><fem><neut>]<gen><pl> |\
   <u>nouninfl\.os\_ou8</u>ois[<masc><fem><neut>]<dat><pl> |\
   <u>nouninfl\.os\_ou9</u>ous[<masc><fem>]<acc><pl> |\
-    <u>nouninfl\.os\_ou9</u>a<neut><acc><pl>  \
+    <u>nouninfl\.os\_ou10</u>a<neut><acc><pl>  \
 )
 
 $decl2noun_ending$ = $os_ou_ending$
@@ -48,7 +58,7 @@ $decl2noun_ending$ = $os_ou_ending$
 %
 % Third declension patterns:
 %
-$is_iosending$ = <is\_ios> (<u>nouninfl\.is\_ios1</u>is[<masc><fem>]<nom><sg> |\
+$is_ios_ending$ = <is\_ios> (<u>nouninfl\.is\_ios1</u>is[<masc><fem>]<nom><sg> |\
   <u>nouninfl\.is\_ios2</u>ios[<masc><fem>]<gen><sg> |\
   <u>nouninfl\.is\_ios3</u>i[<masc><fem>]<dat><sg> |\
   <u>nouninfl\.is\_ios4</u>in[<masc><fem>]<acc><sg> |\
@@ -83,7 +93,7 @@ $eus_ews_ending$ = <eus_ews> (eus[<masc>][<nom><voc>]<sg> |\
   eas[<masc>]<acc><pl> \
 )
 
-$decl3noun_ending$ = $is_iosending$ | $is_ews_ending$ | $eus_ews_ending$
+$decl3noun_ending$ = $is_ios_ending$ | $is_ews_ending$ | $eus_ews_ending$
 
 
 % Sum it all up:
