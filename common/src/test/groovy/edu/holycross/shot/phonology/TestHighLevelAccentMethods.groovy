@@ -18,4 +18,15 @@ class TestHighLevelAccentMethods {
     GreekWord antepenult =  proparoxytone.accent(AccentPattern.RECESSIVE)
     assert antepenult.toString() == expectedProparoxytone
   }
+
+
+  void testLongshort() {
+    GreekWord wrath = new GreekWord("mhnin")
+    String expectedResult = "mh=nin"
+    GreekWord accented =  wrath.accent(AccentPattern.PENULT)
+    assert accented.toString() == expectedResult
+    // also works with static method:
+    assert Accent.accentWord(wrath, AccentPattern.PENULT) == expectedResult
+  }
+
 }

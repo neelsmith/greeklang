@@ -70,6 +70,7 @@ class Accent {
   */
   static GreekWord addPenultAccent(GreekWord gw) {
     def syllables = gw.getSyllables()
+    System.err.println "Syllabify as : " + syllables
     if (syllables.size() < 2){
       throw new Exception("Accent: cannot accent penult of ${gw}. Too few syllables.")
     }
@@ -79,15 +80,21 @@ class Accent {
     Integer penultIdx = lastIndex - 1
     String penult = syllables[penultIdx]
 
-    // last syllable long:
+    // last syllable long, accent must be paroxytone:
     if (lastSyll ==~ syllLongByNature) {
       syllables[penultIdx] = accentSyllable(penult, "/")
+
     } else {
       // last syllable short: check length of penult
       if (penult ==~ syllLongByNature ) {
-	syllables[penultIdx] = accentSyllable(penult, "/")
-      } else
-      syllables[penultIdx] = accentSyllable(syllables[penultIdx], "=")
+        // properispomenon
+        System.err.println "Penult ${penult} is long by nature"
+	syllables[penultIdx] = accentSyllable(penult, "=")
+
+      } else {
+        // paroxytone:
+	syllables[penultIdx] = accentSyllable(syllables[penultIdx], "/")
+      }
     }
     return new GreekWord(syllables.join(""))
   }
@@ -155,6 +162,11 @@ class Accent {
 
       case AccentPattern.PENULT:
       return addPenultAccent(gw)
+      break
+
+
+      case AccentPattern.ULTIMA:
+      throw new Exception("Accent: cannot accent ultima without morphological information about ${gw}.")
       break
     }
   }
