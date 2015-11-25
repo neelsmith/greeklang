@@ -140,7 +140,9 @@ class MorphologicalParser {
       System.err.println "MorphologicalParser: analytical type ${triple.morphForm.getAnalyticalType()} not yet implemented"
       break
     }
-
+    if (debug > 0 ) {
+      System.err.println "Check accent by comparing ${accented} to ${utf8String}"
+    }
     return (accented.toString() == utf8String.toString())
   }
 
@@ -165,6 +167,10 @@ class MorphologicalParser {
         if (debug > 0) {System.err.println "FAP: " + fap}
         if (checkAccent(gkStr,fap)) {
           analysisList.add(fap.getTriple())
+        } else {
+          if (debug > 0) {
+            System.err.println "Reject ${gkStr}"
+          }
         }
       }
     }

@@ -31,7 +31,8 @@ class TestAnqrwpos {
     UrnManager umgr = new UrnManager(inflCsvSource)
     umgr.addCsvFile(lexCsvSource)
     MorphologicalParser mp = new MorphologicalParser(fstBinary, umgr)
-
+    mp.debug = 10
+    mp.fstParser.debug = 10
     // Parsing a GreekString gets you 0 or more analyses
     MorphologicalAnalysis morph = mp.parseGreekString(s)
     // although there is only 1 possibility for ἀνθρώπου.

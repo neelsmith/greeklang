@@ -145,10 +145,10 @@ class FstAnalysisParser {
       // Strip out all tags from surface form except <#>
       System.err.println "RAW MORPHFORM has surface " + stemString + "-" + inflectionString
       surfaceStem = stemString.replaceFirst("<ro>", "(")
-      surfaceInflection = inflectionString.replaceFirst("<ro>", "(")
-
+      surfaceStem = stemString.replaceFirst("<sm>", ")")
       surfaceStem = surfaceStem.replaceAll(leftmostUrn,"").replaceAll(leftmostUrn,"").replaceAll(semanticTags, "")
-      surfaceInflection = surfaceInflection.replaceAll(leftmostUrn,"").replaceAll(semanticTags, "")
+
+      surfaceInflection = inflectionString.replaceAll(leftmostUrn,"").replaceAll(semanticTags, "")
 
       // Example of conjugated verb:  "<coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>"
       // Example of compound form with quantity symbol:
