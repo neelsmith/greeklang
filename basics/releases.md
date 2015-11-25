@@ -4,6 +4,8 @@ layout: page
 ---
 
 
+**2.2.2** Fixes a bug in the `Accent` class when diphthong in final syllable should be treated as short.
+
 **2.2.1** Fixes a bug in the `Accent` class placing accents on syllables containing an iota subscript.
 
 **2.2.0** New functionality: serialization of `GreekNode` objects as XML.
