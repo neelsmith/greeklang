@@ -38,7 +38,7 @@ class TestZwnh {
 
       "ζωνῶν": [Gender.FEMININE, GrammaticalCase.GENITIVE, GrammaticalNumber.PLURAL],
       "ζώναις": [Gender.FEMININE, GrammaticalCase.DATIVE, GrammaticalNumber.PLURAL],
-      //"ζώνας": [Gender.FEMININE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.PLURAL]
+      "ζώνας": [Gender.FEMININE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.PLURAL]
 
 
       ]
