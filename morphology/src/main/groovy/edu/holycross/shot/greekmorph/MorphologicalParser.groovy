@@ -112,14 +112,14 @@ class MorphologicalParser {
     AnalysisExplanation explanation = triple.getAnalysisExplanation()
 
     if (debug > 0) {
-      System.err.println "Checking unaccented " + unaccented + " with " + form.getAnalyticalType()
+      System.err.println "Checking unaccented " + unaccented + " with type " + form.getAnalyticalType()
 
     }
     switch (form.getAnalyticalType()) {
       case AnalyticalType.NOUN:
       NounForm nounAnalysis = form.getAnalysis()
       if (debug > 0) {
-        System.err.println "Checking  persistent accent " + nounAnalysis.getPersistentAccent()
+        System.err.println "Checking noun w  persistent accent " + nounAnalysis.getPersistentAccent()
 
       }
 
@@ -159,7 +159,7 @@ class MorphologicalParser {
   */
   MorphologicalAnalysis parseGreekString(GreekString gkStr) {
     ArrayList analysisList  = []
-    System.err.println "Parsing " + gkStr
+    if (debug > 0) {System.err.println "Parsing " + gkStr}
 
     FstToken fstToken = new FstToken(gkStr)
     if (debug > 0) {System.err.println "MorphologicalAnalysis: submit ${fstToken}"}
