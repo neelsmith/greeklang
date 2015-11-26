@@ -30,8 +30,7 @@ class TestZwnh {
       umgr.addCsvFile(lexCsvSource)
       // And, finally, the parser:
       MorphologicalParser mp = new MorphologicalParser(fstBinary, umgr)
-      mp.debug = 10
-      mp.fstParser.debug = 10
+      
       // map keyed by forms to analyze, to a unique GCN of noun form
       def expectedUnique = [
 
@@ -39,9 +38,9 @@ class TestZwnh {
       "ζώνῃ": [Gender.FEMININE, GrammaticalCase.DATIVE, GrammaticalNumber.SINGULAR],
       "ζώνην": [Gender.FEMININE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.SINGULAR],
 
-      //"ζωνῶν": [Gender.FEMININE, GrammaticalCase.GENITIVE, GrammaticalNumber.PLURAL],
+      "ζωνῶν": [Gender.FEMININE, GrammaticalCase.GENITIVE, GrammaticalNumber.PLURAL],
       "ζώναις": [Gender.FEMININE, GrammaticalCase.DATIVE, GrammaticalNumber.PLURAL],
-      "ζώνας": [Gender.FEMININE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.PLURAL]
+      //"ζώνας": [Gender.FEMININE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.PLURAL]
 
 
       ]
@@ -60,7 +59,7 @@ class TestZwnh {
 
       // Check also the ambiguous nom/voc form.
       def nom_voc = [GrammaticalCase.NOMINATIVE,GrammaticalCase.VOCATIVE ]
-      GreekString ambiguous = new GreekString("ἄνθρωποι",true)
+      GreekString ambiguous = new GreekString("ζώνη",true)
       MorphologicalAnalysis morph = mp.parseGreekString(ambiguous)
       assert morph.analyses.size() == 2
       morph.analyses.each {
@@ -70,7 +69,22 @@ class TestZwnh {
           // can't know ordering of analyses, but case must be
           // ONE of these two!
           assert nom_voc.contains(formIdentification.getCas())
-          assert formIdentification.getGender() == Gender.MASCULINE
+          assert formIdentification.getGender() == Gender.FEMININE
+          assert formIdentification.getNum() == GrammaticalNumber.SINGULAR
+      }
+
+
+      GreekString ambiguousPlural = new GreekString("ζῶναι",true)
+      MorphologicalAnalysis morphPl = mp.parseGreekString(ambiguousPlural)
+      assert morphPl.analyses.size() == 2
+      morphPl.analyses.each {
+          MorphForm form = it.getMorphForm()
+          assert form.getAnalyticalType() == AnalyticalType.NOUN
+          CitableId formIdentification = form.getAnalysis()
+          // can't know ordering of analyses, but case must be
+          // ONE of these two!
+          assert nom_voc.contains(formIdentification.getCas())
+          assert formIdentification.getGender() == Gender.FEMININE
           assert formIdentification.getNum() == GrammaticalNumber.PLURAL
       }
     }
@@ -78,7 +92,7 @@ class TestZwnh {
 
   @Test
   void testParserDidactically() {
-    String testWord = "ζῶναι"
+    String testWord = "ζωνῶν"
     GreekString s = new GreekString(testWord, true)
 
 
@@ -88,7 +102,7 @@ class TestZwnh {
 
     // Parsing a GreekString gets you 0 or more analyses
     MorphologicalAnalysis morph = mp.parseGreekString(s)
-    // although there is only 1 possibility for ψυχῆς.
+    // although there is only 1 possibility for ζωνῶν.
     assert morph.analyses.size() == 1
 
     morph.analyses.each { morphAnalysis ->
@@ -103,23 +117,25 @@ class TestZwnh {
 
       CitableId formIdentification = form.getAnalysis()
       assert formIdentification.getGender() == Gender.FEMININE
-      assert formIdentification.getCas() == GrammaticalCase.NOMINATIVE
+      assert formIdentification.getCas() == GrammaticalCase.GENITIVE
       assert formIdentification.getNum() == GrammaticalNumber.PLURAL
       // we can also find its persistent accent:
       assert formIdentification.getPersistentAccent() == PersistentAccent.STEM_ULTIMA
 
       // and (3) an explanation for the analysis
       AnalysisExplanation explanation = morphAnalysis.getAnalysisExplanation()
-      String expectedStemExplanation =  "urn:cite:gmorph:coretests.n67485_0"
-      //assert explanation.stem.toString() == expectedStemExplanation
+      String expectedStemExplanation =  "urn:cite:gmorph:coretests.n46456_0"
+      assert explanation.stem.toString() == expectedStemExplanation
 
 
-      System.err.println "antth. stem expl: " + explanation.stem.toString()
+      //System.err.println "stem expl: " + explanation.stem.toString()
+
+
       // Inflectional patterns are explained by a URN identifying the
       // the inflectional rule applied to the stem
-      String expectedInflectionExplanation = "urn:cite:gmorph:nouninfl.is_ios4"
-      //assert explanation.inflection.toString() == expectedInflectionExplanation
-      System.err.println "antth. inf expl: " + explanation.inflection.toString()
+      String expectedInflectionExplanation = "urn:cite:gmorph:nouninfl.h_hs7"
+      assert explanation.inflection.toString() == expectedInflectionExplanation
+      //System.err.println "inf expl: " + explanation.inflection.toString()
 
 
     }

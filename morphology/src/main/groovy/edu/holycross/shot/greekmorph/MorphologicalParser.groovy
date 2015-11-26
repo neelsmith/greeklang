@@ -90,61 +90,73 @@ class MorphologicalParser {
   }
 
 
-  // TO BE IMPLEMENTED.  GENERATE ACCENTED FORM AND COMPARE TO SUBMITTED FORM.
-  /** NOT YET FULLY IMPLEMENTED */
-  boolean checkAccent(GreekString utf8String, FstAnalysisParser analysisInfo) {
 
-
-    // depends on type of analysis.
-    // with only a handful of exceptions, conjugated verbs are recessive.
-    // nouns have persistent accent property to consider.
+  boolean checkNounAccent(GreekString gs, FstAnalysisParser analysisInfo) {
+    // Add accent to unaccented form based on analysisInfo.
+    // Method is true if accented form we create matches gs.
+    GreekWord accented
     GreekWord unaccented = new GreekWord(analysisInfo.getSurfaceStem() + analysisInfo.getSurfaceInflection())
 
-    GreekWord accented
+
+    AnalysisTriple triple = analysisInfo.getTriple()
+    MorphForm form = triple.getMorphForm()
+    NounForm nounAnalysis = form.getAnalysis()
+    String inflectionTag = analysisInfo.getInflectionTag()
+    if (debug > 0) {
+      System.err.println "Checking noun w  persistent accent " + nounAnalysis.getPersistentAccent()
+    }
+
+    if ( (isFirstDeclension(inflectionTag) ) &&
+	 (nounAnalysis.cas == GrammaticalCase.GENITIVE) &&
+	 (nounAnalysis.num == GrammaticalNumber.PLURAL)
+       ) {
+      if (debug > 1) {System.err.println "Special treatment for 1st decl  ${nounAnalysis.cas}  ${nounAnalysis.num}"}
+      accented = addNounUltima(unaccented, nounAnalysis, analysisInfo.getInflectionTag())
+
+    } else {
+      if ( (isFirstDeclension(inflectionTag)) || (isSecondDeclension(inflectionTag))) {
+        if (debug > 0) {System.err.println "NOT gen.pl., so look at " + nounAnalysis.getPersistentAccent()}
+        switch (nounAnalysis.getPersistentAccent()) {
+          case PersistentAccent.STEM_PENULT:
+          accented = unaccented.accent(AccentPattern.RECESSIVE)
+          break
+
+          case PersistentAccent.STEM_ULTIMA:
+          accented =  Accent.accentWord(unaccented, AccentPattern.PENULT)
+          break
+
+          case PersistentAccent.INFLECTIONAL_ENDING:
+          accented = addNounUltima(unaccented, nounAnalysis, analysisInfo.getInflectionTag())
+          break
+        }
+      }
+    }
+
+    if (debug > 0 ) {
+      System.err.println "Check accent by comparing ${accented} to ${gs}"
+    }
+    return (accented.toString() == gs.toString())
+  }
+
+
+  // TO BE IMPLEMENTED.  GENERATE ACCENTED FORM AND COMPARE TO SUBMITTED FORM.
+  /**
+   */
+  boolean checkAccent(GreekString utf8String, FstAnalysisParser analysisInfo) {
+    // depends on type of analysis
     AnalysisTriple triple = analysisInfo.getTriple()
     MorphForm form = triple.getMorphForm()
 
-    AnalysisExplanation explanation = triple.getAnalysisExplanation()
-
-    if (debug > 0) {
-      System.err.println "Checking unaccented " + unaccented + " with type " + form.getAnalyticalType()
-
-    }
     switch (form.getAnalyticalType()) {
-      case AnalyticalType.NOUN:
-      NounForm nounAnalysis = form.getAnalysis()
-      if (debug > 0) {
-        System.err.println "Checking noun w  persistent accent " + nounAnalysis.getPersistentAccent()
+    case AnalyticalType.NOUN:
+    return checkNounAccent(utf8String, analysisInfo)
+    break
 
-      }
-
-
-
-
-      switch (nounAnalysis.getPersistentAccent()) {
-        case PersistentAccent.STEM_PENULT:
-        accented = unaccented.accent(AccentPattern.RECESSIVE)
-        break
-
-        case PersistentAccent.STEM_ULTIMA:
-        accented =  Accent.accentWord(unaccented, AccentPattern.PENULT)
-        break
-
-        case PersistentAccent.INFLECTIONAL_ENDING:
-        accented = addNounUltima(unaccented, nounAnalysis, analysisInfo.getInflectionTag())
-        break
-
-      }
-      break
-
-      default:
-      System.err.println "MorphologicalParser: analytical type ${triple.morphForm.getAnalyticalType()} not yet implemented"
-      break
+    default:
+    System.err.println "MorphologicalParser: analytical type ${triple.morphForm.getAnalyticalType()} not yet implemented"
+    return false
+    break
     }
-    if (debug > 0 ) {
-      System.err.println "Check accent by comparing ${accented} to ${utf8String}"
-    }
-    return (accented.toString() == utf8String.toString())
   }
 
   /** Gets a morphological analysis for a Greek string.
