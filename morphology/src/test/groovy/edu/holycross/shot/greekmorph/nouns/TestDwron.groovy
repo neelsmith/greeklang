@@ -80,8 +80,8 @@ class TestDwron {
     // Parsing a GreekString gets you 0 or more analyses
     MorphologicalAnalysis morph = mp.parseGreekString(s)
     // should be 2 possibilities for δώρον.
-    def nom_acc = [GrammaticalCase.NOMINATIVE,GrammaticalCase.ACCUSATIVE ]
-    assert morph.analyses.size() == 2
+    def nom_acc = [GrammaticalCase.NOMINATIVE,GrammaticalCase.ACCUSATIVE, GrammaticalCase.VOCATIVE]
+    assert morph.analyses.size() == 3
     morph.analyses.each { morphAnalysis ->
       // (2) a form:
       MorphForm form = morphAnalysis.getMorphForm()
