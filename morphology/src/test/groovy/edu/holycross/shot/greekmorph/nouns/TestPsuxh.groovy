@@ -43,7 +43,7 @@ class TestPsuxh {
     morph.analyses.each { morphAnalysis ->
       // Individual analyses of a word have three components.
       // (1) The lexical entity :
-      String urnForForm = "urn:cite:shot:lexent.n8909"
+      String urnForForm = "urn:cite:shot:lexent.n115887"
       assert morphAnalysis.getLexicalEntity().toString() == urnForForm
 
       // (2) a form:
@@ -51,11 +51,11 @@ class TestPsuxh {
       assert form.getAnalyticalType() == AnalyticalType.NOUN
 
       CitableId formIdentification = form.getAnalysis()
-      assert formIdentification.getGender() == Gender.MASCULINE
+      assert formIdentification.getGender() == Gender.FEMININE
       assert formIdentification.getCas() == GrammaticalCase.GENITIVE
       assert formIdentification.getNum() == GrammaticalNumber.SINGULAR
       // we can also find its persistent accent:
-      assert formIdentification.getPersistentAccent() == PersistentAccent.STEM_PENULT
+      assert formIdentification.getPersistentAccent() == PersistentAccent.INFLECTIONAL_ENDING
 
       // and (3) an explanation for the analysis
       AnalysisExplanation explanation = morphAnalysis.getAnalysisExplanation()
@@ -63,7 +63,7 @@ class TestPsuxh {
       //assert explanation.stem.toString() == expectedStemExplanation
 
 
-      System.err.println "antth. stem expl: " + explanation.stem.toString
+      System.err.println "antth. stem expl: " + explanation.stem.toString()
       // Inflectional patterns are explained by a URN identifying the
       // the inflectional rule applied to the stem
       String expectedInflectionExplanation = "urn:cite:gmorph:nouninfl.is_ios4"

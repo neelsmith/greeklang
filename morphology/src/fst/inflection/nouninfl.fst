@@ -33,7 +33,7 @@ $hs_ou_ending$ = <hs_ou> (hs[<masc>][<nom><voc>]<sg> |\
   as[<masc>]<acc><pl> \
 )
 
-$decl1noun_ending$ = $a_as_ending$ | h_hs_ending | $hs_ou_ending$
+$decl1noun_ending$ = $a_as_ending$ | $h_hs_ending$ | $hs_ou_ending$
 
 %
 % Second declension patterns:

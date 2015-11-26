@@ -8,7 +8,7 @@ import static groovy.test.GroovyAssert.shouldFail
 
 /** Tests demonstrating parsing of nouns from Unicode string.
 */
-class TestHodos {
+class TestZwnh {
 
   // External files used in didactic tests:
   // FST toolkit's batch parser:
@@ -23,7 +23,7 @@ class TestHodos {
 
   @Test
   void testParserDidactically() {
-    String testWord = "ὁδῷ"
+    String testWord = "ζῶναι"
     GreekString s = new GreekString(testWord, true)
 
     // A URN manager configured with CITE collection abbreviations
@@ -37,13 +37,13 @@ class TestHodos {
 
     // Parsing a GreekString gets you 0 or more analyses
     MorphologicalAnalysis morph = mp.parseGreekString(s)
-    // although there is only 1 possibility for ὁδῷ.
+    // although there is only 1 possibility for ψυχῆς.
     assert morph.analyses.size() == 1
 
     morph.analyses.each { morphAnalysis ->
       // Individual analyses of a word have three components.
       // (1) The lexical entity :
-      String urnForForm = "urn:cite:shot:lexent.n272092"
+      String urnForForm = "urn:cite:shot:lexent.n46456"
       assert morphAnalysis.getLexicalEntity().toString() == urnForForm
 
       // (2) a form:
@@ -52,10 +52,10 @@ class TestHodos {
 
       CitableId formIdentification = form.getAnalysis()
       assert formIdentification.getGender() == Gender.FEMININE
-      assert formIdentification.getCas() == GrammaticalCase.DATIVE
-      assert formIdentification.getNum() == GrammaticalNumber.SINGULAR
+      assert formIdentification.getCas() == GrammaticalCase.NOMINATIVE
+      assert formIdentification.getNum() == GrammaticalNumber.PLURAL
       // we can also find its persistent accent:
-      assert formIdentification.getPersistentAccent() == PersistentAccent.INFLECTIONAL_ENDING
+      assert formIdentification.getPersistentAccent() == PersistentAccent.STEM_ULTIMA
 
       // and (3) an explanation for the analysis
       AnalysisExplanation explanation = morphAnalysis.getAnalysisExplanation()

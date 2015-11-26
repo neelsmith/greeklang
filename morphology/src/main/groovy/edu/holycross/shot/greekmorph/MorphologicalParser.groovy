@@ -34,6 +34,9 @@ class MorphologicalParser {
 
   boolean isFirstDeclension(String inflectionClass) {
     switch (inflectionClass) {
+      case "h_hs":
+      return true
+      break
 
       default:
       return false
@@ -91,6 +94,7 @@ class MorphologicalParser {
     return  resultWord
   }
 
+
   // TO BE IMPLEMENTED.  GENERATE ACCENTED FORM AND COMPARE TO SUBMITTED FORM.
   /** NOT YET FULLY IMPLEMENTED */
   boolean checkAccent(GreekString utf8String, FstAnalysisParser analysisInfo) {
@@ -120,13 +124,16 @@ class MorphologicalParser {
       }
 
 
+
+
       switch (nounAnalysis.getPersistentAccent()) {
         case PersistentAccent.STEM_PENULT:
         accented = unaccented.accent(AccentPattern.RECESSIVE)
         break
 
         case PersistentAccent.STEM_ULTIMA:
-        accented =  unaccented.accent(AccentPattern.PENULT)
+        System.err.println "Accent ${unaccented} on PENULT"
+        accented =  Accent.accentWord(unaccented, AccentPattern.PENULT)
         break
 
         case PersistentAccent.INFLECTIONAL_ENDING:
@@ -164,7 +171,7 @@ class MorphologicalParser {
         // omit
       } else {
         FstAnalysisParser fap = new FstAnalysisParser(l, urnManager)
-        if (debug > 0) {System.err.println "FAP: " + fap}
+        if (debug > 0) {System.err.println "parse with FAP: " + fap}
         if (checkAccent(gkStr,fap)) {
           analysisList.add(fap.getTriple())
         } else {

@@ -143,11 +143,12 @@ class FstAnalysisParser {
 
       morphForm = computeMorphForm()
       // Strip out all tags from surface form except <#>
-      System.err.println "RAW MORPHFORM has surface " + stemString + "-" + inflectionString
+      if (debug > 0) { System.err.println "RAW MORPHFORM has surface " + stemString + "-" + inflectionString}
       surfaceStem = stemString.replaceFirst("<ro>", "(")
-      surfaceStem = stemString.replaceFirst("<sm>", ")")
-      surfaceStem = surfaceStem.replaceAll(leftmostUrn,"").replaceAll(leftmostUrn,"").replaceAll(semanticTags, "")
-
+      surfaceStem = surfaceStem.replaceFirst("<sm>", ")")
+      surfaceStem = surfaceStem.replaceAll(leftmostUrn,"").replaceAll(leftmostUrn,"")
+      surfaceStem = surfaceStem.replaceAll(semanticTags, "")
+      if (debug > 0) { System.err.println "yielding stem " + surfaceStem}
       surfaceInflection = inflectionString.replaceAll(leftmostUrn,"").replaceAll(semanticTags, "")
 
       // Example of conjugated verb:  "<coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>"
