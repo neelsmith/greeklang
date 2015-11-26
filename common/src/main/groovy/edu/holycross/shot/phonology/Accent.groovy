@@ -45,7 +45,7 @@ class Accent {
     Integer max = index
     while ((index >= 0) && (noAccent)) {
       String ch = syllable[index]
-      
+
       if ((Phonology.isVowel(ch)) || (Phonology.isBreathing(ch)) || Phonology.isQuantity(ch)) {
 	if (ch != "|") {
 	  if (index == syllable.size() - 1) {
@@ -66,6 +66,8 @@ class Accent {
     }
   }
 
+
+
   /** Adds persistent accent on penult to a GreekWord.
   * @param gw Unaccented form to accent.
   * @returns A GreekWord with accent added.
@@ -73,7 +75,6 @@ class Accent {
   */
   static GreekWord addPenultAccent(GreekWord gw) {
     def syllables = gw.getSyllables()
-    System.err.println "Syllabify as : " + syllables
     if (syllables.size() < 2){
       throw new Exception("Accent: cannot accent penult of ${gw}. Too few syllables.")
     }
@@ -83,21 +84,64 @@ class Accent {
     Integer penultIdx = lastIndex - 1
     String penult = syllables[penultIdx]
 
-    // last syllable long, accent must be paroxytone:
-    if (lastSyll ==~ syllLongByNature) {
+    if (hasFinalDiphthong(gw)) {
+      // treat as short:  Smyth 169
+      if (penult ==~ syllLongByNature ) {
+        // properispomenon
+
+  syllables[penultIdx] = accentSyllable(penult, "=")
+
+      } else {
+        // paroxytone:
+  syllables[penultIdx] = accentSyllable(syllables[penultIdx], "/")
+      }
+
+    } else if (lastSyll ==~ syllLongByNature) {
+          // last syllable long, accent must be paroxytone:
       syllables[penultIdx] = accentSyllable(penult, "/")
 
     } else {
       // last syllable short: check length of penult
       if (penult ==~ syllLongByNature ) {
         // properispomenon
-        System.err.println "Penult ${penult} is long by nature"
+
 	syllables[penultIdx] = accentSyllable(penult, "=")
 
       } else {
         // paroxytone:
 	syllables[penultIdx] = accentSyllable(syllables[penultIdx], "/")
       }
+    }
+    return new GreekWord(syllables.join(""))
+  }
+
+
+  static GreekWord addRecessiveAccentShortFinal(GreekWord gw) {
+    System.err.println "Adding recessive accent with final syll. short"
+    def syllables = gw.getSyllables()
+    Integer lastIndex = syllables.size() - 1
+    String lastSyll = syllables[lastIndex]
+
+    switch(lastIndex) {
+      case 0:
+      syllables[lastIndex] = accentSyllable(syllables[lastIndex], "/")
+      break
+
+      case 1:
+
+      Integer penultIdx = lastIndex - 1
+      String penult = syllables[penultIdx]
+      if (penult ==~ syllLongByNature ) {
+        syllables[penultIdx] = accentSyllable(syllables[penultIdx], "=")
+      } else {
+        syllables[penultIdx] = accentSyllable(syllables[penultIdx], "/")
+      }
+      break
+
+      default:
+      Integer antepenultIdx = lastIndex - 2
+      syllables[antepenultIdx] = accentSyllable(syllables[antepenultIdx], "/")
+      break
     }
     return new GreekWord(syllables.join(""))
   }
@@ -113,8 +157,11 @@ class Accent {
     Integer lastIndex = syllables.size() - 1
     String lastSyll = syllables[lastIndex]
 
-    // last syllable long:
-    if (lastSyll ==~ syllLongByNature) {
+    if (hasFinalDiphthong(gw)) {
+      // treat as short:  Smyth 169
+      return addRecessiveAccentShortFinal(gw)
+    } else if (lastSyll ==~ syllLongByNature) {
+      // last syllable long:
       switch(lastIndex) {
         case 0:
         syllables[lastIndex] = accentSyllable(syllables[lastIndex], "=")
@@ -125,39 +172,20 @@ class Accent {
         syllables[penultIdx] = accentSyllable(syllables[penultIdx], "/")
         break
       }
-
+      return new GreekWord(syllables.join(""))
     } else {
       // last syllable short
-      switch(lastIndex) {
-        case 0:
-        syllables[lastIndex] = accentSyllable(syllables[lastIndex], "/")
-        break
+      return addRecessiveAccentShortFinal(gw)
 
-        case 1:
 
-        Integer penultIdx = lastIndex - 1
-        String penult = syllables[penultIdx]
-        if (penult ==~ syllLongByNature ) {
-          syllables[penultIdx] = accentSyllable(syllables[penultIdx], "=")
-        } else {
-          syllables[penultIdx] = accentSyllable(syllables[penultIdx], "/")
-        }
-        break
-
-        default:
-        Integer antepenultIdx = lastIndex - 2
-        syllables[antepenultIdx] = accentSyllable(syllables[antepenultIdx], "/")
-        break
-      }
     }
-
-    return new GreekWord(syllables.join(""))
   }
 
   // makes best guess at what accent to apply to what syllable
   // based on accent pattern and string content of greekword
 
   static GreekWord accentWord(GreekWord gw, AccentPattern acc) {
+    System.err.println "Add accent to ${gw}, ${acc}"
     switch (acc) {
       case AccentPattern.RECESSIVE:
       return addRecessiveAccent(gw)
@@ -171,6 +199,19 @@ class Accent {
       case AccentPattern.ULTIMA:
       throw new Exception("Accent: cannot accent ultima without morphological information about ${gw}.")
       break
+    }
+  }
+
+
+
+  // Smyth 169 : final -ai and -oi are short
+  static boolean hasFinalDiphthong(GreekWord gs) {
+    String ascii = gs.toString()
+    if ((ascii ==~ /.+ai$/) || (ascii ==~ /.+oi$/)) {
+      System.err.println "FINAL DIPHTHONG"
+      return true
+    } else {
+      return false
     }
   }
 
