@@ -117,7 +117,6 @@ class Accent {
 
 
   static GreekWord addRecessiveAccentShortFinal(GreekWord gw) {
-    System.err.println "Adding recessive accent with final syll. short"
     def syllables = gw.getSyllables()
     Integer lastIndex = syllables.size() - 1
     String lastSyll = syllables[lastIndex]
@@ -185,7 +184,7 @@ class Accent {
   // based on accent pattern and string content of greekword
 
   static GreekWord accentWord(GreekWord gw, AccentPattern acc) {
-    System.err.println "Add accent to ${gw}, ${acc}"
+    //System.err.println "Add accent to ${gw}, ${acc}"
     switch (acc) {
       case AccentPattern.RECESSIVE:
       return addRecessiveAccent(gw)
@@ -208,7 +207,6 @@ class Accent {
   static boolean hasFinalDiphthong(GreekWord gs) {
     String ascii = gs.toString()
     if ((ascii ==~ /.+ai$/) || (ascii ==~ /.+oi$/)) {
-      System.err.println "FINAL DIPHTHONG"
       return true
     } else {
       return false

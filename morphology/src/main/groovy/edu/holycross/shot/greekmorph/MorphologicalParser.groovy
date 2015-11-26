@@ -54,7 +54,6 @@ class MorphologicalParser {
     }
   }
   GreekWord addNounUltima(GreekWord gw, NounForm nounForm, String inflectionClass) {
-    System.err.println "Accent ultima of " + gw + ", type " + inflectionClass + ", form " + nounForm
 
     def syllables = gw.getSyllables()
     Integer lastIndex = syllables.size() - 1
@@ -71,13 +70,10 @@ class MorphologicalParser {
     */
 
     if ((isFirstDeclension(inflectionClass)) || (isSecondDeclension(inflectionClass)) ) {
-      System.err.println "IS 1-2 DECL"
       switch (nounForm.cas) {
         case GrammaticalCase.GENITIVE:
         case GrammaticalCase.DATIVE:
-
         syllables[lastIndex] = Accent.accentSyllable(lastSyll, "=")
-        System.err.println "accented last syll "  + syllables
         break
         default :
         syllables[lastIndex] = Accent.accentSyllable(lastSyll, "/")
@@ -90,7 +86,6 @@ class MorphologicalParser {
     Third declension is complicated
     */
     GreekWord resultWord = new GreekWord(syllables.join(""))
-    System.err.println "Word with ultima = " + resultWord
     return  resultWord
   }
 
@@ -99,7 +94,7 @@ class MorphologicalParser {
   /** NOT YET FULLY IMPLEMENTED */
   boolean checkAccent(GreekString utf8String, FstAnalysisParser analysisInfo) {
 
-    System.err.println "Check accent on " + utf8String
+
     // depends on type of analysis.
     // with only a handful of exceptions, conjugated verbs are recessive.
     // nouns have persistent accent property to consider.
@@ -132,7 +127,6 @@ class MorphologicalParser {
         break
 
         case PersistentAccent.STEM_ULTIMA:
-        System.err.println "Accent ${unaccented} on PENULT"
         accented =  Accent.accentWord(unaccented, AccentPattern.PENULT)
         break
 
