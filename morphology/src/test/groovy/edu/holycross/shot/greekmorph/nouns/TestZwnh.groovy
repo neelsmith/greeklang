@@ -22,15 +22,13 @@ class TestZwnh {
   // Compiled finite state transducer:
   String fstBinary = "build/fst/greek.a"
 
-
-
     @Test
     void testDeclension() {
       // Add lexicon to URN manager:
       umgr.addCsvFile(lexCsvSource)
       // And, finally, the parser:
       MorphologicalParser mp = new MorphologicalParser(fstBinary, umgr)
-      
+
       // map keyed by forms to analyze, to a unique GCN of noun form
       def expectedUnique = [
 
@@ -57,7 +55,8 @@ class TestZwnh {
         assert formIdentification.getNum() == expectedAnswer[2]
       }
 
-      // Check also the ambiguous nom/voc form.
+      // Check also the ambiguous nom/voc forms.
+      // Singular:
       def nom_voc = [GrammaticalCase.NOMINATIVE,GrammaticalCase.VOCATIVE ]
       GreekString ambiguous = new GreekString("ζώνη",true)
       MorphologicalAnalysis morph = mp.parseGreekString(ambiguous)
@@ -72,8 +71,7 @@ class TestZwnh {
           assert formIdentification.getGender() == Gender.FEMININE
           assert formIdentification.getNum() == GrammaticalNumber.SINGULAR
       }
-
-
+      // Plural:
       GreekString ambiguousPlural = new GreekString("ζῶναι",true)
       MorphologicalAnalysis morphPl = mp.parseGreekString(ambiguousPlural)
       assert morphPl.analyses.size() == 2
@@ -81,8 +79,6 @@ class TestZwnh {
           MorphForm form = it.getMorphForm()
           assert form.getAnalyticalType() == AnalyticalType.NOUN
           CitableId formIdentification = form.getAnalysis()
-          // can't know ordering of analyses, but case must be
-          // ONE of these two!
           assert nom_voc.contains(formIdentification.getCas())
           assert formIdentification.getGender() == Gender.FEMININE
           assert formIdentification.getNum() == GrammaticalNumber.PLURAL
@@ -95,10 +91,8 @@ class TestZwnh {
     String testWord = "ζωνῶν"
     GreekString s = new GreekString(testWord, true)
 
-
     umgr.addCsvFile(lexCsvSource)
     MorphologicalParser mp = new MorphologicalParser(fstBinary, umgr)
-
 
     // Parsing a GreekString gets you 0 or more analyses
     MorphologicalAnalysis morph = mp.parseGreekString(s)
@@ -114,7 +108,6 @@ class TestZwnh {
       // (2) a form:
       MorphForm form = morphAnalysis.getMorphForm()
       assert form.getAnalyticalType() == AnalyticalType.NOUN
-
       CitableId formIdentification = form.getAnalysis()
       assert formIdentification.getGender() == Gender.FEMININE
       assert formIdentification.getCas() == GrammaticalCase.GENITIVE
@@ -126,18 +119,10 @@ class TestZwnh {
       AnalysisExplanation explanation = morphAnalysis.getAnalysisExplanation()
       String expectedStemExplanation =  "urn:cite:gmorph:coretests.n46456_0"
       assert explanation.stem.toString() == expectedStemExplanation
-
-
-      //System.err.println "stem expl: " + explanation.stem.toString()
-
-
       // Inflectional patterns are explained by a URN identifying the
       // the inflectional rule applied to the stem
       String expectedInflectionExplanation = "urn:cite:gmorph:nouninfl.h_hs7"
       assert explanation.inflection.toString() == expectedInflectionExplanation
-      //System.err.println "inf expl: " + explanation.inflection.toString()
-
-
     }
   }
 
