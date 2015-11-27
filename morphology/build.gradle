@@ -171,7 +171,9 @@ task cpStems (type: Copy, dependsOn: "buildStems") {
     filter(ReplaceTokens, tokens: ["workdir" : "${buildDir}/fst/".toString()])
 }
 
-
+cpStems.doLast {
+  System.err.println "Copied stems from ${projectDir}/${stemsdir}"
+}
 
 task cpAll (dependsOn: [ cpStems, cpRules, cpSrc]){
   description = "Copies all source material to build area"

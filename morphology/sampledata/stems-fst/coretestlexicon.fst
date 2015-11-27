@@ -7,6 +7,7 @@
 <u>coretests.n67485_0</u><u>lexent.n67485</u>mhn<noun><fem><is_ios><stemultacc>
 <u>coretests.n115887_0</u><u>lexent.n115887</u>yux<noun><fem><h_hs><inflacc>
 <u>coretests.n46456_0</u><u>lexent.n46456</u>zwn<noun><fem><h_hs><stemultacc>
+<u>coretests.n47039_0</u><u>lexent.n47039</u>ni<lo>k<noun><fem><h_hs><stemultacc>
 <u>coretests.n29828_0</u><u>lexent.n29828</u>dwr<noun><neut><os_ou><stemultacc>
 <u>coretests.n272092_0</u><u>lexent.n272092</u>o<ro>d<noun><fem><os_ou><inflacc>
 <u>coretests.n8909_0</u><u>lexent.n8909</u>a<sm>nqrwp<noun><masc><os_ou><stempenacc>
