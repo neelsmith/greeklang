@@ -18,5 +18,5 @@ layout: page
         - [Dictionaries of lexical entities](dictionaries)
         - [Sets of inflectional rules](rules)
 - Sample data sets included
-    - The HMT project lexical dictionary
+    - Core test data set
     - The HMT project rule set for Homeric epic
