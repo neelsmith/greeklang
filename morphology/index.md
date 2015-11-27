@@ -12,6 +12,7 @@ In development. Initial release expected in spring, 2016.
 ## To be added##
 
 - version: x.x.x. [Release notes](releases).
+- [documentation](documentation)
 - live specifications
 - API docs
 - maven identifiers
