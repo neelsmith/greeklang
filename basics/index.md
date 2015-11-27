@@ -1,5 +1,5 @@
 ---
-title: Greek orthographyu and phonology
+title: Greek orthography and phonology
 layout: page
 ---
 
