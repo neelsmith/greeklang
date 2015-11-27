@@ -8,8 +8,8 @@ layout: page
 - Overvew: [what the system is, how it works](overview)
 - The citable data sets it uses
     - Fixed data sets
-        - morphological forms
-        - inflectional classes of:
+        - [morphological forms](forms)
+        - [inflectional classes](inflection) of:
             - nouns
             - adjectives
             - verbs

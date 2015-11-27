@@ -3,6 +3,6 @@ title: Inflectional classes
 layout: page
 ---
 
-They're not "real". About 30 for nouns?
+They're not historically "real": pragmatic internally consistent abstractions for goal of this system. (Link to overview)
 
-- [nouns](nouns)
+- [nouns](nouns)  About 30 total for all 3 declensions?
