@@ -17,3 +17,6 @@ layout: page
     - Dynamically supplied data sets
         - [Dictionaries of lexical entities](dictionaries)
         - [Sets of inflectional rules](rules)
+- Sample data sets included
+    - The HMT project lexical dictionary
+    - The HMT project rule set for Homeric epic
