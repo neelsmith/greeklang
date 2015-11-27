@@ -135,7 +135,7 @@ class MorphologicalParser {
     if (debug > 0 ) {
       System.err.println "Check accent by comparing ${accented} to ${gs}"
     }
-    return (accented.toString() == gs.toString())
+    return (accented.toString().replaceAll("[_^]","") == gs.toString())
   }
 
 
@@ -170,6 +170,7 @@ class MorphologicalParser {
     FstToken fstToken = new FstToken(gkStr)
     if (debug > 0) {System.err.println "MorphologicalAnalysis: submit ${fstToken}"}
     String parseOutput = fstParser.parseToken(fstToken)
+    if (debug > 0) {System.err.println "MorphologicalAnalysis: got ${parseOutput}"}
     parseOutput.eachLine { l ->
       if (l[0] == ">") {
         // omit

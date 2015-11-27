@@ -55,7 +55,7 @@ class FstParser {
     def proc = procList.execute()
     proc.consumeProcessOutput(out, err)
     proc.waitFor()
-    return out.toString()
+    return out.toString().replaceAll("<lo>","_").replaceAll("<sh>","^")
   }
 
   /** Parses a list of tokens, one per line, with the SFST parser.

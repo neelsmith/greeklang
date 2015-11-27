@@ -1,7 +1,7 @@
 %%% Noun declensions
 %
 % First declension patterns:
-$h_hs_ending$ = <h\_hs> (<u>nouninfl\.h\_hs1</u>h[<masc><fem>]<nom><sg> |\
+$h_hs_ending$ = <h_hs> (<u>nouninfl\.h\_hs1</u>h[<masc><fem>]<nom><sg> |\
 <u>nouninfl\.h\_hs2</u>hs[<masc><fem>]<gen><sg> |\
 <u>nouninfl\.h\_hs3</u>h\|[<masc><fem>]<dat><sg> |\
 <u>nouninfl\.h\_hs4</u>hn[<masc><fem>]<acc><sg> |\
@@ -9,7 +9,7 @@ $h_hs_ending$ = <h\_hs> (<u>nouninfl\.h\_hs1</u>h[<masc><fem>]<nom><sg> |\
 <u>nouninfl\.h\_hs6</u>ai[<masc><fem>]<nom><pl> |\
 <u>nouninfl\.h\_hs7</u>wn[<masc><fem>]<gen><pl> |\
 <u>nouninfl\.h\_hs8</u>ais[<masc><fem>]<dat><pl> |\
-<u>nouninfl\.h\_hs9</u>a\_s[<masc><fem>]<acc><pl> |\
+<u>nouninfl\.h\_hs9</u>a<lo>s[<masc><fem>]<acc><pl> |\
 <u>nouninfl\.h\_hs10</u>ai[<masc><fem>]<voc><pl> \
 )
 %
