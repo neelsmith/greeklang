@@ -25,13 +25,16 @@ Constant across orthographic systems:
 
 - everything else?
 
+
+
 ## Dependencies
 
-`inflection.fst` is included in `symbols.fst`
 
-`inflection.a` is used in `greek.fst`
 
-acceptors use letter definitions from `phonology.fst`:
+
+- `inflection.a` is used in `greek.fst`, so need a separately compiled inflection module
+- `phonology.fst` is included in `symbols.fst`
+- acceptors use letter definitions from `phonology.fst`:
 
 
 
@@ -42,10 +45,10 @@ acceptors use letter definitions from `phonology.fst`:
     #letter# = #consonant# #vowel# #breathing#
 
 
-Perhaps break out an "alphabet" file to include in phonology?
+So break out an "alphabet" file to include in phonology
 
 So requirements would be;
 
 1. makefile compiling `inflection.a`
 2. cp in compiled inflection.a and its source files (for inclusion in symbols)
-3. cp in alphabet file (alphabet.fst?)
+3. √ cp in alphabet file (alphabet.fst?)
