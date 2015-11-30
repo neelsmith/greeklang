@@ -107,7 +107,7 @@ String getLexEntUrns() {
 task cpSrc (type: Copy) {
     description = "Filters and copies FST src directory to build area."
     from ("src/fst") {
-      include ("makefile", "**/*.fst")
+      include ("**/makefile", "**/*.fst")
     }
     into "${buildDir}/fst"
     filter(
@@ -123,7 +123,19 @@ task cpSrc (type: Copy) {
      ])
 }
 
-task cpRules (type: Copy) {
+
+task cpCoreInflection(type:Copy) {
+    description = "Filters and copies directory with core inflectional rules to build area."
+    from ("${projectDir}/${coreinfldir}") {
+      include ("**/*.fst", "**/makefile")
+    }
+    into "${buildDir}/fst"
+    filter(ReplaceTokens, tokens: ["workdir" : "${buildDir}/fst/".toString()])
+}
+cpCoreInflection.doLast {
+  System.err.println "Copied ${projectDir}/${coreinfldir} to ${buildDir}/fst"
+}
+task cpRules (type: Copy, dependsOn: cpCoreInflection) {
     description = "Filters and copies directory with additional inflectional rules to build area."
     from ("${projectDir}/${rulesdir}") {
       include ("**/*.fst")
@@ -175,7 +187,7 @@ cpStems.doLast {
   System.err.println "Copied stems from ${projectDir}/${stemsdir}"
 }
 
-task cpAll (dependsOn: [ cpStems, cpRules, cpSrc]){
+task cpAll (dependsOn: [ cpStems, cpRules, cpSrc, cpCoreInflection]){
   description = "Copies all source material to build area"
 }
 cpAll.doLast {
@@ -193,7 +205,18 @@ cpAll.doLast {
   }
 }
 
-task fst(type:Exec, dependsOn: cpAll) {
+
+//task compileCore(type:Exec, dependsOn: cpCore) {
+task compileCore(type:Exec, dependsOn: cpAll) {
+  description = "Builds binary Finite State Transducer for core inflection in ${buildDir}/fst/core_inflection/inflection.a"
+
+  outputs.file "${buildDir}/fst/core_inflection/inflection.a".toString()
+  inputs.dir "${buildDir}/fst/core_inflection"
+
+  commandLine =  [MAKE, "-f", "${buildDir}/fst/core_inflection/makefile".toString()]
+}
+
+task fst(type:Exec, dependsOn: [cpAll, compileCore]) {
   description = "Builds binary Finite State Transducer in ${buildDir}/fst/greek.a"
 
   outputs.file "${buildDir}/fst/greek.a".toString()

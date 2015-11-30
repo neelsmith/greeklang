@@ -10,6 +10,10 @@ ext {
   // Source directories for required and optional data used in
   // building a corpus-specific parser.
   //
+  // Required:  core set of inflectional rules for a given
+  // orthographic system:
+  coreinfldir = "src/core_inflection/greek"
+  //
   // Required:  one or more .fst files with stems.
   stemsdir = "data/stems-fst"
   // Required:  one or more .csv files definiing expansion of
