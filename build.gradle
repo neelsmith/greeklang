@@ -160,7 +160,7 @@ project(":morphology") {
 
 
 project(":hexameter") {
-  version = morphversion
+  version = hexameterversion
   ext {
     specversion = hexameterspec
   }
