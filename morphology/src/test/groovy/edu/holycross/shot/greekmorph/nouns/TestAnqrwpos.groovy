@@ -20,7 +20,7 @@ class TestAnqrwpos {
   UrnManager umgr = new UrnManager(inflCsvSource)
 
   // Compiled finite state transducer:
-  String fstBinary = "build/fst/greek.a"
+  String fstBinary = "build/greek/greek.a"
 
 
 
@@ -30,6 +30,8 @@ class TestAnqrwpos {
     umgr.addCsvFile(lexCsvSource)
     // And, finally, the parser:
     MorphologicalParser mp = new MorphologicalParser(fstBinary, umgr)
+    mp.debug = 10
+    mp.fstParser.debug = 10
     // map keyed by forms to analyze, to a unique GCN of noun form
     def expectedUnique = [
     "ἄνθρωπος": [Gender.MASCULINE, GrammaticalCase.NOMINATIVE, GrammaticalNumber.SINGULAR],

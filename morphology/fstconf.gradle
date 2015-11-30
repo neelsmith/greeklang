@@ -6,6 +6,9 @@ ext {
 
   installdir = "/usr/local"
 
+  // Identify an available orthography (e.g., "greek", "attic")
+  orthography = "greek"
+
   ////////////////////////////////////////////////////////////
   // Source directories for required and optional data used in
   // building a corpus-specific parser.
