@@ -25,4 +25,27 @@ Constant across orthographic systems:
 
 - everything else?
 
-.wq
+## Dependencies
+
+`inflection.fst` is included in `symbols.fst`
+
+`inflection.a` is used in `greek.fst`
+
+acceptors use letter definitions from `phonology.fst`:
+
+
+
+    % Characters for Greek character set:
+    #consonant# = bgdzqklmncprstfxy
+    #vowel# = aeiouhw\|
+    #breathing# = <sm><ro>
+    #letter# = #consonant# #vowel# #breathing#
+
+
+Perhaps break out an "alphabet" file to include in phonology?
+
+So requirements would be;
+
+1. makefile compiling `inflection.a`
+2. cp in compiled inflection.a and its source files (for inclusion in symbols)
+3. cp in alphabet file (alphabet.fst?)

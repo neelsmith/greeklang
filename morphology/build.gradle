@@ -123,7 +123,19 @@ task cpSrc (type: Copy) {
      ])
 }
 
-task cpRules (type: Copy) {
+
+task cpAlphabet(type:Copy) {
+    description = "Filters and copies directory with additional inflectional rules to build area."
+    from ("${projectDir}/${coreinfldir}") {
+      include ("**/*.fst")
+    }
+    into "${buildDir}/fst"
+    filter(ReplaceTokens, tokens: ["workdir" : "${buildDir}/fst/".toString()])
+}
+cpAlphabet.doLast {
+  System.err.println "Copied ${projectDir}/${coreinfldir} to ${buildDir}/fst"
+}
+task cpRules (type: Copy, dependsOn: cpAlphabet) {
     description = "Filters and copies directory with additional inflectional rules to build area."
     from ("${projectDir}/${rulesdir}") {
       include ("**/*.fst")
