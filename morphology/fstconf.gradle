@@ -15,7 +15,7 @@ ext {
   //
   // Required:  core set of inflectional rules for a given
   // orthographic system:
-  coreinfldir = "src/core_inflection/greek"
+  coreinfldir = "src/core_inflection"
   //
   // Required:  one or more .fst files with stems.
   stemsdir = "data/stems-fst"

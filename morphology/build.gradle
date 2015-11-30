@@ -147,7 +147,7 @@ task cpSrc (type: Copy) {
 
 task cpCoreInflection(type:Copy) {
     description = "Filters and copies directory with core inflectional rules to build area."
-    from ("${projectDir}/${coreinfldir}") {
+    from ("${projectDir}/${coreinfldir}/${orthography}") {
       include ("**/*.fst", "**/makefile")
     }
     into "${buildDir}/${orthography}"
