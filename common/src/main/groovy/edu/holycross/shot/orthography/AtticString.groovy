@@ -4,8 +4,19 @@ import edu.unc.epidoc.transcoder.TransCoder
 import java.text.Normalizer
 import java.text.Normalizer.Form
 
+// account for:
+/*
+- aspirate H
+- E = e, h, ei
+- O = o, w, ou
+- instead of c, y, XS and FS
+- very early, some QOPPA
+*/
 
-import edu.holycross.shot.AtticPhonology.AtticPhonology
+/* SEE CONVERSION TABLE
+
+*/
+import edu.holycross.shot.phonology.AtticPhonology
 
 /**
  * A class for working with text in Greek.  Instances may
@@ -220,7 +231,7 @@ class AtticString implements Comparable<AtticString>{
       || (AtticString.isQuantity(ch))
       || (AtticString.isPunctuation(ch))
       || (AtticString.isWhiteSpace(ch))
-      || (ch == AtticAtticPhonology.diaeresis)
+      || (ch == AtticPhonology.diaeresis)
       || (ch == AtticPhonology.elision)
     )  {
       if (debug > 0) { System.err.println "${ch} is OK!" }

@@ -39,6 +39,7 @@ class AtticPhonology {
   /** Pairs of vowels forming diphthongs. */
   static diphthong = [
     "ai", "ei","oi",
+
     "au","eu", "ou",
     "hu", "ui"
   ]
@@ -47,18 +48,20 @@ class AtticPhonology {
   * @param ch A 1-character String.
   * @returns True if ch is the elision character.
   */
+  /*
   static boolean isElision(String ch) {
     return ch == elision
-  }
+  }*/
 
   /** Determines if a character is a breathing character.
   * @param ch A 1-character String.
   * @returns True if ch is a breathing character.
   */
+  /*
   static boolean isBreathing(String ch) {
     return breathing.contains(ch)
   }
-
+*/
   /** Determines if a character is an accent.
   * @param ch A 1-character String.
   * @returns True if ch is an accent.
