@@ -16,6 +16,7 @@ import java.text.Normalizer.Form
 /* SEE CONVERSION TABLE
 
 */
+
 import edu.holycross.shot.phonology.AtticPhonology
 
 /**
@@ -28,7 +29,7 @@ import edu.holycross.shot.phonology.AtticPhonology
  * as numeric characters, or more exotic kinds of punctuatio, you will
  * have to strip those out before creating a AtticString object.
  */
-class AtticString implements Comparable<AtticString>{
+class AtticString implements GreekOrthography, Comparable<AtticString>{
 
   // Temporary constructs for debugging:
 
@@ -62,86 +63,24 @@ class AtticString implements Comparable<AtticString>{
   /** The string in ascii form.*/
   String AtticString
 
+  boolean validString
 
-
-  /** Compares a pair of one-character long Strings using the
-  * ordered map in asciiOrder.
-  * @return  -1 if s1 < s2, 0 if s1 == s2, 1 if s1 > s2
-  */
-  static private int charComp (String s1, String s2) {
-    def mapEntry1 =   asciiOrder.find {it.value == s1.toLowerCase()}
-    def mapEntry2 =   asciiOrder.find{it.value == s2.toLowerCase()}
-    if ((!mapEntry1) || (!mapEntry2)) {
-      // non-comparing character:  ignore
-      // by treating as equal
-      return 0
-    }
-    if (mapEntry1.key == mapEntry2.key) {
-      return 0
-    } else if (mapEntry1.key > mapEntry2.key) {
-      return 1
-    } else {
-      return -1
-    }
-  }
-
-  @Override
-  int compareTo(AtticString gs2)
-  throws Exception {
-    String s2 = gs2.toString()
-
-    int idx1 = 0
-    int idx2 = 0
-    int maxChars = 0
-    if (AtticString.size() > s2.size()) {
-      maxChars = s2.size()
-    } else {
-      maxChars = AtticString.size()
-    }
-
-    boolean done = false
-    while (!done) {
-      // skip over non-alphabetic chars:
-      while (
-      (! AtticString.isAlphabetic(AtticString[idx1])) &&
-      (idx1 < (maxChars -1))
-      ) {
-        idx1++
-      }
-      while (
-      (! AtticString.isAlphabetic(s2[idx2])) &&
-      (idx2 < (maxChars - 1))
-      ) {
-        idx2++
-      }
-
-      // compare pair of alphabetic chars:
-      def cComp = charComp(AtticString[idx1],s2[idx2])
-      if (cComp != 0) {
-	return cComp
-      } else {
-	idx1++;
-	idx2++;
-      }
-      if ((idx1 >= (maxChars - 1) ) || (idx2 >= (maxChars -1))) {
-	done = true
-      }
-    }
-
-
-    // two tokens matched for all chars, but
-    // if one is longer, it sorts later:
-    if (AtticString.size() > s2.size()) {
-      return 1
-    } else if (AtticString.size() == s2.size()) {
-      return 0
-    } else {
-      return -1
-    }
+  boolean isValid() {
+    return validString
   }
 
 
-
+  static String adjustVowelAcc(String s) {
+    Normalizer.normalize(s.toUpperCase().replaceAll("E=", "Ê").replaceAll("O=", "Ô"), Form.NFC)
+  }
+  static String adjustVowelAcc(String s, boolean inUnicode) {
+    if (inUnicode) {
+      String nfcStyle = Normalizer.normalize(s.toLowerCase(),Form.NFC)
+      return s.replaceAll( "ê","E=").replaceAll( "ô", "O=")
+    } else {
+      return adjustVowelAcc(s)
+    }
+  }
   /** Constructor verifies that scSring, supplied in an identified
    * system for encoding Greek, contains only valid characters
    * for a AtticString's underlying ascii representation.
@@ -159,10 +98,10 @@ class AtticString implements Comparable<AtticString>{
       TransCoder xcoder = new TransCoder()
       xcoder.setParser("Unicode")
       xcoder.setConverter("BetaCode")
-      asciiString = xcoder.getString(srcString.toLowerCase()).toLowerCase().replaceAll("s1","s")
+      asciiString = xcoder.getString(srcString.toLowerCase()).toUpperCase().replaceAll("S1","S")
       if (debugLevel > 0) { System.err.println "Analyze " + srcString + ". In Unicode? " + inUnicode + " (len ${asciiString} = " + asciiString.length() + ")" }
     } else {
-      asciiString = srcString
+      asciiString = srcString.toUpperCase()
     }
     while (count < asciiString.length()) {
       if (!(isValidChar(asciiString.substring(count,count+1)))) {
@@ -173,7 +112,7 @@ class AtticString implements Comparable<AtticString>{
       count++
     }
     this.AtticString = asciiString.replaceAll(/\s+/," ")
-
+    validString = true
   }
 
   AtticString(String srcString, boolean inUnicode, boolean ignoreInvalid)  {
@@ -182,11 +121,27 @@ class AtticString implements Comparable<AtticString>{
       TransCoder xcoder = new TransCoder()
       xcoder.setParser("Unicode")
       xcoder.setConverter("BetaCode")
-      asciiString = xcoder.getString(srcString).toLowerCase().replaceAll("s1","s")
+
+
+      asciiString =     xcoder.getString(srcString.toLowerCase()).toUpperCase().replaceAll("S1","S")
     } else {
-      asciiString = srcString
+      asciiString = srcString.toUpperCase()
     }
     this.AtticString = asciiString.replaceAll(/\s+/," ")
+
+
+    validString = true
+    int count = 0
+    while (count < asciiString.length() ) {
+      if (!(isValidChar(asciiString.substring(count,count+1)))) {
+        if (! ignoreInvalid) {
+  System.err.println "Error parsing ${asciiString}: failed on ${asciiString.substring(count,count+1)} (char ${count})"
+  throw new Exception("AtticString: invalid characer ${asciiString.substring(count,count+1)}")
+}
+  validString = false
+      }
+      count++
+    }
   }
 
   /** Constructor verifies that srcSring contains only valid characters
@@ -197,7 +152,7 @@ class AtticString implements Comparable<AtticString>{
   AtticString(String srcString)
   throws Exception {
     Integer count = 0
-    String asciiString = srcString.toLowerCase()
+    String asciiString = srcString.toUpperCase()
     while (count < asciiString.length() ) {
       if (!(isValidChar(asciiString.substring(count,count+1)))) {
 	System.err.println "Error parsing ${asciiString}: failed on ${asciiString.substring(count,count+1)} (char ${count})"
@@ -206,6 +161,7 @@ class AtticString implements Comparable<AtticString>{
       count++
     }
     this.AtticString = asciiString.replaceAll(/\s+/," ")
+    validString = true
   }
 
 
@@ -231,7 +187,6 @@ class AtticString implements Comparable<AtticString>{
       || (AtticString.isQuantity(ch))
       || (AtticString.isPunctuation(ch))
       || (AtticString.isWhiteSpace(ch))
-      || (ch == AtticPhonology.diaeresis)
       || (ch == AtticPhonology.elision)
     )  {
       if (debug > 0) { System.err.println "${ch} is OK!" }
@@ -265,7 +220,7 @@ class AtticString implements Comparable<AtticString>{
    */
   static boolean isAccentOrBreathing(ch) {
     if (
-      (AtticPhonology.isBreathing(ch))
+      (ch == "H")
       || (AtticPhonology.isAccent(ch))
     ) {
       return true
@@ -289,7 +244,7 @@ class AtticString implements Comparable<AtticString>{
    * @returns true if character is a breathing, otherwise false.
    */
   static boolean isBreathing(ch) {
-    return (AtticPhonology.isBreathing(ch))
+    return (ch == "H")
   }
 
 
@@ -331,13 +286,7 @@ class AtticString implements Comparable<AtticString>{
     return AtticPhonology.isDiphthong(s)
   }
 
-  /** Determines if a one-character long string is diaeresis.
-   * @param ch String to check.
-   * @returns true if character is diaeresis, otherwise false.
-   */
-  static boolean isDiaeresis(ch) {
-    return (ch == AtticPhonology.diaeresis)
-  }
+
 
   /** Determines if a single-character String
    * is a punctuation character.
@@ -462,5 +411,93 @@ class AtticString implements Comparable<AtticString>{
       return this.AtticString
     }
   }
+
+
+
+
+
+
+    /////////////////////////////////////////////////////////////////////
+    // COMPARISON METHODS ///////////////////////////////////////////////
+
+
+
+    /** Compares a pair of one-character long Strings using the
+    * ordered map in asciiOrder.
+    * @return  -1 if s1 < s2, 0 if s1 == s2, 1 if s1 > s2
+    */
+    static private int charComp (String s1, String s2) {
+      def mapEntry1 =   asciiOrder.find {it.value == s1.toLowerCase()}
+      def mapEntry2 =   asciiOrder.find{it.value == s2.toLowerCase()}
+      if ((!mapEntry1) || (!mapEntry2)) {
+        // non-comparing character:  ignore
+        // by treating as equal
+        return 0
+      }
+      if (mapEntry1.key == mapEntry2.key) {
+        return 0
+      } else if (mapEntry1.key > mapEntry2.key) {
+        return 1
+      } else {
+        return -1
+      }
+    }
+
+    @Override
+    int compareTo(AtticString gs2)
+    throws Exception {
+      String s2 = gs2.toString()
+
+      int idx1 = 0
+      int idx2 = 0
+      int maxChars = 0
+      if (AtticString.size() > s2.size()) {
+        maxChars = s2.size()
+      } else {
+        maxChars = AtticString.size()
+      }
+
+      boolean done = false
+      while (!done) {
+        // skip over non-alphabetic chars:
+        while (
+        (! AtticString.isAlphabetic(AtticString[idx1])) &&
+        (idx1 < (maxChars -1))
+        ) {
+          idx1++
+        }
+        while (
+        (! AtticString.isAlphabetic(s2[idx2])) &&
+        (idx2 < (maxChars - 1))
+        ) {
+          idx2++
+        }
+
+        // compare pair of alphabetic chars:
+        def cComp = charComp(AtticString[idx1],s2[idx2])
+        if (cComp != 0) {
+  	return cComp
+        } else {
+  	idx1++;
+  	idx2++;
+        }
+        if ((idx1 >= (maxChars - 1) ) || (idx2 >= (maxChars -1))) {
+  	done = true
+        }
+      }
+
+
+      // two tokens matched for all chars, but
+      // if one is longer, it sorts later:
+      if (AtticString.size() > s2.size()) {
+        return 1
+      } else if (AtticString.size() == s2.size()) {
+        return 0
+      } else {
+        return -1
+      }
+    }
+
+
 
 }

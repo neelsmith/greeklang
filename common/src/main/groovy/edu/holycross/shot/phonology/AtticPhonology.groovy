@@ -8,18 +8,18 @@ class AtticPhonology {
 
   /** Immutable set of consonant characters. */
   static consonant = [
-    'b','g','d',
-    'z','q','k',
-    'l','m','n',
-    'p','r',
-    's','t','f',
-    'x','h'
+    'B','G','D',
+    'Z','Q','K',
+    'L','M','N',
+    'P','R',
+    'S','T','F',
+    'X','H'
   ]
 
   /** Immutable set of vowel characters. */
   static vowel = [
-    'a', 'e',
-    'i','o','u'
+    'A', 'E',
+    'I','O','U'
   ]
 
 
@@ -35,14 +35,13 @@ class AtticPhonology {
   /** Elision mark in ascii. */
   static String elision = "'"
 
+  /** Since unicode can't handle E= or O= we pass along
+  * these subsistutes. */
+  static mockUni = ["Ê", "Ô"]
 
-  /** Pairs of vowels forming diphthongs. */
-  static diphthong = [
-    "ai", "ei","oi",
-
-    "au","eu", "ou",
-    "hu", "ui"
-  ]
+  static isMockUnicode(String ch) {
+      return mockUni.contains(ch)
+  }
 
   /** Determines if a character is the elision character.
   * @param ch A 1-character String.
@@ -53,15 +52,7 @@ class AtticPhonology {
     return ch == elision
   }*/
 
-  /** Determines if a character is a breathing character.
-  * @param ch A 1-character String.
-  * @returns True if ch is a breathing character.
-  */
-  /*
-  static boolean isBreathing(String ch) {
-    return breathing.contains(ch)
-  }
-*/
+
   /** Determines if a character is an accent.
   * @param ch A 1-character String.
   * @returns True if ch is an accent.
@@ -98,13 +89,6 @@ class AtticPhonology {
   }
 
 
-  /** Determines if a string is a diphthong.
-  * @param ch String to check.
-  * @returns True if s is a diphthong.
-  */
-  static boolean isDiphthong(String s) {
-    return diphthong.contains(s)
-  }
 
 
   /** Determines if a character is a markers for vowel

@@ -4,7 +4,7 @@ import edu.unc.epidoc.transcoder.TransCoder
 import java.text.Normalizer
 import java.text.Normalizer.Form
 
-class GreekMsString extends GreekString {
+class GreekMsString extends GreekString implements GreekOrthography {
 
   // Temporary constructs for debugging:
   Integer debug = 0
