@@ -20,7 +20,8 @@ class TestAnqrwpos {
   UrnManager umgr = new UrnManager(inflCsvSource)
 
   // Compiled finite state transducer:
-  String fstBinary = "build/greek/greek.a"
+  String litGreekBinary = "build/greek/greek.a"
+  String atticBinary = "build/attic/greek.a"
 
 
 
@@ -29,7 +30,7 @@ class TestAnqrwpos {
     // Add lexicon to URN manager:
     umgr.addCsvFile(lexCsvSource)
     // And, finally, the parser:
-    MorphologicalParser mp = new MorphologicalParser(fstBinary, umgr)
+    LiteraryGreekParser mp = new LiteraryGreekParser(litGreekBinary, umgr)
     mp.debug = 10
     mp.fstParser.debug = 10
     // map keyed by forms to analyze, to a unique GCN of noun form
@@ -82,7 +83,7 @@ class TestAnqrwpos {
     // Add lexicon to URN manager:
     umgr.addCsvFile(lexCsvSource)
     // And, finally, the parser:
-    MorphologicalParser mp = new MorphologicalParser(fstBinary, umgr)
+    LiteraryGreekParser mp = new LiteraryGreekParser(litGreekBinary, umgr)
 
     String testWord = "ἀνθρώπου"
     GreekString s = new GreekString(testWord, true)
