@@ -69,6 +69,23 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
     return validString
   }
 
+  static String asciiForUcode(String s) {
+    String normalized = Normalizer.normalize(s.toUpperCase(), Form.NFC)
+    String adjusted = adjustVowelAcc(s, true)
+    TransCoder xcoder = new TransCoder()
+    xcoder.setParser("Unicode")
+    xcoder.setConverter("BetaCode")
+    return xcoder.getString(adjusted).replaceAll("S1","S")
+  }
+
+  static String ucodeForAscii(String s) {
+    String adjusted = adjustVowelAcc(s).toLowerCase()
+    TransCoder xcoder = new TransCoder()
+
+    xcoder.setParser("BetaCode")
+    xcoder.setConverter("UnicodeC")
+    return xcoder.getString(adjusted)
+  }
 
   static String adjustVowelAcc(String s) {
     Normalizer.normalize(s.toUpperCase().replaceAll("E=", "Ê").replaceAll("O=", "Ô"), Form.NFC)
@@ -95,11 +112,7 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
     String asciiString = ""
 
     if (inUnicode) {
-      TransCoder xcoder = new TransCoder()
-      xcoder.setParser("Unicode")
-      xcoder.setConverter("BetaCode")
-      asciiString = xcoder.getString(srcString.toLowerCase()).toUpperCase().replaceAll("S1","S")
-      if (debugLevel > 0) { System.err.println "Analyze " + srcString + ". In Unicode? " + inUnicode + " (len ${asciiString} = " + asciiString.length() + ")" }
+      asciiString = asciiForUcode(srcString)
     } else {
       asciiString = srcString.toUpperCase()
     }
@@ -118,12 +131,7 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
   AtticString(String srcString, boolean inUnicode, boolean ignoreInvalid)  {
     String asciiString = ""
     if (inUnicode) {
-      TransCoder xcoder = new TransCoder()
-      xcoder.setParser("Unicode")
-      xcoder.setConverter("BetaCode")
-
-
-      asciiString =     xcoder.getString(srcString.toLowerCase()).toUpperCase().replaceAll("S1","S")
+      asciiString = asciiForUcode(srcString)
     } else {
       asciiString = srcString.toUpperCase()
     }
