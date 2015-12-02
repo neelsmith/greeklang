@@ -7,7 +7,7 @@ apply plugin:  "maven"
 // maintain separate version numbers formatting
 // individual subprojects, and their specs.
 ext {
-  utilsversion = '2.2.2'
+  utilsversion = '3.0.0'
   utilsspec = '0.1.0'
   morphversion = "0.1.0"
   morphspec = '0.1.0'
@@ -144,7 +144,12 @@ subprojects {
 
 project(":morphology") {
   version = morphversion
+  String orthVal = "greek"
+  if (project.hasProperty('ortho')) {
+    orthVal = ortho
+  }
   ext {
+    orthography = orthVal
     specversion = morphspec
   }
   // set defaults for FST compilation:
