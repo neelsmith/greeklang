@@ -12,7 +12,7 @@ class TestAtticXcode{
   @Test
   void testAsciiAccentedVowels() {
     String ascii = "BOLE=S"
-    String ucode = "βολêς"
+    String ucode = "βολε͂ς"
 
     assert ucode == AtticString.ucodeForAscii(ascii)
     assert ascii == AtticString.asciiForUcode(ucode)

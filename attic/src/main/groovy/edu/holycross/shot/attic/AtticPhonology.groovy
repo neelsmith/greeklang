@@ -99,5 +99,13 @@ class AtticPhonology {
     return quantity.contains(ch)
   }
 
+  static ArrayList getVowels() {
+    return vowel
+  }
+
+
+  static ArrayList getConsonants() {
+    return consonant
+  }
 
 }

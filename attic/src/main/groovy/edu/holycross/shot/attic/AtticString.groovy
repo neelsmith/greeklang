@@ -49,17 +49,15 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
   /** Regex matching AtticString punctuation characters. */
   static punctuationRE = ~/[\.;,:]+/
 
-  /** Ascii marker for upper case in epidoc transcoder. */
-  static String asterisk = "*"
 
 
   /** Ordered map of beta-code alphabetic characters for use in comparator */
   static HashMap asciiOrder = [
-    0:'a',1:'b',2:'g',3:'d',4:'e',
-    5:'z',7:'q',8:'i',9:'k',
-    10:'l',11:'m',12:'n',14:'o',
-    15:'p',16:'r',17:'s',18:'t',19:'u',
-    20:'f',21:'x'
+    0:'A',1:'B',2:'G',3:'D',4:'E',
+    5:'Z',7:'Q',8:'I',9:'K',
+    10:'L',11:'M',12:'N',14:'O',
+    15:'P',16:'R',17:'S',18:'T',19:'U',
+    20:'F',21:'X',22: 'H'
   ]
 
   /** The string in ascii form.*/
@@ -90,12 +88,12 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
   }
 
   static String adjustVowelAcc(String s) {
-    Normalizer.normalize(s.toUpperCase().replaceAll("E=", "Ê").replaceAll("O=", "Ô"), Form.NFC)
+    Normalizer.normalize(s.toUpperCase().replaceAll("E=", "ε͂").replaceAll("O=", "ο͂"), Form.NFC)
   }
   static String adjustVowelAcc(String s, boolean inUnicode) {
     if (inUnicode) {
       String nfcStyle = Normalizer.normalize(s.toLowerCase(),Form.NFC)
-      return s.replaceAll( "ê","E=").replaceAll( "ô", "O=")
+      return s.replaceAll( "ε͂","E=").replaceAll( "ο͂", "O=")
     } else {
       return adjustVowelAcc(s)
     }

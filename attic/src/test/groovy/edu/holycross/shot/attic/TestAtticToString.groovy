@@ -21,7 +21,8 @@ class TestAtticToString {
     assert atticUcode.toString() == "BOLE"
 
     // explicitly require valid input:
-    AtticString accented = new AtticString("βολê", true, false)
+    AtticString accented = new AtticString("βολε͂", true, false)
+
     assert accented.toString() == "BOLE="
 
   }

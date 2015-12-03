@@ -12,14 +12,14 @@ class TestAtticAccents{
   @Test
   void testAsciiAccentedVowels() {
     String accented = "BOLE=S"
-    String expectedMock = "BOLÊS"
+    String expectedMock = "BOLε͂S"
     String adjusted = AtticString.adjustVowelAcc(accented)
     assert adjusted == expectedMock
 
 
 
     String article = "TO="
-    String expected =  "TÔ"
+    String expected =  "Tο͂"
     String adjustedArticle = AtticString.adjustVowelAcc(article)
     assert adjustedArticle == expected
   }
@@ -27,11 +27,11 @@ class TestAtticAccents{
 
   @Test
   void testUnicodeAccentedVowels() {
-    String uniInput = "βολêς"
+    String uniInput = "βολε͂ς"
     String expected1 = "βολE=ς"
     assert  AtticString.adjustVowelAcc(uniInput, true) == expected1
 
-    String article = "τô"
+    String article = "το͂"
     String expected2 = "τO="
     assert  AtticString.adjustVowelAcc(article, true) == expected2
   }
