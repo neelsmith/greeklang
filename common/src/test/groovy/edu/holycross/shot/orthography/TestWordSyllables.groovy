@@ -15,4 +15,15 @@ class TestWordSyllables {
       assert syll.toString() == expectedSyllables[idx]
     }
   }
+
+  @Test
+  void testAtticSyllables() {
+    AtticWord aw = new AtticWord("BOLE=S")
+    def expectedSyllables = ["BO", "LES"]
+    def actualSyllables = gw.getSyllables()
+    actualSyllables.eachWithIndex { syll, idx ->
+      assert syll.toString() == expectedSyllables[idx]
+    }
+  }
+
 }

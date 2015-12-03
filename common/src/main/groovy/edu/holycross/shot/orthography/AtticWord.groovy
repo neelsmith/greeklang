@@ -8,11 +8,11 @@ import edu.holycross.shot.phonology.Accent
 /**
  * A class for working with a Greek word.
  */
-class GreekWord implements GreekOrthography {
+class AtticWord implements GreekOrthography {
 
 
   /** The word in ascii format.*/
-  GreekString asciiWord
+  AtticString asciiWord
 
 
   /** Constructor verifies that
@@ -20,10 +20,10 @@ class GreekWord implements GreekOrthography {
    * @param srcString Greek string, in ascii.
    * @throws Exception if not all characters in srcString are valid.
    */
-  GreekWord(String srcString)
+  AtticWord(String srcString)
   throws Exception {
     Integer count = 0
-    this.asciiWord = new GreekString(srcString)
+    this.asciiWord = new AtticString(srcString)
   }
 
 
@@ -35,7 +35,7 @@ class GreekWord implements GreekOrthography {
   }
 
   /** Splits word into syllabes.
-  * @returns An ordered list of GreekStrings.
+  * @returns An ordered list of AtticStrings.
   */
   ArrayList getSyllables() {
     return Syllable.getSyllables(this)
@@ -43,25 +43,22 @@ class GreekWord implements GreekOrthography {
 
 
   /** Removes accents from a word.
-  * @returns A GreekWord with accents removed.
+  * @returns A AtticWord with accents removed.
   */
-  GreekWord stripAccents() {
+  AtticWord stripAccents() {
     return Accent.stripAccents(this)
-
-
   }
 
 
   ArrayList getFinalAccentQuantities() {
-
     return Syllable.getFinalAccentQuantities(this)
   }
 
-  GreekWord addAccent(ArrayList syllables, AccentPattern accent) {
+  AtticWord addAccent(ArrayList syllables, AccentPattern accent) {
 
   }
 
-  GreekWord accent(AccentPattern acc) {
+  AtticWord accent(AccentPattern acc) {
     return Accent.accentWord(this, acc)
   }
 
@@ -74,8 +71,7 @@ class GreekWord implements GreekOrthography {
 
    String toString(boolean asUnicode) {
      if (asUnicode) {
-       GreekString s = new GreekString(this.asciiWord.toString())
-       System.err.println ("GreekWord: Got ${s}, as uni = " + s.toString(asUnicode))
+       AtticString s = new AtticString(this.asciiWord.toString())
        return s.toString(asUnicode)
     } else {
        return this.asciiWord.toString()
