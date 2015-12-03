@@ -1,9 +1,9 @@
 package edu.holycross.shot.orthography
 
-import edu.holycross.shot.phonology.Syllable
-import edu.holycross.shot.phonology.Phonology
+import edu.holycross.shot.phonology.AtticSyllable
+import edu.holycross.shot.phonology.AtticPhonology
 import edu.holycross.shot.phonology.AccentPattern
-import edu.holycross.shot.phonology.Accent
+import edu.holycross.shot.phonology.AtticAccent
 
 /**
  * A class for working with a Greek word.
@@ -59,7 +59,7 @@ class AtticWord implements GreekOrthography {
   }
 
   AtticWord accent(AccentPattern acc) {
-    return Accent.accentWord(this, acc)
+    return AtticAccent.accentWord(this, acc)
   }
 
   /** Overrides default implementation of toString.
