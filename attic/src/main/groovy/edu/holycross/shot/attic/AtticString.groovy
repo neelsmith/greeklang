@@ -15,11 +15,6 @@ import edu.holycross.shot.orthography.GreekOrthography
 - very early, some QOPPA
 */
 
-/* SEE CONVERSION TABLE
-
-*/
-
-
 
 /**
  * A class for working with text in Greek.  Instances may
@@ -37,6 +32,7 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
 
   Integer debugLevel = 0
 
+  static java.util.regex.Pattern initial_vowel = ~/^([aeiou])/
 
   /** Immutable set of punctuation characters. */
   static punctuation = [
@@ -61,7 +57,7 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
   ]
 
   /** The string in ascii form.*/
-  String AtticString
+  String atticString
 
   boolean validString
 
@@ -75,11 +71,28 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
     TransCoder xcoder = new TransCoder()
     xcoder.setParser("Unicode")
     xcoder.setConverter("BetaCode")
-    return xcoder.getString(adjusted).replaceAll("S1","S")
+
+
+    String transcode = xcoder.getString(adjusted).replaceAll("S1","S")
+    transcode = transcode.replaceFirst('\\)', "")
+    // rough breathing!
+    return transcode
+
+  }
+
+  static String checkBreathing(String s) {
+    System.err.println "CHCK BREATH ON " + s
+    String breathe = s.replaceAll(initial_vowel) { fullMatch, vow ->
+      vow + ")"
+    }
+    System.err.println "yields " + breathe
+    return breathe
   }
 
   static String ucodeForAscii(String s) {
+
     String adjusted = adjustVowelAcc(s).toLowerCase()
+    adjusted = checkBreathing(adjusted)
     TransCoder xcoder = new TransCoder()
 
     xcoder.setParser("BetaCode")
@@ -124,7 +137,7 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
       }
       count++
     }
-    this.AtticString = asciiString.replaceAll(/\s+/," ")
+    this.atticString = asciiString.replaceAll(/\s+/," ")
     validString = true
   }
 
@@ -135,7 +148,7 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
     } else {
       asciiString = srcString.toUpperCase()
     }
-    this.AtticString = asciiString.replaceAll(/\s+/," ")
+    this.atticString = asciiString.replaceAll(/\s+/," ")
 
 
     validString = true
@@ -168,7 +181,7 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
       }
       count++
     }
-    this.AtticString = asciiString.replaceAll(/\s+/," ")
+    this.atticString = asciiString.replaceAll(/\s+/," ")
     validString = true
   }
 
@@ -374,8 +387,8 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
   static ArrayList tokenize(AtticString s) {
     ArrayList tokens = []
     System.err.println "Tokenize source string " + s
-    System.err.println "Splits to " + s.AtticString.split(/\s+/)
-    s.AtticString.split(/\s+/).each {
+    System.err.println "Splits to " + s.atticString.split(/\s+/)
+    s.atticString.split(/\s+/).each {
       String token = it.toString().replaceAll(punctuationRE, '')
       tokens.add(new AtticString(token))
     }
@@ -387,7 +400,7 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
    * @returns ASCII-only version of a Greek word.
    */
   String toString() {
-    return this.AtticString
+    return this.atticString
   }
 
 
@@ -401,7 +414,7 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
       TransCoder xcoder = new TransCoder()
       xcoder.setParser("BetaCode")
       xcoder.setConverter("UnicodeC")
-      String u = xcoder.getString(this.AtticString)
+      String u = xcoder.getString(this.atticString)
       u = Normalizer.normalize(u, Form.NFC)
       if (debugLevel > 1) {
 	System.err.println "Before check, normalized " + u
@@ -416,7 +429,7 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
 
       return u
     } else {
-      return this.AtticString
+      return this.atticString
     }
   }
 
@@ -459,17 +472,17 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
       int idx1 = 0
       int idx2 = 0
       int maxChars = 0
-      if (AtticString.size() > s2.size()) {
+      if (atticString.size() > s2.size()) {
         maxChars = s2.size()
       } else {
-        maxChars = AtticString.size()
+        maxChars = atticString.size()
       }
 
       boolean done = false
       while (!done) {
         // skip over non-alphabetic chars:
         while (
-        (! AtticString.isAlphabetic(AtticString[idx1])) &&
+        (! AtticString.isAlphabetic(atticString[idx1])) &&
         (idx1 < (maxChars -1))
         ) {
           idx1++
@@ -482,7 +495,7 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
         }
 
         // compare pair of alphabetic chars:
-        def cComp = charComp(AtticString[idx1],s2[idx2])
+        def cComp = charComp(atticString[idx1],s2[idx2])
         if (cComp != 0) {
   	return cComp
         } else {
@@ -497,9 +510,9 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
 
       // two tokens matched for all chars, but
       // if one is longer, it sorts later:
-      if (AtticString.size() > s2.size()) {
+      if (atticString.size() > s2.size()) {
         return 1
-      } else if (AtticString.size() == s2.size()) {
+      } else if (atticString.size() == s2.size()) {
         return 0
       } else {
         return -1
