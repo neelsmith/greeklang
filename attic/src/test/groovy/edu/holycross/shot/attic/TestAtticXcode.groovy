@@ -48,4 +48,19 @@ class TestAtticXcode{
     assert ucode == AtticString.ucodeForAscii(ascii)
     assert AtticString.asciiForUcode(ucode) == ascii
   }
+
+
+  @Test
+  void testQuantDisambiguate() {
+    // source string:
+    String ascii = "HO_TO^S" // i.e.,, οὗτος
+    String ucode = "ὁ_το^ς"
+    assert AtticString.asciiForUcode(ucode) == ascii
+    assert AtticString.ucodeForAscii(ascii) == ucode
+
+    String longlong = "HO_TO_S" // e.g., οὑτως
+    String longucode = "ὁ_το_ς"
+    assert AtticString.ucodeForAscii(longlong) == longucode
+    assert AtticString.asciiForUcode(longucode) == longlong
+  }
 }
