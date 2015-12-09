@@ -51,9 +51,7 @@ class AtticWord implements GreekOrthography {
     return AtticSyllable.getFinalAccentQuantities(this)
   }
 
-  AtticWord addAccent(ArrayList syllables, AccentPattern accent) {
-
-  }
+  
 
   AtticWord accent(AccentPattern acc) {
     return AtticAccent.accentWord(this, acc)

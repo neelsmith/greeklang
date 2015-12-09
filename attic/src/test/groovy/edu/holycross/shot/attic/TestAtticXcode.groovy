@@ -30,10 +30,18 @@ class TestAtticXcode{
     assert ucode == AtticString.ucodeForAscii(ascii)
     assert AtticString.asciiForUcode(ucode) == expected
 
-    //AtticWord unacc = new AtticWord(AtticString.asciiForUcode(ucode))
-    //System.err.println "Add recessive " + unacc.accent(AccentPattern.RECESSIVE)
 
-    //accent(AccentPattern.RECESSIVE)
+    // behavior of transcoding in AtticWord class regarding accents and breathings:
+    AtticWord unacc = new AtticWord(AtticString.asciiForUcode(ucode))
+    String accentString = unacc.accent(AccentPattern.RECESSIVE)
+    AtticWord accented = new AtticWord(accentString)
+    String expectedAscii = "E/DOXSEN"
+    String expectedUcode = "ἔδοχσεν"
+    assert accented.toString()  == expectedAscii
+    assert accented.toString(true) == expectedUcode
+    
+
+
   }
 
 }
