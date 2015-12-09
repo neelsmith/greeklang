@@ -17,25 +17,24 @@ import edu.holycross.shot.orthography.GreekOrthography
 
 
 /**
- * A class for working with text in Greek.  Instances may
- * be initialized with any encoding of Greek that Hugh Cayless'
- * transcoder recognizes;  static methods expect ascii strings.
- * Valid Greek characters are limited to the small set that can be
- * used to construct valid morphologically parseable lexical tokens, plus punctuation characters.
- * If your representation of Greek text includes other characaters, such
- * as numeric characters, or more exotic kinds of punctuatio, you will
- * have to strip those out before creating a AtticString object.
+ * A class for working with Greek text written in the alphabet used in Athens
+ * before 403 BCE.
  */
 class AtticString implements GreekOrthography, Comparable<AtticString>{
 
   // Temporary constructs for debugging:
-
   Integer debugLevel = 0
 
 
   // Regular expressions to work with mappings of breathings
   // in different encoding systems.
   //
+  /** RE identifying Epidoc transcoder's representation of rough breathing. */
+  static java.util.regex.Pattern aspirate_epidoc = ~/^([AEIOU]+)[\\(]/
+
+  /** RE identifying initial rough breathing in AtticString ascii encoding. */
+  static java.util.regex.Pattern aspirate_attic = ~/^H([AEIOU])/
+
   /** RE identifying initial diphthong  NOT followed by rough breathing in
   * lower-case ASCII encoding used by Epidoc transcoder. */
   static java.util.regex.Pattern initial_diphthong_epidoc = ~/^([aeiou]{2})([^\\(])/
@@ -44,11 +43,9 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
   * lower-case ASCII encoding used by Epidoc transcoder. */
   static java.util.regex.Pattern initial_vowel_epidoc = ~/^([aeiou])([^\\(])/
 
-  /** RE identifying initial rough breathing in AtticString ascii encoding. */
-  static java.util.regex.Pattern xcode_rough = ~/^H([AEIOU])/
 
-  /** RE identifying Epidoc transcoder's representation of rough breathing. */
-  static java.util.regex.Pattern aspirate = ~/^([AEIOU]+)[\\(]/
+
+
 
   /** Immutable set of punctuation characters. */
   static punctuation = [
@@ -58,7 +55,7 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
     ":"
   ]
 
-  /** Regex matching AtticString punctuation characters. */
+  /** RE matching AtticString punctuation characters. */
   static punctuationRE = ~/[\.;,:]+/
 
 
@@ -78,47 +75,82 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
   /** True if AtticString is validly encoded. */
   boolean validString
 
-  /** True if AtticString is validly encoded. */
+  /** Implementation of method required for GreekOrthography interface.
+  * True if AtticString is validly encoded. */
   boolean isValid() {
     return validString
   }
 
-  static String asciiRoughBreathing(String s) {
-    System.err.println "Check for rough breathing on " + s
-    String breathe = s.toUpperCase().replaceAll(xcode_rough) { fullMatch, vow ->
+  /** Formats a String in AtticString representation to use
+  * the Epidoc transcoder's representation of rough breathing.
+  * @param s The String to reformat.
+  * returns A String formatting the aspirate according to the
+  * ASCII conventions used by the Epidoc transcoder.
+  */
+  static String atticToEpidocAspirate(String s) {
+    System.err.println "atticToEpidocAspirate: check for rough breathing on attic " + s.toLowerCase()
+    String breathe = s.replaceAll(aspirate_attic) { fullMatch, vow ->
       vow + "("
     }
-    System.err.println "Adjusted for rough = "   + breathe
+    System.err.println "Yields epidoc  formatting  = "   + breathe
+    return breathe
+  }
+
+  /** Formats a String in the Epidoc transcoder's representation of rough breathing
+  * to the format used by AtticString objects.
+  * @param s The String to reformat.
+  * returns A String formatting the aspirate in the AtticString format.
+  */
+  static String epidocToAtticAspirate(String s) {
+    System.err.println "epidocToAtticAspirate: work on " + s
+
+    //aspirate_epidoc
+    String breathe = s.replaceAll(aspirate_epidoc) { fullMatch, vow ->
+      "H" + vow
+    }
     return breathe
   }
 
 
-    static String atticAspirate(s) {
-      return s
-    }
-
+  /**
+  * Converts a string in the Unicode Greek mapping of AtticStrings
+  * to the corresponding ASCII-only mapping.
+  * @param s String to convert.
+  * @returns A String in the ASCII-only encoding of AtticString values.
+  */
   static String asciiForUcode(String s) {
     String normalized = Normalizer.normalize(s.toUpperCase(), Form.NFC)
-    String adjusted = adjustVowelAcc(s, true)
+    String adjustedUcode = adjustVowelAccentCombo(s, true)
+    System.err.println "asciiForUcode: adjusted vowel/acc to " + adjustedUcode
 
-    adjusted = atticAspirate(adjusted)
+  //  adjusted = epidocToAtticAspirate(adjusted)
+    //System.err.println "Changed epidoc to attic aspirate" + adjusted
     TransCoder xcoder = new TransCoder()
     xcoder.setParser("Unicode")
     xcoder.setConverter("BetaCode")
 
 
-    String transcode = xcoder.getString(adjusted).replaceAll("S1","S")
+    String transcode = xcoder.getString(adjustedUcode).replaceAll("S1","S")
     transcode = transcode.replaceFirst('\\)', "")
+
+    System.err.println "Submit to  aspirate check " + transcode
+    transcode = epidocToAtticAspirate(transcode)
+    System.err.println "Transcoded as " + transcode
     // rough breathing!
 
-      transcode = asciiRoughBreathing(transcode)
+    //transcode =  atticToEpidocAspirate(transcode)
 
     return transcode
-
   }
 
-  static String checkBreathing(String s) {
-    System.err.println "Cehck for smooth breathing on " + s
+
+  /** Converts a String as output by Epidoc transcoder to use
+  * AtticString formatting of breathing.
+  * @param s String to convert.
+  * @returns A String value using AtticString formatting for breathing.
+  */
+  static String epidocSmoothBreathingToAttic(String s) {
+    System.err.println "Cehck for smooth breathing on epidoc format " + s
     String lc = s.toLowerCase()
 
 
@@ -137,14 +169,18 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
     return breathe
   }
 
-  static String ucodeForAscii(String s) {
 
-    System.err.println "get ucode for " + s
-   String adjustRough = asciiRoughBreathing(s)
-   System.err.println "Adjusted rough to " + adjustRough
-   String adjusted = adjustVowelAcc(adjustRough.toLowerCase())
-   System.err.println "Adjusted vowel acc to " + adjusted
-   adjusted = checkBreathing(adjusted)
+  /**  Converts a string in the ASCII-only  mapping of AtticStrings to the corresponding Unicode Greek mapping.
+  * @param s The String to convert.
+  * @retrurns A String in the Unicode Greek encoding of AtticString values.
+  */
+  static String ucodeForAscii(String s) {
+    System.err.println "ucodeForAscii: get ucode for " + s
+   String adjustRough = atticToEpidocAspirate(s)
+   System.err.println "Adjusted attic to epidoc aspirate" + adjustRough
+   String adjusted = asciiVowelAccToUni(adjustRough.toLowerCase())
+   System.err.println "Adjusted vowel+perispomenon combos to " + adjusted
+   adjusted = epidocSmoothBreathingToAttic(adjusted)
 
    System.err.println "ucodeForAscii: after checking breathing, xcoding " + adjusted
 
@@ -155,24 +191,46 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
     return xcoder.getString(adjusted)
   }
 
-  static String adjustVowelAcc(String s) {
+
+  /** Replaces ASCII-only vowel-accent combinations not converted by
+  * Epidoc transcoder to corresponding encoding in the Unicode Greek range.
+  * Since the ASCII characters "E" and "O" correspond only to epsilon and
+  * omicron in the ASCII transliteration of literary Ionic Greek, the
+  * Epidoc transcoder does not support making them perispomenon.
+  * The ASCII sequences are here converted to the equivalent Unicode
+  * character followed by the combining form of the perispomenon.
+  * @param s ASCII string to convert.
+  * @returns A String Unicode Greek substitutions for "E=" and "O=",
+  * in form NFC.
+  */
+  static String asciiVowelAccToUni(String s) {
     Normalizer.normalize(s.toUpperCase().replaceAll("E=", "ε͂").replaceAll("O=", "ο͂"), Form.NFC)
   }
-  static String adjustVowelAcc(String s, boolean inUnicode) {
+
+
+  /** Maps encodings of epsilon or omicron followed by perispomenon between ASCII-only and Unicode Greek encoding of an AtticString.
+  * @param s String value to map to other encoding.
+  * @param inUnicode True if s is in Unicode Greek encoding, otherwise
+  * s is in ASCII-only encoding.
+  * @returns A String value with instances of epsilon or omicron followed by
+  * perispomenon converted to the other encoding system for AtticString values.
+  */
+  static String adjustVowelAccentCombo(String s, boolean inUnicode) {
     if (inUnicode) {
       String nfcStyle = Normalizer.normalize(s.toLowerCase(),Form.NFC)
       return s.replaceAll( "ε͂","E=").replaceAll( "ο͂", "O=")
+
     } else {
-      return adjustVowelAcc(s)
+      return asciiVowelAccToUni(s)
     }
   }
-  /** Constructor verifies that scSring, supplied in an identified
-   * system for encoding Greek, contains only valid characters
-   * for a AtticString's underlying ascii representation.
-   * @param srcString Greek string, in ascii.
-   * @param System for mapping Greek onto Unicode.  String value may
-   * be any of the values for "sourceEncoding" supported by the
-   * epidoc transcoder, such as "Unicode".
+
+  /** Constructor verifies that scSring contains only valid characters
+   * for constructing an AtticString in one of the two defined encodings,
+   * ASCII-only, or encoding using characters from the Unicode range of
+   * polytonic Greek.
+   * @param inUnicode True if srcString is in the Unicode Greek range encoding,
+   * otherwise srcString is in the ASCII-only encoding.
    * @throws Exception if not all characters in srcString are valid.
    */
   AtticString(String srcString, boolean inUnicode)  {
@@ -196,6 +254,22 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
     validString = true
   }
 
+
+
+
+
+  /** Constructor checkes that scSring contains only valid characters
+   * for constructing an AtticString in one of the two defined encodings,
+   * ASCII-only, or encoding using characters from the Unicode range of
+   * polytonic Greek, and records the result of that check in the isValid
+   * member variable.
+   * @param inUnicode True if srcString is in the Unicode Greek range encoding,
+   * otherwise srcString is in the ASCII-only encoding.
+   * @param ignoreInvalid True if constructor should still return an object
+   * when input is not valid.
+   * @throws Exception if not all characters in srcString are valid, and
+   * ignoreInvalid is false.
+   */
   AtticString(String srcString, boolean inUnicode, boolean ignoreInvalid)  {
     String asciiString = ""
     if (inUnicode) {
@@ -375,9 +449,13 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
 
 
 
+  /** Determines if a single-character String
+   * is a white-space character.
+   * @param ch Character to examine.
+   * @returns True if ch is a white-space character.
+   */
   static boolean isWhiteSpace (String ch) {
     return Character.isWhitespace(ch as char)
-    //punctuation.contains(ch)
   }
 
 
@@ -459,17 +537,18 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
   }
 
 
-  /** Overrides default implementation of toString.
-   * @param asUnicode True if output should be Unicode
-   * in NFC form.
-   * @returns ASCII-only version of a Greek word.
-   */
+  /** Overrides default implementation of toString with signature
+  * required for GreekOrthography interface.
+  * @param asUnicode True if output should be Unicode
+  * in NFC form.
+  * @returns ASCII-only version of a Greek word.
+  */
   String toString(boolean asUnicode) {
     if (asUnicode) {
       TransCoder xcoder = new TransCoder()
       xcoder.setParser("BetaCode")
       xcoder.setConverter("UnicodeC")
-      String wBreath = checkBreathing(this.atticString)
+      String wBreath = epidocSmoothBreathingToAttic(this.atticString)
 System.err.println "TRANSCODE " + wBreath
       String u = xcoder.getString(wBreath)
       u = Normalizer.normalize(u, Form.NFC)
@@ -521,10 +600,14 @@ System.err.println "TRANSCODE " + wBreath
       }
     }
 
+    /** Implements required comparison method for Comparable interface.
+    * @param atticStr An AtticString to compare to this.
+    * @returns -1, 0 or 1 depening on whether atticStr is less than,
+    * equivalent to or greater than this object.
+    */
     @Override
-    int compareTo(AtticString gs2)
-    throws Exception {
-      String s2 = gs2.toString()
+    int compareTo(AtticString atticStr) {
+      String s2 = atticStr.toString()
 
       int idx1 = 0
       int idx2 = 0
