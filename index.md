@@ -7,6 +7,6 @@ On this website, you'll find specifications of a computational system for workin
 
 
 - [Foundational libraries](basics): Greek orthography and phonology.  Latest release: **2.2.2**.
-- [Attic orthography](attic) (before 403 BCE)
+- [Attic orthography](attic) (before 403 BCE).  Latest release:  **1.0.0**.
 - Greek morphology
 - Epic hexameter

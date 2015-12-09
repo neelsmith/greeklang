@@ -7,7 +7,7 @@ layout: page
 
 A library for working with texts written in the Attic alphabet used before 403 BCE.
 
-- version: not et released. [Release notes](releases).
+- version: **1.0.0**. [Release notes](releases).
 - requires: java version >= 7
 - [live specifications](specs/Attic.html)
 - [API docs](api)
