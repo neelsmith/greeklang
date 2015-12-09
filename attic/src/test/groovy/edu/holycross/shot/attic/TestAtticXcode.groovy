@@ -19,16 +19,15 @@ class TestAtticXcode{
   }
 
   @Test
-  void testBreathings() {
+  void testSmoothBreathings() {
     // source string:
     String ascii = "EDOXSEN"
     // unicode conversion:
     String ucode = "ἐδοχσεν"
-    // roundtripping adds initial breathing:
-    String expected = "EDOXSEN"
 
+    // note treatment of smooth breathing
     assert ucode == AtticString.ucodeForAscii(ascii)
-    assert AtticString.asciiForUcode(ucode) == expected
+    assert AtticString.asciiForUcode(ucode) == ascii
 
 
     // behavior of transcoding in AtticWord class regarding accents and breathings:
@@ -39,9 +38,14 @@ class TestAtticXcode{
     String expectedUcode = "ἔδοχσεν"
     assert accented.toString()  == expectedAscii
     assert accented.toString(true) == expectedUcode
-    
-
 
   }
-
+  @Test
+  void testRoughBreathings() {
+    // source string:
+    String ascii = "HOTOS"
+    String ucode = "ὁτος"
+    assert ucode == AtticString.ucodeForAscii(ascii)
+    assert AtticString.asciiForUcode(ucode) == ascii
+  }
 }
