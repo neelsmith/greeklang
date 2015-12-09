@@ -12,19 +12,18 @@ class AtticSyllable {
 
   // Regular expressions to split up succesive vowels:
   //
-  /** Diphthong is split from a following vowel.  Note breathing on
-  * a diphthong is possible if word-initial. */
+  /** Diphthong is split from a following vowel. */
   static java.util.regex.Pattern diphthong_vowel = ~/(AI|OI|EI|AU|EU|OU|UI)([AEIOU])/
 
   /** Vowel is split from a following diphthong. Breathing on
   * vowel possible if word-initial. */
   static java.util.regex.Pattern vowel_diphthong =
-   ~/([AEIOU])(AI|OI|EI|AU|EU|OU|UI)/
+   ~/([AEIOU][_^]?)(AI|OI|EI|AU|EU|OU|UI)/
 
 
   /** Short vowel is split form a following vowel other than [iu].
   * Breathing on vowel possible if word-initial. */
-  static java.util.regex.Pattern shortv_vowel = ~/([aeio][\^+]?[\)\(]?)([aehow])/
+  static java.util.regex.Pattern shortv_vowel = ~/([AEIOU][\^ ]?)([AEO])/
 
   /** Vowel long by nature followed by a vowel other than u.
   * Breathing on vowel possible if word-initial. */
@@ -38,12 +37,12 @@ class AtticSyllable {
   // Regular expressions to split up consonant-vowel combinations.
   //
   /** Preceded by a vowel, the sequence mu-nu always starts a syllable. */
-  static java.util.regex.Pattern mu_nu = ~/([AEIOU])MN/
+  static java.util.regex.Pattern mu_nu = ~/([AEIOU][_^]?)MN/
 
   /** Other than mu-nu, a liquid-consonant combination is split up
   * when it follows a vowel.
   */
-  static java.util.regex.Pattern liquid_consonant = ~/([AEIOU])([LMNR])([BGDZDZQPRSTFX]+)([^'])/
+  static java.util.regex.Pattern liquid_consonant = ~/([AEIOU][_^]?)([LMNR])([BGDZDZQPRSTFX]+)([^'])/
 
   /**  Double consonants are split. */
   static java.util.regex.Pattern double_consonant = ~/(B{2}|G{2}|D{2}|Z{2}|Q{2}|K{2}|L{2}|M{2}|N{2}|P{2}|R{2}|S{2}|T{2}|F{2}|X{2})([^'])/
@@ -51,11 +50,11 @@ class AtticSyllable {
   /** Other consonant clusters stay together. This regex *must*
   * be applied later in the pipeline than the preceding regexes
   * spliting on consonant patterns!*/
-  static java.util.regex.Pattern consonant_cluster = ~/([AEIOU])([BGDZKPSTFX][MNBGDGDZQKLPRSTFX]+)([^'])/
+  static java.util.regex.Pattern consonant_cluster = ~/([AEIOU][_^]?)([BGDZKPSTFX][MNBGDGDZQKLPRSTFX]+)([^'])/
 
   /** In the pattern vowel-consonant-vowel, consonant begins
   * a new syllable. */
-  static java.util.regex.Pattern vowel_consonantvowel = ~/([(AEIOU])([BGDZQKLMNPRSTFX][AEIOU])/
+  static java.util.regex.Pattern vowel_consonantvowel = ~/([(AEIOU][_^]?)([BGDZQKLMNPRSTFX][AEIOU])/
 
 
 
@@ -96,7 +95,7 @@ class AtticSyllable {
 */
     // mu-nu always starts a syllable
     syllabic = syllabic.replaceAll(mu_nu) { fullMatch, vow ->
-      vow + "#mn"
+      vow + "#MN"
     }
     // otherwise split liquids and consonants
     syllabic = syllabic.replaceAll(liquid_consonant) { fullMatch, vow, liq, stopcons, trail ->
