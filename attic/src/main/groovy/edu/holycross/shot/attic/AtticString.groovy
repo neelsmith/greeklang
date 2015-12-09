@@ -12,7 +12,7 @@ import edu.holycross.shot.orthography.GreekOrthography
 - E = e, h, ei
 - O = o, w, ou
 - instead of c, y, XS and FS
-- very early, some QOPPA
+- very early, some QOPPA.  Not included here.
 */
 
 
@@ -81,11 +81,9 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
   }
 
   static String checkBreathing(String s) {
-    System.err.println "CHCK BREATH ON " + s
-    String breathe = s.replaceAll(initial_vowel) { fullMatch, vow ->
+    String breathe = s.toLowerCase().replaceAll(initial_vowel) { fullMatch, vow ->
       vow + ")"
     }
-    System.err.println "yields " + breathe
     return breathe
   }
 
@@ -414,7 +412,9 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
       TransCoder xcoder = new TransCoder()
       xcoder.setParser("BetaCode")
       xcoder.setConverter("UnicodeC")
-      String u = xcoder.getString(this.atticString)
+      String wBreath = checkBreathing(this.atticString)
+System.err.println "TRANSCODE " + wBreath
+      String u = xcoder.getString(wBreath)
       u = Normalizer.normalize(u, Form.NFC)
       if (debugLevel > 1) {
 	System.err.println "Before check, normalized " + u

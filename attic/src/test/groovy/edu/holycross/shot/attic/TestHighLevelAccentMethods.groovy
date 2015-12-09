@@ -44,4 +44,18 @@ class TestHighLevelAccentMethods {
         assert AtticAccent.accentWord(victory, AccentPattern.PENULT).toString() == expectedResult
       }
 
+
+
+      @Test
+        void testInitialVowel() {
+          AtticWord decision = new AtticWord("EDOXSEN")
+          String expectedResult = "E/DOXSEN"
+          AtticWord accented =  decision.accent(AccentPattern.RECESSIVE)
+          assert accented.toString() == expectedResult
+
+          String expectedUcode = "ἔδοχσεν"
+          assert accented.toString(true) == expectedUcode
+
+        }
+
 }
