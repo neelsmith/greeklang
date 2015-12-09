@@ -32,7 +32,23 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
 
   Integer debugLevel = 0
 
-  static java.util.regex.Pattern initial_vowel = ~/^([aeiou])/
+
+  // Regular expressions to work with mappings of breathings
+  // in different encoding systems.
+  //
+  /** RE identifying initial diphthong  NOT followed by rough breathing in
+  * lower-case ASCII encoding used by Epidoc transcoder. */
+  static java.util.regex.Pattern initial_diphthong_epidoc = ~/^([aeiou]{2})([^\\(])/
+
+  /** RE identifying initial vowel NOT followed by rough breathing in
+  * lower-case ASCII encoding used by Epidoc transcoder. */
+  static java.util.regex.Pattern initial_vowel_epidoc = ~/^([aeiou])([^\\(])/
+
+  /** RE identifying initial rough breathing in AtticString ascii encoding. */
+  static java.util.regex.Pattern xcode_rough = ~/^H([AEIOU])/
+
+  /** RE identifying Epidoc transcoder's representation of rough breathing. */
+  static java.util.regex.Pattern aspirate = ~/^([AEIOU]+)[\\(]/
 
   /** Immutable set of punctuation characters. */
   static punctuation = [
@@ -59,15 +75,33 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
   /** The string in ascii form.*/
   String atticString
 
+  /** True if AtticString is validly encoded. */
   boolean validString
 
+  /** True if AtticString is validly encoded. */
   boolean isValid() {
     return validString
   }
 
+  static String asciiRoughBreathing(String s) {
+    System.err.println "Check for rough breathing on " + s
+    String breathe = s.toUpperCase().replaceAll(xcode_rough) { fullMatch, vow ->
+      vow + "("
+    }
+    System.err.println "Adjusted for rough = "   + breathe
+    return breathe
+  }
+
+
+    static String atticAspirate(s) {
+      return s
+    }
+
   static String asciiForUcode(String s) {
     String normalized = Normalizer.normalize(s.toUpperCase(), Form.NFC)
     String adjusted = adjustVowelAcc(s, true)
+
+    adjusted = atticAspirate(adjusted)
     TransCoder xcoder = new TransCoder()
     xcoder.setParser("Unicode")
     xcoder.setConverter("BetaCode")
@@ -76,21 +110,44 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
     String transcode = xcoder.getString(adjusted).replaceAll("S1","S")
     transcode = transcode.replaceFirst('\\)', "")
     // rough breathing!
+
+      transcode = asciiRoughBreathing(transcode)
+
     return transcode
 
   }
 
   static String checkBreathing(String s) {
-    String breathe = s.toLowerCase().replaceAll(initial_vowel) { fullMatch, vow ->
-      vow + ")"
+    System.err.println "Cehck for smooth breathing on " + s
+    String lc = s.toLowerCase()
+
+
+    String breathe = lc.replaceFirst(initial_diphthong_epidoc) { fullMatch, vowels, cons ->
+      System.err.println "Yes have diphthong with full match ${fullMatch} and vowelse  " + vowels
+      vowels + ")"  + cons
     }
+
+    if (breathe == lc) {
+      breathe = breathe.replaceFirst(initial_vowel_epidoc) { fullMatch, vow, cons ->
+        vow + ")" + cons
+      }
+    }
+    System.err.println "Breathe is " + breathe
+
     return breathe
   }
 
   static String ucodeForAscii(String s) {
 
-    String adjusted = adjustVowelAcc(s).toLowerCase()
-    adjusted = checkBreathing(adjusted)
+    System.err.println "get ucode for " + s
+   String adjustRough = asciiRoughBreathing(s)
+   System.err.println "Adjusted rough to " + adjustRough
+   String adjusted = adjustVowelAcc(adjustRough.toLowerCase())
+   System.err.println "Adjusted vowel acc to " + adjusted
+   adjusted = checkBreathing(adjusted)
+
+   System.err.println "ucodeForAscii: after checking breathing, xcoding " + adjusted
+
     TransCoder xcoder = new TransCoder()
 
     xcoder.setParser("BetaCode")
