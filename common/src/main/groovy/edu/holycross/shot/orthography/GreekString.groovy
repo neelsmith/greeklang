@@ -51,9 +51,11 @@ class GreekString implements GreekOrthography, Comparable<GreekString>{
   /** The string in ascii form.*/
   String greekString
 
+
+  /** True if string is validly encoded.*/
   boolean validString
 
-
+  /** True if string is validly encoded.*/
   boolean isValid() {
     return validString
   }
