@@ -8,8 +8,8 @@ import  edu.holycross.shot.phonology.AccentPattern
 import  edu.holycross.shot.orthography.GreekWord
 import edu.holycross.shot.orthography.GreekString
 
-class TestHighLevelAccentMethods {
 
+class TestHighLevelAccentMethods {
 
   @Test
   void testRecessive() {
@@ -20,13 +20,15 @@ class TestHighLevelAccentMethods {
   }
 
 
+  @Test
   void testLongshort() {
     GreekWord wrath = new GreekWord("mhnin")
     String expectedResult = "mh=nin"
     GreekWord accented =  wrath.accent(AccentPattern.PENULT)
-    assert accented.toString() == expectedResult
+    assert  accented.toString() == expectedResult
     // also works with static method:
-    assert Accent.accentWord(wrath, AccentPattern.PENULT) == expectedResult
+    assert Accent.accentWord(wrath, AccentPattern.PENULT).toString() == expectedResult
   }
+
 
 }

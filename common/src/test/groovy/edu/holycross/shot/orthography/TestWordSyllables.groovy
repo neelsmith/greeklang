@@ -15,7 +15,7 @@ class TestWordSyllables {
       assert syll.toString() == expectedSyllables[idx]
     }
   }
-
+/*
   @Test
   void testAtticSyllables() {
     AtticWord aw = new AtticWord("BOLE=S")
@@ -25,5 +25,5 @@ class TestWordSyllables {
       assert syll.toString() == expectedSyllables[idx]
     }
   }
-
+*/
 }
