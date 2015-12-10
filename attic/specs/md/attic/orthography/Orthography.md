@@ -5,11 +5,11 @@
 ## Specifications for alphabetic text
 
 
-- Valid <a concordion:run="concordion" href="AtticString.html">strings of characters</a> in the orthography of standard printed editions. (**Substantially complete**)
-- Valid <a concordion:run="concordion"  href="AtticWord.html">lexical tokens</a> ("words") in the orthography of standard printed editions (**Substantially complete**)
-- <a concordion:run="concordion"  href="AtticSort.html">Alphabetic sorting and comparison</a> (**Initial phase complete**)
+- Valid <a concordion:run="concordion" href="AtticString.html">strings of characters</a> in the orthography of standard printed editions.
+- Valid <a concordion:run="concordion"  href="AtticWord.html">lexical tokens</a> ("words") in the orthography of standard printed editions.
+- <a concordion:run="concordion"  href="AtticSort.html">Alphabetic sorting and comparison</a>.
 
 
-## Planned additions
+## Planned additions in future versions
 
-Acrophonic numerals
+- Specification of encoding for acrophonic numerals
