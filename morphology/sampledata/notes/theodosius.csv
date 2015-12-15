@@ -1,4 +1,4 @@
-urn:cts:greekLit:tlg2020.tlg001:passage,nominative,genitive
+text_passage,nominative,genitive
 urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.1,Αἴας,Αἴαντος
 urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.2,ὁ κοχλίας,τοῦ κοχλίου
 urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.3,Ὁ Λάχης,τοῦ Λάχητος
@@ -20,25 +20,40 @@ urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.14,Ὁ πλοῦς,τοῦ πλ
 urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.15,Ὁ ἱδρώς,τοῦ ἱδρῶτος
 urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.16,Ὁ ἥρως,τοῦ ἥρωος
 urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.16,ὁ γέλως,τοῦ γέλωτος
-urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.17,,
-urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.18,,
-urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.19,,
-urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.20,,
-urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.21,,
-urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.22,,
-urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.23,,
-urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.24,,
-urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.25,,
-urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.26,,
-urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.27,,
-urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.28,,
-urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.29,,
-urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.30,,
-urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.31,,
-urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.32,,
-urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.33,,
-urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.34,,
-urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.35,,
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.17,Ὁ Μενέλεως,τοῦ Μενέλεω
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.18,Ὁ ἅλς,τοῦ ἁλός
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.19,Ὁ Ἀλκμάν,τοῦ Ἀλκμᾶνος
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.20,Ὁ σωλήν,τοῦ σωλῆνος
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.20,ὁ ποιμήν,τοῦ ποιμένος
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.21,Ὁ Ἕλλην,τοῦ Ἕλληνος
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.21,ὁ τέρην,τοῦ τέρενος
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.22,Ὁ δελφίν,τοῦ δελφῖνος
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.23,Ὁ Φόρκυν,τοῦ Φόρκυνος
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.24,Ὁ Θέων,τοῦ Θέωνος
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.24,ὁ σώφρων,τοῦ σώφρονος
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.24,ὁ λέων,τοῦ λέοντος
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.25,Ὁ κοιτών,τοῦ κοιτῶνος
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.25,ὁ Σαρπηδών,τοῦ Σαρπηδόνος
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.25,ὁ ἀλεκτρυών,τοῦ ἀλεκτρυόνος
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.26,Ὁ Ξενοφῶν,τοῦ Ξενοφῶντος
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.26,ὁ Ποσειδῶν,τοῦ Ποσειδῶνος
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.26,ὁ ταῶν,τοῦ ταῶνος
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.27,Ὁ θώραξ,τοῦ θώρακος
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.28,Ὁ μύρμηξ,τοῦ μύρμηκος
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.28,ὁ βουπλήξ,τοῦ βουπλῆγος
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.29,Ὁ πέρδιξ,τοῦ πέρδικος
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.29,ὁ τέττιξ,τοῦ τέττιγος
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.29,ὁ ὁμῆλιξ,τοῦ ὁμήλικος
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.30,Ὁ δοῖδυξ,τοῦ δοίδυκος
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.30,ὁ Βέβρυξ,τοῦ Βέβρυκος
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.31,Ὁ βῶξ,τοῦ βωκός
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.32,Ὁ λουτήρ,τοῦ λουτῆρος
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.32,ὁ αἰθήρ,τοῦ αἰθέρος
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.33,Ὁ Πίηρ,τοῦ Πίερος
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.33,ὁ Ἴβηρ,τοῦ Ἴβηρος
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.34,Ὁ Νέστωρ,τοῦ Νέστορος
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.34,ὁ κέλωρ,τοῦ κέλωρος
+urn:cts:greekLit:tlg2020.tlg001:nouns.masculines.35,Ὁ Κύκλωψ,τοῦ Κύκλωπος
 urn:cts:greekLit:tlg2020.tlg001:nouns.feminines.1,Ἡ Μοῦσα,τῆς Μούσης
 urn:cts:greekLit:tlg2020.tlg001:nouns.feminines.1,ἡ μαῖα,τῆς μαίας
 urn:cts:greekLit:tlg2020.tlg001:nouns.feminines.1,ἡ σφαῖρα,τῆς σφαίρας
