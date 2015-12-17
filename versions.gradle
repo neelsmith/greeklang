@@ -1,12 +1,13 @@
 ext {
 
   versionMap = [
-    "cite" : "0.98j7.0",
+    "groovy" : '[2.0,)',
+    "cite" : "[1.0,)",
     "epidoc": "1.2-SNAPSHOT",
 
     "xmlutils": "1.+",
 
-    "groovy" : '[2.0,)',
+
 
     "concordion" : "1.5.1",
 
