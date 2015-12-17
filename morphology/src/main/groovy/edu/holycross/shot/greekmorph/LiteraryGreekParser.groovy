@@ -9,7 +9,7 @@ import edu.harvard.chs.cite.CtsUrn
 
 /** A Greek morphological parser.
 */
-class MorphologicalParser {
+class LiteraryGreekParser {
 
   Integer debug  = 0
 
@@ -26,7 +26,7 @@ class MorphologicalParser {
   * @param umgr UrnManager configured for collections cited
   * in stem lexica for this corpus.
   */
-  MorphologicalParser(String fstBinary, UrnManager umgr) {
+  LiteraryGreekParser(String fstBinary, UrnManager umgr) {
     fstParser = new FstParser(fstBinary)
     urnManager = umgr
   }

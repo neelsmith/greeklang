@@ -25,7 +25,7 @@ class TestAnqrwpos {
 
 
 
-  @Test
+  @Testhh
   void testDeclension() {
     // Add lexicon to URN manager:
     umgr.addCsvFile(lexCsvSource)

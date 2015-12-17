@@ -12,7 +12,8 @@ To any core system, add supplementary rules in `data/rules-fst`
 Be sure that lexica of stems use same orthographic system or you will get nonsense.
 
 
-## How to integrate common parts?
+
+## Dependencies for FST compilation
 
 Vary by orthographic system:
 
@@ -21,21 +22,16 @@ Vary by orthographic system:
 
 `makefile` has to take account of these
 
-Constant across orthographic systems:
-
-- everything else?
-
-
-
-## Dependencies
-
 
 
 
 - `inflection.a` is used in `greek.fst`, so need a separately compiled inflection module
 - `phonology.fst` is included in `symbols.fst`
 - acceptors use letter definitions from `phonology.fst`:
+    - `AnalysisTriple`
+    - `FstToken`
 
+Break out an "alphabet" file to include in phonology
 
 
     % Characters for Greek character set:
@@ -45,10 +41,22 @@ Constant across orthographic systems:
     #letter# = #consonant# #vowel# #breathing#
 
 
-So break out an "alphabet" file to include in phonology
 
 So requirements would be;
 
-1. makefile compiling `inflection.a`
-2. cp in compiled inflection.a and its source files (for inclusion in symbols)
+1. √ makefile compiling `inflection.a`
+2. √ cp in compiled inflection.a and its source files (for inclusion in symbols)
 3. √ cp in alphabet file (alphabet.fst?)
+
+
+## Dependencies for JVM code
+
+These classes use `GreekString` objects:
+
+- `AnalysisTriple`
+- `FstToken`
+- `MorphologicalAnalysis`
+- `MorphologicalParser`
+
+
+.wq

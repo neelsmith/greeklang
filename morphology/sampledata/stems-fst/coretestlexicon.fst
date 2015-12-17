@@ -11,3 +11,4 @@
 <u>coretests.n29828_0</u><u>lexent.n29828</u>dwr<noun><neut><os_ou><stemultacc>
 <u>coretests.n272092_0</u><u>lexent.n272092</u>o<ro>d<noun><fem><os_ou><inflacc>
 <u>coretests.n8909_0</u><u>lexent.n8909</u>a<sm>nqrwp<noun><masc><os_ou><stempenacc>
+<u>coretests.n14584_0</u><u>lexent.n14584</u>boul<noun><fem><h_hs><inflacc>
