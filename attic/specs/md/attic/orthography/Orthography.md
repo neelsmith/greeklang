@@ -2,9 +2,10 @@
 
 
 
-- Specification of valid <a concordion:run="concordion" href="AtticString.html">characters and their mappings to Unicode code points</a>
+- Specification of valid <a concordion:run="concordion" href="AtticCharacters.html">characters and their mappings to Unicode code points</a>
+- Construction and representation of <a concordion:run="concordion" href="AtticString.html">strings of characters</a>
 - Specification of valid <a concordion:run="concordion"  href="AtticWord.html">lexical tokens</a> ("words")
-- Specification of <a concordion:run="concordion"  href="AtticSort.html">Alphabetic sorting and comparison</a> of strings in Attic Greek orthography
+- Specification of <a concordion:run="concordion"  href="AtticSort.html">alphabetic sorting and comparison</a> of strings in Attic Greek orthography
 
 
 ## Planned additions in future versions
