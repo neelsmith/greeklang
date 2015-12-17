@@ -6,7 +6,7 @@ package edu.holycross.shot.attic
 class AtticPhonology {
 
   /** Immutable set of consonant characters. */
-  static consonant = [
+  public static ArrayList consonant = [
     'B','G','D',
     'Z','Q','K',
     'L','M','N',
@@ -16,7 +16,7 @@ class AtticPhonology {
   ]
 
   /** Immutable set of vowel characters. */
-  static vowel = [
+  public static ArrayList vowel = [
     'A', 'E',
     'I','O','U'
   ]

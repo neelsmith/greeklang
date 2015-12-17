@@ -6,10 +6,31 @@ import org.concordion.integration.junit4.ConcordionRunner;
 import org.junit.runner.RunWith;
 
 import edu.holycross.shot.attic.AtticString;
+import edu.holycross.shot.attic.AtticPhonology;
 
 @RunWith(ConcordionRunner.class)
 public class AtticStringTest  {
 
+
+  public String getRoughBreathing() {
+    return("H");
+  }
+
+
+  public String uForAscii(String ascii)
+    throws Exception {
+      AtticString attic = new AtticString(ascii);
+      return attic.toString(true);
+  }
+
+  public String asciiForU(String u)
+  throws Exception {
+    AtticString attic = new AtticString(u, true);
+    return attic.toString();
+  }
+  public int countAlphas() {
+    return (AtticPhonology.consonant.size() + AtticPhonology.vowel.size());
+  }
   public String asUnicode(String str) {
 	   AtticString s;
      try {

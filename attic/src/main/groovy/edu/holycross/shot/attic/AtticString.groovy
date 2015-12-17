@@ -368,7 +368,7 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
    * @param ch String to check.
    * @returns true if character is accent or breathing, otherwise false.
    */
-  static boolean isAccentOrBreathing(ch) {
+  static boolean isAccentOrBreathing(String ch) {
     if (
       (ch == "H")
       || (AtticPhonology.isAccent(ch))
