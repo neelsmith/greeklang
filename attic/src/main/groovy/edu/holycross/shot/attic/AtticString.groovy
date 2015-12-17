@@ -48,15 +48,13 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
 
 
   /** Immutable set of punctuation characters. */
-  static punctuation = [
+  public static ArrayList punctuation = [
     ".",
-    ";",
-    ",",
     ":"
   ]
 
   /** RE matching AtticString punctuation characters. */
-  static punctuationRE = ~/[\.;,:]+/
+  static  punctuationRE = ~/[\.:]+/
 
 
 

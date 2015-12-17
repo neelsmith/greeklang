@@ -12,6 +12,10 @@ import edu.holycross.shot.attic.AtticPhonology;
 public class AtticCharactersTest  {
 
 
+  public int codePoint(String s) {
+    	return s.codePointAt(0);
+  }
+
   public String getRoughBreathing() {
     return("H");
   }
@@ -30,6 +34,9 @@ public class AtticCharactersTest  {
   }
   public int countAlphas() {
     return (AtticPhonology.consonant.size() + AtticPhonology.vowel.size());
+  }
+  public int countPuncts() {
+    return (AtticString.punctuation.size());
   }
   public String asUnicode(String str) {
 	   AtticString s;

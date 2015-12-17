@@ -41,7 +41,7 @@ Until the archonship of Euclid in 403 BCE, official Athenian inscriptions are re
 <tr><td>chi</td><td>χ</td><td>X</td></tr>
 </table>
 
-In addition, the Attic alphabet has a character for the aspirate corresponding to the rough breathing mark in Ionic.  This is conventionally  transcribed with `h` in print editions of Attic inscriptions.
+The Attic alphabet has a further alphabetic character for the aspirate corresponding to the rough breathing mark in Ionic.  This is conventionally  transcribed with `h` in print editions of Attic inscriptions.
 
 <table  concordion:execute="#result = getRoughBreathing()">
 <tr>
@@ -52,10 +52,20 @@ In addition, the Attic alphabet has a character for the aspirate corresponding t
 <tr><td>rough breathing (aspirate)</td><td>h</td><td>H</td></tr>
 </table>
 
+Version <strong>@specversion@</strong> of this specification recognizes <strong concordion:assertEquals="countPuncts()">2</strong> punctuation characters, mapped to the following ASCII characters:
+
+<table concordion:execute="#result = codePoint(#src)">
+
+<tr>
+  <th>Usage </th>
+   <th concordion:set="#src">ASCII representation</th>
+  <th concordion:assertEquals="#result">Unicode code point (decimal)</th>
+</tr>
+<tr><td>A major break, or full stop; form can resemble two dots or a colon</td><td>.</td><td>46</td></tr>
+<tr><td>A less significant break; form can resemble two or three vertical dots </td><td>:</td><td>58</td></tr>
+</table>
 
 
-
-Punctuation:  colon; tricolon; high stop.  Two puncts supported.  Encode ASCII with period and colon.  Encode Unicode with period and ano teleia.
 
 
 
@@ -99,6 +109,10 @@ The same twenty characters are mapped to lower-case characters in the Greek rang
 Treatment of sigma
 
 output principle
+
+
+
+Punctuation:  colon; tricolon; high stop.  Two puncts supported.  Encode ASCII with period and colon.  Encode Unicode with period and ano teleia.
 
 In version @version@, we recognize:
 
