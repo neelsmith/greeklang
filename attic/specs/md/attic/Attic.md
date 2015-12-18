@@ -10,17 +10,12 @@
 
 ## Background
 
-The current Unicode specification does not recognize any orthographic systems for writing ancient Greek other than the Ionic alphabet that first became universally used in the Hellenistic period, and developed in medieval manuscripts into the cursive form that is the basis for the orthography of modern print editions. In order to use Unicode to represent Greek texts recorded in any of the epichoric alphabets used before the Hellenic period, it is therefore necessary to define a mapping of the alphabet onto Unicode code points.
+The current Unicode specification does not recognize any orthographic systems for writing classical Greek other than the Ionic alphabet that first became universally used in the Hellenistic period, and developed in medieval manuscripts into the cursive form that is the basis for the orthography of modern print editions. In order to use Unicode to represent Greek texts recorded in any of the epichoric alphabets used before the Hellenic period, it is therefore necessary to define a mapping of the alphabet onto Unicode code points.
 
 This specification follows the logic of the `GreekOrthography` interface (in the [`edu.holycross.shot.orthography` package](http://neelsmith.github.io/greeklang/basics/api/)): it defines a representation in an ASCII-only mapping that is well suited to many kinds of machine processing, and a mapping including characters in the Greek range of Unicode with glyphs that are more familiar to human readers.
 
+The current specification covers only alphabetic texts:  the Attic system of acrophonic notation used for numbers will have to be added in a later version.
 
-
-## Important properties
-
-- currently covers alphabetic texts, not yet numbers
-- case-insensitive
-- ordered and sortable
 
 ## Specifications
 
