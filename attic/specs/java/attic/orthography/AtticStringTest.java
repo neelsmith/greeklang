@@ -12,6 +12,20 @@ import edu.holycross.shot.attic.AtticPhonology;
 public class AtticStringTest  {
 
 
+  public boolean isValidString(String s)
+  throws Exception {
+    AtticString attic = new AtticString(s);
+    return attic.isValid();
+  }
+
+
+  public boolean isValidCP(int decimalCodePt)
+  throws Exception {
+    String ascii = new String(Character.toChars(decimalCodePt));
+    AtticString attic = new AtticString(ascii);
+    return attic.isValid();
+  }
+
   public String getRoughBreathing() {
     return("H");
   }
