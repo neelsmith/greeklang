@@ -16,7 +16,7 @@ Binary packages for all libraries are accessible from <http://beta.hpcc.uh.edu/n
 ## Libraries
 
 - [Foundational libraries](basics): Greek orthography and phonology.  Latest release: **2.2.2**.
-- [Attic orthography](attic) (before 403 BCE).  Latest release:  **1.0.0**.
+- [Attic orthography](attic) (before 403 BCE).  Latest release:  **1.0.1**.
 - Greek morphology
-- Theodosius.  A machine-testable edition of the morphological specifications in the works of Theodosius of Alexandria.
+- Theodosius.  A machine-testable edition of the morphological specifications in the *Canones* of Theodosius of Alexandria.
 - Epic hexameter

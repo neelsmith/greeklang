@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?><html xmlns:concordion="http://www.concordion.org/2007/concordion"><head><style>* {
+  font-family: Arial;
+}
+body {
+  padding: 32px;  
+}
+pre {
+  padding: 6px 28px 6px 28px;
+  background-color: #E8EEF7;
+}
+pre, pre *, code, code *, kbd {
+  font-family: Courier New, Courier;
+  font-size: 10pt;
+}
+h1, h1 * {
+  font-size: 24pt;	
+}
+p, td, th, li, .breadcrumbs {
+  font-size: 10pt;
+}
+p, li {
+  line-height: 140%;
+  max-width: 720px;
+}
+table {
+  border-collapse: collapse;
+  empty-cells: show;
+  margin: 8px 0px 8px 0px;
+}
+th, td {
+  border: 1px solid black;
+  padding: 3px;
+}
+td {
+  background-color: white;
+  vertical-align: top;
+}
+th {
+  background-color: #C3D9FF;
+}
+li {
+  margin-top: 6px;
+  margin-bottom: 6px; 
+}
+
+.example {
+  padding: 6px 16px 6px 16px;
+  border: 1px solid #C3D9FF;
+  margin: 6px 0px 28px 0px;
+  background-color: #F5F9FD;
+}
+.example h3 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 12pt;
+}
+
+p.success {
+  padding: 2px;
+}
+.success, .success * {
+  background-color: #afa !important;
+}
+.success pre {
+  background-color: #bbffbb;
+}
+.failure, .failure * {
+  background-color: #ffb0b0;
+  padding: 1px;
+}
+.failure .expected {
+  text-decoration: line-through;
+  color: #bb5050;
+}
+.ignored, .ignored * {
+  background-color: #f0f0f0 !important;	
+}
+
+ins {
+  text-decoration: none;	
+}
+
+.exceptionMessage {
+  background-color: #fdd;
+  font-family: Courier New, Courier, Monospace;
+  font-size: 10pt;
+  display: block;
+  font-weight: normal;
+  padding: 4px;
+  text-decoration: none !important;
+}
+.stackTrace, .stackTrace * {
+  font-weight: normal;
+}
+.stackTrace {
+  display: none;
+  padding: 1px 4px 4px 4px;
+  background-color: #fdd;
+  border-top: 1px dotted black;
+}
+.stackTraceExceptionMessage {
+  display: block;
+  font-family: Courier New, Courier, Monospace;
+  font-size: 8pt;
+  white-space: wrap;
+  padding: 1px 0px 1px 0px;
+}
+.stackTraceEntry {
+  white-space: nowrap;
+  font-family: Courier New, Courier, Monospace;
+  display: block;
+  font-size: 8pt;
+  padding: 1px 0px 1px 32px;
+}
+.stackTraceButton {
+  font-size: 8pt;
+  margin: 2px 8px 2px 0px;
+  font-weight: normal;
+  font-family: Arial;
+}
+
+.special {
+  font-style: italic;
+}
+.missing, .missing * {
+  background-color: #ff9999;
+  color:#bb5050;
+  text-decoration: line-through;
+}
+.surplus, .surplus * {
+  background-color: #ff9999;
+}
+.footer {
+  text-align: right;
+  margin-top: 40px;
+  font-size: 8pt;
+  width: 100%;
+  color: #999;
+}
+.footer .testTime {
+  padding: 2px 10px 0px 0px;
+}
+
+.idea {
+  font-size: 9pt;
+  color: #888;
+  font-style: italic;	
+}
+.tight li {
+  margin-top: 1px;
+  margin-bottom: 1px; 
+}
+.commentary {
+  float: right;
+  width: 200px;
+  background-color: #ffffd0;
+  padding:8px;
+  border: 3px solid #eeeeb0;	 
+  margin: 10px 0px 10px 10px;	 
+}
+.commentary, .commentary * {
+  font-size: 8pt;
+}
+</style><meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+</head><body><span class="breadcrumbs"><a href="../Attic.html">A library for working with Greek in the pre-403 BCE Attic alphabet</a> &gt; <a href="Orthography.html">Orthography of Attic Greek</a> &gt;</span>
+<h1>Mapping the Attic writing system to digital code points</h1>
+<p>This is the form as it crystallized in 6th and 5th cc. No qoppa.  Ionic usages...</p>
+<h2>Background</h2>
+<p>The current Unicode specification does not recognize any orthographic systems for writing ancient Greek other than the Ionic alphabet that first became universally used in the Hellenistic period, and developed in medieval manuscripts into the cursive form that is the basis for the orthography of modern print editions. In order to use Unicode to represent Greek texts recorded in any of the epichoric alphabets used before the Hellenic period, it is therefore necessary to define a mapping of the alphabet onto Unicode code points.</p>
+<p>This specification follows the logic of the <code>GreekOrthography</code> interface (in the <code>edu.holycross.shot.orthography</code> package): it defines a representation in an ASCII-only mapping that is well suited to many kinds of machine processing, and a mapping including characters in the Greek range of Unicode with glyphs that are more familiar to human readers.</p>
+<h2>Encoding the Attic alphabet in the ASCII range of Unicode</h2>
+<p>Until the archonship of Euclid in 403 BCE, official Athenian inscriptions are regularly written with <strong concordion:assertEquals="countAlphas()" class="success">21</strong>, case-insensitive alphabetic characters.  Twenty of them corresponding to characters in the Ionic alphabet are mapped to Unicode characters in the upper-case ASCII range as specified in the following table:</p>
+<table concordion:execute="#result = asciiForU(#src)">
+
+<tr>
+  <th>Correspondence in Ionic literary orthography </th>
+   <th concordion:set="#src">Typical visual display</th>
+  <th concordion:assertEquals="#result">ASCII representation</th>
+</tr>
+<tr><td>alpha (long or short vowel)</td><td>α</td><td class="success">A</td></tr>
+<tr><td>beta</td><td>β</td><td class="success">B</td></tr>
+<tr><td>gamma</td><td>γ</td><td class="success">G</td></tr>
+<tr><td>delta</td><td>δ</td><td class="success">D</td></tr>
+<tr><td>short epsilon, long eta, or diphthong ei</td><td>ε</td><td class="success">E</td></tr>
+<tr><td>zeta</td><td>ζ</td><td class="success">Z</td></tr>
+<tr><td>theta</td><td>θ</td><td class="success">Q</td></tr>
+<tr><td>iota (long or short vowel)</td><td>ι</td><td class="success">I</td></tr>
+<tr><td>kappa</td><td>κ</td><td class="success">K</td></tr>
+<tr><td>lamda</td><td>λ</td><td class="success">L</td></tr>
+<tr><td>mu</td><td>μ</td><td class="success">M</td></tr>
+<tr><td>nu</td><td>ν</td><td class="success">N</td></tr>
+<tr><td>short omicron, long omega, or diphthong ou</td><td>ο</td><td class="success">O</td></tr>
+<tr><td>pi</td><td>π</td><td class="success">P</td></tr>
+<tr><td>rho</td><td>ρ</td><td class="success">R</td></tr>
+<tr><td>sigma</td><td>σ</td><td class="success">S</td></tr>
+<tr><td>tau</td><td>τ</td><td class="success">T</td></tr>
+<tr><td>upsilon (long or short vowel)</td><td>υ</td><td class="success">U</td></tr>
+<tr><td>phi</td><td>φ</td><td class="success">F</td></tr>
+<tr><td>chi</td><td>χ</td><td class="success">X</td></tr>
+</table>
+<p>The Attic alphabet has a further alphabetic character for the aspirate corresponding to the rough breathing mark in Ionic.  This is conventionally  transcribed with <code>h</code> in print editions of Attic inscriptions.</p>
+<table concordion:execute="#result = getRoughBreathing()">
+<tr>
+  <th>Correspondence in Ionic literary orthography </th>
+   <th>Typical visual display</th>
+  <th concordion:assertEquals="#result">ASCII representation</th>
+</tr>
+<tr><td>rough breathing (aspirate)</td><td>h</td><td class="success">H</td></tr>
+</table>
+<p>Version <strong>1.0.0</strong> of this specification recognizes <strong concordion:assertEquals="countPuncts()" class="success">2</strong> punctuation characters, mapped to the following ASCII characters:</p>
+<table concordion:execute="#result = codePoint(#src)">
+
+<tr>
+  <th>Usage </th>
+   <th concordion:set="#src">ASCII representation</th>
+  <th concordion:assertEquals="#result">Unicode code point (decimal)</th>
+</tr>
+<tr><td>A major break, or full stop; form can resemble two dots or a colon</td><td>.</td><td class="success">46</td></tr>
+<tr><td>A less significant break; form can resemble two or three vertical dots </td><td>:</td><td class="success">58</td></tr>
+</table>
+<h2>Encoding the Attic alphabet in the Greek range of Unicode</h2>
+<p>The same twenty characters are mapped to lower-case characters in the Greek range as follows:</p>
+<table concordion:execute="#result = uForAscii(#src)">
+
+<tr>
+  <th>Correspondence in Ionic literary orthography </th>
+  <th concordion:assertEquals="#result">Mapping to Greek range of Unicode</th>
+   <th concordion:set="#src">Mapping to ASCII</th>
+
+</tr>
+<tr><td>alpha (long or short vowel)</td><td class="success">α</td><td>A</td></tr>
+<tr><td>beta</td><td class="success">β</td><td>B</td></tr>
+<tr><td>gamma</td><td class="success">γ</td><td>G</td></tr>
+<tr><td>delta</td><td class="success">δ</td><td>D</td></tr>
+<tr><td>short epsilon, long eta, or diphthong ei</td><td class="success">ε</td><td>E</td></tr>
+<tr><td>zeta</td><td class="success">ζ</td><td>Z</td></tr>
+<tr><td>theta</td><td class="success">θ</td><td>Q</td></tr>
+<tr><td>iota (long or short vowel)</td><td class="success">ι</td><td>I</td></tr>
+<tr><td>kappa</td><td class="success">κ</td><td>K</td></tr>
+<tr><td>lamda</td><td class="success">λ</td><td>L</td></tr>
+<tr><td>mu</td><td class="success">μ</td><td>M</td></tr>
+<tr><td>nu</td><td class="success">ν</td><td>N</td></tr>
+<tr><td>short omicron, long omega, or diphthong ou</td><td class="success">ο</td><td>O</td></tr>
+<tr><td>pi</td><td class="success">π</td><td>P</td></tr>
+<tr><td>rho</td><td class="success">ρ</td><td>R</td></tr>
+<tr><td>sigma</td><td class="success">ς</td><td>S</td></tr>
+<tr><td>tau</td><td class="success">τ</td><td>T</td></tr>
+<tr><td>upsilon (long or short vowel)</td><td class="success">υ</td><td>U</td></tr>
+<tr><td>fi</td><td class="success">φ</td><td>F</td></tr>
+<tr><td>chi</td><td class="success">χ</td><td>X</td></tr>
+</table>
+<p>Treatment of sigma</p>
+<p>output principle</p>
+<p>Punctuation:  colon; tricolon; high stop.  Two puncts supported.  Encode ASCII with period and colon.  Encode Unicode with period and ano teleia.</p>
+<p>In version 1.0.1, we recognize:</p>
+<p>16 cons + 5 vowels
+punct (4?)</p>
+<p>3 acc
+2 quant
+1 elision</p>
+<p>The characters to be encoded are:</p>
+<ul>
+<li>characters directly transcribing characters in the Attic writing system, namely:<ul>
+<li>twenty-one alphabetic characters (sixteen consonants and five vowels)</li>
+<li>four punctuation characters</li>
+</ul>
+</li>
+<li>editorial characters commonly used to disambiguate aspects of the<ul>
+<li>accent characters</li>
+<li>quantity</li>
+</ul>
+</li>
+</ul>
+<div class="footer">Results generated by <a href="http://www.concordion.org" style="font-weight: bold; text-decoration: none; color: #89C;">Concordion</a><div class="testTime">in 1304 ms on 18-Dec-2015 at 04:33:12 EST</div></div></body>
+</html>
