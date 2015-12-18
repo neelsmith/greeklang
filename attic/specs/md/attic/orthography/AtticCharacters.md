@@ -1,9 +1,9 @@
-# Mapping the Attic writing system to digital code points
+# Representation of the characters in the Attic writing system
 
 This page specifies two systems for directly transcribing characters used in the Attic writing system.
 
 
-## Encoding the Attic alphabet in the ASCII range of Unicode
+## Encoding Attic characters in the ASCII range of Unicode
 
 Until the archonship of Euclid in 403 BCE, official Athenian inscriptions are regularly written with <strong concordion:assertEquals="countAlphas()">21</strong>, case-insensitive alphabetic characters.  Twenty of them corresponding to characters in the Ionic alphabet are mapped to Unicode characters in the upper-case ASCII range as specified in the following table:
 
@@ -64,7 +64,7 @@ Version <strong>@specversion@</strong> of this specification recognizes <strong 
 
 
 
-## Encoding the Attic alphabet in the Greek range of Unicode
+## Encoding Attic characters in the Greek range of Unicode
 
 The same twenty characters listed above are mapped to lower-case characters in the Greek range of Unicode as specified in the following table.  All values are in Unicode NFKC form.
 
