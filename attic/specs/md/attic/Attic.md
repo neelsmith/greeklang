@@ -2,6 +2,8 @@
 
 Specification version **@specversion@**, documenting version **@version@** of the `attic` library.
 
+Home page: <http://neelsmith.github.io/greeklang/attic/>
+
 `attic` is a JVM library for working with texts in Greek recorded in the alphabet used in Attica before 403 BCE.
 
 - <a concordion:run="concordion" href="orthography/Orthography.html">orthography</a>
