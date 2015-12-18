@@ -16,6 +16,12 @@ This specification follows the logic of the `GreekOrthography` interface (in the
 
 
 
+## Important properties
+
+- currently covers alphabetic texts, not yet numbers
+- case-insensitive
+- ordered and sortable
+
 ## Specifications
 
 - <a concordion:run="concordion" href="orthography/Orthography.html">orthography</a>

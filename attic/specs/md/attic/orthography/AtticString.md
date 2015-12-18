@@ -2,25 +2,31 @@
 
 
 ## ASCII
-Editorial characters
+In addition the characters (AtticCharacters.html),
+
+
+### White space
+
+- tab dec 9
+- LF 10
+- form feed 12
+- CR 13
+- space 32
+
+### Editorial characters
 
 The characters to be encoded are:
 
 - editorial characters commonly used to disambiguate aspects of the
     - accent characters
     - quantity
-    
+
 3 acc
 2 quant
 1 elision
 
-White space characters
 
 
-
-Can roundtrip without loss
-
-As input convenience: accept LC equivalents.  Unambiguous mapping.
 
 
 
@@ -33,12 +39,12 @@ As input convenience: accept LC equivalents.  Unambiguous mapping.
 ## Greek Unicode
 
 
-Always normalized FORM
+Always normalized FORM NFKC
 
 - Treatment of sigma context dependent
 - Vowel + acc -> combined
 
-
+- except for combinations of perispomenon with Ε or Ο.  Combining perispomenon (decimal 834 \u342)
 
 output principles unambiguous
 
@@ -47,26 +53,14 @@ As input convenience: accept LC equivalents.  Unambiguous mapping.
 
 
 
-
-
-
-
-## Output specifications
-
-## Input specifications
+## Constructing characters (input specifications)
 
 It is possible to create an `AtticString` object
 
 
-
-- ASCII-only transcription maps one notional character to a single ASCII character.  Can be used for either input or output.
-- In addition to transcription of characters on stone, permits analytical characters for:
-    - accents
-    - vowel quantity
-    - initial smooth breathing
 - Transcription in Greek range of Unicode.
     - individual combining characters or Unicode-equivalent precombined (FORM ?)
-    - except for combinations of perispomenon with Ε or Ο.  Combining perispomenon (decimal 834 \u342)
+
 - currently covers alphabetic texts, not yet numbers
 - case-insensitive
 - ordered and sortable
