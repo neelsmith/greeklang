@@ -1,12 +1,7 @@
 # Mapping the Attic writing system to digital code points
 
-This is the form as it crystallized in 6th and 5th cc. No qoppa.  Ionic usages...
+- characters directly transcribing characters in the Attic writing system
 
-## Background
-
-The current Unicode specification does not recognize any orthographic systems for writing ancient Greek other than the Ionic alphabet that first became universally used in the Hellenistic period, and developed in medieval manuscripts into the cursive form that is the basis for the orthography of modern print editions. In order to use Unicode to represent Greek texts recorded in any of the epichoric alphabets used before the Hellenic period, it is therefore necessary to define a mapping of the alphabet onto Unicode code points.
-
-This specification follows the logic of the `GreekOrthography` interface (in the `edu.holycross.shot.orthography` package): it defines a representation in an ASCII-only mapping that is well suited to many kinds of machine processing, and a mapping including characters in the Greek range of Unicode with glyphs that are more familiar to human readers.
 
 ## Encoding the Attic alphabet in the ASCII range of Unicode
 
@@ -71,7 +66,7 @@ Version <strong>@specversion@</strong> of this specification recognizes <strong 
 
 ## Encoding the Attic alphabet in the Greek range of Unicode
 
-The same twenty characters are mapped to lower-case characters in the Greek range as follows:
+The same twenty characters listed above are mapped to lower-case characters in the Greek range of Unicode as follows:
 
 <table concordion:execute="#result = uForAscii(#src)">
 
@@ -103,34 +98,24 @@ The same twenty characters are mapped to lower-case characters in the Greek rang
 <tr><td>chi</td><td>χ</td><td>X</td></tr>
 </table>
 
+In this mapping, the value of sigma depends on context.  When sigma terminates a token as defined in the specification of [Attic Greek string values](AtticString.html), its value is 962 (lower-case terminal sigma);  otherwise 963 (lower-case sigma).
+
+@openex@
+
+### Example
+
+As listed above, an isolated sigma is represented by <strong concordion:set="#terminal">S</strong> in the ASCII mapping, and terminal form of sigma <strong concordion:assertEquals="uForAscii(#terminal)">ς</strong> in the Unicode mapping.  By contrast, the cluster sigma+tau is represented by the ASCII mapping <strong concordion:set="#medial">ST</strong> and the Unicode mapping <strong concordion:assertEquals="uForAscii(#medial)">στ</strong>.
+
+See further examples in the specification for [Attic Greek string values](AtticString.html).
+@closeex@
 
 
 
-Treatment of sigma
 
-output principle
+ano teleia dec 903 - > 183 mid-dot
 
-
-
-Punctuation:  colon; tricolon; high stop.  Two puncts supported.  Encode ASCII with period and colon.  Encode Unicode with period and ano teleia.
-
-In version @version@, we recognize:
-
-16 cons + 5 vowels
-punct (4?)
+output principle: NFKC
 
 
-3 acc
-2 quant
-1 elision
 
-
-The characters to be encoded are:
-
-
-- characters directly transcribing characters in the Attic writing system, namely:
-    - twenty-one alphabetic characters (sixteen consonants and five vowels)
-    - four punctuation characters
-- editorial characters commonly used to disambiguate aspects of the
-    - accent characters
-    - quantity
+Punctuation:  colon; tricolon; high stop.  Two puncts supported.   Encode Unicode with period and mid-dot.

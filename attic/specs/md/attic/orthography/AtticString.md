@@ -1,31 +1,51 @@
 # Representing strings of characters
 
 
+## ASCII
+Editorial characters
 
-Treatment of sigma
+The characters to be encoded are:
 
-output principle
-
-In version @version@, we recognize:
-
-16 cons + 5 vowels
-punct (4?)
-
-
+- editorial characters commonly used to disambiguate aspects of the
+    - accent characters
+    - quantity
+    
 3 acc
 2 quant
 1 elision
 
+White space characters
 
-The characters to be encoded are:
 
 
-- characters directly transcribing characters in the Attic writing system, namely:
-    - twenty-one alphabetic characters (sixteen consonants and five vowels)
-    - four punctuation characters
-- editorial characters commonly used to disambiguate aspects of the
-    - accent characters
-    - quantity
+Can roundtrip without loss
+
+As input convenience: accept LC equivalents.  Unambiguous mapping.
+
+
+
+
+
+
+
+
+
+## Greek Unicode
+
+
+Always normalized FORM
+
+- Treatment of sigma context dependent
+- Vowel + acc -> combined
+
+
+
+output principles unambiguous
+
+As input convenience: accept LC equivalents.  Unambiguous mapping.
+
+
+
 
 
 
