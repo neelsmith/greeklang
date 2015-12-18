@@ -61,9 +61,7 @@ It is possible to create an `AtticString` object
 - Transcription in Greek range of Unicode.
     - individual combining characters or Unicode-equivalent precombined (FORM ?)
 
-- currently covers alphabetic texts, not yet numbers
-- case-insensitive
-- ordered and sortable
+
 
 ## Inputs
 
