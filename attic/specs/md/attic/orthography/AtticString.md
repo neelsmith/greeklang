@@ -13,6 +13,8 @@ In addition the characters (AtticCharacters.html),
 - CR 13
 - space 32
 
+
+
 ### Editorial characters
 
 The characters to be encoded are:
