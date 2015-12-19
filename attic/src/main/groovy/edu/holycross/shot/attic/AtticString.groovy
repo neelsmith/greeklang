@@ -56,7 +56,10 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
   /** RE matching AtticString punctuation characters. */
   static  punctuationRE = ~/[\.:]+/
 
-
+  /** Immutable set of code point values for valid white-space characters. */
+  public static ArrayList whiteSpace = [
+    9,10,12,13,32
+  ]
 
   /** Ordered map of beta-code alphabetic characters for use in comparator */
   static HashMap asciiOrder = [

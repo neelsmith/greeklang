@@ -23,11 +23,11 @@ class AtticPhonology {
 
 
   /** Immutable set of accent characters. */
-  static accent = ['/','\\','=']
+  public static ArrayList accent = ['/','\\','=']
 
   // these are not really orthographic, are they?
   /** Immutable set of vowel quantity markers. */
-  static quantity = ['_','^']
+  public static ArrayList quantity = ['_','^']
 
 
 

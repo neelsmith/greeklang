@@ -12,6 +12,13 @@ import edu.holycross.shot.attic.AtticPhonology;
 public class AtticStringTest  {
 
 
+
+  public boolean isValidUString(String s)
+  throws Exception {
+    AtticString attic = new AtticString(s, true);
+    return attic.isValid();
+  }
+
   public boolean isValidString(String s)
   throws Exception {
     AtticString attic = new AtticString(s);

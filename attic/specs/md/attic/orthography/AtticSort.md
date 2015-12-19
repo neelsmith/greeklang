@@ -6,16 +6,18 @@ The twenty alphabetic characters other than the aspirate sort in the same sequen
 
 @openex@
 
-### Examples
+### Examples ###
 
 
-<strong>AP</strong> O sorts after <strong>HAI</strong> and before <strong>BOLE</strong>
+<em>APO</em> sorts after
+<em>HAI</em> and before <em>BOLE</em>
 
 
-<strong>BOLE</strong> and <strong>BOLE_</strong> are equivalent.
+<em>BOLE</em> and <em>BOLE_</em> are equivalent.
 
 
-<strong>BOLE</strong> and <strong>BOLE_</strong> each sort before <strong>BOLES</strong> or <strong>BOLE_S</strong>.
+<em>BOLE</em> and <em>BOLE_</em> each sort before
+ <em>BOLES</em> or <em>BOLE_S</em>.
 
 
 
