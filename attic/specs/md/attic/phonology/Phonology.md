@@ -1,6 +1,6 @@
 # Phonology#
 
-Includes syllabification.
+Valid Attic characters can be classified
 
 There are five (<strong concordion:assertEquals="countVowels()">5</strong>) vowels and sixteen (<strong concordion:assertEquals="countConsonants()">16</strong>) consonants including the aspirate (rough breathing), a total of <strong concordion:assertEquals="countAlphabetic()">21</strong> alphabetic characters.
 
