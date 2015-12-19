@@ -1,6 +1,6 @@
 # Representation of the characters in the Attic writing system
 
-This page specifies two systems for directly transcribing characters used in the Attic writing system.
+This page specifies two systems for directly transcribing characters used in the Attic writing system to Unicode code points in form NFKC.
 
 
 ## Encoding Attic characters in the ASCII range of Unicode

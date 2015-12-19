@@ -239,7 +239,7 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
     String asciiString = ""
 
     if (inUnicode) {
-      asciiString = asciiForUcode(srcString)
+      asciiString = asciiForUcode(srcString.toLowerCase())
     } else {
       asciiString = srcString.toUpperCase()
     }
@@ -274,7 +274,7 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
   AtticString(String srcString, boolean inUnicode, boolean ignoreInvalid)  {
     String asciiString = ""
     if (inUnicode) {
-      asciiString = asciiForUcode(srcString)
+      asciiString = asciiForUcode(srcString.toLowerCase())
     } else {
       asciiString = srcString.toUpperCase()
     }

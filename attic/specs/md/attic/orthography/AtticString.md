@@ -88,7 +88,7 @@ A string of Attic Greek in either ASCII or Greek Unicode ranges may include an u
 
 
 @openex@
-### Examples
+### Examples of quantity markers
 
 
 The string
@@ -97,13 +97,12 @@ The string
 The string
 <strong concordion:set="#src">βο_λε_ι</strong> includes explicit indications that the O and E vowels have long values.  It is <strong concordion:assertTrue="isValidUString(#src)">a valid Attic string</strong> in the Greek range of Unicode.
 
-The string
-<strong concordion:set="#src">NI^KE</strong> explicitly marks the iota as having a short value.  It is <strong concordion:assertTrue="isValidString(#src)">a valid Attic string</strong> in the ASCII mapping.
-
 
 The string
-<strong concordion:set="#src">νι^κε</strong> explicitly marks the iota as having a short value.  It is <strong concordion:assertTrue="isValidUString(#src)">a valid Attic string</strong> in the Greek range of Unicode.
+<strong concordion:set="#src">HO_TO^S</strong> explicitly marks the first 0 as long, and the second O as short (e.g., as the masculine nominative singular pronoun written in the Ionic literary alphabet οὗτος).  It is <strong concordion:assertTrue="isValidString(#src)">a valid Attic string</strong> in the ASCII mapping.
 
+The string
+<strong concordion:set="#src">HO_TO_S</strong> explicitly marks both O characters as long (e.g., as the adverb written in the Ionic literary alphabet οὕτως).  It is <strong concordion:assertTrue="isValidString(#src)">a valid Attic string</strong> in the ASCII mapping.
 
 @closeex@
 
@@ -138,7 +137,7 @@ The accent character must *follow* either the vowel character it accents, or the
 
 
 @openex@
-### Examples
+### Examples of accents in the ASCII mapping
 
 The string
 <strong concordion:set="#src">BOLE/</strong> includes oxytone accent.  It is <strong concordion:assertTrue="isValidString(#src)">a valid Attic string</strong> in the ASCII mapping.
@@ -163,65 +162,56 @@ The string
 #### Unicode mapping
 
 
+Since all strings are represented in Unicode form NFKC, combinations of accents and vowels are represented by the precomposed form, where one exists, for the combination of one of the specified [lower case vowels](AtticCharacters.html) with the combining accent character (combining acute codepoint 301, combining acute accent codepoint 300, or combining perispomenon codepoint x342), possibly with a combining form of either the smooth breathing (codepoint x313, combining turned comma above) or rough breathing (codepoint x314, combining comma above) characters.  Since there is no precombined form of epsilon or omicron with circumflex in the Ionic alphabet, when the Attic vowel E or O is mapped to epsilon or omicron, circumflex accents are indicated by following the vowel with codepoint x342, the combining perispomenon.
+
+
+
+@openex@
+
+### Examples of accents in the Greek range of Unicode
+
+@closeex@
+
+
+
+
+
 
 
 ## Summary of valid characters
 
 Attic strings are composed exclusively of  alphabetic and punctuation characters, as specified [here](AtticCharacters.html), tokenizing characters, characters indicating vowel quantity, and characters indicating accent, as specified above.  This [table](AsciiSummary.html) summarizes all valid characters used in the ASCII mapping.
 
+For a full list of the form NFKC Unicode characters used to map Attic strings to the Greek range of Unicode, please see, in addition to the
+ [specified alphabetic and punctuations](AtticCharacters.html), and the tables above, the  Unicode consortium's normalization chart for Greek: <http://www.unicode.org/charts/normalization/>.
 
 ## Creating valid strings
 
+The specified representation of Attic strings mapped either to ASCII characters only or to the Greek range of Unicode allows for unambiguous [comparison and sorting of Attic strings](AtticSort.html).  It is convent to support the following equivalent forms of input when creating an Attic string:
+
+- ASCII mappings accept the lower-case equivalent of alphabetic characters
+- Greek unicode mappings accept the upper-case equivalent of alphabetic characters
+- Greek unicode mappings accept equivalent decomposed forms of vowels with breathing, accents or both
 
 
-## Greek Unicode
-
-
-Always normalized FORM NFKC
-
-- Treatment of sigma context dependent
-- Vowel + acc -> combined
-
-- except for combinations of perispomenon with Ε or Ο.  Combining perispomenon (decimal 834 \u342)
-
-output principles unambiguous
-
-As input convenience: accept LC equivalents.  Unambiguous mapping.
-
-
-
-
-## Constructing characters (input specifications)
-
-It is possible to create an `AtticString` object
-
-
-- Transcription in Greek range of Unicode.
-    - individual combining characters or Unicode-equivalent precombined (FORM ?)
-
-
-
-## Inputs
-
-- ASCII, Unicode upper or lower case
-
-
-## Outputs
-
-- normalized Unicode form C in all cases
-- ASCII all upper
-- Unicode all lower
 
 
 @openex@
 
-## Constructors
+### Examples of constructing Attic strings
 
-ASCII form <strong concordion:set="#noacc">BOLES</strong>.  Make an AtticString, and express in unicode, you get <strong concordion:assertEquals="asUnicode(#noacc)">βολες</strong>
+The string <strong concordion:set="#src">DEMOS</strong> is a <strong concordion:assertTrue="isValidString(#src)">valid input form</strong> to create an Attic string in the ASCII mapping.
 
-Allow convenience input forms of ê and ô ?
+The string <strong concordion:set="#src">δεμος</strong> is a <strong concordion:assertTrue="isValidUString(#src)">valid input form</strong> to create an Attic string in the mapping to the Greek range of Unicode.
+
+The string <strong concordion:set="#src">Demos</strong> is a <strong concordion:assertTrue="isValidString(#src)">valid input form</strong> to create an Attic string in the ASCII mapping.
+
+The string <strong concordion:set="#src">Δεμος</strong> is a <strong concordion:assertTrue="isValidUString(#src)">valid input form</strong> to create an Attic string in the mapping to the Greek range of Unicode.
 
 
+The string <strong concordion:set="#src">demos</strong> is a <strong concordion:assertTrue="isValidString(#src)">valid input form</strong> to create an Attic string in the ASCII mapping..
+
+The string <strong concordion:set="#src">ΔΕΜΟΣ</strong> is a <strong concordion:assertTrue="isValidUString(#src)">valid input form</strong> to create an Attic string in the mapping to the Greek range of Unicode.
 
 
 @closeex@
