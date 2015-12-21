@@ -27,14 +27,8 @@ Consider the ordering of the strings <strong>BOLE</strong> and <strong concordio
 
 
 - <strong>BOLE_</strong> is <strong concordion:assertEquals="compareAttic(#bolelong,#bole)">equal</strong> to <strong>BOLE</strong>
-- <strong>BOLE_S</strong> is <strong concordion:assertEquals="compareAttic(#bolegenlong,#bolegen)">equal</strong> to <strong>BOLE</strong>
+- <strong>BOLE_S</strong> is <strong concordion:assertEquals="compareAttic(#bolegenlong,#bolegen)">equal</strong> to <strong>BOLES</strong>
 - <strong>BOLE_</strong>  sorts <strong concordion:assertEquals="compareAttic(#bolelong, #bolegen)">before</strong> <strong>BOLES</strong> and also <strong>before</strong> <strong>BOLE_S</strong>
-
-
-
-
-<em>BOLE</em> and <em>BOLE_</em> each sort before
- <em>BOLES</em> or <em>BOLE_S</em>.
 
 
 
