@@ -6,6 +6,8 @@ import java.text.Normalizer.Form
 
 import edu.holycross.shot.orthography.GreekOrthography
 
+
+
 // account for:
 /*
 - aspirate H
@@ -23,7 +25,7 @@ import edu.holycross.shot.orthography.GreekOrthography
 class AtticString implements GreekOrthography, Comparable<AtticString>{
 
   // Temporary constructs for debugging:
-  Integer debugLevel = 0
+  Integer debug = 0
 
 
   // Regular expressions to work with mappings of breathings
@@ -67,7 +69,8 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
     5:'Z',7:'Q',8:'I',9:'K',
     10:'L',11:'M',12:'N',14:'O',
     15:'P',16:'R',17:'S',18:'T',19:'U',
-    20:'F',21:'X',22: 'H'
+    20:'F',21:'X'
+    //,22: 'H'
   ]
 
   /** The string in ascii form.*/
@@ -89,11 +92,9 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
   * ASCII conventions used by the Epidoc transcoder.
   */
   static String atticToEpidocAspirate(String s) {
-    //System.err.println "atticToEpidocAspirate: check for rough breathing on attic " + s.toLowerCase()
     String breathe = s.replaceAll(aspirate_attic) { fullMatch, vow ->
       vow + "("
     }
-    //System.err.println "Yields epidoc  formatting  = "   + breathe
     return breathe
   }
 
@@ -555,14 +556,14 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
 //System.err.println "TRANSCODE " + wBreath
       String u = xcoder.getString(wBreath)
       u = Normalizer.normalize(u, Form.NFC)
-      if (debugLevel > 1) {
+      if (debug > 1) {
 	//System.err.println "Before check, normalized " + u
       }
       // Override epidoc mapping of high stop
       // and Greek question mark:
       u  = u.replaceAll(/\u00B7/,"\u0387")
       u = u.replaceAll(/\u003B/,"\u037E")
-      if (debugLevel > 1) {
+      if (debug > 1) {
 	//System.err.println "After check " + u
       }
 
@@ -580,6 +581,24 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
     /////////////////////////////////////////////////////////////////////
     // COMPARISON METHODS ///////////////////////////////////////////////
 
+   String comparisonChars() {
+     return AtticString.comparisonChars(this.toString())
+   }
+   static String comparisonChars(String s) {
+     StringBuilder cfChars = new StringBuilder()
+     def idx = 0
+     while(idx < s.size()) {
+       String sub = s.substring(idx, idx + 1)
+       if (isAlphabetic(sub) &&
+       (! isBreathing(sub))
+       ) {
+         cfChars.append(sub)
+       }
+       idx++;
+     }
+     return cfChars.toString()
+   }
+
 
 
     /** Compares a pair of one-character long Strings using the
@@ -587,8 +606,9 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
     * @return  -1 if s1 < s2, 0 if s1 == s2, 1 if s1 > s2
     */
     static private int charComp (String s1, String s2) {
-      def mapEntry1 =   asciiOrder.find {it.value == s1.toLowerCase()}
-      def mapEntry2 =   asciiOrder.find{it.value == s2.toLowerCase()}
+      def mapEntry1 =   asciiOrder.find {it.value == s1.toUpperCase()}
+      def mapEntry2 =   asciiOrder.find{it.value == s2.toUpperCase()}
+
       if ((!mapEntry1) || (!mapEntry2)) {
         // non-comparing character:  ignore
         // by treating as equal
@@ -610,52 +630,75 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
     */
     @Override
     int compareTo(AtticString atticStr) {
+      String s1 = this.toString()
       String s2 = atticStr.toString()
 
       int idx1 = 0
       int idx2 = 0
       int maxChars = 0
-      if (atticString.size() > s2.size()) {
+      if (s1.size() > s2.size()) {
         maxChars = s2.size()
       } else {
-        maxChars = atticString.size()
+        maxChars = s1.size()
       }
+
 
       boolean done = false
       while (!done) {
+	       if (debug > 0) {System.err.println "Comparing ${this.toString()} to ${atticStr.toString()} with maxChars ${maxChars}"}
+
         // skip over non-alphabetic chars:
         while (
-        (! AtticString.isAlphabetic(atticString[idx1])) &&
+	  ( ( AtticString.isBreathing(s1[idx1])) ||
+	    (! AtticString.isAlphabetic(s1[idx1]))  )
+	  	    &&
+
         (idx1 < (maxChars -1))
         ) {
-          idx1++
+          idx1++;
+	   if (debug > 0) {System.err.println "Bump idx1 to ${idx1}"}
         }
         while (
-        (! AtticString.isAlphabetic(s2[idx2])) &&
-        (idx2 < (maxChars - 1))
+	  ( ( AtticString.isBreathing(s2[idx2])) ||
+	    (! AtticString.isAlphabetic(s2[idx2]))  )
+	  	    &&
+
+        (idx2 < (maxChars -1))
         ) {
-          idx2++
+          idx2++;
+	   if (debug > 0) {System.err.println"Bump idx2 to ${idx2}"}
         }
 
+
         // compare pair of alphabetic chars:
-        def cComp = charComp(atticString[idx1],s2[idx2])
+        def cComp = charComp(s1[idx1],s2[idx2])
+	 if (debug > 0) {System.err.println "comparison of ${s1[idx1]} with ${s2[idx2]} yields ${cComp}"}
+
         if (cComp != 0) {
-  	return cComp
+	  // the two strings are not equal for sorting purposes,
+	  // just return this value:
+	  return cComp
         } else {
-  	idx1++;
-  	idx2++;
+
+	  idx1++;
+	  idx2++;
+  	   if (debug > 0) {System.err.println "Equal, so bumping both indices to ${idx1}/${idx2}"}
         }
-        if ((idx1 >= (maxChars - 1) ) || (idx2 >= (maxChars -1))) {
+        if ((idx1 >= (maxChars) ) || (idx2 >= (maxChars))) {
   	done = true
-        }
+	 if (debug > 0) {System.err.println "Passed max index: stop!"}
+        } else {
+	   if (debug > 0) {System.err.println "Keep going"}
+	}
       }
 
 
       // two tokens matched for all chars, but
       // if one is longer, it sorts later:
-      if (atticString.size() > s2.size()) {
+      //  
+      if (AtticString.comparisonChars(s1).size() > AtticString.comparisonChars(s2).size()) {
         return 1
-      } else if (atticString.size() == s2.size()) {
+      } else if (AtticString.comparisonChars(s1).size() == AtticString.comparisonChars(s2).size()) {
         return 0
       } else {
         return -1

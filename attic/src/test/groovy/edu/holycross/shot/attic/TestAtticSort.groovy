@@ -7,34 +7,24 @@ import static groovy.test.GroovyAssert.shouldFail
 
 
 class TestAtticSort{
+  def alphabeticallyLater = 1
+  def alphabeticallyEarlier = -1
+  def alphabeticallyEqual = 0
 
   @Test
   void testSorting() {
     // When two words match for every char,
     // but one word keeps going, the short
     // word sorts first.
-    assert (new AtticString("BOLE") < new AtticString("BOLES"))
+    AtticString boleNom = new AtticString("BOLE")
+    AtticString boleGen =   new AtticString("BOLES")
+    assert boleNom.compareTo(boleGen) == alphabeticallyEarlier
+
     // sorting follows logic of Attic alphabet, not Unicode:
-    assert (new AtticString("QEOS") < new AtticString("KERUGMA"))
-  }
-
-
-    @Test
-    void testSort() {
-      // Comparable interface supports sorting lists:
-      def unsortedWords = [
-        new AtticString("QEOS"),
-        new AtticString("KERUGMA"),
-        new AtticString("BOLE")
-      ]
-
-      def sortedWords = [
-        new AtticString("BOLE"),
-        new AtticString("QEOS"),
-        new   AtticString("KERUGMA")
-      ]
-
-      assert sortedWords == unsortedWords.sort()
+    AtticString theos = new AtticString("QEOS")
+    AtticString kerugma = new AtticString("KERUGMA")
+    assert theos.compareTo(kerugma) == alphabeticallyEarlier
 
   }
+
 }
