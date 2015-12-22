@@ -240,7 +240,8 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
     String asciiString = ""
 
     if (inUnicode) {
-      asciiString = asciiForUcode(srcString.toLowerCase())
+      asciiString = asciiForUcode(srcString.toLowerCase()).replaceFirst('h','H')
+
     } else {
       asciiString = srcString.toUpperCase()
     }
@@ -248,7 +249,7 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
       if (!(isValidChar(asciiString.substring(count,count+1)))) {
 	System.err.println "Error parsing ${asciiString}: failed on ${asciiString.substring(count,count+1)} (char ${count})"
 	System.err.println "AtticString:constructor with Unicode = ${inUnicode} invalid character at position ${count}:  '" + asciiString.substring(count,count+1) + "'"
-	throw new Exception("AtticString:constructor with Unicode = ${inUnicode} invalid character at position ${count}:  '" + asciiString.substring(count,count+1) + "'")
+	throw new Exception("AtticString:constructor for ${asciiString} with Unicode = ${inUnicode} invalid character at position ${count}:  '" + asciiString.substring(count,count+1) + "'")
       }
       count++
     }
@@ -695,7 +696,7 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
 
       // two tokens matched for all chars, but
       // if one is longer, it sorts later:
-      //  
+      //
       if (AtticString.comparisonChars(s1).size() > AtticString.comparisonChars(s2).size()) {
         return 1
       } else if (AtticString.comparisonChars(s1).size() == AtticString.comparisonChars(s2).size()) {
