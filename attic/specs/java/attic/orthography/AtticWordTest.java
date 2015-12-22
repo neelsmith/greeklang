@@ -7,6 +7,8 @@ import org.junit.runner.RunWith;
 import edu.holycross.shot.attic.AtticString;
 import edu.holycross.shot.attic.AtticSyllable;
 import edu.holycross.shot.attic.AtticWord;
+import edu.holycross.shot.phonology.AccentPattern;
+
 import java.util.ArrayList;
 
 @RunWith(ConcordionRunner.class)
@@ -41,6 +43,35 @@ public class AtticWordTest  {
       syllableList.add(x.toString());
     }
     return syllableList;
+  }
+
+  public String addAsciiAcc(String lex, String accentType)
+  throws Exception {
+    AtticWord atticWord = new AtticWord(lex);
+    AtticWord accentedWord = new AtticWord("");
+    if (accentType.equals("recessive")) {
+      accentedWord = atticWord.accent(edu.holycross.shot.phonology.AccentPattern.RECESSIVE);
+    } else if (accentType.equals("penult")) {
+      accentedWord = atticWord.accent(edu.holycross.shot.phonology.AccentPattern.PENULT);
+    } else if (accentType.equals("ultima")) {
+      accentedWord = atticWord.accent(edu.holycross.shot.phonology.AccentPattern.ULTIMA);
+    }
+    return accentedWord.toString();
+  }
+
+
+  public String addUcodeAcc(String lex, String accentType)
+  throws Exception {
+    AtticWord atticWord = new AtticWord(lex);
+    AtticWord accentedWord = new AtticWord("");
+    if (accentType.equals("recessive")) {
+      accentedWord = atticWord.accent(edu.holycross.shot.phonology.AccentPattern.RECESSIVE);
+    } else if (accentType.equals("penult")) {
+      accentedWord = atticWord.accent(edu.holycross.shot.phonology.AccentPattern.PENULT);
+    } else if (accentType.equals("ultima")) {
+      accentedWord = atticWord.accent(edu.holycross.shot.phonology.AccentPattern.ULTIMA);
+    }
+    return accentedWord.toString(true);
   }
 
 }

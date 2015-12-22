@@ -1,5 +1,6 @@
 # Word tokens
 
+[$PROFILE$]: extended
 
 
 ## Lexical tokenization
@@ -90,9 +91,10 @@ Accent characters can be automatically added to word tokens in cases where a rec
 
 ### Examples: Accentuation
 
-Adding <strong concordion:set="#acc">recessive</strong> accentuation to <strong concordion:set="#src">EDOXSEN</strong> produces <strong concordion:assertEquals="addAsciiAcc(#src,#acc)">E/DOXSEN</strong> in ASCII mapping, or <strong>ἔδοχσεν</strong> in the Greek Unicode mapping.
+Adding <strong concordion:set="#acc">recessive</strong> accentuation to <strong concordion:set="#src">EDOXSEN</strong> produces <strong concordion:assertEquals="addAsciiAcc(#src,#acc)">E/DOXSEN</strong> in ASCII mapping, or <strong concordion:assertEquals="addUcodeAcc(#src,#acc)">ἔδοχσεν</strong> in the Greek Unicode mapping.
 
 
+Adding persistent accentuation on the <strong concordion:set="#acc">penult</strong>  to <strong concordion:set="#src">NIKE_S</strong> produces <strong concordion:assertEquals="addAsciiAcc(#src,#acc)">NI/KE_S</strong> in ASCII mapping, or <strong concordion:assertEquals="addUcodeAcc(#src,#acc)">νίκε_ς</strong> in the Greek Unicode mapping.
 
 @closeex@
 
