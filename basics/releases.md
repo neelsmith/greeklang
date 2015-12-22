@@ -3,6 +3,7 @@ title: "Foundational libraries: release notes"
 layout: page
 ---
 
+**2.2.3** Fixes a bug in constructing `GreekString` objects with rough breathing in Unicode representation.
 
 **2.2.2** Fixes a bug in the `Accent` class when diphthong in final syllable should be treated as short.
 
