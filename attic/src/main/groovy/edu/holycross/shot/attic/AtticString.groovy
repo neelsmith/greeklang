@@ -517,9 +517,13 @@ class AtticString implements GreekOrthography, Comparable<AtticString>{
   */
   static ArrayList tokenize(AtticString s) {
     ArrayList tokens = []
-    s.atticString.split(/\s+/).each {
-      String token = it.toString().replaceAll(punctuationRE, '')
-      tokens.add(new AtticString(token))
+    String elided = s.atticString.replaceAll(/'/,"' ")
+    elided = elided.replaceAll(punctuationRE," ")
+    elided.split(/\s+/).each { token ->
+      //String token = it.toString().replaceAll(punctuationRE, '')
+      if (token.size() > 0) {
+        tokens.add(new AtticString(token))
+      }
     }
     return tokens
   }

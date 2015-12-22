@@ -6,7 +6,7 @@
 
 In addition to transcribing the alphabetic and punctuation characters used in Attic inscriptions (specified [here](AtticCharacters.html)), editions of Attic inscriptions conventionally include additional characters helping to disambiguate:
 
-- tokenization of text in *scriptio continua*
+- syntactic tokenization of text in *scriptio continua*
 - interpretation of vowel quantity
 - interpretation of accent
 
@@ -16,7 +16,7 @@ In addition to transcribing the alphabetic and punctuation characters used in At
 
 ### Tokenizing characters
 
-Archaic and classical Attic inscriptions do not normally indicate word divisions.  Any of the following white-space characters may be included in a string of Attic Greek in either ASCII or Greek Unicode ranges to indicate breaks between tokens.
+Archaic and classical Attic inscriptions do not normally indicate word divisions.  Any of the following white-space characters may be included in a string of Attic Greek in either ASCII or Greek Unicode ranges to indicate breaks between syntactic tokens.
 
 
 <table concordion:execute="#result = isValidCP(#src)">
