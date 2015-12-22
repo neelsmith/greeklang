@@ -3,9 +3,10 @@
 
 
 - Representation of <a concordion:run="concordion" href="AtticCharacters.html">alphabetic and punctuation characters appearing in Attic inscriptions</a>
-- Specification of valid <a concordion:run="concordion" href="AtticString.html">strings of characters</a>
-    - Summary of all <a concordion:run="concordion" href="AsciiSummary.html">characters in ASCII mapping</a>
-- Specification of valid <a concordion:run="concordion"  href="AtticWord.html">lexical tokens</a> ("words")
+- Representation of valid <a concordion:run="concordion" href="AtticString.html">strings including editorial characters</a>
+- Summary of all <a concordion:run="concordion" href="AsciiSummary.html">characters in ASCII mapping</a>
+- <a concordion:run="concordion" href="StringManipulation.html">Creating and manipulating strings of Attic Greek</a>
+- Specification of valid <a concordion:run="concordion"  href="AtticWord.html">syntactic and lexical tokens</a> ("words")
 - Specification of <a concordion:run="concordion"  href="AtticSort.html">alphabetic sorting and comparison</a> of strings in Attic Greek orthography
 
 
