@@ -44,7 +44,7 @@ class TestAtticXcode{
   void testRoughBreathings() {
     // source string:
     String ascii = "HOTOS"
-    String ucode = "ὁτος"
+    String ucode = "hοτος"
     assert ucode == AtticString.ucodeForAscii(ascii)
     assert AtticString.asciiForUcode(ucode) == ascii
   }
@@ -54,12 +54,12 @@ class TestAtticXcode{
   void testQuantDisambiguate() {
     // source string:
     String ascii = "HO_TO^S" // i.e.,, οὗτος
-    String ucode = "ὁ_το^ς"
+    String ucode = "hο_το^ς"
     assert AtticString.asciiForUcode(ucode) == ascii
     assert AtticString.ucodeForAscii(ascii) == ucode
 
     String longlong = "HO_TO_S" // e.g., οὑτως
-    String longucode = "ὁ_το_ς"
+    String longucode = "hο_το_ς"
     assert AtticString.ucodeForAscii(longlong) == longucode
     assert AtticString.asciiForUcode(longucode) == longlong
   }

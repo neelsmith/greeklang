@@ -30,7 +30,7 @@ class TestAtticBreathing{
   @Test
   void testRough () {
     String src = "HODOS"
-    String expectedUcode = "ὁδος"
+    String expectedUcode = "hοδος"
 
     assert AtticString.ucodeForAscii(src) == expectedUcode
     assert AtticString.asciiForUcode(expectedUcode) == src

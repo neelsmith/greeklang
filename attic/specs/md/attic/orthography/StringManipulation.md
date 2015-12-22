@@ -85,6 +85,41 @@ Attic strings created from accepted ASCII input can be represented in the fully 
 
 ### Examples: generating strings in the Greek range of Unicode
 
+
+Attic strings created from ASCII values can also be represented in the mapping to the Greek range of Unicode:
+
+<table concordion:execute="#result = uForAscii(#src)">
+
+<tr>
+   <th concordion:set="#src">Constructed from</th>
+  <th concordion:assertEquals="#result">As string</th>
+</tr>
+<tr><td>DEMOS</td><td>δεμος</td></tr>
+<tr><td>demos</td><td>δεμος</td></tr>
+<tr><td>Demos</td><td>δεμος</td></tr>
+<tr><td>DEMOS</td><td>δεμος</td></tr>
+<tr><td>de_mos</td><td>δε_μος</td></tr>
+<tr><td>de=mos</td><td>δε͂μος</td></tr>
+<tr><td>HODO/S</td><td>hοδός</td></tr>
+</table>
+
+Attic strings created from accepted Greek Unicode input can be represented in the fully specified mapping to the Greek range of Unicode:
+
+<table concordion:execute="#result = regularUcode(#src)">
+
+<tr>
+   <th concordion:set="#src">Constructed from</th>
+  <th concordion:assertEquals="#result">As ASCII string</th>
+</tr>
+<tr><td>δεμος</td><td>δεμος</td></tr>
+<tr><td>Δεμος</td><td>δεμος</td></tr>
+<tr><td>ΔΕΜΟΣ</td><td>δεμος</td></tr>
+<tr><td>ΔΕ_ΜΟΣ</td><td>δε_μος</td></tr>
+<tr><td>Hοδός</td><td>hοδός</td></tr>
+
+
+</table>
+
 <table>
 </table>
 
