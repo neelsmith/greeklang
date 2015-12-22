@@ -10,15 +10,15 @@ ext {
   utilsversion = '2.2.3'
   utilsspec = '0.1.0'
 
-  atticversion = "1.0.4"
-  atticspec = "1.3.0"
+  atticversion = "1.0.5"
+  atticspec = "1.4.0"
 
   morphversion = "0.1.0"
   morphspec = '0.1.0'
 
   hexameterversion = "0.1.0"
   hexameterspec = '0.1.0'
-  
+
   theoversion = "0.1.0"
 }
 

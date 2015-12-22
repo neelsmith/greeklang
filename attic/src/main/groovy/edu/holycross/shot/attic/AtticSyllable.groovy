@@ -70,8 +70,10 @@ class AtticSyllable {
     ArrayList syllables = []
 
     String s = AtticSyllable.getSyllablicString(gw.stripAccents().toString())
-    s.split(/#/).each {
-      syllables.add(new AtticWord(it))
+    s.split(/#/).each { syll ->
+      if (syll.size() > 0) {
+        syllables.add(new AtticString(syll))
+      }
     }
   }
 
