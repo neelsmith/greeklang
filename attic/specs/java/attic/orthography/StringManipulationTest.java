@@ -37,6 +37,19 @@ public class StringManipulationTest  {
     return("H");
   }
 
+  public String regularUcode(String u)
+    throws Exception {
+      AtticString attic = new AtticString(u, true);
+      return attic.toString(true);
+  }
+
+
+  public String regularAscii(String ascii)
+    throws Exception {
+      AtticString attic = new AtticString(ascii);
+      return attic.toString();
+  }
+
 
   public String uForAscii(String ascii)
     throws Exception {
