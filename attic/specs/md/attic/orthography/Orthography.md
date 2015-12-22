@@ -6,7 +6,7 @@
 - Representation of valid <a concordion:run="concordion" href="AtticString.html">strings including editorial characters</a>
 - Summary of all <a concordion:run="concordion" href="AsciiSummary.html">characters in ASCII mapping</a>
 - <a concordion:run="concordion" href="StringManipulation.html">Creating and manipulating strings of Attic Greek</a>
-- Specification of valid <a concordion:run="concordion"  href="AtticWord.html">lexical tokens</a> ("words")
+- Specification of valid <a concordion:run="concordion"  href="AtticWord.html">lexical tokens</a> ("words"), including automated syllabification and accentuation
 - Specification of <a concordion:run="concordion"  href="AtticSort.html">alphabetic sorting and comparison</a> of strings in Attic Greek orthography
 
 
