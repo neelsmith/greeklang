@@ -84,4 +84,16 @@ In the token <strong concordion:set="#src">E_NAI</strong>, the quantity marker i
 
 ## Accentuation
 
-Accent characters can be automatically added to word tokens in cases where a recessive or persistent accent patterns persistent accent pattern does not require further morphological information, and vowel quantity is explicitly indicated.
+Accent characters can be automatically added to word tokens in cases where a recessive or persistent accent pattern does not require further morphological information, and vowel quantity is explicitly indicated.
+
+@openex@
+
+### Examples: Accentuation
+
+Adding <strong concordion:set="#acc">recessive</strong> accentuation to <strong concordion:set="#src">EDOXSEN</strong> produces <strong concordion:assertEquals="addAsciiAcc(#src,#acc)">E/DOXSEN</strong> in ASCII mapping, or <strong>ἔδοχσεν</strong> in the Greek Unicode mapping.
+
+
+
+@closeex@
+
+.
