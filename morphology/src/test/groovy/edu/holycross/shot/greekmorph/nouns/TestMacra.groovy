@@ -22,12 +22,13 @@ class TestMacra {
   // Compiled finite state transducer:
   String fstBinary = "build/fst/greek.a"
 
+/*
     @Test
     void testDeclension() {
       // Add lexicon to URN manager:
       umgr.addCsvFile(lexCsvSource)
       // And, finally, the parser:
-      MorphologicalParser mp = new MorphologicalParser(fstBinary, umgr)
+      LiteraryGreekParser mp = new LiteraryGreekParser(fstBinary, umgr)
       mp.debug = 10
       mp.fstParser.debug = 10
 
@@ -49,5 +50,5 @@ class TestMacra {
       }
 
     }
-
+*/
 }

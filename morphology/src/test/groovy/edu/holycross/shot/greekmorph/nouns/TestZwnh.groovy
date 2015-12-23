@@ -27,7 +27,7 @@ class TestZwnh {
       // Add lexicon to URN manager:
       umgr.addCsvFile(lexCsvSource)
       // And, finally, the parser:
-      MorphologicalParser mp = new MorphologicalParser(fstBinary, umgr)
+      LiteraryGreekParser mp = new LiteraryGreekParser(fstBinary, umgr)
 
       // map keyed by forms to analyze, to a unique GCN of noun form
       def expectedUnique = [
@@ -92,7 +92,7 @@ class TestZwnh {
     GreekString s = new GreekString(testWord, true)
 
     umgr.addCsvFile(lexCsvSource)
-    MorphologicalParser mp = new MorphologicalParser(fstBinary, umgr)
+    LiteraryGreekParser mp = new LiteraryGreekParser(fstBinary, umgr)
 
     // Parsing a GreekString gets you 0 or more analyses
     MorphologicalAnalysis morph = mp.parseGreekString(s)

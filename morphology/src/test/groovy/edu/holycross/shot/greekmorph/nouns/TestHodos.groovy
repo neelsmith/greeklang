@@ -30,7 +30,7 @@ class TestHodos {
     // for both inflectional patterns and lexicon of stems:
     UrnManager umgr = new UrnManager(inflCsvSource)
     umgr.addCsvFile(lexCsvSource)
-    MorphologicalParser mp = new MorphologicalParser(fstBinary, umgr)
+    LiteraryGreekParser mp = new LiteraryGreekParser(fstBinary, umgr)
     mp.debug = 10
     mp.fstParser.debug = 10
 

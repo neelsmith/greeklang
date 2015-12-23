@@ -85,7 +85,7 @@ Of course the top-level, conceptual URN values are keys to further information. 
 
 
 
-## Bigger overvie`urn:cite:morph:coretests.n64316_0`w `urn:cite:morph:w_indicative.1`
+## Bigger overview
 
 
 
@@ -156,9 +156,9 @@ Process:
 ### augment
 
 - follows princ. parts in verb pipeline
-- mark location in lexicon, eg. <aug>lu<verb>
+- mark location in lexicon, eg. `<aug>lu<verb>`
 - classify tense/mood combos as "augmented" "unaugmented"
-- define transforamtion of <aug> -> e with appropriate neighboring modifications:
+- define transforamtion of `<aug>` -> e with appropriate neighboring modifications:
     - add breathing if initial
     - drop preceding vowel
     - compound!

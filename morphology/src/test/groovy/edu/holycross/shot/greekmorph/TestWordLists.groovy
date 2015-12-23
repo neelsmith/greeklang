@@ -18,7 +18,7 @@ class TestWordLists {
     File lexCsvSource = new File("sampledata/urn-registries/datasets.csv")
     umgr.addCsvFile(lexCsvSource)
 
-    MorphologicalParser mp  = new MorphologicalParser(transducer, umgr)
+    LiteraryGreekParser mp  = new LiteraryGreekParser(transducer, umgr)
 
     def totalsByFile = [:]
     File srcDir = new File("unit_tests_data/wordlists")
@@ -31,7 +31,7 @@ class TestWordLists {
         if ((w.size() < 1) ||  (w[0] == "%")) {
           // comment or empty line
         } else {
-          GreekString gs = new GreekString(w, "Unicode")
+          GreekString gs = new GreekString(w, true)
           System.out.print "Analyzing ${w} ... "
           try {
             MorphologicalAnalysis morph = mp.parseGreekString(gs)

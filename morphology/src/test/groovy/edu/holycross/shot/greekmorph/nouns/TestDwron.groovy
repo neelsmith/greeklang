@@ -32,7 +32,7 @@ class TestDwron {
     // for both inflectional patterns and lexicon of stems:
     UrnManager umgr = new UrnManager(inflCsvSource)
     umgr.addCsvFile(lexCsvSource)
-    MorphologicalParser mp = new MorphologicalParser(fstBinary, umgr)
+    LiteraryGreekParser mp = new LiteraryGreekParser(fstBinary, umgr)
 
     // Parsing a GreekString gets you 0 or more analyses
     MorphologicalAnalysis morph = mp.parseGreekString(s)
@@ -75,7 +75,7 @@ class TestDwron {
     // for both inflectional patterns and lexicon of stems:
     UrnManager umgr = new UrnManager(inflCsvSource)
     umgr.addCsvFile(lexCsvSource)
-    MorphologicalParser mp = new MorphologicalParser(fstBinary, umgr)
+    LiteraryGreekParser mp = new LiteraryGreekParser(fstBinary, umgr)
 
     // Parsing a GreekString gets you 0 or more analyses
     MorphologicalAnalysis morph = mp.parseGreekString(s)

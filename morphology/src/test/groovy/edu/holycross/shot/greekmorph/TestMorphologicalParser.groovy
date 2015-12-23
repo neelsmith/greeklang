@@ -19,10 +19,10 @@ class TestMorphologicalParser {
     // defines coretests collection:
     File lexCsvSource = new File("sampledata/urn-registries/datasets.csv")
     umgr.addCsvFile(lexCsvSource)
-    MorphologicalParser mp = new MorphologicalParser(fstBinary, umgr)
+    LiteraryGreekParser mp = new LiteraryGreekParser(fstBinary, umgr)
 
 
-    GreekString s1 = new GreekString("λύω", "Unicode")
+    GreekString s1 = new GreekString("λύω", true)
     MorphologicalAnalysis morph = mp.parseGreekString(s1)
     System.err.println "Analyses for λύω : "
     morph.analyses.each {
@@ -30,7 +30,7 @@ class TestMorphologicalParser {
     }
 
 
-    GreekString s2 = new GreekString("ἔλυον", "Unicode")
+    GreekString s2 = new GreekString("ἔλυον", true)
 
     MorphologicalAnalysis impft = mp.parseGreekString(s2)
     System.err.println "Analyses for ἔλυον : "

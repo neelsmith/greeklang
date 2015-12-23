@@ -21,10 +21,10 @@ class TestMhnis {
   //  A word to test:
   String testWord = "μῆνιν"
 
-
+/*
   @Test
   void testParserDidactically() {
-    // You build a MorphologicalParser with a FST
+    // You build a LiteraryGreekParser with a FST
     // and a URNManager:
     // 1. Compiled finite state transducer:
     String fstBinary = "build/fst/greek.a"
@@ -33,9 +33,9 @@ class TestMhnis {
     UrnManager umgr = new UrnManager(inflCsvSource)
     umgr.addCsvFile(lexCsvSource)
 
-    MorphologicalParser mp = new MorphologicalParser(fstBinary, umgr)
+    LiteraryGreekParser mp = new LiteraryGreekParser(fstBinary, umgr)
 
-    // MorphologicalParsers can operate on GreekString objects:
+    // LiteraryGreekParsers can operate on GreekString objects:
     GreekString s = new GreekString(testWord, true)
 
     // Parsing a GreekString gets you 0 or more analyses
@@ -81,5 +81,5 @@ class TestMhnis {
 
     }
   }
-
+*/
 }
