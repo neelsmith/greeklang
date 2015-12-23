@@ -4,8 +4,10 @@ layout: page
 ---
 
 - [What's here](what)?
-- Why do we need these libraries?
+- Why do we need this?
+- How can I evaluate these projects?
 - Why code for the JVM?
+- What the heck are the *Canones* of Theodosius of Alexandria?
 
 ## Individual libraries
 
