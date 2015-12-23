@@ -13,7 +13,7 @@ ext {
   atticversion = "1.0.5"
   atticspec = "1.4.0"
 
-  morphversion = "0.1.0"
+  morphversion = "0.2.0"
   morphspec = '0.1.0'
 
   hexameterversion = "0.1.0"
