@@ -3,7 +3,9 @@ title: "Attic: release notes"
 layout: page
 ---
 
-**1.0.4** Bug fixes in syllabification and accentuation of Attic lexical tokens.
+**1.0.5** Bug fixes in syllabification and accentuation of Attic lexical tokens.
+
+**1.0.4** Bug fixes in tokenization.
 
 **1.0.3** Bug fixes in sorting of Attic strings.
 
