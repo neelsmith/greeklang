@@ -119,8 +119,6 @@ class TestAnqrwpos {
       // the inflectional rule applied to the stem
       String expectedInflectionExplanation = "urn:cite:gmorph:nouninfl.os_ou2"
       assert explanation.inflection.toString() == expectedInflectionExplanation
-
-
     }
   }
 

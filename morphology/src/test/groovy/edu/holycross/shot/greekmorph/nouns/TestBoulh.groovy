@@ -55,6 +55,22 @@ class TestBoulh {
       assert formIdentification.getNum() == expectedAnswer[2]
     }
 
+
+    // Check also the ambiguous nom/voc form.
+    def nom_voc = [GrammaticalCase.NOMINATIVE,GrammaticalCase.VOCATIVE ]
+    GreekString ambiguous = new GreekString("βουλαί",true)
+    MorphologicalAnalysis morph = mp.parseGreekString(ambiguous)
+    assert morph.analyses.size() == 2
+    morph.analyses.each {
+        MorphForm form = it.getMorphForm()
+        assert form.getAnalyticalType() == AnalyticalType.NOUN
+        CitableId formIdentification = form.getAnalysis()
+        // can't know ordering of analyses, but case must be
+        // ONE of these two!
+        assert nom_voc.contains(formIdentification.getCas())
+        assert formIdentification.getGender() == Gender.FEMININE
+        assert formIdentification.getNum() == GrammaticalNumber.PLURAL
+    }
   }
 
 }
