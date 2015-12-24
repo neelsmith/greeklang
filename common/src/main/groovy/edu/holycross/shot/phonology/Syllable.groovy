@@ -70,8 +70,7 @@ class Syllable {
   static ArrayList getSyllables(GreekString gs) {
     ArrayList syllables = []
 
-    String s = Syllable.getSyllablicString(gs.stripAccents().toString())
-System.err.println "For GS " + gs.stripAccents().toString()     + ", syll str is " +  s
+    String s = Syllable.getSyllablicString(Accent.stripAccents(gs).toString())
     s.split(/#/).each {
       syllables.add(new GreekString(it))
     }
@@ -84,12 +83,11 @@ System.err.println "For GS " + gs.stripAccents().toString()     + ", syll str is
   */
   static ArrayList getSyllables(GreekWord gw) {
     ArrayList syllables = []
-    String s = Syllable.getSyllablicString(gw.stripAccents().toString())
+    String s = Syllable.getSyllablicString(Accent.stripAccents(gw).toString())
     s.split(/#/).each {
       syllables.add(new GreekString(it))
     }
     return syllables
-
   }
 
   /** Sequentially applies regular expressions to split the String

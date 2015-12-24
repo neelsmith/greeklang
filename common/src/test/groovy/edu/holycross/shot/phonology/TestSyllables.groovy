@@ -63,7 +63,10 @@ class TestSyllables {
   void testGreekStringSyllables() {
     testMap.each { m ->
       GreekString gs = new GreekString(m.key)
+      System.err.println "Made gs ${gs} from ${m.key}"
       def gsSyllables = Syllable.getSyllables(gs)
+
+      System.err.println "Testing: for gs ${gs}, syllables " + gsSyllables
       assert gsSyllables.size() == m.value.split(/#/).size()
     }
   }

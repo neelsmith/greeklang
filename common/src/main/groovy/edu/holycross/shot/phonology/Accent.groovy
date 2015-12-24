@@ -30,6 +30,11 @@ class Accent {
       }.join(''))
   }
 
+  static String accentSyllable(GreekString syllable, String accentChar) {
+    return accentSyllable(syllable.toString(), accentChar)
+  }
+
+
   /** Places a given accent character on a single syllable by
   * reading from the end of the syllable back until a vowel is
   * found.

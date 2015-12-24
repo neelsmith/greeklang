@@ -26,7 +26,6 @@ class TestStripAccents {
     GreekString syllable = new GreekString("ios")
     GreekString syllStripped = Accent.stripAccents(syllable)
     assert syllStripped.toString() == "ios"
-
   }
 
 }
