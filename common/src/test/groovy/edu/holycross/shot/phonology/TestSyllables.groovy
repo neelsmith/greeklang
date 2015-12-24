@@ -3,6 +3,8 @@ package edu.holycross.shot.phonology
 import org.junit.Test
 import static groovy.test.GroovyAssert.shouldFail
 
+import edu.holycross.shot.orthography.GreekString
+
 class TestSyllables {
   // map of test strings to expected syllable breaks
   // marked by pound sign.
@@ -43,13 +45,26 @@ class TestSyllables {
   "xiwn"  : "xi#wn",
   "a)u+th" : "a)#u+#th",
   "lu_e" : "lu_#e",
-  "a)nalu_w": "a)#na#lu_#w"
+  "a)nalu_w": "a)#na#lu_#w",
+  "is" : "is",
+  "ios" : "i#os"
   ]
 
   @Test
   void testSyllables() {
     testMap.each { m ->
       assert Syllable.getSyllablicString(m.key) == m.value
+    }
+  }
+
+
+
+  @Test
+  void testGreekStringSyllables() {
+    testMap.each { m ->
+      GreekString gs = new GreekString(m.key)
+      def gsSyllables = Syllable.getSyllables(gs)
+      assert gsSyllables.size() == m.value.split(/#/).size()
     }
   }
 }

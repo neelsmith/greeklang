@@ -65,8 +65,17 @@ class Syllable {
 
 
 
-  // treat this as source for an array of GreekWord objects?
+  // allow string so we can look at syllables of non-tokens,
+  // like inflectional endings
   static ArrayList getSyllables(GreekString gs) {
+    ArrayList syllables = []
+
+    String s = Syllable.getSyllablicString(gs.stripAccents().toString())
+System.err.println "For GS " + gs.stripAccents().toString()     + ", syll str is " +  s
+    s.split(/#/).each {
+      syllables.add(new GreekString(it))
+    }
+    return syllables
   }
 
   /** Splits a GreekWord into syllabes.
@@ -75,11 +84,12 @@ class Syllable {
   */
   static ArrayList getSyllables(GreekWord gw) {
     ArrayList syllables = []
-
     String s = Syllable.getSyllablicString(gw.stripAccents().toString())
     s.split(/#/).each {
-      syllables.add(new GreekWord(it))
+      syllables.add(new GreekString(it))
     }
+    return syllables
+
   }
 
   /** Sequentially applies regular expressions to split the String

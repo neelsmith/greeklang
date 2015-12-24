@@ -75,6 +75,7 @@ class Accent {
   */
   static GreekWord addPenultAccent(GreekWord gw) {
     def syllables = gw.getSyllables()
+    System.err.println "Syllables for ${gw} : " + syllables
     if (syllables.size() < 2){
       throw new Exception("Accent: cannot accent penult of ${gw}. Too few syllables.")
     }
