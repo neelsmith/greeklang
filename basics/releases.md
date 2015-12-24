@@ -2,6 +2,7 @@
 title: "Foundational libraries: release notes"
 layout: page
 ---
+**2.3.0** Additional signatures added to static methods of `Accent` class. Bug fixes in accent handling, and in syllabification of `GreekString` objects.
 
 **2.2.3** Fixes a bug in constructing `GreekString` objects with rough breathing in Unicode representation.
 
