@@ -4,7 +4,7 @@ layout: page
 ---
 
 
-This site hosts a coordinated set of libraries for the JVM supporting work with texts in ancient Greek.  Each of the sections linked below includes:
+This site hosts a coordinated set of libraries for the JVM supporting work with texts in ancient Greek.  The main reference page for each library includes:
 
 - testable formal specifications
 - API documentation
