@@ -64,22 +64,36 @@ class TestDwron {
       }
 
       // Check also the ambiguous nom/acc/voc form.
-      /*
-      def nom_voc = [GrammaticalCase.NOMINATIVE,GrammaticalCase.VOCATIVE ]
-      GreekString ambiguous = new GreekString("ἄνθρωποι",true)
+
+      def nom_acc_voc = [GrammaticalCase.NOMINATIVE,GrammaticalCase.ACCUSATIVE,GrammaticalCase.VOCATIVE ]
+      GreekString ambiguous = new GreekString("δῶρα",true)
       MorphologicalAnalysis morph = mp.parseGreekString(ambiguous)
-      assert morph.analyses.size() == 2
+      assert morph.analyses.size() == 3
       morph.analyses.each {
           MorphForm form = it.getMorphForm()
           assert form.getAnalyticalType() == AnalyticalType.NOUN
           CitableId formIdentification = form.getAnalysis()
           // can't know ordering of analyses, but case must be
           // ONE of these two!
-          assert nom_voc.contains(formIdentification.getCas())
+          assert nom_acc_voc.contains(formIdentification.getCas())
           assert formIdentification.getGender() == Gender.NEUTER
           assert formIdentification.getNum() == GrammaticalNumber.PLURAL
       }
-      */
+
+
+      GreekString ambiguousSing = new GreekString("δῶρον",true)
+      morph = mp.parseGreekString(ambiguousSing)
+      assert morph.analyses.size() == 3
+      morph.analyses.each {
+          MorphForm form = it.getMorphForm()
+          assert form.getAnalyticalType() == AnalyticalType.NOUN
+          CitableId formIdentification = form.getAnalysis()
+          // can't know ordering of analyses, but case must be
+          // ONE of these two!
+          assert nom_acc_voc.contains(formIdentification.getCas())
+          assert formIdentification.getGender() == Gender.NEUTER
+          assert formIdentification.getNum() == GrammaticalNumber.SINGULAR
+      }
     }
 
 
