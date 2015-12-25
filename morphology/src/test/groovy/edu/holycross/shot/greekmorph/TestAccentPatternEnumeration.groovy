@@ -5,6 +5,7 @@ import static groovy.test.GroovyAssert.shouldFail
 
 import edu.holycross.shot.orthography.GreekWord
 import edu.holycross.shot.orthography.GreekString
+import edu.holycross.shot.greekmorph.PersistentAccent
 
 class TestAccentPatternEnumeration {
 
@@ -13,10 +14,10 @@ class TestAccentPatternEnumeration {
 
     @Test
     void testAdd() {
-      def accPatt = PersistentAccent.STEM_ULTIMA
+      def accPatt = PersistentAccent.STEM_PENULT
       accPatt++
-      assert accPatt == AccentPattern.STEM_PENULT
+      assert accPatt == PersistentAccent.STEM_ULTIMA
       accPatt++
-      assert accPatt == AccentPattern.INFLECTIONAL_ENDING
+      assert accPatt == PersistentAccent.INFLECTIONAL_ENDING
     }
 }
