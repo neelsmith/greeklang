@@ -4,6 +4,7 @@ import edu.holycross.shot.orthography.GreekString
 import edu.holycross.shot.orthography.GreekWord
 import edu.holycross.shot.phonology.Accent
 import edu.holycross.shot.phonology.AccentPattern
+import edu.holycross.shot.phonology.Syllable
 import edu.harvard.chs.cite.CiteUrn
 import edu.harvard.chs.cite.CtsUrn
 
@@ -97,38 +98,76 @@ class LiteraryGreekParser {
     GreekWord accented
     GreekWord unaccented = new GreekWord(analysisInfo.getSurfaceStem() + analysisInfo.getSurfaceInflection())
 
-
     AnalysisTriple triple = analysisInfo.getTriple()
     MorphForm form = triple.getMorphForm()
     NounForm nounAnalysis = form.getAnalysis()
     String inflectionTag = analysisInfo.getInflectionTag()
+
+    GreekString inflectionalString = new GreekString(analysisInfo.surfaceInflection)
+    def inflectionSyllables = Syllable.getSyllables(inflectionalString)
+    def accPattern = nounAnalysis.getPersistentAccent()
+
+    def maxOffset = AccentPattern.values().size() - 1
     if (debug > 0) {
-      System.err.println "Checking noun w  persistent accent " + nounAnalysis.getPersistentAccent()
+      System.err.println "Checking noun w  persistent accent " + accPattern + " and ordinal " + accPattern.ordinal() //nounAnalysis.getPersistentAccent()
+      def sylloffset = (inflectionSyllables.size() - 1)
+
+
+      def max1 = sylloffset + accPattern.ordinal()
+      def max2 = 2 // ie, PersistentAccent.size() - 1
+
+      def shiftidx = Math.min(max1, max2)
+
+
+      def allVals = PersistentAccent.values()
+      System.err.println "TRY INDEX " + shiftidx + " = " + allVals[shiftidx]
     }
 
-    if ( (isFirstDeclension(inflectionTag) ) &&
-	 (nounAnalysis.cas == GrammaticalCase.GENITIVE) &&
-	 (nounAnalysis.num == GrammaticalNumber.PLURAL)
-       ) {
-      if (debug > 1) {System.err.println "Special treatment for 1st decl  ${nounAnalysis.cas}  ${nounAnalysis.num}"}
-      accented = addNounUltima(unaccented, nounAnalysis, analysisInfo.getInflectionTag())
+    if (isFirstDeclension(inflectionTag)) {
+      //check special cases:  gen.pl.:
+      if (
+        (nounAnalysis.cas == GrammaticalCase.GENITIVE) &&
+	(nounAnalysis.num == GrammaticalNumber.PLURAL)
+        ) {
+	if (debug > 1) {System.err.println "Special treatment for 1st decl  ${nounAnalysis.cas}  ${nounAnalysis.num}"}
+	accented = addNounUltima(unaccented, nounAnalysis, analysisInfo.getInflectionTag())
 
-    } else {
-      if ( (isFirstDeclension(inflectionTag)) || (isSecondDeclension(inflectionTag))) {
+      } else {
         if (debug > 0) {System.err.println "NOT gen.pl., so look at " + nounAnalysis.getPersistentAccent()}
         switch (nounAnalysis.getPersistentAccent()) {
-          case PersistentAccent.STEM_PENULT:
-          accented = unaccented.accent(AccentPattern.RECESSIVE)
-          break
+	case PersistentAccent.STEM_PENULT:
+	accented = unaccented.accent(AccentPattern.RECESSIVE)
+	break
 
-          case PersistentAccent.STEM_ULTIMA:
-          accented =  Accent.accentWord(unaccented, AccentPattern.PENULT)
-          break
+	case PersistentAccent.STEM_ULTIMA:
+	// need to check for polysyllabic ending:
+	accented =  Accent.accentWord(unaccented, AccentPattern.PENULT)
+	break
 
-          case PersistentAccent.INFLECTIONAL_ENDING:
-          accented = addNounUltima(unaccented, nounAnalysis, analysisInfo.getInflectionTag())
-          break
+	case PersistentAccent.INFLECTIONAL_ENDING:
+  // need to check for polysyllabic ending:
+	accented = addNounUltima(unaccented, nounAnalysis, analysisInfo.getInflectionTag())
+	break
         }
+      }
+    } else { // second or third decl:
+    //   if (isSecondDeclension(inflectionTag)) {
+      if (debug > 0) {System.err.println "Second or third decl, look at " + nounAnalysis.getPersistentAccent()}
+      switch (nounAnalysis.getPersistentAccent()) {
+      case PersistentAccent.STEM_PENULT:
+      // need to check for polysyllabic ending:
+      accented = unaccented.accent(AccentPattern.RECESSIVE)
+      break
+
+      case PersistentAccent.STEM_ULTIMA:
+      // need to check for polysyllabic ending:
+      accented =  Accent.accentWord(unaccented, AccentPattern.PENULT)
+      break
+
+      case PersistentAccent.INFLECTIONAL_ENDING:
+      // need to check for polysyllabic ending:
+      accented = addNounUltima(unaccented, nounAnalysis, analysisInfo.getInflectionTag())
+      break
       }
     }
 

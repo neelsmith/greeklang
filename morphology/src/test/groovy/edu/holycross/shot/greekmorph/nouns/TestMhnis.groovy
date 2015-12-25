@@ -12,29 +12,86 @@ import static groovy.test.GroovyAssert.shouldFail
 class TestMhnis {
 
   // External files used in didactic tests:
-  // FST toolkit's batch parser:
-  String fstinfl = "/usr/bin/fst-infl"
+  //
   // CSV files with URN abbreviations for stems and inflectional rules
   File lexCsvSource = new File("sampledata/urn-registries/datasets.csv")
   File inflCsvSource = new File("src/fst/collectionAbbreviations.csv")
+  // A URN manager configured with CITE collection abbreviations
+  // for both inflectional patterns and lexicon of stems:
+  UrnManager umgr = new UrnManager(inflCsvSource)
 
-  //  A word to test:
-  String testWord = "μῆνιν"
+  // Compiled finite state transducer:
+  String litGreekBinary = "build/greek/greek.a"
+  String atticBinary = "build/attic/greek.a"
 
-/*
+
+
+  @Test
+  void testDeclension() {
+    // Add lexicon to URN manager:
+    umgr.addCsvFile(lexCsvSource)
+    // And, finally, the parser:
+    LiteraryGreekParser mp = new LiteraryGreekParser(litGreekBinary, umgr)
+    mp.debug = 10
+    mp.fstParser.debug = 10
+    // map keyed by forms to analyze, to a unique GCN of noun form
+    def expectedUnique = [
+    "μῆνις": [Gender.FEMININE, GrammaticalCase.NOMINATIVE, GrammaticalNumber.SINGULAR],
+    "μήνιος": [Gender.FEMININE, GrammaticalCase.GENITIVE, GrammaticalNumber.SINGULAR],
+
+    "μῆνιν": [Gender.FEMININE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.SINGULAR],
+
+    "μηνίων": [Gender.FEMININE, GrammaticalCase.GENITIVE, GrammaticalNumber.PLURAL],
+    "μήνισι": [Gender.FEMININE, GrammaticalCase.DATIVE, GrammaticalNumber.PLURAL]
+
+    ]
+
+    expectedUnique.keySet().each { greek ->
+      def expectedAnswer = expectedUnique[greek]
+      MorphologicalAnalysis morph = mp.parseGreekString(new GreekString(greek,true))
+      assert morph.analyses.size() == 1
+      MorphForm form = morph.analyses[0].getMorphForm()
+      assert form.getAnalyticalType() == AnalyticalType.NOUN
+      CitableId formIdentification = form.getAnalysis()
+      assert formIdentification.getGender() == expectedAnswer[0]
+      assert formIdentification.getCas() == expectedAnswer[1]
+      assert formIdentification.getNum() == expectedAnswer[2]
+    }
+
+    // Check also the ambiguous nom/acc/voc form.
+    // Add test for voc/dat singular
+    def nom_acc_voc = [GrammaticalCase.NOMINATIVE,GrammaticalCase.NOMINATIVE.ACCUSATIVE,GrammaticalCase.VOCATIVE ]
+    GreekString ambiguous = new GreekString("μήνιες",true)
+    MorphologicalAnalysis morph = mp.parseGreekString(ambiguous)
+    assert morph.analyses.size() == 3
+    morph.analyses.each {
+        MorphForm form = it.getMorphForm()
+        assert form.getAnalyticalType() == AnalyticalType.NOUN
+        CitableId formIdentification = form.getAnalysis()
+        // can't know ordering of analyses, but case must be
+        // ONE of these two!
+        assert nom_acc_voc.contains(formIdentification.getCas())
+        assert formIdentification.getGender() == Gender.FEMININE
+        assert formIdentification.getNum() == GrammaticalNumber.PLURAL
+    }
+  }
+
+
+
   @Test
   void testParserDidactically() {
     // You build a LiteraryGreekParser with a FST
     // and a URNManager:
-    // 1. Compiled finite state transducer:
-    String fstBinary = "build/fst/greek.a"
+    // 1. Compiled finite state transducer
+    // defined above as litGreekBinary
     // 2. A URN manager configured with CITE collection abbreviations
     // for both inflectional patterns and lexicon of stems:
     UrnManager umgr = new UrnManager(inflCsvSource)
     umgr.addCsvFile(lexCsvSource)
 
-    LiteraryGreekParser mp = new LiteraryGreekParser(fstBinary, umgr)
-
+    LiteraryGreekParser mp = new LiteraryGreekParser(litGreekBinary, umgr)
+    //  A word to test:
+    String testWord = "μῆνιν"
     // LiteraryGreekParsers can operate on GreekString objects:
     GreekString s = new GreekString(testWord, true)
 
@@ -61,7 +118,7 @@ class TestMhnis {
       assert formIdentification.getCas() == GrammaticalCase.ACCUSATIVE
       assert formIdentification.getNum() == GrammaticalNumber.SINGULAR
       // we can also find its persistent accent:
-      assert formIdentification.getPersistentAccent() == PersistentAccent.STEM_ULTIMA
+      assert formIdentification.getPersistentAccent() == PersistentAccent.STEM_PENULT
 
       // and (3) an explanation for the analysis
       AnalysisExplanation explanation = morphAnalysis.getAnalysisExplanation()
@@ -81,5 +138,5 @@ class TestMhnis {
 
     }
   }
-*/
+
 }

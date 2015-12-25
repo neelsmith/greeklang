@@ -8,10 +8,10 @@ package edu.holycross.shot.greekmorph
 public enum PersistentAccent {
 
   /** Singular */
-  STEM_ULTIMA("accent persists on ultima of stem", "<stemultacc>"),
-  /** Dual */
   STEM_PENULT("accent persists on penult of stem", "<stempenacc>"),
   /** Plural */
+  STEM_ULTIMA("accent persists on ultima of stem", "<stemultacc>"),
+  /** Dual */
   INFLECTIONAL_ENDING("accent persists on inflectional ending", "<inflacc>")
 
   private String fstToken
