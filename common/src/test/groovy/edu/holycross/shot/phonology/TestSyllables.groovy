@@ -47,7 +47,8 @@ class TestSyllables {
   "lu_e" : "lu_#e",
   "a)nalu_w": "a)#na#lu_#w",
   "is" : "is",
-  "ios" : "i#os"
+  "ios" : "i#os",
+  "ni_ke": "ni_#ke"
   ]
 
   @Test
@@ -63,10 +64,8 @@ class TestSyllables {
   void testGreekStringSyllables() {
     testMap.each { m ->
       GreekString gs = new GreekString(m.key)
-      System.err.println "Made gs ${gs} from ${m.key}"
       def gsSyllables = Syllable.getSyllables(gs)
-
-      System.err.println "Testing: for gs ${gs}, syllables " + gsSyllables
+      System.err.println "For gs ${gs}, syllables ${gsSyllables}"
       assert gsSyllables.size() == m.value.split(/#/).size()
     }
   }
