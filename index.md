@@ -11,7 +11,7 @@ layout: page
 
 ## Individual libraries
 
-- [Foundational libraries](basics): Greek orthography and phonology.  Latest release: **2.3.0**.
+- [Foundational libraries](basics): Greek orthography and phonology.  Latest release: **2.3.1**.
 - [Attic](attic):  orthography and phonology of Greek written in the Attic alphabet used before 403 BCE.  Latest release:  **1.0.5**.
 - Morphology: a system for building morphological parsers tailored for a specified lexicon, using a specified set of inflectional rules.
 - Theodosius: a machine-testable edition of the morphological specifications in the *Canones* of Theodosius of Alexandria.
