@@ -20,9 +20,9 @@ class TestMacra {
   UrnManager umgr = new UrnManager(inflCsvSource)
 
   // Compiled finite state transducer:
-  String fstBinary = "build/fst/greek.a"
+  String fstBinary = "build/greek/greek.a"
 
-/*
+
     @Test
     void testDeclension() {
       // Add lexicon to URN manager:
@@ -50,5 +50,5 @@ class TestMacra {
       }
 
     }
-*/
+
 }

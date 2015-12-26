@@ -23,7 +23,7 @@ class TestNikh {
   String fstBinary = "build/greek/greek.a"
 
 
-/*
+
   @Test
   void testDeclension(){
     // Add lexicon to URN manager:
@@ -49,13 +49,13 @@ class TestNikh {
     expectedUnique.keySet().each { greek ->
       def expectedAnswer = expectedUnique[greek]
       MorphologicalAnalysis morph = mp.parseGreekString(new GreekString(greek,true))
-      ////assert morph.analyses.size() == 1
+      assert morph.analyses.size() == 1
       MorphForm form = morph.analyses[0].getMorphForm()
-      //assert form.getAnalyticalType() == AnalyticalType.NOUN
+      assert form.getAnalyticalType() == AnalyticalType.NOUN
       CitableId formIdentification = form.getAnalysis()
-      //assert formIdentification.getGender() == expectedAnswer[0]
-      //assert formIdentification.getCas() == expectedAnswer[1]
-      //assert formIdentification.getNum() == expectedAnswer[2]
+      assert formIdentification.getGender() == expectedAnswer[0]
+      assert formIdentification.getCas() == expectedAnswer[1]
+      assert formIdentification.getNum() == expectedAnswer[2]
     }
 
     // Check also the ambiguous nom/voc forms.
@@ -63,29 +63,29 @@ class TestNikh {
     def nom_voc = [GrammaticalCase.NOMINATIVE,GrammaticalCase.VOCATIVE ]
     GreekString ambiguous = new GreekString("νίκη",true)
     MorphologicalAnalysis morph = mp.parseGreekString(ambiguous)
-    //assert morph.analyses.size() == 2
+    assert morph.analyses.size() == 2
     morph.analyses.each {
         MorphForm form = it.getMorphForm()
-        //assert form.getAnalyticalType() == AnalyticalType.NOUN
+        assert form.getAnalyticalType() == AnalyticalType.NOUN
         CitableId formIdentification = form.getAnalysis()
         // can't know ordering of analyses, but case must be
         // ONE of these two!
-        //assert nom_voc.contains(formIdentification.getCas())
-        //assert formIdentification.getGender() == Gender.FEMININE
-        //assert formIdentification.getNum() == GrammaticalNumber.SINGULAR
+        assert nom_voc.contains(formIdentification.getCas())
+        assert formIdentification.getGender() == Gender.FEMININE
+        assert formIdentification.getNum() == GrammaticalNumber.SINGULAR
     }
     // Plural:
     GreekString ambiguousPlural = new GreekString("νῖκαι",true)
     MorphologicalAnalysis morphPl = mp.parseGreekString(ambiguousPlural)
-    //assert morphPl.analyses.size() == 2
+    assert morphPl.analyses.size() == 2
     morphPl.analyses.each {
         MorphForm form = it.getMorphForm()
-        //assert form.getAnalyticalType() == AnalyticalType.NOUN
+        assert form.getAnalyticalType() == AnalyticalType.NOUN
         CitableId formIdentification = form.getAnalysis()
-        //assert nom_voc.contains(formIdentification.getCas())
-        //assert formIdentification.getGender() == Gender.FEMININE
-        //assert formIdentification.getNum() == GrammaticalNumber.PLURAL
+        assert nom_voc.contains(formIdentification.getCas())
+        assert formIdentification.getGender() == Gender.FEMININE
+        assert formIdentification.getNum() == GrammaticalNumber.PLURAL
     }
   }
-*/
+
 }

@@ -28,7 +28,8 @@ class TestZwnh {
       umgr.addCsvFile(lexCsvSource)
       // And, finally, the parser:
       LiteraryGreekParser mp = new LiteraryGreekParser(fstBinary, umgr)
-
+      mp.debug = 10
+      mp.fstParser.debug = 10
       // map keyed by forms to analyze, to a unique GCN of noun form
       def expectedUnique = [
 
@@ -93,6 +94,8 @@ class TestZwnh {
 
     umgr.addCsvFile(lexCsvSource)
     LiteraryGreekParser mp = new LiteraryGreekParser(fstBinary, umgr)
+    mp.debug = 10
+    mp.fstParser.debug = 10
 
     // Parsing a GreekString gets you 0 or more analyses
     MorphologicalAnalysis morph = mp.parseGreekString(s)
