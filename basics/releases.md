@@ -5,7 +5,7 @@ layout: page
 
 **2.3.1** Fixes a bug in syllabification of strings with explicit marker for vowel quantity.
 
-**2.3.0** Additional signatures added to static methods of `Accent` class. Bug fixes in accent handling, and in syllabification of `GreekString` objects.
+**2.3.0** New functionality: additional signatures added to static methods of `Accent` class. Bug fixes in accent handling, and in syllabification of `GreekString` objects.
 
 **2.2.3** Fixes a bug in constructing `GreekString` objects with rough breathing in Unicode representation.
 
