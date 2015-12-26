@@ -19,7 +19,7 @@ class TestPsuxh {
 
 
   // Compiled finite state transducer:
-  String fstBinary = "build/fst/greek.a"
+  String fstBinary = "build/greek/greek.a"
 
   @Test
   void testParserDidactically() {
@@ -38,40 +38,109 @@ class TestPsuxh {
     // Parsing a GreekString gets you 0 or more analyses
     MorphologicalAnalysis morph = mp.parseGreekString(s)
     // although there is only 1 possibility for ψυχῆς.
-    //assert morph.analyses.size() == 1
+    assert morph.analyses.size() == 1
 
     morph.analyses.each { morphAnalysis ->
       // Individual analyses of a word have three components.
       // (1) The lexical entity :
       String urnForForm = "urn:cite:shot:lexent.n115887"
-      //assert morphAnalysis.getLexicalEntity().toString() == urnForForm
+      assert morphAnalysis.getLexicalEntity().toString() == urnForForm
 
       // (2) a form:
       MorphForm form = morphAnalysis.getMorphForm()
-      //assert form.getAnalyticalType() == AnalyticalType.NOUN
+      assert form.getAnalyticalType() == AnalyticalType.NOUN
 
       CitableId formIdentification = form.getAnalysis()
-      //assert formIdentification.getGender() == Gender.FEMININE
-      //assert formIdentification.getCas() == GrammaticalCase.GENITIVE
-      //assert formIdentification.getNum() == GrammaticalNumber.SINGULAR
+      assert formIdentification.getGender() == Gender.FEMININE
+      assert formIdentification.getCas() == GrammaticalCase.GENITIVE
+      assert formIdentification.getNum() == GrammaticalNumber.SINGULAR
       // we can also find its persistent accent:
-      //assert formIdentification.getPersistentAccent() == PersistentAccent.INFLECTIONAL_ENDING
+      assert formIdentification.getPersistentAccent() == PersistentAccent.INFLECTIONAL_ENDING
 
       // and (3) an explanation for the analysis
       AnalysisExplanation explanation = morphAnalysis.getAnalysisExplanation()
       String expectedStemExplanation =  "urn:cite:gmorph:coretests.n67485_0"
-      ////assert explanation.stem.toString() == expectedStemExplanation
+      //assert explanation.stem.toString() == expectedStemExplanation
 
 
       System.err.println "antth. stem expl: " + explanation.stem.toString()
       // Inflectional patterns are explained by a URN identifying the
       // the inflectional rule applied to the stem
-      String expectedInflectionExplanation = "urn:cite:gmorph:nouninfl.is_ios4"
-      //assert explanation.inflection.toString() == expectedInflectionExplanation
+      String expectedInflectionExplanation = "urn:cite:gmorph:nouninfl.h_hs2"
+      assert explanation.inflection.toString() == expectedInflectionExplanation
       System.err.println "antth. inf expl: " + explanation.inflection.toString()
-
-
     }
   }
+
+
+
+
+  @Test
+  void testDeclension() {
+  // A URN manager configured with CITE collection abbreviations
+  // for both inflectional patterns and lexicon of stems:
+  UrnManager umgr = new UrnManager(inflCsvSource)
+  // Add lexicon to URN manager:
+  umgr.addCsvFile(lexCsvSource)
+  // And, finally, the parser:
+  LiteraryGreekParser mp = new LiteraryGreekParser(fstBinary, umgr)
+  mp.debug = 10
+  mp.fstParser.debug = 10
+      // map keyed by forms to analyze, to a unique GCN of noun form
+      def expectedUnique = [
+
+      "ψυχῆς": [Gender.FEMININE, GrammaticalCase.GENITIVE, GrammaticalNumber.SINGULAR],
+      "ψυχῇ": [Gender.FEMININE, GrammaticalCase.DATIVE, GrammaticalNumber.SINGULAR],
+      "ψυχήν": [Gender.FEMININE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.SINGULAR],
+
+      "ψυχῶν": [Gender.FEMININE, GrammaticalCase.GENITIVE, GrammaticalNumber.PLURAL],
+      "ψυχαῖς": [Gender.FEMININE, GrammaticalCase.DATIVE, GrammaticalNumber.PLURAL],
+      "ψυχάς": [Gender.FEMININE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.PLURAL]
+
+
+      ]
+
+      expectedUnique.keySet().each { greek ->
+        def expectedAnswer = expectedUnique[greek]
+        MorphologicalAnalysis morph = mp.parseGreekString(new GreekString(greek,true))
+        assert morph.analyses.size() == 1
+        MorphForm form = morph.analyses[0].getMorphForm()
+        assert form.getAnalyticalType() == AnalyticalType.NOUN
+        CitableId formIdentification = form.getAnalysis()
+        assert formIdentification.getGender() == expectedAnswer[0]
+        assert formIdentification.getCas() == expectedAnswer[1]
+        assert formIdentification.getNum() == expectedAnswer[2]
+      }
+
+      // Check also the ambiguous nom/voc forms.
+      // Singular:
+      def nom_voc = [GrammaticalCase.NOMINATIVE,GrammaticalCase.VOCATIVE ]
+      GreekString ambiguous = new GreekString("ψυχή",true)
+      MorphologicalAnalysis morph = mp.parseGreekString(ambiguous)
+      assert morph.analyses.size() == 2
+      morph.analyses.each {
+          MorphForm form = it.getMorphForm()
+          assert form.getAnalyticalType() == AnalyticalType.NOUN
+          CitableId formIdentification = form.getAnalysis()
+          // can't know ordering of analyses, but case must be
+          // ONE of these two!
+          assert nom_voc.contains(formIdentification.getCas())
+          assert formIdentification.getGender() == Gender.FEMININE
+          assert formIdentification.getNum() == GrammaticalNumber.SINGULAR
+      }
+      // Plural:
+      GreekString ambiguousPlural = new GreekString("ψυχαί",true)
+      MorphologicalAnalysis morphPl = mp.parseGreekString(ambiguousPlural)
+      assert morphPl.analyses.size() == 2
+      morphPl.analyses.each {
+          MorphForm form = it.getMorphForm()
+          assert form.getAnalyticalType() == AnalyticalType.NOUN
+          CitableId formIdentification = form.getAnalysis()
+          assert nom_voc.contains(formIdentification.getCas())
+          assert formIdentification.getGender() == Gender.FEMININE
+          assert formIdentification.getNum() == GrammaticalNumber.PLURAL
+      }
+    }
+
 
 }
