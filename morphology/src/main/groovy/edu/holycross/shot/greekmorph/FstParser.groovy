@@ -1,5 +1,6 @@
 package edu.holycross.shot.greekmorph
 
+import edu.holycross.shot.orthography.GreekOrthography
 
 /**
 * Class wrapping a SFST.
@@ -31,6 +32,10 @@ class FstParser {
   * @returns A list of zero or more morphological analysis objects.
   */
   String parseToken(FstToken fstToken) {
+    return parseTokenStr(fstToken.getFstStr()) //.toString())
+  }
+
+  String parseToken(AtticFstToken fstToken) {
     return parseTokenStr(fstToken.getFstStr()) //.toString())
   }
 

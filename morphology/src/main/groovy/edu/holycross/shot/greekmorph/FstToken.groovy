@@ -1,6 +1,7 @@
 package edu.holycross.shot.greekmorph
 
-import edu.holycross.shot.orthography.GreekString
+import edu.holycross.shot.orthography.GreekOrthography
+//import edu.holycross.shot.orthography.GreekString
 import edu.unc.epidoc.transcoder.TransCoder
 
 /**
@@ -11,8 +12,10 @@ class FstToken {
   /** An epidoc trancoder. */
   TransCoder utf2beta = new TransCoder()
 
-  /** A GreekString to analyze. */
-  GreekString greekStr
+  /** A string in Greek orthography to analyze. */
+  GreekOrthography greekStr
+
+
   /** An ASCII string in the format processed by the
   * morphological parser's FST. */
   String fstStr
@@ -23,11 +26,11 @@ class FstToken {
   * multicharacter symbols.
   * @param s A GreekString to analyze.
   */
-  FstToken(GreekString s) {
+  FstToken(GreekOrthography s) {
     greekStr = s
     utf2beta.setParser("Unicode")
     utf2beta.setConverter("BetaCode")
-    String convertedStr = utf2beta.getString(greekStr.toString(true)).replaceAll(/[=\\/\\\\]/,"").toLowerCase()
+    String convertedStr = utf2beta.getString(greekStr.toString(true)).replaceAll(/[=\\/\\\\]/,"")//.toLowerCase()
     convertedStr = convertedStr.replaceAll(/\^/, "<sh>")
     convertedStr = convertedStr.replaceAll("_", "<lo>")
     convertedStr = convertedStr.replaceAll(/\(/, "<ro>")

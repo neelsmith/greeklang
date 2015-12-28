@@ -1,6 +1,7 @@
 package edu.holycross.shot.greekmorph
 
 import edu.holycross.shot.orthography.GreekString
+import edu.holycross.shot.orthography.GreekOrthography
 
 /**
  * A class representing the morphological analysis of a single token.
@@ -11,7 +12,7 @@ import edu.holycross.shot.orthography.GreekString
 class MorphologicalAnalysis {
 
   /** The analyzed string. */
-  GreekString greekString
+  GreekOrthography greekString
 
   /** A (possibly empty) list of AnalysisTriple objects. */
   ArrayList analyses
@@ -25,7 +26,7 @@ class MorphologicalAnalysis {
   * @param explanations The list of explanations, one for each form in
   * the list of analyses.
   */
-  MorphologicalAnalysis(GreekString s, ArrayList analyses) {
+  MorphologicalAnalysis(GreekOrthography s, ArrayList analyses) {
     this.greekString = s
     this.analyses = analyses
   }
