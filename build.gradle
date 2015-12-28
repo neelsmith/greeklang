@@ -166,7 +166,9 @@ project(":morphology") {
   // version of this library
   dependencies {
     compile project(':common')
+    compile project(':attic')
     testCompile project(':common')
+    testCompile project(':attic')
   }
 }
 
