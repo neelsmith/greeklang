@@ -304,8 +304,6 @@
 :le:a)qemitofage/w
 :de:a)qemitofag ew_denom
 
-:le:*)aqhnai/zw
-:de:*)aqhna izw
 
 :le:a)qlio/omai
 :de:a)qli ow_denom mp
@@ -334,8 +332,6 @@
 :le:ai)gotrixe/w
 :de:ai)gotrix ew_denom
 
-:le:*ai)guptio/w
-:de:*ai)gupti ow_denom
 
 :le:ai)qerobate/w
 :de:ai)qerobat ew_denom
@@ -349,8 +345,6 @@
 :le:ai)qero/omai
 :de:ai)qer ow_denom mp
 
-:le:*ai)qiopi/zw
-:de:*ai)qiop izw
 
 :le:ai)qriopoie/w
 :de:ai)qriopoi ew_denom
@@ -628,8 +622,6 @@
 :le:a)lea/zw
 :de:a)le azw
 
-:le:*)alecandri/zw
-:de:*)alecandr izw
 
 :le:a)leuropoie/w
 :de:a)leuropoi ew_denom
@@ -865,8 +857,6 @@
 :le:a)mudro/w
 :de:a)mudr ow_denom
 
-:le:*)amuklaia/zw
-:de:*)amuklai azw
 
 :le:a)muni/zw
 :de:a)mun izw
@@ -2689,8 +2679,6 @@
 :le:a)nixneu/w
 :de:a)nixn euw
 
-:le:*)annibi/zw
-:de:*)annib izw
 
 :le:a)nnwnarxe/w
 :de:a)nnwnarx ew_denom
@@ -3184,8 +3172,6 @@
 :le:a)ntighrotrofe/w
 :de:a)ntighrotrof ew_denom
 
-:le:*)antigoni/zw
-:de:*)antigon izw
 
 :le:a)ntigumnasiarxe/w
 :de:a)ntigumnasiarx ew_denom
@@ -6610,8 +6596,6 @@
 :le:a)pwrugi/zw
 :de:a)pwrug izw
 
-:le:*)arabi/zw
-:de:*)arab izw
 
 :le:a)ra/zw
 :de:a)r azw
@@ -6673,14 +6657,10 @@
 :le:a)ristoprage/w
 :de:a)ristoprag ew_denom
 
-:le:*)aristoteli/zw
-:de:*)aristotel izw
 
 :le:a)rixa/omai
 :de:a)rix aw_denom mp
 
-:le:*)arkadi/zw
-:de:*)arkad izw
 
 :le:a)rkteu/w
 :de:a)rkt euw
@@ -6712,8 +6692,6 @@
 :le:a)rmenopoie/w
 :de:a)rmenopoi ew_denom
 
-:le:*(armoni/zw
-:de:*(armon izw
 
 :le:a)rotreu/w
 :de:a)rotr euw
@@ -6895,8 +6873,6 @@
 :le:a)sqma/omai
 :de:a)sqm aw_denom mp
 
-:le:*)asiarxe/w
-:de:*)asiarx ew_denom
 
 :le:a)sigmopoie/w
 :de:a)sigmopoi ew_denom
@@ -7402,8 +7378,6 @@
 :le:a)fria/w
 :de:a)fr iaw_denom
 
-:le:*)afrodisia/zw
-:de:*)afrodisi azw
 
 :le:a)froneu/omai
 :de:a)fron euw mp
@@ -7546,8 +7520,6 @@
 :le:bakthreu/w
 :de:bakthr euw
 
-:le:*bakxio/w
-:de:*bakxi ow_denom
 
 :le:balanhfage/w
 :de:balanhfag ew_denom
@@ -8308,8 +8280,6 @@
 :le:gorgeu/w
 :de:gorg euw
 
-:le:*gorgia/zw
-:de:*gorgi azw
 
 :le:grai/zw
 :de:gra izw
@@ -10747,8 +10717,6 @@
 :le:dionoma/zw
 :de:dionom azw
 
-:le:*dionusomane/w
-:de:*dionusoman ew_denom
 
 :le:diopta/w
 :de:diopt aw_denom
@@ -11269,8 +11237,6 @@
 :le:dwre/omai
 :de:dwr ew_denom mp
 
-:le:*dwriarxe/w
-:de:*dwriarx ew_denom
 
 :le:dwrodote/w
 :de:dwrodot ew_denom
@@ -11287,8 +11253,6 @@
 :le:e(bdomeu/omai
 :de:e(bdom euw mp
 
-:le:*(ebrai/zw
-:de:*(ebra izw
 
 :le:e)ggae/w
 :de:e)gga ew_denom
@@ -11857,8 +11821,6 @@
 :le:ei(le/w
 :de:ei(l ew_denom
 
-:le:*ei(lwti/zomai
-:de:*ei(lwt izw mp
 
 :le:ei)naeti/zomai
 :de:ei)naet izw mp
@@ -13960,8 +13922,6 @@
 :le:ei(li/ssw
 :de:ei(li ss
 
-:le:*(elladarxe/w
-:de:*(elladarx ew_denom
 
 :le:e)llale/w
 :de:e)llal ew_denom
@@ -13969,8 +13929,6 @@
 :le:e)llampru/nomai
 :de:e)llampr unw mp
 
-:le:*(ellanodike/w
-:de:*(ellanodik ew_denom
 
 :le:e(lleboria/w
 :de:e(llebor iaw_denom
@@ -13981,8 +13939,6 @@
 :le:e)llhke/w
 :de:e)llhk ew_denom
 
-:le:*(ellhnokope/w
-:de:*(ellhnokop ew_denom
 
 :le:e)lloga/w
 :de:e)llog aw_denom
@@ -19939,8 +19895,6 @@
 :le:e)rgwne/w
 :de:e)rgwn ew_denom
 
-:le:*)ereqeimia/zw
-:de:*)ereqeimi azw
 
 :le:e)resxele/w
 :de:e)resxel ew_denom
@@ -19972,17 +19926,11 @@
 :le:e(rma/zw
 :de:e(rm azw
 
-:le:*(ermai/zomai
-:de:*(erma izw mp
 
 :le:e(rmati/zw
 :de:e(rmat izw
 
-:le:*(ermologe/w
-:de:*(ermolog ew_denom
 
-:le:*(ermomaxe/w
-:de:*(ermomax ew_denom
 
 :le:e)rno/omai
 :de:e)rn ow_denom mp
@@ -20335,11 +20283,7 @@
 :le:eu)melite/w
 :de:eu)melit ew_denom
 
-:le:*eu)mene/w
-:de:*eu)men ew_denom
 
-:le:*eu)meni/zomai
-:de:*eu)men izw mp
 
 :le:eu)moirate/w
 :de:eu)moirat ew_denom
@@ -20989,8 +20933,6 @@
 :le:h)pio/w
 :de:h)pi ow_denom
 
-:le:*(hrakleiti/zw
-:de:*(hrakleit izw
 
 :le:h)rema/zw
 :de:h)rem azw
@@ -21175,8 +21117,6 @@
 :le:qesmw|de/w
 :de:qesmw|d ew_denom
 
-:le:*qessali/zw
-:de:*qessal izw
 
 :le:qesfati/zw
 :de:qesfat izw
@@ -21265,8 +21205,6 @@
 :le:qra/zw
 :de:qr azw
 
-:le:*qra|ki/zw
-:de:*qra|k izw
 
 :le:qranu/ssw
 :de:qranu ss
@@ -21568,8 +21506,6 @@
 :le:i(e/w
 :de:i( ew_denom
 
-:le:*)ihpaiwni/zw
-:de:*)ihpaiwn izw
 
 :le:i)qupore/w
 :de:i)_qupor ew_denom
@@ -21646,8 +21582,6 @@
 :le:i)lli/zw
 :de:i)ll izw
 
-:le:*)illuri/zw
-:de:*)illur izw
 
 :le:i)llwpe/w
 :de:i)llwp ew_denom
@@ -21709,8 +21643,6 @@
 :le:i)pneu/w
 :de:i)pn euw
 
-:le:*(ippia/zw
-:de:*(ippi azw
 
 :le:i(ppoqute/w
 :de:i(ppoqut ew_denom
@@ -21736,8 +21668,6 @@
 :le:i)shgore/w
 :de:i)shgor ew_denom
 
-:le:*)isqmia/zw
-:de:*)isqmi azw
 
 :le:i)sobare/w
 :de:i)sobar ew_denom
@@ -21814,8 +21744,6 @@
 :le:i)sxuro/w
 :de:i)sxur ow_denom
 
-:le:*)italia/zw
-:de:*)itali azw
 
 :le:i)tameu/omai
 :de:i)^tam euw mp
@@ -21838,11 +21766,7 @@
 :le:i)xquofore/w
 :de:i)xquofor ew_denom
 
-:le:*)ixna/omai
-:de:*)ixn aw_denom mp
 
-:le:*)ixneu/w
-:de:*)ixn euw
 
 :le:i)xnhlate/w
 :de:i)xnhlat ew_denom
@@ -21853,14 +21777,10 @@
 :le:i)xwrorroe/w
 :de:i)xwrorro ew_denom
 
-:le:*)iwni/zw
-:de:*)iwn izw
 
 :le:i)wtografe/w
 :de:i)wtograf ew_denom
 
-:le:*kabeiria/zomai
-:de:*kabeiri azw mp
 
 :le:kagxali/zomai
 :de:kagxal izw mp
@@ -22432,8 +22352,6 @@
 :le:karido/w
 :de:karid ow_denom
 
-:le:*kari/zw
-:de:*kar izw
 
 :le:kario/w
 :de:kari ow_denom
@@ -25240,11 +25158,7 @@
 :le:kikkaba/zw
 :de:kikkab azw
 
-:le:*kiliki/zw
-:de:*kilik izw
 
-:le:*kiliki/zomai
-:de:*kilik izw mp
 
 :le:kinaideu/omai
 :de:kinaid euw mp
@@ -25552,8 +25466,6 @@
 :le:komotrofe/w
 :de:komotrof ew_denom
 
-:le:*kompe/w
-:de:*komp ew_denom
 
 :le:kompolakuqe/w
 :de:kompolakuq ew_denom
@@ -25633,8 +25545,6 @@
 :le:kori/zw
 :de:kor izw
 
-:le:*korinqia/zomai
-:de:*korinqi azw mp
 
 :le:korma/zw
 :de:korm azw
@@ -25834,8 +25744,6 @@
 :le:kriomaxe/w
 :de:kriomax ew_denom
 
-:le:*kritia/zw
-:de:*kriti azw
 
 :le:krokka/w
 :de:krokk aw_denom
@@ -25921,8 +25829,6 @@
 :le:kudro/omai
 :de:kudr ow_denom mp
 
-:le:*kudwnia/w
-:de:*kudwn iaw_denom
 
 :le:kukla/zw
 :de:kukl azw
@@ -25933,8 +25839,6 @@
 :le:kukli/zw
 :de:kukl izw
 
-:le:*kuklografe/w
-:de:*kuklograf ew_denom
 
 :le:kuklopore/w
 :de:kuklopor ew_denom
@@ -26179,8 +26083,6 @@
 :le:laka/w
 :de:lak aw_denom
 
-:le:*lakedaimonia/zw
-:de:*lakedaimoni azw
 
 :le:lakeru/zw
 :de:laker uzw
@@ -26395,8 +26297,6 @@
 :le:lepurio/w
 :de:lepuri ow_denom
 
-:le:*lesbi/zw
-:de:*lesb izw
 
 :le:lesxhmoneu/omai
 :de:lesxhmon euw mp
@@ -26440,8 +26340,6 @@
 :le:lhmmati/zw
 :de:lhmmat izw
 
-:le:*lhnai/zw
-:de:*lhna izw
 
 :le:lhneu/w
 :de:lhn euw
@@ -26719,8 +26617,6 @@
 :le:lugi/zomai
 :de:lug izw mp
 
-:le:*ludia/zw
-:de:*ludi azw
 
 :le:luqa/zw
 :de:luq azw
@@ -26728,8 +26624,6 @@
 :le:luqro/w
 :de:luqr ow_denom
 
-:le:*lukiarxe/w
-:de:*lukiarx ew_denom
 
 :le:lukoktone/w
 :de:lukokton ew_denom
@@ -26923,8 +26817,6 @@
 :le:marauge/w
 :de:maraug ew_denom
 
-:le:*marianduni/zw
-:de:*mariandun izw
 
 :le:marmarergate/w
 :de:marmarergat ew_denom
@@ -28222,8 +28114,6 @@
 :le:nebro/omai
 :de:nebr ow_denom mp
 
-:le:*neilobroxe/w
-:de:*neilobrox ew_denom
 
 :le:nekrokomi/zw
 :de:nekrokom izw
@@ -28867,8 +28757,6 @@
 :le:o)mbro/w
 :de:o)mbr ow_denom
 
-:le:*(omhri/zw
-:de:*(omhr izw
 
 :le:o)mixlo/omai
 :de:o)mixl ow_denom mp
@@ -29299,8 +29187,6 @@
 :le:o)rxe/w
 :de:o)rx ew_denom
 
-:le:*)orxomeni/zw
-:de:*)orxomen izw
 
 :le:o)rxotome/w
 :de:o)rxotom ew_denom
@@ -29308,8 +29194,6 @@
 :le:o(sieu/w
 :de:o(si euw
 
-:le:*)osiria/zw
-:de:*)osiri azw
 
 :le:o)spreu/w
 :de:o)spr euw
@@ -29569,8 +29453,6 @@
 :le:paneufhme/w
 :de:paneufhm ew_denom
 
-:le:*paneu/w
-:de:*pan euw
 
 :le:panhgura/zw
 :de:panhgur azw
@@ -32932,8 +32814,6 @@
 :le:pone/omai
 :de:pon ew_denom mp
 
-:le:*pontarxe/w
-:de:*pontarx ew_denom
 
 :le:ponto/w
 :de:pont ow_denom
@@ -33082,8 +32962,6 @@
 :le:priamo/omai
 :de:priam ow_denom mp
 
-:le:*priapi/zw
-:de:*priap izw
 
 :le:pri/zw
 :de:pr izw
@@ -37627,8 +37505,6 @@
 :le:pugi/zw
 :de:pug izw
 
-:le:*puqai/zw
-:de:*puqa izw
 
 :le:puqia/zw
 :de:puqi azw
@@ -37996,8 +37872,6 @@
 :le:r(uso/w
 :de:r(us ow_denom
 
-:le:*(rwmai/zw
-:de:*(rwma izw
 
 :le:r(wmaleo/omai
 :de:r(wmale ow_denom mp
@@ -38014,8 +37888,6 @@
 :le:r(wtaki/zw
 :de:r(wtak izw
 
-:le:*saba/zw
-:de:*sab azw
 
 :le:saba/zw
 :de:sab azw
@@ -38125,17 +37997,9 @@
 :le:saunia/zw
 :de:sauni azw
 
-:le:*sebasmia/zw
-:de:*sebasmi azw
 
-:le:*sebasteu/w
-:de:*sebast euw
 
-:le:*sebastokrate/w
-:de:*sebastokrat ew_denom
 
-:le:*sebastofante/w
-:de:*sebastofant ew_denom
 
 :le:seira/w
 :de:seir aw_denom
@@ -38164,8 +38028,6 @@
 :le:sela/w
 :de:sel aw_denom
 
-:le:*seleuki/zw
-:de:*seleuk izw
 
 :le:selhna/zw
 :de:selhn azw
@@ -38236,8 +38098,6 @@
 :le:sidhrodete/w
 :de:sidhrodet ew_denom
 
-:le:*sikeli/zw
-:de:*sikel izw
 
 :le:sikua/zw
 :de:siku azw
@@ -38284,8 +38144,6 @@
 :le:sino/w
 :de:sin ow_denom
 
-:le:*sinwpi/zw
-:de:*sinwp izw
 
 :le:siria/w
 :de:sir iaw_denom
@@ -43309,8 +43167,6 @@
 :le:sao/w
 :de:sa ow_denom
 
-:le:*swkrati/zw
-:de:*swkrat izw
 
 :le:swlhneu/omai
 :de:swlhn euw mp
@@ -43357,8 +43213,6 @@
 :le:tagmatarxe/w
 :de:tagmatarx ew_denom
 
-:le:*tainari/zw
-:de:*tainar izw
 
 :le:tainia/zw
 :de:taini azw
@@ -43393,11 +43247,7 @@
 :le:tapeinofrone/w
 :de:tapeinofron ew_denom
 
-:le:*tarantinarxe/w
-:de:*tarantinarx ew_denom
 
-:le:*tarantini/zw
-:de:*tarantin izw
 
 :le:targano/omai
 :de:targan ow_denom mp
@@ -43417,8 +43267,6 @@
 :le:tarso/omai
 :de:tars ow_denom mp
 
-:le:*tartari/zw
-:de:*tartar izw
 
 :le:tatali/zw
 :de:tatal izw
@@ -43537,8 +43385,6 @@
 :le:teleiourge/w
 :de:teleiourg ew_denom
 
-:le:*teleniki/zw
-:de:*telenik izw
 
 :le:teleodrome/w
 :de:teleodrom ew_denom
@@ -43696,8 +43542,6 @@
 :le:tiqhne/w
 :de:tiqhn ew_denom
 
-:le:*timaiografe/w
-:de:*timaiograf ew_denom
 
 :le:time/w
 :de:tim ew_denom
@@ -44089,8 +43933,6 @@
 :le:turokome/w
 :de:turokom ew_denom
 
-:le:*turrhni/zw
-:de:*turrhn izw
 
 :le:tuflhgore/w
 :de:tuflhgor ew_denom

@@ -1,0 +1,158 @@
+:le:*)aqhnai/zw
+:de:*)aqhna izw
+:le:*ai)guptio/w
+:de:*ai)gupti ow_denom
+:le:*ai)qiopi/zw
+:de:*ai)qiop izw
+:le:*)alecandri/zw
+:de:*)alecandr izw
+:le:*)amuklaia/zw
+:de:*)amuklai azw
+:le:*)annibi/zw
+:de:*)annib izw
+:le:*)antigoni/zw
+:de:*)antigon izw
+:le:*)arabi/zw
+:de:*)arab izw
+:le:*)aristoteli/zw
+:de:*)aristotel izw
+:le:*)arkadi/zw
+:de:*)arkad izw
+:le:*(armoni/zw
+:de:*(armon izw
+:le:*)asiarxe/w
+:de:*)asiarx ew_denom
+:le:*)afrodisia/zw
+:de:*)afrodisi azw
+:le:*bakxio/w
+:de:*bakxi ow_denom
+:le:*gorgia/zw
+:de:*gorgi azw
+:le:*dionusomane/w
+:de:*dionusoman ew_denom
+:le:*dwriarxe/w
+:de:*dwriarx ew_denom
+:le:*(ebrai/zw
+:de:*(ebra izw
+:le:*ei(lwti/zomai
+:de:*ei(lwt izw mp
+:le:*(elladarxe/w
+:de:*(elladarx ew_denom
+:le:*(ellanodike/w
+:de:*(ellanodik ew_denom
+:le:*(ellhnokope/w
+:de:*(ellhnokop ew_denom
+:le:*)ereqeimia/zw
+:de:*)ereqeimi azw
+:le:*(ermai/zomai
+:de:*(erma izw mp
+:le:*(ermologe/w
+:de:*(ermolog ew_denom
+:le:*(ermomaxe/w
+:de:*(ermomax ew_denom
+:le:*eu)mene/w
+:de:*eu)men ew_denom
+:le:*eu)meni/zomai
+:de:*eu)men izw mp
+:le:*(hrakleiti/zw
+:de:*(hrakleit izw
+:le:*qessali/zw
+:de:*qessal izw
+:le:*qra|ki/zw
+:de:*qra|k izw
+:le:*)ihpaiwni/zw
+:de:*)ihpaiwn izw
+:le:*)illuri/zw
+:de:*)illur izw
+:le:*(ippia/zw
+:de:*(ippi azw
+:le:*)isqmia/zw
+:de:*)isqmi azw
+:le:*)italia/zw
+:de:*)itali azw
+:le:*)ixna/omai
+:de:*)ixn aw_denom mp
+:le:*)ixneu/w
+:de:*)ixn euw
+:le:*)iwni/zw
+:de:*)iwn izw
+:le:*kabeiria/zomai
+:de:*kabeiri azw mp
+:le:*kari/zw
+:de:*kar izw
+:le:*kiliki/zw
+:de:*kilik izw
+:le:*kiliki/zomai
+:de:*kilik izw mp
+:le:*kompe/w
+:de:*komp ew_denom
+:le:*korinqia/zomai
+:de:*korinqi azw mp
+:le:*kritia/zw
+:de:*kriti azw
+:le:*kudwnia/w
+:de:*kudwn iaw_denom
+:le:*kuklografe/w
+:de:*kuklograf ew_denom
+:le:*lakedaimonia/zw
+:de:*lakedaimoni azw
+:le:*lesbi/zw
+:de:*lesb izw
+:le:*lhnai/zw
+:de:*lhna izw
+:le:*ludia/zw
+:de:*ludi azw
+:le:*lukiarxe/w
+:de:*lukiarx ew_denom
+:le:*marianduni/zw
+:de:*mariandun izw
+:le:*neilobroxe/w
+:de:*neilobrox ew_denom
+:le:*(omhri/zw
+:de:*(omhr izw
+:le:*)orxomeni/zw
+:de:*)orxomen izw
+:le:*)osiria/zw
+:de:*)osiri azw
+:le:*paneu/w
+:de:*pan euw
+:le:*pontarxe/w
+:de:*pontarx ew_denom
+:le:*priapi/zw
+:de:*priap izw
+:le:*puqai/zw
+:de:*puqa izw
+:le:*(rwmai/zw
+:de:*(rwma izw
+:le:*saba/zw
+:de:*sab azw
+:le:*sebasmia/zw
+:de:*sebasmi azw
+:le:*sebasteu/w
+:de:*sebast euw
+:le:*sebastokrate/w
+:de:*sebastokrat ew_denom
+:le:*sebastofante/w
+:de:*sebastofant ew_denom
+:le:*seleuki/zw
+:de:*seleuk izw
+:le:*sikeli/zw
+:de:*sikel izw
+:le:*sinwpi/zw
+:de:*sinwp izw
+:le:*swkrati/zw
+:de:*swkrat izw
+:le:*tainari/zw
+:de:*tainar izw
+:le:*tarantinarxe/w
+:de:*tarantinarx ew_denom
+:le:*tarantini/zw
+:de:*tarantin izw
+:le:*tartari/zw
+:de:*tartar izw
+:le:*teleniki/zw
+:de:*telenik izw
+:le:*timaiografe/w
+:de:*timaiograf ew_denom
+:le:*turrhni/zw
+:de:*turrhn izw
