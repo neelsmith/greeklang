@@ -28,9 +28,17 @@ class FstToken {
   */
   FstToken(GreekOrthography s) {
     greekStr = s
+    // strip out accents
+    String convertedStr = greekStr.toString().replaceAll(/[=\\/\\\\]/,"")
+    // replace direct call to Epidoc with GreekOrthography
+    // method accepting potentially bad input!
+
+    /*
     utf2beta.setParser("Unicode")
     utf2beta.setConverter("BetaCode")
-    String convertedStr = utf2beta.getString(greekStr.toString(true)).replaceAll(/[=\\/\\\\]/,"")//.toLowerCase()
+     utf2beta.getString(greekStr.toString(true)).replaceAll(/[=\\/\\\\]/,"")//.toLowerCase()
+*/
+    // replace quantity and breathing markers with FST tokens:
     convertedStr = convertedStr.replaceAll(/\^/, "<sh>")
     convertedStr = convertedStr.replaceAll("_", "<lo>")
     convertedStr = convertedStr.replaceAll(/\(/, "<ro>")

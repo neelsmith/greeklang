@@ -1,6 +1,6 @@
 package edu.holycross.shot.greekmorph
 
-import edu.holycross.shot.orthography.GreekOrthography
+
 
 /**
 * Class wrapping a SFST.
@@ -34,10 +34,11 @@ class FstParser {
   String parseToken(FstToken fstToken) {
     return parseTokenStr(fstToken.getFstStr()) //.toString())
   }
-
+/*
   String parseToken(AtticFstToken fstToken) {
     return parseTokenStr(fstToken.getFstStr()) //.toString())
   }
+*/
 
   /** Parses a literal string with the SFST parser.
   * @param fstStr A String in the format required
