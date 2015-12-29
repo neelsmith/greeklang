@@ -125,45 +125,6 @@ String getLexEntUrns() {
   return "<lexent.n47950><lexent.n71065><lexent.n19546><lexent.n50824><lexent.n67485><lexent.n84494><lexent.n64316><lexent.n6949><lexent.n81672><lexent.n88464><lexent.n87956><lexent.n786>"
 }
 
-task cpSrc (type: Copy) {
-    description = "Filters and copies FST src directory to build area."
-    from ("src/fst") {
-      include ("**/makefile", "**/*.fst")
-    }
-    into "${buildDir}/${orthography}"
-    filter(
-      ReplaceTokens, tokens: [
-      "workdir" : buildDir.toString() + "/${orthography}/",
-      "lexica": lexiconFstStatement(new File("${projectDir}/${stemsdir}")),
-      "makelexica": lexiconMakeStatement(new File("${projectDir}/${stemsdir}")),
-      "fstrules": rulesFstStatement(new File("${projectDir}/${rulesdir}")),
-      "extramakerules": rulesMakeStatement(new File("${projectDir}/${rulesdir}")),
-      "extratags": tagsFstStatement(),
-      "stemurn": getStemUrns(),
-      "lexicon": getLexEntUrns()
-     ])
-}
-
-
-task cpCoreInflection(type:Copy) {
-    description = "Filters and copies directory with core inflectional rules to build area."
-    from ("${projectDir}/${coreinfldir}/${orthography}") {
-      include ("**/*.fst", "**/makefile")
-    }
-    into "${buildDir}/${orthography}"
-    filter(ReplaceTokens, tokens: ["workdir" : "${buildDir}/${orthography}/".toString()])
-}
-cpCoreInflection.doLast {
-  System.err.println "Copied ${projectDir}/${coreinfldir} to ${buildDir}/${orthography}"
-}
-task cpRules (type: Copy, dependsOn: cpCoreInflection) {
-    description = "Filters and copies directory with additional inflectional rules to build area."
-    from ("${projectDir}/${rulesdir}") {
-      include ("**/*.fst")
-    }
-    into "${buildDir}/${orthography}"
-    filter(ReplaceTokens, tokens: ["workdir" : "${buildDir}/${orthography}/".toString()])
-}
 
 task buildVerbStems() {
   description = "Builds .fst files from tabular source for both simplex and compound verbs"
@@ -216,10 +177,8 @@ buildNounStems.doLast {
       if (lineCount > 0) {
         data.append(nounFstStringForCols(cols))
       }
-
       lineCount++
     }
-    System.err.println "Appending to ${fstFile}: " + data
     fstFile.append(data.toString())
   }
 }
@@ -230,6 +189,48 @@ task buildStems(dependsOn: [buildNounStems, buildVerbStems, buildAdjectiveStems,
 buildStems.doLast {
   System.err.print "Built .fst files from stem data in " + stemssrcdir
 }
+
+
+task cpSrc (type: Copy, dependsOn: buildStems) {
+    description = "Filters and copies FST src directory to build area."
+    from ("src/fst") {
+      include ("**/makefile", "**/*.fst")
+    }
+    into "${buildDir}/${orthography}"
+    filter(
+      ReplaceTokens, tokens: [
+      "workdir" : buildDir.toString() + "/${orthography}/",
+      "lexica": lexiconFstStatement(new File("${projectDir}/${stemsdir}")),
+      "makelexica": lexiconMakeStatement(new File("${projectDir}/${stemsdir}")),
+      "fstrules": rulesFstStatement(new File("${projectDir}/${rulesdir}")),
+      "extramakerules": rulesMakeStatement(new File("${projectDir}/${rulesdir}")),
+      "extratags": tagsFstStatement(),
+      "stemurn": getStemUrns(),
+      "lexicon": getLexEntUrns()
+     ])
+}
+
+
+task cpCoreInflection(type:Copy) {
+    description = "Filters and copies directory with core inflectional rules to build area."
+    from ("${projectDir}/${coreinfldir}/${orthography}") {
+      include ("**/*.fst", "**/makefile")
+    }
+    into "${buildDir}/${orthography}"
+    filter(ReplaceTokens, tokens: ["workdir" : "${buildDir}/${orthography}/".toString()])
+}
+cpCoreInflection.doLast {
+  System.err.println "Copied ${projectDir}/${coreinfldir} to ${buildDir}/${orthography}"
+}
+task cpRules (type: Copy, dependsOn: cpCoreInflection) {
+    description = "Filters and copies directory with additional inflectional rules to build area."
+    from ("${projectDir}/${rulesdir}") {
+      include ("**/*.fst")
+    }
+    into "${buildDir}/${orthography}"
+    filter(ReplaceTokens, tokens: ["workdir" : "${buildDir}/${orthography}/".toString()])
+}
+
 
 task exploreSource() {}
 exploreSource.doLast {
