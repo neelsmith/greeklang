@@ -17,13 +17,15 @@
 #accent# = \/\=
 #diacritic# = #diaeresis# #accent#
 
-#character# = #letter# #diacritic#
+% Accents should only be included in entries for
+% irregular forms!
+#character# = #letter# #diacritic# #accent#
 $character$ = [#character#]
 
 % Additional editorial symbols used in stem files:
 #morpheme# = <#>
 #vowelquant# = <lo><sh>
-#persistacc# = <stemultacc><stempenacc><inflacc>
+#persistacc# = <stemultacc><stempenacc><inflacc><irregacc>
 #editorial# = #vowelquant# #morpheme# #persistacc#
 
 
