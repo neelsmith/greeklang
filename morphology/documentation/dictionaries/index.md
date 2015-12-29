@@ -37,6 +37,17 @@ Note that only morphological stem information is automatically carried over.  Si
 
 ### substantives
 
+Lexical entries for nouns and adjectives differ only in that the stem records gender for nouns.
 
+Nouns:
+
+    StemURN,LexicalEntityUrn,String,Gender,InflectionClass,PersistentAcc
+
+Adjective or pronoun:
+
+    StemURN,LexicalEntityUrn,String,InflectionClass,PersistentAcc
+
+
+Note that when analyzed, pronouns and nouns are analyzed identically (GCN); adjectives differ in having degree as well.
 
 ### other
