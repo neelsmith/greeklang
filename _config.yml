@@ -22,6 +22,8 @@ paginate:         5
 links:
   - title: Foundational libraries
     url: basics
+  - title: Attic orthography
+    url: attic
   - title: Morphology
     url: morphology
   - title: Hexameter

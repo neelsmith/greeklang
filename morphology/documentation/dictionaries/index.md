@@ -13,3 +13,30 @@ Requirements:
 
 
 Configuration of dictionary collections
+
+
+### Formats
+
+### verbs: simplex form
+
+Five columns:
+
+    StemUrn,LexicalEntity,StemString,PartOfSpeech,MorphologicalClass,Tags
+
+Documentation for verbs:  defined set of morphological classes.
+
+
+### verbs: compounds
+
+Three columns:
+
+    CompoundEntity,StemString,SimplexEntity,Tags
+
+Note that only morphological stem information is automatically carried over.  Since tags may refer to any taxonomic category, they cannot be safely carried over.  If you want to duplicate tags from simplex to compound form, you must explicitly enter the same set of tags in the compound entry that you used in the simplex entry, and it will be applied to *all* compound stem forms.  If you want to tag individual stems, you will have to make individual entries for them in the main/simple verb lexicon.
+
+
+### substantives
+
+
+
+### other
