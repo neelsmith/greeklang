@@ -30,7 +30,8 @@ class TestBoulh {
     umgr.addCsvFile(lexCsvSource)
     // And, finally, the parser:
     LiteraryGreekParser mp = new LiteraryGreekParser(litGreekBinary, umgr)
-
+    mp.debug = 10
+    mp.fstParser.debug = 10
     // map keyed by forms to analyze, to a unique GCN of noun form
     def expectedUnique = [
 
