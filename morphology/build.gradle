@@ -165,13 +165,70 @@ task cpRules (type: Copy, dependsOn: cpCoreInflection) {
     filter(ReplaceTokens, tokens: ["workdir" : "${buildDir}/${orthography}/".toString()])
 }
 
+task buildVerbStems() {
+  description = "Builds .fst files from tabular source for both simplex and compound verbs"
+}
+buildVerbStems.doLast {
+  System.err.println "buildVerbStems not yet implemented."
+}
+task buildOtherStems() {
+  description = "Builds .fst files from tabular source in data/stems-lexica/other"
+}
+buildOtherStems.doLast {
+  System.err.println "buildOtherStems not yet implemented."
+}
+task buildAdjectiveStems() {
+  description = "Builds .fst files from tabular source in data/stems-lexica/adjectives"
+}
+buildAdjectiveStems.doLast {
+  System.err.println "buildAdjectiveStems not yet implemented."
+}
 
-task buildStems() {
-  description = "Builds .fst files from tabular source in stems_lexicon"
+
+String nounFstStringForCols(ArrayList columns) {
+  StringBuilder nounEntry  = new StringBuilder()
+  nounEntry.append("<u>${columns[0]}</u>")
+  nounEntry.append("<u>${columns[1]}</u>")
+  String stem = columns[2].replaceAll("_", "<lo>")
+  stem = stem.replaceAll("\\(", "<ro>")
+  stem = stem.replaceAll("\\)", "<sm>")
+  nounEntry.append(stem)
+  nounEntry.append("<noun>")
+  nounEntry.append("<${columns[3]}>")
+  nounEntry.append("<${columns[4]}>")
+  nounEntry.append("<${columns[5]}>")
+  nounEntry.append("\n")
+  return nounEntry.toString()
+}
+task buildNounStems() {
+  description = "Builds .fst files from tabular source in ${stemssrcdir}/nouns"
+}
+buildNounStems.doLast {
+  File lexDir = new File(projectDir,"${stemssrcdir}/nouns")
+  System.err.println "Look for csv files in " + lexDir
+  lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
+    File fstFile = new File(projectDir, "${stemsdir}/nouns-${csvFile.getName().replaceFirst(/.csv/,'.fst')}")
+    fstFile.setText("")
+    StringBuilder data = new StringBuilder()
+    def lineCount = 0
+    csvFile.eachLine { l ->
+      ArrayList cols = l.split(/,/)
+      if (lineCount > 0) {
+        data.append(nounFstStringForCols(cols))
+      }
+
+      lineCount++
+    }
+    System.err.println "Appending to ${fstFile}: " + data
+    fstFile.append(data.toString())
+  }
+}
+
+task buildStems(dependsOn: [buildNounStems, buildVerbStems, buildAdjectiveStems, buildOtherStems]) {
+  description = "Builds .fst files from tabular source in data/stems-lexica"
 }
 buildStems.doLast {
-  System.err.println "buildStems not yet implemented."
-  System.err.print "Work with files in " + stemssrcdir
+  System.err.print "Built .fst files from stem data in " + stemssrcdir
 }
 
 task exploreSource() {}
