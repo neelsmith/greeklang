@@ -20,6 +20,9 @@ Vary by orthographic system:
 - `inflection.fst` (and associated subdir)
 - `symbols/phonology.fst`
 
+
+**ADD AUGMENT TO THIS LIST!** See issue #189
+
 `makefile` has to take account of these
 
 
@@ -50,6 +53,12 @@ So requirements would be;
 
 
 ## Dependencies for JVM code
+
+UPDATE THIS LIST FOR DOCS:  instead of list below, either
+
+- use `GreekOrthography` interface, or
+- use ortho-specific class (e.g., `AtticParser`)
+
 
 These classes use `GreekString` objects:
 
