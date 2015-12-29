@@ -57,7 +57,7 @@ Nouns must include:
 - stem
 - gender
 - an inflectional class (see full list elsewhere)
-- symbol for persistent accent. Logic is determined from *longest form*.  Example: μήνις  with gen. μήνιος .  Stem, penult.
+- symbol for persistent accent. Logic is determined from *longest form*.  Example: μήνις  with gen. μήνιος .  Stem, penult. For irregular forms, use tag `irregacc` and include accent in explictly given form.  If you put accents on stem or inflectional strings otherwise, you will break stuff.
 
 
 
