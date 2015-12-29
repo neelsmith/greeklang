@@ -1,6 +1,6 @@
 % noun snippet
 
-#include "../../build/fst/symbols.fst"
+#include "../../build/greek/symbols.fst"
 
 
 % TARGET LEXICON ENTRY:
@@ -8,6 +8,10 @@
 
 % As variable with protected chars:
 $target$ = <u>coretests\.n67485\_0</u><u>lexent\.n67485</u>mhn<noun><fem><is\_ios><stemultacc>\:\:<is\_ios><u>nouninfl\.is\_ios1</u>is<fem><nom><sg>
+
+
+% Test an irregular form:
+%$target$ = <u>coretests\.n23069\_0</u><u>lexent\.n23069</u><noun><fem><gunh><irregacc>\:\:<gunh><u>nouninfl\.gunh1</u>gunh/<fem><nom><sg>
 
 
 
