@@ -50,4 +50,18 @@ Adjective or pronoun:
 
 Note that when analyzed, pronouns and nouns are analyzed identically (GCN); adjectives differ in having degree as well.
 
+Nouns must include:
+
+- URN for stem
+- URN for lexical entity
+- stem
+- gender
+- an inflectional class (see full list elsewhere)
+- symbol for persistent accent. Logic is determined from *longest form*.  Example: μήνις  with gen. μήνιος .  Stem, penult.
+
+
+
+Optionally include lexicon- or project-specific tags expressed with FST tokens.
+
+
 ### other
