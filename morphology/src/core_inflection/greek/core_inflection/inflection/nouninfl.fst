@@ -78,7 +78,8 @@ $is_ios_ending$ = <is\_ios> (\
   )
 
 
-$is_ews_ending$ = <is_ews> (is[<masc><fem>]<nom><sg> |\
+$is_ews_ending$ = <is_ews> (\
+  is[<masc><fem>]<nom><sg> |\
   ews[<masc><fem>]<gen><sg> |\
   ei[<masc><fem>]<dat><sg> |\
   in[<masc><fem>]<acc><sg> |\
@@ -89,16 +90,17 @@ $is_ews_ending$ = <is_ews> (is[<masc><fem>]<nom><sg> |\
   eis[<masc><fem>]<acc><pl> \
 )
 
-$eus_ews_ending$ = <eus_ews> (eus[<masc>][<nom><voc>]<sg> |\
-  ews[<masc>]<gen><sg> |\
-  ei[<masc>]<dat><sg> |\
-  ea[<masc>]<acc><sg> |\
-  h[<masc>]<acc><sg> |\
-  eu[<masc><fem>]<voc><sg> |\
-  eis[<masc>]<nom><pl> |\
-  ewn[<masc>]<gen><pl> |\
-  eusi[<masc>]<dat><pl> |\
-  eas[<masc>]<acc><pl> \
+$eus_ews_ending$ = <eus_ews> (\
+  <u>nouninfl\.eus\_ews1</u>eus[<masc>][<nom><voc>]<sg> |\
+  <u>nouninfl\.eus\_ews2</u>ews[<masc>]<gen><sg> |\
+  <u>nouninfl\.eus\_ews3</u>ei[<masc>]<dat><sg> |\
+  <u>nouninfl\.eus\_ews4</u>ea[<masc>]<acc><sg> |\
+  <u>nouninfl\.eus\_ews5</u>h[<masc>]<acc><sg> |\
+  <u>nouninfl\.eus\_ews6</u>eu[<masc><fem>]<voc><sg> |\
+  <u>nouninfl\.eus\_ews7</u>eis[<masc>]<nom><pl> |\
+  <u>nouninfl\.eus\_ews8</u>ewn[<masc>]<gen><pl> |\
+  <u>nouninfl\.eus\_ews9</u>eusi[<masc>]<dat><pl> |\
+  <u>nouninfl\.eus\_ews10</u>eas[<masc>]<acc><pl> \
 )
 
 $decl3noun_ending$ = $is_ios_ending$ | $is_ews_ending$ | $eus_ews_ending$
