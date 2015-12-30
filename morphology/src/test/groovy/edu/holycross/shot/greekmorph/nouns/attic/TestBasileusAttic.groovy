@@ -35,13 +35,13 @@ class TestBasileusAttic {
     // map keyed by forms to analyze, to a unique GCN of noun form
     def expectedUnique = [
 
-    "BOLES": [Gender.FEMININE, GrammaticalCase.GENITIVE, GrammaticalNumber.SINGULAR],
-    "BOLEI": [Gender.FEMININE, GrammaticalCase.DATIVE, GrammaticalNumber.SINGULAR],
-    "BOLEN": [Gender.FEMININE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.SINGULAR],
+    "BASILEO_S": [Gender.MASCULINE, GrammaticalCase.GENITIVE, GrammaticalNumber.SINGULAR],
+    "BASILEI": [Gender.MASCULINE, GrammaticalCase.DATIVE, GrammaticalNumber.SINGULAR],
+    "BASLEA": [Gender.MASCULINE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.SINGULAR],
 
-    "BOLON": [Gender.FEMININE, GrammaticalCase.GENITIVE, GrammaticalNumber.PLURAL],
-    "BOLAIS": [Gender.FEMININE, GrammaticalCase.DATIVE, GrammaticalNumber.PLURAL],
-    "BOLAS": [Gender.FEMININE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.PLURAL]
+    "BASILEWN": [Gender.MASCULINE, GrammaticalCase.GENITIVE, GrammaticalNumber.PLURAL],
+    "BASILEUSI": [Gender.MASCULINE, GrammaticalCase.DATIVE, GrammaticalNumber.PLURAL],
+    "BASILEAS": [Gender.MASCULINE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.PLURAL]
     ]
 
     expectedUnique.keySet().each { greek ->
@@ -56,7 +56,7 @@ class TestBasileusAttic {
       assert formIdentification.getNum() == expectedAnswer[2]
     }
 
-
+    /*
     // Check also the ambiguous nom/voc form.
     def nom_voc = [GrammaticalCase.NOMINATIVE,GrammaticalCase.VOCATIVE ]
     AtticString ambiguous = new AtticString("BOLAI")
@@ -69,9 +69,9 @@ class TestBasileusAttic {
         // can't know ordering of analyses, but case must be
         // ONE of these two!
         assert nom_voc.contains(formIdentification.getCas())
-        assert formIdentification.getGender() == Gender.FEMININE
+        assert formIdentification.getGender() == Gender.MASCULINE
         assert formIdentification.getNum() == GrammaticalNumber.PLURAL
-    }
+    } */
   }
 
 }
