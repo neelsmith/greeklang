@@ -36,6 +36,29 @@ $os_ou_ending$ = <os_ou> (<u>nouninfl\.os\_ou1</u>O<sh>S[<masc><fem>]<nom><sg> |
 
 $decl2noun_ending$ = $os_ou_ending$
 
+
+
+
+$eus_ews_ending$ = <eus_ews> (\
+  <u>nouninfl\.eus\_ews1</u>EUS[<masc>][<nom><voc>]<sg> |\
+  <u>nouninfl\.eus\_ews2</u>EO<lo>S[<masc>]<gen><sg> |\
+  <u>nouninfl\.eus\_ews3</u>EI[<masc>]<dat><sg> |\
+  <u>nouninfl\.eus\_ews4</u>EA[<masc>]<acc><sg> |\
+  <u>nouninfl\.eus\_ews5</u>E<lo>[<masc>]<acc><sg> |\
+  <u>nouninfl\.eus\_ews6</u>EU[<masc><fem>]<voc><sg> |\
+  <u>nouninfl\.eus\_ews7</u>EIS[<masc>]<nom><pl> |\
+  <u>nouninfl\.eus\_ews8</u>EW<lo>N[<masc>]<gen><pl> |\
+  <u>nouninfl\.eus\_ews9</u>EUSI[<masc>]<dat><pl> |\
+  <u>nouninfl\.eus\_ews10</u>EA<lo>S[<masc>]<acc><pl> \
+)
+
+$decl3noun_ending$ = $eus_ews_ending$
+
+
+%%%%%%%%%%%%%%%%
 % Sum it all up:
-$nouninfll$ = $decl1noun_ending$ | $decl2noun_ending$
+%%%%%%%%%%%%%%%%
+$nouninfll$ = $decl1noun_ending$ | $decl2noun_ending$ | $decl3noun_ending$
+
+
 $nouninfll$

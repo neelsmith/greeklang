@@ -2,3 +2,4 @@ StemUrn,LexicalEntity,Stem,Gender,InflClass,Accent,Tags
 attictests.n14584_0,lexent.n14584,BOL,fem,h_hs,inflacc,
 attictests.n29828_0,lexent.n29828,DO_R,neut,os_ou,stemultacc,
 attictests.n23069_0,lexent.n23069,,fem,gunh,irregacc,
+attictests.n19546_0,lexent.n19546,BASIL,masc,eus_ews,inflacc,
