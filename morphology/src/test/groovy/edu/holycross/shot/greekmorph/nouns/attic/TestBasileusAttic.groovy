@@ -35,7 +35,7 @@ class TestBasileusAttic {
     // map keyed by forms to analyze, to a unique GCN of noun form
     def expectedUnique = [
 
-    "BASILEO_S": [Gender.MASCULINE, GrammaticalCase.GENITIVE, GrammaticalNumber.SINGULAR],
+    //"BASILEO_S": [Gender.MASCULINE, GrammaticalCase.GENITIVE, GrammaticalNumber.SINGULAR],
     "BASILEI": [Gender.MASCULINE, GrammaticalCase.DATIVE, GrammaticalNumber.SINGULAR],
     "BASLEA": [Gender.MASCULINE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.SINGULAR],
 

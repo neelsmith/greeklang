@@ -37,10 +37,9 @@ class TestDoronAttic {
 
     "DORO": [Gender.NEUTER, GrammaticalCase.GENITIVE, GrammaticalNumber.SINGULAR],
     "DOROI": [Gender.NEUTER, GrammaticalCase.DATIVE, GrammaticalNumber.SINGULAR],
-
-
-
     "DOROIS": [Gender.NEUTER, GrammaticalCase.DATIVE, GrammaticalNumber.PLURAL],
+    //"DORO_N": [Gender.NEUTER, GrammaticalCase.GENITIVE, GrammaticalNumber.PLURAL],
+    // test this in Unicode with accent DO/RON 
 
     ]
 

@@ -29,7 +29,7 @@ $os_ou_ending$ = <os_ou> (<u>nouninfl\.os\_ou1</u>O<sh>S[<masc><fem>]<nom><sg> |
   <u>nouninfl\.os\_ou8</u>OIS[<masc><fem><neut>]<dat><pl> |\
   <u>nouninfl\.os\_ou9</u>O<lo>S[<masc><fem>]<acc><pl> |\
     <u>nouninfl\.os\_ou10</u>A<neut><acc><pl>  |\
-    <u>nouninfl\.os\_ou11</u>O<lo>N[<neut>]<voc><sg> |\
+    <u>nouninfl\.os\_ou11</u>O<sh>N[<neut>]<voc><sg> |\
     <u>nouninfl\.os\_ou12</u>OI[<masc><fem>]<voc><pl> |\
     <u>nouninfl\.os\_ou13</u>A[<neut>]<voc><pl> \
 )

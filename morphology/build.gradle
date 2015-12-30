@@ -126,6 +126,38 @@ String getLexEntUrns() {
 }
 
 
+
+task loadSampleLexica(type: Copy) {
+  description = "Copies sample lexicon data in .csv files to active work area."
+  from ("sampledata/stems-lexica") {
+    include ("**/*.csv")
+  }
+  into "${stemssrcdir}"
+}
+task loadSampleRules(type: Copy) {
+  description = "Copies sample fst rules to active work area."
+   from ("sampledata/rules-fst") {
+     include "**/*.fst"
+   }
+  into "${rulesdir}"
+}
+/*
+task flattenSampleLexica(type: Copy, dependsOn: loadSampleLexica) {
+  from fileTree("${buildDir}/temp_stemsrc").files
+  into "${stemssrcdir}"
+}
+task flattenSampleRules(type: Copy, dependsOn: loadSampleRules) {
+  from fileTree("${buildDir}/temp_rulesdir").files
+  into "${rulesdir}"
+}
+*/
+task loadSampleData(dependsOn: [loadSampleLexica, loadSampleRules]) {
+  description = "Copies sample data sets into active working area"
+}
+loadSampleData.doLast {
+  System.err.println "Sample data sets copied into loading zone."
+}
+
 task buildVerbStems() {
   description = "Builds .fst files from tabular source for both simplex and compound verbs"
 }
