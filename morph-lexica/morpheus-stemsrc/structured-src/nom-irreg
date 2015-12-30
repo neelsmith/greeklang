@@ -402,21 +402,6 @@
 :wd:e)mauta_/s   pron1 fem acc pl
 :wd:e)mauta/   pron1 neut acc pl
 
-:le:*zeu/s
-:wd:*zeu/s irreg_decl3 masc sg pers_name nom
-:wd:*zeu= irreg_decl3 masc sg pers_name voc
-:wd:*di_/ irreg_decl3 masc sg pers_name dat
-:wd:*zh=n irreg_decl3 masc sg pers_name acc
-:wd:*dio/qen adverb epic
-:wd:*dios   irreg_decl3 masc gen sg pers_name needs_acc
-:wd:*zhnos   irreg_decl3 masc gen sg pers_name needs_acc poetic
-:wd:*za_nos   irreg_decl3 masc gen sg doric pers_name needs_acc
-:wd:*dii   irreg_decl3 masc dat sg pers_name needs_acc
-:wd:*zhni   irreg_decl3 masc dat sg pers_name needs_acc poetic
-:wd:*za_ni   irreg_decl3 masc dat sg doric pers_name needs_acc
-:wd:*dia   irreg_decl3 masc acc sg pers_name needs_acc
-:wd:*zhna   irreg_decl3 masc acc sg pers_name needs_acc poetic
-:wd:*za_na   irreg_decl3 masc acc sg doric pers_name needs_acc
 
 :le:ke/ras
 :wd:ke/ras irreg_decl3 neut nom voc acc sg
@@ -1101,7 +1086,6 @@
 :wd:pnu/c irreg_decl3 masc nom sg
 :wd:pukno/s   irreg_decl3 masc gen sg
 :wd:pukni/   irreg_decl3 masc dat sg
-:wd:*pu/kna   irreg_decl3 masc acc sg
 :wd:pu/kna   irreg_decl3 masc acc sg
 :wd:pu/kne   irreg_decl3 masc nom/voc/acc dual
 :wd:puknoi=n   irreg_decl3 masc gen/dat dual
