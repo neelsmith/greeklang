@@ -41,3 +41,21 @@ The FST is one (central) component of a larger, comprehensive analytical system.
 ## Role of orthographic system
 
 System works on lexical tokens in a rigorously specified orthographic system.
+
+Separation of concerns bewteen tokenizing and parsing.
+
+Tokenizing phase must normalize accentuation.
+
+### Normalized accentuation
+
+Make explicit how enclitics are handled
+
+
+
+### Handling accent in analysis by synthesis
+
+Irregular and indeclinable forms are record *with* accent.  By definition, these cannot be added algorithmically.
+
+*Irregular* forms record the accented form in the inflectional pattern.
+
+*Indeclinable tokens* recrod the nomarlized accented form in the stem pattern.
