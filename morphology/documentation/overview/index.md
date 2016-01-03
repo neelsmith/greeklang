@@ -48,7 +48,11 @@ Tokenizing phase must normalize accentuation.
 
 ### Normalized accentuation
 
-Make explicit how enclitics are handled
+- Only one accent per word token.
+- No grave accents.
+
+
+Make explicit how enclitics are handled.  See issue #200 in gh repo.
 
 
 
