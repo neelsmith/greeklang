@@ -21,19 +21,23 @@ $acceptor$ = "<@workdir@acceptor.a>"
 % Formatting: suppress analytical markup in surface forms:
 $striptags$ = "<@workdir@striptags.a>"
 
-
+% Suppress accents in inflectional patterns for irregulars,
+% or stem string values for indeclinables:
+$stripacc$ = "<@workdir@stripacc.a>"
 
 % Final transducer:
-$morph$ || $acceptor$  || $striptags$
+$morph$ || $acceptor$  || $striptags$ || $stripacc$
 
 
 % Examples of translations from surface form to analysis:
 %
 % input:  mhnis
-% output: <n67485>mhn<noun><fem><is_ios>::<is_ios>is<fem><nom><sg>
+% output: <u>coretests.n67485_0</u><u>lexent.n67485</u>mhn<noun><fem><is_ios><stempenacc>::<is_ios><u>nouninfl.is_ios1</u>is<fem><nom><sg>
 %
+%
+%
+% VERB EXAMPLE IS OUT OF DATE AND NEEDS TO BE CONVERTED TO
+% REVISED URN NOTATION.
 % input:  luw
 % output: <coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>
-%
-%
 % <coretests.n6949_0><lexent.n6949>a)na<#>lu<long><verb><w_regular>::<w_regular><w_indicative.43>a<1st><sg><pres><indic><act>

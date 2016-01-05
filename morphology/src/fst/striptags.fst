@@ -1,4 +1,4 @@
-% striptags.fst:
+% stripacc.fst:
 %
 % All symbols used in the FST:
 #include "@workdir@symbols.fst"
