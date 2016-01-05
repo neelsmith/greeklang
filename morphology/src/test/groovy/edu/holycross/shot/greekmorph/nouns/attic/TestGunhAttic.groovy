@@ -35,13 +35,13 @@ class TestGunhAttic {
     // map keyed by forms to analyze, to a unique GCN of noun form
     def expectedUnique = [
 
+    "GUNE/": [Gender.FEMININE, GrammaticalCase.NOMINATIVE, GrammaticalNumber.SINGULAR],
     "GUNAIKO/S": [Gender.FEMININE, GrammaticalCase.GENITIVE, GrammaticalNumber.SINGULAR],
-    "BOLEI": [Gender.FEMININE, GrammaticalCase.DATIVE, GrammaticalNumber.SINGULAR],
-    "BOLEN": [Gender.FEMININE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.SINGULAR],
-
-    "BOLON": [Gender.FEMININE, GrammaticalCase.GENITIVE, GrammaticalNumber.PLURAL],
-    "BOLAIS": [Gender.FEMININE, GrammaticalCase.DATIVE, GrammaticalNumber.PLURAL],
-    "BOLAS": [Gender.FEMININE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.PLURAL]
+    "GUNAIKI/": [Gender.FEMININE, GrammaticalCase.DATIVE, GrammaticalNumber.SINGULAR],
+    "GUNAI=KA": [Gender.FEMININE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.SINGULAR],
+    "GUNAIKO=N": [Gender.FEMININE, GrammaticalCase.GENITIVE, GrammaticalNumber.PLURAL],
+    "GUNAIXSI/": [Gender.FEMININE, GrammaticalCase.DATIVE, GrammaticalNumber.PLURAL],
+    "GUNAI=KAS": [Gender.FEMININE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.PLURAL]
     ]
 
     expectedUnique.keySet().each { greek ->
@@ -59,7 +59,7 @@ class TestGunhAttic {
 
     // Check also the ambiguous nom/voc form.
     def nom_voc = [GrammaticalCase.NOMINATIVE,GrammaticalCase.VOCATIVE ]
-    AtticString ambiguous = new AtticString("BOLAI")
+    AtticString ambiguous = new AtticString("GUNAI=KES")
     MorphologicalAnalysis morph = agp.parseAtticString(ambiguous)
     assert morph.analyses.size() == 2
     morph.analyses.each {
