@@ -35,7 +35,7 @@ class TestGunhAttic {
     // map keyed by forms to analyze, to a unique GCN of noun form
     def expectedUnique = [
 
-    "BOLES": [Gender.FEMININE, GrammaticalCase.GENITIVE, GrammaticalNumber.SINGULAR],
+    "GUNAIKO/S": [Gender.FEMININE, GrammaticalCase.GENITIVE, GrammaticalNumber.SINGULAR],
     "BOLEI": [Gender.FEMININE, GrammaticalCase.DATIVE, GrammaticalNumber.SINGULAR],
     "BOLEN": [Gender.FEMININE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.SINGULAR],
 

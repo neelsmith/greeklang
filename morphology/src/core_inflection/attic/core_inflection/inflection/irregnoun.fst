@@ -1,6 +1,6 @@
 %%% Irregular noun declensions
 %
-$gunh$ = <gunhattic> (<u>nouninfl\.gunh1</u>GUNE<lo>/<fem><nom><sg> |\
+$gunh$ = <gunh> (<u>nouninfl\.gunh1</u>GUNE<lo>/<fem><nom><sg> |\
   <u>nouninfl\.gunh2</u>GUNAIKO/S<fem><gen><sg> |\
   <u>nouninfl\.gunh3</u>GUNAIKI//<fem><dat><sg> |\
   <u>nouninfl\.gunh4</u>GUNAI\=KA<fem><acc><sg> |\

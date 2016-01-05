@@ -96,7 +96,7 @@ class LiteraryGreekParser {
     // Add accent to unaccented form based on analysisInfo.
     // Method is true if accented form we create matches gs.
     GreekWord accented
-    GreekWord unaccented = new GreekWord(analysisInfo.getSurfaceStem() + analysisInfo.getSurfaceInflection())
+    GreekWord retrievedForm = new GreekWord(analysisInfo.getSurfaceStem() + analysisInfo.getSurfaceInflection())
 
     AnalysisTriple triple = analysisInfo.getTriple()
     MorphForm form = triple.getMorphForm()
@@ -106,7 +106,7 @@ class LiteraryGreekParser {
     GreekString inflectionalString = new GreekString(analysisInfo.surfaceInflection)
     def inflectionSyllables = Syllable.getSyllables(inflectionalString)
     def accPattern = nounAnalysis.getPersistentAccent()
-
+    System.err.println "Acc. pattern is " + accPattern
     def maxOffset = AccentPattern.values().size() - 1
     if (debug > 0) {
       System.err.println "Checking noun w  persistent accent " + accPattern + " and ordinal " + accPattern.ordinal() //nounAnalysis.getPersistentAccent()
@@ -130,23 +130,23 @@ class LiteraryGreekParser {
 	(nounAnalysis.num == GrammaticalNumber.PLURAL)
         ) {
 	if (debug > 1) {System.err.println "Special treatment for 1st decl  ${nounAnalysis.cas}  ${nounAnalysis.num}"}
-	accented = addNounUltima(unaccented, nounAnalysis, analysisInfo.getInflectionTag())
+	accented = addNounUltima(retrievedForm, nounAnalysis, analysisInfo.getInflectionTag())
 
       } else {
         if (debug > 0) {System.err.println "NOT gen.pl., so look at " + nounAnalysis.getPersistentAccent()}
         switch (nounAnalysis.getPersistentAccent()) {
 	case PersistentAccent.STEM_PENULT:
-	accented = unaccented.accent(AccentPattern.RECESSIVE)
+	accented = retrievedForm.accent(AccentPattern.RECESSIVE)
 	break
 
 	case PersistentAccent.STEM_ULTIMA:
 	// need to check for polysyllabic ending:
-	accented =  Accent.accentWord(unaccented, AccentPattern.PENULT)
+	accented =  Accent.accentWord(retrievedForm, AccentPattern.PENULT)
 	break
 
 	case PersistentAccent.INFLECTIONAL_ENDING:
   // need to check for polysyllabic ending:
-	accented = addNounUltima(unaccented, nounAnalysis, analysisInfo.getInflectionTag())
+	accented = addNounUltima(retrievedForm, nounAnalysis, analysisInfo.getInflectionTag())
 	break
         }
       }
@@ -156,17 +156,23 @@ class LiteraryGreekParser {
       switch (nounAnalysis.getPersistentAccent()) {
       case PersistentAccent.STEM_PENULT:
       // need to check for polysyllabic ending:
-      accented = unaccented.accent(AccentPattern.RECESSIVE)
+      accented = retrievedForm.accent(AccentPattern.RECESSIVE)
       break
 
       case PersistentAccent.STEM_ULTIMA:
       // need to check for polysyllabic ending:
-      accented =  Accent.accentWord(unaccented, AccentPattern.PENULT)
+      accented =  Accent.accentWord(retrievedForm, AccentPattern.PENULT)
       break
 
       case PersistentAccent.INFLECTIONAL_ENDING:
       // need to check for polysyllabic ending:
-      accented = addNounUltima(unaccented, nounAnalysis, analysisInfo.getInflectionTag())
+      accented = addNounUltima(retrievedForm, nounAnalysis, analysisInfo.getInflectionTag())
+      break
+
+
+      case PersistentAccent.IRREGULAR_ACCENT:
+      // need to check for polysyllabic ending:
+      accented = retrievedForm
       break
       }
     }
@@ -182,6 +188,7 @@ class LiteraryGreekParser {
   /**
    */
   boolean checkAccent(GreekString utf8String, FstAnalysisParser analysisInfo) {
+
     // depends on type of analysis
     AnalysisTriple triple = analysisInfo.getTriple()
     MorphForm form = triple.getMorphForm()
@@ -204,7 +211,7 @@ class LiteraryGreekParser {
   */
   MorphologicalAnalysis parseGreekString(GreekString gkStr) {
     ArrayList analysisList  = []
-    if (debug > 0) {System.err.println "Parsing " + gkStr}
+    if (debug > 0) {System.err.println "\nParsing " + gkStr}
 
     FstToken fstToken = new FstToken(gkStr)
     if (debug > 0) {System.err.println "MorphologicalAnalysis: submit ${fstToken}"}

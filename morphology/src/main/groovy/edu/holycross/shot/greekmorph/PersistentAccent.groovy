@@ -12,7 +12,8 @@ public enum PersistentAccent {
   /** Plural */
   STEM_ULTIMA("accent persists on ultima of stem", "<stemultacc>"),
   /** Dual */
-  INFLECTIONAL_ENDING("accent persists on inflectional ending", "<inflacc>")
+  INFLECTIONAL_ENDING("accent persists on inflectional ending", "<inflacc>"),
+  IRREGULAR_ACCENT("irregular accent", "<irregacc>")
 
   private String fstToken
   private String label
