@@ -235,6 +235,12 @@ class LiteraryGreekParser {
     return checkNounAccent(utf8String, analysisInfo)
     break
 
+
+    case AnalyticalType.INDECLINABLE:
+    GreekWord retrievedForm = new GreekWord(analysisInfo.getSurfaceStem() + analysisInfo.getSurfaceInflection())
+    return retrievedForm.toString() == utf8String.toString()
+    break
+
     default:
     System.err.println "MorphologicalParser: analytical type ${triple.morphForm.getAnalyticalType()} not yet implemented"
     return false

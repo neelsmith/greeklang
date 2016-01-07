@@ -70,9 +70,11 @@ class FstAnalysisParser {
   /** Multicharacter symbols that can appear in stem strings.  */
   static ArrayList editorialTags = ["<#>", "<lo>", "<sh>", "<ro>", "<sm>"]
 
-  /** Constructor builds an object representation of information in a morphological
-  * analysis from an FST analysis string.
-  * @param analysisStr Output of fst-infl.
+  /** Constructor builds an object representation of the information
+  * in  an FST morphological analysis string.
+  * @param analysisStr Literal string output of fst-infl.
+  * @param umgr A UrnManager configured to resolve abbreviated
+  * URNs in this data set.
   */
   FstAnalysisParser(String analysisStr, UrnManager umgr) {
       this.urnMgr = umgr
@@ -82,6 +84,7 @@ class FstAnalysisParser {
       }
       stemString = cols[0]
       inflectionString = cols[1]
+      debug = 10
       if (debug > 1) {
         System.err.println "FstAP: Analyzing " + analysisStr
         System.err.println "Preparing to compute parts with\t stemstr ${stemString}\n\tinfl string ${inflectionString}"
@@ -221,6 +224,10 @@ class FstAnalysisParser {
       mf = new MorphForm(analysisPattern, noun)
       break
 
+      case AnalyticalType.INDECLINABLE:
+      System.err.println "INDECLINABLE form"
+      mf = new MorphForm(analysisPattern,new IndeclinableForm())
+      break
 
       default:
       System.err.println "Unimplemented analytical type: " + analysisPattern

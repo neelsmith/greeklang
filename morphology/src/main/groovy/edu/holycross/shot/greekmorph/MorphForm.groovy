@@ -46,6 +46,14 @@ class MorphForm {
         }
       break
 
+
+      case AnalyticalType.INDECLINABLE:
+        if (analysis instanceof IndeclinableForm) {
+        } else {
+          throw new Exception("MorphForm: ${analyticalType} not consistent with analysis of class IndeclinableForm")
+        }
+      break
+
       default:
       break
     }
