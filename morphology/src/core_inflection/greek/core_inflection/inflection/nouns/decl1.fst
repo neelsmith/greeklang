@@ -1,6 +1,5 @@
-%%% Noun declensions
-%
-% First declension patterns:
+%%% Noun declensions: first declension patterns:
+% 
 $h_hs_ending$ = <h_hs> (<u>nouninfl\.h\_hs1</u>h[<masc><fem>]<nom><sg> |\
 <u>nouninfl\.h\_hs2</u>hs[<masc><fem>]<gen><sg> |\
 <u>nouninfl\.h\_hs3</u>h\|[<masc><fem>]<dat><sg> |\
@@ -37,4 +36,4 @@ $hs_ou_ending$ = <hs_ou> (hs[<masc>][<nom><voc>]<sg> |\
 
 $decl1noun_ending$ = $a_as_ending$ | $h_hs_ending$ | $hs_ou_ending$
 
-$decl1noun_ending$ 
+$decl1noun_ending$
