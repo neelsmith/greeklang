@@ -1,5 +1,10 @@
+# Scaffolding inflectional types
+
+The results of a morphological analyses include analytical data belonging to one of eight types enumerated in `AnalyticalType`.
+
 
 ## Get a type through the FST pipeline
+
 The following mods were required to add a new analytical type (here, added indeclinable type)
 
 - modified:   build.gradle.  Added method to build appropriate stem lexicon from `.csv` source
@@ -16,15 +21,23 @@ The following mods were required to add a new analytical type (here, added indec
 
 The following mods were required to add a new analytical type (here, added indeclinable type)
 
-new file:   referenceCollections/indeclinableForm.csv
-	modified:   src/core_inflection/greek/core_inflection/inflection/indeclinfl.fst
-	modified:   src/fst/acceptors/indeclinable.fst
-	modified:   src/fst/collectionAbbreviations.csv
-	modified:   src/main/groovy/edu/holycross/shot/greekmorph/FstAnalysisParser.groovy
-	new file:   src/main/groovy/edu/holycross/shot/greekmorph/IndeclinableForm.groovy
-	modified:   src/main/groovy/edu/holycross/shot/greekmorph/LiteraryGreekParser.groovy
-	modified:   src/main/groovy/edu/holycross/shot/greekmorph/MorphForm.groovy
-	new file:   src/test/groovy/edu/holycross/shot/greekmorph/indecls/TestIndeclinable.groovy
+- √ referenceCollections/*.csv.  Collections identifying morphological forms.
+- √ src/fst/collectionAbbreviations.csv.  Register abbreviations for URNs identifying inflectional patterns.
+- √ src/main/groovy/edu/holycross/shot/greekmorph/*Form.groovy: implementations of CitableId
+    - AdjectiveForm
+    - AdverbForm
+    - IndeclinableForm
+    - InfinitiveForm
+    - NounForm
+    - ParticipleForm
+    - VerbalAdjectiveForm
+    - VerbForm
+- √ src/main/groovy/edu/holycross/shot/greekmorph/MorphForm.groovy. Generic morphological form including a form belonging to one of the 8 enumerated types.
+- src/main/groovy/edu/holycross/shot/greekmorph/FstAnalysisParser.groovy
+- new file:   
+- modified:   src/main/groovy/edu/holycross/shot/greekmorph/LiteraryGreekParser.groovy
+
+
 
 
 .wq

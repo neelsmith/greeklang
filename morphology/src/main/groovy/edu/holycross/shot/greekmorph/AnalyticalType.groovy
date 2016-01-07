@@ -12,7 +12,7 @@ public enum AnalyticalType {
   /** Participle analyzed with TVGCN */
   PARTICIPLE ("participle", "<ptcpl>"),
   /** Infinitie form of verb analyzed with TV */
-  ININITIVE ("infinitive", "<infin>"),
+  INFINITIVE ("infinitive", "<infin>"),
   /** Verbal adjective analyzed with GCN */
   VERBAL_ADJECTIVE ("verbal adjective", "<vadj>"),
   /** Noun analyzed with GCN */

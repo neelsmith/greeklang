@@ -23,20 +23,28 @@ class MorphForm {
   MorphForm(AnalyticalType analyticalType, CitableId analysis)
   throws Exception {
     switch(analyticalType) {
-      // other AnalyticalType values to check:
-      /*
-      PARTICIPLE
-      ININITIVE
-      VERBAL_ADJECTIVE
-      ADJECTIVE
-      ADVERB
-      INDECLINABLE
-      */
-
       case AnalyticalType.CVERB:
         if (analysis instanceof VerbForm) {
         } else {
           throw new Exception("MorphForm: ${analyticalType} not consistent with analysis of class VerbForm")
+        }
+      break
+      case AnalyticalType.PARTICIPLE:
+        if (analysis instanceof ParticipleForm) {
+        } else {
+          throw new Exception("MorphForm: ${analyticalType} not consistent with analysis of class ParticipleForm")
+        }
+      break
+      case AnalyticalType.INFINITIVE:
+        if (analysis instanceof InfinitiveForm) {
+        } else {
+          throw new Exception("MorphForm: ${analyticalType} not consistent with analysis of class InfinitiveForm")
+        }
+      break
+      case AnalyticalType.VERBAL_ADJECTIVE:
+        if (analysis instanceof VerbalAdjectiveForm) {
+        } else {
+          throw new Exception("MorphForm: ${analyticalType} not consistent with analysis of class VerbalAdjectiveForm")
         }
       break
       case AnalyticalType.NOUN:
@@ -45,8 +53,18 @@ class MorphForm {
           throw new Exception("MorphForm: ${analyticalType} not consistent with analysis of class NounForm")
         }
       break
-
-
+      case AnalyticalType.ADJECTIVE:
+        if (analysis instanceof AdjectiveForm) {
+        } else {
+          throw new Exception("MorphForm: ${analyticalType} not consistent with analysis of class AdjectiveForm")
+        }
+      break
+      case AnalyticalType.ADVERB:
+        if (analysis instanceof AdverbForm) {
+        } else {
+          throw new Exception("MorphForm: ${analyticalType} not consistent with analysis of class AdverbForm")
+        }
+      break
       case AnalyticalType.INDECLINABLE:
         if (analysis instanceof IndeclinableForm) {
         } else {

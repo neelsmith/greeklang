@@ -6,3 +6,8 @@ w_optative,urn:cite:gmorph:w_optative,"Inflectional patterns for optative of ome
 w_imperative,urn:cite:gmorph:w_imperative,"Inflectional patterns for imperative of omega verbs"
 nouninfl,urn:cite:gmorph:nouninfl,"Inflectional patterns for nouns"
 indeclinfl,urn:cite:gmorph:indeclinfl,"Inflectional pattern for indeclinable tokens"
+adjinfl,urn:cite:gmorph:adjinfl,"Inflectional patterns for adjectives"
+advinfl,urn:cite:gmorph:advinfl,"Inflectional patterns for adverbs"
+infinfl,urn:cite:gmorph:infinfl,"Inflectional patterns for infinitives"
+vadjinfl,urn:cite:gmorph:vadjinfl,"Inflectional patterns for verbal adjectives"
+ptcplinfl,urn:cite:gmorph:ptcplinfl,"Inflectional patterns for participles"
