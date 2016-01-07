@@ -141,16 +141,6 @@ task loadSampleRules(type: Copy) {
    }
   into "${rulesdir}"
 }
-/*
-task flattenSampleLexica(type: Copy, dependsOn: loadSampleLexica) {
-  from fileTree("${buildDir}/temp_stemsrc").files
-  into "${stemssrcdir}"
-}
-task flattenSampleRules(type: Copy, dependsOn: loadSampleRules) {
-  from fileTree("${buildDir}/temp_rulesdir").files
-  into "${rulesdir}"
-}
-*/
 task loadSampleData(dependsOn: [loadSampleLexica, loadSampleRules]) {
   description = "Copies sample data sets into active working area"
 }
@@ -178,6 +168,19 @@ buildAdjectiveStems.doLast {
 }
 
 
+
+String indeclFstStringForCols(ArrayList columns) {
+  StringBuilder indeclEntry  = new StringBuilder()
+  indeclEntry.append("<u>${columns[0]}</u>")
+  indeclEntry.append("<u>${columns[1]}</u>")
+  String stem = columns[2].replaceAll("_", "<lo>")
+  stem = stem.replaceAll("\\(", "<ro>")
+  stem = stem.replaceAll("\\)", "<sm>")
+  indeclEntry.append(stem)
+  indeclEntry.append("<indecl>")
+  indeclEntry.append("\n")
+  return indeclEntry.toString()
+}
 String nounFstStringForCols(ArrayList columns) {
   StringBuilder nounEntry  = new StringBuilder()
   nounEntry.append("<u>${columns[0]}</u>")
@@ -215,11 +218,36 @@ buildNounStems.doLast {
   }
 }
 
-task buildStems(dependsOn: [buildNounStems, buildVerbStems, buildAdjectiveStems, buildOtherStems]) {
+task buildIndeclinableStems() {
+  description = "Builds .fst files from tabular source in ${stemssrcdir}/indeclinables"
+}
+buildIndeclinableStems.doLast {
+  File lexDir = new File(projectDir,"${stemssrcdir}/indeclinables")
+  System.err.println "Look for csv files in " + lexDir
+  lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
+    File fstFile = new File(projectDir, "${stemsdir}/indeclinables-${csvFile.getName().replaceFirst(/.csv/,'.fst')}")
+    fstFile.setText("")
+    StringBuilder data = new StringBuilder()
+    def lineCount = 0
+    csvFile.eachLine { l ->
+      ArrayList cols = l.split(/,/)
+      if (lineCount > 0) {
+        data.append(indeclFstStringForCols(cols))
+      }
+      lineCount++
+    }
+    fstFile.append(data.toString())
+  }
+}
+task buildStems(dependsOn: [buildNounStems, buildVerbStems, buildAdjectiveStems, buildOtherStems, buildIndeclinableStems]) {
   description = "Builds .fst files from tabular source in data/stems-lexica"
 }
 buildStems.doLast {
   System.err.print "Built .fst files from stem data in " + stemssrcdir
+  File lexDir = new File(projectDir,"${stemssrcdir}/indeclinables")
+  System.err.println "Look for csv files in " + lexDir
+  lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
+  }
 }
 
 
@@ -298,7 +326,7 @@ cpStems.doLast {
   System.err.println "Copied stems from ${projectDir}/${stemsdir}"
 }
 
-task cpAll (dependsOn: [ cpStems, cpRules, cpSrc, cpCoreInflection]){
+task cpAll (dependsOn: [ cpStems, cpRules, cpSrc]){
   description = "Copies all source material to build area"
 }
 cpAll.doLast {

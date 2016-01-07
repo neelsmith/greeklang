@@ -17,6 +17,7 @@
 
 #verbclass#  = #omega#
 
+#othermorph# = <indecl>
 
 % TBA: all other parts of speech
 % adj
@@ -26,4 +27,4 @@
 
 
 % Union of all stemtypes
-#stemtype# = #nounclass# #verbclass#
+#stemtype# = #nounclass# #verbclass# #othermorph#
