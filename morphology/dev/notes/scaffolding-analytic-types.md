@@ -38,7 +38,7 @@ The following mods were required to add a new analytical type (here, added indec
     - VerbalAdjectiveForm
     - VerbForm
 - √ src/main/groovy/edu/holycross/shot/greekmorph/MorphForm.groovy. Generic morphological form including a form belonging to one of the 8 enumerated types.
-- src/main/groovy/edu/holycross/shot/greekmorph/FstAnalysisParser.groovy
+- √ src/main/groovy/edu/holycross/shot/greekmorph/FstAnalysisParser.groovy
 - src/main/groovy/edu/holycross/shot/greekmorph/*PARSER_FOR_ORTHOGRAPHY*.groovy
 
 
