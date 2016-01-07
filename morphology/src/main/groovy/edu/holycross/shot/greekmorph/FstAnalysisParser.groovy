@@ -229,8 +229,14 @@ class FstAnalysisParser {
       mf = new MorphForm(analysisPattern,new IndeclinableForm())
       break
 
+      case AnalyticalType.PARTICIPLE:
+      case AnalyticalType.INFINITIVE:
+      case AnalyticalType.VERBAL_ADJECTIVE:
+      case AnalyticalType.ADJECTIVE:
+      case AnalyticalType.ADVERB:
+
       default:
-      System.err.println "Unimplemented analytical type: " + analysisPattern
+      System.err.println "FAP: Unimplemented analytical type: " + analysisPattern
       break
 
     }
