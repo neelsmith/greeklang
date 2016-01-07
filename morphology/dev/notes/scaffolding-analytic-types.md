@@ -7,14 +7,19 @@ The results of a morphological analyses include analytical data belonging to one
 
 The following mods were required to add a new analytical type (here, added indeclinable type)
 
-- build.gradle.  Add method to build appropriate stem lexicon from `.csv` source.
+
+### Stem data and inflectional patterns
+- build.gradle.  Add method to build appropriate `.fst` format stem lexicon from `.csv` source.
 - √ src/core_inflection/*ORTHOGRAPHY*/core_inflection/inflection.fst.  Include  reference to implementation of inflectional type.  Done for *ORTHOGRAPHY*=greek.
 - √ src/core_inflection/*ORTHOGRAPHY*/core_inflection/inflection/*MORPHTYPE*.fst.  Inflectional rules for each type in a given orthography.  Added placeholders for *ORTHOGRAPHY*=greek.
-- src/core_inflection/*ORTHOGRAPHY*/core_inflection/makefile.  Include implementation of each type to `make` dependencies for building this orthography.
-- modified:   src/fst/acceptor.fst.  Add new type to chain of acceptors.
-- modified:   src/fst/makefile. Add make dependency for acceptor.a on new acceptor.
-- modified:   src/fst/symbols/stemtypes.fst Add new analytic type to alphabet of symbols.
+- √ src/core_inflection/*ORTHOGRAPHY*/core_inflection/makefile.  Include implementation of each type to `make` dependencies for building this orthography.
+
+### Acceptor transducers to verify format of stem-inflection pairing
+
+- src/fst/symbols/stemtypes.fst Add new analytic type to alphabet of symbols.
 - modified: src/fst/acceptors/indeclinable.fst.  Implement generic acceptor for new type (still requires implementation in a given orthograph).
+- src/fst/acceptor.fst.  Add new type to chain of acceptors.
+- modified:   src/fst/makefile. Add make dependency for acceptor.a on new acceptor.
 
 
 ## Process the FST results in the parser
