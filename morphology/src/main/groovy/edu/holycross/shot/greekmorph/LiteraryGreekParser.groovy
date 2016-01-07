@@ -54,6 +54,23 @@ class LiteraryGreekParser {
       break
     }
   }
+
+
+
+  boolean isPreAccented(String inflectionClass) {
+    switch (inflectionClass) {
+      case "irregacc":
+      case "eus_ews":
+      return true
+      break
+      default:
+      return false
+      break
+    }
+  }
+
+
+
   GreekWord addNounUltima(GreekWord gw, NounForm nounForm, String inflectionClass) {
 
     def syllables = gw.getSyllables()
@@ -91,19 +108,15 @@ class LiteraryGreekParser {
   }
 
 
-
-  boolean checkNounAccent(GreekString gs, FstAnalysisParser analysisInfo) {
-    // Add accent to unaccented form based on analysisInfo.
-    // Method is true if accented form we create matches gs.
+  GreekWord getAccentedForm(GreekString inflectionalString, FstAnalysisParser analysisInfo) {
     GreekWord accented
-    GreekWord retrievedForm = new GreekWord(analysisInfo.getSurfaceStem() + analysisInfo.getSurfaceInflection())
 
+    // Analysis data:
     AnalysisTriple triple = analysisInfo.getTriple()
     MorphForm form = triple.getMorphForm()
     NounForm nounAnalysis = form.getAnalysis()
-    String inflectionTag = analysisInfo.getInflectionTag()
+    GreekWord retrievedForm = new GreekWord(analysisInfo.getSurfaceStem() + analysisInfo.getSurfaceInflection())
 
-    GreekString inflectionalString = new GreekString(analysisInfo.surfaceInflection)
     def inflectionSyllables = Syllable.getSyllables(inflectionalString)
     def accPattern = nounAnalysis.getPersistentAccent()
     System.err.println "Acc. pattern is " + accPattern
@@ -111,18 +124,14 @@ class LiteraryGreekParser {
     if (debug > 0) {
       System.err.println "Checking noun w  persistent accent " + accPattern + " and ordinal " + accPattern.ordinal() //nounAnalysis.getPersistentAccent()
       def sylloffset = (inflectionSyllables.size() - 1)
-
-
       def max1 = sylloffset + accPattern.ordinal()
       def max2 = 2 // ie, PersistentAccent.size() - 1
-
       def shiftidx = Math.min(max1, max2)
-
-
       def allVals = PersistentAccent.values()
       System.err.println "TRY INDEX " + shiftidx + " = " + allVals[shiftidx]
     }
 
+    String inflectionTag = analysisInfo.getInflectionTag()
     if (isFirstDeclension(inflectionTag)) {
       //check special cases:  gen.pl.:
       if (
@@ -145,13 +154,12 @@ class LiteraryGreekParser {
 	break
 
 	case PersistentAccent.INFLECTIONAL_ENDING:
-  // need to check for polysyllabic ending:
+	// need to check for polysyllabic ending:
 	accented = addNounUltima(retrievedForm, nounAnalysis, analysisInfo.getInflectionTag())
 	break
         }
       }
     } else { // second or third decl:
-    //   if (isSecondDeclension(inflectionTag)) {
       if (debug > 0) {System.err.println "Second or third decl, look at " + nounAnalysis.getPersistentAccent()}
       switch (nounAnalysis.getPersistentAccent()) {
       case PersistentAccent.STEM_PENULT:
@@ -176,6 +184,35 @@ class LiteraryGreekParser {
       break
       }
     }
+    return accented
+  }
+
+  /** Determines if form retrieved from FST parser should be considered a
+   * match for GreekString gs.
+    // Add accent to form retrieved from FST based on analysisInfo.
+    // Method is true if accented form we create matches gs.
+   * @param gs GreekString submitted for analysis.
+   * @param analysisInfo Parsed results from FST parser.
+   */
+  boolean checkNounAccent(GreekString gs, FstAnalysisParser analysisInfo) {
+    // Normalized, canonically accented form to compare with gs:
+    GreekWord accented
+    // Surface form from FST parser:
+    GreekWord retrievedForm = new GreekWord(analysisInfo.getSurfaceStem() + analysisInfo.getSurfaceInflection())
+
+    String inflectionTag = analysisInfo.getInflectionTag()
+
+
+    // see if retrieved from is pre-accented.
+    //inflectionTag
+    if (isPreAccented(inflectionTag)) {
+      System.err.println "${inflectionTag} class is already accented!"
+      accented = retrievedForm
+    } else {
+      GreekString fstSurfaceString = new GreekString(analysisInfo.surfaceInflection)
+      accented = getAccentedForm(fstSurfaceString, analysisInfo)
+    }
+
 
     if (debug > 0 ) {
       System.err.println "Check noun accent by comparing ${accented} to ${gs}"

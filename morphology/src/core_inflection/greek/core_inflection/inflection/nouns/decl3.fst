@@ -1,7 +1,6 @@
-%%% Noun declensions
+%%% Noun declensions: third declension patterns:
 %
-%
-% Third declension patterns:
+% is_ios_ending example: mh=nis, mh/nios
 %
 $is_ios_ending$ = <is\_ios> (\
   <u>nouninfl\.is\_ios1</u>is[<masc><fem>]<nom><sg> |\
@@ -29,20 +28,22 @@ $is_ews_ending$ = <is_ews> (\
   eis[<masc><fem>]<acc><pl> \
 )
 
+% eus_ews_ending example: basileu/s, basile/ws
+%
 $eus_ews_ending$ = <eus_ews> (\
-  <u>nouninfl\.eus\_ews1</u>eus[<masc>][<nom><voc>]<sg> |\
-  <u>nouninfl\.eus\_ews2</u>ews[<masc>]<gen><sg> |\
-  <u>nouninfl\.eus\_ews3</u>ei[<masc>]<dat><sg> |\
-  <u>nouninfl\.eus\_ews4</u>ea[<masc>]<acc><sg> |\
-  <u>nouninfl\.eus\_ews5</u>h[<masc>]<acc><sg> |\
-  <u>nouninfl\.eus\_ews6</u>eu[<masc><fem>]<voc><sg> |\
-  <u>nouninfl\.eus\_ews7</u>eis[<masc>]<nom><pl> |\
-  <u>nouninfl\.eus\_ews8</u>ewn[<masc>]<gen><pl> |\
-  <u>nouninfl\.eus\_ews9</u>eusi[<masc>]<dat><pl> |\
-  <u>nouninfl\.eus\_ews10</u>eas[<masc>]<acc><pl> \
+  <u>nouninfl\.eus\_ews1</u>eu/s[<masc>][<nom><voc>]<sg> |\
+  <u>nouninfl\.eus\_ews2</u>e/ws[<masc>]<gen><sg> |\
+  <u>nouninfl\.eus\_ews3</u>ei\=[<masc>]<dat><sg> |\
+  <u>nouninfl\.eus\_ews4</u>e/a[<masc>]<acc><sg> |\
+  <u>nouninfl\.eus\_ews6</u>eu\=[<masc><fem>]<voc><sg> |\
+  <u>nouninfl\.eus\_ews7</u>ei\=s[<masc>]<nom><pl> |\
+  <u>nouninfl\.eus\_ews8</u>e/wn[<masc>]<gen><pl> |\
+  <u>nouninfl\.eus\_ews9</u>eu\=si[<masc>]<dat><pl> |\
+  <u>nouninfl\.eus\_ews9nu</u>eu\=sin[<masc>]<dat><pl> |\
+  <u>nouninfl\.eus\_ews10</u>e/as[<masc>]<acc><pl> \
 )
 
 $decl3noun_ending$ = $is_ios_ending$ | $is_ews_ending$ | $eus_ews_ending$
 
 
-$decl3noun_ending$ 
+$decl3noun_ending$
