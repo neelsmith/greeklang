@@ -5,7 +5,7 @@ layout: page
 
 - [What's here](what)?
 - Why do we need this?
-- How can I evaluate these projects?
+- [How can I evaluate these projects](evaluate)?
 - Why code for the JVM?
 - What the heck are the *Canones* of Theodosius of Alexandria?
 
