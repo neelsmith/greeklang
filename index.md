@@ -6,7 +6,7 @@ layout: page
 - [What's here](what)?
 - Why do we need this?
 - [How can I evaluate these projects](evaluate)?
-- Why code for the JVM?
+- [Why code for the JVM?](why-jvm)
 - What the heck are the *Canones* of Theodosius of Alexandria?
 
 ## Individual libraries
