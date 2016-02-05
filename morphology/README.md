@@ -29,4 +29,4 @@ You can use any of the Stuttgart FST tools directly with the compiled binary in 
     2. conjugated verb: first person singular present subjunctive active
     >
 
-or in batch mode `greek.sh [FILE|DIRECTORY]+`.  See the documentation for details of input and output options.
+or in batch mode `greek.sh [FILE|DIRECTORY]+`.  See the [documentation](http://neelsmith.github.io/greeklang/morphology/documentation/) for details of input and output options.
