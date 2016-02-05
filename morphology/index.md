@@ -3,16 +3,21 @@ title: Greek morphology
 layout: page
 ---
 
-In development. Initial release expected in spring, 2016.
+In active development. Initial 1.0 release expected in May, 2016.
 
 - requires:
     - java version >= 7
     - Stuttgart Finite State Transducer tools (<http://www.cis.uni-muenchen.de/~schmid/tools/SFST/>)
 
-## To be added##
 
-- version: x.x.x. [Release notes](releases).
+
+- [release notes](releases).
 - [documentation](documentation)
+- [github repository](https://github.com/neelsmith/greeklang/morphology)
+
+
+## To be added with 1.0 release
+
 - live specifications
 - API docs
 - maven identifiers

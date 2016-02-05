@@ -4,7 +4,7 @@ layout: page
 ---
 
 
-- Background: [designing a morphological parser for ancient Greek](background)
+
 - Overvew: [what the system is, how it works](overview)
 - [Building and testing your parser](building)
 - The citable data sets it uses
