@@ -120010,7 +120010,7 @@
 
 
 :le:sa/bbaton
-:no:sa/bbat	os_ou neut
+:no:sa/bbat os_ou neut
 
 :le:sabba/twsis
 :no:sabbatws is_ews fem
