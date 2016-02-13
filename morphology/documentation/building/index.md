@@ -4,7 +4,9 @@ layout: page
 ---
 
 
+## Configuration
 
+- [configuration](configuration)
 
 ## Prerequisites
 
@@ -33,5 +35,3 @@ Many unit tests.  Build parsers for both Attic and literary Greek orthography wi
 
 
     fst-mor build/$ORTHO/greek.a
-
-    
