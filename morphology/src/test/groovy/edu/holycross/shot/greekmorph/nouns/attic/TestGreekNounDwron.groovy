@@ -10,7 +10,7 @@ import static groovy.test.GroovyAssert.shouldFail
 /** Tests demonstrating parsing of nouns from Unicode string.
 * <u>lsjpool.n29828_0</u><u>lexent.n29828</u>dwr<noun><neut><os_ou><stemultacc>
 */
-class TestDwron {
+class TestGreekNounDwron {
   // External files used in didactic tests:
   //
   // CSV files with URN abbreviations for stems and inflectional rules

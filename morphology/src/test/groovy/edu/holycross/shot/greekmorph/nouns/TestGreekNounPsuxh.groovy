@@ -8,7 +8,7 @@ import static groovy.test.GroovyAssert.shouldFail
 
 /** Tests demonstrating parsing of nouns from Unicode string.
 */
-class TestPsuxh {
+class TestGreekNounPsuxh {
 
   // External files used in didactic tests:
   // FST toolkit's batch parser:
@@ -59,7 +59,7 @@ class TestPsuxh {
 
       // and (3) an explanation for the analysis
       AnalysisExplanation explanation = morphAnalysis.getAnalysisExplanation()
-      String expectedStemExplanation =  "urn:cite:gmorph:coretests.n67485_0"
+      String expectedStemExplanation =  "urn:cite:gmorph:lsjpool.n67485_0"
       //assert explanation.stem.toString() == expectedStemExplanation
 
 

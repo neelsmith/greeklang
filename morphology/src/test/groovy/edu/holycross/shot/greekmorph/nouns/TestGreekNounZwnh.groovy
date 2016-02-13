@@ -8,7 +8,7 @@ import static groovy.test.GroovyAssert.shouldFail
 
 /** Tests demonstrating parsing of nouns from Unicode string.
 */
-class TestZwnh {
+class TestGreekNounZwnh {
 
   // External files used in didactic tests:
   //
@@ -120,7 +120,7 @@ class TestZwnh {
 
       // and (3) an explanation for the analysis
       AnalysisExplanation explanation = morphAnalysis.getAnalysisExplanation()
-      String expectedStemExplanation =  "urn:cite:gmorph:coretests.n46456_0"
+      String expectedStemExplanation =  "urn:cite:gmorph:lsjpool.n46456_0"
       assert explanation.stem.toString() == expectedStemExplanation
       // Inflectional patterns are explained by a URN identifying the
       // the inflectional rule applied to the stem
