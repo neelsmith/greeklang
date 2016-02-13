@@ -8,7 +8,7 @@ import static groovy.test.GroovyAssert.shouldFail
 
 
 /** Tests demonstrating parsing of nouns from Unicode string.
-* <u>coretests.n29828_0</u><u>lexent.n29828</u>dwr<noun><neut><os_ou><stemultacc>
+* <u>lsjpool.n29828_0</u><u>lexent.n29828</u>dwr<noun><neut><os_ou><stemultacc>
 */
 class TestDwron {
   // External files used in didactic tests:
@@ -137,7 +137,7 @@ class TestDwron {
 
       // and (3) an explanation for the analysis (an AnalysisExplanation)
       AnalysisExplanation explanation = morphAnalysis.getAnalysisExplanation()
-      String expectedStemExplanation =  "urn:cite:gmorph:coretests.n29828_0"
+      String expectedStemExplanation =  "urn:cite:gmorph:lsjpool.n29828_0"
       assert explanation.stem.toString() == expectedStemExplanation
       String expectedInflectionExplanation = "urn:cite:gmorph:nouninfl.os_ou2"
       assert explanation.inflection.toString() == expectedInflectionExplanation
