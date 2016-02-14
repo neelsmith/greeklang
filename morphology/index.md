@@ -11,7 +11,7 @@ In active development. Initial 1.0 release expected in May, 2016.
 
 
 
-- [release notes](releases).
+- [release notes](releases)
 - [documentation](documentation)
 - [github repository](https://github.com/neelsmith/greeklang/morphology)
 
