@@ -12,7 +12,7 @@ $dictionary$ = <u>lsjpool\.n47039\_0</u><u>lexent\.n47039</u>ni<lo>ka<lo>s<noun>
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%% COMBINE ACCEPTOR AND URN SQUASHER IN ONE TRANSDUCER:
 %
 $=nounclass$ = [#nounclass#]
@@ -25,22 +25,15 @@ $squashverburn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>
 
 
 % Union of all acceptor squashers:
-$squasher$ = $squashverburn$ | $squashnounurn$
+$acceptor$ = $squashverburn$ | $squashnounurn$
 
+%% Strip out all tags:
 %
-%%%%%%%%%%%%%%%%%%%% STRIP OUT ALL TAGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-#analysissymbol# = #editorial# #urntag# <noun><verb> #morphtag# #stemtype#  #separator#
-#surfacesymbol# = #character#
+#analysissymbol# = #editorial# #urntag# <noun><verb> #morphtag# #stemtype#  #separator# #accent#
+#surfacesymbol# = #letter# #diacritic#  #breathing#
 ALPHABET = [#surfacesymbol#] [#analysissymbol#]:<>
 $stripsym$ = .+
 
 
-
-%% Strip accents in irregulars and fixed accent words:
-#bareletter# = #letter# #diacritic#  #breathing#
-ALPHABET = [#bareletter#] [#accent#]:<>
-$stripacc$ = .+
-
-%% The canonical pipeline: morph data -> acceptor -> parser/stripper:
-$dictionary$ || $squasher$ || $stripsym$ || $stripacc$
+%% The canonical pipeline: morph data -> acceptor
+$dictionary$ || $acceptor$ || $stripsym$
