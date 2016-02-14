@@ -38,14 +38,14 @@ $a_as_ending$ = <a_as> (<u>nouninfl\.a\_as1</u>a<lo><fem><nom><sg> |\
   <u>nouninfl\.a\_as9</u>a<lo>s<fem><acc><pl> \
 )
 
-$hs_ou_ending$ = <hs_ou> (<u>nouninfl\.hs\_ou1</u>hs[<masc>][<nom><voc>]<sg> |\
-  <u>nouninfl\.hs\_ou2</u>ou[<masc>]<gen><sg> |\
-  <u>nouninfl\.hs\_ou3</u>h\|[<masc>]<dat><sg> |\
-  <u>nouninfl\.hs\_ou4</u>hn[<masc>]<acc><sg> |\
-  <u>nouninfl\.hs\_ou5</u>ai[<masc>]<nom><pl> |\
-  <u>nouninfl\.hs\_ou6</u>wn[<masc>]<gen><pl> |\
-  <u>nouninfl\.hs\_ou7</u>ais|[<masc>]<dat><pl> |\
-  <u>nouninfl\.hs\_ou8</u>as[<masc>]<acc><pl> \
+$hs_ou_ending$ = <hs_ou> (<u>nouninfl\.hs\_ou1</u>hs<masc>[<nom><voc>]<sg> |\
+  <u>nouninfl\.hs\_ou2</u>ou<masc><gen><sg> |\
+  <u>nouninfl\.hs\_ou3</u>h\|<masc><dat><sg> |\
+  <u>nouninfl\.hs\_ou4</u>hn<masc><acc><sg> |\
+  <u>nouninfl\.hs\_ou5</u>ai<masc><nom><pl> |\
+  <u>nouninfl\.hs\_ou6</u>wn<masc><gen><pl> |\
+  <u>nouninfl\.hs\_ou7</u>ais|<masc><dat><pl> |\
+  <u>nouninfl\.hs\_ou8</u>as<masc><acc><pl> \
 )
 
 $decl1noun_ending$ = $a_as_ending$ | $a_hs_ending$ | $h_hs_ending$ | $hs_ou_ending$
