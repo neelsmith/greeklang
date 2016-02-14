@@ -13,12 +13,19 @@
 % Test an irregular form:
 %%$target$ = <u>coretests\.n23069\_0</u><u>lexent\.n23069</u><noun><fem><gunh><irregacc>\:\:<gunh><u>nouninfl\.gunh1</u>gunh/<fem><nom><sg>
 
-$dictionary$ = <u>coretests\.n23069\_0</u><u>lexent\.n23069</u><noun><fem><gunh><irregacc>\:\:<gunh><u>nouninfl\.gunh2</u>gunaiko/s<fem><gen><sg>
+%% $dictionary$ = <u>coretests\.n23069\_0</u><u>lexent\.n23069</u><noun><fem><gunh><irregacc>\:\:<gunh><u>nouninfl\.gunh2</u>gunaiko/s<fem><gen><sg>
 
 
 
 
+% $dictionary$ = <u>lsjpool\.n47786\_0</u><u>lexent\.n47786</u>qalatt<noun><fem><a\_hs><stempenacc>\:\:<a\_hs><u>nouninfl\.a\_hs8</u>ais<fem><dat><pl>
 
+% cp'able:
+% <u>lsjpool.n47786_0</u><u>lexent.n47786</u>qalatt<noun><fem><a_hs><stempenacc>::<a_hs><u>nouninfl.a_hs8</u>ais<fem><dat><pl>
+
+
+
+$dictionary$ =  <u>lsjpool\.n47039\_0</u><u>lexent\.n47039</u>ni<lo>k<noun><fem><h_hs><stemultacc>\:\:<h\_hs><u>nouninfl\.h\_hs9</u>a<lo>s<fem><acc><pl> |  <u>lsjpool\.n47039\_0</u><u>lexent\.n47039</u>ni<lo>k<noun><fem><h\_hs><stemultacc>\:\:<h\_hs><u>nouninfl\.h_hs8</u>ais<fem><dat><pl>
 
 
 %
@@ -31,7 +38,7 @@ $noun$ = <u>[#urnchar#]+ [#period#] [#urnchar#]+</u><u>lexent[#period#][#urnchar
 %
 %%%%%%%%%%%%%%%%%%%% STRIP OUT VALUE STRINGS FROM URNS %%%%%%%%%%%%%%%%%%%%%%%%
 %
-$squashurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]*<noun>$=gender$ $=nounclass$  [#persistacc#]  $separator$+ $=nounclass$ <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> [#stemchars#]* $=gender$ $case$ $number$
+$squashurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+<noun>$=gender$ $=nounclass$  [#persistacc#]  $separator$+ $=nounclass$ <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> [#stemchars#]* $=gender$ $case$ $number$
 
 %
 %%%%%%%%%%%%%%%%%%%% STRIP OUT ALL TAGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -39,7 +46,7 @@ $squashurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#ur
 #analysissymbol# = #urn# #editorial# #morphtag# #stemtype# #separator# #urntag#
 #surfacesymbol# = #character#
 ALPHABET = [#surfacesymbol#] [#analysissymbol#]:<>
-$striptag$ = .*
+$striptag$ = .+
 
 
 
