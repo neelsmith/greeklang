@@ -1,7 +1,21 @@
 ---
 layout: page
-title: Dynamically supplied dictionaries of lexical entities
+title: Dynamically supplied dictionaries of morphological stems
 ---
+
+
+The "morphological lexicon" is a collection of stem forms, citable by URN value, that will be used to parse a given set of tokens.  Each entry in the lexicon of stems identifies what lexical entity ("dictionary word") the stem belongs to, and what inflectional category the stem belongs to. [ADD LINK TO FULL LIST OF INFLECTIONAL CATEGORIES.]  A verb :
+
+- stem of tuptw belongs to lemma for tuptw
+- belongs to infl class "2ndpp" for example...
+
+The record for each stem also includes any other dictionary information needed by the morphological parsing system.  Both nouns and adjectives, for example, must identify what syllable accent persists on; noun stems will also have a gender, which adjective stems will not.
+
+
+This collection can be maintained in simple text files in `.csv`  format, organized into distinct sections, divided roughly according to "parts of speech".  Each section has a specific layout of columns that depends on the kind of morphological information required for that part of speech.
+
+
+
 
 Options: `.csv` format, or directly compose `.fst` lexica
 
