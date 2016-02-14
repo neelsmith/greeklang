@@ -11,10 +11,11 @@
 #diaeresis# = \+
 #accent# = \/\=
 #diacritic# = #diaeresis# #accent#
+#breathing# = <sm><ro>
 
 % Accents should only be included in entries for
 % irregular forms!
-#character# = #letter# #diacritic# #accent#
+#character# = #letter# #diacritic# #accent# #breathing#
 $character$ = [#character#]
 
 % Additional editorial symbols used in stem files:

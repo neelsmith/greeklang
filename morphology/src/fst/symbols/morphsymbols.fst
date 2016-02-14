@@ -37,6 +37,11 @@ $gender$ = [#gender#]
 $case$ = [#case#]
 $number$ = [#number#]
 
+$person$ = [#person#]
+$tense$ = [#tense#]
+$mood$ = [#mood#]
+$voice$ = [#voice#]
+
 
 % Identity variables for the transducers:
 $=gender$ = [#gender#]

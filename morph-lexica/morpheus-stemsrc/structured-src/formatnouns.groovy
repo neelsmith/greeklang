@@ -1,6 +1,15 @@
-// Read morpheus stem file, extract nouns,
-// format for greeklang parser.
+// Read morpheus stem file, extract nouns;
+// attempt to match with LSJ identifier;
+// format output for greeklang parser.
+//
+// usage: grovy formatnouns.groovy LSJFILE STEMFILE
+String base = "lexent."
 
+
+def idMap = [:]
+
+File lsjFile = new File(args[0])
+File stemsFile = new File(args[1])
 
 ArrayList getGenderDeclAccent (ArrayList lst){
   ArrayList decls = ["a_hs", "c_gos", "c_kos", "c_ktos", "eus_ews", "gc_ggos", "h_hs", "hs_eos", "hs_ou", "is_ews", "is_idos", "ma_matos", "n_nos", "os_ou", "r_ros", "s_dos", "s_qos", "s_tos", "us_uos", "w_oos", "wn_onos", "wn_ontos", "wr_oros"]
@@ -24,10 +33,23 @@ ArrayList getGenderDeclAccent (ArrayList lst){
   return [gender, decl, accent]
 }
 
+
+
+// Load up map of LSJ IDs:
+lsjFile.eachLine {
+  def cols = it.split(/,/)
+  String lsjid = cols[0]
+  String lemm = cols[1]
+  idMap[lemm] = lsjid
+}
+
+String currentLemma = ""
 println "StemUrn,LexicalEntity,Stem,Gender,InflClass,Accent,Tags"
-File f = new File(args[0])
-f.eachLine { l ->
-  if (l ==~ /^:no:.+$/) {
+stemsFile.eachLine { l ->
+  if (l ==~ /^:le:.+$/) {
+    currentLemma = l.replaceFirst(":le:", '')
+    currentLemma = currentLemma.replaceAll(/[ ]+/,'')
+  } else if (l ==~ /^:no:.+$/) {
 
     ArrayList cols = l.split(/[ ]+/)
     String stem = cols[0].replaceFirst (":no:", '')
@@ -41,7 +63,16 @@ f.eachLine { l ->
 
       }
 
-      println "StemUrn,LexicalEntity,${stem},${info[0]},${info[1]},${accPattern},"
+
+      String lexEnt
+
+      if (idMap.keySet().contains(currentLemma)) {
+        lexEnt = idMap[currentLemma]
+      } else {
+        lexEnt = "XXX"
+      }
+      String stemUrn = "${lexEnt}_0"
+      println "lsjpool.${stemUrn},lexent.${lexEnt},${stem},${info[0]},${info[1]},${accPattern},"
 
     }
   }

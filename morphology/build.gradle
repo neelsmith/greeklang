@@ -114,7 +114,7 @@ String tagsFstStatement() {
   return "#extratag# = <epic><hmt><ml>"
 }
 
-
+/*
 // should read all .fst files in stemsdir and read list of stem URNs
 String getStemUrns() {
   return "<coretests.n64316_0><coretests.n6949_0><coretests.n81672_0><coretests.n88464_0><coretests.n87956_0><coretests.n786_0>"
@@ -125,7 +125,7 @@ String getLexEntUrns() {
   return "<lexent.n47950><lexent.n71065><lexent.n19546><lexent.n50824><lexent.n67485><lexent.n84494><lexent.n64316><lexent.n6949><lexent.n81672><lexent.n88464><lexent.n87956><lexent.n786>"
 }
 
-
+*/
 
 task loadSampleLexica(type: Copy) {
   description = "Copies sample lexicon data in .csv files to active work area."
@@ -148,11 +148,46 @@ loadSampleData.doLast {
   System.err.println "Sample data sets copied into loading zone."
 }
 
+
+
+
+String verbFstStringForCols(ArrayList columns) {
+
+  StringBuilder verbEntry  = new StringBuilder()
+  verbEntry.append("<u>${columns[0]}</u>")
+  verbEntry.append("<u>${columns[1]}</u>")
+
+  String stem = columns[2].replaceAll("_", "<lo>")
+  stem = stem.replaceAll("\\(", "<ro>")
+  stem = stem.replaceAll("\\)", "<sm>")
+  verbEntry.append(stem)
+  verbEntry.append("<verb>")
+  verbEntry.append("<${columns[3]}>")
+  //verbEntry.append("<${columns[4]}>")
+  verbEntry.append("\n")
+  return verbEntry.toString()
+
+}
 task buildVerbStems() {
   description = "Builds .fst files from tabular source for both simplex and compound verbs"
 }
 buildVerbStems.doLast {
-  System.err.println "buildVerbStems not yet implemented."
+  File lexDir = new File(projectDir,"${stemssrcdir}/verbs-simplex")
+  System.err.println "Look for csv files in " + lexDir
+  lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
+    File fstFile = new File(projectDir, "${stemsdir}/verbs-${csvFile.getName().replaceFirst(/.csv/,'.fst')}")
+    fstFile.setText("")
+    StringBuilder data = new StringBuilder()
+    def lineCount = 0
+    csvFile.eachLine { l ->
+      ArrayList cols = l.split(/,/)
+      if (lineCount > 0) {
+        data.append(verbFstStringForCols(cols))
+      }
+      lineCount++
+    }
+    fstFile.append(data.toString())
+  }
 }
 task buildOtherStems() {
   description = "Builds .fst files from tabular source in data/stems-lexica/other"
@@ -265,8 +300,8 @@ task cpSrc (type: Copy, dependsOn: buildStems) {
       "fstrules": rulesFstStatement(new File("${projectDir}/${rulesdir}")),
       "extramakerules": rulesMakeStatement(new File("${projectDir}/${rulesdir}")),
       "extratags": tagsFstStatement(),
-      "stemurn": getStemUrns(),
-      "lexicon": getLexEntUrns()
+      //"stemurn": getStemUrns(),
+      //"lexicon": getLexEntUrns()
      ])
 }
 
