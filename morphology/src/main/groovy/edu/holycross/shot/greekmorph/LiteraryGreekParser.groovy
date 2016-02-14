@@ -218,7 +218,7 @@ class LiteraryGreekParser {
 
     if (debug > 0 ) {
       System.err.println "Check noun accent by comparing ${accented} to ${gs}"
-      System.err.println ("(removing quanity markers to get " + accented.toString().replaceAll("[_^]","") )
+      System.err.println "(removing quanity markers to get " + accented.toString().replaceAll("[_^]","") + ")"
     }
     return (accented.toString().replaceAll("[_^]","") == gs.toString())
   }
