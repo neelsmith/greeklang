@@ -37,16 +37,16 @@ class TestGreekNounPoliths {
           // map keyed by forms to analyze, to a unique GCN of noun form
           def expectedUnique = [
 
-          "πολίτης": [Gender.FEMININE, GrammaticalCase.NOMINATIVE, GrammaticalNumber.SINGULAR],
-          "πολίτου": [Gender.FEMININE, GrammaticalCase.GENITIVE, GrammaticalNumber.SINGULAR],
-          "πολίτῃ": [Gender.FEMININE, GrammaticalCase.DATIVE, GrammaticalNumber.SINGULAR],
-          "πολίτην": [Gender.FEMININE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.SINGULAR],
-          "πολῖτα": [Gender.FEMININE, GrammaticalCase.VOCATIVE, GrammaticalNumber.SINGULAR],
+          "πολίτης": [Gender.MASCULINE, GrammaticalCase.NOMINATIVE, GrammaticalNumber.SINGULAR],
+          "πολίτου": [Gender.MASCULINE, GrammaticalCase.GENITIVE, GrammaticalNumber.SINGULAR],
+          "πολίτῃ": [Gender.MASCULINE, GrammaticalCase.DATIVE, GrammaticalNumber.SINGULAR],
+          "πολίτην": [Gender.MASCULINE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.SINGULAR],
+          "πολῖτα": [Gender.MASCULINE, GrammaticalCase.VOCATIVE, GrammaticalNumber.SINGULAR],
 
 
-          "πολιτῶν": [Gender.FEMININE, GrammaticalCase.GENITIVE, GrammaticalNumber.PLURAL],
-          "πολίταις": [Gender.FEMININE, GrammaticalCase.DATIVE, GrammaticalNumber.PLURAL],
-          "πολίτας": [Gender.FEMININE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.PLURAL]
+          "πολιτῶν": [Gender.MASCULINE, GrammaticalCase.GENITIVE, GrammaticalNumber.PLURAL],
+          "πολίταις": [Gender.MASCULINE, GrammaticalCase.DATIVE, GrammaticalNumber.PLURAL],
+          "πολίτας": [Gender.MASCULINE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.PLURAL]
           ]
 
           expectedUnique.keySet().each { greek ->
@@ -74,7 +74,7 @@ class TestGreekNounPoliths {
               // can't know ordering of analyses, but case must be
               // ONE of these two!
               assert nom_voc.contains(formIdentification.getCas())
-              assert formIdentification.getGender() == Gender.FEMININE
+              assert formIdentification.getGender() == Gender.MASCULINE
               assert formIdentification.getNum() == GrammaticalNumber.PLURAL
           }*/
         }
