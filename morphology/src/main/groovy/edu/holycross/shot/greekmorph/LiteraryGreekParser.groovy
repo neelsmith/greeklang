@@ -35,9 +35,13 @@ class LiteraryGreekParser {
 
   boolean isFirstDeclension(String inflectionClass) {
     switch (inflectionClass) {
-      case "h_hs":
+      //<a_hs><a_as><h_hs><hs_ou><as_ou>
+
       case "a_hs":
       case "a_as":
+      case "h_hs":
+      case "hs_ou":
+      case "as_ou":
       return true
       break
 
