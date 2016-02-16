@@ -15,12 +15,12 @@ $w_presfut_indic_ending$ = <w_regular> ( \
     ete<2nd><pl>[<pres><fut>]<indic><act><u>verbinfl\.w\_indicative5</u> |\
     ousi<3rd><pl>[<pres><fut>]<indic><act><u>verbinfl\.w\_indicative6</u> |\
     \
-    omai<1st><sg>[<pres><fut>]<indic><mid><u>verbinfl\.w\_indicative7</u> |\
-    ei<2nd><sg>[<pres><fut>]<indic><mid><u>verbinfl\.w\_indicative8</u> |\
-    etai<3rd><sg>[<pres><fut>]indic><mid><u>verbinfl\.w\_indicative9</u> |\
-    omeqa<1st><pl>[<pres><fut>]<indic><mid><u>verbinfl\.w\_indicative10</u> |\
-    esqe<2nd><pl>[<pres><fut>]<indic><mid><u>verbinfl\.w\_indicative11</u> |\
-    ontai<3rd><pl>[<pres><fut>]<indic><mid><u>verbinfl\.w\_indicative12</u>  |\
+    omai<1st><sg>[<pres><fut>]<indic>[<mid><pass>]<u>verbinfl\.w\_indicative7</u> |\
+    ei<2nd><sg>[<pres><fut>]<indic>[<mid><pass>]<u>verbinfl\.w\_indicative8</u> |\
+    etai<3rd><sg>[<pres><fut>]indic>[<mid><pass>]<u>verbinfl\.w\_indicative9</u> |\
+    omeqa<1st><pl>[<pres><fut>]<indic>[<mid><pass>]<u>verbinfl\.w\_indicative10</u> |\
+    esqe<2nd><pl>[<pres><fut>]<indic>[<mid><pass>]<u>verbinfl\.w\_indicative11</u> |\
+    ontai<3rd><pl>[<pres><fut>]<indic>[<mid><pass>]<u>verbinfl\.w\_indicative12</u>  |\
     \
     hsomai<1st><sg><fut><indic><pass><u>verbinfl\.w\_indicative67</u> |\
     hsei<2nd><sg><fut><indic><pass><u>verbinfl\.w\_indicative68</u> |\
