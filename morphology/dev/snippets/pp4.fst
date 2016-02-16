@@ -1,49 +1,45 @@
-% Get these strings past pp6:
-%
-%
+%%% This transducer should PRECEDE generic verb acceptor/squasher.
+
+#include "../../build/greek/symbols.fst"
+
+% Cross one verb with full inflection:
+
+$dictionary$ =  <u>lsjpool\.n786\_0</u><u>lexent\.n786</u>lu<verb> <w_regular> \:\:  "<../../build/greek/core_inflection/inflection.a>"
+
+%%<w_regular>  a<1st><sg><pft><indic><act><u>verbinfl\.w\_indicative43</u>
 
 
-%%%%
-#include "../../build/fst/symbols.fst"
 
+
+
+
+% 2nd and 3rd principal part
 #4th_5th_tense# = <pft><plupft>
 
 
-%%%%% 4th and 5th principal parts %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Extend stem with kappa in 4th (active voice):
-#=ltr# = #stemchars#
-ALPHABET = [#letter#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extratag#] [#vowelquant#]
-$kappa$ = {[#=ltr#]}:{[#=ltr#]k} ^-> ([#urn#]+[#stemchars#]+ __ <verb><w_regular>[#extratag#]*[\:]+<w_regular>[#urn#][#letter#]*[#person#][#number#][#4th_5th_tense#][#mood#]<act>)
+% Extend stem with sigma after a final vowel:
+ALPHABET = [#editorial# #urntag# #urnchar# <verb> #morphtag# #stemtype#  #separator# #accent# #letter# #diacritic#  #breathing# \. #stemchars# ]
 
-
-% Add reduplication on both 4th and 5th parts:
-ALPHABET = [#letter#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extratag#] [#vowelquant#]
-$redupe$ = {[#=ltr#]}:{[#=ltr#]e[#=ltr#]}  ^-> ([#urn#]+[#inmorpheme#]*<#> __ [#stemchars#]+<verb><w_regular>[#extratag#]*[\:]+<w_regular>[#urn#][#letter#]*[#person#][#number#][#4th_5th_tense#][#mood#][#voice#])
-
-$4th_5th_pp$ =   $kappa$ || $redupe$
-$4th_5th_pp$
-
-
-% Works with both 4-5 parts and passes through 1st part:
-% $kappa$
-
-% Works with both 4-5 parts and passes through 1st part:
-% $redupe$
+#=ltr# = #vowel#
 
 
 
 
+$kappa$ = {[#=ltr#]}:{[#=ltr#]k} ^->  (<u>[#urnchar#]+[#period#][#urnchar#]+</u><u>[#urnchar#]+[#period#][#urnchar#]+</u>[#stemchars#]+ __ <verb><w_regular>\:\:<w_regular>[#stemchars#]+[#person#][#number#][#4th_5th_tense#][#mood#][#voice#]<u>[#urnchar#]+[#period#][#urnchar#]+</u> )
 
 
+#=cons# = #consonant#
+$redupe$ = {[#=cons#]}:{[#=cons#]e[#=cons#]} ^->  (<u>[#urnchar#]+[#period#][#urnchar#]+</u><u>[#urnchar#]+[#period#][#urnchar#]+</u> __ [#stemchars#]+ <verb><w_regular>\:\:<w_regular>[#stemchars#]+[#person#][#number#][#4th_5th_tense#][#mood#][#voice#]<u>[#urnchar#]+[#period#][#urnchar#]+</u> )
 
 
-%% Strings to test:
-%
-% Pass through a first part (unmodified stem):
-% <coretests.n6949_0><lexent.n6949>a<sm>na<#>lu<lo><verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>
-%
-% FOURTH AND FIFTH PARTS:
-%
-%<coretests.n64316_0><lexent.n64316><#>lelu<lo>k<verb><w_regular>::<w_regular><w_indicative.43>a<1st><sg><pft><indic><act>
-%
-% <coretests.n6949_0><lexent.n6949>a<sm>na<#>leluk<verb><w_regular>::<w_regular><w_indicative.43>a<1st><sg><pft><indic><act>
+% Squash URN and strip symbol tags:
+
+$=verbclass$ = [#verbclass#]
+$squashverburn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+<verb>$=verbclass$ $separator$+$=verbclass$ [#stemchars#]* [#person#] [#number#] [#tense#] [#mood#] [#voice#]<u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u>
+
+#analysissymbol# = #editorial# #urntag# <noun><verb> #morphtag# #stemtype#  #separator# #accent#
+#surfacesymbol# = #letter# #diacritic#  #breathing#
+ALPHABET = [#surfacesymbol#] [#analysissymbol#]:<>
+$stripsym$ = .+
+
+$dictionary$  || $redupe$ || $kappa$ || $squashverburn$  || $stripsym$
