@@ -16,7 +16,3 @@
 %#include "@workdir@extratags.fst"
 
 @extratags@
-
-
-% URN ID values
-#include "@workdir@urns.fst"

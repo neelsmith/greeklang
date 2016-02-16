@@ -4,7 +4,7 @@
 #include "@workdir@symbols.fst"
 
 #=ltr# = a-z
-ALPHABET = [#letter#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extratag#] [#persistacc#]
-$2nd_3rd_pp$ = {[#=ltr#]}:{[#=ltr#]s} ^-> ([#urn#]+[#stemchars#]+ __ <verb><w_regular>[#extratag#]*[\:]+<infin>[#letter#]+[<aor><fut><futpft>][<act><mid>][#persistacc#])
+ALPHABET = [#letter#] [#morphtag#] [\:] [<#>] [#stemtype#] [#extratag#] [#persistacc#]
+$2nd_3rd_pp$ = {[#=ltr#]}:{[#=ltr#]s} ^-> ([#stemchars#]+ __ <verb><w_regular>[#extratag#]*[\:]+<infin>[#letter#]+[<aor><fut><futpft>][<act><mid>][#persistacc#])
 
 $2nd_3rd_pp$

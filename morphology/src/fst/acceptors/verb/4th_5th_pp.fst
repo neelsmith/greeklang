@@ -15,20 +15,20 @@
 
 % Add reduplication on 4th and 5th parts:
 #=ltr# = a-z
-ALPHABET = [#letter#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extratag#]
+ALPHABET = [#letter#] [#morphtag#]  [\:] [<#>] [#stemtype#] [#extratag#]
 
 
 %%%%% 4th and 5th principal parts %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Extend stem with kappa in 4th (active voice):
 % Extend stem with kappa in 4th (active voice):
 #=ltr# = #stemchars#
-ALPHABET = [#letter#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extratag#] [#vowelquant#]
-$kappa$ = {[#=ltr#]}:{[#=ltr#]k} ^-> ([#urn#]+[#stemchars#]+ __ <verb><w_regular>[#extratag#]*[\:]+<w_regular>[#urn#][#letter#]*[#person#][#number#][#4th_5th_tense#][#mood#]<act>)
+ALPHABET = [#letter#] [#morphtag#] [\:] [<#>] [#stemtype#] [#extratag#] [#vowelquant#]
+$kappa$ = {[#=ltr#]}:{[#=ltr#]k} ^-> ([#stemchars#]+ __ <verb><w_regular>[#extratag#]*[\:]+<w_regular>[#letter#]*[#person#][#number#][#4th_5th_tense#][#mood#]<act>)
 
 
 % Add reduplication on both 4th and 5th parts:
-ALPHABET = [#letter#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extratag#] [#vowelquant#]
-$redupe$ = {[#=ltr#]}:{[#=ltr#]e[#=ltr#]}  ^-> ([#urn#]+[#inmorpheme#]*<#> __ [#stemchars#]+<verb><w_regular>[#extratag#]*[\:]+<w_regular>[#urn#][#letter#]*[#person#][#number#][#4th_5th_tense#][#mood#][#voice#])
+ALPHABET = [#letter#] [#morphtag#]  [\:] [<#>] [#stemtype#] [#extratag#] [#vowelquant#]
+$redupe$ = {[#=ltr#]}:{[#=ltr#]e[#=ltr#]}  ^-> ([#inmorpheme#]*<#> __ [#stemchars#]+<verb><w_regular>[#extratag#]*[\:]+<w_regular>[#letter#]*[#person#][#number#][#4th_5th_tense#][#mood#][#voice#])
 
 $4th_5th_pp$ =   $kappa$ || $redupe$
 $4th_5th_pp$

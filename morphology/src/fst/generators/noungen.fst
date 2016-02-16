@@ -13,7 +13,7 @@ $gen$ = <u>:<>[#urnchar#]:<>+ [#period#]:<> [#urnchar#]:<>+</u>:<><u>lexent[#per
 
 % Final surface level only requries a URN and gender+number
 #analysissymbol# =  #gender#  #stemtype#
-#surfacesymbol# = #character# #case# #number# #urntag# #urn# #editorial#  #urnchar# \.
+#surfacesymbol# = #character# #case# #number# #urntag#  #editorial#  #urnchar# \.
 ALPHABET = [#surfacesymbol#] [#analysissymbol#]:<>
 $trimMatches$ = .*
 

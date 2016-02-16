@@ -16,8 +16,8 @@
 %%%%% 2nd and 3rd principal part %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Extend stem with sigma:
 #=ltr# = #stemchars#
-ALPHABET = [#letter#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extratag#] [#vowelquant#]
-$2nd_3rd_pp$ = {[#=ltr#]}:{[#=ltr#]s} ^-> ([#urn#]+[#stemchars#]+ __ <verb><w_regular>[#extratag#]*[\:]+<w_regular>[#urn#][#letter#]*[#person#][#number#][#2nd_3rd_6th_tense#][#mood#][#2nd_3rd_voice#])
+ALPHABET = [#letter#] [#morphtag#]  [\:] [<#>] [#stemtype#] [#extratag#] [#vowelquant#]
+$2nd_3rd_pp$ = {[#=ltr#]}:{[#=ltr#]s} ^-> ([#stemchars#]+ __ <verb><w_regular>[#extratag#]*[\:]+<w_regular>[#letter#]*[#person#][#number#][#2nd_3rd_6th_tense#][#mood#][#2nd_3rd_voice#])
 
 $2nd_3rd_pp$
 
