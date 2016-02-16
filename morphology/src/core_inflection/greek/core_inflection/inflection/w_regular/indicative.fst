@@ -111,7 +111,7 @@ $plupft_indic_ending$ = <w_regular> ( \
   nto<3rd><pl><plupft><indic>[<mid><pass>]<u>verbinfl\.w\_indicative66</u> \
 )
 
-$w\_indicative$ = ( $w_presfut_indic_ending$ | $w_imperfect_ending$ | $aor1_indic_ending$ | $pft_indic_ending$ | $plupft_indic_ending$)
+$w_indicative$ = ( $w_presfut_indic_ending$ | $w_imperfect_ending$ | $aor1_indic_ending$ | $pft_indic_ending$ | $plupft_indic_ending$)
 
 
-$w\_indicative$
+$w_indicative$
