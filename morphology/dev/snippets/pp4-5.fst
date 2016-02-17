@@ -8,8 +8,7 @@ $dictionary$ =  <u>lsjpool\.n786\_0</u><u>lexent\.n786</u>lu<verb> <w_regular> \
 
 %%<w_regular>  a<1st><sg><pft><indic><act><u>verbinfl\.w\_indicative43</u>
 
-
-
+$tiny$ = <u>lsjpool\.n786\_0</u><u>lexent\.n786</u>lu<verb><w_regular>\:\:<w_regular>mai<1st><sg><pft><indic><mid><u>verbinfl\.w_indicative49</u> | <u>lsjpool\.n786\_0</u><u>lexent\.n786</u>lu<verb><w_regular>\:\:<w_regular>mai<1st><sg><pft><indic><pass><u>verbinfl\.w\_indicative49</u> | <u>lsjpool\.n786\_0</u><u>lexent\.n786</u>lu<verb><w_regular>\:\:<w_regular>a<1st><sg><pft><indic><act><u>verbinfl\.w\_indicative43</u>
 
 
 
@@ -25,7 +24,7 @@ ALPHABET = [#editorial# #urntag# #urnchar# <verb> #morphtag# #stemtype#  #separa
 
 
 
-$kappa$ = {[#=ltr#]}:{[#=ltr#]k} ^->  (<u>[#urnchar#]+[#period#][#urnchar#]+</u><u>[#urnchar#]+[#period#][#urnchar#]+</u>[#stemchars#]+ __ <verb><w_regular>\:\:<w_regular>[#stemchars#]+[#person#][#number#][#4th_5th_tense#][#mood#][#voice#]<u>[#urnchar#]+[#period#][#urnchar#]+</u> )
+$kappa$ = {[#=ltr#]}:{[#=ltr#]k} ^->  (<u>[#urnchar#]+[#period#][#urnchar#]+</u><u>[#urnchar#]+[#period#][#urnchar#]+</u>[#stemchars#]+ __ <verb><w_regular>\:\:<w_regular>[#stemchars#]+[#person#][#number#][#4th_5th_tense#][#mood#]<act><u>[#urnchar#]+[#period#][#urnchar#]+</u> )
 
 
 #=cons# = #consonant#
@@ -43,3 +42,4 @@ ALPHABET = [#surfacesymbol#] [#analysissymbol#]:<>
 $stripsym$ = .+
 
 $dictionary$  || $redupe$ || $kappa$ || $squashverburn$  || $stripsym$
+%%$dictionary$  || $redupe$ || $kappa$ || $squashverburn$  || $stripsym$
