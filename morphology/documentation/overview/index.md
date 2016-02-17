@@ -5,12 +5,13 @@ layout: page
 
 ## What it is
 
-A system for building binary parsers.
+Kanōnes is a system for building Greek morphological parsers.  It compiles a finite state transducer (FST) from a lexicon of stems and a set of inflectional patterns, both easily defined in tables read from simple `.csv` files.
 
+Greek morphology cannot be fully analyzed with a FST, however, due to the interdependencies of morphology and movable accent, so the FST strips accents, and reports all possible analyses for the remaining string, ignoring distinctions identifiable from accent.  To implement a full parser, a `GreekParser` implementation can implement accentuation
 
-## Role of FST in analysis-by-synthesis design
+the output of the FST can be
 
-Greek morphology cannot be analyzed with FST due to interaction of multiple systems: accent and morphology, accent and syllabification.  These require awareness of state that cannot be reduced to a pipeline of transformations.
+Stems and inflectional patterns may follow any orthographic system implemented with the `GreekOrthography`.
 
 But fst parser works on unaccented forms.  Approach here is to use a FST on the unaccented form, algorithmically add accent, and test resulting accented form against submitted form to analyze.
 

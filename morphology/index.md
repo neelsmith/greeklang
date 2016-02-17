@@ -1,5 +1,5 @@
 ---
-title: Greek morphology
+title: Kanōnes, a system for building Greek morphological parsers
 layout: page
 ---
 
