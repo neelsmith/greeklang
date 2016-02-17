@@ -2,8 +2,9 @@
 
 #include "../../build/greek/symbols.fst"
 
-% Cross one verb with full inflection of omega verbs:
-$dictionary$ =  <u>lsjpool\.n786\_0</u><u>lexent\.n786</u>lu<verb> <w_regular> \:\: "<../../build/greek/core_inflection/inflection.a>"
+% Cross two verb with full inflection of omega verbs:
+$dictionary$ =  <u>lsjpool\.n64316\_0</u><u>lexent\.n64316</u>lu<verb> <w_regular> \:\: "<../../build/greek/core_inflection/inflection.a>" | <u>lsjpool\.n105945\_0</u><u>lexent\.n105945</u>tupt<verb> <w_pp1> \:\: "<../../build/greek/core_inflection/inflection.a>" |  <u>lsjpool\.n105945\_1</u><u>lexent\.n105945</u>tuy<verb> <w_pp2> \:\: "<../../build/greek/core_inflection/inflection.a>" | <u>lsjpool\.n105945\_2</u><u>lexent\.n105945</u>tuy<verb> <w_pp3> \:\: "<../../build/greek/core_inflection/inflection.a>"
+
 
 ALPHABET = [#editorial# #urntag# #urnchar# <verb> #morphtag# #stemtype#  #separator# #accent# #letter# #diacritic#  #breathing# \. #stemchars# ]
 
