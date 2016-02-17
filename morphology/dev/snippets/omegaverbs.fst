@@ -9,13 +9,21 @@ $dictionary$ =  <u>lsjpool\.n64316\_0</u><u>lexent\.n64316</u>lu<verb> <w_regula
 ALPHABET = [#editorial# #urntag# #urnchar# <verb> #morphtag# #stemtype#  #separator# #accent# #letter# #diacritic#  #breathing# \. #stemchars# ]
 
 % Handy shorthands:
+% Tenses for 1st principal part
+#1st_tense# = <pres><impft>
+#1stppclasses# = <w_regular><w_pp1>
 % Tenses 2nd and 3rd principal part
 #2nd_3rd_6th_tense# = <aor><fut><futpft>
 #2nd_3rd_voice# = <act><mid>
-% 6th = passive voice
+%%% 6th = passive voice
 % tenses for 4th-5th principal parts
 #4th_5th_tense# = <pft><plupft>
-% 4th = act , 5th = m-p
+%%%% 4th = act , 5th = m-p
+
+
+#=pp1class# = #1stppclasses#
+$1stpp$ = <u>[#urnchar#]+[#period#][#urnchar#]+</u><u>[#urnchar#]+[#period#][#urnchar#]+</u>[#stemchars#]+<verb>[#=pp1class#]\:\:[#=pp1class#][#stemchars#]+[#person#][#number#][#1st_tense#][#mood#][#voice#]<u>[#urnchar#]+[#period#][#urnchar#]+</u>
+
 
 % 2nd,3rd: extend stem with sigma after a final vowel:
 #=ltr# = #vowel#
@@ -49,4 +57,5 @@ $squashverburn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>
 ALPHABET = [#surfacesymbol#] [#analysissymbol#]:<>
 $stripsym$ = .+
 
-$dictionary$  || $2nd_3rd_pp$  || $4th_5th_pp$  || $6th_pp$ || $squashverburn$  || $stripsym$
+%$dictionary$ || $1stpp$ || $2nd_3rd_pp$  || $4th_5th_pp$  || $6th_pp$ || $squashverburn$  || $stripsym$
+$dictionary$ ||  $2nd_3rd_pp$  || $4th_5th_pp$  || $6th_pp$ || $squashverburn$  || $stripsym$

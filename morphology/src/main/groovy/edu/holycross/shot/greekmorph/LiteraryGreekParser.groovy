@@ -1,6 +1,7 @@
 package edu.holycross.shot.greekmorph
 
 import edu.holycross.shot.orthography.GreekString
+import edu.holycross.shot.orthography.GreekOrthography
 import edu.holycross.shot.orthography.GreekWord
 import edu.holycross.shot.phonology.Accent
 import edu.holycross.shot.phonology.AccentPattern
@@ -10,7 +11,7 @@ import edu.harvard.chs.cite.CtsUrn
 
 /** A Greek morphological parser.
 */
-class LiteraryGreekParser {
+class LiteraryGreekParser implements GreekParser {
 
   Integer debug  = 0
 
@@ -259,7 +260,7 @@ class LiteraryGreekParser {
   * @param gkStr The string to analyze.
   * @returns A MorphologicalAnalysis.
   */
-  MorphologicalAnalysis parseGreekString(GreekString gkStr) {
+  MorphologicalAnalysis parseGreekString(GreekOrthography gkStr) {
     ArrayList analysisList  = []
     if (debug > 0) {System.err.println "\nParsing " + gkStr}
 

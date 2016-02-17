@@ -1,7 +1,7 @@
 package edu.holycross.shot.greekmorph
 
 import edu.holycross.shot.attic.AtticString
-
+import edu.holycross.shot.orthography.GreekOrthography
 import edu.holycross.shot.phonology.Accent
 import edu.holycross.shot.phonology.AccentPattern
 import edu.holycross.shot.phonology.Syllable
@@ -10,7 +10,7 @@ import edu.harvard.chs.cite.CtsUrn
 
 /** A Greek morphological parser.
 */
-class AtticGreekParser {
+class AtticGreekParser implements GreekParser {
 
   Integer debug  = 0
 
@@ -32,10 +32,10 @@ class AtticGreekParser {
     urnManager = umgr
   }
 
-  MorphologicalAnalysis parseAtticString(AtticString gkStr) {
-    return parseAtticString(gkStr, true)
+  MorphologicalAnalysis parseGreekString(GreekOrthography gkStr) {
+    return parseGreekString(gkStr, true)
   }
-  MorphologicalAnalysis parseAtticString(AtticString gkStr, boolean includeAccent) {
+  MorphologicalAnalysis parseGreekString(AtticString gkStr, boolean includeAccent) {
     ArrayList analysisList  = []
     if (debug > 0) {System.err.println "Parsing " + gkStr}
     FstToken fstToken = new FstToken(gkStr)
