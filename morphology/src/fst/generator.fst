@@ -6,7 +6,7 @@
 $stems$ = @lexica@
 %
 % Dynamically loaded inflectional rules:
-$ends$ = "<@workdir@core_inflection/inflection.a>" @fstrules@
+$ends$ = "<@workdir@inflection.a>" @fstrules@
 
 %
 % Morphology data is the crossing of stems and endings:

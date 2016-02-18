@@ -118,7 +118,7 @@ String tagsFstStatement() {
 
 task loadSampleLexica(type: Copy) {
   description = "Copies sample lexicon data in .csv files to active work area."
-  from ("sampledata/stems-lexica") {
+  from ("sampledata/stems-csv") {
     include ("**/*.csv")
   }
   into "${stemssrcdir}"
@@ -161,10 +161,10 @@ task buildVerbStems() {
   description = "Builds .fst files from tabular source for both simplex and compound verbs"
 }
 buildVerbStems.doLast {
-  File lexDir = new File(projectDir,"${stemssrcdir}/verbs-simplex")
+  File lexDir = new File(projectDir,"${datadir}/${orthography}/stems-csv/verbs-simplex")
   System.err.println "Look for csv files in " + lexDir
   lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
-    File fstFile = new File(projectDir, "${stemsdir}/verbs-${csvFile.getName().replaceFirst(/.csv/,'.fst')}")
+    File fstFile = new File(projectDir, "${datadir}/${orthography}/stems-fst/verbs-${csvFile.getName().replaceFirst(/.csv/,'.fst')}")
     fstFile.setText("")
     StringBuilder data = new StringBuilder()
     def lineCount = 0
@@ -179,13 +179,13 @@ buildVerbStems.doLast {
   }
 }
 task buildOtherStems() {
-  description = "Builds .fst files from tabular source in data/stems-lexica/other"
+  description = "Builds .fst files from tabular source in data/stems-csv/other"
 }
 buildOtherStems.doLast {
   System.err.println "buildOtherStems not yet implemented."
 }
 task buildAdjectiveStems() {
-  description = "Builds .fst files from tabular source in data/stems-lexica/adjectives"
+  description = "Builds .fst files from tabular source in data/stems-csv/adjectives"
 }
 buildAdjectiveStems.doLast {
   System.err.println "buildAdjectiveStems not yet implemented."
@@ -223,11 +223,12 @@ String nounFstStringForCols(ArrayList columns) {
 task buildNounStems() {
   description = "Builds .fst files from tabular source in ${stemssrcdir}/nouns"
 }
+
 buildNounStems.doLast {
-  File lexDir = new File(projectDir,"${stemssrcdir}/nouns")
+  File lexDir = new File(projectDir,"${datadir}/${orthography}/stems-csv/nouns")
   System.err.println "Look for csv files in " + lexDir
   lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
-    File fstFile = new File(projectDir, "${stemsdir}/nouns-${csvFile.getName().replaceFirst(/.csv/,'.fst')}")
+    File fstFile = new File(projectDir, "${datadir}/${orthography}/stems-fst/nouns-${csvFile.getName().replaceFirst(/.csv/,'.fst')}")
     fstFile.setText("")
     StringBuilder data = new StringBuilder()
     def lineCount = 0
@@ -246,10 +247,10 @@ task buildIndeclinableStems() {
   description = "Builds .fst files from tabular source in ${stemssrcdir}/indeclinables"
 }
 buildIndeclinableStems.doLast {
-  File lexDir = new File(projectDir,"${stemssrcdir}/indeclinables")
+  File lexDir = new File(projectDir,"${datadir}/${orthography}/stems-csv/indeclinables")
   System.err.println "Look for csv files in " + lexDir
   lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
-    File fstFile = new File(projectDir, "${stemsdir}/indeclinables-${csvFile.getName().replaceFirst(/.csv/,'.fst')}")
+    File fstFile = new File(projectDir, "${datadir}/${orthography}/stems-fst/indeclinables-${csvFile.getName().replaceFirst(/.csv/,'.fst')}")
     fstFile.setText("")
     StringBuilder data = new StringBuilder()
     def lineCount = 0
@@ -264,16 +265,8 @@ buildIndeclinableStems.doLast {
   }
 }
 task buildStems(dependsOn: [buildNounStems, buildVerbStems, buildAdjectiveStems, buildOtherStems, buildIndeclinableStems]) {
-  description = "Builds .fst files from tabular source in data/stems-lexica"
+  description = "Builds .fst files from tabular source in data/stems-csv"
 }
-buildStems.doLast {
-  System.err.print "Built .fst files from stem data in " + stemssrcdir
-  File lexDir = new File(projectDir,"${stemssrcdir}/indeclinables")
-  System.err.println "Look for csv files in " + lexDir
-  lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
-  }
-}
-
 
 task cpSrc (type: Copy, dependsOn: buildStems) {
     description = "Filters and copies FST src directory to build area."
@@ -284,10 +277,10 @@ task cpSrc (type: Copy, dependsOn: buildStems) {
     filter(
       ReplaceTokens, tokens: [
       "workdir" : buildDir.toString() + "/${orthography}/",
-      "lexica": lexiconFstStatement(new File("${projectDir}/${stemsdir}")),
-      "makelexica": lexiconMakeStatement(new File("${projectDir}/${stemsdir}")),
-      "fstrules": rulesFstStatement(new File("${projectDir}/${rulesdir}")),
-      "extramakerules": rulesMakeStatement(new File("${projectDir}/${rulesdir}")),
+      "lexica": lexiconFstStatement(new File("${projectDir}/${datadir}/${orthography}/stems-fst")),
+      "makelexica": lexiconMakeStatement(new File("${projectDir}/${datadir}/${orthography}/stems-fst")),
+      "fstrules": rulesFstStatement(new File("${projectDir}/${datadir}/${orthography}/rules-fst")),
+      "extramakerules": rulesMakeStatement(new File("${projectDir}/${datadir}/${orthography}/rules-fst")),
       "extratags": tagsFstStatement(),
       //"stemurn": getStemUrns(),
       //"lexicon": getLexEntUrns()
@@ -308,7 +301,7 @@ cpCoreInflection.doLast {
 }
 task cpRules (type: Copy, dependsOn: cpCoreInflection) {
     description = "Filters and copies directory with additional inflectional rules to build area."
-    from ("${projectDir}/${rulesdir}") {
+    from ("${projectDir}/${datadir}/${orthography}/rules-fst") {
       include ("**/*.fst")
     }
     into "${buildDir}/${orthography}"
@@ -339,7 +332,7 @@ exploreSource.doLast {
 
 task cpStems (type: Copy, dependsOn: "buildStems") {
     description = "Filters and copies directory with lexica of stems to build area."
-    from ("${projectDir}/${stemsdir}") {
+    from ("${projectDir}/${datadir}/${orthography}/stems-fst") {
       include ('**/*.fst')
     }
     into "${buildDir}/${orthography}"
@@ -356,7 +349,7 @@ task cpAll (dependsOn: [ cpStems, cpRules, cpSrc]){
 cpAll.doLast {
   // check that at least one stems lexicon was copied.
   Integer lexicaCount = 0
-  File stemsDir = new File(projectDir,stemsdir)
+  File stemsDir = new File(projectDir,"${datadir}/${orthography}/stems-fst")
   stemsDir.eachFileMatch(~/.*.fst/) {
     lexicaCount++
   }
@@ -372,15 +365,16 @@ cpAll.doLast {
 
 //task compileCore(type:Exec, dependsOn: cpCore) {
 task compileCore(type:Exec, dependsOn: cpAll) {
-  description = "Builds binary Finite State Transducer for core inflection in ${buildDir}/${orthography}/core_inflection/inflection.a"
+  description = "Builds binary Finite State Transducer for core inflection in ${buildDir}/${orthography}/inflection.a"
 
-  outputs.file "${buildDir}/${orthography}/core_inflection/inflection.a".toString()
-  inputs.dir "${buildDir}/${orthography}/core_inflection"
+  outputs.file "${buildDir}/${orthography}/inflection.a".toString()
+  inputs.dir "${buildDir}/${orthography}/inflection"
 
-  commandLine =  [MAKE, "-f", "${buildDir}/${orthography}/core_inflection/makefile".toString()]
+  commandLine =  [MAKE, "-f", "${buildDir}/${orthography}/inflection/makefile".toString()]
 }
 
 task fst(type:Exec, dependsOn: [cpAll, compileCore]) {
+//task fst(type:Exec, dependsOn: [cpAll]) {
   description = "Builds binary Finite State Transducer in ${buildDir}/${orthography}/greek.a"
 
   outputs.file "${buildDir}/${orthography}/greek.a".toString()

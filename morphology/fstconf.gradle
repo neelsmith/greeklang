@@ -9,13 +9,15 @@ ext {
   // Identify an available orthography (e.g., "greek", "attic")
   //orthography = "greek"
 
+
+  datadir = "data"
   ////////////////////////////////////////////////////////////
   // Source directories for required and optional data used in
   // building a corpus-specific parser.
   //
   // Required:  core set of inflectional rules for a given
   // orthographic system:
-  coreinfldir = "src/core_inflection"
+  coreinfldir = "src/inflection"
   //
   // Required:  one or more .fst files with stems.
   stemsdir = "data/stems-fst"

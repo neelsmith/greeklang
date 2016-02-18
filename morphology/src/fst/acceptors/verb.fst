@@ -1,8 +1,6 @@
 % verb.fst
 % Limits input to valid morphological analyses of conjugated verbal forms.
-% Works correctly with input like this:
-% <coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>
-%
+
 
 #include "@workdir@symbols.fst"
 
