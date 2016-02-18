@@ -3,6 +3,17 @@ title: Kanōnes, a system for building Greek morphological parsers
 layout: page
 ---
 
+
+## Features
+
+
+- **Corpus specific**:  lexical stems and inflectional patterns can be easily tailored to analyze a specific corpus of texts
+- **Citable**: analyses identify the lexical entity and morphological analysis with URNs, and include URNs identifying the specific stem and inflectional rule used to arrive at an analysis
+- **Requires no coding**:  build a parser specific to your corpus by editing tables of stems and inflectional patterns stored in simple `.csv` files
+- **Cleanly separated from *and* designed for integration with other systems**: structured output in JSON and RDF formats
+
+## Current status
+
 In active development. Initial 1.0 release expected in May, 2016.
 
 - requires:
