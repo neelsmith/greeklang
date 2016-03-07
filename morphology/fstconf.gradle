@@ -4,7 +4,7 @@ ext {
   FSTINFL = "/usr/bin/fst-infl"
   MAKE = "/usr/bin/make"
 
-  installdir = "/usr/local"
+  //installdir = "/usr/local"
 
   // Identify an available orthography (e.g., "greek", "attic")
   //orthography = "greek"
