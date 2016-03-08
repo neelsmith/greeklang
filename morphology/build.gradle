@@ -214,11 +214,8 @@ String nounInflFstForCols(ArrayList cols) {
   if (cols.size() < 6) {
     System.err.println "Too few columns in ${cols}"
     return ""
-  } else {
-    System.err.println "PARSE NOUN INFL " + cols
   }
   StringBuilder fst = new StringBuilder("")
-  
   String ruleUrn = cols[0].replaceAll(/_/,"\\\\_")
   ruleUrn = ruleUrn.replaceAll("\\.","\\\\.")
   String inflClass = cols[1].replaceAll(/_/,"\\_")
@@ -232,20 +229,7 @@ String nounInflFstForCols(ArrayList cols) {
   inflString = inflString.replaceAll("\\)", "<sm>")
 
   fst.append(" <${inflClass}> <u>${ruleUrn}</u>${inflString}<${grammGender}><${grammCase}><${grammNumber}>")
-  
   return fst.toString()
-  // <h_hs> <u>nouninfl\\.h\\_hs1</u>h<fem><nom><sg>
-
-
-
-
-	     
-  // jprotect periods and underscores!
-  // add appropriate brackets.
-  //
-  // <is\_ios><u>nouninfl\.is\_ios1</u>is<fem><nom><sg>
-  // or in acceptor pattern:
-  // $=nounclass$ <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> [#stemchars#]* $=gender$ $case$ $number$
 }
 task buildNounInflection(dependsOn: setUpBuildDir) {
   description = "Builds nouninfl.fst from tabular source"
@@ -290,15 +274,6 @@ buildNounInflection.doLast {
   }
   data.append("\n\n\$nouninfl\$\n")
   nounFst.append(data.toString())
-
-  String  testStr = """
-\$nouninfl\$ = <h_hs> <u>nouninfl\\.h\\_hs1</u>h[<masc><fem>]<nom><sg>
-
-\$nouninfl\$
-"""
-    //nounFst.append(testStr)
-  System.err.println "Wrote noun stems to " + nounFst
-
 }
 
 
