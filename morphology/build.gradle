@@ -80,12 +80,9 @@ String lexiconFstStatement(File dir) {
     System.err.println "Can't make FST statements for nonexistent dir " + dir
     return ""
   } else {
-
-    System.err.println "LEXICA SHOULD BE IN " + dir
     dir.eachFileMatch(~/lex.*.fst/) { fstFile ->
       fileList.add ('"' + "${buildDir}/${orthography}/lexica/${fstFile.getName()}".toString() + '"')
     }
-    System.err.println "LEXICON FILES:  " + fileList
     fileList.eachWithIndex { f, i ->
       if (i < (fileList.size() - 1)) {
 	stmt.append( f + ' | ')
@@ -93,7 +90,6 @@ String lexiconFstStatement(File dir) {
 	stmt.append( f )
       }
     }
-    System.err.println "FINAL LEX STATEMENT IS " + stmt.toString()
     return stmt.toString()
   }
 }
@@ -133,10 +129,19 @@ String nounFstStringForCols(ArrayList columns) {
   return nounEntry.toString()
 }
 task buildNounStems(dependsOn: setUpBuildDir) {
-  description = "Builds .fst files from tabular source in ${stemssrcdir}/nouns"
+  description = "Builds .fst files from tabular source in ${datadir}/${orthography}/stems-csv/nouns"
+
+  File lexDir = new File(projectDir,"${datadir}/${orthography}/stems-csv/nouns")
+    
+  File orthoBuild = new File(buildDir,orthography)
+  File fstDir = new File(orthoBuild,"lexica")
+
+  outputs.dir fstDir
+  inputs.dir lexDir
 }
 
 buildNounStems.doLast {
+  System.err.println "BUILD NOUN STEMS"
   File lexDir = new File(projectDir,"${datadir}/${orthography}/stems-csv/nouns")
   File orthoBuild = new File(buildDir,orthography)
   File fstDir = new File(orthoBuild,"lexica")
@@ -167,6 +172,9 @@ buildNounStems.doLast {
 //task buildStems(dependsOn: [buildNounStems, buildVerbStems, buildAdjectiveStems, buildOtherStems, buildIndeclinableStems]) {
 task buildStems(dependsOn: [buildNounStems]) {
   description = "Builds .fst files from tabular source in data/stems-csv"
+  File orthoBuild = new File(buildDir,orthography)
+  File fstDir = new File(orthoBuild,"lexica")
+  outputs.dir fstDir
 }
 
 
@@ -299,10 +307,11 @@ task cpSrc (type: Copy, dependsOn: [buildStems]) {
       "workdir" : buildDir.toString() + "/${orthography}/",
       "lexica": lexiconFstStatement(new File("${buildDir}/${orthography}/lexica")),
       "makelexica": lexiconMakeStatement(new File("${buildDir}/${orthography}/lexica")),
-      //"fstrules": rulesFstStatement(new File("${projectDir}/${datadir}/${orthography}/rules-fst")),
+
       "extramakerules": "", // rulesMakeStatement(new File("${projectDir}/${datadir}/${orthography}/rules-fst")),
       "extratags": "" //tagsFstStatement()
      ])
+    inputs.dir file("${buildDir}/${orthography}/lexica")
 }
 
 
@@ -322,8 +331,14 @@ cpOrthography.doLast {
 /////////////////////////////////////////////////////////////////////////////////
 
 
+//task buildFst(dependsOn: [ buildStems, buildInflection]) {
+//}
 
-task cpAll (dependsOn: [ buildStems, buildInflection, cpOrthography, cpSrc]){
+
+task filterCopy (dependsOn: [cpSrc]) {
+}
+
+task cpAll (dependsOn: [filterCopy, buildInflection, cpOrthography] ){
   description = "Copies all source material to build area"
 }
 cpAll.doLast {
