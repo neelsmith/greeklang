@@ -116,10 +116,11 @@ String tagsFstStatement() {
 // Methods for writing FST statements from simple tabular source.
 //
 
+task buildVerbStems(dependsOn: setUpBuildDir) {
+}
+
 String nounFstStringForCols(ArrayList columns) {
   StringBuilder nounEntry  = new StringBuilder()
-
-  // PROTECT . and _ IN URN VALUES??
   nounEntry.append("<u>${columns[0]}</u>")
   nounEntry.append("<u>${columns[1]}</u>")
   String stem = columns[2].replaceAll("_", "<lo>")
@@ -174,7 +175,7 @@ buildNounStems.doLast {
 
 
 //task buildStems(dependsOn: [buildNounStems, buildVerbStems, buildAdjectiveStems, buildOtherStems, buildIndeclinableStems]) {
-task buildStems(dependsOn: [buildNounStems]) {
+task buildStems(dependsOn: [buildNounStems, buildVerbStems]) {
   description = "Builds .fst files from tabular source in data/stems-csv"
   File orthoBuild = new File(buildDir,orthography)
   File fstDir = new File(orthoBuild,"lexica")
@@ -213,11 +214,14 @@ String nounInflFstForCols(ArrayList cols) {
   if (cols.size() < 6) {
     System.err.println "Too few columns in ${cols}"
     return ""
+  } else {
+    System.err.println "PARSE NOUN INFL " + cols
   }
   StringBuilder fst = new StringBuilder("")
   
-  String ruleUrn = cols[0]
-  String inflClass = cols[1].replaceAll(/_/,"")
+  String ruleUrn = cols[0].replaceAll(/_/,"\\\\_")
+  ruleUrn = ruleUrn.replaceAll("\\.","\\\\.")
+  String inflClass = cols[1].replaceAll(/_/,"\\_")
   String inflString = cols[2]
   String grammGender = cols[3]
   String grammCase = cols[4]
@@ -227,17 +231,21 @@ String nounInflFstForCols(ArrayList cols) {
   inflString = inflString.replaceAll("\\(", "<ro>")
   inflString = inflString.replaceAll("\\)", "<sm>")
 
+  fst.append(" <${inflClass}> <u>${ruleUrn}</u>${inflString}<${grammGender}><${grammCase}><${grammNumber}>")
+  
+  return fst.toString()
+  // <h_hs> <u>nouninfl\\.h\\_hs1</u>h<fem><nom><sg>
 
 
+
+
+	     
   // jprotect periods and underscores!
   // add appropriate brackets.
   //
   // <is\_ios><u>nouninfl\.is\_ios1</u>is<fem><nom><sg>
   // or in acceptor pattern:
   // $=nounclass$ <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> [#stemchars#]* $=gender$ $case$ $number$
-
-  
-  return ""
 }
 task buildNounInflection(dependsOn: setUpBuildDir) {
   description = "Builds nouninfl.fst from tabular source"
@@ -256,7 +264,7 @@ buildNounInflection.doLast {
   }
   File nounFst = new File(inflDir,"nouninfl.fst")
   nounFst.setText("")
-  StringBuilder data = new StringBuilder()
+  StringBuilder data = new StringBuilder("\$nouninfl\$ = ")
   
   File lexDir = new File(projectDir,"${datadir}/${orthography}/rules-csv/nouns")
   System.err.println "Looking for csv files in " + lexDir
@@ -265,20 +273,30 @@ buildNounInflection.doLast {
     def lineCount = 0
     csvFile.eachLine { l ->
       ArrayList cols = l.split(/,/)
-      if (lineCount > 0) {
-        data.append(nounInflFstForCols(cols))
+      if (lineCount == 0) {
+	// skip
+      } else {
+	String fstRow = nounInflFstForCols(cols)
+	if (fstRow.size() > 1) {
+	  if (lineCount == 1) {
+	    data.append(fstRow)
+	  } else if (lineCount > 1) {
+	    data.append(" |\\\n" + nounInflFstForCols(cols))
+	  }
+	}
       }
       lineCount++
     }
   }
-  //  nounFst.append(data.toString())
+  data.append("\n\n\$nouninfl\$\n")
+  nounFst.append(data.toString())
 
-    String  testStr = """
+  String  testStr = """
 \$nouninfl\$ = <h_hs> <u>nouninfl\\.h\\_hs1</u>h[<masc><fem>]<nom><sg>
 
 \$nouninfl\$
 """
-    nounFst.append(testStr)
+    //nounFst.append(testStr)
   System.err.println "Wrote noun stems to " + nounFst
 
 }
