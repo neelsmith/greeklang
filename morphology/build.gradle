@@ -1,6 +1,5 @@
 import org.apache.tools.ant.filters.ReplaceTokens
 import org.apache.commons.io.FilenameUtils
-//import edu.unc.epidoc.transcoder.TransCoder
 
 buildscript {
   repositories {
@@ -14,10 +13,6 @@ buildscript {
     classpath group : 'edu.unc.epidoc', name: 'transcoder', version : '1.2-SNAPSHOT'
   }
 }
-
-
-
-
 
 task setUpBuildDir() {
   description = "Ensure that work area is built."
@@ -39,6 +34,16 @@ setUpBuildDir.doLast {
     lexDir.mkdir()
     System.err.println "Created dir " + lexDir
   }
+}
+
+
+
+task loadSampleData(type: Copy) {
+  description = "Copies sample data and rules in .csv files to active work area."
+  from ("sampledata/${orthography}") {
+    include ("**/*.csv", "**/*.fst")
+  }
+  into "${datadir}/${orthography}"
 }
 
 
@@ -141,7 +146,6 @@ task buildNounStems(dependsOn: setUpBuildDir) {
 }
 
 buildNounStems.doLast {
-  System.err.println "BUILD NOUN STEMS"
   File lexDir = new File(projectDir,"${datadir}/${orthography}/stems-csv/nouns")
   File orthoBuild = new File(buildDir,orthography)
   File fstDir = new File(orthoBuild,"lexica")
@@ -331,20 +335,15 @@ cpOrthography.doLast {
 /////////////////////////////////////////////////////////////////////////////////
 
 
-//task buildFst(dependsOn: [ buildStems, buildInflection]) {
-//}
-
-
-task filterCopy (dependsOn: [cpSrc]) {
+task filterCopy (dependsOn: [cpSrc, cpOrthography]) {
 }
 
-task cpAll (dependsOn: [filterCopy, buildInflection, cpOrthography] ){
+task cpAll (dependsOn: [filterCopy, buildInflection] ){
   description = "Copies all source material to build area"
 }
 cpAll.doLast {
   // check that at least one stem lexicon was copied....
 }
-
 
 
 
