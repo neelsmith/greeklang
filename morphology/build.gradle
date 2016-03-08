@@ -1,6 +1,6 @@
 import org.apache.tools.ant.filters.ReplaceTokens
 import org.apache.commons.io.FilenameUtils
-import edu.unc.epidoc.transcoder.TransCoder
+//import edu.unc.epidoc.transcoder.TransCoder
 
 buildscript {
   repositories {
@@ -15,35 +15,52 @@ buildscript {
   }
 }
 
+
+
+
+
+task setUpBuildDir() {
+  description = "Ensure that work area is built."
+  File orthoDir = new File(buildDir,orthography)
+  File lexDir = new File(orthoDir,"lexica")
+  outputs.dir lexDir
+}
+setUpBuildDir.doLast {
+  if (! buildDir.exists()) {
+    buildDir.mkdir()
+  }
+  File orthoDir = new File(buildDir,orthography)
+  if (! orthoDir.exists()) {
+    orthoDir.mkdir()
+    System.err.println "Created dir " + orthoDir
+  }
+  File lexDir = new File(orthoDir, "lexica")
+  if (! lexDir.exists()) {
+    lexDir.mkdir()
+    System.err.println "Created dir " + lexDir
+  }
+}
+
+
 /////////////////////////////////////////////////////////////////////////////////
-// Methods generating statements to include in makefile 
+// Methods generating statements to include in makefile.
+// Stem lexica in SFST can be sucked in efficiently from raw .fst lexicon statements,
+// whereas inflectional rules are better handled with compiled transducers.
+// We therefore generate two kinds of lists for inclusion in makefile statements.
 //
 // Generates appropriate statement to add to makefile dependencies
-// for lexica.
+// for lexica in uncompiled .fst files.
 String lexiconMakeStatement(File dir) {
-  StringBuilder stmt = new StringBuilder()
+  StringBuilder stmt = new StringBuilder("")
   def fileList = []
-  dir.eachFileMatch(~/.*.fst/) { fstFile ->
+  /*
+  dir.eachFileMatch(~/lex.*.fst/) { fstFile ->
     fileList.add ("${buildDir}/${orthography}/${fstFile.getName()}".toString())
   }
   fileList.each { f ->
     stmt.append(f + " ")
   }
-  return stmt.toString()
-}
-
-// Generates appropriate statements for makefile
-// dependencies on compiled inflectional rules.
-String rulesMakeStatement(File dir) {
-  StringBuilder stmt = new StringBuilder()
-  def fileList = []
-  dir.eachFileMatch(~/.*.fst/) { fstFile ->
-    String compiledFile = fstFile.getName().replaceFirst(/fst$/, "a")
-    fileList.add ("${buildDir}/${orthography}/${compiledFile}".toString())
-  }
-  fileList.each { f ->
-    stmt.append(f + " ")
-  }
+  */
   return stmt.toString()
 }
 
@@ -51,51 +68,41 @@ String rulesMakeStatement(File dir) {
 /////////////////////////////////////////////////////////////////////////////////
 
 
-
 /////////////////////////////////////////////////////////////////////////////////
 // Methods generating statement to include in FST files.
 //
-// Generates appropriate SFST-PL statements for including
-// compiled files with predefined inflectional rules.
-String rulesFstStatement(File dir) {
-  StringBuilder stmt = new StringBuilder(" ")
-  def fileList = []
-  dir.eachFileMatch(~/.*.fst/) { fstFile ->
-    String compiledFile = fstFile.getName().replaceFirst(/fst$/, "a")
-    fileList.add ('"<' + "${buildDir}/${orthography}/${compiledFile}".toString() + '>"')
-  }
-  fileList.eachWithIndex { f, i ->
-    stmt.append(' | ' + f)
-  }
-
-  return stmt.toString()
-}
-
 // Generates appropriate SFST-PL statements for including lexica
 // in .fst files.
 String lexiconFstStatement(File dir) {
-  StringBuilder stmt = new StringBuilder()
+  StringBuilder stmt = new StringBuilder("")
   def fileList = []
+  if (! dir.exists()) {
+    System.err.println "Can't make FST statements for nonexistent dir " + dir
+    return ""
+  } else {
 
-  dir.eachFileMatch(~/.*.fst/) { fstFile ->
-    //fileList.add ('"' + "${projectDir}/${fstFile.getName()}".toString() + '"')
-    fileList.add ('"' + "${buildDir}/${orthography}/${fstFile.getName()}".toString() + '"')
-  }
-  fileList.eachWithIndex { f, i ->
-    if (i < (fileList.size() - 1)) {
-      stmt.append( f + ' | ')
-    } else {
-      stmt.append( f )
+    System.err.println "LEXICA SHOULD BE IN " + dir
+    dir.eachFileMatch(~/lex.*.fst/) { fstFile ->
+      fileList.add ('"' + "${buildDir}/${orthography}/lexica/${fstFile.getName()}".toString() + '"')
     }
-
+    System.err.println "LEXICON FILES:  " + fileList
+    fileList.eachWithIndex { f, i ->
+      if (i < (fileList.size() - 1)) {
+	stmt.append( f + ' | ')
+      } else {
+	stmt.append( f )
+      }
+    }
+    System.err.println "FINAL LEX STATEMENT IS " + stmt.toString()
+    return stmt.toString()
   }
-  return stmt.toString()
 }
 
 // Generates  SFST-PL statement to add taxonomic tags
 // to FST alphabet of symbols.
 String tagsFstStatement() {
-  return "#extratag# = <epic><hmt><ml>"
+  //return "#extratag# = <epic><hmt><ml>"
+  return ""
 }
 
 // End methods generating statement to include in FST files.
@@ -104,101 +111,14 @@ String tagsFstStatement() {
 
 
 
-
-/*
-task loadSampleLexica(type: Copy) {
-  description = "Copies sample lexicon data in .csv files to active work area."
-  from ("sampledata/stems-csv") {
-    include ("** / *.csv")
-  }
-  into "${stemssrcdir}"
-}
-task loadSampleRules(type: Copy) {
-  description = "Copies sample fst rules to active work area."
-   from ("sampledata/rules-fst") {
-     include "* * / *.fst"
-   }
-  into "${rulesdir}"
-}
-task loadSampleData(dependsOn: [loadSampleLexica, loadSampleRules]) {
-  description = "Copies sample data sets into active working area"
-}
-loadSampleData.doLast {
-  System.err.println "Sample data sets copied into loading zone."
-}
- */
-
-
-String verbFstStringForCols(ArrayList columns) {
-
-  StringBuilder verbEntry  = new StringBuilder()
-  verbEntry.append("<u>${columns[0]}</u>")
-  verbEntry.append("<u>${columns[1]}</u>")
-
-  String stem = columns[2].replaceAll("_", "<lo>")
-  stem = stem.replaceAll("\\(", "<ro>")
-  stem = stem.replaceAll("\\)", "<sm>")
-  verbEntry.append(stem)
-  verbEntry.append("<verb>")
-  verbEntry.append("<${columns[3]}>")
-  //verbEntry.append("<${columns[4]}>")
-  verbEntry.append("\n")
-  return verbEntry.toString()
-
-}
-task buildVerbStems() {
-  description = "Builds .fst files from tabular source for both simplex and compound verbs"
-}
-
-/*
-buildVerbStems.doLast {
-  File lexDir = new File(projectDir,"${datadir}/${orthography}/stems-csv/verbs-simplex")
-  System.err.println "Look for csv files in " + lexDir
-  lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
-    File fstFile = new File(projectDir, "${datadir}/${orthography}/stems-fst/verbs-${csvFile.getName().replaceFirst(/.csv/,'.fst')}")
-    fstFile.setText("")
-    StringBuilder data = new StringBuilder()
-    def lineCount = 0
-    csvFile.eachLine { l ->
-      ArrayList cols = l.split(/,/)
-      if (lineCount > 0) {
-        data.append(verbFstStringForCols(cols))
-      }
-      lineCount++
-    }
-    fstFile.append(data.toString())
-  }
-}
-*/
-task buildOtherStems() {
-  description = "Builds .fst files from tabular source in data/stems-csv/other"
-}
-buildOtherStems.doLast {
-  System.err.println "buildOtherStems not yet implemented."
-}
-task buildAdjectiveStems() {
-  description = "Builds .fst files from tabular source in data/stems-csv/adjectives"
-}
-buildAdjectiveStems.doLast {
-  System.err.println "buildAdjectiveStems not yet implemented."
-}
-
-String indeclFstStringForCols(ArrayList columns) {
-  StringBuilder indeclEntry  = new StringBuilder()
-  indeclEntry.append("<u>${columns[0]}</u>")
-  indeclEntry.append("<u>${columns[1]}</u>")
-  String stem = columns[2].replaceAll("_", "<lo>")
-  stem = stem.replaceAll("\\(", "<ro>")
-  stem = stem.replaceAll("\\)", "<sm>")
-  indeclEntry.append(stem)
-  indeclEntry.append("<indecl>")
-  indeclEntry.append("\n")
-  return indeclEntry.toString()
-}
-
+/////////////////////////////////////////////////////////////////////////////////
+// Methods for writing FST statements from simple tabular source.
+//
 
 String nounFstStringForCols(ArrayList columns) {
   StringBuilder nounEntry  = new StringBuilder()
+
+  // PROTECT . and _ IN URN VALUES??
   nounEntry.append("<u>${columns[0]}</u>")
   nounEntry.append("<u>${columns[1]}</u>")
   String stem = columns[2].replaceAll("_", "<lo>")
@@ -212,23 +132,21 @@ String nounFstStringForCols(ArrayList columns) {
   nounEntry.append("\n")
   return nounEntry.toString()
 }
-task buildNounStems() {
+task buildNounStems(dependsOn: setUpBuildDir) {
   description = "Builds .fst files from tabular source in ${stemssrcdir}/nouns"
 }
 
 buildNounStems.doLast {
-  if (! buildDir.exists()) {
-    buildDir.mkdir()
-  }
-  File orthoBuild = new File(buildDir, orthography)
-  if (! orthoBuild.exists()) {
-    orthoBuild.mkdir()
-  }
-
   File lexDir = new File(projectDir,"${datadir}/${orthography}/stems-csv/nouns")
+  File orthoBuild = new File(buildDir,orthography)
+  File fstDir = new File(orthoBuild,"lexica")
+  if (! fstDir.exists()) {
+    fstDir.mkdir()
+  }
+  
   System.err.println "Looking for csv files in " + lexDir
   lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
-    File fstFile = new File(orthoBuild, "nouns-${csvFile.getName().replaceFirst(/.csv/,'.fst')}")
+    File fstFile = new File(fstDir, "lex-nouns-${csvFile.getName().replaceFirst(/.csv/,'.fst')}")
     fstFile.setText("")
     StringBuilder data = new StringBuilder()
     def lineCount = 0
@@ -245,36 +163,132 @@ buildNounStems.doLast {
   
 }
 
-task buildIndeclinableStems() {
-  description = "Builds .fst files from tabular source in ${stemssrcdir}/indeclinables"
-}
-/*
-buildIndeclinableStems.doLast {
-  File lexDir = new File(projectDir,"${datadir}/${orthography}/stems-csv/indeclinables")
-  System.err.println "Look for csv files in " + lexDir
-  lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
-    File fstFile = new File(projectDir, "${datadir}/${orthography}/stems-fst/indeclinables-${csvFile.getName().replaceFirst(/.csv/,'.fst')}")
-    fstFile.setText("")
-    StringBuilder data = new StringBuilder()
-    def lineCount = 0
-    csvFile.eachLine { l ->
-      ArrayList cols = l.split(/,/)
-      if (lineCount > 0) {
-        data.append(indeclFstStringForCols(cols))
-      }
-      lineCount++
-    }
-    fstFile.append(data.toString())
-  }
-}
-*/
 
 //task buildStems(dependsOn: [buildNounStems, buildVerbStems, buildAdjectiveStems, buildOtherStems, buildIndeclinableStems]) {
 task buildStems(dependsOn: [buildNounStems]) {
   description = "Builds .fst files from tabular source in data/stems-csv"
 }
 
-task cpSrc (type: Copy, dependsOn: buildStems) {
+
+
+task buildAdjectiveInflection() {
+  description = "Builds adjectiveinfl.fst from tabular source"
+  
+}
+task buildAdverbInflection() {
+  description = "Builds adverbinl.fst from tabular source" 
+}
+task buildIndeclInflection() {
+  description = "Builds indeclinfl.fst from tabular source" 
+}
+task buildInfInflection() {
+  description = "Builds infinfl.fst from tabular source" 
+}
+task buildPtcplInflection() {
+  description = "Builds ptcplinfl.fst from tabular source" 
+}
+task buildVadjInflection() {
+  description = "Builds vadjinfl.fst from tabular source" 
+}
+task buildVerbInflection() {
+  description = "Builds verbinfl.fst from tabular source" 
+}
+
+
+
+String nounInflFstForCols(ArrayList cols) {
+
+  if (cols.size() < 6) {
+    System.err.println "Too few columns in ${cols}"
+    return ""
+  }
+  StringBuilder fst = new StringBuilder("")
+  
+  String ruleUrn = cols[0]
+  String inflClass = cols[1].replaceAll(/_/,"")
+  String inflString = cols[2]
+  String grammGender = cols[3]
+  String grammCase = cols[4]
+  String grammNumber = cols[5]
+
+  inflString = inflString.replaceAll("_", "<lo>")
+  inflString = inflString.replaceAll("\\(", "<ro>")
+  inflString = inflString.replaceAll("\\)", "<sm>")
+
+
+
+  // jprotect periods and underscores!
+  // add appropriate brackets.
+  //
+  // <is\_ios><u>nouninfl\.is\_ios1</u>is<fem><nom><sg>
+  // or in acceptor pattern:
+  // $=nounclass$ <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> [#stemchars#]* $=gender$ $case$ $number$
+
+  
+  return ""
+}
+task buildNounInflection(dependsOn: setUpBuildDir) {
+  description = "Builds nouninfl.fst from tabular source"
+}
+buildNounInflection.doLast {
+  if (! buildDir.exists()) {
+    buildDir.mkdir()
+  }
+  File orthoBuild = new File(buildDir, orthography)
+  if (! orthoBuild.exists()) {
+    orthoBuild.mkdir()
+  }
+  File inflDir = new File(orthoBuild,"inflection")
+  if (! inflDir.exists()) {
+    inflDir.mkdir()
+  }
+  File nounFst = new File(inflDir,"nouninfl.fst")
+  nounFst.setText("")
+  StringBuilder data = new StringBuilder()
+  
+  File lexDir = new File(projectDir,"${datadir}/${orthography}/rules-csv/nouns")
+  System.err.println "Looking for csv files in " + lexDir
+  lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
+    System.err.println "Check: " + csvFile
+    def lineCount = 0
+    csvFile.eachLine { l ->
+      ArrayList cols = l.split(/,/)
+      if (lineCount > 0) {
+        data.append(nounInflFstForCols(cols))
+      }
+      lineCount++
+    }
+  }
+  //  nounFst.append(data.toString())
+
+    String  testStr = """
+\$nouninfl\$ = <h_hs> <u>nouninfl\\.h\\_hs1</u>h[<masc><fem>]<nom><sg>
+
+\$nouninfl\$
+"""
+    nounFst.append(testStr)
+  System.err.println "Wrote noun stems to " + nounFst
+
+}
+
+
+task buildInflection(dependsOn: [buildNounInflection, buildAdjectiveInflection, buildAdverbInflection,buildIndeclInflection, buildInfInflection, buildPtcplInflection, buildVadjInflection,  buildVadjInflection ]) {
+  description = "Builds .fst files from tabular source in data/rules-csv"
+}
+
+
+// End methods for writing FST statements from simple tabular source.
+/////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////
+// Tasks for copying FST source and definition of orthographic system
+
+task cpSrc (type: Copy, dependsOn: [buildStems]) {
     description = "Filters and copies FST src directory to build area."
     from ("src/fst") {
       include ("**/makefile", "**/*.fst")
@@ -283,62 +297,47 @@ task cpSrc (type: Copy, dependsOn: buildStems) {
     filter(
       ReplaceTokens, tokens: [
       "workdir" : buildDir.toString() + "/${orthography}/",
-      "lexica": lexiconFstStatement(new File("${projectDir}/${datadir}/${orthography}/stems-fst")),
-      "makelexica": lexiconMakeStatement(new File("${projectDir}/${datadir}/${orthography}/stems-fst")),
-      "fstrules": rulesFstStatement(new File("${projectDir}/${datadir}/${orthography}/rules-fst")),
-      "extramakerules": rulesMakeStatement(new File("${projectDir}/${datadir}/${orthography}/rules-fst")),
-      "extratags": tagsFstStatement(),
-      //"stemurn": getStemUrns(),
-      //"lexicon": getLexEntUrns()
+      "lexica": lexiconFstStatement(new File("${buildDir}/${orthography}/lexica")),
+      "makelexica": lexiconMakeStatement(new File("${buildDir}/${orthography}/lexica")),
+      //"fstrules": rulesFstStatement(new File("${projectDir}/${datadir}/${orthography}/rules-fst")),
+      "extramakerules": "", // rulesMakeStatement(new File("${projectDir}/${datadir}/${orthography}/rules-fst")),
+      "extratags": "" //tagsFstStatement()
      ])
 }
 
 
-task cpCoreInflection(type:Copy) {
-    description = "Filters and copies directory with core inflectional rules to build area."
-    from ("${projectDir}/${coreinfldir}/${orthography}") {
-      include ("**/*.fst", "**/makefile")
-    }
-    into "${buildDir}/${orthography}"
-    filter(ReplaceTokens, tokens: ["workdir" : "${buildDir}/${orthography}/".toString()])
-}
-cpCoreInflection.doLast {
-  System.err.println "Copied ${projectDir}/${coreinfldir} to ${buildDir}/${orthography}"
-}
-task cpRules (type: Copy, dependsOn: cpCoreInflection) {
-    description = "Filters and copies directory with additional inflectional rules to build area."
-    from ("${projectDir}/${datadir}/${orthography}/rules-fst") {
+task cpOrthography(type:Copy, dependsOn: setUpBuildDir) {
+    description = "Filters and copies directory with defintions of orthographic system to build area."
+    from ("${projectDir}/${datadir}/${orthography}/orthography") {
       include ("**/*.fst")
     }
     into "${buildDir}/${orthography}"
-    filter(ReplaceTokens, tokens: ["workdir" : "${buildDir}/${orthography}/".toString()])
+    //filter(ReplaceTokens, tokens: ["workdir" : "${buildDir}/${orthography}/".toString()])
+}
+cpOrthography.doLast {
+  System.err.println "Copied orthography data from ${projectDir}/${datadir}/${orthography}/orthography to ${buildDir}/${orthography}"
 }
 
+// End tasks for copying FST source and definition of orthographic system
+/////////////////////////////////////////////////////////////////////////////////
 
 
 
-task cpAll (dependsOn: [ buildStems, cpRules, cpSrc]){
+task cpAll (dependsOn: [ buildStems, buildInflection, cpOrthography, cpSrc]){
   description = "Copies all source material to build area"
 }
 cpAll.doLast {
-  // check that at least one stems lexicon was copied.
-  Integer lexicaCount = 0
-  File stemsDir = new File(projectDir,"${datadir}/${orthography}/stems-fst")
-  stemsDir.eachFileMatch(~/.*.fst/) {
-    lexicaCount++
-  }
-  if (lexicaCount == 0) {
-    System.err.println ("cpAll: no lexica of stems found in directory ${stemsdir}.")
-    throw new Exception("cpAll: no lexica of stems found in directory ${stemsdir}.")
-  } else {
-    System.err.println "All source files copied to build area."
-  }
-  System.err.println "Used orthography ${orthography}"
+  // check that at least one stem lexicon was copied....
 }
 
 
-//task compileCore(type:Exec, dependsOn: cpCore) {
-task compileCore(type:Exec, dependsOn: cpAll) {
+
+
+
+/////////////////////////////////////////////////////////////////////////////////
+// Tasks compiling FSTs
+
+task compileInflection(type:Exec, dependsOn: cpAll) {
   description = "Builds binary Finite State Transducer for core inflection in ${buildDir}/${orthography}/inflection.a"
 
   outputs.file "${buildDir}/${orthography}/inflection.a".toString()
@@ -347,8 +346,7 @@ task compileCore(type:Exec, dependsOn: cpAll) {
   commandLine =  [MAKE, "-f", "${buildDir}/${orthography}/inflection/makefile".toString()]
 }
 
-task fst(type:Exec, dependsOn: [cpAll, compileCore]) {
-//task fst(type:Exec, dependsOn: [cpAll]) {
+task fst(type:Exec, dependsOn: [cpAll, compileInflection]) {
   description = "Builds binary Finite State Transducer in ${buildDir}/${orthography}/greek.a"
 
   outputs.file "${buildDir}/${orthography}/greek.a".toString()
@@ -366,10 +364,13 @@ task fstgen(type:Exec, dependsOn: cpAll) {
   commandLine =  [FSTCOMPILER, "-s", "${buildDir}/${orthography}/morphology.fst".toString(), "${buildDir}/${orthography}/bulkgen.a".toString()]
 }
 
+// End tasks compiling FSTs
+/////////////////////////////////////////////////////////////////////////////////
+
 
 
 ////////////////////////////////////////////////////////////////////////////////////
-/* ***********  Utility transducers, used in testing, helpful in  debugging  *** */
+// Utility transducers, used in testing, helpful in debugging
 task rawlex(type:Exec, dependsOn: fst) {
   description = "Builds binary Finite State Transducer in ${buildDir}/${orthography}/rawlex.a"
 
@@ -409,62 +410,3 @@ test.dependsOn utils
 // End utility transducers used in testing
 ////////////////////////////////////////////////////////////////////////////////////
 
-
-///////////////////////////////////////////////////////////////////////////////
-// Debugging and informational tasks:
-
-task exploreSource() {}
-exploreSource.doLast {
-  System.err.println "Looking for cp.  Here's runtime: "  //sourceSets.main.runtimeClasspath.getFiles().each {
-    //System.err.println  it
-  //}
-  sourceSets {
-          main {
-              println "java.srcDirs = ${java.srcDirs}"
-              println "resources.srcDirs = ${resources.srcDirs}"
-              println "java.files = ${java.files.name}"
-              println "allJava.files = ${allJava.files.name}"
-              println "resources.files = ${resources.files.name}"
-              println "allSource.files = ${allSource.files.name}"
-              println "output.classesDir = ${output.classesDir}"
-              println "output.resourcesDir = ${output.resourcesDir}"
-              println "output.files = ${output.files}"
-          }
-      }
-}
-
-task seeSettings () {
-}
-
-seeSettings.doLast {
-  System.err.println "Settings from fstconf.gradle:"
-  def settingsToView =
-  [
-    "orthography" : orthography,
-    "datadir": datadir,
-    
-    "coreinfldir": coreinfldir,
-    "stemsdir": stemsdir,
-    "urnregdir" : urnregdir,
-    "stemssrcdir" : stemssrcdir,
-    "rulesdir" : rulesdir,
-    "tagsdir" : tagsdir
-  ]
-
-  settingsToView.keySet().each {
-    println "${it}: ${settingsToView[it]}"
-  }
-
-}
-
-// End debugging and informational tasks.
-///////////////////////////////////////////////////////////////////////////////
-
-
-
-
-// IMPLEMENT THIS:
-/*
-task install() {
-  description = "Install binary fst parser and CLI scripts in /usr/local"
-}*/

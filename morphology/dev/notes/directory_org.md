@@ -4,6 +4,9 @@ Within a gradle ${projectDir}:
 
 - All data for compilation: **${datadir}**
     - Per orthography: **${orthography}**
+        - orthography
+            - symbols
+                - alphabet.fst
         - stems-csv
             - adjectives
             - indeclinables
@@ -11,6 +14,12 @@ Within a gradle ${projectDir}:
             - other
             - verbs-compound
             - verbs-simplex
-        - stems-fst: THIS SHOULD BE BUILT NOW!
         - rules-csv
-        - rules-fst
+            - adjectiveinfl.fst
+            - adverbinfl.fst
+            - indeclinfl.fst
+            - infininfl.fst
+            - nouninfl.fst
+            - ptcplinfl.fst
+            - vadjinfl.fst
+            - verbinfl.fst

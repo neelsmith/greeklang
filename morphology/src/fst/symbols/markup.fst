@@ -12,3 +12,8 @@ $separator$ = [#separator#]
 #period# = \.
 
 $period$ = [#period#]
+
+
+% Placeholder so an #extratag# variable exists.
+% How should we manage these?
+#extratag# = <hmt>
