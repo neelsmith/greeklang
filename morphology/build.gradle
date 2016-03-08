@@ -120,6 +120,7 @@ task buildVerbStems(dependsOn: setUpBuildDir) {
 }
 
 String nounFstStringForCols(ArrayList columns) {
+  System.err.println "Write noun FST for " + columns
   StringBuilder nounEntry  = new StringBuilder()
   nounEntry.append("<u>${columns[0]}</u>")
   nounEntry.append("<u>${columns[1]}</u>")
@@ -162,7 +163,10 @@ buildNounStems.doLast {
     def lineCount = 0
     csvFile.eachLine { l ->
       ArrayList cols = l.split(/,/)
-      if (lineCount > 0) {
+
+      // CHECK THAT LINE IS NOT EMPTYR
+      System.err.println "Examine " + cols
+      if ((lineCount > 0) && (cols.size() > 1)) {
         data.append(nounFstStringForCols(cols))
       }
       lineCount++
