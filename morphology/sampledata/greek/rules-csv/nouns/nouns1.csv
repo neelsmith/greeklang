@@ -1,0 +1,12 @@
+RuleUrn,InflectionClasses,Ending,Gender,Case,Number
+nouninfl.h_hs1,h_hs,h,fem,nom,sg
+nouninfl.h_hs2,h_hs,hs,fem,gen,sg
+nouninfl.h_hs3,h_hs,h|,fem,dat,sg
+nouninfl.h_hs4,h_hs,hn,fem,acc,sg
+nouninfl.h_hs5,h_hs,h,fem,voc,sg
+
+nouninfl.h_hs6,h_hs,ai,fem,nom,pl
+nouninfl.h_hs7,h_hs,wn,fem,gen,pl
+nouninfl.h_hs8,h_hs,ais,fem,dat,pl
+nouninfl.h_hs9,h_hs,a_s,fem,acc,pl
+nouninfl.h_hs10,h_hs,ai,fem,voc,pl

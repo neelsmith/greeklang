@@ -227,6 +227,8 @@ String nounInflFstForCols(ArrayList cols) {
   inflString = inflString.replaceAll("_", "<lo>")
   inflString = inflString.replaceAll("\\(", "<ro>")
   inflString = inflString.replaceAll("\\)", "<sm>")
+  inflString = inflString.replaceAll("\\|", "\\\\|")
+  
 
   fst.append(" <${inflClass}> <u>${ruleUrn}</u>${inflString}<${grammGender}><${grammCase}><${grammNumber}>")
   return fst.toString()
