@@ -155,9 +155,14 @@ project(":morphology") {
   if (project.hasProperty('ortho')) {
     orthVal = ortho
   }
+  String sampleDir = "sampledata"
+  if (project.hasProperty('datasrc')) {
+    sampleDir = datasrc
+  }
   ext {
     orthography = orthVal
     specversion = morphspec
+    loaddir = sampleDir
   }
   // set defaults for FST compilation:
   apply from: "${rootProject.rootDir}/morphology/fstconf.gradle"

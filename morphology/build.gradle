@@ -38,9 +38,11 @@ setUpBuildDir.doLast {
 
 
 
-task loadSampleData(type: Copy) {
-  description = "Copies sample data and rules in .csv files to active work area."
-  from ("sampledata/${orthography}") {
+task loadData(type: Copy) {
+  description = "Copies lexical stems and rules in .csv files to active work area."
+  //  from ("sampledata/${orthography}") {
+
+  from ("${loaddir}/${orthography}") {
     include ("**/*.csv", "**/*.fst")
   }
   into "${datadir}/${orthography}"
