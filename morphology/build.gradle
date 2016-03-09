@@ -120,7 +120,6 @@ task buildVerbStems(dependsOn: setUpBuildDir) {
 }
 
 String nounFstStringForCols(ArrayList columns) {
-  System.err.println "Write noun FST for " + columns
   StringBuilder nounEntry  = new StringBuilder()
   nounEntry.append("<u>${columns[0]}</u>")
   nounEntry.append("<u>${columns[1]}</u>")
@@ -156,6 +155,7 @@ buildNounStems.doLast {
   }
   
   System.err.println "Looking for csv files in " + lexDir
+  def fileCount = 0
   lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
     File fstFile = new File(fstDir, "lex-nouns-${csvFile.getName().replaceFirst(/.csv/,'.fst')}")
     fstFile.setText("")
@@ -165,14 +165,17 @@ buildNounStems.doLast {
       ArrayList cols = l.split(/,/)
 
       // CHECK THAT LINE IS NOT EMPTYR
-      System.err.println "Examine " + cols
       if ((lineCount > 0) && (cols.size() > 1)) {
         data.append(nounFstStringForCols(cols))
       }
       lineCount++
     }
+    System.err.println "${fileCount}. File ${csvFile}"
+    if (fileCount > 0) {
+     fstFile.append(" \\\\|\n")
+    }
     fstFile.append(data.toString())
-    System.err.println "Wrote noun stems to " + fstFile
+    fileCount++
   }
   
 }
@@ -257,9 +260,12 @@ buildNounInflection.doLast {
   StringBuilder data = new StringBuilder("\$nouninfl\$ = ")
   
   File lexDir = new File(projectDir,"${datadir}/${orthography}/rules-csv/nouns")
-  System.err.println "Looking for csv files in " + lexDir
+  def fileCount = 0
   lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
-    System.err.println "Check: " + csvFile
+    if (fileCount > 0) {
+      data.append(" |\\\n")
+    }
+
     def lineCount = 0
     csvFile.eachLine { l ->
       ArrayList cols = l.split(/,/)
@@ -271,12 +277,13 @@ buildNounInflection.doLast {
 	  if (lineCount == 1) {
 	    data.append(fstRow)
 	  } else if (lineCount > 1) {
-	    data.append(" |\\\n" + nounInflFstForCols(cols))
+	    data.append(" |\\\n" + fstRow) 
 	  }
 	}
       }
       lineCount++
-    }
+      }
+    fileCount++
   }
   data.append("\n\n\$nouninfl\$\n")
   nounFst.append(data.toString())
