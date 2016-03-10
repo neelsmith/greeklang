@@ -7,7 +7,7 @@
 % Noun stem types
 #noun1# = <a_hs><a_as_long><a_as_short><h_hs><hs_ou><as_ou>
 #noun2# = <os_ou><os_on>
-#noun3# = <is_ios><is_ews><eus_ews><ma_matos><wn_ontos>
+#noun3# = <c_ktos><is_ios><is_ews><eus_ews><ma_matos><wn_ontos>
 #irregnoun# = <gunh>
 
 #nounclass# = #noun1# #noun2# #noun3# #irregnoun#
