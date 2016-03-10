@@ -1,4 +1,26 @@
 RuleUrn,InflectionClasses,Ending,Gender,Case,Number
+nouninfl.c_gos1m,c_gos,c,masc,nom,sg
+nouninfl.c_gos2m,c_gos,gos,masc,gen,sg
+nouninfl.c_gos3m,c_gos,gi,masc,dat,sg
+nouninfl.c_gos4m,c_gos,ga,masc,acc,sg
+nouninfl.c_gos5m,c_gos,c,masc,voc,sg
+
+nouninfl.c_gos6m,c_gos,ges,masc,nom,pl
+nouninfl.c_gos7m,c_gos,gwn,masc,gen,pl
+nouninfl.c_gos8m,c_gos,aci,masc,dat,pl
+nouninfl.c_gos8mn,c_gos,acin,masc,dat,pl
+nouninfl.c_gos9m,c_gos,gas,masc,acc,pl
+nouninfl.c_gos10m,c_gos,ge,masc,voc,pl
+
+nouninfl.c_gos11m,c_gos,ge,masc,nom,dual
+nouninfl.c_gos12m,c_gos,goin,masc,gen,dual
+nouninfl.c_gos13m,c_gos,goin,masc,dat,dual
+nouninfl.c_gos14m,c_gos,ge,masc,acc,dual
+nouninfl.c_gos15m,c_gos,ge,masc,voc,dual
+
+
+
+
 nouninfl.c_ktos1m,c_ktos,c,masc,nom,sg
 nouninfl.c_ktos2m,c_ktos,ktos,masc,gen,sg
 nouninfl.c_ktos3m,c_ktos,kti,masc,dat,sg
@@ -17,6 +39,28 @@ nouninfl.c_ktos12m,c_ktos,ktoin,masc,gen,dual
 nouninfl.c_ktos13m,c_ktos,ktoin,masc,dat,dual
 nouninfl.c_ktos14m,c_ktos,kte,masc,acc,dual
 nouninfl.c_ktos15m,c_ktos,kte,masc,voc,dual
+
+
+
+
+nouninfl.hs_eos1m,hs_eos,hs,masc,nom,sg
+nouninfl.hs_eos2m,hs_eos,ous,masc,gen,sg
+nouninfl.hs_eos3m,hs_eos,ei,masc,dat,sg
+nouninfl.hs_eos4m,hs_eos,h,masc,acc,sg
+nouninfl.hs_eos5m,hs_eos,es,masc,voc,sg
+
+nouninfl.hs_eos6m,hs_eos,eis,masc,nom,pl
+nouninfl.hs_eos7m,hs_eos,wn,masc,gen,pl
+nouninfl.hs_eos8m,hs_eos,esi,masc,dat,pl
+nouninfl.hs_eos8mn,hs_eos,esin,masc,dat,pl
+nouninfl.hs_eos9m,hs_eos,eis,masc,acc,pl
+nouninfl.hs_eos10m,hs_eos,eis,masc,voc,pl
+
+nouninfl.hs_eos11m,hs_eos,ei,masc,nom,dual
+nouninfl.hs_eos12m,hs_eos,oin,masc,gen,dual
+nouninfl.hs_eos13m,hs_eos,oin,masc,dat,dual
+nouninfl.hs_eos14m,hs_eos,ei,masc,acc,dual
+nouninfl.hs_eos15m,hs_eos,ei,masc,voc,dual
 
 
 
