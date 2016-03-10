@@ -19,6 +19,25 @@ nouninfl.c_gos14m,c_gos,ge,masc,acc,dual
 nouninfl.c_gos15m,c_gos,ge,masc,voc,dual
 
 
+nouninfl.c_kos1m,c_kos,c,masc,nom,sg
+nouninfl.c_kos2m,c_kos,kos,masc,gen,sg
+nouninfl.c_kos3m,c_kos,ki,masc,dat,sg
+nouninfl.c_kos4m,c_kos,ka,masc,acc,sg
+nouninfl.c_kos5m,c_kos,c,masc,voc,sg
+
+nouninfl.c_kos6m,c_kos,kes,masc,nom,pl
+nouninfl.c_kos7m,c_kos,kwn,masc,gen,pl
+nouninfl.c_kos8m,c_kos,aci,masc,dat,pl
+nouninfl.c_kos8mn,c_kos,acin,masc,dat,pl
+nouninfl.c_kos9m,c_kos,kas,masc,acc,pl
+nouninfl.c_kos10m,c_kos,kes,masc,voc,pl
+
+nouninfl.c_kos11m,c_kos,ke,masc,nom,dual
+nouninfl.c_kos12m,c_kos,koin,masc,gen,dual
+nouninfl.c_kos13m,c_kos,koin,masc,dat,dual
+nouninfl.c_kos14m,c_kos,ke,masc,acc,dual
+nouninfl.c_kos15m,c_kos,ke,masc,voc,dual
+
 
 
 nouninfl.c_ktos1m,c_ktos,c,masc,nom,sg
