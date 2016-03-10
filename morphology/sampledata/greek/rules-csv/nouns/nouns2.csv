@@ -7,7 +7,7 @@ nouninfl.os_ou5m,os_ou,e,masc,voc,sg
 
 nouninfl.os_ou6m,os_ou,oi,masc,nom,pl
 nouninfl.os_ou7m,os_ou,wn,masc,gen,pl
-nouninfl.os_ou8m,os_ou,ois|,masc,dat,pl
+nouninfl.os_ou8m,os_ou,ois,masc,dat,pl
 nouninfl.os_ou9m,os_ou,ous,masc,acc,pl
 nouninfl.os_ou10m,os_ou,oi,masc,voc,pl
 
@@ -48,7 +48,7 @@ nouninfl.os_ou5n,os_ou,on,neut,voc,sg
 
 nouninfl.os_ou6n,os_ou,a,neut,nom,pl
 nouninfl.os_ou7n,os_ou,wn,neut,gen,pl
-nouninfl.os_ou8n,os_ou,ois|,neut,dat,pl
+nouninfl.os_ou8n,os_ou,ois,neut,dat,pl
 nouninfl.os_ou9n,os_ou,a,neut,acc,pl
 nouninfl.os_ou10n,os_ou,a,neut,voc,pl
 

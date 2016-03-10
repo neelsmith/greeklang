@@ -84,6 +84,25 @@ nouninfl.is_ios15f,is_ios,e,fem,voc,dual
 
 
 
+nouninfl.us_uos1f,us_uos,us,fem,nom,sg
+nouninfl.us_uos2f,us_uos,uos,fem,gen,sg
+nouninfl.us_uos3f,us_uos,ui+,fem,dat,sg
+nouninfl.us_uos4f,us_uos,u_n,fem,acc,sg
+nouninfl.us_uos5f,us_uos,es,fem,voc,sg
+
+nouninfl.us_uos6f,us_uos,eis,fem,nom,pl
+nouninfl.us_uos7f,us_uos,wn,fem,gen,pl
+nouninfl.us_uos8f,us_uos,esi,fem,dat,pl
+nouninfl.us_uos8mn,us_uos,esin,fem,dat,pl
+nouninfl.us_uos9f,us_uos,eis,fem,acc,pl
+nouninfl.us_uos10f,us_uos,eis,fem,voc,pl
+
+nouninfl.us_uos11f,us_uos,ei,fem,nom,dual
+nouninfl.us_uos12f,us_uos,oin,fem,gen,dual
+nouninfl.us_uos13f,us_uos,oin,fem,dat,dual
+nouninfl.us_uos14f,us_uos,ei,fem,acc,dual
+nouninfl.us_uos15f,us_uos,ei,fem,voc,dual
+
 
 
 nouninfl.wn_onos1f,wn_onos,wn,fem,nom,sg
