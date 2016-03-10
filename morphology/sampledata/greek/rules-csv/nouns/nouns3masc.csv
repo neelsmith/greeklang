@@ -87,6 +87,27 @@ nouninfl.hs_eos15m,hs_eos,ei,masc,voc,dual
 
 
 
+
+
+nouninfl.s_nos1m,s_nos,s,masc,nom,sg
+nouninfl.s_nos2m,s_nos,nos,masc,gen,sg
+nouninfl.s_nos3m,s_nos,ni,masc,dat,sg
+nouninfl.s_nos4m,s_nos,na,masc,acc,sg
+nouninfl.s_nos5m,s_nos,s,masc,voc,sg
+
+nouninfl.s_nos6m,s_nos,nes,masc,nom,pl
+nouninfl.s_nos7m,s_nos,nwn,masc,gen,pl
+nouninfl.s_nos8m,s_nos,isi,masc,dat,pl
+nouninfl.s_nos8mn,s_nos,isin,masc,dat,pl
+nouninfl.s_nos9m,s_nos,nas,masc,acc,pl
+nouninfl.s_nos10m,s_nos,nes,masc,voc,pl
+
+nouninfl.s_nos11m,s_nos,ne,masc,nom,dual
+nouninfl.s_nos12m,s_nos,noin,masc,gen,dual
+nouninfl.s_nos13m,s_nos,noin,masc,dat,dual
+nouninfl.s_nos14m,s_nos,ne,masc,acc,dual
+nouninfl.s_nos15m,s_nos,ne,masc,voc,dual
+
 nouninfl.us_ews1m,us_ews,us,masc,nom,sg
 nouninfl.us_ews2m,us_ews,ews,masc,gen,sg
 nouninfl.us_ews3m,us_ews,ei,masc,dat,sg

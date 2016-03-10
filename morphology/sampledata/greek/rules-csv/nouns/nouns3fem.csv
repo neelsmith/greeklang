@@ -105,6 +105,29 @@ nouninfl.eus_ews14m,eus_ews,ei,fem,acc,dual
 nouninfl.eus_ews15m,eus_ews,ei,fem,voc,dual
 
 
+
+
+nouninfl.s_nos1f,s_nos,s,fem,nom,sg
+nouninfl.s_nos2f,s_nos,nos,fem,gen,sg
+nouninfl.s_nos3f,s_nos,ni,fem,dat,sg
+nouninfl.s_nos4f,s_nos,na,fem,acc,sg
+nouninfl.s_nos5f,s_nos,s,fem,voc,sg
+
+nouninfl.s_nos6f,s_nos,nes,fem,nom,pl
+nouninfl.s_nos7f,s_nos,nwn,fem,gen,pl
+nouninfl.s_nos8f,s_nos,isi,fem,dat,pl
+nouninfl.s_nos8mn,s_nos,isin,fem,dat,pl
+nouninfl.s_nos9f,s_nos,nas,fem,acc,pl
+nouninfl.s_nos10f,s_nos,nes,fem,voc,pl
+
+nouninfl.s_nos11f,s_nos,ne,fem,nom,dual
+nouninfl.s_nos12f,s_nos,noin,fem,gen,dual
+nouninfl.s_nos13f,s_nos,noin,fem,dat,dual
+nouninfl.s_nos14f,s_nos,ne,fem,acc,dual
+nouninfl.s_nos15f,s_nos,ne,fem,voc,dual
+
+
+
 nouninfl.us_ews1f,us_ews,us,fem,nom,sg
 nouninfl.us_ews2f,us_ews,ews,fem,gen,sg
 nouninfl.us_ews3f,us_ews,ei,fem,dat,sg
