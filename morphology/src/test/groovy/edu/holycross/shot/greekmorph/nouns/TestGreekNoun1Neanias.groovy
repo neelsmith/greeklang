@@ -8,7 +8,7 @@ import static groovy.test.GroovyAssert.shouldFail
 
 /** Tests demonstrating parsing of nouns from Unicode string.
 */
-class TestGreekNounNeanias {
+class TestGreekNoun1Neanias {
 
           // External files used in didactic tests:
           // FST toolkit's batch parser:
@@ -35,7 +35,7 @@ class TestGreekNounNeanias {
             // map keyed by forms to analyze, to a unique GCN of noun form
             def expectedUnique = [
 
-          
+
             "νεανίου": [Gender.MASCULINE, GrammaticalCase.GENITIVE, GrammaticalNumber.SINGULAR],
             "νεανίᾳ": [Gender.MASCULINE, GrammaticalCase.DATIVE, GrammaticalNumber.SINGULAR],
             "νεανίαν": [Gender.MASCULINE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.SINGULAR],

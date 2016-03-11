@@ -8,7 +8,7 @@ import static groovy.test.GroovyAssert.shouldFail
 
 /** Tests demonstrating parsing of nouns from Unicode string.
 */
-class TestGreekNounXwra {
+class TestGreekNoun1Xwra {
 
 
       // External files used in didactic tests:

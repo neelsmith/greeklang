@@ -9,7 +9,7 @@ import static groovy.test.GroovyAssert.shouldFail
 
 /** Tests demonstrating parsing of nouns from Unicode string.
 */
-class TestGreekNounMhnis {
+class TestGreekNoun3Mhnis {
 
   // External files used in didactic tests:
   //
