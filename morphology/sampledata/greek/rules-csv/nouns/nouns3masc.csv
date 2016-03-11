@@ -62,6 +62,26 @@ nouninfl.c_ktos15m,c_ktos,kte,masc,voc,dual
 
 
 
+nouninfl.gc_ggos1m,gc_ggos,gc,masc,nom,sg
+nouninfl.gc_ggos2m,gc_ggos,ggos,masc,gen,sg
+nouninfl.gc_ggos3m,gc_ggos,ggi,masc,dat,sg
+nouninfl.gc_ggos4m,gc_ggos,gga,masc,acc,sg
+nouninfl.gc_ggos5m,gc_ggos,gc,masc,voc,sg
+
+nouninfl.gc_ggos6m,gc_ggos,gges,masc,nom,pl
+nouninfl.gc_ggos7m,gc_ggos,ggwn,masc,gen,pl
+nouninfl.gc_ggos8m,gc_ggos,gci,masc,dat,pl
+nouninfl.gc_ggos8mn,gc_ggos,gcin,masc,dat,pl
+nouninfl.gc_ggos9m,gc_ggos,ggas,masc,acc,pl
+nouninfl.gc_ggos10m,gc_ggos,gges,masc,voc,pl
+
+nouninfl.gc_ggos11m,gc_ggos,gge,masc,nom,dual
+nouninfl.gc_ggos12m,gc_ggos,ggoin,masc,gen,dual
+nouninfl.gc_ggos13m,gc_ggos,ggoin,masc,dat,dual
+nouninfl.gc_ggos14m,gc_ggos,gge,masc,acc,dual
+nouninfl.gc_ggos15m,gc_ggos,gge,masc,voc,dual
+
+
 nouninfl.eus_ews1m,eus_ews,eus,masc,nom,sg
 nouninfl.eus_ews2m,eus_ews,ews,masc,gen,sg
 nouninfl.eus_ews3m,eus_ews,ei,masc,dat,sg
@@ -186,3 +206,27 @@ nouninfl.wn_ontos12m,wn_ontos,ontoin,masc,gen,dual
 nouninfl.wn_ontos13m,wn_ontos,ontoin,masc,dat,dual
 nouninfl.wn_ontos14m,wn_ontos,onte,masc,acc,dual
 nouninfl.wn_ontos15m,wn_ontos,onte,masc,voc,dual
+
+
+
+
+
+
+nouninfl.y_pos1m,y_pos,y,masc,nom,sg
+nouninfl.y_pos2m,y_pos,pos,masc,gen,sg
+nouninfl.y_pos3m,y_pos,pi,masc,dat,sg
+nouninfl.y_pos4m,y_pos,pa,masc,acc,sg
+nouninfl.y_pos5m,y_pos,y,masc,voc,sg
+
+nouninfl.y_pos6m,y_pos,pes,masc,nom,pl
+nouninfl.y_pos7m,y_pos,pwn,masc,gen,pl
+nouninfl.y_pos8m,y_pos,yi,masc,dat,pl
+nouninfl.y_pos8mn,y_pos,yin,masc,dat,pl
+nouninfl.y_pos9m,y_pos,pas,masc,acc,pl
+nouninfl.y_pos10m,y_pos,pes,masc,voc,pl
+
+nouninfl.y_pos11m,y_pos,pe,masc,nom,dual
+nouninfl.y_pos12m,y_pos,poin,masc,gen,dual
+nouninfl.y_pos13m,y_pos,poin,masc,dat,dual
+nouninfl.y_pos14m,y_pos,pe,masc,acc,dual
+nouninfl.y_pos15m,y_pos,pe,masc,voc,dual
