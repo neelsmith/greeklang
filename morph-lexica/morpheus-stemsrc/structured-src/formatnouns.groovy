@@ -1,6 +1,9 @@
 // Read morpheus stem file, extract nouns;
 // attempt to match with LSJ identifier;
 // format output for greeklang parser.
+// LSJFILE is a 4-column .csv file like `lsj-lemma.csv` in the root directory
+// of this repository.
+// STEMFILE is a text file in morpheus stemfile format.
 //
 // usage: grovy formatnouns.groovy LSJFILE STEMFILE
 String base = "lexent."
