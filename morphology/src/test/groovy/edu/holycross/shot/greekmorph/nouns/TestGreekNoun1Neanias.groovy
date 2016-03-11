@@ -14,21 +14,19 @@ class TestGreekNoun1Neanias {
           // FST toolkit's batch parser:
           String fstinfl = "/usr/bin/fst-infl"
           // CSV files with URN abbreviations for stems and inflectional rules
-          File lexCsvSource = new File("sampledata/urn-registries/datasets.csv")
-          File inflCsvSource = new File("src/fst/collectionAbbreviations.csv")
+          File urnReg = new File("data/smyth/urnregistry/collectionregistry.csv")
+
           // A URN manager configured with CITE collection abbreviations
           // for both inflectional patterns and lexicon of stems:
-          UrnManager umgr = new UrnManager(inflCsvSource)
+          UrnManager umgr = new UrnManager(urnReg)
 
           // Compiled finite state transducer:
-          String litGreekBinary = "build/greek/greek.a"
-          String atticBinary = "build/attic/greek.a"
+          String litGreekBinary = "build/smyth/greek.a"
+          
 
           @Test
           void testDeclension() {
-            // Add lexicon to URN manager:
-            umgr.addCsvFile(lexCsvSource)
-            // And, finally, the parser:
+            // The parser
             LiteraryGreekParser mp = new LiteraryGreekParser(litGreekBinary, umgr)
             mp.debug = 10
             mp.fstParser.debug = 10
@@ -39,7 +37,7 @@ class TestGreekNoun1Neanias {
             "νεανίου": [Gender.MASCULINE, GrammaticalCase.GENITIVE, GrammaticalNumber.SINGULAR],
             "νεανίᾳ": [Gender.MASCULINE, GrammaticalCase.DATIVE, GrammaticalNumber.SINGULAR],
             "νεανίαν": [Gender.MASCULINE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.SINGULAR],
-            "νεανία": [Gender.MASCULINE, GrammaticalCase.VOCATIVE, GrammaticalNumber.SINGULAR],
+            //"νεανία": [Gender.MASCULINE, GrammaticalCase.VOCATIVE, GrammaticalNumber.SINGULAR],
 
 
             "νεανιῶν": [Gender.MASCULINE, GrammaticalCase.GENITIVE, GrammaticalNumber.PLURAL],
