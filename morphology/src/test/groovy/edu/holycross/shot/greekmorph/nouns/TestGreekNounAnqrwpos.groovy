@@ -117,7 +117,7 @@ class TestGreekNounAnqrwpos {
 
       // Inflectional patterns are explained by a URN identifying the
       // the inflectional rule applied to the stem
-      String expectedInflectionExplanation = "urn:cite:gmorph:nouninfl.os_ou2"
+      String expectedInflectionExplanation = "urn:cite:gmorph:nouninfl.os_ou2m"
       assert explanation.inflection.toString() == expectedInflectionExplanation
     }
   }
