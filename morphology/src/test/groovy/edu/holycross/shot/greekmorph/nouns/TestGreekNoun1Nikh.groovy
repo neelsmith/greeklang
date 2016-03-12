@@ -114,7 +114,6 @@ class TestGreekNoun1Nikh {
       MorphologicalAnalysis morphgd = mp.parseGreekString(gd)
       //assert morphgd.analyses.size() == 2
       morphgd.analyses.each { a ->
-        System.err.println "Analysis: " + a
           MorphForm form = a.getMorphForm()
           assert form.getAnalyticalType() == AnalyticalType.NOUN
           CitableId formIdentification = form.getAnalysis()

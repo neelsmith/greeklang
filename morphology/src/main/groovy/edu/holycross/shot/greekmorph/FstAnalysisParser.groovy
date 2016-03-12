@@ -84,7 +84,6 @@ class FstAnalysisParser {
       }
       stemString = cols[0]
       inflectionString = cols[1]
-      debug = 10
       if (debug > 1) {
         System.err.println "FstAP: Analyzing " + analysisStr
         System.err.println "Preparing to compute parts with\t stemstr ${stemString}\n\tinfl string ${inflectionString}"

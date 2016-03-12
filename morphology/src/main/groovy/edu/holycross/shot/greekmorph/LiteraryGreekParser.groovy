@@ -126,9 +126,10 @@ class LiteraryGreekParser implements GreekParser {
 
     def inflectionSyllables = Syllable.getSyllables(inflectionalString)
     def accPattern = nounAnalysis.getPersistentAccent()
-    System.err.println "Acc. pattern is " + accPattern
+
     def maxOffset = AccentPattern.values().size() - 1
     if (debug > 0) {
+      System.err.println "Acc. pattern is " + accPattern
       System.err.println "Checking noun w  persistent accent " + accPattern + " and ordinal " + accPattern.ordinal() //nounAnalysis.getPersistentAccent()
       def sylloffset = (inflectionSyllables.size() - 1)
       def max1 = sylloffset + accPattern.ordinal()
