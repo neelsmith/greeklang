@@ -83,7 +83,7 @@ nouninfl.gc_ggos15m,gc_ggos,gge,masc,voc,dual
 
 
 nouninfl.eus_ews1m,eus_ews,eus,masc,nom,sg
-nouninfl.eus_ews2m,eus_ews,ews,masc,gen,sg
+nouninfl.eus_ews2m,eus_ews,e/ws,masc,gen,sg
 nouninfl.eus_ews3m,eus_ews,ei,masc,dat,sg
 nouninfl.eus_ews4m,eus_ews,ea,masc,acc,sg
 nouninfl.eus_ews5m,eus_ews,eu,masc,voc,sg
