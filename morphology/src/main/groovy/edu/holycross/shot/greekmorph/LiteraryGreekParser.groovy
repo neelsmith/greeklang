@@ -40,6 +40,8 @@ class LiteraryGreekParser implements GreekParser {
 
       case "a_hs":
       case "a_as":
+      case "a_as_long":
+      case "a_as_short":
       case "h_hs":
       case "hs_ou":
       case "as_ou":
