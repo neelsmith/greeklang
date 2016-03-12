@@ -8,12 +8,12 @@ import static groovy.test.GroovyAssert.shouldFail
 
 /** Tests demonstrating parsing of nouns from Unicode string.
 */
-class TestGreekNoun1Nikh {
+class TestGreekNoun1Kriths {
 
   // External files used in didactic tests:
   //
   // CSV files with URN abbreviations for stems and inflectional rules
-  File urnReg = new File("sampledata/smyth/urnregistry/collectionregistry.csv")
+  File urnReg = new File("data/smyth/urnregistry/collectionregistry.csv")
 
   // A URN manager configured with CITE collection abbreviations
   // for both inflectional patterns and lexicon of stems:
@@ -25,7 +25,7 @@ class TestGreekNoun1Nikh {
   // The parser:
   LiteraryGreekParser mp = new LiteraryGreekParser(fstBinary, umgr)
 
-
+/*
   @Test
   void testUniqueForms(){
     // map keyed by forms to analyze, to a unique GCN of noun form
@@ -123,4 +123,5 @@ class TestGreekNoun1Nikh {
           assert formIdentification.getNum() == GrammaticalNumber.DUAL
       }
     }
+    */
 }

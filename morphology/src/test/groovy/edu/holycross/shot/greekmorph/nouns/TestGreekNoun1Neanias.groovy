@@ -14,7 +14,7 @@ class TestGreekNoun1Neanias {
           // FST toolkit's batch parser:
           String fstinfl = "/usr/bin/fst-infl"
           // CSV files with URN abbreviations for stems and inflectional rules
-          File urnReg = new File("data/smyth/urnregistry/collectionregistry.csv")
+          File urnReg = new File("sampledata/smyth/urnregistry/collectionregistry.csv")
 
           // A URN manager configured with CITE collection abbreviations
           // for both inflectional patterns and lexicon of stems:
@@ -22,7 +22,7 @@ class TestGreekNoun1Neanias {
 
           // Compiled finite state transducer:
           String litGreekBinary = "build/smyth/greek.a"
-          
+
 
           @Test
           void testDeclension() {
