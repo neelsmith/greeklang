@@ -157,7 +157,7 @@ class LiteraryGreekParser implements GreekParser {
 
 	case PersistentAccent.STEM_ULTIMA:
 	// need to check for polysyllabic ending:
-	accented =  Accent.accentWord(retrievedForm, AccentPattern.PENULT)
+	accented = retrievedForm.accent( AccentPattern.PENULT) //Accent.accentWord(retrievedForm, AccentPattern.PENULT)
 	break
 
 	case PersistentAccent.INFLECTIONAL_ENDING:
@@ -208,7 +208,6 @@ class LiteraryGreekParser implements GreekParser {
     GreekWord retrievedForm = new GreekWord(analysisInfo.getSurfaceStem() + analysisInfo.getSurfaceInflection())
 
     String inflectionTag = analysisInfo.getInflectionTag()
-
 
     // see if retrieved from is pre-accented.
     //inflectionTag
