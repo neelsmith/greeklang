@@ -16,15 +16,15 @@ buildscript {
 
 task setUpBuildDir() {
   description = "Ensure that work area is built."
-  File orthoDir = new File(buildDir,orthography)
-  File lexDir = new File(orthoDir,"lexica")
+  File datasetDir = new File(buildDir,dataset)
+  File lexDir = new File(datasetDir,"lexica")
   outputs.dir lexDir
 }
 setUpBuildDir.doLast {
   if (! buildDir.exists()) {
     buildDir.mkdir()
   }
-  File orthoDir = new File(buildDir,orthography)
+  File orthoDir = new File(buildDir,dataset)
   if (! orthoDir.exists()) {
     orthoDir.mkdir()
     System.err.println "Created dir " + orthoDir
@@ -34,18 +34,6 @@ setUpBuildDir.doLast {
     lexDir.mkdir()
     System.err.println "Created dir " + lexDir
   }
-}
-
-
-
-task loadData(type: Copy) {
-  description = "Copies lexical stems and rules in .csv files to active work area."
-  //  from ("sampledata/${orthography}") {
-
-  from ("${loaddir}/${orthography}") {
-    include ("**/*.csv", "**/*.fst")
-  }
-  into "${datadir}/${orthography}"
 }
 
 
@@ -62,7 +50,7 @@ String lexiconMakeStatement(File dir) {
   def fileList = []
   /*
   dir.eachFileMatch(~/lex.*.fst/) { fstFile ->
-    fileList.add ("${buildDir}/${orthography}/${fstFile.getName()}".toString())
+    fileList.add ("${buildDir}/${dataset}/${fstFile.getName()}".toString())
   }
   fileList.each { f ->
     stmt.append(f + " ")
@@ -88,7 +76,7 @@ String lexiconFstStatement(File dir) {
     return ""
   } else {
     dir.eachFileMatch(~/lex.*.fst/) { fstFile ->
-      fileList.add ('"' + "${buildDir}/${orthography}/lexica/${fstFile.getName()}".toString() + '"')
+      fileList.add ('"' + "${buildDir}/${dataset}/lexica/${fstFile.getName()}".toString() + '"')
     }
     fileList.eachWithIndex { f, i ->
       if (i < (fileList.size() - 1)) {
@@ -137,11 +125,11 @@ String nounFstStringForCols(ArrayList columns) {
   return nounEntry.toString()
 }
 task buildNounStems(dependsOn: setUpBuildDir) {
-  description = "Builds .fst files from tabular source in ${datadir}/${orthography}/stems-csv/nouns"
+  description = "Builds .fst files from tabular source in ${loaddir}/${dataset}/stems-csv/nouns"
 
-  File lexDir = new File(projectDir,"${datadir}/${orthography}/stems-csv/nouns")
-    
-  File orthoBuild = new File(buildDir,orthography)
+  File lexDir = new File("${loaddir}/${dataset}/stems-csv/nouns")
+
+  File orthoBuild = new File(buildDir,dataset)
   File fstDir = new File(orthoBuild,"lexica")
 
   outputs.dir fstDir
@@ -149,13 +137,13 @@ task buildNounStems(dependsOn: setUpBuildDir) {
 }
 
 buildNounStems.doLast {
-  File lexDir = new File(projectDir,"${datadir}/${orthography}/stems-csv/nouns")
-  File orthoBuild = new File(buildDir,orthography)
+  File lexDir = new File("${loaddir}/${dataset}/stems-csv/nouns")
+  File orthoBuild = new File(buildDir,dataset)
   File fstDir = new File(orthoBuild,"lexica")
   if (! fstDir.exists()) {
     fstDir.mkdir()
   }
-  
+
   System.err.println "Looking for csv files in " + lexDir
   def fileCount = 0
   lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
@@ -179,14 +167,14 @@ buildNounStems.doLast {
     fstFile.append(data.toString())
     fileCount++
   }
-  
+
 }
 
 
 //task buildStems(dependsOn: [buildNounStems, buildVerbStems, buildAdjectiveStems, buildOtherStems, buildIndeclinableStems]) {
 task buildStems(dependsOn: [buildNounStems, buildVerbStems]) {
   description = "Builds .fst files from tabular source in data/stems-csv"
-  File orthoBuild = new File(buildDir,orthography)
+  File orthoBuild = new File(buildDir,dataset)
   File fstDir = new File(orthoBuild,"lexica")
   outputs.dir fstDir
 }
@@ -195,25 +183,25 @@ task buildStems(dependsOn: [buildNounStems, buildVerbStems]) {
 
 task buildAdjectiveInflection() {
   description = "Builds adjectiveinfl.fst from tabular source"
-  
+
 }
 task buildAdverbInflection() {
-  description = "Builds adverbinl.fst from tabular source" 
+  description = "Builds adverbinl.fst from tabular source"
 }
 task buildIndeclInflection() {
-  description = "Builds indeclinfl.fst from tabular source" 
+  description = "Builds indeclinfl.fst from tabular source"
 }
 task buildInfInflection() {
-  description = "Builds infinfl.fst from tabular source" 
+  description = "Builds infinfl.fst from tabular source"
 }
 task buildPtcplInflection() {
-  description = "Builds ptcplinfl.fst from tabular source" 
+  description = "Builds ptcplinfl.fst from tabular source"
 }
 task buildVadjInflection() {
-  description = "Builds vadjinfl.fst from tabular source" 
+  description = "Builds vadjinfl.fst from tabular source"
 }
 task buildVerbInflection() {
-  description = "Builds verbinfl.fst from tabular source" 
+  description = "Builds verbinfl.fst from tabular source"
 }
 
 
@@ -221,7 +209,6 @@ task buildVerbInflection() {
 String nounInflFstForCols(ArrayList cols) {
 
   if (cols.size() < 6) {
-    System.err.println "Too few columns in ${cols}"
     return ""
   }
   StringBuilder fst = new StringBuilder("")
@@ -237,7 +224,7 @@ String nounInflFstForCols(ArrayList cols) {
   inflString = inflString.replaceAll("\\(", "<ro>")
   inflString = inflString.replaceAll("\\)", "<sm>")
   inflString = inflString.replaceAll("\\|", "\\\\|")
-  
+
 
   fst.append(" <${inflClass}> <u>${ruleUrn}</u>${inflString}<${grammGender}><${grammCase}><${grammNumber}>")
   return fst.toString()
@@ -249,7 +236,7 @@ buildNounInflection.doLast {
   if (! buildDir.exists()) {
     buildDir.mkdir()
   }
-  File orthoBuild = new File(buildDir, orthography)
+  File orthoBuild = new File(buildDir, dataset)
   if (! orthoBuild.exists()) {
     orthoBuild.mkdir()
   }
@@ -260,8 +247,8 @@ buildNounInflection.doLast {
   File nounFst = new File(inflDir,"nouninfl.fst")
   nounFst.setText("")
   StringBuilder data = new StringBuilder("\$nouninfl\$ = ")
-  
-  File lexDir = new File(projectDir,"${datadir}/${orthography}/rules-csv/nouns")
+
+  File lexDir = new File("${loaddir}/${dataset}/rules-csv/nouns")
   def fileCount = 0
   lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
     if (fileCount > 0) {
@@ -279,7 +266,7 @@ buildNounInflection.doLast {
 	  if (lineCount == 1) {
 	    data.append(fstRow)
 	  } else if (lineCount > 1) {
-	    data.append(" |\\\n" + fstRow) 
+	    data.append(" |\\\n" + fstRow)
 	  }
 	}
       }
@@ -313,30 +300,30 @@ task cpSrc (type: Copy, dependsOn: [buildStems]) {
     from ("src/fst") {
       include ("**/makefile", "**/*.fst")
     }
-    into "${buildDir}/${orthography}"
+    into "${buildDir}/${dataset}"
     filter(
       ReplaceTokens, tokens: [
-      "workdir" : buildDir.toString() + "/${orthography}/",
-      "lexica": lexiconFstStatement(new File("${buildDir}/${orthography}/lexica")),
-      "makelexica": lexiconMakeStatement(new File("${buildDir}/${orthography}/lexica")),
+      "workdir" : buildDir.toString() + "/${dataset}/",
+      "lexica": lexiconFstStatement(new File("${buildDir}/${dataset}/lexica")),
+      "makelexica": lexiconMakeStatement(new File("${buildDir}/${dataset}/lexica")),
 
-      "extramakerules": "", // rulesMakeStatement(new File("${projectDir}/${datadir}/${orthography}/rules-fst")),
+      "extramakerules": "", // rulesMakeStatement(new File("${loaddir}/${dataset}/rules-fst")),
       "extratags": "" //tagsFstStatement()
      ])
-    inputs.dir file("${buildDir}/${orthography}/lexica")
+    inputs.dir file("${buildDir}/${dataset}/lexica")
 }
 
 
 task cpOrthography(type:Copy, dependsOn: setUpBuildDir) {
     description = "Filters and copies directory with defintions of orthographic system to build area."
-    from ("${projectDir}/${datadir}/${orthography}/orthography") {
+    from ("${loaddir}/${dataset}/orthography") {
       include ("**/*.fst")
     }
-    into "${buildDir}/${orthography}"
-    //filter(ReplaceTokens, tokens: ["workdir" : "${buildDir}/${orthography}/".toString()])
+    into "${buildDir}/${dataset}"
+    //filter(ReplaceTokens, tokens: ["workdir" : "${buildDir}/${dataset}/".toString()])
 }
 cpOrthography.doLast {
-  System.err.println "Copied orthography data from ${projectDir}/${datadir}/${orthography}/orthography to ${buildDir}/${orthography}"
+  System.err.println "Copied orthography data from ${loaddir}/${dataset}/orthography to ${buildDir}/${dataset}"
 }
 
 // End tasks for copying FST source and definition of orthographic system
@@ -360,30 +347,30 @@ cpAll.doLast {
 // Tasks compiling FSTs
 
 task compileInflection(type:Exec, dependsOn: cpAll) {
-  description = "Builds binary Finite State Transducer for core inflection in ${buildDir}/${orthography}/inflection.a"
+  description = "Builds binary Finite State Transducer for core inflection in ${buildDir}/${dataset}/inflection.a"
 
-  outputs.file "${buildDir}/${orthography}/inflection.a".toString()
-  inputs.dir "${buildDir}/${orthography}/inflection"
+  outputs.file "${buildDir}/${dataset}/inflection.a".toString()
+  inputs.dir "${buildDir}/${dataset}/inflection"
 
-  commandLine =  [MAKE, "-f", "${buildDir}/${orthography}/inflection/makefile".toString()]
+  commandLine =  [MAKE, "-f", "${buildDir}/${dataset}/inflection/makefile".toString()]
 }
 
 task fst(type:Exec, dependsOn: [cpAll, compileInflection]) {
-  description = "Builds binary Finite State Transducer in ${buildDir}/${orthography}/greek.a"
+  description = "Builds binary Finite State Transducer in ${buildDir}/${dataset}/greek.a"
 
-  outputs.file "${buildDir}/${orthography}/greek.a".toString()
-  inputs.dir "${buildDir}/${orthography}"
+  outputs.file "${buildDir}/${dataset}/greek.a".toString()
+  inputs.dir "${buildDir}/${dataset}"
 
-  commandLine =  [MAKE, "-f", "${buildDir}/${orthography}/makefile".toString()]
+  commandLine =  [MAKE, "-f", "${buildDir}/${dataset}/makefile".toString()]
 }
 
 task fstgen(type:Exec, dependsOn: cpAll) {
-  description = "Builds binary Finite State Transducer in ${buildDir}/${orthography}/greek.a and 'switched' FST (for bulk generation of surface symbols) in ${buildDir}/${orthography}/bulkgen.a"
+  description = "Builds binary Finite State Transducer in ${buildDir}/${dataset}/greek.a and 'switched' FST (for bulk generation of surface symbols) in ${buildDir}/${dataset}/bulkgen.a"
 
-  outputs.file "${buildDir}/${orthography}/bulkgen.a".toString()
-  inputs.dir "${buildDir}/${orthography}"
+  outputs.file "${buildDir}/${dataset}/bulkgen.a".toString()
+  inputs.dir "${buildDir}/${dataset}"
 
-  commandLine =  [FSTCOMPILER, "-s", "${buildDir}/${orthography}/morphology.fst".toString(), "${buildDir}/${orthography}/bulkgen.a".toString()]
+  commandLine =  [FSTCOMPILER, "-s", "${buildDir}/${dataset}/morphology.fst".toString(), "${buildDir}/${dataset}/bulkgen.a".toString()]
 }
 
 // End tasks compiling FSTs
@@ -394,30 +381,30 @@ task fstgen(type:Exec, dependsOn: cpAll) {
 ////////////////////////////////////////////////////////////////////////////////////
 // Utility transducers, used in testing, helpful in debugging
 task rawlex(type:Exec, dependsOn: fst) {
-  description = "Builds binary Finite State Transducer in ${buildDir}/${orthography}/rawlex.a"
+  description = "Builds binary Finite State Transducer in ${buildDir}/${dataset}/rawlex.a"
 
-  outputs.file "${buildDir}/${orthography}/utils/rawlex.a".toString()
-  inputs.file "${buildDir}/${orthography}/fst.a"
+  outputs.file "${buildDir}/${dataset}/utils/rawlex.a".toString()
+  inputs.file "${buildDir}/${dataset}/fst.a"
 
-  commandLine =  [FSTCOMPILER, "${buildDir}/${orthography}/utils/rawlex.fst".toString(), "${buildDir}/${orthography}/utils/rawlex.a".toString()]
+  commandLine =  [FSTCOMPILER, "${buildDir}/${dataset}/utils/rawlex.fst".toString(), "${buildDir}/${dataset}/utils/rawlex.a".toString()]
 }
 
 task rawmorph(type:Exec, dependsOn: fst) {
-  description = "Builds binary Finite State Transducer in ${buildDir}/${orthography}/rawmorph.a"
+  description = "Builds binary Finite State Transducer in ${buildDir}/${dataset}/rawmorph.a"
 
-  outputs.file "${buildDir}/${orthography}/utils/rawmorph.a".toString()
-  inputs.file "${buildDir}/${orthography}/fst.a"
+  outputs.file "${buildDir}/${dataset}/utils/rawmorph.a".toString()
+  inputs.file "${buildDir}/${dataset}/fst.a"
 
-  commandLine =  [FSTCOMPILER, "${buildDir}/${orthography}/utils/rawmorph.fst".toString(), "${buildDir}/${orthography}/utils/rawmorph.a".toString()]
+  commandLine =  [FSTCOMPILER, "${buildDir}/${dataset}/utils/rawmorph.fst".toString(), "${buildDir}/${dataset}/utils/rawmorph.a".toString()]
 }
 
 task rawaccepted(type:Exec, dependsOn: rawmorph) {
-  description = "Builds binary Finite State Transducer in ${buildDir}/${orthography}/rawaccepted.a"
+  description = "Builds binary Finite State Transducer in ${buildDir}/${dataset}/rawaccepted.a"
 
-  outputs.file "${buildDir}/${orthography}/utils/rawaccepted.a".toString()
-  inputs.file "${buildDir}/${orthography}/fst.a"
+  outputs.file "${buildDir}/${dataset}/utils/rawaccepted.a".toString()
+  inputs.file "${buildDir}/${dataset}/fst.a"
 
-  commandLine =  [FSTCOMPILER, "${buildDir}/${orthography}/utils/rawaccepted.fst".toString(), "${buildDir}/${orthography}/utils/rawaccepted.a".toString()]
+  commandLine =  [FSTCOMPILER, "${buildDir}/${dataset}/utils/rawaccepted.fst".toString(), "${buildDir}/${dataset}/utils/rawaccepted.a".toString()]
 }
 
 task utils(dependsOn: [rawlex, rawmorph, rawaccepted]) {
@@ -431,4 +418,3 @@ test.dependsOn utils
 
 // End utility transducers used in testing
 ////////////////////////////////////////////////////////////////////////////////////
-

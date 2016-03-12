@@ -151,18 +151,23 @@ subprojects {
 
 project(":morphology") {
   version = morphversion
-  String orthVal = "greek"
-  if (project.hasProperty('ortho')) {
-    orthVal = ortho
+
+  String srcDir = "sampledata"
+  if (project.hasProperty('datadir')) {
+    srcDir = datadir
   }
-  String sampleDir = "sampledata"
-  if (project.hasProperty('datasrc')) {
-    sampleDir = datasrc
+
+  String dataSetting = "greek"
+  if (project.hasProperty('dataset')) {
+    dataSetting = dataset
   }
+
+
+
   ext {
-    orthography = orthVal
     specversion = morphspec
-    loaddir = sampleDir
+    loaddir = srcDir
+    dataset = dataSetting
   }
   // set defaults for FST compilation:
   apply from: "${rootProject.rootDir}/morphology/fstconf.gradle"

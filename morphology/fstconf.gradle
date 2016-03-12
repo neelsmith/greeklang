@@ -4,8 +4,4 @@ ext {
   FSTINFL = "/usr/bin/fst-infl"
   MAKE = "/usr/bin/make"
 
-  // Relative or absolute path to directory
-  // with source data for building parser:
-  datadir = "data"
-
 }
