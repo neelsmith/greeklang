@@ -25,19 +25,19 @@ class TestGreekNoun1Fugh {
   // The parser:
   LiteraryGreekParser mp = new LiteraryGreekParser(fstBinary, umgr)
 
-/*
+
   @Test
   void testUniqueForms(){
     // map keyed by forms to analyze, to a unique GCN of noun form
     def expectedUnique = [
 
-    "νίκης": [Gender.FEMININE, GrammaticalCase.GENITIVE, GrammaticalNumber.SINGULAR],
-    "νίκῃ": [Gender.FEMININE, GrammaticalCase.DATIVE, GrammaticalNumber.SINGULAR],
-    "νίκην": [Gender.FEMININE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.SINGULAR],
+    "φυγῆς": [Gender.FEMININE, GrammaticalCase.GENITIVE, GrammaticalNumber.SINGULAR],
+    "φυγῇ": [Gender.FEMININE, GrammaticalCase.DATIVE, GrammaticalNumber.SINGULAR],
+    "φυγήν": [Gender.FEMININE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.SINGULAR],
 
-    "νικῶν": [Gender.FEMININE, GrammaticalCase.GENITIVE, GrammaticalNumber.PLURAL],
-    "νίκαις": [Gender.FEMININE, GrammaticalCase.DATIVE, GrammaticalNumber.PLURAL],
-    "νίκας": [Gender.FEMININE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.PLURAL]
+    "φυγῶν": [Gender.FEMININE, GrammaticalCase.GENITIVE, GrammaticalNumber.PLURAL],
+    "φυγαῖς": [Gender.FEMININE, GrammaticalCase.DATIVE, GrammaticalNumber.PLURAL],
+    "φυγάς": [Gender.FEMININE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.PLURAL]
 
 
     ]
@@ -62,7 +62,7 @@ class TestGreekNoun1Fugh {
     // Check also the ambiguous nom/voc forms.
     // Singular:
     def nom_voc = [GrammaticalCase.NOMINATIVE,GrammaticalCase.VOCATIVE ]
-    GreekString ambiguous = new GreekString("νίκη",true)
+    GreekString ambiguous = new GreekString("φυγή",true)
     MorphologicalAnalysis morph = mp.parseGreekString(ambiguous)
     assert morph.analyses.size() == 2
     morph.analyses.each {
@@ -76,7 +76,7 @@ class TestGreekNoun1Fugh {
         assert formIdentification.getNum() == GrammaticalNumber.SINGULAR
     }
     // Plural:
-    GreekString ambiguousPlural = new GreekString("νῖκαι",true)
+    GreekString ambiguousPlural = new GreekString("φυγαί",true)
     MorphologicalAnalysis morphPl = mp.parseGreekString(ambiguousPlural)
     assert morphPl.analyses.size() == 2
     morphPl.analyses.each {
@@ -94,7 +94,7 @@ class TestGreekNoun1Fugh {
     void testDuals(){
       def nom_acc_voc = [GrammaticalCase.NOMINATIVE,GrammaticalCase.ACCUSATIVE,GrammaticalCase.VOCATIVE ]
 
-      GreekString nav = new GreekString("νίκα",true)
+      GreekString nav = new GreekString("φυγά",true)
       MorphologicalAnalysis morph = mp.parseGreekString(nav)
       assert morph.analyses.size() == 3
       morph.analyses.each {
@@ -110,7 +110,7 @@ class TestGreekNoun1Fugh {
 
       def gen_dat = [GrammaticalCase.GENITIVE,GrammaticalCase.DATIVE ]
 
-      GreekString gd = new GreekString("νίκαιν",true)
+      GreekString gd = new GreekString("φυγαῖν",true)
       MorphologicalAnalysis morphgd = mp.parseGreekString(gd)
       //assert morphgd.analyses.size() == 2
       morphgd.analyses.each { a ->
@@ -123,5 +123,5 @@ class TestGreekNoun1Fugh {
           assert formIdentification.getNum() == GrammaticalNumber.DUAL
       }
     }
-    */
+    
 }
