@@ -1,6 +1,0 @@
-CollectionId,CollectionUrn,Label
-coretests,urn:cite:gmorph:coretests,"Lexicon of stems used in testing core morphological engine in literary Greek orthography"
-lsjpool,urn:cite:gmorph:lsjpool,"Lexicon of stems used in testing core morphological engine in literary Greek orthography"
-attictests,urn:cite:gmorph:attictests,"Lexicon of stems used in testing core morphological engine in classical Greek orthography"
-vocab,urn:cite:gmorph:vocab,"Sources for vocabulary used in parser's test and sample data sets"
-hmttag,urn:cite:hmt:hmttag,"Set of analytical tags used in the Homer Multitext project"
