@@ -24,38 +24,68 @@ class TestGreekNoun1Xwra {
 
     // The parser:
     LiteraryGreekParser mp = new LiteraryGreekParser(fstBinary, umgr)
-
+/*
 
     @Test
-    void testUniqueForms(){
-      // map keyed by forms to analyze, to a unique GCN of noun form
-      def expectedUnique = [
+    void testGenSgAccPl(){
+      String greek =   "χώρας"
 
-      "χώρας": [Gender.FEMININE, GrammaticalCase.GENITIVE, GrammaticalNumber.SINGULAR],
-      "χώρᾳ": [Gender.FEMININE, GrammaticalCase.DATIVE, GrammaticalNumber.SINGULAR],
-      "χώραν": [Gender.FEMININE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.SINGULAR],
+    //  "χώρας": [Gender.FEMININE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.PLURAL]
 
-      "χωρῶν": [Gender.FEMININE, GrammaticalCase.GENITIVE, GrammaticalNumber.PLURAL],
-      "χώραις": [Gender.FEMININE, GrammaticalCase.DATIVE, GrammaticalNumber.PLURAL],
-      "χώρας": [Gender.FEMININE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.PLURAL]
+    mp.debug = 10
+    mp.fstParser.debug = 10
 
-
-      ]
-
-      expectedUnique.keySet().each { greek ->
-        def expectedAnswer = expectedUnique[greek]
-        MorphologicalAnalysis morph = mp.parseGreekString(new GreekString(greek,true))
-        assert morph.analyses.size() == 1
-        MorphForm form = morph.analyses[0].getMorphForm()
-        assert form.getAnalyticalType() == AnalyticalType.NOUN
-        CitableId formIdentification = form.getAnalysis()
-        assert formIdentification.getGender() == expectedAnswer[0]
-        assert formIdentification.getCas() == expectedAnswer[1]
-        assert formIdentification.getNum() == expectedAnswer[2]
+    MorphologicalAnalysis morph = mp.parseGreekString(new GreekString(greek,true))
+    assert morph.analyses.size() == 2
+    MorphForm form = morph.analyses[0].getMorphForm()
+    assert form.getAnalyticalType() == AnalyticalType.NOUN
+    assert formIdentification.getGender() == Gender.FEMININE
+    def casePossible = [GrammaticalCase.ACCUSATIVE, GrammaticalCase.GENITIVE]
+    def actualCase = formIdentification.getCas()
+    assert casePossible.contains(actualCase)
+    if (actualCase == GrammaticalCase.ACCUSATIVE) {
+      assert formIdentification.getNum() == GrammaticalNumber.PLURAL
+    }
+    if (actualCase == GrammaticalCase.GENITIVE) {
+      assert formIdentification.getNum() == GrammaticalNumber.SINGULAR
+    }
+  }
+  */
+  /*
+    @Test
+    void testNomVoc(){
+      // Check also the ambiguous nom/voc forms.
+      // Singular:
+      def nom_voc = [GrammaticalCase.NOMINATIVE,GrammaticalCase.VOCATIVE ]
+      GreekString ambiguous = new GreekString("χώρα",true)
+      MorphologicalAnalysis morph = mp.parseGreekString(ambiguous)
+      assert morph.analyses.size() == 2
+      morph.analyses.each {
+          MorphForm form = it.getMorphForm()
+          assert form.getAnalyticalType() == AnalyticalType.NOUN
+          CitableId formIdentification = form.getAnalysis()
+          // can't know ordering of analyses, but case must be
+          // ONE of these two!
+          assert nom_voc.contains(formIdentification.getCas())
+          assert formIdentification.getGender() == Gender.FEMININE
+          assert formIdentification.getNum() == GrammaticalNumber.SINGULAR
       }
+      // Plural:
+      GreekString ambiguousPlural = new GreekString("νῖκαι",true)
+      MorphologicalAnalysis morphPl = mp.parseGreekString(ambiguousPlural)
+      assert morphPl.analyses.size() == 2
+      morphPl.analyses.each {
+          MorphForm form = it.getMorphForm()
+          assert form.getAnalyticalType() == AnalyticalType.NOUN
+          CitableId formIdentification = form.getAnalysis()
+          assert nom_voc.contains(formIdentification.getCas())
+          assert formIdentification.getGender() == Gender.FEMININE
+          assert formIdentification.getNum() == GrammaticalNumber.PLURAL
+      }
+
     }
 
-/*
+
 
     @Test
     void testNomVoc(){
@@ -87,6 +117,7 @@ class TestGreekNoun1Xwra {
           assert formIdentification.getGender() == Gender.FEMININE
           assert formIdentification.getNum() == GrammaticalNumber.PLURAL
       }
+
     }
 
 
