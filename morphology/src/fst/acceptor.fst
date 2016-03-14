@@ -12,6 +12,7 @@ $=nounclass$ = [#nounclass#]
 $squashnounurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+<noun>$=gender$ $=nounclass$  [#persistacc#]  $separator$+ $=nounclass$ <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> [#stemchars#]* $=gender$ $case$ $number$
 
 % Adjective acceptor:
+$=adjclass$ = [#adjectiveclass#]
 $squashadjurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+<adj>$=adjclass$  [#persistacc#]  $separator$+ <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u>$=adjclass$ [#stemchars#]* <adj>$gender$ $case$ $number$ [#degree#]
 
 
