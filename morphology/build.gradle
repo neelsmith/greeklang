@@ -257,14 +257,96 @@ task buildPtcplInflection() {
 task buildVadjInflection() {
   description = "Builds vadjinfl.fst from tabular source"
 }
+
+
+String verbInflFstForCols(ArrayList cols) {
+  // SOURCE:
+  // verbinfl.w_impf_indic1
+  // w_regular
+  // on
+  // 1st,sg,impft,indic,act
+  if (cols.size() < 8) {
+    return ""
+  }
+  StringBuilder fst = new StringBuilder("")
+
+  String ruleUrn = cols[0].replaceAll(/_/,"\\\\_")
+  ruleUrn = ruleUrn.replaceAll("\\.","\\\\.")
+  
+  String inflClass = cols[1] //.replaceAll(/_/,"\\_")
+  String inflString = cols[2]
+  
+  String pers = cols[3]
+  String num = cols[4]
+  String tense = cols[5]
+  String mood = cols[6]
+  String voice = cols[7]
+
+  inflString = inflString.replaceAll("_", "<lo>")
+  inflString = inflString.replaceAll("\\(", "<ro>")
+  inflString = inflString.replaceAll("\\)", "<sm>")
+  inflString = inflString.replaceAll("\\|", "\\\\|")
+
+  // TARGET:
+  // <w_regular>es<2nd><sg><impft><indic><act><u>verbinfl\.w\_impf\_indic2</u>
+  fst.append(" <${inflClass}>${inflString}<${pers}><${num}><${tense}><${mood}><${voice}><u>${ruleUrn}</u>")
+
+  return fst.toString()
+}
+
+
 task buildVerbInflection() {
-  description = "Builds verbinfl.fst from tabular source"
+  description = "Builds rules for conjugated verb forms in verbinfl.fst from tabular source"
+}
+buildVerbInflection.doLast {
+  if (! buildDir.exists()) {
+    buildDir.mkdir()
+  }
+  File orthoBuild = new File(buildDir, dataset)
+  if (! orthoBuild.exists()) {
+    orthoBuild.mkdir()
+  }
+  File inflDir = new File(orthoBuild,"inflection")
+  if (! inflDir.exists()) {
+    inflDir.mkdir()
+  }
+  File verbFst = new File(inflDir,"verbinfl.fst")
+  verbFst.setText("")
+  StringBuilder data = new StringBuilder("\$verbinfl\$ = ")
+
+  File lexDir = new File("${loaddir}/${dataset}/rules-csv/verbs")
+  def fileCount = 0
+  lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
+    if (fileCount > 0) {
+      data.append(" |\\\n")
+    }
+
+    def lineCount = 0
+    csvFile.eachLine { l ->
+      ArrayList cols = l.split(/,/)
+      if (lineCount == 0) {
+	// skip
+      } else {
+	String fstRow = verbInflFstForCols(cols)
+	if (fstRow.size() > 1) {
+	  if (lineCount == 1) {
+	    data.append(fstRow)
+	  } else if (lineCount > 1) {
+	    data.append(" |\\\n" + fstRow)
+	  }
+	}
+      }
+      lineCount++
+      }
+    fileCount++
+  }
+  data.append("\n\n\$verbinfl\$\n")
+  verbFst.append(data.toString())
 }
 
 
 
 String nounInflFstForCols(ArrayList cols) {
-
   if (cols.size() < 6) {
     return ""
   }
@@ -336,7 +418,7 @@ buildNounInflection.doLast {
 }
 
 
-task buildInflection(dependsOn: [buildNounInflection, buildAdjectiveInflection, buildAdverbInflection,buildIndeclInflection, buildInfInflection, buildPtcplInflection, buildVadjInflection,  buildVadjInflection ]) {
+task buildInflection(dependsOn: [buildNounInflection, buildAdjectiveInflection, buildAdverbInflection,buildIndeclInflection, buildInfInflection, buildPtcplInflection, buildVadjInflection,  buildVerbInflection ]) {
   description = "Builds .fst files from tabular source in data/rules-csv"
 }
 

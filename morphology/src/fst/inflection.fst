@@ -8,6 +8,6 @@
 
 
 % Implemented so far:
-$ending$ =  "<@workdir@/inflection/nouninfl.a>"
+$ending$ =  "<@workdir@/inflection/nouninfl.a>" |  "<@workdir@/inflection/verbinfl.a>" 
 
 $ending$
