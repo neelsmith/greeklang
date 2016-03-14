@@ -25,9 +25,9 @@
 #tense# = <pres><impft><fut><aor><pft><plupft>
 #mood# = <indic><subj><opt><imptv>
 #voice# = <act><mid><pass>
+#finiteform# = <infin><ptcpl><vadj1><vadj2>
 
-
-#morphtag# = #pos# #gender# #case# #number# #person# #tense# #mood# #voice# #degree#
+#morphtag# = #pos# #gender# #case# #number# #person# #tense# #mood# #voice# #degree# #finiteform#
 
 
 % Consider whether those belong here or elsewhere...?

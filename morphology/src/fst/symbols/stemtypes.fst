@@ -59,7 +59,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Indeclinable type
-#indeclclass# = <indecl>
+#indeclclass# = <conjunct><particle>
 
 
 % Union of all stemtypes
