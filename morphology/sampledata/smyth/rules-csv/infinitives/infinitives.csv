@@ -1,0 +1,7 @@
+RuleUrn,InflectionClass,Ending,Tense,Voice
+verbinfl.w_infin1,w_regular,ein,pres,act
+verbinfl.w_infin1b,w_pp1,ein,pres,act
+verbinfl.w_infin2,w_regular,esqai,pres,mid
+verbinfl.w_infin2b,w_pp1,esqai,pres,mid
+verbinfl.w_infin3,w_regular,esqai,pres,pass
+verbinfl.w_infin3b,w_pp1,esqai,pres,pass

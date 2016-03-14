@@ -1,10 +1,6 @@
 CollectionId,CollectionUrn,Label
 smyth,urn:cite:gmorph:smyth,"Lexicon of stems for all paradigm words in Smyth, Greek Grammar"
 lexent,urn:cite:shot:lexent,"Greek lexical entities."
-w_indicative,urn:cite:gmorph:w_indicative,"Inflectional patterns for indicative of omega verbs"
-w_subjunctive,urn:cite:gmorph:w_subjunctive,"Inflectional patterns for subjunctive of omega verbs"
-w_optative,urn:cite:gmorph:w_optative,"Inflectional patterns for optative of omega verbs"
-w_imperative,urn:cite:gmorph:w_imperative,"Inflectional patterns for imperative of omega verbs"
 verbinfl,urn:cite:gmorph:verbinfl,"Inflectional patterns for verbs"
 nouninfl,urn:cite:gmorph:nouninfl,"Inflectional patterns for nouns"
 indeclinfl,urn:cite:gmorph:indeclinfl,"Inflectional pattern for indeclinable tokens"
