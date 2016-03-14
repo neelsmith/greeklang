@@ -72,7 +72,6 @@ String lexiconFstStatement(File dir) {
   StringBuilder stmt = new StringBuilder("")
   def fileList = []
   if (! dir.exists()) {
-    System.err.println "Can't make FST statements for nonexistent dir " + dir
     return ""
   } else {
     dir.eachFileMatch(~/lex.*.fst/) { fstFile ->
@@ -105,8 +104,65 @@ String tagsFstStatement() {
 /////////////////////////////////////////////////////////////////////////////////
 // Methods for writing FST statements from simple tabular source.
 //
+String verbFstStringForCols(ArrayList columns) {
+  StringBuilder verbEntry  = new StringBuilder()
+  // Src:
+  // lsjpool.n64316_0,
+  // lexent.n64316,
+  //lu_,
+  // w_regular,
+  // Target:
+  //  <u>lsjpool\.n64316\_0</u><u>lexent\.n64316</u>lu<lo><verb><w_regular>
+
+  verbEntry.append("<u>${columns[0]}</u>")
+  verbEntry.append("<u>${columns[1]}</u>")
+
+
+  String stem = columns[2].replaceAll("_", "<lo>")
+  stem = stem.replaceAll("\\^", "<sh>")
+  stem = stem.replaceAll("\\(", "<ro>")
+  stem = stem.replaceAll("\\)", "<sm>")
+  verbEntry.append(stem)
+  verbEntry.append("<verb>")
+  verbEntry.append("<${columns[3]}>")
+  verbEntry.append("\n")
+  return verbEntry.toString()
+}
 
 task buildVerbStems(dependsOn: setUpBuildDir) {
+}
+buildVerbStems.doLast {
+  File lexDir = new File("${loaddir}/${dataset}/stems-csv/verbs-simplex")
+  File orthoBuild = new File(buildDir,dataset)
+  File fstDir = new File(orthoBuild,"lexica")
+  if (! fstDir.exists()) {
+    fstDir.mkdir()
+  }
+
+
+  def fileCount = 0
+  lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
+    File fstFile = new File(fstDir, "lex-verbs-${csvFile.getName().replaceFirst(/.csv/,'.fst')}")
+    fstFile.setText("")
+    StringBuilder data = new StringBuilder()
+    def lineCount = 0
+    csvFile.eachLine { l ->
+      ArrayList cols = l.split(/,/)
+
+      // CHECK THAT LINE IS NOT EMPTYR
+      if ((lineCount > 0) && (cols.size() > 1)) {
+        data.append(verbFstStringForCols(cols))
+      }
+      lineCount++
+    }
+    System.err.println "${fileCount}. File ${csvFile}"
+    if (fileCount > 0) {
+     fstFile.append(" \\\\|\n")
+    }
+    fstFile.append(data.toString())
+    fileCount++
+  }
+
 }
 
 String nounFstStringForCols(ArrayList columns) {
@@ -114,6 +170,7 @@ String nounFstStringForCols(ArrayList columns) {
   nounEntry.append("<u>${columns[0]}</u>")
   nounEntry.append("<u>${columns[1]}</u>")
   String stem = columns[2].replaceAll("_", "<lo>")
+  stem = stem.replaceAll("\\^", "<sh>")
   stem = stem.replaceAll("\\(", "<ro>")
   stem = stem.replaceAll("\\)", "<sm>")
   nounEntry.append(stem)
