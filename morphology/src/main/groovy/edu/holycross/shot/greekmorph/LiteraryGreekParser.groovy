@@ -38,13 +38,19 @@ class LiteraryGreekParser implements GreekParser {
     switch (inflectionClass) {
       //<a_hs><a_as><h_hs><hs_ou><as_ou>
 
-      case "a_hs":
+
       case "a_as":
+      case "a_as_comp":
       case "a_as_long":
       case "a_as_short":
-      case "h_hs":
-      case "hs_ou":
+      case "a_hs":
       case "as_ou":
+      case "as_ou_comp":
+      case "h_hs":
+      case "h_hs_comp":
+      case "hs_ou":
+      case "hs_ou_comp":
+
       return true
       break
 

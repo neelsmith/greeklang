@@ -416,5 +416,10 @@ utils.doLast {
 
 test.dependsOn utils
 
+test {
+  systemProperty 'testForms', testformfile
+}
+
+
 // End utility transducers used in testing
 ////////////////////////////////////////////////////////////////////////////////////
