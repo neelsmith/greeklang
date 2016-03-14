@@ -5,9 +5,32 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Noun stem types
-#noun1# = <a_hs><a_as_long><a_as_short><h_hs><hs_ou><as_ou>
-#noun2# = <os_ou><os_on>
-#noun3# = <gc_ggos><c_gos><c_kos><c_ktos><hs_eos><is_ios><is_ews><eus_ews><ma_matos><s_nos><us_ews><wn_onos><wn_ontos><wr_oros><y_pos>
+#noun1# = <a_as><a_as_comp><a_as_long><a_as_short><a_hs><as_ou><as_ou_comp><h_hs><h_hs_comp><hs_ou><hs_ou_comp>
+
+
+#noun2# = <os_ou><ous_ou><ous_ou_ult>
+
+
+#labialpalatal3# = <y_pos><y_bos><c_kos><gc_ggos><c_gos><c_xos>
+
+#dental3# = <s_tos><is_idos><is_itos><s_qos><s_ntos><wn_ontos>
+
+#neuttau3# = <ma_matos><r_tos><s_tos>
+
+#liquidnasal3# = <wr_oros><s_nos><wn_onos><hn_enos><null_os>
+
+#rho3# = <hr_ros>
+
+#sigma3# = <hs_ous><as_ws>
+
+#iu3# = <is_ews><us_ews><us_uos>
+
+#diphth3# = <eus_ews><w_ous>
+
+
+#noun3# = #labialpalatal3#  #dental3# #neuttau3# #liquidnasal3# #rho3# #iu3#  #diphth3#
+
+%%%<gc_ggos><c_gos><c_kos><c_ktos><hs_eos><is_ios><is_ews><eus_ews><ma_matos><s_nos><us_ews><wn_onos><wn_ontos><wr_oros><y_pos>
 
 #irregnoun# = <gunh>
 
