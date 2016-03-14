@@ -13,7 +13,7 @@ class TestGreekNoun1Fugh {
   // External files used in didactic tests:
   //
   // CSV files with URN abbreviations for stems and inflectional rules
-  File urnReg = new File("data/smyth/urnregistry/collectionregistry.csv")
+  File urnReg = new File("sampledata/smyth/urnregistry/collectionregistry.csv")
 
   // A URN manager configured with CITE collection abbreviations
   // for both inflectional patterns and lexicon of stems:
@@ -42,6 +42,9 @@ class TestGreekNoun1Fugh {
 
     ]
 
+
+    mp.debug = 10
+    mp.fstParser.debug = 10
     expectedUnique.keySet().each { greek ->
       def expectedAnswer = expectedUnique[greek]
       MorphologicalAnalysis morph = mp.parseGreekString(new GreekString(greek,true))
@@ -123,5 +126,5 @@ class TestGreekNoun1Fugh {
           assert formIdentification.getNum() == GrammaticalNumber.DUAL
       }
     }
-    
+
 }
