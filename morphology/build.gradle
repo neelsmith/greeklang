@@ -5,12 +5,12 @@ Build file for Kanones.
 Main sections:
 
 // Tasks setting up directory tree for working area
-// Generates appropriate SFST-PL statements for including lexica
+// Task to generate appropriate SFST-PL statements for including lexica
 // Tasks for writing FST statements for stem lexica from simple tabular source.
 // Tasks to build inflectional rules in FST from source data in .csv files
 // Tasks for copying FST source and definition of orthographic system
 // Tasks for compiling FSTs
-// Utility transducers, used in testing, helpful in debugging
+// Tasks for building utility transducers, used in testing, helpful in debugging
 
 
 ///////////////////////////////////////////////////////////////////////////////// */
@@ -241,8 +241,64 @@ buildNounStems.doLast {
 
 task buildAdjectiveStems() {
 }
-task buildIndeclinableStems() {
+
+// SOURCE: smythpool.n51951_0,lexent.n51951,kai/,conjunct
+// TARGET: <u>smythpool.n51951_0</u><u>lexent.n51951</u>kai/<conjunct>
+String indeclFstStringForCols(ArrayList columns) {
+  if (columns.size() < 4) {
+    return ""
+  }
+  StringBuilder indeclEntry  = new StringBuilder()
+  indeclEntry.append("<u>${columns[0]}</u>")
+  indeclEntry.append("<u>${columns[1]}</u>")
+  String stem = columns[2].replaceAll("_", "<lo>")
+  stem = stem.replaceAll("\\^", "<sh>")
+  stem = stem.replaceAll("\\(", "<ro>")
+  stem = stem.replaceAll("\\)", "<sm>")
+  indeclEntry.append(stem)
+  indeclEntry.append("<${columns[3]}>")
+  indeclEntry.append("\n")
+  return indeclEntry.toString()
 }
+task buildIndeclinableStems(dependsOn: setUpLexDir) {
+}
+buildIndeclinableStems.doLast {
+  File lexDir = new File("${loaddir}/${dataset}/stems-csv/indeclinable")
+  File orthoBuild = new File(buildDir,dataset)
+  File fstDir = new File(orthoBuild,"lexica")
+
+  if (! fstDir.exists()) {
+    fstDir.mkdir()
+  }
+
+  System.err.println "Looking for csv files in " + lexDir
+  def fileCount = 0
+  lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
+    File fstFile = new File(fstDir, "lex-indecl-${csvFile.getName().replaceFirst(/.csv/,'.fst')}")
+    fstFile.setText("")
+    StringBuilder data = new StringBuilder()
+    def lineCount = 0
+    csvFile.eachLine { l ->
+      ArrayList cols = l.split(/,/)
+
+      // CHECK THAT LINE IS NOT EMPTYR
+      if ((lineCount > 0) && (cols.size() > 1)) {
+        data.append(indeclFstStringForCols(cols))
+      }
+      lineCount++
+    }
+    System.err.println "${fileCount}. File ${csvFile}"
+    if (fileCount > 0) {
+     fstFile.append(" \\\\|\n")
+    }
+    fstFile.append(data.toString())
+    fileCount++
+  }
+
+}
+
+
+
 task buildStems(dependsOn: [buildNounStems, buildVerbStems, buildAdjectiveStems, buildIndeclinableStems]) {
   description = "Builds .fst files from tabular source in data/stems-csv"
   File orthoBuild = new File(buildDir,dataset)
