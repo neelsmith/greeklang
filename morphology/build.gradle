@@ -1,3 +1,21 @@
+/* ////////////////////////////////////////////////////////////////////////////////
+
+Build file for Kanones.
+
+Main sections:
+
+// Tasks setting up directory tree for working area
+// Generates appropriate SFST-PL statements for including lexica
+// Tasks for writing FST statements for stem lexica from simple tabular source.
+// Tasks to build inflectional rules in FST from source data in .csv files
+// Tasks for copying FST source and definition of orthographic system
+// Tasks for compiling FSTs
+// Utility transducers, used in testing, helpful in debugging
+
+
+///////////////////////////////////////////////////////////////////////////////// */
+
+
 import org.apache.tools.ant.filters.ReplaceTokens
 import org.apache.commons.io.FilenameUtils
 
@@ -15,6 +33,10 @@ buildscript {
 }
 
 
+
+/////////////////////////////////////////////////////////////////////////////////
+// Tasks setting up directory tree for working area
+//
 task setUpInflDir() {
   description = "Ensure that work area is built for inflectional rules."
   File datasetDir = new File(buildDir,dataset)
@@ -59,37 +81,11 @@ setUpLexDir.doLast {
     System.err.println "Created dir " + lexDir
   }
 }
-
-
-/////////////////////////////////////////////////////////////////////////////////
-// Methods generating statements to include in makefile.
-// Stem lexica in SFST can be sucked in efficiently from raw .fst lexicon statements,
-// whereas inflectional rules are better handled with compiled transducers.
-// We therefore generate two kinds of lists for inclusion in makefile statements.
-//
-// Generates appropriate statement to add to makefile dependencies
-// for lexica in uncompiled .fst files.
-String lexiconMakeStatement(File dir) {
-  StringBuilder stmt = new StringBuilder("")
-  def fileList = []
-  /*
-  dir.eachFileMatch(~/lex.*.fst/) { fstFile ->
-    fileList.add ("${buildDir}/${dataset}/${fstFile.getName()}".toString())
-  }
-  fileList.each { f ->
-    stmt.append(f + " ")
-  }
-  */
-  return stmt.toString()
-}
-
-// End methods generating statements to include in makefile.
+// End tasks setting up directory tree for working area
 /////////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////////
-// Methods generating statement to include in FST files.
-//
 // Generates appropriate SFST-PL statements for including lexica
 // in .fst files.
 String lexiconFstStatement(File dir) {
@@ -111,37 +107,23 @@ String lexiconFstStatement(File dir) {
     return stmt.toString()
   }
 }
-
-// Generates  SFST-PL statement to add taxonomic tags
-// to FST alphabet of symbols.
-/*
-String tagsFstStatement() {
-  //return "#extratag# = <epic><hmt><ml>"
-  return ""
-}
-*/
-// End methods generating statement to include in FST files.
-/////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-/////////////////////////////////////////////////////////////////////////////////
-// Methods for writing FST statements from simple tabular source.
 //
+/////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////
+// Tasks for writing FST statements for stem lexica from simple tabular source.
+//
+
+// SOURCE:  lsjpool.n64316_0,lexent.n64316,lu_,w_regular,
+// TARGET: <u>lsjpool.n64316_0</u><u>lexent.n64316</u>lu<lo><verb><w_regular>
 String verbFstStringForCols(ArrayList columns) {
   StringBuilder verbEntry  = new StringBuilder()
-  // Src:
-  // lsjpool.n64316_0,
-  // lexent.n64316,
-  //lu_,
-  // w_regular,
-  // Target:
-  //  <u>lsjpool\.n64316\_0</u><u>lexent\.n64316</u>lu<lo><verb><w_regular>
 
   verbEntry.append("<u>${columns[0]}</u>")
   verbEntry.append("<u>${columns[1]}</u>")
-
 
   String stem = columns[2].replaceAll("_", "<lo>")
   stem = stem.replaceAll("\\^", "<sh>")
@@ -155,6 +137,7 @@ String verbFstStringForCols(ArrayList columns) {
 }
 
 task buildVerbStems(dependsOn: setUpLexDir) {
+  description = "Builds FST lexicon for verbs from .csv files"
 }
 buildVerbStems.doLast {
   File lexDir = new File("${loaddir}/${dataset}/stems-csv/verbs-simplex")
@@ -163,7 +146,6 @@ buildVerbStems.doLast {
   if (! fstDir.exists()) {
     fstDir.mkdir()
   }
-
 
   def fileCount = 0
   lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
@@ -190,6 +172,10 @@ buildVerbStems.doLast {
 
 }
 
+
+
+// SOURCE:
+// TARGET:
 String nounFstStringForCols(ArrayList columns) {
   StringBuilder nounEntry  = new StringBuilder()
   nounEntry.append("<u>${columns[0]}</u>")
@@ -253,14 +239,19 @@ buildNounStems.doLast {
 
 }
 
-
-//task buildStems(dependsOn: [buildNounStems, buildVerbStems, buildAdjectiveStems, buildOtherStems, buildIndeclinableStems]) {
-task buildStems(dependsOn: [buildNounStems, buildVerbStems]) {
+task buildAdjectiveStems() {
+}
+task buildIndeclinableStems() {
+}
+task buildStems(dependsOn: [buildNounStems, buildVerbStems, buildAdjectiveStems, buildIndeclinableStems]) {
   description = "Builds .fst files from tabular source in data/stems-csv"
   File orthoBuild = new File(buildDir,dataset)
   File fstDir = new File(orthoBuild,"lexica")
   outputs.dir fstDir
 }
+//
+// End methods for writing FST statements for stem lexica from simple tabular source.
+/////////////////////////////////////////////////////////////////////////////////////
 
 
 
@@ -756,11 +747,7 @@ task cpSrc (type: Copy, dependsOn: [buildStems]) {
     filter(
       ReplaceTokens, tokens: [
       "workdir" : buildDir.toString() + "/${dataset}/",
-      "lexica": lexiconFstStatement(new File("${buildDir}/${dataset}/lexica")),
-      "makelexica": lexiconMakeStatement(new File("${buildDir}/${dataset}/lexica")),
-
-      //"extramakerules": "", // rulesMakeStatement(new File("${loaddir}/${dataset}/rules-fst")),
-      //"extratags": "" //tagsFstStatement()
+      "lexica": lexiconFstStatement(new File("${buildDir}/${dataset}/lexica"))
      ])
     inputs.dir file("${buildDir}/${dataset}/lexica")
 }
@@ -772,14 +759,10 @@ task cpOrthography(type:Copy, dependsOn: setUpLexDir) {
       include ("**/*.fst")
     }
     into "${buildDir}/${dataset}"
-    //filter(ReplaceTokens, tokens: ["workdir" : "${buildDir}/${dataset}/".toString()])
 }
 cpOrthography.doLast {
   System.err.println "Copied orthography data from ${loaddir}/${dataset}/orthography to ${buildDir}/${dataset}"
 }
-
-// End tasks for copying FST source and definition of orthographic system
-/////////////////////////////////////////////////////////////////////////////////
 
 
 task filterCopy (dependsOn: [cpSrc, cpOrthography]) {
@@ -792,11 +775,16 @@ cpAll.doLast {
   // check that at least one stem lexicon was copied....
 }
 
+// End tasks for copying FST source and definition of orthographic system
+/////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 
 
 /////////////////////////////////////////////////////////////////////////////////
-// Tasks compiling FSTs
+// Tasks for compiling FSTs
 
 task compileInflection(type:Exec, dependsOn: cpAll) {
   description = "Builds binary Finite State Transducer for core inflection in ${buildDir}/${dataset}/inflection.a"
