@@ -3,20 +3,23 @@
 #include "../../build/smyth/symbols.fst"
 
 % Raw:
-%
+% <u>smythpool.n51951_0</u><u>lexent.n51951</u>kai/<conjunct>::<conjunct><u>indeclinfl.2</u>
 
 
-$inflection$ = 
+$inflection$ = <conjunct><u>indeclinfl\.2</u>
 
-$stem$ =
-
-
-$morphdb$ = $stem$ \:\: $inflection$
+$stem$ = <u>smythpool\.n51951\_0</u><u>lexent\.n51951</u>kai/<conjunct>
 
 
+$morphdb$ = $stem$   \:\:  $inflection$
 
 
-//$squashverburn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+<verb>$=verbclass$ $separator$+$=verbclass$ [#stemchars#]* [#person#] [#number#] [#tense#] [#mood#] [#voice#]<u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u>
+
+
+$=indeclclass$ = [#indeclclass#]
+$squashindeclurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u> [#stemchars#]+  $=indeclclass$  $separator$+  $=indeclclass$ <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u>
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -31,7 +34,7 @@ $stripsym$ = .+
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-$morphdb$  || $squashindeclurn$ || $stripsym$
+$morphdb$  || $squashindeclurn$  || $stripsym$
 
 
 % .wq
