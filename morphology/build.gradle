@@ -239,7 +239,68 @@ buildNounStems.doLast {
 
 }
 
-task buildAdjectiveStems() {
+// SOURCE: smythpool.n260_0,lexent.n260,a)gaq,os_h_on,inflacc
+// TARGET: <u>smythpool.n260_0</u><u>lexent.n260</u>a<sm>gaq<adj><os_h_on><inflacc>
+String adjFstStringForCols(ArrayList columns) {
+  if (columns.size() < 5) {
+    return ""
+  }
+  
+  StringBuilder adjEntry  = new StringBuilder()
+  adjEntry.append("<u>${columns[0]}</u>")
+  adjEntry.append("<u>${columns[1]}</u>")
+  String stem = columns[2].replaceAll("_", "<lo>")
+  stem = stem.replaceAll("\\^", "<sh>")
+  stem = stem.replaceAll("\\(", "<ro>")
+  stem = stem.replaceAll("\\)", "<sm>")
+  adjEntry.append(stem)
+  adjEntry.append("<adj>")
+  adjEntry.append("<${columns[3]}>")
+  adjEntry.append("<${columns[4]}>")
+  adjEntry.append("\n")
+  return adjEntry.toString()
+}
+task buildAdjectiveStems(dependsOn: setUpLexDir) {
+  description = "Builds .fst files from tabular source in ${loaddir}/${dataset}/stems-csv/adjectives"
+
+  File lexDir = new File("${loaddir}/${dataset}/stems-csv/adjectives")
+
+  File orthoBuild = new File(buildDir,dataset)
+  File fstDir = new File(orthoBuild,"lexica")
+
+  outputs.dir fstDir
+  inputs.dir lexDir
+}
+buildAdjectiveStems.doLast {
+  File lexDir = new File("${loaddir}/${dataset}/stems-csv/adjectives")
+  File orthoBuild = new File(buildDir,dataset)
+  File fstDir = new File(orthoBuild,"lexica")
+
+  System.err.println "Looking for csv files in " + lexDir
+  def fileCount = 0
+  lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
+    File fstFile = new File(fstDir, "lex-adjs-${csvFile.getName().replaceFirst(/.csv/,'.fst')}")
+    fstFile.setText("")
+    StringBuilder data = new StringBuilder()
+    def lineCount = 0
+    csvFile.eachLine { l ->
+      ArrayList cols = l.split(/,/)
+
+      // CHECK THAT LINE IS NOT EMPTYR
+      if ((lineCount > 0) && (cols.size() > 1)) {
+        data.append(adjFstStringForCols(cols))
+      }
+      lineCount++
+    }
+    System.err.println "${fileCount}. File ${csvFile}"
+    if (fileCount > 0) {
+     fstFile.append(" \\\\|\n")
+    }
+    fstFile.append(data.toString())
+    fileCount++
+  }
+
+
 }
 
 // SOURCE: smythpool.n51951_0,lexent.n51951,kai/,conjunct
