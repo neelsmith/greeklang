@@ -10,9 +10,3 @@
 %
 % 3. Editorial symbols
 #include "@workdir@symbols/markup.fst"
-%
-% 4. Other data symbols:
-% taxonomic tagging
-%#include "@workdir@extratags.fst"
-
-@extratags@

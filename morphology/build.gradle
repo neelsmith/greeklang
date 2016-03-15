@@ -114,11 +114,12 @@ String lexiconFstStatement(File dir) {
 
 // Generates  SFST-PL statement to add taxonomic tags
 // to FST alphabet of symbols.
+/*
 String tagsFstStatement() {
   //return "#extratag# = <epic><hmt><ml>"
   return ""
 }
-
+*/
 // End methods generating statement to include in FST files.
 /////////////////////////////////////////////////////////////////////////////////
 
@@ -758,8 +759,8 @@ task cpSrc (type: Copy, dependsOn: [buildStems]) {
       "lexica": lexiconFstStatement(new File("${buildDir}/${dataset}/lexica")),
       "makelexica": lexiconMakeStatement(new File("${buildDir}/${dataset}/lexica")),
 
-      "extramakerules": "", // rulesMakeStatement(new File("${loaddir}/${dataset}/rules-fst")),
-      "extratags": "" //tagsFstStatement()
+      //"extramakerules": "", // rulesMakeStatement(new File("${loaddir}/${dataset}/rules-fst")),
+      //"extratags": "" //tagsFstStatement()
      ])
     inputs.dir file("${buildDir}/${dataset}/lexica")
 }
