@@ -8,13 +8,13 @@ class TestFstAPIndecl{
 
   File urnReg = new File("sampledata/smyth/urnregistry/collectionregistry.csv")
   umgr.addCsvFile(urnReg)
-  String verb = "<u>smyth.n64316_0</u><u>lexent.n64316</u>lu<lo><verb><w_regular>::<w_regular>omen<1st><pl><pres><indic><act><u>verbinfl.w_pres_indic6</u>"
+  String indecl = "<u>smythpool.n51951_0</u><u>lexent.n51951</u>kai/<conjunct>::<conjunct><u>indeclinfl.2</u>"
 
-  FstAnalysisParser fap = new FstAnalysisParser(verb, umgr)
+  FstAnalysisParser fap = new FstAnalysisParser(indecl, umgr)
 
 
   // Analysis type, lexical entity, and form:
-  assert fap.analysisPattern == AnalyticalType.CVERB
-  assert fap.lexicalEntity.toString() == "urn:cite:shot:lexent.n64316"
+  assert fap.analysisPattern == AnalyticalType.INDECLINABLE
+  assert fap.lexicalEntity.toString() == "urn:cite:shot:lexent.n51951"
   MorphForm mf = fap.getMorphForm()
 }
