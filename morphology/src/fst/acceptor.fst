@@ -13,7 +13,7 @@ $squashnounurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>
 
 % Adjective acceptor:
 $=adjclass$ = [#adjectiveclass#]
-$squashadjurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+<adj>$=adjclass$  [#persistacc#]  $separator$+ <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u>$=adjclass$ [#stemchars#]* <adj>$gender$ $case$ $number$ [#degree#]
+$squashadjurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+<adj>$=adjclass$  [#persistacc#]  $separator$+ $=adjclass$ <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> [#stemchars#]* <adj>$gender$ $case$ $number$ [#degree#]
 
 
 % Conjugated verb acceptor:
@@ -22,13 +22,13 @@ $squashverburn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>
 
 
 % Verb: infinitive acceptor:
-$squashinfinurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+<verb>$=verbclass$  $separator$+$=verbclass$ [#stemchars#]*  [#tense#]  [#voice#]<infin><u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u>
+$squashinfinurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+<verb>$=verbclass$  $separator$+$=verbclass$ [#stemchars#]*  [#tense#] <infin> [#voice#]<u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u>
 
 % Verb: participle acceptor:
 $squashptcplurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+<verb>$=verbclass$  $separator$+$=verbclass$ [#stemchars#]*  [#gender#][#case#][#number#][#tense#]  [#voice#]<ptcpl><u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u>
 
 % Verb: verbal adjective acceptor
-$squashvadjurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+<verb>$=verbclass$  $separator$+$=verbclass$ [#stemchars#]*  [#gender#][#case#][#number#]<vadj1><u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u>
+$squashvadjurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+<verb>$=verbclass$  $separator$+ $=verbclass$ [#stemchars#]*  [#gender#][#case#][#number#]<vadj1><u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u>
 
 
 % Indeclinable form acceptor:
