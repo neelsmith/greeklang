@@ -15,7 +15,7 @@ class TestFstAPVerb {
       umgr.addCsvFile(urnReg)
 
       // use 3rd pl pres ind act...
-      String verb = "<u>smyth.n64316_0</u><u>lexent.n64316</u>lu<lo><verb><w_regular>::<w_regular><verb>ousi<3rd><plf><pres><indic><act><u>verbinfl\.w\_pres\_indic8</u>"
+      String verb = "<u>smyth.n64316_0</u><u>lexent.n64316</u>lu<lo><verb><w_regular>::<w_regular><verb>ousi<3rd><plf><pres><indic><act><u>verbinfl.w_pres_indic8</u>"
 
       FstAnalysisParser fap = new FstAnalysisParser(verb, umgr)
 
