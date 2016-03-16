@@ -13,7 +13,7 @@ class TestFstAPVerb {
     void testParser() {
       File urnReg = new File("sampledata/smyth/urnregistry/collectionregistry.csv")
       umgr.addCsvFile(urnReg)
-      String verb = "<u>smyth.n64316_0</u><u>lexent.n64316</u>lu<lo><verb><w_regular>::<w_regular>omen<1st><pl><pres><indic><act><u>verbinfl.w_pres_indic6</u>"
+      String verb = "<u>smyth.n64316_0</u><u>lexent.n64316</u>lu<lo><verb><w_regular>::<w_regular><verb>omen<1st><pl><pres><indic><act><u>verbinfl.w_pres_indic6</u>"
 
       FstAnalysisParser fap = new FstAnalysisParser(verb, umgr)
 
@@ -21,7 +21,16 @@ class TestFstAPVerb {
       // Analysis type, lexical entity, and form:
       assert fap.analysisPattern == AnalyticalType.CVERB
       assert fap.lexicalEntity.toString() == "urn:cite:shot:lexent.n64316"
-      MorphForm mf = fap.getMorphForm()
+
+        System.err.println "Explanations,"
+        System.err.println "stem: " +   fap.explanation.stem.toString()
+        System.err.println "inflection: " +   fap.explanation.inflection.toString()
+        System.err.println "Surf stem: " + fap.getSurfaceStem()
+        System.err.println "Surf infl: " + fap.getSurfaceInflection()
+        System.err.println "Surface: " + fap.getSurface()
+        MorphForm mf = fap.getMorphForm()
+          System.err.println "morphform: " + mf.toString()
+          
       //assert mf.toString() == "verb: first plural present indicative active"
 
 /*
