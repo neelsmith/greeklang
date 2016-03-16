@@ -1,3 +1,10 @@
-StemUrn,LexicalEntity,Stem,InflClass
-lysias1.n51951_0,lexent.n51951,kai/,conjunct
-lysias1.n116401_0,lexent.n116401,w(s,conjunct
+StemUrn,LexicalEntity,Stem,InflClass,Accent,
+lysias.n4357_0,lexent.n4357,a)lla/,conjunct,
+lysias1.n30817_0,lexent.n30817,ei),conjunct,
+lysias1.n38471_0,lexent.n38471,e)peidh/,conjunct,
+lysias1.n46568_0,lexent.n46568,h)/,conjunct,
+lysias1.n50492_0,lexent.n50492,i(/na,conjunct,
+lysias1.n51951_0,lexent.n51951,kai/,conjunct,
+lysias1.n75695_0,lexent.n75695,o(/ti,conjunct,
+lysias1.n102753_0,lexent.n102753,te,conjunct,enclitic
+lysias1.n116401_0,lexent.n116401,w(s,conjunct,

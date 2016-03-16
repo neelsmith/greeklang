@@ -1,5 +1,8 @@
-StemUrn,LexicalEntity,Stem,InflClass
-lysias1.n23596_0,lexent.n23596,de/,particle
-lysias1.n66260_0,lexent.n66260,me/n,particle
-lysias1.n21618_0,lexent.n21618,ga/r,particle
-lysias1.n116027_0,lexent.n116027,w=),exclam
+StemUrn,LexicalEntity,Stem,InflClass,Accent
+lysias1.n6207_0,lexent.n6207,a)/n,particle,
+lysias1.n21618_0,lexent.n21618,ga/r,particle,
+lysias1.n21705_0,lexent.n21705,ge,particle,enclitic
+lysias1.n23596_0,lexent.n23596,de/,particle,
+lysias1.n66260_0,lexent.n66260,me/n,particle,
+lysias1.n75887_0,lexent.n75887,ou)=,particle,
+lysias1.n116027_0,lexent.n116027,w)=,exclam,
