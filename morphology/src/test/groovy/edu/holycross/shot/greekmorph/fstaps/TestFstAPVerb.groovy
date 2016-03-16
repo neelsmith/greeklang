@@ -13,7 +13,9 @@ class TestFstAPVerb {
     void testParser() {
       File urnReg = new File("sampledata/smyth/urnregistry/collectionregistry.csv")
       umgr.addCsvFile(urnReg)
-      String verb = "<u>smyth.n64316_0</u><u>lexent.n64316</u>lu<lo><verb><w_regular>::<w_regular><verb>omen<1st><pl><pres><indic><act><u>verbinfl.w_pres_indic6</u>"
+
+      // use 3rd pl pres ind act...
+      String verb = "<u>smyth.n64316_0</u><u>lexent.n64316</u>lu<lo><verb><w_regular>::<w_regular><verb>ousi<3rd><plf><pres><indic><act><u>verbinfl\.w\_pres\_indic8</u>"
 
       FstAnalysisParser fap = new FstAnalysisParser(verb, umgr)
 
@@ -21,28 +23,13 @@ class TestFstAPVerb {
       // Analysis type, lexical entity, and form:
       assert fap.analysisPattern == AnalyticalType.CVERB
       assert fap.lexicalEntity.toString() == "urn:cite:shot:lexent.n64316"
-
-        System.err.println "Explanations,"
-        System.err.println "stem: " +   fap.explanation.stem.toString()
-        System.err.println "inflection: " +   fap.explanation.inflection.toString()
-        System.err.println "Surf stem: " + fap.getSurfaceStem()
-        System.err.println "Surf infl: " + fap.getSurfaceInflection()
-        System.err.println "Surface: " + fap.getSurface()
+      assert fap.explanation.stem.toString() == "urn:cite:gmorph:smyth"
+        System.err.println "inflection: " +   fap.explanation.inflection.toString() == "urn:cite:gmorph:verbinfl.w_pres_indic8"
+        assert fap.getSurfaceStem() == "lu"
+        assert fap.getSurfaceInflection() == "ousi"
+        assert fap.getSurface() == "lu-ousi"
         MorphForm mf = fap.getMorphForm()
-          System.err.println "morphform: " + mf.toString()
-          
-      //assert mf.toString() == "verb: first plural present indicative active"
-
-/*
-      // Explanations for analysis:
-      assert fap.explanation.stem.toString() ==  "urn:cite:gmorph:smyth.n29828_0"
-      assert fap.explanation.inflection.toString() ==  "urn:cite:gmorph:nouninfl.os_ou2n"
-
-      // Surface representation of stem-ending
-      assert fap.getSurfaceStem() == "dwr"
-      assert fap.getSurfaceInflection() == "ou"
-      assert fap.getSurface() == "dwr-ou"
-*/
+        assert mf.toString() == "conjugated verb: third person plural present indicative active"
 
     }
 }

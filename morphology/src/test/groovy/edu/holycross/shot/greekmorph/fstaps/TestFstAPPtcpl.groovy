@@ -23,28 +23,14 @@ void testParser() {
   assert fap.analysisPattern == AnalyticalType.PARTICIPLE
   assert fap.lexicalEntity.toString() == "urn:cite:shot:lexent.n64316"
 
-  System.err.println "Explanations,"
-  System.err.println "stem: " +   fap.explanation.stem.toString()
-  System.err.println "inflection: " +   fap.explanation.inflection.toString()
-  System.err.println "Surf stem: " + fap.getSurfaceStem()
-  System.err.println "Surf infl: " + fap.getSurfaceInflection()
-  System.err.println "Surface: " + fap.getSurface()
+  assert  fap.explanation.stem.toString() == "urn:cite:gmorph:smyth.n64316_0"
+  assert fap.explanation.inflection.toString() == "urn:cite:gmorph:verbinfl.w_pres_ptcp1"
+  assert fap.getSurfaceStem() == "lu"
+  assert fap.getSurfaceInflection() == "wn"
+  assert fap.getSurface() == "lu-wn"
 
   MorphForm mf = fap.getMorphForm()
-  System.err.println "morphform: " + mf.toString()
-  
-  //assert mf.toString() == "verb: first plural present indicative active"
-
-/*
-  // Explanations for analysis:
-  assert fap.explanation.stem.toString() ==  "urn:cite:gmorph:smyth.n29828_0"
-  assert fap.explanation.inflection.toString() ==  "urn:cite:gmorph:nouninfl.os_ou2n"
-
-  // Surface representation of stem-ending
-  assert fap.getSurfaceStem() == "dwr"
-  assert fap.getSurfaceInflection() == "ou"
-  assert fap.getSurface() == "dwr-ou"
-*/
+  mf.toString() == "participle: present active masculine nominative singular"
 
 }
 
