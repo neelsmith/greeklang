@@ -9,13 +9,13 @@
 
 $stem$ = <u>smythpool\.n260\_0</u><u>lexent\.n260</u>a<sm>gaq<adj><os_h_on><inflacc>
 
-$inflection$ = <u>adjinfl\.os\_h\_on1</u><os_h_on>os<adj><masc><nom><sg><posit>
+$inflection$ = <os_h_on><adj>os<masc><nom><sg><posit><u>adjinfl\.os\_h\_on1</u>
 
 $morphdb$ = $stem$  \:\: $inflection$
 
 $=adjclass$ = [#adjectiveclass#]
 
-$squashadjurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+<adj>$=adjclass$  [#persistacc#]  $separator$+ <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u>$=adjclass$ [#stemchars#]* <adj>$gender$ $case$ $number$ [#degree#]
+$squashadjurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+<adj>$=adjclass$  [#persistacc#]  $separator$+ $=adjclass$ <adj> [#stemchars#]* $gender$ $case$ $number$ [#degree#] <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u>
 
 
 

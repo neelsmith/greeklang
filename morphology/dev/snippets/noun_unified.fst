@@ -3,18 +3,18 @@
 #include "../../build/smyth/symbols.fst"
 
 % Raw:
-%  <u>lsjpool.n8909_0</u><u>lexent.n8909</u>a<sm>nqrwp<noun><masc><os_ou><stempenacc>::<os_ou><u>nouninfl.os_ou2m</u>ou<masc><gen><sg>
+%  <u>lsjpool.n8909_0</u><u>lexent.n8909</u>a<sm>nqrwp<noun><masc><os_ou><stempenacc>::<os_ou><oun>ou<masc><gen><sg><u>nouninfl.os_ou2m</u>
 %
 
 $stem$ = <u>lsjpool\.n8909\_0</u><u>lexent\.n8909</u>a<sm>nqrwp<noun><masc><os_ou><stempenacc>
 
-$inflection$ = <os_ou> <u>nouninfl\.os\_ou2m</u>ou<masc><gen><sg>
+$inflection$ = <os_ou><noun>ou<masc><gen><sg> <u>nouninfl\.os\_ou2m</u>
 
 
 $morphdb$ = $stem$ \:\: $inflection$
 
 $=nounclass$ = [#nounclass#]
-$squashnounurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+<noun>$=gender$ $=nounclass$  [#persistacc#]  $separator$+ $=nounclass$ <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> [#stemchars#]* $=gender$ $case$ $number$
+$squashnounurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+<noun>$=gender$ $=nounclass$  [#persistacc#]  $separator$+ $=nounclass$  <noun> [#stemchars#]* $=gender$ $case$ $number$ <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u>
 
 
 

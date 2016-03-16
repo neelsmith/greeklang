@@ -3,13 +3,13 @@
 #include "../../build/smyth/symbols.fst"
 
 % Raw:
-% <u>lsjpool.n64316_0</u><u>lexent.n64316</u>lu_<verb><w_regular>:: <w_regular>te/os<masc><nom><sg><vadj><u>verbinfl.teos_1</u>
+% <u>lsjpool.n64316_0</u><u>lexent.n64316</u>lu_<verb><w_regular>:: <w_regular><vadj>te/os<masc><nom><sg><vadj1><u>verbinfl.teos_1</u>
 
 %
 
 $stem$ = <u>lsjpool\.n64316\_0</u><u>lexent\.n64316</u>lu<lo><verb><w_regular>
 
-$inflection$ =  <w_regular>te/os<masc><nom><sg><vadj1><u>verbinfl\.teos\_1</u>
+$inflection$ =  <w_regular><vadj>te/os<masc><nom><sg><vadj1><u>verbinfl\.teos\_1</u>
 
 
 
@@ -18,7 +18,7 @@ $morphdb$ = $stem$ \:\: $inflection$
 
 
 $=verbclass$ = [#verbclass#]
-$squashvadjurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+<verb>$=verbclass$  $separator$+$=verbclass$ [#stemchars#]*  [#gender#][#case#][#number#]<vadj1><u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u>
+$squashvadjurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+<verb>$=verbclass$  $separator$+$=verbclass$ <vadj>[#stemchars#]*  [#gender#][#case#][#number#]<vadj1><u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u>
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %

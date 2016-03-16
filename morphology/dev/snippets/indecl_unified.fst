@@ -3,21 +3,21 @@
 #include "../../build/smyth/symbols.fst"
 
 % Raw:
-% <u>smythpool.n51951_0</u><u>lexent.n51951</u>kai/<conjunct>::<conjunct><u>indeclinfl.2</u>
+% <u>lysias1.n51951_0</u><u>lexent.n51951</u>kai/<conjunct>::<conjunct><indecl><u>indeclinfl.2</u>
 
 
-$inflection$ = <conjunct><u>indeclinfl\.2</u>
+$inflection$ = <conjunct><indecl><u>indeclinfl\.2</u>
 
-$stem$ = <u>smythpool\.n51951\_0</u><u>lexent\.n51951</u>kai/<conjunct>
+$stem$ = <u>lysias1\.n51951\_0</u><u>lexent\.n51951</u>kai/<conjunct>
 
 
-$morphdb$ = $stem$   \:\:  $inflection$
+$morphdb$ = $stem$  \:\:  $inflection$
 
 
 
 
 $=indeclclass$ = [#indeclclass#]
-$squashindeclurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u> [#stemchars#]+  $=indeclclass$  $separator$+  $=indeclclass$ <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u>
+$squashindeclurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u> [#stemchars#]+  $=indeclclass$  $separator$+  $=indeclclass$ <indecl> <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u>
 
 
 
@@ -27,14 +27,14 @@ $squashindeclurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:
 %
 %% Put all symbols in 2 categories:  pass through
 %% surface symbols, squash analytical symbols.
-#analysissymbol# = #editorial# #urntag# <noun><verb> #morphtag# #stemtype#  #separator# #accent#
+#analysissymbol# = #editorial# #urntag# <noun><verb><indecl> #morphtag# #stemtype#  #separator# #accent#
 #surfacesymbol# = #letter# #diacritic#  #breathing#
 ALPHABET = [#surfacesymbol#] [#analysissymbol#]:<>
 $stripsym$ = .+
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-$morphdb$  || $squashindeclurn$  || $stripsym$
+$morphdb$  || $squashindeclurn$   || $stripsym$
 
 
 % .wq
