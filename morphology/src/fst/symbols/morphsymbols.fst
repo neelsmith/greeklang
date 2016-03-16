@@ -16,7 +16,7 @@
 %
 % 2. Adjective morphology:
 %
-#degree# = <posit><comp><superl>
+#degree# = <pos><comp><superl>
 %
 % 3. Verb morphology:
 %
