@@ -1,5 +1,6 @@
 CollectionId,CollectionUrn,Label
 smyth,urn:cite:gmorph:smyth,"Lexicon of stems for all paradigm words in Smyth, Greek Grammar"
+lysias1,urn:cite:gmorph:lysias1,"Supplementary list of selected stems attested in Lysias, 1, and useful for testing"
 lexent,urn:cite:shot:lexent,"Greek lexical entities."
 verbinfl,urn:cite:gmorph:verbinfl,"Inflectional patterns for verbs"
 nouninfl,urn:cite:gmorph:nouninfl,"Inflectional patterns for nouns"
