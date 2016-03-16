@@ -12,8 +12,8 @@
 %%%%% Add augment %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 #=ltr# = a-z
-ALPHABET = [#letter#] [#morphtag#]  [\:] [<#>] [#stemtype#] [#extratag#] [#vowelquant#]
-$augmented$ = {[#=ltr#]}:{e<sm>[#=ltr#]} ^-> ([#stemchars#]*<#> __ [#stemchars#]+<verb><w_regular>[#extratag#]*[\:]+<w_regular>[#letter#]*[#person#][#number#][#augmenttense#]<indic>[#voice#])
+ALPHABET = [#letter#] [#morphtag#]  [\:] [<#>] [#stemtype#]  [#vowelquant#]
+$augmented$ = {[#=ltr#]}:{e<sm>[#=ltr#]} ^-> ([#stemchars#]*<#> __ [#stemchars#]+<verb><w_regular>[\:]+<w_regular>[#letter#]*[#person#][#number#][#augmenttense#]<indic>[#voice#])
 
 
  $augmented$

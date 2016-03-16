@@ -7,6 +7,6 @@
 %%%%% 4th principal part only  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Extend stem with kappa:
 #=ltr# = a-z
-ALPHABET = [#letter#] [#morphtag#] [\:] [<#>] [#stemtype#] [#extratag#][#persistacc#]
-$kappa$ = {[#=ltr#]}:{[#=ltr#]k} ^-> ([#stemchars#]+ __ <verb><w_regular>[#extratag#]*[\:]+<infin>[#letter#]+[<pft><plupft><futpft>]<act>)
+ALPHABET = [#letter#] [#morphtag#] [\:] [<#>] [#stemtype#] [#persistacc#]
+$kappa$ = {[#=ltr#]}:{[#=ltr#]k} ^-> ([#stemchars#]+ __ <verb><w_regular>[\:]+<infin>[#letter#]+[<pft><plupft><futpft>]<act>)
 $kappa$

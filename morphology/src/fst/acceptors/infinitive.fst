@@ -6,7 +6,7 @@
 #include "@workdir@symbols.fst"
 
 
-$infinacceptor$ = [#stemchars#]+<verb>[#verbclass#][#extratag#]*\:\:<infin>[#stemchars#]+[#tense#][#voice#][#persistacc#]
+$infinacceptor$ = [#stemchars#]+<verb>[#verbclass#]\:\:<infin>[#stemchars#]+[#tense#][#voice#][#persistacc#]
 
 
 
