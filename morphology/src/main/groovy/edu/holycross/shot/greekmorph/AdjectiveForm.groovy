@@ -25,7 +25,8 @@ class AdjectiveForm implements CitableId {
   GrammaticalNumber num
   /** Degree of the form. */
   Degree degree
-
+  /** */
+  PersistentAccent persistentAccent
 
   /** Constructor with full morphological identificaion of an adjective.
   * @param g Gender of the form.
@@ -33,11 +34,12 @@ class AdjectiveForm implements CitableId {
   * @param n Number of the form.
   * @param d Degree of the form.
   */
-  AdjectiveForm(Gender g, GrammaticalCase c, GrammaticalNumber n, Degree d) {
+  AdjectiveForm(Gender g, GrammaticalCase c, GrammaticalNumber n, Degree d, PersistentAccent a ) {
     gender = g
     cas = c
     num = n
     degree = d
+    persistentAccent = a
   }
 
   /** Gets a CITE URN corresponding to this identification.

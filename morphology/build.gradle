@@ -404,7 +404,7 @@ String adjInflFstForCols(ArrayList cols) {
   inflString = inflString.replaceAll("\\|", "\\\\|")
 
 
-  fst.append(" <${inflClass}> <u>${ruleUrn}</u>${inflString}<${grammGender}><${grammCase}><${grammNumber}><${degree}>")
+  fst.append(" <${inflClass}><adj>${inflString}<${grammGender}><${grammCase}><${grammNumber}><${degree}><u>${ruleUrn}</u>")
   return fst.toString()
 }
 task buildAdjectiveInflection(dependsOn: setUpInflDir) {
@@ -459,7 +459,7 @@ String indeclInflFstForCols(ArrayList cols) {
   String ruleUrn = cols[0].replaceAll(/_/,"\\\\_")
   ruleUrn = ruleUrn.replaceAll("\\.","\\\\.")
   String inflClass = cols[1] //.replaceAll(/_/,"\\_")
-  fst.append(" <${inflClass}><u>${ruleUrn}</u>")
+  fst.append(" <${inflClass}><indecl><u>${ruleUrn}</u>")
   return fst.toString()
   
   return ""
@@ -519,7 +519,7 @@ String infInflFstForCols(ArrayList cols) {
   String inflString = cols[2]
   String tense = cols[3]
   String voice = cols[4]
-  fst.append(" <${inflClass}>${inflString}<${tense}><infin><${voice}><u>${ruleUrn}</u>")
+  fst.append(" <${inflClass}><infin>${inflString}<${tense}><${voice}><u>${ruleUrn}</u>")
   return fst.toString()  
 }
 task buildInfInflection(dependsOn: setUpInflDir) {
@@ -589,7 +589,7 @@ String ptcplInflFstForCols(ArrayList cols) {
   inflString = inflString.replaceAll("\\)", "<sm>")
   inflString = inflString.replaceAll("\\|", "\\\\|")
 
-  fst.append(" <${inflClass}>${inflString}<${gender}><${grammCase}><${grammNumber}><${tense}><${voice}><ptcpl><u>${ruleUrn}</u>")
+  fst.append(" <${inflClass}><ptcpl>${inflString}<${gender}><${grammCase}><${grammNumber}><${tense}><${voice}><u>${ruleUrn}</u>")
 
   return fst.toString()
 }
@@ -660,7 +660,7 @@ String vadjInflFstForCols(ArrayList cols) {
   inflString = inflString.replaceAll("\\)", "<sm>")
   inflString = inflString.replaceAll("\\|", "\\\\|")
 
-  fst.append(" <${inflClass}>${inflString}<${gender}><${grammCase}><${grammNumber}><${adjType}><u>${ruleUrn}</u>")
+  fst.append(" <${inflClass}><vadj>${inflString}<${gender}><${grammCase}><${grammNumber}><${adjType}><u>${ruleUrn}</u>")
   return fst.toString()
 }
 task buildVadjInflection(dependsOn: setUpInflDir) {
@@ -729,7 +729,7 @@ String verbInflFstForCols(ArrayList cols) {
   inflString = inflString.replaceAll("\\)", "<sm>")
   inflString = inflString.replaceAll("\\|", "\\\\|")
 
-  fst.append(" <${inflClass}>${inflString}<${pers}><${num}><${tense}><${mood}><${voice}><u>${ruleUrn}</u>")
+  fst.append(" <${inflClass}><verb>${inflString}<${pers}><${num}><${tense}><${mood}><${voice}><u>${ruleUrn}</u>")
 
   return fst.toString()
 }
@@ -795,7 +795,7 @@ String nounInflFstForCols(ArrayList cols) {
   inflString = inflString.replaceAll("\\|", "\\\\|")
 
 
-  fst.append(" <${inflClass}> <u>${ruleUrn}</u>${inflString}<${grammGender}><${grammCase}><${grammNumber}>")
+  fst.append(" <${inflClass}><noun>${inflString}<${grammGender}><${grammCase}><${grammNumber}> <u>${ruleUrn}</u>")
   return fst.toString()
 }
 task buildNounInflection(dependsOn: setUpInflDir) {
@@ -969,12 +969,6 @@ task utils(dependsOn: [rawlex, rawmorph, rawaccepted]) {
 }
 utils.doLast {
   System.err.println "Three utility transducers compiled."
-}
-
-test.dependsOn utils
-
-test {
-  systemProperty 'testForms', testformfile
 }
 
 

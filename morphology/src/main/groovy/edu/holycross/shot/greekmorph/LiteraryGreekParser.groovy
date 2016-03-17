@@ -13,7 +13,7 @@ import edu.harvard.chs.cite.CtsUrn
 */
 class LiteraryGreekParser implements GreekParser {
 
-  Integer debug  = 0
+  Integer debug  = 10
 
   /** Implementation of accent-free Greek morphology
   * in a finite state transducer. */
@@ -36,9 +36,6 @@ class LiteraryGreekParser implements GreekParser {
 
   boolean isFirstDeclension(String inflectionClass) {
     switch (inflectionClass) {
-      //<a_hs><a_as><h_hs><hs_ou><as_ou>
-
-
       case "a_as":
       case "a_as_comp":
       case "a_as_long":
@@ -72,6 +69,7 @@ class LiteraryGreekParser implements GreekParser {
 
 
 
+  // is this the best way to determine this?
   boolean isPreAccented(String inflectionClass) {
     switch (inflectionClass) {
       case "irregacc":
@@ -86,6 +84,9 @@ class LiteraryGreekParser implements GreekParser {
 
 
 
+  /**  Adds correct accent to last syllable of a noun, taking into consideration
+  * the inflectional class the noun belongs to and the case of the string.
+  */
   GreekWord addNounUltima(GreekWord gw, NounForm nounForm, String inflectionClass) {
 
     def syllables = gw.getSyllables()
@@ -115,14 +116,17 @@ class LiteraryGreekParser implements GreekParser {
 
     }
 
-    /*
-    Third declension is complicated
-    */
+    //    Third declension is complicated
     GreekWord resultWord = new GreekWord(syllables.join(""))
     return  resultWord
   }
 
 
+  /** Uses morphological information in a FstAnalysisParser to deteremine
+  * how to accent a GreeString, and adds the appropriate accent.
+  * @param inflectionalString
+  * @param analysisInfo
+  */
   GreekWord getAccentedForm(GreekString inflectionalString, FstAnalysisParser analysisInfo) {
     GreekWord accented
 
@@ -266,7 +270,7 @@ class LiteraryGreekParser implements GreekParser {
 
   /** Gets a morphological analysis for a Greek string.
   * @param gkStr The string to analyze.
-  * @returns A MorphologicalAnalysis.
+  * @returns A MorphologicalAnalysis object.
   */
   MorphologicalAnalysis parseGreekString(GreekOrthography gkStr) {
     ArrayList analysisList  = []
@@ -296,8 +300,7 @@ class LiteraryGreekParser implements GreekParser {
     return( new MorphologicalAnalysis(gkStr, analysisList))
   }
 
-  String toRdf(GreekString gkStr, CtsUrn ctsUrn) {
-  }
+
 
 
 }
