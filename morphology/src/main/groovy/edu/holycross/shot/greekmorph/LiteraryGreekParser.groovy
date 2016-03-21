@@ -34,41 +34,6 @@ class LiteraryGreekParser implements GreekParser {
   }
 
 
-  boolean isFirstDeclension(String inflectionClass) {
-    switch (inflectionClass) {
-      case "a_as":
-      case "a_as_comp":
-      case "a_as_long":
-      case "a_as_short":
-      case "a_hs":
-      case "as_ou":
-      case "as_ou_comp":
-      case "h_hs":
-      case "h_hs_comp":
-      case "hs_ou":
-      case "hs_ou_comp":
-
-      return true
-      break
-
-      default:
-      return false
-      break
-    }
-  }
-  boolean isSecondDeclension(String inflectionClass) {
-    switch (inflectionClass) {
-      case "os_ou":
-      return true
-      break
-      default:
-      return false
-      break
-    }
-  }
-
-
-
   // is this the best way to determine this?
   boolean isPreAccented(String inflectionClass) {
     switch (inflectionClass) {
@@ -84,128 +49,7 @@ class LiteraryGreekParser implements GreekParser {
 
 
 
-  /**  Adds correct accent to last syllable of a noun, taking into consideration
-  * the inflectional class the noun belongs to and the case of the string.
-  */
-  GreekWord addNounUltima(GreekWord gw, NounForm nounForm, String inflectionClass) {
 
-    def syllables = gw.getSyllables()
-    Integer lastIndex = syllables.size() - 1
-    String lastSyll = syllables[lastIndex]
-
-    // need to know form!
-    // for nouns:  oblique are =, nom/acc are /
-    /* - Final -αι -οι are normally short , but are LONG IN OPTATIVE and in locative οἴκοι (S. 169)
-
-    1. Accent is generally *persistent* (Smyth 205)
-    2. First, second decl. oxytone:  perispomenon in gen, dat
-    3. First decl:  all gen plural are perispomenon
-
-    */
-
-    if ((isFirstDeclension(inflectionClass)) || (isSecondDeclension(inflectionClass)) ) {
-      switch (nounForm.cas) {
-        case GrammaticalCase.GENITIVE:
-        case GrammaticalCase.DATIVE:
-        syllables[lastIndex] = Accent.accentSyllable(lastSyll, "=")
-        break
-        default :
-        syllables[lastIndex] = Accent.accentSyllable(lastSyll, "/")
-        break
-      }
-
-    }
-
-    //    Third declension is complicated
-    GreekWord resultWord = new GreekWord(syllables.join(""))
-    return  resultWord
-  }
-
-
-  /** Uses morphological information in a FstAnalysisParser to deteremine
-  * how to accent a GreeString, and adds the appropriate accent.
-  * @param inflectionalString
-  * @param analysisInfo
-  */
-  GreekWord getAccentedForm(GreekString inflectionalString, FstAnalysisParser analysisInfo) {
-    GreekWord accented
-
-    // Analysis data:
-    AnalysisTriple triple = analysisInfo.getTriple()
-    MorphForm form = triple.getMorphForm()
-    NounForm nounAnalysis = form.getAnalysis()
-    GreekWord retrievedForm = new GreekWord(analysisInfo.getSurfaceStem() + analysisInfo.getSurfaceInflection())
-
-    def inflectionSyllables = Syllable.getSyllables(inflectionalString)
-    def accPattern = nounAnalysis.getPersistentAccent()
-
-    def maxOffset = AccentPattern.values().size() - 1
-    if (debug > 0) {
-      System.err.println "Acc. pattern is " + accPattern
-      System.err.println "Checking noun w  persistent accent " + accPattern + " and ordinal " + accPattern.ordinal() //nounAnalysis.getPersistentAccent()
-      def sylloffset = (inflectionSyllables.size() - 1)
-      def max1 = sylloffset + accPattern.ordinal()
-      def max2 = 2 // ie, PersistentAccent.size() - 1
-      def shiftidx = Math.min(max1, max2)
-      def allVals = PersistentAccent.values()
-      System.err.println "TRY INDEX " + shiftidx + " = " + allVals[shiftidx]
-    }
-
-    String inflectionTag = analysisInfo.getInflectionTag()
-    if (isFirstDeclension(inflectionTag)) {
-      //check special cases:  gen.pl.:
-      if (
-        (nounAnalysis.cas == GrammaticalCase.GENITIVE) &&
-	(nounAnalysis.num == GrammaticalNumber.PLURAL)
-        ) {
-	if (debug > 1) {System.err.println "Special treatment for 1st decl  ${nounAnalysis.cas}  ${nounAnalysis.num}"}
-	accented = addNounUltima(retrievedForm, nounAnalysis, analysisInfo.getInflectionTag())
-
-      } else {
-        if (debug > 0) {System.err.println "NOT gen.pl., so look at " + nounAnalysis.getPersistentAccent()}
-        switch (nounAnalysis.getPersistentAccent()) {
-	case PersistentAccent.STEM_PENULT:
-	accented = retrievedForm.accent(AccentPattern.RECESSIVE)
-	break
-
-	case PersistentAccent.STEM_ULTIMA:
-	// need to check for polysyllabic ending:
-	accented = retrievedForm.accent( AccentPattern.PENULT) //Accent.accentWord(retrievedForm, AccentPattern.PENULT)
-	break
-
-	case PersistentAccent.INFLECTIONAL_ENDING:
-	// need to check for polysyllabic ending:
-	accented = addNounUltima(retrievedForm, nounAnalysis, analysisInfo.getInflectionTag())
-	break
-        }
-      }
-    } else { // second or third decl:
-      if (debug > 0) {System.err.println "Second or third decl, look at " + nounAnalysis.getPersistentAccent()}
-      switch (nounAnalysis.getPersistentAccent()) {
-      case PersistentAccent.STEM_PENULT:
-      // need to check for polysyllabic ending:
-      accented = retrievedForm.accent(AccentPattern.RECESSIVE)
-      break
-
-      case PersistentAccent.STEM_ULTIMA:
-      // need to check for polysyllabic ending:
-      accented =  Accent.accentWord(retrievedForm, AccentPattern.PENULT)
-      break
-
-      case PersistentAccent.INFLECTIONAL_ENDING:
-      // need to check for polysyllabic ending:
-      accented = addNounUltima(retrievedForm, nounAnalysis, analysisInfo.getInflectionTag())
-      break
-
-
-      case PersistentAccent.IRREGULAR_ACCENT:
-      // need to check for polysyllabic ending:
-      accented = retrievedForm
-      break
-      }
-    }
-    return accented
-  }
 
   /** Determines if form retrieved from FST parser should be considered a
    * match for GreekString gs.
@@ -229,12 +73,43 @@ class LiteraryGreekParser implements GreekParser {
       accented = retrievedForm
     } else {
       GreekString fstSurfaceString = new GreekString(analysisInfo.surfaceInflection)
-      accented = getAccentedForm(fstSurfaceString, analysisInfo)
+      accented = LiteraryGreekNounAccent.getAccentedNounForm(fstSurfaceString, analysisInfo)
     }
 
 
     if (debug > 0 ) {
       System.err.println "Check noun accent by comparing ${accented} to ${gs}"
+      System.err.println "(removing quanity markers to get " + accented.toString().replaceAll("[_^]","") + ")"
+    }
+    return (accented.toString().replaceAll("[_^]","") == gs.toString())
+  }
+
+
+
+
+
+  boolean checkAdjAccent(GreekString gs, FstAnalysisParser analysisInfo) {
+    // Normalized, canonically accented form to compare with gs:
+    GreekWord accented
+    // Surface form from FST parser:
+    GreekWord retrievedForm = new GreekWord(analysisInfo.getSurfaceStem() + analysisInfo.getSurfaceInflection())
+
+    String inflectionTag = analysisInfo.getInflectionTag()
+    System.err.println "ADJ: ${retrievedForm} with infl tag ${inflectionTag}"
+    // see if retrieved from is pre-accented.
+    //inflectionTag
+    if (isPreAccented(inflectionTag)) {
+      System.err.println "${inflectionTag} class is already accented!"
+      accented = retrievedForm
+    } else {
+      GreekString fstSurfaceString = new GreekString(analysisInfo.surfaceInflection)
+      System.err.println "Surface form of analysis: " + fstSurfaceString
+      accented = LiteraryGreekAdjectiveAccent.getAccentedAdjForm(fstSurfaceString, analysisInfo)
+    }
+
+
+    if (debug > 0 ) {
+      System.err.println "Check adjective accent by comparing ${accented} to ${gs}"
       System.err.println "(removing quanity markers to get " + accented.toString().replaceAll("[_^]","") + ")"
     }
     return (accented.toString().replaceAll("[_^]","") == gs.toString())
@@ -259,6 +134,15 @@ class LiteraryGreekParser implements GreekParser {
     case AnalyticalType.INDECLINABLE:
     GreekWord retrievedForm = new GreekWord(analysisInfo.getSurfaceStem() + analysisInfo.getSurfaceInflection())
     return retrievedForm.toString() == utf8String.toString()
+    break
+
+
+    case AnalyticalType.ADJECTIVE:
+    return checkAdjAccent(utf8String, analysisInfo)
+    break
+
+
+    case AnalyticalType.CVERB:
     break
 
     default:
