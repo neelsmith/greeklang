@@ -3,13 +3,18 @@
 #include "../../build/smyth/symbols.fst"
 
 % Raw:
-%  <u>smythpool.n260_0</u><u>lexent.n260</u>a<sm>gaq<adj><os_h_on><inflacc>::<os_h_on>os<adj><masc><nom><sg><posit><u>adjinfl.os_h_on1</u>
+% <u>smyth.n260_0</u><u>lexent.n260</u>a<sm>gaq<adj><os_h_on><inflacc>
+% <u>smyth.n260_0</u><u>lexent.n260</u>a<sm>gaq<adj><os_h_on><inflacc>
+%::
+%<os_h_on><adj>os<masc><nom><sg><pos><u>adjinfl.os_h_on1</u>
+%<os_h_on><adj>os<masc><nom><sg><pos><u>adjinfl\.os\_h\_on1</u>
+
+$stem$ = <u>smyth\.n260\_0</u><u>lexent\.n260</u>a<sm>gaq<adj><os_h_on><inflacc>
 
 
+$inflection$ = <os_h_on><adj>os<masc><nom><sg><pos><u>adjinfl\.os\_h\_on1</u>
 
-$stem$ = <u>smythpool\.n260\_0</u><u>lexent\.n260</u>a<sm>gaq<adj><os_h_on><inflacc>
-
-$inflection$ = <os_h_on><adj>os<masc><nom><sg><posit><u>adjinfl\.os\_h\_on1</u>
+%<os_h_on><adj>os<masc><nom><sg><posit><u>adjinfl\.os\_h\_on1</u>
 
 $morphdb$ = $stem$  \:\: $inflection$
 
