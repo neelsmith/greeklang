@@ -41,7 +41,7 @@ $squashindeclurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:
 
 
 %% Union of all acceptor squashers:
-$acceptor$ = $squashverburn$ | $squashnounurn$ | $squashinfinurn$ | $squashptcplurn$ | $squashvadjurn$  | $squashindeclurn$
+$acceptor$ = $squashverburn$ | $squashnounurn$ | $squashinfinurn$ | $squashptcplurn$ | $squashvadjurn$  | $squashindeclurn$ | $squashadjurn$ 
 
 
 %% Put all symbols in 2 categories:  pass through
