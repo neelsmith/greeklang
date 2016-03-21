@@ -22,6 +22,15 @@ class TestGreekAdjAgathos {
       String greek = "ἀγαθός"
       MorphologicalAnalysis morph = mp.parseGreekString(new GreekString(greek,true))
       assert morph.analyses.size() == 1
+
+
+      MorphForm form = morph.analyses[0].getMorphForm()
+      assert form.getAnalyticalType() == AnalyticalType.ADJECTIVE
+      CitableId formIdentification = form.getAnalysis()
+      assert formIdentification.getGender() == Gender.MASCULINE
+      assert formIdentification.getCas() == GrammaticalCase.NOMINATIVE
+      assert formIdentification.getNum() == GrammaticalNumber.SINGULAR
+      assert formIdentification.getDegree() == Degree.POSITIVE
     }
   /*
     @Test
