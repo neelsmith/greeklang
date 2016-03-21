@@ -13,6 +13,8 @@ $squashnounurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>
 
 % Adjective acceptor:
 $=adjclass$ = [#adjectiveclass#]
+%% <u>smyth.n260_0</u><u>lexent.n260</u>a<sm>gaq<adj><os_h_on><inflacc>::<os_h_on>os<adj><masc><nom><sg><pos><u>adjinfl.os_h_on1</u>
+
 
 $squashadjurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+<adj>$=adjclass$  [#persistacc#]  $separator$+ $=adjclass$ <adj> [#stemchars#]* $gender$ $case$ $number$ [#degree#] <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u>
 
