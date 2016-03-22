@@ -21,6 +21,22 @@ class TestGreekWParticiples {
     mp.fstParser.debug = 10
 
 
+
+    String greek = "λύων"
+    MorphologicalAnalysis morph = mp.parseGreekString(new GreekString(greek,true))
+    assert morph.analyses.size() == 1
+
+
+
+
+    MorphForm form = morph.analyses[0].getMorphForm()
+    assert form.getAnalyticalType() == AnalyticalType.PARTICIPLE
+    CitableId formIdentification = form.getAnalysis()
+    assert formIdentification.getGender() == Gender.MASCULINE
+    assert formIdentification.getCas() == GrammaticalCase.NOMINATIVE
+    assert formIdentification.getNum() == GrammaticalNumber.SINGULAR
+    assert formIdentification.getTense() == Tense.PRESENT
+    assert formIdentification.getVoice() == Voice.ACTIVE
   }
 
 }
