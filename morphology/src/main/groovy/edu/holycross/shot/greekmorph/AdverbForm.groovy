@@ -16,12 +16,15 @@ class AdverbForm implements CitableId {
 
   /** Degree of the adverb. */
   Degree degree
+  /** */
+  PersistentAccent persistentAccent
 
   /** Constructor with full morphological identificaion of an adverb.
   * @param d Degree of the form.
   */
-  AdverbForm(Degree d) {
+  AdverbForm(Degree d, PersistentAccent p) {
     degree = d
+    persistentAccent = p
   }
 
   /** Gets a CITE URN corresponding to this identification.

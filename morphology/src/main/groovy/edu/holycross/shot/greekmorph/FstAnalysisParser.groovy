@@ -266,6 +266,17 @@ class FstAnalysisParser {
       break
 
       case AnalyticalType.ADVERB:
+      //<os_h_on>, <adv>, <pos>
+      System.err.println "HERE ARE ALL INFL TAGS FOR AN ADV: " + inflTags
+      Integer lastTag = stemTags.size() - 1
+      PersistentAccent accent = PersistentAccent.getByToken(stemTags[lastTag])
+
+
+      Degree deg = Degree.getByToken(inflTags[2])
+      mf = new MorphForm(analysisPattern, new AdverbForm(deg, accent))
+      break
+
+
       default:
       System.err.println "FAP: Unimplemented analytical type: " + analysisPattern
       break

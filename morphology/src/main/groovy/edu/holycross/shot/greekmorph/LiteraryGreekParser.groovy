@@ -115,6 +115,42 @@ class LiteraryGreekParser implements GreekParser {
     return (accented.toString().replaceAll("[_^]","") == gs.toString())
   }
 
+
+
+
+
+
+  boolean checkAdvAccent(GreekString gs, FstAnalysisParser analysisInfo) {
+    // Normalized, canonically accented form to compare with gs:
+    GreekWord accented
+    // Surface form from FST parser:
+    GreekWord retrievedForm = new GreekWord(analysisInfo.getSurfaceStem() + analysisInfo.getSurfaceInflection())
+
+    String inflectionTag = analysisInfo.getInflectionTag()
+    if (debug > 1) { System.err.println "ADJ: ${retrievedForm} with infl tag ${inflectionTag}"}
+    // see if retrieved from is pre-accented.
+    //inflectionTag
+    if (isPreAccented(inflectionTag)) {
+      System.err.println "${inflectionTag} class is already accented!"
+      accented = retrievedForm
+    } else {
+      GreekString fstSurfaceString = new GreekString(analysisInfo.surfaceInflection)
+      if (debug > 1) { System.err.println "Surface form of analysis: " + fstSurfaceString}
+      accented = LiteraryGreekAdverbAccent.getAccentedAdverbForm(fstSurfaceString, analysisInfo)
+    }
+
+
+    if (debug > 0 ) {
+      System.err.println "Check adverb accent by comparing ${accented} to ${gs}"
+      System.err.println "(removing quanity markers to get " + accented.toString().replaceAll("[_^]","") + ")"
+    }
+    return (accented.toString().replaceAll("[_^]","") == gs.toString())
+  }
+
+
+
+
+
   boolean checkInfinitiveAccent(GreekString gs, FstAnalysisParser analysisInfo) {
     GreekWord retrievedForm = new GreekWord(analysisInfo.getSurfaceStem() + analysisInfo.getSurfaceInflection())
     MorphForm morphForm = analysisInfo.getMorphForm()
@@ -173,6 +209,10 @@ class LiteraryGreekParser implements GreekParser {
     break
 
 
+    case AnalyticalType.ADVERB:
+    return checkAdvAccent(utf8String, analysisInfo)
+    break
+    
     case AnalyticalType.PARTICIPLE:
     return checkPtcplAccent(utf8String, analysisInfo)
     break
