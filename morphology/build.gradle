@@ -376,9 +376,6 @@ task buildStems(dependsOn: [buildNounStems, buildVerbStems, buildAdjectiveStems,
 // 
 // Tasks to build inflectional rules in FST from source data in .csv files
 //
-task buildAdverbInflection(dependsOn: setUpInflDir) {
-  description = "Builds adverbinl.fst from tabular source"
-}
 
 // SOURCE: adjinfl.os_h_on1,os_h_on,os,masc,nom,sg,posit
 // TARGET: <os_h_on><u>adjinfl.os_h_on1</u>os<adj><masc><nom><sg><posit>
@@ -407,6 +404,69 @@ String adjInflFstForCols(ArrayList cols) {
   fst.append(" <${inflClass}><adj>${inflString}<${grammGender}><${grammCase}><${grammNumber}><${degree}><u>${ruleUrn}</u>")
   return fst.toString()
 }
+
+String advInflFstForCols(ArrayList cols) {
+  if (cols.size() < 4) {
+    return ""
+  }
+  String ruleUrn = cols[0].replaceAll(/_/,"\\\\_")
+  ruleUrn = ruleUrn.replaceAll("\\.","\\\\.")
+  String inflClass = cols[1] //.replaceAll(/_/,"\\_")
+  String inflString = cols[2]
+  String degree = cols[3]
+
+
+  inflString = inflString.replaceAll("_", "<lo>")
+  inflString = inflString.replaceAll("\\(", "<ro>")
+  inflString = inflString.replaceAll("\\)", "<sm>")
+  inflString = inflString.replaceAll("\\|", "\\\\|")
+  String fst = "<${inflClass}><adv>${inflString}<${degree}><u>${ruleUrn}</u>"
+
+  return  fst
+}
+// SOURCE:
+// TARGET: <os_h_on><adv>ws<pos><u>advinfl.os_h_on</u>
+task buildAdverbInflection(dependsOn:setUpInflDir) {
+  description = "Builds rules for adverbs in adverbinfl.fst from tabular source"
+}
+buildAdverbInflection.doLast {
+  File orthoBuild = new File(buildDir, dataset)
+  File inflDir = new File(orthoBuild,"inflection")
+  File adjFst = new File(inflDir,"adverbinfl.fst")
+  adjFst.setText("")
+  StringBuilder data = new StringBuilder("\$advinfl\$ = ")
+
+  File lexDir = new File("${loaddir}/${dataset}/rules-csv/adverbs")
+  System.err.println "Look for adverbs in " + lexDir
+  def fileCount = 0
+  lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
+    System.err.println "Look at " + csvFile
+    if (fileCount > 0) {
+      data.append(" |\\\n")
+    }
+    def lineCount = 0
+    csvFile.eachLine { l ->
+      ArrayList cols = l.split(/,/)
+      if (lineCount == 0) {
+	// skip
+      } else {
+	String fstRow = advInflFstForCols(cols)
+	if (fstRow.size() > 1) {
+	  if (lineCount == 1) {
+	    data.append(fstRow)
+	  } else if (lineCount > 1) {
+	    data.append(" |\\\n" + fstRow)
+	  }
+	}
+      }
+      lineCount++;
+    }
+    fileCount++
+  }
+  data.append("\n\n\$advinfl\$\n")
+  adjFst.append(data.toString())
+}
+
 task buildAdjectiveInflection(dependsOn: setUpInflDir) {
   description = "Builds rules for adjectives in adjectiveinfl.fst from tabular source"
 
