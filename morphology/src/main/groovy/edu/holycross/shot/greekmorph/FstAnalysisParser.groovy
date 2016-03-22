@@ -192,6 +192,7 @@ class FstAnalysisParser {
   */
   MorphForm computeMorphForm() {
     MorphForm mf  = null
+    System.err.println "Analysis patterns: " + analysisPattern
     switch (analysisPattern) {
       case AnalyticalType.CVERB:
       System.err.println "HERE ARE ALL INFL TAGS FOR A CVERB: " + inflTags
@@ -207,15 +208,26 @@ class FstAnalysisParser {
 
 
       case AnalyticalType.NOUN:
-
-
-
-      Gender gender = Gender.getByToken(inflTags[2])
-      GrammaticalCase cas = GrammaticalCase.getByToken(inflTags[3])
-      GrammaticalNumber num = GrammaticalNumber.getByToken(inflTags[4])
-      // Persistent accent is recorded  as last item in stem data:
-      Integer lastTag = stemTags.size() - 1
-      PersistentAccent accent = PersistentAccent.getByToken(stemTags[lastTag])
+      Gender gender
+      GrammaticalCase cas
+      GrammaticalNumber num
+      PersistentAccent accent
+      if (inflTags[0] == "<irregnoun>") {
+	// then inflectional data is actually stored in lexicon:
+	System.err.println "Irregnoun stem tags: " + stemTags
+	gender = Gender.getByToken(stemTags[4])
+	cas = GrammaticalCase.getByToken(stemTags[5])
+	num = GrammaticalNumber.getByToken(stemTags[6])
+	accent = PersistentAccent.getByToken("<irregacc>")
+	
+      } else {
+	gender = Gender.getByToken(inflTags[2])
+	cas = GrammaticalCase.getByToken(inflTags[3])
+	num = GrammaticalNumber.getByToken(inflTags[4])
+	// Persistent accent is recorded  as last item in stem data:
+	Integer lastTag = stemTags.size() - 1
+	accent = PersistentAccent.getByToken(stemTags[lastTag])
+      }
       NounForm noun = new NounForm(gender, cas, num, accent)
       mf = new MorphForm(analysisPattern, noun)
       break
