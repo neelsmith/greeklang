@@ -62,5 +62,9 @@
 #indeclclass# = <conjunct><particle><exclam><prepos>
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Irregular type
+#irregclass# = <irregadj><irregnoun><irregadv><irregcverb><irreginfin><irregptcpl><irregvadj>
+
 % Union of all stemtypes
-#stemtype# = #nounclass# #adjectiveclass# #adverbclass# #verbclass# #indeclclass#
+#stemtype# = #nounclass# #adjectiveclass# #adverbclass# #verbclass# #indeclclass# #irregclass#
