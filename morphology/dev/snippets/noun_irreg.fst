@@ -3,17 +3,17 @@
 #include "../../build/smyth/symbols.fst"
 
 % Raw:
-% <u>smyth.n23069_0</u><u>lexent.n23069</u>gunaiko/s<fem><gen><sg><irregnoun>::<irregnoun><u>irreginfl.1</u>
+% <u>smyth.n23069_0</u><u>lexent.n23069</u>gunaiko/s<fem><gen><sg><irregnoun>::<irregnoun><noun><u>irreginfl.1</u>
 
 $stem$ = <u>smyth\.n23069\_0</u><u>lexent\.n23069</u>gunaiko/s<fem><gen><sg><irregnoun>
 
-$inflection$ = <irregnoun><u>irreginfl\.1</u>
+$inflection$ = <irregnoun><noun><u>irreginfl\.1</u>
 
 
-$morphdb$ = $stem$ \:\: $inflection$
+$morphdb$ = $stem$   \:\: $inflection$
 
 $=nounclass$ = [#nounclass#]
-$squashnounurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+<noun>$=gender$ $=nounclass$  [#persistacc#]  $separator$+ $=nounclass$  <noun> [#stemchars#]* $=gender$ $case$ $number$ <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u>
+$squashirregnounurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+ $gender$ $case$ $number$ <irregnoun>  $separator$+ <irregnoun><noun><u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u>
 
 
 
@@ -30,7 +30,7 @@ $stripsym$ = .+
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-$morphdb$  %%|| $squashnounurn$ || $stripsym$
+$morphdb$  || $squashirregnounurn$  || $stripsym$
 
 
 % .wq
