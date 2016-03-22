@@ -117,6 +117,107 @@ String lexiconFstStatement(File dir) {
 // Tasks for writing FST statements for stem lexica from simple tabular source.
 //
 
+
+// Irregulars are a little different.
+//Source: StemUrn,LexicalEntity,String,Gender,Case,Number
+// Target: <u>smyth\.n23069\_0</u><u>lexent\.n23069</u>gunaiko/s<fem><gen><sg><irregnoun>
+String irregNounFstStringForCols(ArrayList columns) {
+  StringBuilder nounEntry  = new StringBuilder()
+  nounEntry.append("<u>${columns[0]}</u>")
+  nounEntry.append("<u>${columns[1]}</u>")
+  String stem = columns[2].replaceAll("_", "<lo>")
+  stem = stem.replaceAll("\\^", "<sh>")
+  stem = stem.replaceAll("\\(", "<ro>")
+  stem = stem.replaceAll("\\)", "<sm>")
+  nounEntry.append(stem)
+  nounEntry.append("<${columns[3]}>")
+  nounEntry.append("<${columns[4]}>")
+  nounEntry.append("<${columns[5]}>")
+  nounEntry.append("<irregnoun>")
+  nounEntry.append("\n")
+  return nounEntry.toString()
+}
+/*
+task buildNounStems(dependsOn: setUpLexDir) {
+  description = "Builds .fst files from tabular source in ${loaddir}/${dataset}/stems-csv/nouns"
+
+  File lexDir = new File("${loaddir}/${dataset}/stems-csv/nouns")
+
+  File orthoBuild = new File(buildDir,dataset)
+  File fstDir = new File(orthoBuild,"lexica")
+
+  outputs.dir fstDir
+  inputs.dir lexDir
+}
+*/
+// StemUrn,LexicalEntity,String,Gender,Case,Number
+task buildIrregNouns(dependsOn:setUpLexDir) {
+  description = "Builds FST lexicon for irregular nouns from .csv files"
+
+  File lexDir = new File("${loaddir}/${dataset}/irregular-stems-csv/nouns")
+  File orthoBuild = new File(buildDir,dataset)
+  File fstDir = new File(orthoBuild,"lexica")
+
+  outputs.dir fstDir
+  inputs.dir lexDir
+}
+buildIrregNouns.doLast {
+  File lexDir = new File("${loaddir}/${dataset}/irregular-stems-csv/nouns")
+  File orthoBuild = new File(buildDir,dataset)
+  File fstDir = new File(orthoBuild,"lexica")
+  if (! fstDir.exists()) {
+    fstDir.mkdir()
+  }
+
+  def fileCount = 0
+  lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
+    File fstFile = new File(fstDir, "lex-irreg-noun-${csvFile.getName().replaceFirst(/.csv/,'.fst')}")
+    fstFile.setText("")
+    StringBuilder data = new StringBuilder()
+    def lineCount = 0
+    csvFile.eachLine { l ->
+      ArrayList cols = l.split(/,/)
+
+      // CHECK THAT LINE IS NOT EMPTYR
+      if ((lineCount > 0) && (cols.size() > 1)) {
+        data.append(irregNounFstStringForCols(cols))
+      }
+      lineCount++
+    }
+    System.err.println "${fileCount}. File ${csvFile}"
+    fstFile.append(data.toString())
+    fileCount++
+  }
+
+}
+task buildIrregAdjectives(dependsOn:setUpLexDir) {
+  description = "Builds FST lexicon for irregular adjectives from .csv files"
+}
+task buildIrregAdverbs(dependsOn:setUpLexDir) {
+  description = "Builds FST lexicon for irregular adverbs from .csv files"
+}
+task buildIrregVerbs(dependsOn:setUpLexDir) {
+  description = "Builds FST lexicon for irregular conjugated verb forms from .csv files"
+}
+task buildIrregInfinitives(dependsOn:setUpLexDir) {
+  description = "Builds FST lexicon for irregular infinitives from .csv files"
+}
+task buildIrregPtcpls(dependsOn:setUpLexDir) {
+  description = "Builds FST lexicon for irregular participles from .csv files"
+}
+task buildIrregVadjs(dependsOn:setUpLexDir) {
+  description = "Builds FST lexicon for irregular verbal adjectives from .csv files"
+}
+
+
+task buildIrregStems(dependsOn: [buildIrregNouns, buildIrregAdjectives,buildIrregAdverbs,buildIrregVerbs,buildIrregInfinitives,buildIrregPtcpls,buildIrregPtcpls,buildIrregVadjs ]) {
+  description = "Builds FST lexicon for irregular forms from .csv files"
+}
+buildIrregStems.doLast {
+  System.err.println "FST statements for all irregular forms constructed."
+}
+
+
 // SOURCE:  lsjpool.n64316_0,lexent.n64316,lu_,w_regular,
 // TARGET: <u>lsjpool.n64316_0</u><u>lexent.n64316</u>lu<lo><verb><w_regular>
 String verbFstStringForCols(ArrayList columns) {
@@ -360,7 +461,7 @@ buildIndeclinableStems.doLast {
 
 
 
-task buildStems(dependsOn: [buildNounStems, buildVerbStems, buildAdjectiveStems, buildIndeclinableStems]) {
+task buildStems(dependsOn: [buildNounStems, buildVerbStems, buildAdjectiveStems, buildIndeclinableStems, buildIrregStems]) {
   description = "Builds .fst files from tabular source in data/stems-csv"
   File orthoBuild = new File(buildDir,dataset)
   File fstDir = new File(orthoBuild,"lexica")
