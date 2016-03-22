@@ -3,7 +3,7 @@
 #include "../../build/smyth/symbols.fst"
 
 % Raw:
-% <u>smyth.n23069_0</u><u>lexent.n23069</u>gunaiko/s<fem><gen><sg><irregnoun>::<irregnoun>
+% <u>smyth.n23069_0</u><u>lexent.n23069</u>gunaiko/s<fem><gen><sg><irregnoun>::<irregnoun><u>irreginfl.1</u>
 
 $stem$ = <u>smyth\.n23069\_0</u><u>lexent\.n23069</u>gunaiko/s<fem><gen><sg><irregnoun>
 
