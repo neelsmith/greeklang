@@ -1,0 +1,9 @@
+StemUrn,LexicalEntity,String,Gender,Case,Number
+smyth.n71882_0,lexent.n71882,o(,masc,nom,sg
+smyth.n71882_1,lexent.n71882,oi(,masc,nom,pl
+smyth.n71882_3,lexent.n71882,h(,fem,nom,sg
+smyth.n71882_4,lexent.n71882,ai(,fem,nom,pl
+smyth.n71882_5,lexent.n71882,to/,neut,nom,sg
+smyth.n71882_6,lexent.n71882,to/,neut,acc,sg
+smyth.n71882_7,lexent.n71882,ta/,neut,nom,pl
+smyth.n71882_8,lexent.n71882,ta/,neut,acc,pl
