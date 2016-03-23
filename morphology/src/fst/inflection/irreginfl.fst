@@ -1,4 +1,4 @@
-$irreginfl$ =  <irregnoun><noun><u>irreginfl\.1</u> |\
+$irreginfl$ =  <irregnoun><noun><u>irreginfl\.0</u> |\
 <irregadj><adj><u>irreginfl\.1</u> |\
 <irregadv><adv><u>irreginfl\.2</u> |\
 <irregcverb><verb><u>irreginfl\.3</u> |\
