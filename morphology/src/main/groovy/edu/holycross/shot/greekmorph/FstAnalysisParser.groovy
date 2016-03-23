@@ -138,8 +138,14 @@ class FstAnalysisParser {
        CiteUrn inflectionalPattern  = new CiteUrn(inflUrnStr)
        this.explanation = new AnalysisExplanation(stem, inflectionalPattern)
 
-       // Second tag in inflectional pattern must be "part of speech":
-       analysisPattern = AnalyticalType.getByToken(inflTags[1])
+       // Second tag in inflectional pattern must be "part of speech", unless overriden:
+       if (stemTags[4] == "<pron>") {
+	 System.err.println "Pronoun analytical type ovverides adje"
+	 analysisPattern == AnalyticalType.getByToken("<pron>")
+	 System.err.println "yielding pattern "  + analysisPattern
+       } else {
+	 analysisPattern = AnalyticalType.getByToken(inflTags[1])
+       }
        if (debug > 0) { System.err.println "For ${inflTags[1]}, analysisPattern was " + analysisPattern }
 
 

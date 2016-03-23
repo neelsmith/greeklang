@@ -5,8 +5,8 @@ import static groovy.test.GroovyAssert.shouldFail
 
 class TestAnalyticalTypeEnum {
 
-  def expectedTokens = ["<verb>", "<ptcpl>", "<infin>","<vadj>","<noun>", "<adj>","<adv>","<indecl>" ]
-  def expectedLabels = ["conjugated verb", "participle", "infinitive", "verbal adjective", "noun","adjective", "adverb", "indeclinable form"]
+  def expectedTokens = ["<verb>", "<ptcpl>", "<infin>","<vadj>","<noun>", "<pron>", "<adj>","<adv>","<indecl>" ]
+  def expectedLabels = ["conjugated verb", "participle", "infinitive", "verbal adjective", "noun", "pronoun", "adjective", "adverb", "indeclinable form", ]
 
   @Test
   void testAnalyticalTypeEnum() {

@@ -13,7 +13,7 @@ class PronounForm implements CitableId {
   * from the string "aj" concatenated with digits for each of
   * the adjectival identifiers gender, case, number and degee.
   */
-  static String urnBase = "urn:cite:gmorph:form.aj"
+  static String urnBase = "urn:cite:gmorph:form.pn"
 
 
 
