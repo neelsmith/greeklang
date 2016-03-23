@@ -13,24 +13,20 @@ class TestGreekNoun2Anqrwpos {
   // External files used in didactic tests:
   //
   // CSV files with URN abbreviations for stems and inflectional rules
-  File lexCsvSource = new File("sampledata/urn-registries/datasets.csv")
-  File inflCsvSource = new File("src/fst/collectionAbbreviations.csv")
+  File urnReg = new File("sampledata/smyth/urnregistry/collectionregistry.csv")
+
   // A URN manager configured with CITE collection abbreviations
   // for both inflectional patterns and lexicon of stems:
-  UrnManager umgr = new UrnManager(inflCsvSource)
+  UrnManager umgr = new UrnManager(urnReg)
 
   // Compiled finite state transducer:
-  String litGreekBinary = "build/greek/greek.a"
-  String atticBinary = "build/attic/greek.a"
+  String litGreekBinary = "build/smyth/greek.a"
 
 
+  LiteraryGreekParser mp = new LiteraryGreekParser(litGreekBinary, umgr)
 
   @Test
   void testDeclension() {
-    // Add lexicon to URN manager:
-    umgr.addCsvFile(lexCsvSource)
-    // And, finally, the parser:
-    LiteraryGreekParser mp = new LiteraryGreekParser(litGreekBinary, umgr)
     mp.debug = 10
     mp.fstParser.debug = 10
     // map keyed by forms to analyze, to a unique GCN of noun form
@@ -39,12 +35,11 @@ class TestGreekNoun2Anqrwpos {
     "ἀνθρώπου": [Gender.MASCULINE, GrammaticalCase.GENITIVE, GrammaticalNumber.SINGULAR],
     "ἀνθρώπῳ": [Gender.MASCULINE, GrammaticalCase.DATIVE, GrammaticalNumber.SINGULAR],
     "ἄνθρωπον": [Gender.MASCULINE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.SINGULAR],
+    "ἄνθρωπε": [Gender.MASCULINE, GrammaticalCase.VOCATIVE, GrammaticalNumber.SINGULAR],
 
     "ἀνθρώπων": [Gender.MASCULINE, GrammaticalCase.GENITIVE, GrammaticalNumber.PLURAL],
     "ἀνθρώποις": [Gender.MASCULINE, GrammaticalCase.DATIVE, GrammaticalNumber.PLURAL],
     "ἀνθρώπους": [Gender.MASCULINE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.PLURAL],
-
-    "ἄνθρωπε": [Gender.MASCULINE, GrammaticalCase.VOCATIVE, GrammaticalNumber.SINGULAR]
     ]
 
     expectedUnique.keySet().each { greek ->
@@ -58,8 +53,10 @@ class TestGreekNoun2Anqrwpos {
       assert formIdentification.getCas() == expectedAnswer[1]
       assert formIdentification.getNum() == expectedAnswer[2]
     }
+  }
 
-    // Check also the ambiguous nom/voc form.
+  @Test
+  void testNomVoc() {
     def nom_voc = [GrammaticalCase.NOMINATIVE,GrammaticalCase.VOCATIVE ]
     GreekString ambiguous = new GreekString("ἄνθρωποι",true)
     MorphologicalAnalysis morph = mp.parseGreekString(ambiguous)
@@ -76,50 +73,40 @@ class TestGreekNoun2Anqrwpos {
     }
   }
 
-
-
   @Test
-  void testParserDidactically() {
-    // Add lexicon to URN manager:
-    umgr.addCsvFile(lexCsvSource)
-    // And, finally, the parser:
-    LiteraryGreekParser mp = new LiteraryGreekParser(litGreekBinary, umgr)
+  void testDuals1() {
+    def nom_acc_voc = [GrammaticalCase.NOMINATIVE,GrammaticalCase.ACCUSATIVE,GrammaticalCase.VOCATIVE ]
 
-    String testWord = "ἀνθρώπου"
-    GreekString s = new GreekString(testWord, true)
 
-    // Parsing a GreekString gets you 0 or more analyses
-    MorphologicalAnalysis morph = mp.parseGreekString(s)
-    // although there is only 1 possibility for ἀνθρώπου.
-    assert morph.analyses.size() == 1
-
-    morph.analyses.each { morphAnalysis ->
-      // Individual analyses of a word have three components.
-      // (1) The lexical entity :
-      String urnForForm = "urn:cite:shot:lexent.n8909"
-      assert morphAnalysis.getLexicalEntity().toString() == urnForForm
-
-      // (2) a form:
-      MorphForm form = morphAnalysis.getMorphForm()
-      assert form.getAnalyticalType() == AnalyticalType.NOUN
-
-      CitableId formIdentification = form.getAnalysis()
-      assert formIdentification.getGender() == Gender.MASCULINE
-      assert formIdentification.getCas() == GrammaticalCase.GENITIVE
-      assert formIdentification.getNum() == GrammaticalNumber.SINGULAR
-      // we can also find its persistent accent:
-      assert formIdentification.getPersistentAccent() == PersistentAccent.STEM_PENULT
-
-      // and (3) an explanation for the analysis
-      AnalysisExplanation explanation = morphAnalysis.getAnalysisExplanation()
-      String expectedStemExplanation =  "urn:cite:gmorph:lsjpool.n8909_0"
-      assert explanation.stem.toString() == expectedStemExplanation
-
-      // Inflectional patterns are explained by a URN identifying the
-      // the inflectional rule applied to the stem
-      String expectedInflectionExplanation = "urn:cite:gmorph:nouninfl.os_ou2m"
-      assert explanation.inflection.toString() == expectedInflectionExplanation
-    }
+    GreekString ambiguousNav = new GreekString("ἀνθρώπω",true)
+    MorphologicalAnalysis morph = mp.parseGreekString(ambiguousNav)
+    assert morph.analyses.size() == 3
+    morph.analyses.each {
+        MorphForm form = it.getMorphForm()
+        assert form.getAnalyticalType() == AnalyticalType.NOUN
+        CitableId formIdentification = form.getAnalysis()
+        // can't know ordering of analyses, but case must be
+        // ONE of these two!
+        assert nom_acc_voc.contains(formIdentification.getCas())
+        assert formIdentification.getGender() == Gender.MASCULINE
+        assert formIdentification.getNum() == GrammaticalNumber.DUAL
   }
-
+}
+@Test
+void testDuals2() {
+  def gen_dat = [GrammaticalCase.GENITIVE,GrammaticalCase.DATIVE ]
+  GreekString ambiguousGd = new GreekString("ἀνθρώποιν",true)
+  MorphologicalAnalysis morph = mp.parseGreekString(ambiguousGd)
+  assert morph.analyses.size() == 2
+  morph.analyses.each {
+      MorphForm form = it.getMorphForm()
+      assert form.getAnalyticalType() == AnalyticalType.NOUN
+      CitableId formIdentification = form.getAnalysis()
+      // can't know ordering of analyses, but case must be
+      // ONE of these two!
+      assert gen_dat.contains(formIdentification.getCas())
+      assert formIdentification.getGender() == Gender.MASCULINE
+      assert formIdentification.getNum() == GrammaticalNumber.DUAL
+  }
+  }
 }
