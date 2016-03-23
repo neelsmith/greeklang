@@ -1,2 +1,11 @@
-StemUrn,LexicalEntity,Stem,InflClass,Accent
-smyth.lexent.n71882_00,lexent.n71882,t,os_h_on,inflacc
+StemUrn,LexicalEntity,Stem,InflClass,Accent,Notes
+smyth.n17907_0,lexent.n17907,au)t,os_h_on,inflacc,Smyth 328
+smyth.n33935_0,lexent.n33935,e)maut,os_h_on,inflacc,Smyth 329
+smyth.n34194_0,lexent.n34194,e)m,os_h_on,inflacc,Smyth 330
+smyth.n95610_0,lexent.n95610,s,os_h_on,inflacc,Smyth 330
+smyth.n47030_0,lexent.n47030,h(meter,os_h_on,stemultacc,Smyth 330
+smyth.n106696_0,lexent.n106696,u(meter,os_h_on,stempenacc,Smyth 330
+smyth.n101655_0,lexent.n101655,sfeter,os_h_on,stempenacc,Smyth 330
+smyth.n4430_0,lexent.n4430,a)llhl,os_h_on,stempenacc,Smyth 331
+smyth.n71882_0,lexent.n71882,t,os_h_on,inflacc,Smyth 332
+smyth.n31951_0,lexent.n31951,e)kein,os_h_on,stemultacc,Smyth 333
