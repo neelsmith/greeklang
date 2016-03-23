@@ -340,6 +340,80 @@ buildNounStems.doLast {
 
 }
 
+
+
+
+
+
+
+
+
+// pronouns
+//SOURCE: smyth.lexent.n71882_00,lexent.n71882,t,os_h_on,inflacc
+//TARGET: <u>smyth.n71882_00</u><u>lexent.n71882</u>t<pron><os_h_on><inflacc>
+String pronFstStringForCols(ArrayList columns) {
+  if (columns.size() < 5) {
+    return ""
+  }
+  
+  StringBuilder pronEntry  = new StringBuilder()
+  pronEntry.append("<u>${columns[0]}</u>")
+  pronEntry.append("<u>${columns[1]}</u>")
+  String stem = columns[2].replaceAll("_", "<lo>")
+  stem = stem.replaceAll("\\^", "<sh>")
+  stem = stem.replaceAll("\\(", "<ro>")
+  stem = stem.replaceAll("\\)", "<sm>")
+  pronEntry.append(stem)
+  pronEntry.append("<pron>")
+  pronEntry.append("<${columns[3]}>")
+  pronEntry.append("<${columns[4]}>")
+  pronEntry.append("\n")
+  return pronEntry.toString()
+}
+
+task buildPronounStems(dependsOn: setUpLexDir) {
+  description = "Builds .fst files from tabular source in ${loaddir}/${dataset}/stems-csv/pronouns"
+
+  File lexDir = new File("${loaddir}/${dataset}/stems-csv/pronouns")
+
+  File orthoBuild = new File(buildDir,dataset)
+  File fstDir = new File(orthoBuild,"lexica")
+
+  outputs.dir fstDir
+  inputs.dir lexDir
+}
+buildAdjectiveStems.doLast {
+  File lexDir = new File("${loaddir}/${dataset}/stems-csv/pronouns")
+  File orthoBuild = new File(buildDir,dataset)
+  File fstDir = new File(orthoBuild,"lexica")
+
+  System.err.println "Looking for csv files in " + lexDir
+  def fileCount = 0
+  lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
+    File fstFile = new File(fstDir, "lex-prons-${csvFile.getName().replaceFirst(/.csv/,'.fst')}")
+    fstFile.setText("")
+    StringBuilder data = new StringBuilder()
+    def lineCount = 0
+    csvFile.eachLine { l ->
+      ArrayList cols = l.split(/,/)
+
+      // CHECK THAT LINE IS NOT EMPTYR
+      if ((lineCount > 0) && (cols.size() > 1)) {
+        data.append(pronFstStringForCols(cols))
+      }
+      lineCount++
+    }
+    System.err.println "${fileCount}. File ${csvFile}"
+    //if (fileCount > 0) {
+      //fstFile.append(" \\\\|\n")
+    //}
+    fstFile.append(data.toString())
+    fileCount++
+  }
+
+
+}
+
 // SOURCE: smythpool.n260_0,lexent.n260,a)gaq,os_h_on,inflacc
 // TARGET: <u>smythpool.n260_0</u><u>lexent.n260</u>a<sm>gaq<adj><os_h_on><inflacc>
 String adjFstStringForCols(ArrayList columns) {
@@ -461,7 +535,7 @@ buildIndeclinableStems.doLast {
 
 
 
-task buildStems(dependsOn: [buildNounStems, buildVerbStems, buildAdjectiveStems, buildIndeclinableStems, buildIrregStems]) {
+task buildStems(dependsOn: [buildNounStems, buildVerbStems, buildAdjectiveStems, buildIndeclinableStems, buildIrregStems, buildPronounStems]) {
   description = "Builds .fst files from tabular source in data/stems-csv"
   File orthoBuild = new File(buildDir,dataset)
   File fstDir = new File(orthoBuild,"lexica")
