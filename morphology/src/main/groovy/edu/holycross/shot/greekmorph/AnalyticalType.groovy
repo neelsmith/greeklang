@@ -17,6 +17,8 @@ public enum AnalyticalType {
   VERBAL_ADJECTIVE ("verbal adjective", "<vadj>"),
   /** Noun analyzed with GCN */
   NOUN("noun", "<noun>"),
+  /** Pronoun analyzed with GCN */
+  PRONOUN("pronoun", "<pron>"),
   /** Adjective analyzed with GCND */
   ADJECTIVE("adjective", "<adj>"),
   /** Adverb analyzed with D */
