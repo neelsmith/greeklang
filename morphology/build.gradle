@@ -382,7 +382,7 @@ task buildPronounStems(dependsOn: setUpLexDir) {
   outputs.dir fstDir
   inputs.dir lexDir
 }
-buildAdjectiveStems.doLast {
+buildPronounStems.doLast {
   File lexDir = new File("${loaddir}/${dataset}/stems-csv/pronouns")
   File orthoBuild = new File(buildDir,dataset)
   File fstDir = new File(orthoBuild,"lexica")
