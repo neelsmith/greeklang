@@ -26,4 +26,12 @@ class TestAnalyticalTypeEnum {
 
   }
 
+
+  @Test
+  void testGetter() {
+    def analysisPattern = AnalyticalType.getByToken("<pron>")
+    assert analysisPattern != null
+    System.err.println analysisPattern
+  }
+
 }

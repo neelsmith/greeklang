@@ -141,7 +141,7 @@ class FstAnalysisParser {
        // Second tag in inflectional pattern must be "part of speech", unless overriden:
        if (stemTags[4] == "<pron>") {
 	 System.err.println "Pronoun analytical type ovverides adje"
-	 analysisPattern == AnalyticalType.getByToken("<pron>")
+	 analysisPattern = AnalyticalType.getByToken("<pron>")
 	 System.err.println "yielding pattern "  + analysisPattern
        } else {
 	 analysisPattern = AnalyticalType.getByToken(inflTags[1])
@@ -294,7 +294,18 @@ class FstAnalysisParser {
       mf = new MorphForm(analysisPattern, new AdverbForm(deg, accent))
       break
 
+    case AnalyticalType.PRONOUN:
+    Integer lastTag = stemTags.size() - 1
+    PersistentAccent accent = PersistentAccent.getByToken(stemTags[lastTag])
+    
+    System.err.println "HERE ARE ALL INFL TAGS FOR A PRON: " + inflTags
 
+    Gender gender = Gender.getByToken(inflTags[2])
+    GrammaticalCase cas = GrammaticalCase.getByToken(inflTags[3])
+    GrammaticalNumber num = GrammaticalNumber.getByToken(inflTags[4])
+    mf = new MorphForm(analysisPattern, new PronounForm(gender, cas,num,accent))
+    break
+    
       default:
       System.err.println "FAP: Unimplemented analytical type: " + analysisPattern
       break
