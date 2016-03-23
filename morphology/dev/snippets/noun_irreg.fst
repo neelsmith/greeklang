@@ -6,8 +6,12 @@
 % <u>smyth.n23069_0</u><u>lexent.n23069</u>gunaiko/s<fem><gen><sg><irregnoun>::<irregnoun><noun><u>irreginfl.1</u>
 
 $stem$ = <u>smyth\.n23069\_0</u><u>lexent\.n23069</u>gunaiko/s<fem><gen><sg><irregnoun>
+% cf:
+%<u>smyth\.n23069\_0</u><u>lexent\.n23069</u>gunaiko/s<fem><gen><sg><irregnoun>
 
 $inflection$ = <irregnoun><noun><u>irreginfl\.1</u>
+%cf:
+%<irregnoun><noun><u>irreginfl\.1</u>
 
 
 $morphdb$ = $stem$   \:\: $inflection$
