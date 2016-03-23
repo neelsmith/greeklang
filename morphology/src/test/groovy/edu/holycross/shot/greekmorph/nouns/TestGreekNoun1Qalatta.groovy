@@ -10,34 +10,25 @@ import static groovy.test.GroovyAssert.shouldFail
 */
 class TestGreekNoun1Qalatta {
 
-  // External files used in didactic tests:
-  //
-  // CSV files with URN abbreviations for stems and inflectional rules
-  File urnReg = new File("data/smyth/urnregistry/collectionregistry.csv")
-
-  // A URN manager configured with CITE collection abbreviations
-  // for both inflectional patterns and lexicon of stems:
+  File urnReg = new File("sampledata/smyth/urnregistry/collectionregistry.csv")
   UrnManager umgr = new UrnManager(urnReg)
-
-  // Compiled finite state transducer:
   String fstBinary = "build/smyth/greek.a"
 
   // The parser:
   LiteraryGreekParser mp = new LiteraryGreekParser(fstBinary, umgr)
 
-/*
   @Test
-  void testUniqueForms(){
+  void testUnique(){
     // map keyed by forms to analyze, to a unique GCN of noun form
     def expectedUnique = [
 
-    "νίκης": [Gender.FEMININE, GrammaticalCase.GENITIVE, GrammaticalNumber.SINGULAR],
-    "νίκῃ": [Gender.FEMININE, GrammaticalCase.DATIVE, GrammaticalNumber.SINGULAR],
-    "νίκην": [Gender.FEMININE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.SINGULAR],
+    "θαλάττης": [Gender.FEMININE, GrammaticalCase.GENITIVE, GrammaticalNumber.SINGULAR],
+    "θαλάττῃ": [Gender.FEMININE, GrammaticalCase.DATIVE, GrammaticalNumber.SINGULAR],
+    "θάλατταν": [Gender.FEMININE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.SINGULAR],
 
-    "νικῶν": [Gender.FEMININE, GrammaticalCase.GENITIVE, GrammaticalNumber.PLURAL],
-    "νίκαις": [Gender.FEMININE, GrammaticalCase.DATIVE, GrammaticalNumber.PLURAL],
-    "νίκας": [Gender.FEMININE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.PLURAL]
+    "θαλαττῶν": [Gender.FEMININE, GrammaticalCase.GENITIVE, GrammaticalNumber.PLURAL],
+    "θαλάτταις": [Gender.FEMININE, GrammaticalCase.DATIVE, GrammaticalNumber.PLURAL],
+    "θαλάττας": [Gender.FEMININE, GrammaticalCase.ACCUSATIVE, GrammaticalNumber.PLURAL]
 
 
     ]
@@ -62,7 +53,7 @@ class TestGreekNoun1Qalatta {
     // Check also the ambiguous nom/voc forms.
     // Singular:
     def nom_voc = [GrammaticalCase.NOMINATIVE,GrammaticalCase.VOCATIVE ]
-    GreekString ambiguous = new GreekString("νίκη",true)
+    GreekString ambiguous = new GreekString("θάλαττα",true)
     MorphologicalAnalysis morph = mp.parseGreekString(ambiguous)
     assert morph.analyses.size() == 2
     morph.analyses.each {
@@ -76,7 +67,7 @@ class TestGreekNoun1Qalatta {
         assert formIdentification.getNum() == GrammaticalNumber.SINGULAR
     }
     // Plural:
-    GreekString ambiguousPlural = new GreekString("νῖκαι",true)
+    GreekString ambiguousPlural = new GreekString("θάλατται",true)
     MorphologicalAnalysis morphPl = mp.parseGreekString(ambiguousPlural)
     assert morphPl.analyses.size() == 2
     morphPl.analyses.each {
@@ -94,7 +85,7 @@ class TestGreekNoun1Qalatta {
     void testDuals(){
       def nom_acc_voc = [GrammaticalCase.NOMINATIVE,GrammaticalCase.ACCUSATIVE,GrammaticalCase.VOCATIVE ]
 
-      GreekString nav = new GreekString("νίκα",true)
+      GreekString nav = new GreekString("θαλάττα",true)
       MorphologicalAnalysis morph = mp.parseGreekString(nav)
       assert morph.analyses.size() == 3
       morph.analyses.each {
@@ -110,7 +101,7 @@ class TestGreekNoun1Qalatta {
 
       def gen_dat = [GrammaticalCase.GENITIVE,GrammaticalCase.DATIVE ]
 
-      GreekString gd = new GreekString("νίκαιν",true)
+      GreekString gd = new GreekString("θαλάτταιν",true)
       MorphologicalAnalysis morphgd = mp.parseGreekString(gd)
       //assert morphgd.analyses.size() == 2
       morphgd.analyses.each { a ->
@@ -123,5 +114,5 @@ class TestGreekNoun1Qalatta {
           assert formIdentification.getNum() == GrammaticalNumber.DUAL
       }
     }
-    */
+    
 }
