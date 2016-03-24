@@ -38,4 +38,28 @@ class TestGreekWPresent {
 
   }
 
+
+  @Test
+  void testActive() {
+    //
+    def expectedUnique = [
+    "λύομεν": [Person.FIRST, GrammaticalNumber.PLURAL, Tense.PRESENT, Mood.INDICATIVE, Voice.ACTIVE]
+    ]
+    expectedUnique.keySet().each { greek ->
+      def expectedAnswer = expectedUnique[greek]
+      MorphologicalAnalysis morph = mp.parseGreekString(new GreekString(greek,true))
+
+      assert morph.analyses.size() == 1
+      MorphForm form = morph.analyses[0].getMorphForm()
+      assert form.getAnalyticalType() == AnalyticalType.VERB
+      CitableId formIdentification = form.getAnalysis()
+      assert formIdentification.getPerson() == expectedAnswer[0]
+      assert formIdentification.getGrammaticalNumber() == expectedAnswer[1]
+      assert formIdentification.getTense() == expectedAnswer[2]
+      assert formIdentification.getMood() == expectedAnswer[3]
+      assert formIdentification.getVoice() == expectedAnswer[4]
+    }
+
+
+  }
 }
