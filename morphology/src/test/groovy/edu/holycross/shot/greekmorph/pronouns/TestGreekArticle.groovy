@@ -19,7 +19,16 @@ class TestGreekArticle {
     LiteraryGreekParser mp = new LiteraryGreekParser(fstBinary, umgr)
     @Test
     void testSinglePrelim(){
-    //
+      String greek = "τοῦ"
+      MorphologicalAnalysis morph = mp.parseGreekString(new GreekString(greek,true))
+      assert morph.analyses.size() == 2
+
+
+      MorphForm form = morph.analyses[0].getMorphForm()
+      assert form.getAnalyticalType() == AnalyticalType.PRONOUN
+      CitableId formIdentification = form.getAnalysis()
+    
+      assert formIdentification.getNum() == GrammaticalNumber.SINGULAR
     }
   /*
     @Test
