@@ -1,4 +1,7 @@
-% 2nd_3rdpp.fst
+%  w_2_3_6pp.fst
+%
+% Generate second, third and sixth principal parts for
+% regular omega verbs.
 %
 #include "@workdir@symbols.fst"
 

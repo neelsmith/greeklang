@@ -7,4 +7,4 @@
 % modifies the stem accordingly.
 %
 
-"<@workdir@acceptors/verb/2nd_3rd_pp.a>" %%|| "<@workdir@acceptors/verb/6th_pp.a>" || "<@workdir@acceptors/verb/4th_5th_pp.a>"
+"<@workdir@acceptors/verb/w_2_3_6pp.a>" %%|| "<@workdir@acceptors/verb/6th_pp.a>" || "<@workdir@acceptors/verb/4th_5th_pp.a>"
