@@ -30,8 +30,18 @@ class TestGreekWInfinitives {
     CitableId formIdentification = form.getAnalysis()
     assert formIdentification.getTense() == Tense.PRESENT
     assert formIdentification.getVoice() == Voice.ACTIVE
+  }
 
-
+  @Test
+  void testActive() {
+    mp.debug = 10
+    mp.fstParser.debug = 10
+    def expectedTense = [
+    "λύειν": [Tense.PRESENT],
+    "λύσειν": [Tense.FUTURE],
+    "λῦσαι": [Tense.AORIST],
+    "λελυκέναι": [Tense.PERFECT]
+    ]
   }
 
 }
