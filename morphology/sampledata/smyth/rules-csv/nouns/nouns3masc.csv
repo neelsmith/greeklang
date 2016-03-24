@@ -27,8 +27,8 @@ nouninfl.c_kos5m,c_kos,c,masc,voc,sg
 
 nouninfl.c_kos6m,c_kos,kes,masc,nom,pl
 nouninfl.c_kos7m,c_kos,kwn,masc,gen,pl
-nouninfl.c_kos8m,c_kos,aci,masc,dat,pl
-nouninfl.c_kos8mn,c_kos,acin,masc,dat,pl
+nouninfl.c_kos8m,c_kos,ci,masc,dat,pl
+nouninfl.c_kos8mn,c_kos,cin,masc,dat,pl
 nouninfl.c_kos9m,c_kos,kas,masc,acc,pl
 nouninfl.c_kos10m,c_kos,kes,masc,voc,pl
 
