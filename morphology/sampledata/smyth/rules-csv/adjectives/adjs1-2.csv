@@ -11,7 +11,7 @@ adjinfl.os_h_on8,os_h_on,oin,masc,dat,dual,pos
 adjinfl.os_h_on9,os_h_on,w,masc,acc,dual,pos
 adjinfl.os_h_on10,os_h_on,w,masc,voc,dual,pos
 
-djinfl.os_h_on11,os_h_on,oi,masc,nom,pl,pos
+adjinfl.os_h_on11,os_h_on,oi,masc,nom,pl,pos
 adjinfl.os_h_on12,os_h_on,wn,masc,gen,pl,pos
 adjinfl.os_h_on13,os_h_on,ois,masc,dat,pl,pos
 adjinfl.os_h_on14,os_h_on,ous,masc,acc,pl,pos
@@ -39,3 +39,25 @@ adjinfl.os_h_on27,os_h_on,wn,fem,gen,pl,pos
 adjinfl.os_h_on28,os_h_on,ais,fem,dat,pl,pos
 adjinfl.os_h_on29,os_h_on,a_s,fem,acc,pl,pos
 adjinfl.os_h_on30,os_h_on,ai,fem,voc,pl,pos
+
+
+
+
+
+adjinfl.os_h_on31,os_h_on,on,neut,nom,sg,pos
+adjinfl.os_h_on32,os_h_on,ou,neut,gen,sg,pos
+adjinfl.os_h_on33,os_h_on,w|,neut,dat,sg,pos
+adjinfl.os_h_on34,os_h_on,on,neut,acc,sg,pos
+adjinfl.os_h_on35,os_h_on,on,neut,voc,sg,pos
+
+adjinfl.os_h_on36,os_h_on,w,neut,nom,dual,pos
+adjinfl.os_h_on37,os_h_on,oin,neut,gen,dual,pos
+adjinfl.os_h_on38,os_h_on,oin,neut,dat,dual,pos
+adjinfl.os_h_on39,os_h_on,w,neut,acc,dual,pos
+adjinfl.os_h_on40,os_h_on,w,neut,voc,dual,pos
+
+djinfl.os_h_on41,os_h_on,a,neut,nom,pl,pos
+adjinfl.os_h_on42,os_h_on,wn,neut,gen,pl,pos
+adjinfl.os_h_on43,os_h_on,ois,neut,dat,pl,pos
+adjinfl.os_h_on44,os_h_on,a,neut,acc,pl,pos
+adjinfl.os_h_on45,os_h_on,a,neut,voc,pl,pos
