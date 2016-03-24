@@ -1,25 +1,23 @@
-% 2nd_3rdpp.sft
+% 2nd_3rdpp.fst
 %
 #include "@workdir@symbols.fst"
 
-% Tense/voice combinations for second-third principal parts
-%
-% For regular omega verbs,  extend the stem of 2nd and 3rd
-% principal parts by adding sigma.  The stem will be
-% identical, for both parts, and is applied to the active and middle voice.
+
+%% Extend stems for regular verbs:
+
+
+% 2nd and 3rd principal part
 #2nd_3rd_6th_tense# = <aor><fut><futpft>
 #2nd_3rd_voice# = <act><mid>
 
 
+ALPHABET = [#editorial# #urntag# #urnchar# <verb> #morphtag# #stemtype#  #separator# #accent# #letter# #diacritic#  #breathing# \. #stemchars# ]
 
 
-%%%%% 2nd and 3rd principal part %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Extend stem with sigma:
-#=ltr# = #stemchars#
-ALPHABET = [#letter#] [#morphtag#]  [\:] [<#>] [#stemtype#] [#vowelquant#]
-$2nd_3rd_pp$ = {[#=ltr#]}:{[#=ltr#]s} ^-> ([#stemchars#]+ __ <verb><w_regular>[\:]+<w_regular>[#letter#]*[#person#][#number#][#2nd_3rd_6th_tense#][#mood#][#2nd_3rd_voice#])
-
-$2nd_3rd_pp$
+#=ltr# = #vowel# <lo> <sh>
+$2nd_3rd_pp$ = {[#=ltr#]}:{[#=ltr#]s} ^->  (<u>[#urnchar#]+[#period#][#urnchar#]+</u><u>[#urnchar#]+[#period#][#urnchar#]+</u>[#stemchars#]+[#vowel#] __ <verb><w_regular>\:\:<w_regular><verb>[#stemchars#]+[#person#][#number#][#2nd_3rd_6th_tense#][#mood#][#2nd_3rd_voice#]<u>[#urnchar#]+[#period#][#urnchar#]+</u> )
 
 
-%  <coretests.n64316_0><lexent.n64316>a<sm>na<#>lu<lo><verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><fut><indic><act>
+$6th_pp$ = {[#=ltr#]}:{[#=ltr#]q} ^->  (<u>[#urnchar#]+[#period#][#urnchar#]+</u><u>[#urnchar#]+[#period#][#urnchar#]+</u>[#stemchars#]+[#vowel#] __ <verb><w_regular>\:\:<w_regular><verb>[#stemchars#]+[#person#][#number#][#2nd_3rd_6th_tense#][#mood#]<pass><u>[#urnchar#]+[#period#][#urnchar#]+</u> )
+
+$2nd_3rd_pp$  || $6th_pp$
