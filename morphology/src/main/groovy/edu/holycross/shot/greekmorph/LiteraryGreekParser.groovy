@@ -84,6 +84,35 @@ class LiteraryGreekParser implements GreekParser {
 
 
 
+    boolean checkPronounAccent(GreekString gs, FstAnalysisParser analysisInfo) {
+    // Normalized, canonically accented form to compare with gs:
+    GreekWord accented
+    // Surface form from FST parser:
+    GreekWord retrievedForm = new GreekWord(analysisInfo.getSurfaceStem() + analysisInfo.getSurfaceInflection())
+
+    String inflectionTag = analysisInfo.getInflectionTag()
+
+    // see if retrieved from is pre-accented.
+    //inflectionTag
+    if (isPreAccented(inflectionTag)) {
+      System.err.println "${inflectionTag} class is already accented!"
+      accented = retrievedForm
+    } else {
+      GreekString fstSurfaceString = new GreekString(analysisInfo.surfaceInflection)
+      accented = LiteraryGreekPronounAccent.getAccentedPronForm(fstSurfaceString, analysisInfo)
+    }
+
+
+    if (debug > 0 ) {
+      System.err.println "Check noun accent by comparing ${accented} to ${gs}"
+      System.err.println "(removing quanity markers to get " + accented.toString().replaceAll("[_^]","") + ")"
+    }
+    return (accented.toString().replaceAll("[_^]","") == gs.toString())
+  }
+
+
+
+
   /**
    * @param gs Greek string submitted for analysis.
    * @param analysisInfo Proposed analysis of unaccented form.
@@ -204,6 +233,12 @@ class LiteraryGreekParser implements GreekParser {
     case AnalyticalType.NOUN:
     return checkNounAccent(utf8String, analysisInfo)
     break
+
+    case AnalyticalType.PRONOUN:
+    return checkPronounAccent(utf8String, analysisInfo)
+    break
+
+    
     case AnalyticalType.ADJECTIVE:
     return checkAdjAccent(utf8String, analysisInfo)
     break
@@ -232,7 +267,6 @@ class LiteraryGreekParser implements GreekParser {
     GreekWord retrievedForm = new GreekWord(analysisInfo.getSurfaceStem() + analysisInfo.getSurfaceInflection())
     return retrievedForm.toString().replaceAll("[_^]","") == utf8String.toString()
     break
-
 
     case AnalyticalType.CVERB:
     String candidateString = analysisInfo.getSurfaceStem() + analysisInfo.getSurfaceInflection()
