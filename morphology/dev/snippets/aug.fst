@@ -1,30 +1,47 @@
 %
 
-#include "../../build/fst/symbols.fst"
+#include "../../build/smyth/symbols.fst"
+
+
+ALPHABET = [#editorial# #urntag# #urnchar# <verb> #morphtag# #stemtype#  #separator# #accent# #letter# #diacritic#  #breathing# \. #stemchars# ]
 
 #augmenttense# = <aor><impft><plupft>
 
+$dictionary$ = <u>smyth\.n64316\_0</u><u>lexent\.n64316</u><#>lu<lo><verb><w_regular>\:\: "<../../build/smyth/inflection.a>"
 
-%%%%% Add augment %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-#=ltr# = a-z
-ALPHABET = [#letter#] [#morphtag#] [#urn#] [\:] [<#>] [#stemtype#] [#extratag#] [#vowelquant#]
-$augmented$ = {[#=ltr#]}:{e<sm>[#=ltr#]} ^-> ([#urn#]+[#stemchars#]*<#> __ [#stemchars#]+<verb><w_regular>[#extratag#]*[\:]+<w_regular>[#urn#][#letter#]*[#person#][#number#][#augmenttense#]<indic>[#voice#])
+%%<w_regular><verb>on<3rd><pl><impft><indic><act><u>verbinfl\.w\_impf\_indic8</u>
 
 
+#=ltr# = #consonant#
+$augmentsimplecons$ = {[#=ltr#]}:{e<sm>[#=ltr#]} ^-> ( <#> __ [#stemchars#]+<verb><w_regular>\:\:<w_regular><verb>[#stemchars#]+[#person#][#number#][#augmenttense#]<indic>[#voice#]<u>[#urnchar#]+[#period#][#urnchar#]+</u>)
+
+
+%% add simplex vowels
+%% add compounds...
+
+$simplex$ = $augmentsimplecons$
 
 
 
-$augmented$
-
-% Wrong b/c it doesn't check for consonant following;
-%<coretests.n6949_0><lexent.n6949>a<sm>na<#>e<sm>lu<lo><verb><w_regular>::<w_regular><w_indicative.14>es<2nd><sg><impft><indic><act>
 
 
-%%% EXAMPLES
-% First-part to pass through unchanged
-%<coretests.n6949_0><lexent.n6949>a<sm>na<#>lu<lo><verb><w_regular>::<w_regular><w_indicative.1>w<1st><sg><pres><indic><act>
+
+% Squash URN and strip symbol tags:
+$=verbclass$ = [#verbclass#]
+$squashverburn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+<verb>$=verbclass$  $separator$+$=verbclass$ <verb>[#stemchars#]* [#person#] [#number#] [#tense#] [#mood#] [#voice#]<u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% AUGMENTED
+% THE UNIVERSAL FINISHER: don't touch this:
 %
-%<coretests.n64316_0><lexent.n64316><#>e<sm>lu<verb><w_regular>::<w_regular><w_indicative.14>es<2nd><sg><impft><indic><act>
+%% Put all symbols in 2 categories:  pass through
+%% surface symbols, squash analytical symbols.
+#analysissymbol# = #editorial# #urntag# <noun><verb> #morphtag# #stemtype#  #separator# #accent#
+#surfacesymbol# = #letter# #diacritic#  #breathing#
+ALPHABET = [#surfacesymbol#] [#analysissymbol#]:<>
+$stripsym$ = .+
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+$dictionary$  ||  $simplex$ ||  $squashverburn$  || $stripsym$

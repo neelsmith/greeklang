@@ -6,17 +6,19 @@
 % Use an agreement variable to expand stem with augment
 % when followed by tag for augmenting tense
 
+ALPHABET = [#editorial# #urntag# #urnchar# <verb> #morphtag# #stemtype#  #separator# #accent# #letter# #diacritic#  #breathing# \. #stemchars# ]
+
 #augmenttense# = <aor><impft><plupft>
 
-
-%%%%% Add augment %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-#=ltr# = a-z
-ALPHABET = [#letter#] [#morphtag#]  [\:] [<#>] [#stemtype#]  [#vowelquant#]
-$augmented$ = {[#=ltr#]}:{e<sm>[#=ltr#]} ^-> ([#stemchars#]*<#> __ [#stemchars#]+<verb><w_regular>[\:]+<w_regular>[#letter#]*[#person#][#number#][#augmenttense#]<indic>[#voice#])
+#=ltr# = #consonant#
+$augmentsimplecons$ = {[#=ltr#]}:{e<sm>[#=ltr#]} ^-> ( <#> __ [#stemchars#]+<verb><w_regular>\:\:<w_regular><verb>[#stemchars#]+[#person#][#number#][#augmenttense#]<indic>[#voice#]<u>[#urnchar#]+[#period#][#urnchar#]+</u>)
 
 
- $augmented$
+$simplex$ = $augmentsimplecons$
+
+$allaugment$ =  $simplex$ %% and compounds, too...
+
+$allaugment$
 
 
 %% Account for these VC patterns:
