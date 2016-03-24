@@ -1,0 +1,11 @@
+CollectionId,CollectionUrn,Label
+lysias1,urn:cite:gmorph:smyth,"Lexicon of stems for vocabulary in Lysias 1"
+lexent,urn:cite:shot:lexent,"Greek lexical entities."
+verbinfl,urn:cite:gmorph:verbinfl,"Inflectional patterns for verbs"
+nouninfl,urn:cite:gmorph:nouninfl,"Inflectional patterns for nouns"
+indeclinfl,urn:cite:gmorph:indeclinfl,"Inflectional pattern for indeclinable tokens"
+adjinfl,urn:cite:gmorph:adjinfl,"Inflectional patterns for adjectives"
+advinfl,urn:cite:gmorph:advinfl,"Inflectional patterns for adverbs"
+infinfl,urn:cite:gmorph:infinfl,"Inflectional patterns for infinitives"
+vadjinfl,urn:cite:gmorph:vadjinfl,"Inflectional patterns for verbal adjectives"
+ptcplinfl,urn:cite:gmorph:ptcplinfl,"Inflectional patterns for participles"
