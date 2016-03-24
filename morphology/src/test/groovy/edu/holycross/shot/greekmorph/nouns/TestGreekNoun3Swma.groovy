@@ -10,26 +10,78 @@ import static groovy.test.GroovyAssert.shouldFail
 */
 class TestGreekNoun3Swma  {
 
-  // External files used in didactic tests:
-  // FST toolkit's batch parser:
-  String fstinfl = "/usr/bin/fst-infl"
-  // CSV files with URN abbreviations for stems and inflectional rules
-  File lexCsvSource = new File("sampledata/urn-registries/datasets.csv")
-  File inflCsvSource = new File("src/fst/collectionAbbreviations.csv")
+    // External files used in didactic tests:
+    //
+    // CSV files with URN abbreviations for stems and inflectional rules
+    File urnReg = new File("sampledata/smyth/urnregistry/collectionregistry.csv")
 
-
-  // Compiled finite state transducer:
-  String fstBinary = "build/greek/greek.a"
-
-    @Test
-    void testDeclension() {
     // A URN manager configured with CITE collection abbreviations
     // for both inflectional patterns and lexicon of stems:
-    UrnManager umgr = new UrnManager(inflCsvSource)
-    // Add lexicon to URN manager:
-    umgr.addCsvFile(lexCsvSource)
-    // And, finally, the parser:
-    LiteraryGreekParser mp = new LiteraryGreekParser(fstBinary, umgr)
+    UrnManager umgr = new UrnManager(urnReg)
+
+    // Compiled finite state transducer:
+    String litGreekBinary = "build/smyth/greek.a"
+    LiteraryGreekParser mp = new LiteraryGreekParser(litGreekBinary, umgr)
+
+
+/*
+    @Test
+    void testNomVoc() {
+      def nom_voc = [GrammaticalCase.NOMINATIVE,GrammaticalCase.VOCATIVE ]
+      GreekString ambiguous = new GreekString("ἄνθρωποι",true)
+      MorphologicalAnalysis morph = mp.parseGreekString(ambiguous)
+      assert morph.analyses.size() == 2
+      morph.analyses.each {
+          MorphForm form = it.getMorphForm()
+          assert form.getAnalyticalType() == AnalyticalType.NOUN
+          CitableId formIdentification = form.getAnalysis()
+          // can't know ordering of analyses, but case must be
+          // ONE of these two!
+          assert nom_voc.contains(formIdentification.getCas())
+          assert formIdentification.getGender() == Gender.MASCULINE
+          assert formIdentification.getNum() == GrammaticalNumber.PLURAL
+      }
+    }
+
+    @Test
+    void testDuals1() {
+      def nom_acc_voc = [GrammaticalCase.NOMINATIVE,GrammaticalCase.ACCUSATIVE,GrammaticalCase.VOCATIVE ]
+
+
+      GreekString ambiguousNav = new GreekString("ἀνθρώπω",true)
+      MorphologicalAnalysis morph = mp.parseGreekString(ambiguousNav)
+      assert morph.analyses.size() == 3
+      morph.analyses.each {
+          MorphForm form = it.getMorphForm()
+          assert form.getAnalyticalType() == AnalyticalType.NOUN
+          CitableId formIdentification = form.getAnalysis()
+          // can't know ordering of analyses, but case must be
+          // ONE of these two!
+          assert nom_acc_voc.contains(formIdentification.getCas())
+          assert formIdentification.getGender() == Gender.MASCULINE
+          assert formIdentification.getNum() == GrammaticalNumber.DUAL
+    }
+  }
+  @Test
+  void testDuals2() {
+    def gen_dat = [GrammaticalCase.GENITIVE,GrammaticalCase.DATIVE ]
+    GreekString ambiguousGd = new GreekString("ἀνθρώποιν",true)
+    MorphologicalAnalysis morph = mp.parseGreekString(ambiguousGd)
+    assert morph.analyses.size() == 2
+    morph.analyses.each {
+        MorphForm form = it.getMorphForm()
+        assert form.getAnalyticalType() == AnalyticalType.NOUN
+        CitableId formIdentification = form.getAnalysis()
+        // can't know ordering of analyses, but case must be
+        // ONE of these two!
+        assert gen_dat.contains(formIdentification.getCas())
+        assert formIdentification.getGender() == Gender.MASCULINE
+        assert formIdentification.getNum() == GrammaticalNumber.DUAL
+    }
+    }
+*/
+    @Test
+    void testDeclension() {
     mp.debug = 10
     mp.fstParser.debug = 10
         // map keyed by forms to analyze, to a unique GCN of noun form

@@ -20,8 +20,8 @@ class TestParseFileSource {
   @Test
   void testMorphologicalParser() {
     File wordsFile = new File("testwords.txt")
-    File outputFile = new File("build/analyses.txt")
-    outputFile.text = ""
+    File outputFile = new File("build/analyses.csv")
+    outputFile.text = "String,LexicalEntity,MorphologicalForm,Stem,InflectionalRule\n"
     wordsFile.eachLine { l ->
       GreekString gs
       try {
@@ -37,6 +37,10 @@ class TestParseFileSource {
             case AnalyticalType.NOUN:
             NounForm noun =  new NounForm(formIdentification.getGender(), formIdentification.getCas(), formIdentification.getNum(), null)
             formUrn = noun.getUrn().toString()
+            break
+            case AnalyticalType.INDECLINABLE:
+            IndeclinableForm indecl = new IndeclinableForm()
+            formUrn = indecl.getUrn().toString()
             break
           }
           outputFile.append( "${l},${analysisTriple.lexicalEntity},${formUrn},${explanation.stem},${explanation.inflection}\n")
