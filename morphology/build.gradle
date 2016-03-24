@@ -118,6 +118,17 @@ String lexiconFstStatement(File dir) {
 //
 
 
+String toFstAlphabet(String s) {
+  String fst = s.replaceAll("_", "<lo>")
+  fst = fst.replaceAll("\\^", "<sh>")
+  fst = fst.replaceAll("\\(", "<ro>")
+  fst = fst.replaceAll("\\)", "<sm>")
+  fst = fst.replaceAll("=", "\\\\=")
+  fst = fst.replaceAll("\\|", "\\\\|")
+  return fst
+}
+
+
 // Irregulars are a little different.
 //Source: StemUrn,LexicalEntity,String,Gender,Case,Number
 // Target: <u>smyth\.n23069\_0</u><u>lexent\.n23069</u>gunaiko/s<fem><gen><sg><irregnoun>
@@ -125,10 +136,7 @@ String irregNounFstStringForCols(ArrayList columns) {
   StringBuilder nounEntry  = new StringBuilder()
   nounEntry.append("<u>${columns[0]}</u>")
   nounEntry.append("<u>${columns[1]}</u>")
-  String stem = columns[2].replaceAll("_", "<lo>")
-  stem = stem.replaceAll("\\^", "<sh>")
-  stem = stem.replaceAll("\\(", "<ro>")
-  stem = stem.replaceAll("\\)", "<sm>")
+  String stem = toFstAlphabet(columns[2])
   nounEntry.append(stem)
   nounEntry.append("<${columns[3]}>")
   nounEntry.append("<${columns[4]}>")
@@ -137,19 +145,6 @@ String irregNounFstStringForCols(ArrayList columns) {
   nounEntry.append("\n")
   return nounEntry.toString()
 }
-/*
-task buildNounStems(dependsOn: setUpLexDir) {
-  description = "Builds .fst files from tabular source in ${loaddir}/${dataset}/stems-csv/nouns"
-
-  File lexDir = new File("${loaddir}/${dataset}/stems-csv/nouns")
-
-  File orthoBuild = new File(buildDir,dataset)
-  File fstDir = new File(orthoBuild,"lexica")
-
-  outputs.dir fstDir
-  inputs.dir lexDir
-}
-*/
 // StemUrn,LexicalEntity,String,Gender,Case,Number
 task buildIrregNouns(dependsOn:setUpLexDir) {
   description = "Builds FST lexicon for irregular nouns from .csv files"
@@ -226,11 +221,8 @@ String verbFstStringForCols(ArrayList columns) {
   verbEntry.append("<u>${columns[0]}</u>")
   verbEntry.append("<u>${columns[1]}</u>")
 
-  String stem = columns[2].replaceAll("_", "<lo>")
-  stem = stem.replaceAll("\\^", "<sh>")
-  stem = stem.replaceAll("\\(", "<ro>")
-  stem = stem.replaceAll("\\)", "<sm>")
-  verbEntry.append(stem)
+  String stem =toFstAlphabet( columns[2])
+  verbEntry.append("<#>" + stem)
   verbEntry.append("<verb>")
   verbEntry.append("<${columns[3]}>")
   verbEntry.append("\n")
@@ -281,10 +273,7 @@ String nounFstStringForCols(ArrayList columns) {
   StringBuilder nounEntry  = new StringBuilder()
   nounEntry.append("<u>${columns[0]}</u>")
   nounEntry.append("<u>${columns[1]}</u>")
-  String stem = columns[2].replaceAll("_", "<lo>")
-  stem = stem.replaceAll("\\^", "<sh>")
-  stem = stem.replaceAll("\\(", "<ro>")
-  stem = stem.replaceAll("\\)", "<sm>")
+  String stem = toFstAlphabet(columns[2])
   nounEntry.append(stem)
   nounEntry.append("<noun>")
   nounEntry.append("<${columns[3]}>")
@@ -359,10 +348,7 @@ String pronFstStringForCols(ArrayList columns) {
   StringBuilder pronEntry  = new StringBuilder()
   pronEntry.append("<u>${columns[0]}</u>")
   pronEntry.append("<u>${columns[1]}</u>")
-  String stem = columns[2].replaceAll("_", "<lo>")
-  stem = stem.replaceAll("\\^", "<sh>")
-  stem = stem.replaceAll("\\(", "<ro>")
-  stem = stem.replaceAll("\\)", "<sm>")
+  String stem = toFstAlphabet(columns[2])
   pronEntry.append(stem)
   pronEntry.append("<pron>")
   pronEntry.append("<${columns[3]}>")
@@ -424,10 +410,7 @@ String adjFstStringForCols(ArrayList columns) {
   StringBuilder adjEntry  = new StringBuilder()
   adjEntry.append("<u>${columns[0]}</u>")
   adjEntry.append("<u>${columns[1]}</u>")
-  String stem = columns[2].replaceAll("_", "<lo>")
-  stem = stem.replaceAll("\\^", "<sh>")
-  stem = stem.replaceAll("\\(", "<ro>")
-  stem = stem.replaceAll("\\)", "<sm>")
+  String stem = toFstAlphabet(columns[2])
   adjEntry.append(stem)
   adjEntry.append("<adj>")
   adjEntry.append("<${columns[3]}>")
@@ -487,10 +470,7 @@ String indeclFstStringForCols(ArrayList columns) {
   StringBuilder indeclEntry  = new StringBuilder()
   indeclEntry.append("<u>${columns[0]}</u>")
   indeclEntry.append("<u>${columns[1]}</u>")
-  String stem = columns[2].replaceAll("_", "<lo>")
-  stem = stem.replaceAll("\\^", "<sh>")
-  stem = stem.replaceAll("\\(", "<ro>")
-  stem = stem.replaceAll("\\)", "<sm>")
+  String stem = toFstAlphabet(columns[2])
   indeclEntry.append(stem)
   indeclEntry.append("<${columns[3]}>")
   indeclEntry.append("\n")
@@ -751,7 +731,7 @@ String infInflFstForCols(ArrayList cols) {
   String ruleUrn = cols[0].replaceAll(/_/,"\\\\_")
   ruleUrn = ruleUrn.replaceAll("\\.","\\\\.")
   String inflClass = cols[1] //.replaceAll(/_/,"\\_")
-  String inflString = cols[2]
+  String inflString = toFstAlphabet(cols[2])
   String tense = cols[3]
   String voice = cols[4]
   fst.append(" <${inflClass}><infin>${inflString}<${tense}><${voice}><u>${ruleUrn}</u>")
@@ -1019,7 +999,7 @@ String nounInflFstForCols(ArrayList cols) {
   String ruleUrn = cols[0].replaceAll(/_/,"\\\\_")
   ruleUrn = ruleUrn.replaceAll("\\.","\\\\.")
   String inflClass = cols[1].replaceAll(/_/,"\\_")
-  String inflString = cols[2]
+  String inflString = toFstAlphabet(cols[2])
   String grammGender = cols[3]
   String grammCase = cols[4]
   String grammNumber = cols[5]
@@ -1027,7 +1007,7 @@ String nounInflFstForCols(ArrayList cols) {
   inflString = inflString.replaceAll("_", "<lo>")
   inflString = inflString.replaceAll("\\(", "<ro>")
   inflString = inflString.replaceAll("\\)", "<sm>")
-  inflString = inflString.replaceAll("\\|", "\\\\|")
+
 
 
   fst.append(" <${inflClass}><noun>${inflString}<${grammGender}><${grammCase}><${grammNumber}> <u>${ruleUrn}</u>")
