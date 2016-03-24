@@ -149,9 +149,6 @@ class FstAnalysisParser {
        if (debug > 0) { System.err.println "For ${inflTags[1]}, analysisPattern was " + analysisPattern }
 
 
-
-
-
       if (debug > 0) { System.err.println "Compute morph form"}
       morphForm = computeMorphForm()
 

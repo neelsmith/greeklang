@@ -270,7 +270,8 @@ class LiteraryGreekParser implements GreekParser {
 
     case AnalyticalType.CVERB:
     String candidateString = analysisInfo.getSurfaceStem() + analysisInfo.getSurfaceInflection()
-    GreekWord retrievedForm = Accent.addRecessiveAccent(new GreekWord(candidateString))
+    
+    GreekWord retrievedForm = Accent.addRecessiveAccent(new GreekWord(candidateString.replaceFirst("<#>", "")))
     System.err.println "PARSER: candidate " + candidateString + " accented as " + retrievedForm
     return retrievedForm.toString().replaceAll("[_^]","")  == utf8String.toString()
     break
