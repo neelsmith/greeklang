@@ -113,9 +113,6 @@ class FstAnalysisParser {
       String lexEntAbbrUrn = stemUrns[1].replaceFirst('<u>',"").replaceFirst('</u>',"")
       String inflAbbrUrn =  inflUrns[0].replaceFirst('<u>',"").replaceFirst('</u>',"")
 
-
-
-
       String stemUrnStr = resolveUrn(stemAbbrUrn)
       String lexEntUrnStr = resolveUrn(lexEntAbbrUrn)
       String inflUrnStr = resolveUrn(inflAbbrUrn)

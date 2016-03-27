@@ -80,6 +80,7 @@ subprojects {
 
     compile group : 'edu.unc.epidoc', name: 'transcoder', version: versionMap['epidoc']
     compile group: 'edu.harvard.chs', name : 'cite' , version: versionMap['cite']
+    compile group: 'edu.holycross.shot', name : "listutils", version: versionMap["listutils"]
 
     testCompile group : 'edu.unc.epidoc', name: 'transcoder', version: versionMap['epidoc']
     testCompile group: 'junit', name: 'junit', version: versionMap['junit']

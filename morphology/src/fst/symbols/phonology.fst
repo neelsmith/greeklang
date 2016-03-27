@@ -15,14 +15,15 @@
 
 % Accents should only be included in entries for
 % irregular forms!
+
 #character# = #letter# #diacritic# #accent# #breathing#
 $character$ = [#character#]
 
 % Additional editorial symbols used in stem files:
-#morpheme# = <#>
 #vowelquant# = <lo><sh>
+#morpheme# = <#>
 #persistacc# = <stemultacc><stempenacc><inflacc><irregacc>
-#editorial# = #vowelquant# #morpheme# #persistacc#
+#editorial# = #morpheme# #persistacc#  #vowelquant#
 
 
 % All valid chars used in stem file:

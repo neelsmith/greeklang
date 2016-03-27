@@ -8,7 +8,7 @@ import static groovy.test.GroovyAssert.shouldFail
 
 /** Tests demonstrating parsing of nouns from Unicode string.
 */
-class TestGreekWPresent {
+class TestGreekWImpft {
   String fstBinary = "build/smyth/greek.a"
   File urnReg = new File("sampledata/smyth/urnregistry/collectionregistry.csv")
   UrnManager umgr = new UrnManager(urnReg)
@@ -19,26 +19,26 @@ class TestGreekWPresent {
   void testSinglePrelim() {
     mp.debug = 10
     mp.fstParser.debug = 10
-    String greek = "λύονται"
+    String greek = "ἔλυες"
     MorphologicalAnalysis morph = mp.parseGreekString(new GreekString(greek,true))
     // could be middle, could be passive
-    assert morph.analyses.size() == 2
+    assert morph.analyses.size() == 1
 
     morph.analyses.each { ma ->
       MorphForm form = ma.getMorphForm()
       assert form.getAnalyticalType() == AnalyticalType.CVERB
       CitableId formIdentification = form.getAnalysis()
-      assert formIdentification.getPerson() == Person.THIRD
-      assert formIdentification.getNum() == GrammaticalNumber.PLURAL
-      assert formIdentification.getTense() == Tense.PRESENT
+      assert formIdentification.getPerson() == Person.SECOND
+      assert formIdentification.getNum() == GrammaticalNumber.SINGULAR
+      assert formIdentification.getTense() == Tense.IMPERFECT
       assert formIdentification.getMood() == Mood.INDICATIVE
-      assert ((formIdentification.getVoice() == Voice.MIDDLE) || (formIdentification.getVoice() == Voice.PASSIVE) )
+      assert (formIdentification.getVoice() == Voice.ACTIVE)
 
     }
 
   }
 
-
+/*
   @Test
   void testActive() {
     //
@@ -61,5 +61,5 @@ class TestGreekWPresent {
     }
 
 
-  }
+  } */
 }

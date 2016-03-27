@@ -4,6 +4,7 @@ ext {
     "groovy" : '[2.0,)',
     "cite" : "[1.0,)",
     "epidoc": "1.2-SNAPSHOT",
+    "listutils": "1.1.0",
 
     "xmlutils": "1.+",
 
