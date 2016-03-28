@@ -91,7 +91,7 @@ class TestGreekWImpft {
   }
 
   // add test on duals
-  
+
   @Test
   void testMP() {
     def expectedMP = [
@@ -118,6 +118,6 @@ class TestGreekWImpft {
 
     }
 
-    
+
   }
 }
