@@ -931,8 +931,8 @@ String verbInflFstForCols(ArrayList cols) {
     return ""
   }
   String inflClass = cols[1] //.replaceAll(/_/,"\\_")
-  String inflString = cols[2]
-  
+  String inflString = toFstAlphabet(cols[2])
+
   String pers = cols[3]
   String num = cols[4]
   String tense = cols[5]
