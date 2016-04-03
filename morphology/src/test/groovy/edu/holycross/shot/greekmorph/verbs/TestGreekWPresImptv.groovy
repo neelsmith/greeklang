@@ -15,35 +15,13 @@ class TestGreekWPresImptv {
   // The parser:
   LiteraryGreekParser mp = new LiteraryGreekParser(fstBinary, umgr)
 
-  @Test
-  void testSinglePrelim() {
-    mp.debug = 10
-    mp.fstParser.debug = 10
-    String greek = "λύονται"
-    MorphologicalAnalysis morph = mp.parseGreekString(new GreekString(greek,true))
-    // could be middle, could be passive
-    assert morph.analyses.size() == 2
-
-    morph.analyses.each { ma ->
-      MorphForm form = ma.getMorphForm()
-      assert form.getAnalyticalType() == AnalyticalType.CVERB
-      CitableId formIdentification = form.getAnalysis()
-      assert formIdentification.getPerson() == Person.THIRD
-      assert formIdentification.getNum() == GrammaticalNumber.PLURAL
-      assert formIdentification.getTense() == Tense.PRESENT
-      assert formIdentification.getMood() == Mood.INDICATIVE
-      assert ((formIdentification.getVoice() == Voice.MIDDLE) || (formIdentification.getVoice() == Voice.PASSIVE) )
-
-    }
-
-  }
-
 
   @Test
-  void testActive() {
+  void testUnq() {
     //
     def expectedUnique = [
-    "λύομεν": [Person.FIRST, GrammaticalNumber.PLURAL, Tense.PRESENT, Mood.INDICATIVE, Voice.ACTIVE]
+    "λῦε": [Person.SECOND, GrammaticalNumber.SINGULAR, Tense.PRESENT, Mood.IMPERATIVE, Voice.ACTIVE],
+
     ]
     expectedUnique.keySet().each { greek ->
       def expectedAnswer = expectedUnique[greek]
@@ -61,5 +39,30 @@ class TestGreekWPresImptv {
     }
 
 
+  }
+
+  @Test
+  void testMP() {
+    def mp = [Voice.MIDDLE, Voice.PASSIVE]
+    def expectedMP = [
+      "λύου": [Person.SECOND, GrammaticalNumber.SINGULAR, Tense.PRESENT, Mood.IMPERATIVE],
+      "λυέσθω": [Person.THIRD, GrammaticalNumber.SINGULAR, Tense.PRESENT, Mood.IMPERATIVE],
+      "λύεσθον": [Person.SECOND, GrammaticalNumber.DUAL, Tense.PRESENT, Mood.IMPERATIVE],
+      "λύεσθε": [Person.SECOND, GrammaticalNumber.PLURAL, Tense.PRESENT, Mood.IMPERATIVE]
+    ]
+    expectedMP.keySet().each { greek ->
+      def expectedAnswer = expectedMP[greek]
+      MorphologicalAnalysis morph = mp.parseGreekString(new GreekString(greek,true))
+
+      assert morph.analyses.size() == 2
+      MorphForm form = morph.analyses[0].getMorphForm()
+      assert form.getAnalyticalType() == AnalyticalType.CVERB
+      CitableId formIdentification = form.getAnalysis()
+      assert formIdentification.getPerson() == expectedAnswer[0]
+      assert formIdentification.getNum() == expectedAnswer[1]
+      assert formIdentification.getTense() == expectedAnswer[2]
+      assert formIdentification.getMood() == expectedAnswer[3]
+      assert mp.contains(formIdentification.getVoice() )
+    }
   }
 }
