@@ -43,12 +43,10 @@ class TestGreekWPresImptv {
 
   @Test
   void testMP() {
-    def mp = [Voice.MIDDLE, Voice.PASSIVE]
+    def middpass = [Voice.MIDDLE, Voice.PASSIVE]
     def expectedMP = [
       "λύου": [Person.SECOND, GrammaticalNumber.SINGULAR, Tense.PRESENT, Mood.IMPERATIVE],
-      "λυέσθω": [Person.THIRD, GrammaticalNumber.SINGULAR, Tense.PRESENT, Mood.IMPERATIVE],
-      "λύεσθον": [Person.SECOND, GrammaticalNumber.DUAL, Tense.PRESENT, Mood.IMPERATIVE],
-      "λύεσθε": [Person.SECOND, GrammaticalNumber.PLURAL, Tense.PRESENT, Mood.IMPERATIVE]
+      "λυέσθω": [Person.THIRD, GrammaticalNumber.SINGULAR, Tense.PRESENT, Mood.IMPERATIVE]
     ]
     expectedMP.keySet().each { greek ->
       def expectedAnswer = expectedMP[greek]
@@ -62,7 +60,7 @@ class TestGreekWPresImptv {
       assert formIdentification.getNum() == expectedAnswer[1]
       assert formIdentification.getTense() == expectedAnswer[2]
       assert formIdentification.getMood() == expectedAnswer[3]
-      assert mp.contains(formIdentification.getVoice() )
+      assert middpass.contains(formIdentification.getVoice() )
     }
   }
 }
