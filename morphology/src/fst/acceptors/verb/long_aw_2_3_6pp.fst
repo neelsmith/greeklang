@@ -18,9 +18,9 @@ ALPHABET = [#editorial# #urntag# #urnchar# <verb> #morphtag# #stemtype#  #separa
 
 
 #=ltr# = #consonant# #vowel# <lo> <sh>
-$long_aw_2nd_3rd_pp$ = {[#=ltr#]}:{[#=ltr#][#alpha#][#sigma#]} ^->  (<u>[#urnchar#]+[#period#][#urnchar#]+</u><u>[#urnchar#]+[#period#][#urnchar#]+</u>[#stemchars#]+[#vowel#] __ <verb><long_aw_contract>\:\:<long_aw_contract><verb>[#stemchars#]+[#person#][#number#][#2nd_3rd_6th_tense#][#mood#][#2nd_3rd_voice#]<u>[#urnchar#]+[#period#][#urnchar#]+</u> )
+$long_aw_2nd_3rd_pp$ = {[#=ltr#]}:{[#=ltr#][#alpha#][#sigma#]} ^->  (<u>[#urnchar#]+[#period#][#urnchar#]+</u><u>[#urnchar#]+[#period#][#urnchar#]+</u>[#stemchars#]+ __ <verb><long_aw_contract>\:\:<long_aw_contract><verb>[#stemchars#]+[#person#][#number#][#2nd_3rd_6th_tense#][#mood#][#2nd_3rd_voice#]<u>[#urnchar#]+[#period#][#urnchar#]+</u> )
 
 
-$long_aw_6th_pp$ = {[#=ltr#]}:{[#=ltr#][#alpha#][#theta#]} ^->  (<u>[#urnchar#]+[#period#][#urnchar#]+</u><u>[#urnchar#]+[#period#][#urnchar#]+</u>[#stemchars#]+[#vowel#] __ <verb><long_aw_contract>\:\:<long_aw_contract><verb>[#stemchars#]+[#person#][#number#][#2nd_3rd_6th_tense#][#mood#]<pass><u>[#urnchar#]+[#period#][#urnchar#]+</u> )
+$long_aw_6th_pp$ = {[#=ltr#]}:{[#=ltr#][#alpha#][#theta#]} ^->  (<u>[#urnchar#]+[#period#][#urnchar#]+</u><u>[#urnchar#]+[#period#][#urnchar#]+</u>[#stemchars#]+ __ <verb><long_aw_contract>\:\:<long_aw_contract><verb>[#stemchars#]+[#person#][#number#][#2nd_3rd_6th_tense#][#mood#]<pass><u>[#urnchar#]+[#period#][#urnchar#]+</u> )
 
 $long_aw_2nd_3rd_pp$  || $long_aw_6th_pp$
