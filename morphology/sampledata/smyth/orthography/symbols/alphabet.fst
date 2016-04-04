@@ -13,4 +13,5 @@
 #eta# = h
 #alpha# = a
 #omicron# = o
+#omega# = w
 #theta# = q

@@ -13,7 +13,7 @@ ALPHABET = [#editorial# #urntag# #urnchar# <verb> #morphtag# #stemtype#  #separa
 
 
 
-#=ltr# = #vowel# <lo> <sh>
+#=ltr# = #vowel# <lo> <sh> #consonant#
 $2nd_3rd_pp$ = {[#=ltr#]}:{[#=ltr#][#eta#][#sigma#]} ^->  (<u>[#urnchar#]+[#period#][#urnchar#]+</u><u>[#urnchar#]+[#period#][#urnchar#]+</u>[#stemchars#]+[#vowel#] __ <verb><ew_contract>\:\:<ew_contract><verb>[#stemchars#]+[#person#][#number#][#2nd_3rd_6th_tense#][#mood#][#2nd_3rd_voice#]<u>[#urnchar#]+[#period#][#urnchar#]+</u> )
 
 
