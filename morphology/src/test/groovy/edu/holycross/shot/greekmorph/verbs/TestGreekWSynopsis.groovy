@@ -35,11 +35,7 @@ class TestGreekWSynopsis {
     // ambiguou:
     // luw
     // lusw
-    // lelumai = mp
-    // elelumhn = mp
-    // luomai
-    // luoimhn
-    // luou
+
 
     expectedUnique.keySet().each { greek ->
       def expectedAnswer = expectedUnique[greek]
@@ -58,5 +54,31 @@ class TestGreekWSynopsis {
   }
 
 
+  @Test
+  void testMPForms() {
 
+    // luou
+    def expectedMP = [
+    "λύομαι": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.PRESENT, Mood.INDICATIVE],
+    "λυοίμην": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.PRESENT, Mood.OPTATIVE],
+    "λέλυμαι": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.PERFECT, Mood.INDICATIVE],
+    "ἐλελύμην": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.PLUPERFECT, Mood.INDICATIVE]
+    ]
+
+    def mpVoice = [Voice.MIDDLE, Voice.PASSIVE]
+    expectedMP.keySet().each { greek ->
+      def expectedAnswer = expectedMP[greek]
+      MorphologicalAnalysis morph = mp.parseGreekString(new GreekString(greek,true))
+
+      assert morph.analyses.size() == 2
+      MorphForm form = morph.analyses[0].getMorphForm()
+      assert form.getAnalyticalType() == AnalyticalType.CVERB
+      CitableId formIdentification = form.getAnalysis()
+      assert formIdentification.getPerson() == expectedAnswer[0]
+      assert formIdentification.getNum() == expectedAnswer[1]
+      assert formIdentification.getTense() == expectedAnswer[2]
+      assert formIdentification.getMood() == expectedAnswer[3]
+      assert mpVoice.contains(formIdentification.getVoice())
+    }
+  }
 }
