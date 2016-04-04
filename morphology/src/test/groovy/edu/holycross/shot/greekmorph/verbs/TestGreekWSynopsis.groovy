@@ -21,9 +21,26 @@ class TestGreekWSynopsis {
     //
     def expectedUnique = [
 
-    "ἔλυσα": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.INDICATIVE, Voice.ACTIVE]
+    "ἔλυσα": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.INDICATIVE, Voice.ACTIVE],
+    "λέλυκα": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.PERFECT, Mood.INDICATIVE, Voice.ACTIVE],
+
+    "ἐλελύκη": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.PLUPERFECT, Mood.INDICATIVE, Voice.ACTIVE],
+
+    "λύοιμι": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.PRESENT, Mood.OPTATIVE, Voice.ACTIVE],
+    "λύσοιμι": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.FUTURE, Mood.OPTATIVE, Voice.ACTIVE],
+    "λύσαιμι": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.OPTATIVE, Voice.ACTIVE],
+    "λύσωμαι": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.SUBJUNCTIVE, Voice.MIDDLE],
+    "λυσαίμην": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.OPTATIVE, Voice.MIDDLE],
     ]
-    // 
+    // ambiguou:
+    // luw
+    // lusw
+    // lelumai = mp
+    // elelumhn = mp
+    // luomai
+    // luoimhn
+    // luou
+
     expectedUnique.keySet().each { greek ->
       def expectedAnswer = expectedUnique[greek]
       MorphologicalAnalysis morph = mp.parseGreekString(new GreekString(greek,true))
