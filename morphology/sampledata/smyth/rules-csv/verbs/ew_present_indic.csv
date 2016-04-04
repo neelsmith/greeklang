@@ -24,7 +24,7 @@ verbinfl.ew_pres_indic18,ew_contract,ei=,2nd,sg,pres,indic,pass
 verbinfl.ew_pres_indic18h,ew_contract,h=|,2nd,sg,pres,indic,pass
 verbinfl.ew_pres_indic19,ew_contract,ei=tai,3rd,sg,pres,indic,pass
 verbinfl.ew_pres_indic20,ew_contract,ei=sqon,2nd,dual,pres,indic,pass
-verbinfl.ew_pres_indic21,ew_contract,i=,3rd,dual,pres,indic,pass
+verbinfl.ew_pres_indic21,ew_contract,ei=sqon,3rd,dual,pres,indic,pass
 verbinfl.ew_pres_indic22,ew_contract,ou/meqa,1st,pl,pres,indic,pass
 verbinfl.ew_pres_indic23,ew_contract,ei=sqe,2nd,pl,pres,indic,pass
 verbinfl.ew_pres_indic24,ew_contract,ou=ntai,3rd,pl,pres,indic,pass
