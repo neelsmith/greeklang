@@ -1,0 +1,27 @@
+RuleUrn,InflectionClasses,Ending,Person,Number,Tense,Mood,Voice
+verbinfl.ew_pres_opt1,ew_contract,oi/hn,1st,sg,pres,opt,act
+verbinfl.ew_pres_opt2,ew_contract,oi/hs,2nd,sg,pres,opt,act
+verbinfl.ew_pres_opt3,ew_contract,oi/h,3rd,sg,pres,opt,act
+verbinfl.ew_pres_opt4,ew_contract,oi/hton,2nd,dual,pres,opt,act
+verbinfl.ew_pres_opt5,ew_contract,oih/thn,3rd,dual,pres,opt,act
+verbinfl.ew_pres_opt6,ew_contract,oihmen,1st,pl,pres,opt,act
+verbinfl.ew_pres_opt7,ew_contract,oihte,2nd,pl,pres,opt,act
+verbinfl.ew_pres_opt8,ew_contract,oihsan ,3rd,pl,pres,opt,act
+
+verbinfl.ew_pres_opt9,ew_contract,oi/mhn,1st,sg,pres,opt,mid
+verbinfl.ew_pres_opt10,ew_contract,oi=o,2nd,sg,pres,opt,mid
+verbinfl.ew_pres_opt11,ew_contract,oi=to,3rd,sg,pres,opt,mid
+verbinfl.ew_pres_opt12,ew_contract,oi=sqon,2nd,dual,pres,opt,mid
+verbinfl.ew_pres_opt13,ew_contract,oi/sqhn,3rd,dual,pres,opt,mid
+verbinfl.ew_pres_opt14,ew_contract,oimeqa,1st,pl,pres,opt,mid
+verbinfl.ew_pres_opt15,ew_contract,oi=sqe,2nd,pl,pres,opt,mid
+verbinfl.ew_pres_opt16,ew_contract,oi=nto,3rd,pl,pres,opt,mid
+
+verbinfl.ew_pres_opt7,ew_contract,oimhn,1st,sg,pres,opt,pass
+verbinfl.ew_pres_opt18,ew_contract,oi=o,2nd,sg,pres,opt,pass
+verbinfl.ew_pres_opt19,ew_contract,oi=to,3rd,sg,pres,opt,pass
+verbinfl.ew_pres_opt20,ew_contract,oi=sqon,2nd,dual,pres,opt,pass
+verbinfl.ew_pres_opt21,ew_contract,oisqhn,3rd,dual,pres,opt,pass
+verbinfl.ew_pres_opt22,ew_contract,oimeqa,1st,pl,pres,opt,pass
+verbinfl.ew_pres_opt23,ew_contract,oi=sqe,2nd,pl,pres,opt,pass
+verbinfl.ew_pres_opt24,ew_contract,oi=nto,3rd,pl,pres,opt,pass
