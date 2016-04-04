@@ -9,11 +9,18 @@ ALPHABET = [#editorial# #urntag# #urnchar# <verb> #morphtag# #stemtype#  #separa
 
 $dictionary$ = <u>smyth\.n64316\_0</u><u>lexent\.n64316</u><#>lu<lo><verb><w_regular>\:\: "<../../build/smyth/inflection.a>"
 
+
+
+%%<w_regular><verb>on<1st><sg><impft><indic><act><u>verbinfl.w_impf_indic1</u>
+
+%% "<../../build/smyth/inflection.a>"
+
 %%<w_regular><verb>on<3rd><pl><impft><indic><act><u>verbinfl\.w\_impf\_indic8</u>
 
+$=vbclass$ = [#verbclass#]
 
 #=ltr# = #consonant#
-$augmentsimplecons$ = {[#=ltr#]}:{e<sm>[#=ltr#]} ^-> ( <#> __ [#stemchars#]+<verb><w_regular>\:\:<w_regular><verb>[#stemchars#]+[#person#][#number#][#augmenttense#]<indic>[#voice#]<u>[#urnchar#]+[#period#][#urnchar#]+</u>)
+$augmentsimplecons$ = {[#=ltr#]}:{e<sm>[#=ltr#]} ^-> ( <#> __ [#stemchars#]+<verb>[#verbclass#]\:\:[#verbclass#]<verb>[#stemchars#]+[#person#][#number#][#augmenttense#]<indic>[#voice#]<u>[#urnchar#]+[#period#][#urnchar#]+</u>)
 
 
 %% add simplex vowels

@@ -10,8 +10,9 @@ ALPHABET = [#editorial# #urntag# #urnchar# <verb> #morphtag# #stemtype#  #separa
 
 #augmenttense# = <aor><impft><plupft>
 
+
 #=ltr# = #consonant#
-$augmentsimplecons$ = {[#=ltr#]}:{e<sm>[#=ltr#]} ^-> ( <#> __ [#stemchars#]+<verb><w_regular>\:\:<w_regular><verb>[#stemchars#]+[#person#][#number#][#augmenttense#]<indic>[#voice#]<u>[#urnchar#]+[#period#][#urnchar#]+</u>)
+$augmentsimplecons$ = {[#=ltr#]}:{e<sm>[#=ltr#]} ^-> ( <#> __ [#stemchars#]+<verb>[#verbclass#]\:\:[#verbclass#]<verb>[#stemchars#]+[#person#][#number#][#augmenttense#]<indic>[#voice#]<u>[#urnchar#]+[#period#][#urnchar#]+</u>)
 
 
 $simplex$ = $augmentsimplecons$
