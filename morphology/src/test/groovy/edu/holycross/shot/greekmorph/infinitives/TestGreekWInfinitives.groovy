@@ -21,10 +21,11 @@ class TestGreekWInfinitives {
     def expectedUnique = [
     "λύειν": [Tense.PRESENT, Voice.ACTIVE],
     "λύσειν": [Tense.FUTURE, Voice.ACTIVE],
+    //"λελυκέναι": [Tense.PERFECT, Voice.ACTIVE],
     "λύσεσθαι": [Tense.FUTURE, Voice.MIDDLE],
     "λύσασθαι": [Tense.AORIST, Voice.MIDDLE],
     "λυθήσεσθαι": [Tense.FUTURE, Voice.PASSIVE],
-    "λυθῆναι": [Tense.AORIST, Voice.PASSIVE],
+    //"λυθῆναι": [Tense.AORIST, Voice.PASSIVE],
     ]
     expectedUnique.keySet().each { greek ->
       System.err.println "GREEK " + greek
@@ -40,4 +41,26 @@ class TestGreekWInfinitives {
     }
   }
 
+
+  @Test
+  void testMP() {
+    def expectedMP= [
+    "λύεσθαι": Tense.PRESENT,
+    "λελύσθαι": Tense.PERFECT,
+    ]
+    expectedMP.keySet().each { greek ->
+      System.err.println "GREEK " + greek
+      def expectedAnswer = expectedMP[greek]
+      MorphologicalAnalysis morph = mp.parseGreekString(new GreekString(greek,true))
+
+      assert morph.analyses.size() == 2
+      morph.analyses.each { ma ->
+        MorphForm form = ma.getMorphForm()
+        assert form.getAnalyticalType() == AnalyticalType.INFINITIVE
+        CitableId formIdentification = form.getAnalysis()
+        assert formIdentification.getTense() == expectedAnswer
+        assert [Voice.MIDDLE, Voice.PASSIVE].contains(formIdentification.getVoice())
+      }
+    }
+  }
 }
