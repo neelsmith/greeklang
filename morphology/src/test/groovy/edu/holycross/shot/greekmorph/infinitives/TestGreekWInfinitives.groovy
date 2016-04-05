@@ -36,7 +36,7 @@ class TestGreekWInfinitives {
       assert form.getAnalyticalType() == AnalyticalType.INFINITIVE
       CitableId formIdentification = form.getAnalysis()
       assert formIdentification.getTense() == expectedAnswer[0]
-      assert formIdentification.getVoicew() == expectedAnswer[1]
+      assert formIdentification.getVoice() == expectedAnswer[1]
     }
   }
 
