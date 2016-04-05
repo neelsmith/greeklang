@@ -8,7 +8,7 @@ import static groovy.test.GroovyAssert.shouldFail
 
 /** Tests demonstrating parsing of nouns from Unicode string.
 */
-class TestGreekWInfins {
+class TestGreekWInfinitives {
   String fstBinary = "build/smyth/greek.a"
   File urnReg = new File("sampledata/smyth/urnregistry/collectionregistry.csv")
   UrnManager umgr = new UrnManager(urnReg)
@@ -27,6 +27,7 @@ class TestGreekWInfins {
     "λυθῆναι": [Tense.AORIST, Voice.PASSIVE],
     ]
     expectedUnique.keySet().each { greek ->
+      System.err.println "GREEK " + greek
       def expectedAnswer = expectedUnique[greek]
       MorphologicalAnalysis morph = mp.parseGreekString(new GreekString(greek,true))
 
