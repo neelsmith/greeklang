@@ -1,7 +1,7 @@
 @workdir@greek.a: @workdir@symbols.fst @workdir@symbols/phonology.fst @workdir@inflection.a @workdir@acceptor.a @workdir@generator.a
 @workdir@acceptor.a:  @workdir@acceptors/verb.a @workdir@acceptors/infinitive.a  @workdir@acceptors/participle.a
 @workdir@acceptors/participle.a: @workdir@acceptors/participle/w_ptcpl_princparts.a
-@workdir@acceptors/participle/w_ptcpl_princparts.a: 	 @workdir@acceptors/participle/w_2_3_6pp.a
+@workdir@acceptors/participle/w_ptcpl_princparts.a: 	 @workdir@acceptors/participle/w_2_3_6pp.a @workdir@acceptors/participle/w_4_5pp.a
 @workdir@acceptors/infinitive.a:  @workdir@acceptors/infinitive/w_infin_princparts.a
 @workdir@acceptors/infinitive/w_infin_princparts.a:  @workdir@acceptors/infinitive/w_2_3_6pp.a @workdir@acceptors/infinitive/w_4_5pp.a
 @workdir@acceptors/infinitive/infin_4th-5th.a: @workdir@acceptors/infinitive/infin_kappa.a @workdir@acceptors/infinitive/infin_redup.a

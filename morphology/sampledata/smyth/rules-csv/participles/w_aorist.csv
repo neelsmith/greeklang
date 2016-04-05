@@ -1,6 +1,6 @@
 RuleUrn,InflectionClass,Ending,Gender,Case,Number,Tense,Voice
-verbinfl.w_aor_ptcp1,w_regular,as,masc,nom,sg,aor,act
-verbinfl.w_aor_ptcp1b,w_pp2,as,masc,nom,sg,aor,act
+verbinfl.w_aor_ptcp1,w_regular,a_s,masc,nom,sg,aor,act
+verbinfl.w_aor_ptcp1b,w_pp2,a_s,masc,nom,sg,aor,act
 
 
 verbinfl.w_aor_ptcp2,w_regular,amenos,masc,nom,sg,aor,mid
