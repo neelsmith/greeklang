@@ -9,7 +9,7 @@ verbinfl.w_infin3b,w_pp1,esqai,pres,pass
 
 verbinfl.w_infin4,w_regular,ein,fut,act
 verbinfl.w_infin4b,w_pp2,ein,fut,act
-verbinfl.w_infin5,w_regular,esqai,fut,mid
+verbinfl.w_infin5,w_regular,hsesqai,fut,mid
 verbinfl.w_infin5b,w_pp2,esqai,fut,mid
 verbinfl.w_infin6,w_regular,hsesqai,fut,pass
 verbinfl.w_infin6b,w_pp2,hsesqai,fut,pass
