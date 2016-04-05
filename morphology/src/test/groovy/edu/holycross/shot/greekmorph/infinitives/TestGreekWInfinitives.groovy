@@ -33,7 +33,7 @@ class TestGreekWInfinitives {
 
       assert morph.analyses.size() == 1
       MorphForm form = morph.analyses[0].getMorphForm()
-      assert form.getAnalyticalType() == AnalyticalType.CVERB
+      assert form.getAnalyticalType() == AnalyticalType.INFINITIVE
       CitableId formIdentification = form.getAnalysis()
       assert formIdentification.getTense() == expectedAnswer[0]
       assert formIdentification.getVoicew() == expectedAnswer[1]

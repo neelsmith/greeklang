@@ -47,7 +47,7 @@ class LiteraryGreekParser implements GreekParser {
   }
 
   // is this the best way to determine this?
-  boolean isPreAccented(String inflectionClass) {
+  /*  boolean isPreAccented(String inflectionClass) {
     switch (inflectionClass) {
       case "irregacc":
       case "eus_ews":
@@ -57,7 +57,7 @@ class LiteraryGreekParser implements GreekParser {
       return false
       break
     }
-  }
+    }*/
 
 
   /** Determines if form retrieved from FST parser should be considered a
@@ -77,13 +77,15 @@ class LiteraryGreekParser implements GreekParser {
 
     // see if retrieved from is pre-accented.
     //inflectionTag
+    /*
     if (isPreAccented(inflectionTag)) {
       System.err.println "${inflectionTag} class is already accented!"
       accented = retrievedForm
     } else {
+    */
       GreekString fstSurfaceString = new GreekString(analysisInfo.surfaceInflection)
       accented = LiteraryGreekNounAccent.getAccentedNounForm(fstSurfaceString, analysisInfo)
-    }
+      //}
 
 
     if (debug > 0 ) {
@@ -192,8 +194,8 @@ class LiteraryGreekParser implements GreekParser {
 
 
 
-  boolean checkInfinitiveAccent(GreekString gs, FstAnalysisParser analysisInfo) {
-    GreekWord retrievedForm = new GreekWord(analysisInfo.getSurfaceStem() + analysisInfo.getSurfaceInflection())
+  boolean checkInfinitiveAccent(GreekString gs, String retrievedString, FstAnalysisParser analysisInfo) {
+    GreekWord retrievedForm = new GreekWord(retrievedString)
     MorphForm morphForm = analysisInfo.getMorphForm()
     InfinitiveForm  form = morphForm.getAnalysis()
     System.err.println "Infin.accent: retrieve form " + retrievedForm
@@ -262,10 +264,9 @@ class LiteraryGreekParser implements GreekParser {
     return checkPtcplAccent(utf8String, analysisInfo)
     break
 
-
-
     case AnalyticalType.INFINITIVE:
-    return checkInfinitiveAccent(utf8String, analysisInfo)
+    //GreekWord retrievedForm = Accent.addRecessiveAccent(new GreekWord(parserOutputString))
+    return checkInfinitiveAccent(utf8String, parserOutputString, analysisInfo)
     break
 
     case AnalyticalType.VERBAL_ADJECTIVE:
@@ -279,8 +280,14 @@ class LiteraryGreekParser implements GreekParser {
     break
 
     case AnalyticalType.CVERB:
+
+    // so look at fstAnalysisParser:
+
+    def formIdentification = form.getAnalysis()
+    if (formIdentification.getMood() == Mood.OPTATIVE) {
+      // IN OPT, αι AND οι ARE LONG
+    }
     GreekWord retrievedForm = Accent.addRecessiveAccent(new GreekWord(parserOutputString))
-    // Long/short getting suppressed in acceptor.  That's probably wrong.
     return retrievedForm.toString().replaceAll("[_^]","")  == utf8String.toString()
     break
 
@@ -318,10 +325,11 @@ class LiteraryGreekParser implements GreekParser {
 	
 	System.err.println "And use compareison string " + parsedString
 	String convert1 = fstStringToGreekString(parsedString)
-	System.err.println "Merge: " + underlying + " and " + convert1
+
 	
 	ListDiff ldiff = new ListDiff (underlying, convert1)
 	String scs = ldiff.scs.join("")
+	System.err.println "Merge: " + underlying + " and " + convert1 + " -> " + scs
 	String greekStyle  = fstStringToGreekString(scs)
 	System.err.println "Use converted string value " + greekStyle
         if (checkAccent(greekStyle,gkStr,fap)) {
