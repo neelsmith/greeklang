@@ -1,3 +1,11 @@
 RuleUrn,InflectionClass,Ending,Gender,Case,Number,Tense,Voice
 verbinfl.w_pres_ptcp1,w_regular,wn,masc,nom,sg,pres,act
 verbinfl.w_pres_ptcp1b,w_pp1,wn,masc,nom,sg,pres,act
+
+
+verbinfl.w_pres_ptcp2,w_regular,omenos,masc,nom,sg,pres,mid
+verbinfl.w_pres_ptcp2b,w_pp1,wn,omenos,nom,sg,pres,mid
+
+
+verbinfl.w_pres_ptcp2,w_regular,omenos,masc,nom,sg,pres,pass
+verbinfl.w_pres_ptcp2b,w_pp1,wn,omenos,nom,sg,pres,pass

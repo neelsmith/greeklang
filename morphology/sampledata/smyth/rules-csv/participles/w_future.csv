@@ -1,11 +1,11 @@
 RuleUrn,InflectionClass,Ending,Gender,Case,Number,Tense,Voice
-verbinfl.w_fut_ptcp1,w_regular,wn,masc,nom,sg,pres,act
-verbinfl.w_fut_ptcp1b,w_pp2,wn,masc,nom,sg,pres,act
+verbinfl.w_fut_ptcp1,w_regular,wn,masc,nom,sg,fut,act
+verbinfl.w_fut_ptcp1b,w_pp2,wn,masc,nom,sg,fut,act
 
 
-verbinfl.w_fut_ptcp2,w_regular,omenos,masc,nom,sg,pres,mid
-verbinfl.w_fut_ptcp2b,w_pp2,wn,omenos,nom,sg,pres,mid
+verbinfl.w_fut_ptcp2,w_regular,omenos,masc,nom,sg,fut,mid
+verbinfl.w_fut_ptcp2b,w_pp2,wn,omenos,nom,sg,fut,mid
 
 
-verbinfl.w_fut_ptcp3,w_regular,hsomenos,masc,nom,sg,pres,pass
-verbinfl.w_fut_ptcp13b,w_pp6,wn,hsomenos,nom,sg,pres,p[ass]
+verbinfl.w_fut_ptcp3,w_regular,hsomenos,masc,nom,sg,fut,pass
+verbinfl.w_fut_ptcp13b,w_pp6,wn,hsomenos,nom,sg,fut,p[ass]
