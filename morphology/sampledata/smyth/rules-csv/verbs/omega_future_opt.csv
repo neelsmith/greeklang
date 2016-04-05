@@ -1,62 +1,62 @@
 RuleUrn,InflectionClasses,Ending,Person,Number,Tense,Mood,Voice
 verbinfl.w_fut_opt1,w_regular,oimi,1st,sg,fut,opt,act
-verbinfl.w_fut_opt1b,w_pp1,oimi,1st,sg,fut,opt,act
+verbinfl.w_fut_opt1b,w_pp2,oimi,1st,sg,fut,opt,act
 verbinfl.w_fut_opt2,w_regular,ois,2nd,sg,fut,opt,act
-verbinfl.w_fut_opt2b,w_pp1,ois,2nd,sg,fut,opt,act
+verbinfl.w_fut_opt2b,w_pp2,ois,2nd,sg,fut,opt,act
 verbinfl.w_fut_opt3,w_regular,oi,3rd,sg,fut,opt,act
-verbinfl.w_fut_opt3b,w_pp1,oi|,3rd,sg,fut,opt,act
+verbinfl.w_fut_opt3b,w_pp2,oi|,3rd,sg,fut,opt,act
 
 verbinfl.w_fut_opt4,w_regular,oiton,2nd,dual,fut,opt,act
-verbinfl.w_fut_opt4b,w_pp1,oiton,2nd,dual,fut,opt,act
+verbinfl.w_fut_opt4b,w_pp2,oiton,2nd,dual,fut,opt,act
 verbinfl.w_fut_opt5,w_regular,oithn,3rd,dual,fut,opt,act
-verbinfl.w_fut_opt5b,w_pp1,oithn,3rd,dual,fut,opt,act
+verbinfl.w_fut_opt5b,w_pp2,oithn,3rd,dual,fut,opt,act
 
 verbinfl.w_fut_opt6,w_regular,oimen,1st,pl,fut,opt,act
-verbinfl.w_fut_opt6b,w_pp1,oimen,1st,pl,fut,opt,act
+verbinfl.w_fut_opt6b,w_pp2,oimen,1st,pl,fut,opt,act
 verbinfl.w_fut_opt7,w_regular,oite,2nd,pl,fut,opt,act
-verbinfl.w_fut_opt7b,w_pp1,oite,2nd,pl,fut,opt,act
+verbinfl.w_fut_opt7b,w_pp2,oite,2nd,pl,fut,opt,act
 verbinfl.w_fut_opt8,w_regular,wsi,3rd,pl,fut,opt,act
-verbinfl.w_fut_opt8b,w_pp1,oien,3rd,pl,fut,opt,act
+verbinfl.w_fut_opt8b,w_pp2,oien,3rd,pl,fut,opt,act
 verbinfl.w_fut_opt8n,oien,wsin,3rd,pl,fut,opt,act
 
 
 verbinfl.w_fut_opt9,w_regular,oimhn,1st,sg,fut,opt,mid
-verbinfl.w_fut_opt9b,w_pp1,oimhn,1st,sg,fut,opt,mid
+verbinfl.w_fut_opt9b,w_pp2,oimhn,1st,sg,fut,opt,mid
 verbinfl.w_fut_opt10,w_regular,oio,2nd,sg,fut,opt,mid
-verbinfl.w_fut_opt10b,w_pp1,oio,2nd,sg,fut,opt,mid
+verbinfl.w_fut_opt10b,w_pp2,oio,2nd,sg,fut,opt,mid
 verbinfl.w_fut_opt11,w_regular,oito,3rd,sg,fut,opt,mid
-verbinfl.w_fut_opt11b,w_pp1,oito,3rd,sg,fut,opt,mid
+verbinfl.w_fut_opt11b,w_pp2,oito,3rd,sg,fut,opt,mid
 
 verbinfl.w_fut_opt12,w_regular,oisqon,2nd,dual,fut,opt,mid
-verbinfl.w_fut_opt12b,w_pp1,oisqon,2nd,dual,fut,opt,mid
+verbinfl.w_fut_opt12b,w_pp2,oisqon,2nd,dual,fut,opt,mid
 verbinfl.w_fut_opt13,w_regular,oisqhn,3rd,dual,fut,opt,mid
-verbinfl.w_fut_opt13b,w_pp1,oisqhn,3rd,dual,fut,opt,mid
+verbinfl.w_fut_opt13b,w_pp2,oisqhn,3rd,dual,fut,opt,mid
 
 verbinfl.w_fut_opt14,w_regular,oimeqa,1st,pl,fut,opt,mid
-verbinfl.w_fut_opt14b,w_pp1,oimeqa,1st,pl,fut,opt,mid
+verbinfl.w_fut_opt14b,w_pp2,oimeqa,1st,pl,fut,opt,mid
 verbinfl.w_fut_opt15,w_regular,oisqe,2nd,pl,fut,opt,mid
-verbinfl.w_fut_opt15b,w_pp1,oisqe,2nd,pl,fut,opt,mid
+verbinfl.w_fut_opt15b,w_pp2,oisqe,2nd,pl,fut,opt,mid
 verbinfl.w_fut_opt16,w_regular,ointo,3rd,pl,fut,opt,mid
-verbinfl.w_fut_opt16b,w_pp1,ointo,3rd,pl,fut,opt,mid
+verbinfl.w_fut_opt16b,w_pp2,ointo,3rd,pl,fut,opt,mid
 
 
 
 
 verbinfl.w_fut_opt7,w_regular,hsoimhn,1st,sg,fut,opt,pass
-verbinfl.w_fut_opt7b,w_pp1,hsoimhn,1st,sg,fut,opt,pass
+verbinfl.w_fut_opt7b,w_pp2,hsoimhn,1st,sg,fut,opt,pass
 verbinfl.w_fut_opt18,w_regular,hsoio,2nd,sg,fut,opt,pass
-verbinfl.w_fut_opt17b,w_pp1,hsoio,2nd,sg,fut,opt,pass
+verbinfl.w_fut_opt17b,w_pp2,hsoio,2nd,sg,fut,opt,pass
 verbinfl.w_fut_opt19,w_regular,hsoito,3rd,sg,fut,opt,pass
-verbinfl.w_fut_opt19b,w_pp1,hsoito,3rd,sg,fut,opt,pass
+verbinfl.w_fut_opt19b,w_pp2,hsoito,3rd,sg,fut,opt,pass
 
 verbinfl.w_fut_opt20,w_regular,hsoisqon,2nd,dual,fut,opt,pass
-verbinfl.w_fut_opt20b,w_pp1,hsoisqon,2nd,dual,fut,opt,pass
+verbinfl.w_fut_opt20b,w_pp2,hsoisqon,2nd,dual,fut,opt,pass
 verbinfl.w_fut_opt21,w_regular,hsoisqhn,3rd,dual,fut,opt,pass
-verbinfl.w_fut_opt21b,w_pp1,hsoisqhn,3rd,dual,fut,opt,pass
+verbinfl.w_fut_opt21b,w_pp2,hsoisqhn,3rd,dual,fut,opt,pass
 
 verbinfl.w_fut_opt22,w_regular,hsoimeqa,1st,pl,fut,opt,pass
-verbinfl.w_fut_opt22b,w_pp1,hsoimeqa,1st,pl,fut,opt,pass
+verbinfl.w_fut_opt22b,w_pp2,hsoimeqa,1st,pl,fut,opt,pass
 verbinfl.w_fut_opt23,w_regular,hsoisqe,2nd,pl,fut,opt,pass
-verbinfl.w_fut_opt23b,w_pp1,hsoisqe,2nd,pl,fut,opt,pass
+verbinfl.w_fut_opt23b,w_pp2,hsoisqe,2nd,pl,fut,opt,pass
 verbinfl.w_fut_opt24,w_regular,hsointo,3rd,pl,fut,opt,pass
-verbinfl.w_fut_opt24b,w_pp1,hsointo,3rd,pl,fut,opt,pass
+verbinfl.w_fut_opt24b,w_pp2,hsointo,3rd,pl,fut,opt,pass

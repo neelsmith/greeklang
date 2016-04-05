@@ -1,60 +1,60 @@
 RuleUrn,InflectionClasses,Ending,Person,Number,Tense,Mood,Voice
 verbinfl.w_aor_indic1,w_regular,a,1st,sg,aor,indic,act
-verbinfl.w_aor_indic1b,w_pp1,a,1st,sg,aor,indic,act
+verbinfl.w_aor_indic1b,w_pp3,a,1st,sg,aor,indic,act
 verbinfl.w_aor_indic2,w_regular,as,2nd,sg,aor,indic,act
-verbinfl.w_aor_indic2b,w_pp1,as,2nd,sg,aor,indic,act
+verbinfl.w_aor_indic2b,w_pp3,as,2nd,sg,aor,indic,act
 verbinfl.w_aor_indic3,w_regular,e,3rd,sg,aor,indic,act
-verbinfl.w_aor_indic3b,w_pp1,e,3rd,sg,aor,indic,act
+verbinfl.w_aor_indic3b,w_pp3,e,3rd,sg,aor,indic,act
 
 
 verbinfl.w_aor_indic4,w_regular,aton,2nd,dual,aor,indic,act
-verbinfl.w_aor_indic4b,w_pp1,aton,2nd,dual,aor,indic,act
+verbinfl.w_aor_indic4b,w_pp3,aton,2nd,dual,aor,indic,act
 verbinfl.w_aor_indic5,w_regular,athn,3rd,dual,aor,indic,act
-verbinfl.w_aor_indic5b,w_pp1,athn,3rd,dual,aor,indic,act
+verbinfl.w_aor_indic5b,w_pp3,athn,3rd,dual,aor,indic,act
 
 verbinfl.w_aor_indic6,w_regular,amen,1st,pl,aor,indic,act
-verbinfl.w_aor_indic6b,w_pp1,amen,1st,pl,aor,indic,act
+verbinfl.w_aor_indic6b,w_pp3,amen,1st,pl,aor,indic,act
 verbinfl.w_aor_indic7,w_regular,ate,2nd,pl,aor,indic,act
-verbinfl.w_aor_indic7b,w_pp1,ate,2nd,pl,aor,indic,act
+verbinfl.w_aor_indic7b,w_pp3,ate,2nd,pl,aor,indic,act
 verbinfl.w_aor_indic8,w_regular,an,3rd,plf,aor,indic,act
-verbinfl.w_aor_indic8b,w_pp1,an,3rd,plf,aor,indic,act
+verbinfl.w_aor_indic8b,w_pp3,an,3rd,plf,aor,indic,act
 
 
 verbinfl.w_aor_indic9,w_regular,amhn,1st,sg,aor,indic,mid
-verbinfl.w_aor_indic9b,w_pp1,amhn,1st,sg,aor,indic,mid
+verbinfl.w_aor_indic9b,w_pp3,amhn,1st,sg,aor,indic,mid
 verbinfl.w_aor_indic11,w_regular,w,2nd,sg,aor,indic,mid
-verbinfl.w_aor_indic11b,w_pp1,w,2nd,sg,aor,indic,mid
+verbinfl.w_aor_indic11b,w_pp3,w,2nd,sg,aor,indic,mid
 verbinfl.w_aor_indic12,w_regular,ato,3rd,sg,aor,indic,mid
-verbinfl.w_aor_indic12b,w_pp1,ato,3rd,sg,aor,indic,mid
+verbinfl.w_aor_indic12b,w_pp3,ato,3rd,sg,aor,indic,mid
 
 verbinfl.w_aor_indic13,w_regular,asqon,2nd,dual,aor,indic,mid
-verbinfl.w_aor_indic13b,w_pp1,asqon,2nd,dual,aor,indic,mid
+verbinfl.w_aor_indic13b,w_pp3,asqon,2nd,dual,aor,indic,mid
 verbinfl.w_aor_indic14,w_regular,asqhn,3rd,dual,aor,indic,mid
-verbinfl.w_aor_indic14b,w_pp1,asqhn,3rd,dual,aor,indic,mid
+verbinfl.w_aor_indic14b,w_pp3,asqhn,3rd,dual,aor,indic,mid
 
 verbinfl.w_aor_indic15,w_regular,ameqa,1st,pl,aor,indic,mid
-verbinfl.w_aor_indic15b,w_pp1,ameqa,1st,pl,aor,indic,mid
+verbinfl.w_aor_indic15b,w_pp3,ameqa,1st,pl,aor,indic,mid
 verbinfl.w_aor_indic16,w_regular,asqe,2nd,pl,aor,indic,mid
-verbinfl.w_aor_indic16b,w_pp1,asqe,2nd,pl,aor,indic,mid
+verbinfl.w_aor_indic16b,w_pp3,asqe,2nd,pl,aor,indic,mid
 verbinfl.w_aor_indic17,w_regular,anto,3rd,pl,aor,indic,mid
-verbinfl.w_aor_indic17b,w_pp1,anto,3rd,pl,aor,indic,mid
+verbinfl.w_aor_indic17b,w_pp3,anto,3rd,pl,aor,indic,mid
 
 
 verbinfl.w_aor_indic18,w_regular,hn,1st,sg,aor,indic,pass
-verbinfl.w_aor_indic18b,w_pp1,hn,1st,sg,aor,indic,pass
+verbinfl.w_aor_indic18b,w_pp3,hn,1st,sg,aor,indic,pass
 verbinfl.w_aor_indic19,w_regular,hs,2nd,sg,aor,indic,pass
-verbinfl.w_aor_indic19b,w_pp1,hs,2nd,sg,aor,indic,pass
+verbinfl.w_aor_indic19b,w_pp3,hs,2nd,sg,aor,indic,pass
 verbinfl.w_aor_indic20,w_regular,h,3rd,sg,aor,indic,pass
-verbinfl.w_aor_indic20b,w_pp1,h,3rd,sg,aor,indic,pass
+verbinfl.w_aor_indic20b,w_pp3,h,3rd,sg,aor,indic,pass
 
 verbinfl.w_aor_indic21,w_regular,hton,2nd,dual,aor,indic,pass
-verbinfl.w_aor_indic21b,w_pp1,hton,2nd,dual,aor,indic,pass
+verbinfl.w_aor_indic21b,w_pp3,hton,2nd,dual,aor,indic,pass
 verbinfl.w_aor_indic22,w_regular,hthn,3rd,dual,aor,indic,pass
-verbinfl.w_aor_indic22b,w_pp1,hthn,3rd,dual,aor,indic,pass
+verbinfl.w_aor_indic22b,w_pp3,hthn,3rd,dual,aor,indic,pass
 
 verbinfl.w_aor_indic23,w_regular,hmen,1st,pl,aor,indic,pass
-verbinfl.w_aor_indic23b,w_pp1,hmen,1st,pl,aor,indic,pass
+verbinfl.w_aor_indic23b,w_pp3,hmen,1st,pl,aor,indic,pass
 verbinfl.w_aor_indic24,w_regular,hte,2nd,pl,aor,indic,pass
-verbinfl.w_aor_indic24b,w_pp1,hte,2nd,pl,aor,indic,pass
+verbinfl.w_aor_indic24b,w_pp3,hte,2nd,pl,aor,indic,pass
 verbinfl.w_aor_indic25,w_regular,hsan,3rd,pl,aor,indic,pass
-verbinfl.w_aor_indic25b,w_pp1,hsan,3rd,pl,aor,indic,pass
+verbinfl.w_aor_indic25b,w_pp3,hsan,3rd,pl,aor,indic,pass
