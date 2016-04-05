@@ -1,7 +1,7 @@
 % Acceptor pattern for infinitives:
 
 #include "@workdir@symbols.fst"
-$omega_stems$ = "<@workdir@/acceptors/infinitive/w_princparts.a>"
+$omega_stems$ = "<@workdir@/acceptors/infinitive/w_infin_princparts.a>"
 
 
 $=verbclass$ = [#verbclass#]
