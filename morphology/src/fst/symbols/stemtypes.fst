@@ -38,10 +38,10 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Verb stem types
-#omega# = <w_regular> <ew_contract> <aw_contract> <long_aw_contract><ow_contract> <w_pp1> <w_pp2> <w_pp3> <w_pp4> <w_pp5> <w_pp6> <aor2>
-#mi# = <mi_pres>
+#omega# = <w_regular> <ew_contract> <aw_contract> <long_aw_contract><ow_contract> <w_pp1> <w_pp2> <w_pp3> <w_pp4> <w_pp5> <w_pp6> <aor2> <g_pp5>
+#mi# = <numi_pres>
 
-#verbclass#  = #omega#
+#verbclass#  = #omega# #mi#
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
