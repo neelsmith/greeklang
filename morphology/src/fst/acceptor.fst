@@ -27,10 +27,10 @@ $=verbclass$ = [#verbclass#]
 
 $squashverburn$ = "<@workdir@acceptors/verb.a>"
 
-%$squashverburn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+<verb>$=verbclass$  $separator$+$=verbclass$ <verb>[#stemchars#]* [#person#] [#number#] [#tense#] [#mood#] [#voice#]<u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u>
 
 % Verb: infinitive acceptor:
-$squashinfinurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+<verb>$=verbclass$  $separator$+$=verbclass$  <infin> [#stemchars#]*  [#tense#] [#voice#]<u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u>
+$squashinfinurn$  = "<@workdir@acceptors/infinitive.a>"
+
 
 % Verb: participle acceptor:
 $squashptcplurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+<verb>$=verbclass$  $separator$+$=verbclass$ <ptcpl>[#stemchars#]*  [#gender#][#case#][#number#][#tense#]  [#voice#]<u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u>
@@ -62,7 +62,6 @@ $acceptor$ = $squashverburn$ | $squashnounurn$ | $squashinfinurn$ | $squashptcpl
 #surfacesymbol# = #letter# #diacritic#  #breathing#
 ALPHABET = [#surfacesymbol#] [#analysissymbol#]:<>
 $stripsym$ = .+
-
 
 %% The canonical pipeline: (morph data) -> acceptor -> parser/stripper
 $acceptor$ || $stripsym$

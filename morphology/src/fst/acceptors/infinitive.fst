@@ -1,19 +1,11 @@
-%infinitive.fst
-% Acceptor for infinitive pattern:
-% tense, <inf>, voice
-
+% Acceptor pattern for infinitives:
 
 #include "@workdir@symbols.fst"
+$omega_stems$ = "<@workdir@/acceptors/infinitive/w_princparts.a>"
 
 
-$infinacceptor$ = [#stemchars#]+<verb>[#verbclass#]\:\:<infin>[#stemchars#]+[#tense#][#voice#][#persistacc#]
+$=verbclass$ = [#verbclass#]
+$squashinfinurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+<verb>$=verbclass$  $separator$+$=verbclass$  <infin> [#stemchars#]*  [#tense#] [#voice#]<u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u>
 
 
-
-
-$princparts$ = "<@workdir@acceptors/infinitive/w_infin_princparts.a>"
-
-$princparts$ || $infinacceptor$
-
-% Example:
-% <coretests.n64316_0><lexent.n64316><#>lu<verb><w_regular>::<infin>ein<pres><act><penacc>
+$omega_stems$  || $squashinfinurn$
