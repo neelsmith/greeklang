@@ -7,8 +7,6 @@
 % For regular omega verbs,  reduplicate in all voices.
 % In perfect active, extend stem with kappa.
 
-
-
 % 4th=5th principal part
 #4th_5th_tense# = <pft><plupft>
 
@@ -17,13 +15,15 @@
 ALPHABET = [#editorial# #urntag# #urnchar# <verb> #morphtag# #stemtype#  #separator# #accent# #letter# #diacritic#  #breathing# \. #stemchars# ]
 
 #=ltr# = #vowel# <lo> <sh>
-$kappa$ = {[#=ltr#]}:{[#=ltr#][#kappa#]} ^->  (<u>[#urnchar#]+[#period#][#urnchar#]+</u><u>[#urnchar#]+[#period#][#urnchar#]+</u>[#stemchars#]+[#vowel#] __ <verb><w_regular>\:\:<w_regular><verb>[#stemchars#]+[#person#][#number#][#4th_5th_tense#][#mood#]<act><u>[#urnchar#]+[#period#][#urnchar#]+</u> )
-
+$kappa$ = {[#=ltr#]}:{[#=ltr#][#kappa#]} ^->  (<u>[#urnchar#]+[#period#][#urnchar#]+</u><u>[#urnchar#]+[#period#][#urnchar#]+</u>[#stemchars#]+[#vowel#] __ <verb><w_regular>\:\:<w_regular><infin>[#stemchars#]+[#4th_5th_tense#]<act><u>[#urnchar#]+[#period#][#urnchar#]+</u>  )
 
 
 
 #=cons# = #consonant#
-$redupe$ = {[#=cons#]}:{[#=cons#][#epsilon#][#=cons#]} ^->  (<u>[#urnchar#]+[#period#][#urnchar#]+</u><u>[#urnchar#]+[#period#][#urnchar#]+</u>[#stemchars#]*<#> __ [#stemchars#]+<verb><w_regular>\:\:<w_regular><verb>[#stemchars#]+[#person#][#number#][#4th_5th_tense#][#mood#][#voice#]<u>[#urnchar#]+[#period#][#urnchar#]+</u> )
+$redupe$ = {[#=cons#]}:{[#=cons#][#epsilon#][#=cons#]} ^->  (<u>[#urnchar#]+[#period#][#urnchar#]+</u><u>[#urnchar#]+[#period#][#urnchar#]+</u>[#stemchars#]*<#> __ [#stemchars#]+<verb><w_regular>\:\:<w_regular><infin>[#stemchars#]+[#4th_5th_tense#][#voice#]<u>[#urnchar#]+[#period#][#urnchar#]+</u> )
+
+
+
 
 $4th_5th_pp$ =   $kappa$ || $redupe$
 $4th_5th_pp$
