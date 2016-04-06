@@ -1,8 +1,0 @@
-RuleUrn,InflectionClass,Ending,Gender,Case,Number,VAdj
-verbinfl.teos_1,w_regular,te/os,masc,nom,sg,vadj1
-verbinfl.teos_1b,w_pp6,te/os,masc,nom,sg,vadj1
-
-
-
-verbinfl.tos_1,w_regular,to/s,masc,nom,sg,vadj2
-verbinfl.tos_1b,w_pp6,to/s,masc,nom,sg,vadj2
