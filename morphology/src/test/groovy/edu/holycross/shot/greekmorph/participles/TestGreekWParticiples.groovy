@@ -53,6 +53,7 @@ class TestGreekWParticiples {
   void testMP() {
     def expectedMP = [
       "λυόμενος": [Gender.MASCULINE, GrammaticalCase.NOMINATIVE, GrammaticalNumber.SINGULAR, Tense.PRESENT],
+      "λελυμένος": [Gender.MASCULINE, GrammaticalCase.NOMINATIVE, GrammaticalNumber.SINGULAR, Tense.PRESENT],
     ]
     expectedMP.keySet().each { greek ->
       System.err.println "GREEK " + greek

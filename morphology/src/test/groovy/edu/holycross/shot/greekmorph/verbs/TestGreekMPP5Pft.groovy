@@ -65,8 +65,37 @@ class TestGreekMPP5Pft {
     }
   }
 
-// 4  analyses:  also imperative!
-  //     "γέγραφθε": [Person.SECOND, GrammaticalNumber.PLURAL, Tense.PERFECT, Mood.INDICATIVE],
+  @Test
+  void testAmbiguous() {
+    MorphologicalAnalysis morph = mp.parseGreekString(new GreekString("γέγραφθε",true))
 
+    assert morph.analyses.size() == 4
+    morph.analyses.each { ma ->
+      MorphForm form = ma.getMorphForm()
+      assert form.getAnalyticalType() == AnalyticalType.CVERB
+      CitableId formIdentification = form.getAnalysis()
+      assert formIdentification.getPerson() == Person.SECOND
+      assert formIdentification.getNum() == GrammaticalNumber.PLURAL
+      assert formIdentification.getTense() == Tense.PERFECT
+
+      assert [Mood.INDICATIVE,Mood.IMPERATIVE].contains(formIdentification.getMood())
+      assert [Voice.MIDDLE, Voice.PASSIVE].contains(formIdentification.getVoice())
+    }
+  }
+
+  @Test
+  void testInfin() {
+    MorphologicalAnalysis morph = mp.parseGreekString(new GreekString("γεγράφθαι",true))
+    /*
+    assert morph.analyses.size() == 1
+    morph.analyses.each { ma ->
+      MorphForm form = ma.getMorphForm()
+      assert form.getAnalyticalType() == AnalyticalType.INFINITIVE
+      CitableId formIdentification = form.getAnalysis()
+      assert formIdentification.getTense() == PERFECT
+      assert [Voice.MIDDLE, Voice.PASSIVE].contains(formIdentification.getVoice())
+    }
+    */
+  }
 
 }

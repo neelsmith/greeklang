@@ -860,20 +860,21 @@ String vadjInflFstForCols(ArrayList cols) {
   String ruleUrn = cols[0].replaceAll(/_/,"\\\\_")
   ruleUrn = ruleUrn.replaceAll("\\.","\\\\.")
 
-  String inflClass = cols[1] //.replaceAll(/_/,"\\_")
-  String inflString = cols[2]
+  String inflClass = cols[1] 
+  String inflString = toFstAlphabet(cols[2])
   
   String gender = cols[3]
   String grammCase = cols[4]
   String grammNumber = cols[5]
   String adjType = cols[6]
 
-
+  /*
   inflString = inflString.replaceAll("_", "<lo>")
   inflString = inflString.replaceAll("\\(", "<ro>")
   inflString = inflString.replaceAll("\\)", "<sm>")
   inflString = inflString.replaceAll("\\|", "\\\\|")
-
+  */
+  
   fst.append(" <${inflClass}><vadj>${inflString}<${gender}><${grammCase}><${grammNumber}><${adjType}><u>${ruleUrn}</u>")
   return fst.toString()
 }
