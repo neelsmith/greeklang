@@ -6,7 +6,7 @@ import org.junit.Test
 import static groovy.test.GroovyAssert.shouldFail
 
 
-/** Tests demonstrating parsing of nouns from Unicode string.
+/** Smyth 382.
 */
 class TestGreekWSynopsis {
   String fstBinary = "build/smyth/greek.a"
@@ -200,19 +200,5 @@ System.err.println "For λῦσαι : " + formIdentification.toString()
       }
     }*/
   }
-  @Test
-  void testInfins() {
-    def expectedUnique = [
-    "λύειν": [Tense.PRESENT, Voice.ACTIVE],
-    "λύσειν": [Tense.FUTURE, Voice.ACTIVE],
-    "λύσεσθαι": [Tense.FUTURE, Voice.MIDDLE],
-    "λύσασθαι": [Tense.AORIST, Voice.MIDDLE],
-    ]
-  }
-  @Test
-  void testPtcpls() {
-  }
-  @Test
-  void testVadj() {
-  }
+
 }
