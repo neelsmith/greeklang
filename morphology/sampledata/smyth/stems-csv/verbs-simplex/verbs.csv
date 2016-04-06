@@ -4,6 +4,7 @@ smyth.n62274_0,lexent.n62274,leip,w_pp1,Smyth 384
 smyth.n62274_1,lexent.n62274,leiy,w_pp2,Smyth 384
 smyth.n62274_2,lexent.n62274,lip,aor2,Smyth 384
 smyth.n62274_3,lexent.n62274,leloip,w_pp4,Smyth 384
+smyth.n62274_3,lexent.n62274,lelei,m_pp5,Smyth 406
 smyth.n103972_0,lexent.n103972,ti_m,aw_contract,Smyth 385
 smyth.n84234_0,lexent.n84234,poi,ew_contract,Smyth 385
 smyth.n24342_0,lexent.n24342,dhl,ow_contract,Smyth 385
@@ -20,3 +21,9 @@ smyth.n23658_2,lexent.n23658,deic,w_pp3,Smyth 418
 smyth.n23658_3,lexent.n23658,dedeix,w_pp4,Smyth 418
 smyth.n23658_4,lexent.n23658,dedei,g_pp5,Smyth 418
 smyth.n23658_5,lexent.n23658,deixq,w_pp6,Smyth 418
+smyth.n80327_0,lexent.n80327,peiq,w_pp1,
+smyth.n80327_1,lexent.n80327,peis,w_pp2,
+smyth.n80327_2,lexent.n80327,peis,w_pp3,
+smyth.n80327_3,lexent.n80327,pepoiq,w_pp4,
+smyth.n80327_4,lexent.n80327,pepeis,sm_pp5,Smyth 406
+smyth.n80327_5,lexent.n80327,peisq,w_pp6,

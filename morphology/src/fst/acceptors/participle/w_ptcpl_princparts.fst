@@ -8,6 +8,6 @@
 %
 
 
-"<@workdir@acceptors/participle/w_2_3_6pp.a>" || "<@workdir@acceptors/participle/w_4_5pp.a>" 
+"<@workdir@acceptors/participle/w_2_3_6pp.a>" || "<@workdir@acceptors/participle/w_4_5pp.a>"  || "<@workdir@acceptors/participle/m_5pp.a>" 
 
 % "<@workdir@acceptors/participle/w_2_3_6pp.a>" || "<@workdir@acceptors/participle/aw_2_3_6pp.a>" || "<@workdir@acceptors/participle/ew_2_3_6pp.a>" || "<@workdir@acceptors/participle/ow_2_3_6pp.a>" || "<@workdir@acceptors/participle/long_aw_2_3_6pp.a>" || "<@workdir@acceptors/participle/w_4_5pp.a>" || "<@workdir@acceptors/participle/aw_4_5pp.a>" || "<@workdir@acceptors/participle/ew_4_5pp.a>" || "<@workdir@acceptors/participle/ow_4_5pp.a>" || "<@workdir@acceptors/participle/long_aw_4_5pp.a>"

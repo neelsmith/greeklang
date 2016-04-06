@@ -288,6 +288,8 @@ class LiteraryGreekParser implements GreekParser {
       // IN OPT, αι AND οι ARE LONG
     }
     GreekWord retrievedForm = Accent.addRecessiveAccent(new GreekWord(parserOutputString))
+
+    System.err.println "Verb: compare  " + retrievedForm + " with submitted " + utf8String
     return retrievedForm.toString().replaceAll("[_^]","")  == utf8String.toString()
     break
 
