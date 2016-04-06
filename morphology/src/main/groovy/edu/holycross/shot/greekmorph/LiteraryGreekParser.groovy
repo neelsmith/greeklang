@@ -193,7 +193,7 @@ class LiteraryGreekParser implements GreekParser {
 
 
 
-
+  // AOR PASS SHOULD GET SPECIAL ACCENT
   boolean checkInfinitiveAccent(GreekString gs, String retrievedString, FstAnalysisParser analysisInfo) {
     GreekWord retrievedForm = new GreekWord(retrievedString)
     MorphForm morphForm = analysisInfo.getMorphForm()
@@ -211,8 +211,8 @@ class LiteraryGreekParser implements GreekParser {
 
 
 
-  boolean checkPtcplAccent(GreekString gs, FstAnalysisParser analysisInfo) {
-    GreekWord retrievedForm = new GreekWord(analysisInfo.getSurfaceStem() + analysisInfo.getSurfaceInflection())
+  boolean checkPtcplAccent(GreekString gs,String parserOutput, FstAnalysisParser analysisInfo) {
+    GreekWord retrievedForm = new GreekWord(parserOutput)
     MorphForm morphForm = analysisInfo.getMorphForm()
     ParticipleForm  form = morphForm.getAnalysis()
     switch(form.getTense()) {
@@ -261,7 +261,7 @@ class LiteraryGreekParser implements GreekParser {
     break
 
     case AnalyticalType.PARTICIPLE:
-    return checkPtcplAccent(utf8String, analysisInfo)
+    return checkPtcplAccent(utf8String, parserOutputString, analysisInfo)
     break
 
     case AnalyticalType.INFINITIVE:
@@ -270,7 +270,7 @@ class LiteraryGreekParser implements GreekParser {
     break
 
     case AnalyticalType.VERBAL_ADJECTIVE:
-    GreekWord retrievedForm = new GreekWord(analysisInfo.getSurfaceStem() + analysisInfo.getSurfaceInflection())
+    GreekWord retrievedForm = new GreekWord(parserOutputString)
     return retrievedForm.toString().replaceAll("[_^]","") == utf8String.toString()
     break
 
@@ -280,7 +280,7 @@ class LiteraryGreekParser implements GreekParser {
     break
 
     case AnalyticalType.CVERB:
-
+    // consider special case for AorPass infin to work around bug in SCS lib?h
     // so look at fstAnalysisParser:
 
     def formIdentification = form.getAnalysis()
