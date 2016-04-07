@@ -54,7 +54,7 @@ verbinfl.gm_pp5_imptv3,gm_pp5,xqon,2nd,dual,pft,imptv,mid
 verbinfl.gm_pp5_imptv4,gm_pp5,xqwn,3rd,dual,pft,imptv,mid
 
 verbinfl.gm_pp5_imptv5,gm_pp5,xqe,2nd,pl,pft,imptv,mid
-verbinfl.gm_pp5_imptv6,gm_pp5,xqwn,3nd,pl,pft,imptv,mid
+verbinfl.gm_pp5_imptv6,gm_pp5,xqwn,3rd,pl,pft,imptv,mid
 
 
 verbinfl.gm_pp5_imptv1,gm_pp5,co,2nd,sg,pft,imptv,pass
@@ -64,4 +64,4 @@ verbinfl.gm_pp5_imptv3,gm_pp5,xqon,2nd,dual,pft,imptv,pass
 verbinfl.gm_pp5_imptv4,gm_pp5,xqwn,3rd,dual,pft,imptv,pass
 
 verbinfl.gm_pp5_imptv5,gm_pp5,xqe,2nd,pl,pft,imptv,pass
-verbinfl.gm_pp5_imptv6,gm_pp5,xqwn,3nd,pl,pft,imptv,pass
+verbinfl.gm_pp5_imptv6,gm_pp5,xqwn,3rd,pl,pft,imptv,pass

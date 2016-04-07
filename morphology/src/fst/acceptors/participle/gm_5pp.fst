@@ -1,7 +1,7 @@
 %  gm_5pp.fst
 %
 % Generate fifth principal parts for verbs of type
-% gm_pp5.
+% gm_pp5, eg, πράττω
 %
 #include "@workdir@symbols.fst"
 
