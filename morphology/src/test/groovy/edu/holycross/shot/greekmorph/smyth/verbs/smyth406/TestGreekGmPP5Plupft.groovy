@@ -23,14 +23,14 @@ class TestGreekGmPP5Plupft {
     def expectedUnique = [
     "ἐπεπράγμην": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.PLUPERFECT, Mood.INDICATIVE],
     "ἐπέπραξο": [Person.SECOND, GrammaticalNumber.SINGULAR, Tense.PLUPERFECT, Mood.INDICATIVE],
-    "ἑπέπρακτο": [Person.THIRD, GrammaticalNumber.SINGULAR, Tense.PLUPERFECT, Mood.INDICATIVE],
+    "ἐπέπρακτο": [Person.THIRD, GrammaticalNumber.SINGULAR, Tense.PLUPERFECT, Mood.INDICATIVE],
 
 
     "ἐπέπραχθον": [Person.SECOND, GrammaticalNumber.DUAL, Tense.PLUPERFECT, Mood.INDICATIVE],
     "ἐπεπράχθην": [Person.THIRD, GrammaticalNumber.DUAL, Tense.PLUPERFECT, Mood.INDICATIVE],
 
     "ἐπεπράγμεθα": [Person.FIRST, GrammaticalNumber.PLURAL, Tense.PLUPERFECT, Mood.INDICATIVE],
-    "ἐπέπραχθ": [Person.SECOND, GrammaticalNumber.PLURAL, Tense.PLUPERFECT, Mood.INDICATIVE]
+    "ἐπέπραχθε": [Person.SECOND, GrammaticalNumber.PLURAL, Tense.PLUPERFECT, Mood.INDICATIVE]
 
     ]
     expectedUnique.keySet().each { greek ->
