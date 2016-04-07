@@ -113,8 +113,8 @@ class LiteraryGreekNounAccent {
     }
 
 
-    /** Uses morphological information in a FstAnalysisParser to deteremine
-    * how to accent a GreeString, and adds the appropriate accent.
+    /** Uses morphological information in a FstAnalysisParser to determine
+    * how to accent a GreekString, and adds the appropriate accent.
     * @param inflectionalString
     * @param analysisInfo
     */
