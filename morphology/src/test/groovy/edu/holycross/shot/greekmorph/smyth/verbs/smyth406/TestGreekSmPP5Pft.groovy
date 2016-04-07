@@ -67,7 +67,7 @@ class TestGreekSmPP5Pft {
 
   @Test
   void testAmbiguous() {
-    MorphologicalAnalysis morph = mp.parseGreekString(new GreekString("πέπεισθ",true))
+    MorphologicalAnalysis morph = mp.parseGreekString(new GreekString("πέπεισθε",true))
 
     assert morph.analyses.size() == 4
     morph.analyses.each { ma ->

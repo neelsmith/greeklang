@@ -30,7 +30,7 @@ class TestGreekSmPP5Plupft {
     "ἐπεπείσθην": [Person.THIRD, GrammaticalNumber.DUAL, Tense.PLUPERFECT, Mood.INDICATIVE],
 
     "ἐπεπείσμεθα": [Person.FIRST, GrammaticalNumber.PLURAL, Tense.PLUPERFECT, Mood.INDICATIVE],
-    "ἐπέπεισθ": [Person.SECOND, GrammaticalNumber.PLURAL, Tense.PLUPERFECT, Mood.INDICATIVE]
+    "ἐπέπεισθε": [Person.SECOND, GrammaticalNumber.PLURAL, Tense.PLUPERFECT, Mood.INDICATIVE]
 
     ]
     expectedUnique.keySet().each { greek ->
