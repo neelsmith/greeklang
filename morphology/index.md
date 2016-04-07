@@ -14,7 +14,13 @@ layout: page
 
 ## Current status
 
-In active development. Initial 1.0 release expected in May, 2016.
+In active development.  Follow the [scorecard of paradigms from Smyth's *Greek Grammar*](smyth)!
+
+
+
+## Release information
+
+Initial 1.0 release expected in May, 2016.
 
 - requires:
     - java version >= 7
@@ -23,8 +29,8 @@ In active development. Initial 1.0 release expected in May, 2016.
 
 
 - [release notes](releases)
-- [documentation](documentation)
-- [github repository](https://github.com/neelsmith/greeklang/morphology)
+- documentation
+- github:  subproject of the [`greeklang` repository](https://github.com/neelsmith/greeklang)
 
 
 ## To be added with 1.0 release

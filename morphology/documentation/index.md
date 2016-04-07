@@ -17,6 +17,7 @@ layout: page
     - TAG SYSTEM?
 - Implementing a parser for your own orthography
     - Implement the `GreekParser` interface, using an implementation of the `GreekOrthography` interface
+    - Define an alphabet in SFST-PL
 - Sample data sets included
     - LSJ quarried data in Greek orthography
     - Some data in Attic orthography
