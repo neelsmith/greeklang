@@ -202,12 +202,13 @@ class LiteraryGreekParser implements GreekParser {
     System.err.println "Analysis info " + analysisInfo + " of class " + analysisInfo.getClass()
     switch(form.getTense()) {
 
-    case Tense.PERFECT:
-    //override default treatment of final diphthong as short:
-    GreekWord accentedForm = Accent.addPenultAccent(retrievedForm, true)
-    return accentedForm.toString().replaceAll("[_^]","")  == gs.toString()
 
+     
+    case Tense.PERFECT:
+    GreekWord accentedForm = Accent.addPenultAccent(retrievedForm)
+    return accentedForm.toString().replaceAll("[_^]","")  == gs.toString()
     break
+
       
     default:
     if (Accent.hasAccent(retrievedForm)) {

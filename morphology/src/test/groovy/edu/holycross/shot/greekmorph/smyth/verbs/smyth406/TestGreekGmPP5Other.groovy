@@ -34,7 +34,7 @@ class TestGreekGmPP5Other {
 
   @Test
   void testPtcpl() {
-    MorphologicalAnalysis morph = mp.parseGreekString(new GreekString("πεπγραγμένος",true))
+    MorphologicalAnalysis morph = mp.parseGreekString(new GreekString("πεπραγμένος",true))
 
     assert morph.analyses.size() == 2
     morph.analyses.each { ma ->
