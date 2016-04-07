@@ -202,9 +202,20 @@ class LiteraryGreekParser implements GreekParser {
     System.err.println "Analysis info " + analysisInfo + " of class " + analysisInfo.getClass()
     switch(form.getTense()) {
 
-    default:
-    GreekWord accentedForm = Accent.addRecessiveAccent(retrievedForm)
+    case Tense.PERFECT:
+    //override default treatment of final diphthong as short:
+    GreekWord accentedForm = Accent.addPenultAccent(retrievedForm, true)
     return accentedForm.toString().replaceAll("[_^]","")  == gs.toString()
+
+    break
+      
+    default:
+    if (Accent.hasAccent(retrievedForm)) {
+      return retrievedForm
+    } else {
+      GreekWord accentedForm = Accent.addRecessiveAccent(retrievedForm)
+      return accentedForm.toString().replaceAll("[_^]","")  == gs.toString()
+    }
     break
     }
   }
@@ -214,12 +225,20 @@ class LiteraryGreekParser implements GreekParser {
   boolean checkPtcplAccent(GreekString gs,String parserOutput, FstAnalysisParser analysisInfo) {
     GreekWord retrievedForm = new GreekWord(parserOutput)
     MorphForm morphForm = analysisInfo.getMorphForm()
-    ParticipleForm  form = morphForm.getAnalysis()
+    ParticipleForm  form = morphForm.getAnalysis()    
+
+    
     switch(form.getTense()) {
 
     default:
-    GreekWord accentedForm = Accent.addRecessiveAccent(retrievedForm)
-    return accentedForm.toString().replaceAll("[_^]","")  == gs.toString()
+    if (Accent.hasAccent(retrievedForm)) {
+      return retrievedForm
+    } else {
+      GreekWord accentedForm = Accent.addRecessiveAccent(retrievedForm)
+
+      System.err.println "Compare ptcpl ${accentedForm} with ${gs}"
+      return accentedForm.toString().replaceAll("[_^]","")  == gs.toString()
+    }
     break
     }
   }

@@ -83,19 +83,5 @@ class TestGreekMPP5Pft {
     }
   }
 
-  @Test
-  void testInfin() {
-    MorphologicalAnalysis morph = mp.parseGreekString(new GreekString("γεγράφθαι",true))
-    /*
-    assert morph.analyses.size() == 1
-    morph.analyses.each { ma ->
-      MorphForm form = ma.getMorphForm()
-      assert form.getAnalyticalType() == AnalyticalType.INFINITIVE
-      CitableId formIdentification = form.getAnalysis()
-      assert formIdentification.getTense() == PERFECT
-      assert [Voice.MIDDLE, Voice.PASSIVE].contains(formIdentification.getVoice())
-    }
-    */
-  }
 
 }

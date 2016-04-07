@@ -23,7 +23,7 @@ class TestGreekMPP5Plupft {
     def expectedUnique = [
     "ἐγεγράμμην": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.PLUPERFECT, Mood.INDICATIVE],
     "ἐγέγραψο": [Person.SECOND, GrammaticalNumber.SINGULAR, Tense.PLUPERFECT, Mood.INDICATIVE],
-    //"ἐγέγραπτο": [Person.THIRD, GrammaticalNumber.SINGULAR, Tense.PLUPERFECT, Mood.INDICATIVE],
+    "ἐγέγραπτο": [Person.THIRD, GrammaticalNumber.SINGULAR, Tense.PLUPERFECT, Mood.INDICATIVE],
 
 
     "ἐγέγραφθον": [Person.SECOND, GrammaticalNumber.DUAL, Tense.PLUPERFECT, Mood.INDICATIVE],

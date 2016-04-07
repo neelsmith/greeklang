@@ -25,7 +25,7 @@ class TestGreekMPP5Imptv {
     "γέγραψο": [Person.SECOND, GrammaticalNumber.SINGULAR, Tense.PERFECT, Mood.IMPERATIVE],
     "γεγράφθω": [Person.THIRD, GrammaticalNumber.SINGULAR, Tense.PERFECT, Mood.IMPERATIVE],
     //"γεγράφθων": [Person.THIRD, GrammaticalNumber.PLURAL, Tense.PERFECT, Mood.IMPERATIVE], OR DUAL
-  
+
     //"γέγραφθε": [Person.SECOND, GrammaticalNumber.PLURAL, Tense.PERFECT, Mood.IMPERATIVE],  Multiply ambiguous
     ]
     expectedUnique.keySet().each { greek ->
@@ -50,7 +50,7 @@ class TestGreekMPP5Imptv {
   @Test
   void testDual() {
     MorphologicalAnalysis morph = mp.parseGreekString(new GreekString("γέγραφθον",true))
-/*
+
     assert morph.analyses.size() == 6 // !!!
     morph.analyses.each { ma ->
       MorphForm form = ma.getMorphForm()
@@ -58,9 +58,32 @@ class TestGreekMPP5Imptv {
       CitableId formIdentification = form.getAnalysis()
       assert [Person.SECOND, Person.THIRD].contains(formIdentification.getPerson() )
 
-      assert assert [Mood.INDICATIVE, Mood.IMPERATIVE].contains(formIdentification.getMood() )
+      assert [Mood.INDICATIVE, Mood.IMPERATIVE].contains(formIdentification.getMood() )
       assert [Voice.MIDDLE, Voice.PASSIVE].contains(formIdentification.getVoice())
-    }*/
+    }
+  }
+
+
+  @Test
+  void testAmbiguous() {
+    MorphologicalAnalysis morph = mp.parseGreekString(new GreekString("γεγράφθων",true))
+
+    assert morph.analyses.size() == 4
+    morph.analyses.each { ma ->
+      MorphForm form = ma.getMorphForm()
+      assert form.getAnalyticalType() == AnalyticalType.CVERB
+      CitableId formIdentification = form.getAnalysis()
+      assert  formIdentification.getPerson() == Person.THIRD
+
+      assert  formIdentification.getMood() == Mood.IMPERATIVE
+
+
+      assert  [GrammaticalNumber.DUAL, GrammaticalNumber.PLURAL].contains(formIdentification.getNum())
+      assert [Voice.MIDDLE, Voice.PASSIVE].contains(formIdentification.getVoice())
+
+
+
+    }
   }
 
 
