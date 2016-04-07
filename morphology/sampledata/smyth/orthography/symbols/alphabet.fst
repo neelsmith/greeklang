@@ -8,6 +8,7 @@
 % Specific characters used in automatic formation of
 % stems of regular verbs:
 #alpha# = a
+#gamma# = g
 #epsilon# = e
 #eta# = h
 #theta# = q

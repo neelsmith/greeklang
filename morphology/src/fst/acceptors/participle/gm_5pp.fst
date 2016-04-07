@@ -14,6 +14,6 @@ ALPHABET = [#editorial# #urntag# #urnchar# <verb> #morphtag# #stemtype#  #separa
 #=ltr# = #vowel# <lo> <sh>
 
 #=ltr# = #vowel# <lo> <sh>
-$ptcpl_gm_5pp$ = {[#=ltr#]}:{[#=ltr#][#gamma#]} ^->  (<u>[#urnchar#]+[#period#][#urnchar#]+</u><u>[#urnchar#]+[#period#][#urnchar#]+</u>[#stemchars#]+[#vowel#] __ <verb><m_pp5>\:\:<m_pp5><ptcpl>[#stemchars#]+[#gender#][#case#][#number#]<pft>[#mp#]<u>[#urnchar#]+[#period#][#urnchar#]+</u> )
+$ptcpl_gm_5pp$ = {[#=ltr#]}:{[#=ltr#][#gamma#]} ^->  (<u>[#urnchar#]+[#period#][#urnchar#]+</u><u>[#urnchar#]+[#period#][#urnchar#]+</u>[#stemchars#]+ __ <verb><gm_pp5>\:\:<gm_pp5><ptcpl>[#stemchars#]+[#gender#][#case#][#number#]<pft>[#mp#]<u>[#urnchar#]+[#period#][#urnchar#]+</u> )
 
 $ptcpl_gm_5pp$
