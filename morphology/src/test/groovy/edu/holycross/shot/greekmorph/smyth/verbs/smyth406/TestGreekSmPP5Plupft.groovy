@@ -8,7 +8,7 @@ import static groovy.test.GroovyAssert.shouldFail
 
 /** Smyth 406.
 */
-class TestGreekMPP5Plupft {
+class TestGreekSmPP5Plupft {
   String fstBinary = "build/smyth/greek.a"
   File urnReg = new File("sampledata/smyth/urnregistry/collectionregistry.csv")
   UrnManager umgr = new UrnManager(urnReg)
