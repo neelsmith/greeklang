@@ -3,6 +3,8 @@ title: "Foundational libraries: release notes"
 layout: page
 ---
 
+**2.3.2** Fixes a bug in syllabification of strings with explicit marker for vowel quantity where regular expression patterns could overlap.
+
 **2.3.1** Fixes a bug in syllabification of strings with explicit marker for vowel quantity.
 
 **2.3.0** New functionality: additional signatures added to static methods of `Accent` class. Bug fixes in accent handling, and in syllabification of `GreekString` objects.
