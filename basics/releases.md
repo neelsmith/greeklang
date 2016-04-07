@@ -3,6 +3,8 @@ title: "Foundational libraries: release notes"
 layout: page
 ---
 
+**2.3.3** .jar recompiled for java 7 compatibility.
+
 **2.3.2** Fixes a bug in syllabification of strings with explicit marker for vowel quantity where regular expression patterns could overlap.
 
 **2.3.1** Fixes a bug in syllabification of strings with explicit marker for vowel quantity.
