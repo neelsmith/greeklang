@@ -8,7 +8,7 @@ import static groovy.test.GroovyAssert.shouldFail
 
 /** Tests demonstrating parsing of nouns from Unicode string.
 */
-class TestGreekSmPP5Imptv {
+class TestGreekSPP5Imptv {
   String fstBinary = "build/smyth/greek.a"
   File urnReg = new File("sampledata/smyth/urnregistry/collectionregistry.csv")
   UrnManager umgr = new UrnManager(urnReg)
@@ -32,7 +32,6 @@ class TestGreekSmPP5Imptv {
 
       assert morph.analyses.size() == 2
       morph.analyses.each { ma ->
-
         MorphForm form = ma.getMorphForm()
         assert form.getAnalyticalType() == AnalyticalType.CVERB
         CitableId formIdentification = form.getAnalysis()

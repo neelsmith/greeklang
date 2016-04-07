@@ -8,7 +8,7 @@ import static groovy.test.GroovyAssert.shouldFail
 
 /**
 */
-class TestGreekSPP5Other {
+class TestGreekGmPP5Other {
   String fstBinary = "build/smyth/greek.a"
   File urnReg = new File("sampledata/smyth/urnregistry/collectionregistry.csv")
   UrnManager umgr = new UrnManager(urnReg)
@@ -18,7 +18,7 @@ class TestGreekSPP5Other {
 
   @Test
   void testInfin() {
-    MorphologicalAnalysis morph = mp.parseGreekString(new GreekString("πεπεῖσθαι",true))
+    MorphologicalAnalysis morph = mp.parseGreekString(new GreekString("πεπρᾶχθαι",true))
 
     assert morph.analyses.size() == 2
     morph.analyses.each { ma ->
@@ -34,7 +34,7 @@ class TestGreekSPP5Other {
 
   @Test
   void testPtcpl() {
-    MorphologicalAnalysis morph = mp.parseGreekString(new GreekString("πεπεισμένος",true))
+    MorphologicalAnalysis morph = mp.parseGreekString(new GreekString("πεπγραγμένος",true))
 
     assert morph.analyses.size() == 2
     morph.analyses.each { ma ->

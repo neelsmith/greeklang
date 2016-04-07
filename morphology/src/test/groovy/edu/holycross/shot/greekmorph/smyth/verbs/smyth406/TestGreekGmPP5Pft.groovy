@@ -8,7 +8,7 @@ import static groovy.test.GroovyAssert.shouldFail
 
 /** Tests demonstrating parsing of nouns from Unicode string.
 */
-class TestGreekSPP5Pft {
+class TestGreekGmPP5Pft {
   String fstBinary = "build/smyth/greek.a"
   File urnReg = new File("sampledata/smyth/urnregistry/collectionregistry.csv")
   UrnManager umgr = new UrnManager(urnReg)
@@ -21,10 +21,10 @@ class TestGreekSPP5Pft {
   void testUnique() {
     //
     def expectedUnique = [
-    "πέπεισμαι": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.PERFECT, Mood.INDICATIVE],
-    "πέπεισαι": [Person.SECOND, GrammaticalNumber.SINGULAR, Tense.PERFECT, Mood.INDICATIVE],
-    "πέπεισται": [Person.THIRD, GrammaticalNumber.SINGULAR, Tense.PERFECT, Mood.INDICATIVE],
-    "πεπείσμεθα": [Person.FIRST, GrammaticalNumber.PLURAL, Tense.PERFECT, Mood.INDICATIVE],
+    "πέπραγμαι": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.PERFECT, Mood.INDICATIVE],
+    "πέπραξαι": [Person.SECOND, GrammaticalNumber.SINGULAR, Tense.PERFECT, Mood.INDICATIVE],
+    "πέπρακται": [Person.THIRD, GrammaticalNumber.SINGULAR, Tense.PERFECT, Mood.INDICATIVE],
+    "πεπράγμεθα": [Person.FIRST, GrammaticalNumber.PLURAL, Tense.PERFECT, Mood.INDICATIVE],
 
     ]
     expectedUnique.keySet().each { greek ->
@@ -48,7 +48,7 @@ class TestGreekSPP5Pft {
 
   @Test
   void testDual() {
-    MorphologicalAnalysis morph = mp.parseGreekString(new GreekString("πέπεισθον",true))
+    MorphologicalAnalysis morph = mp.parseGreekString(new GreekString("πέπραχθον",true))
 
     assert morph.analyses.size() == 6
     morph.analyses.each { ma ->
@@ -67,7 +67,7 @@ class TestGreekSPP5Pft {
 
   @Test
   void testAmbiguous() {
-    MorphologicalAnalysis morph = mp.parseGreekString(new GreekString("πέπεισθε",true))
+    MorphologicalAnalysis morph = mp.parseGreekString(new GreekString("πέπραχθε",true))
 
     assert morph.analyses.size() == 4
     morph.analyses.each { ma ->

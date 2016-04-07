@@ -8,7 +8,7 @@ import static groovy.test.GroovyAssert.shouldFail
 
 /** Tests demonstrating parsing of nouns from Unicode string.
 */
-class TestGreekSPP5Pft {
+class TestGreekGmPP5Imptv {
   String fstBinary = "build/smyth/greek.a"
   File urnReg = new File("sampledata/smyth/urnregistry/collectionregistry.csv")
   UrnManager umgr = new UrnManager(urnReg)
@@ -21,10 +21,9 @@ class TestGreekSPP5Pft {
   void testUnique() {
     //
     def expectedUnique = [
-    "πέπεισμαι": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.PERFECT, Mood.INDICATIVE],
-    "πέπεισαι": [Person.SECOND, GrammaticalNumber.SINGULAR, Tense.PERFECT, Mood.INDICATIVE],
-    "πέπεισται": [Person.THIRD, GrammaticalNumber.SINGULAR, Tense.PERFECT, Mood.INDICATIVE],
-    "πεπείσμεθα": [Person.FIRST, GrammaticalNumber.PLURAL, Tense.PERFECT, Mood.INDICATIVE],
+
+    "πέπραξο": [Person.SECOND, GrammaticalNumber.SINGULAR, Tense.PERFECT, Mood.IMPERATIVE],
+    "πεπράχθω": [Person.THIRD, GrammaticalNumber.SINGULAR, Tense.PERFECT, Mood.IMPERATIVE],
 
     ]
     expectedUnique.keySet().each { greek ->
@@ -48,38 +47,40 @@ class TestGreekSPP5Pft {
 
   @Test
   void testDual() {
-    MorphologicalAnalysis morph = mp.parseGreekString(new GreekString("πέπεισθον",true))
+    MorphologicalAnalysis morph = mp.parseGreekString(new GreekString("πέπραχθον",true))
 
-    assert morph.analyses.size() == 6
+    assert morph.analyses.size() == 6 // !!!
     morph.analyses.each { ma ->
       MorphForm form = ma.getMorphForm()
       assert form.getAnalyticalType() == AnalyticalType.CVERB
       CitableId formIdentification = form.getAnalysis()
-      assert formIdentification.getNum() == GrammaticalNumber.DUAL
-      assert formIdentification.getTense() == Tense.PERFECT
+      assert [Person.SECOND, Person.THIRD].contains(formIdentification.getPerson() )
 
-
-      assert [Person.SECOND, Person.THIRD].contains(formIdentification.getPerson())
-      assert [Mood.INDICATIVE,Mood.IMPERATIVE].contains(formIdentification.getMood())
+      assert [Mood.INDICATIVE, Mood.IMPERATIVE].contains(formIdentification.getMood() )
       assert [Voice.MIDDLE, Voice.PASSIVE].contains(formIdentification.getVoice())
     }
   }
 
+
   @Test
   void testAmbiguous() {
-    MorphologicalAnalysis morph = mp.parseGreekString(new GreekString("πέπεισθε",true))
+    MorphologicalAnalysis morph = mp.parseGreekString(new GreekString("πεπράχθων",true))
 
     assert morph.analyses.size() == 4
     morph.analyses.each { ma ->
       MorphForm form = ma.getMorphForm()
       assert form.getAnalyticalType() == AnalyticalType.CVERB
       CitableId formIdentification = form.getAnalysis()
-      assert formIdentification.getPerson() == Person.SECOND
-      assert formIdentification.getNum() == GrammaticalNumber.PLURAL
-      assert formIdentification.getTense() == Tense.PERFECT
+      assert  formIdentification.getPerson() == Person.THIRD
 
-      assert [Mood.INDICATIVE,Mood.IMPERATIVE].contains(formIdentification.getMood())
+      assert  formIdentification.getMood() == Mood.IMPERATIVE
+
+
+      assert  [GrammaticalNumber.DUAL, GrammaticalNumber.PLURAL].contains(formIdentification.getNum())
       assert [Voice.MIDDLE, Voice.PASSIVE].contains(formIdentification.getVoice())
+
+
+
     }
   }
 
