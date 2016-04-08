@@ -17,49 +17,6 @@ class TestGreekWPresOpt {
 
   @Test
   void testSinglePrelim() {
-    mp.debug = 10
-    mp.fstParser.debug = 10
-    String greek = "λύονται"
-    MorphologicalAnalysis morph = mp.parseGreekString(new GreekString(greek,true))
-    // could be middle, could be passive
-    assert morph.analyses.size() == 2
-
-    morph.analyses.each { ma ->
-      MorphForm form = ma.getMorphForm()
-      assert form.getAnalyticalType() == AnalyticalType.CVERB
-      CitableId formIdentification = form.getAnalysis()
-      assert formIdentification.getPerson() == Person.THIRD
-      assert formIdentification.getNum() == GrammaticalNumber.PLURAL
-      assert formIdentification.getTense() == Tense.PRESENT
-      assert formIdentification.getMood() == Mood.INDICATIVE
-      assert ((formIdentification.getVoice() == Voice.MIDDLE) || (formIdentification.getVoice() == Voice.PASSIVE) )
-
-    }
-
-  }
-
-
-  @Test
-  void testActive() {
-    //
-    def expectedUnique = [
-    "λύομεν": [Person.FIRST, GrammaticalNumber.PLURAL, Tense.PRESENT, Mood.INDICATIVE, Voice.ACTIVE]
-    ]
-    expectedUnique.keySet().each { greek ->
-      def expectedAnswer = expectedUnique[greek]
-      MorphologicalAnalysis morph = mp.parseGreekString(new GreekString(greek,true))
-
-      assert morph.analyses.size() == 1
-      MorphForm form = morph.analyses[0].getMorphForm()
-      assert form.getAnalyticalType() == AnalyticalType.CVERB
-      CitableId formIdentification = form.getAnalysis()
-      assert formIdentification.getPerson() == expectedAnswer[0]
-      assert formIdentification.getNum() == expectedAnswer[1]
-      assert formIdentification.getTense() == expectedAnswer[2]
-      assert formIdentification.getMood() == expectedAnswer[3]
-      assert formIdentification.getVoice() == expectedAnswer[4]
-    }
-
-
+    
   }
 }

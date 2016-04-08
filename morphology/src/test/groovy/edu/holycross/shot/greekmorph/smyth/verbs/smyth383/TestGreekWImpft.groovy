@@ -15,28 +15,6 @@ class TestGreekWImpft {
   // The parser:
   LiteraryGreekParser mp = new LiteraryGreekParser(fstBinary, umgr)
 
-  @Test
-  void testSinglePrelim() {
-    mp.debug = 10
-    mp.fstParser.debug = 10
-    String greek = "ἔλυες"
-    MorphologicalAnalysis morph = mp.parseGreekString(new GreekString(greek,true))
-    // could be middle, could be passive
-    assert morph.analyses.size() == 1
-
-    morph.analyses.each { ma ->
-      MorphForm form = ma.getMorphForm()
-      assert form.getAnalyticalType() == AnalyticalType.CVERB
-      CitableId formIdentification = form.getAnalysis()
-      assert formIdentification.getPerson() == Person.SECOND
-      assert formIdentification.getNum() == GrammaticalNumber.SINGULAR
-      assert formIdentification.getTense() == Tense.IMPERFECT
-      assert formIdentification.getMood() == Mood.INDICATIVE
-      assert (formIdentification.getVoice() == Voice.ACTIVE)
-
-    }
-
-  }
 
   @Test
   void testUnique () {
@@ -45,6 +23,14 @@ class TestGreekWImpft {
     def expectedUnique = [
     "ἔλυες": [Person.SECOND, GrammaticalNumber.SINGULAR, Tense.IMPERFECT, Mood.INDICATIVE, Voice.ACTIVE],
     "ἔλυε": [Person.THIRD, GrammaticalNumber.SINGULAR, Tense.IMPERFECT, Mood.INDICATIVE, Voice.ACTIVE],
+
+
+
+
+    "ἐλύετον": [Person.SECOND, GrammaticalNumber.DUAL, Tense.IMPERFECT, Mood.INDICATIVE, Voice.ACTIVE],
+    "ἐλυέτην": [Person.THIRD, GrammaticalNumber.DUAL, Tense.IMPERFECT, Mood.INDICATIVE, Voice.ACTIVE],
+
+
 
     "ἐλύομεν": [Person.FIRST, GrammaticalNumber.PLURAL, Tense.IMPERFECT, Mood.INDICATIVE, Voice.ACTIVE],
     "ἐλύετε": [Person.SECOND, GrammaticalNumber.PLURAL, Tense.IMPERFECT, Mood.INDICATIVE, Voice.ACTIVE]
@@ -98,6 +84,10 @@ class TestGreekWImpft {
       "ἐλυόμην": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.IMPERFECT, Mood.INDICATIVE],
       "ἐλύου": [Person.SECOND, GrammaticalNumber.SINGULAR, Tense.IMPERFECT, Mood.INDICATIVE],
       "ἐλύετο": [Person.THIRD, GrammaticalNumber.SINGULAR, Tense.IMPERFECT, Mood.INDICATIVE],
+
+      "ἐλύεσθον": [Person.SECOND, GrammaticalNumber.DUAL, Tense.IMPERFECT, Mood.INDICATIVE],
+      "ἐλυέσθην": [Person.THIRD, GrammaticalNumber.DUAL, Tense.IMPERFECT, Mood.INDICATIVE],
+
       "ἐλυόμεθα": [Person.FIRST, GrammaticalNumber.PLURAL, Tense.IMPERFECT, Mood.INDICATIVE],
       "ἐλύεσθε": [Person.SECOND, GrammaticalNumber.PLURAL, Tense.IMPERFECT, Mood.INDICATIVE],
       "ἐλύοντο" : [Person.THIRD, GrammaticalNumber.PLURAL, Tense.IMPERFECT, Mood.INDICATIVE],
