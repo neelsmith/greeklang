@@ -3,8 +3,12 @@ title: "Scorecard of performance against paradigms in Smyth"
 layout: page
 ---
 
+The Kanōnes distribution includes a set of morphological stems and a set of inflectional rules covering the paradigms and synopses in Smyth's *Greek Grammar* listed below.  All forms appearing in Smyth's paradigms are tested with two exceptions:
 
-Links have more details about individual synopses and paradigms.
+1. Kanōnes analyzes only single tokens: it does not analyze periphrastic forms.  It is left to a higher-order analysis to recognize that combinations like a present subjunctive form of "to be" and a perfect participle in the nominative case can be treated as a compound perfect subjunctive verb form.
+2. The Kanōnes inflectional rules for Smyth paradigms do not include future perfect forms, since it is not clear that many of these forms are attested in corpora of texts classicists actually work with.
+
+Smyth sections with links in the list below have been completely tested.  The links lead to more details about the testing of individual synopses and paradigms.
 
 ## Paradigms and synopses of ω-verbs
 
@@ -34,7 +38,7 @@ Links have more details about individual synopses and paradigms.
 
 
 
-### Totals
+### Total forms tested from Smyth paradigms
 
 
 | Currently tested | Correctly analyzed | Per cent |
