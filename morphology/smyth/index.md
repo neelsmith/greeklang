@@ -23,9 +23,20 @@ Links have more details about individual synopses and paradigms.
 - ¶407: euphony in perfect middle-passive: ἐλέγχω, ἀγγέλλω, φαίνω, τελέω
 
 
+## Participles
+
+- ¶305: present active of λύω
+- ¶306: aorist active of λύω, present active of ἵστημι
+- ¶307: present active of τίθημι, δίδωμι
+- ¶308: present active of δείκνυμι, second aorist active of φύω
+- ¶309: perfect active of λύω, οἶδα
+- ¶310: present active of τιμάω, ποιέω
+
+
+
 ### Totals
 
 
-| Forms tested | Correctly analyzed | Per cent |
+| Currently tested | Correctly analyzed | Per cent |
 |:-------------|:--------------------------|:---------|
 | 88           | 88                        | 100%     |
