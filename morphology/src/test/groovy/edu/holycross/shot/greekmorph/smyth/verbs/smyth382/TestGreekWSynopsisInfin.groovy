@@ -8,7 +8,7 @@ import static groovy.test.GroovyAssert.shouldFail
 
 /** Tests demonstrating parsing of nouns from Unicode string.
 */
-class TestGreekWInfinitives {
+class TestGreekWSynopsisInfin {
   String fstBinary = "build/smyth/greek.a"
   File urnReg = new File("sampledata/smyth/urnregistry/collectionregistry.csv")
   UrnManager umgr = new UrnManager(urnReg)
@@ -22,7 +22,7 @@ class TestGreekWInfinitives {
     "λύειν": [Tense.PRESENT, Voice.ACTIVE],
     "λύσειν": [Tense.FUTURE, Voice.ACTIVE],
     //"λελυκέναι": [Tense.PERFECT, Voice.ACTIVE],
-    "λύσεσθαι": [Tense.FUTURE, Voice.MIDDLE],
+    //"λύσεσθαι": [Tense.FUTURE, Voice.MIDDLE],
     "λύσασθαι": [Tense.AORIST, Voice.MIDDLE],
     "λυθήσεσθαι": [Tense.FUTURE, Voice.PASSIVE],
     //"λυθῆναι": [Tense.AORIST, Voice.PASSIVE],
@@ -46,7 +46,7 @@ class TestGreekWInfinitives {
   void testMP() {
     def expectedMP= [
     "λύεσθαι": Tense.PRESENT,
-    "λελύσθαι": Tense.PERFECT,
+    //"λελύσθαι": Tense.PERFECT,
     ]
     expectedMP.keySet().each { greek ->
       System.err.println "GREEK " + greek
