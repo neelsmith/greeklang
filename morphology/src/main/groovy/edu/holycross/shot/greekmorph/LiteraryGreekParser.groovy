@@ -236,9 +236,9 @@ class LiteraryGreekParser implements GreekParser {
       return retrievedForm
     } else {
       GreekWord accentedForm = Accent.addRecessiveAccent(retrievedForm)
-
-      System.err.println "Compare ptcpl ${accentedForm} with ${gs}"
-      return accentedForm.toString().replaceAll("[_^]","")  == gs.toString()
+      String accentedStr = accentedForm.toString().replaceAll("[_^]","")
+      System.err.println "Compare ptcpl ${accentedStr} with ${gs}"
+      return  accentedStr == gs.toString()
     }
     break
     }
