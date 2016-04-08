@@ -7,6 +7,11 @@
 % modifies the stem accordingly.
 %
 
-"<@workdir@acceptors/infinitive/w_2_3_6pp.a>" "<@workdir@acceptors/infinitive/w_4_5pp.a>"
+"<@workdir@acceptors/infinitive/w_2_3_6pp.a>" || "<@workdir@acceptors/infinitive/w_4_5pp.a>"
 
+
+
+
+
+%%%
 % "<@workdir@acceptors/infinitive/w_2_3_6pp.a>" || "<@workdir@acceptors/infinitive/aw_2_3_6pp.a>" || "<@workdir@acceptors/infinitive/ew_2_3_6pp.a>" || "<@workdir@acceptors/infinitive/ow_2_3_6pp.a>" || "<@workdir@acceptors/infinitive/long_aw_2_3_6pp.a>" || "<@workdir@acceptors/infinitive/w_4_5pp.a>" || "<@workdir@acceptors/infinitive/aw_4_5pp.a>" || "<@workdir@acceptors/infinitive/ew_4_5pp.a>" || "<@workdir@acceptors/infinitive/ow_4_5pp.a>" || "<@workdir@acceptors/infinitive/long_aw_4_5pp.a>"
