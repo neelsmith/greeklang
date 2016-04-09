@@ -12,26 +12,22 @@ import static groovy.test.GroovyAssert.shouldFail
 class TestGreekNoun3Mhnis {
 
   // External files used in didactic tests:
-  //
   // CSV files with URN abbreviations for stems and inflectional rules
-  File lexCsvSource = new File("sampledata/urn-registries/datasets.csv")
-  File inflCsvSource = new File("src/fst/collectionAbbreviations.csv")
+  File urnReg = new File("sampledata/smyth/urnregistry/collectionregistry.csv")
+
   // A URN manager configured with CITE collection abbreviations
   // for both inflectional patterns and lexicon of stems:
-  UrnManager umgr = new UrnManager(inflCsvSource)
+  UrnManager umgr = new UrnManager(urnReg)
 
   // Compiled finite state transducer:
-  String litGreekBinary = "build/greek/greek.a"
-  String atticBinary = "build/attic/greek.a"
+  String fstBinary = "build/smyth/greek.a"
 
+  // The parser:
+  LiteraryGreekParser mp = new LiteraryGreekParser(fstBinary, umgr)
 
 
   @Test
   void testDeclension() {
-    // Add lexicon to URN manager:
-    umgr.addCsvFile(lexCsvSource)
-    // And, finally, the parser:
-    LiteraryGreekParser mp = new LiteraryGreekParser(litGreekBinary, umgr)
     mp.debug = 10
     mp.fstParser.debug = 10
     // map keyed by forms to analyze, to a unique GCN of noun form
