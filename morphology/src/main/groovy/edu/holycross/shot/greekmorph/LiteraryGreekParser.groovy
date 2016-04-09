@@ -195,6 +195,7 @@ class LiteraryGreekParser implements GreekParser {
 
   // AOR PASS SHOULD GET SPECIAL ACCENT
   boolean checkInfinitiveAccent(GreekString gs, String retrievedString, FstAnalysisParser analysisInfo) {
+    System.err.println  "inf acc: gs = ${gs}, retrieved = ${retrievedString}"
     GreekWord retrievedForm = new GreekWord(retrievedString)
     MorphForm morphForm = analysisInfo.getMorphForm()
     InfinitiveForm  form = morphForm.getAnalysis()
@@ -205,7 +206,7 @@ class LiteraryGreekParser implements GreekParser {
 
      
     case Tense.PERFECT:
-    GreekWord accentedForm = Accent.addPenultAccent(retrievedForm)
+    GreekWord accentedForm = Accent.addPenultAccent(retrievedForm,true)
     return accentedForm.toString().replaceAll("[_^]","")  == gs.toString()
     break
 
@@ -300,14 +301,15 @@ class LiteraryGreekParser implements GreekParser {
     break
 
     case AnalyticalType.CVERB:
-    // consider special case for AorPass infin to work around bug in SCS lib?h
-    // so look at fstAnalysisParser:
-
+    GreekWord retrievedForm = new GreekWord(parserOutputString)
     def formIdentification = form.getAnalysis()
-    if (formIdentification.getMood() == Mood.OPTATIVE) {
-      // IN OPT, αι AND οι ARE LONG
+    if (! Accent.hasAccent(retrievedForm)) {
+      if (formIdentification.getMood() == Mood.OPTATIVE) {
+	retrievedForm = Accent.addRecessiveAccent(new GreekWord(parserOutputString), true)
+      } else {
+	retrievedForm = Accent.addRecessiveAccent(new GreekWord(parserOutputString))
+      }
     }
-    GreekWord retrievedForm = Accent.addRecessiveAccent(new GreekWord(parserOutputString))
 
     System.err.println "Verb: compare  " + retrievedForm + " with submitted " + utf8String
     return retrievedForm.toString().replaceAll("[_^]","")  == utf8String.toString()
