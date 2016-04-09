@@ -10,7 +10,7 @@ The Kanōnes distribution includes a set of morphological stems and a set of inf
 
 The links lead to more details about the testing of individual synopses and paradigms.
 
-## Paradigms and synopses of ω-verbs
+## Paradigms and synopses of -ω verbs
 
 - ¶382: synopsis of λύω
 - ¶383: λύω (complete paradigm)
