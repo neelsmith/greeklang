@@ -12,7 +12,7 @@ The links lead to more details about the testing of individual synopses and para
 
 ## Paradigms and synopses of -ω verbs
 
-- ¶382: synopsis of λύω
+- [¶382](s382): synopsis of λύω ([67 forms](s382))
 - ¶383: λύω (complete paradigm)
 - ¶384: second aorist of λείπω
 - ¶385: contract verbs  (complete paradigms)
@@ -43,4 +43,4 @@ The links lead to more details about the testing of individual synopses and para
 
 | Currently tested | Correctly analyzed | Per cent |
 |:-------------|:--------------------------|:---------|
-| 88           | 88                        | 100%     |
+| 155         | 155                        | 100%     |
