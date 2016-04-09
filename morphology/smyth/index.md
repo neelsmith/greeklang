@@ -15,7 +15,7 @@ The links lead to more details about the testing of individual synopses and para
 - ¶382: synopsis of λύω
 - ¶383: λύω (complete paradigm)
 - ¶384: second aorist of λείπω
-- ¶385: contract verbs
+- ¶385: contract verbs  (complete paradigms)
 - ¶388: synopsis of τιμάω
 - ¶389: synopsis of θηράω
 - ¶390: synopsis of ποιέω
