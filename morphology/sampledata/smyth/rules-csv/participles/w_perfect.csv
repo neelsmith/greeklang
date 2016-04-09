@@ -1,9 +1,9 @@
 RuleUrn,InflectionClass,Ending,Gender,Case,Number,Tense,Voice
 verbinfl.w_pft_ptcp1,w_regular,w/s,masc,nom,sg,pft,act
-verbinfl.w_pft_ptcp1b,w_pp2,w/s,masc,nom,sg,pft,act
+verbinfl.w_pft_ptcp1b,w_pp4,w/s,masc,nom,sg,pft,act
 
 verbinfl.w_pft_ptcp2,w_regular,me/nos,masc,nom,sg,pft,mid
-verbinfl.w_pft_ptcp2b,w_pp2,me/nos,masc,nom,sg,pft,mid
+verbinfl.w_pft_ptcp2b,w_pp4,me/nos,masc,nom,sg,pft,mid
 
 verbinfl.w_pft_ptcp3,w_regular,me/nos,masc,nom,sg,pft,pass
-verbinfl.w_pft_ptcp3b,w_pp2,me/nos,masc,nom,sg,pft,pass
+verbinfl.w_pft_ptcp3b,w_pp4,me/nos,masc,nom,sg,pft,pass

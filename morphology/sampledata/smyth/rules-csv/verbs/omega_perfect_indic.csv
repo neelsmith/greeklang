@@ -16,8 +16,8 @@ verbinfl.w_pft_indic6,w_regular,amen,1st,pl,pft,indic,act
 verbinfl.w_pft_indic6b,w_pp4,amen,1st,pl,pft,indic,act
 verbinfl.w_pft_indic7,w_regular,ate,2nd,pl,pft,indic,act
 verbinfl.w_pft_indic7b,w_pp4,ate,2nd,pl,pft,indic,act
-verbinfl.w_pft_indic8,w_regular,a_si,3rd,plf,pft,indic,act
-verbinfl.w_pft_indic8b,w_pp4,a_si,3rd,plf,pft,indic,act
+verbinfl.w_pft_indic8,w_regular,a_si,3rd,pl,pft,indic,act
+verbinfl.w_pft_indic8b,w_pp4,a_si,3rd,pl,pft,indic,act
 
 
 verbinfl.w_pft_indic9,w_regular,mai,1st,sg,pft,indic,mid

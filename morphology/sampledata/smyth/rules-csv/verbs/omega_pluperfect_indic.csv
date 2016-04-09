@@ -17,8 +17,8 @@ verbinfl.w_plupft_indic6,w_regular,emen,1st,pl,plupft,indic,act
 verbinfl.w_plupft_indic6b,w_pp4,emen,1st,pl,plupft,indic,act
 verbinfl.w_plupft_indic7,w_regular,ete,2nd,pl,plupft,indic,act
 verbinfl.w_plupft_indic7b,w_pp4,ete,2nd,pl,plupft,indic,act
-verbinfl.w_plupft_indic8,w_regular,esan,3rd,plf,plupft,indic,act
-verbinfl.w_plupft_indic8b,w_pp4,esan,3rd,plf,plupft,indic,act
+verbinfl.w_plupft_indic8,w_regular,esan,3rd,pl,plupft,indic,act
+verbinfl.w_plupft_indic8b,w_pp4,esan,3rd,pl,plupft,indic,act
 
 
 verbinfl.w_plupft_indic9,w_regular,mhn,1st,sg,plupft,indic,mid
