@@ -1,39 +1,23 @@
 RuleUrn,InflectionClasses,Ending,Person,Number,Tense,Mood,Voice
-verbinfl.w_aor2_indic1,w_regular,on,1st,sg,aor2,indic,act
-verbinfl.w_aor2_indic1b,w_pp1,on,1st,sg,aor2,indic,act
-verbinfl.w_aor2_indic2,w_regular,es,2nd,sg,aor2,indic,act
-verbinfl.w_aor2_indic2b,w_pp1,es,2nd,sg,aor2,indic,act
-verbinfl.w_aor2_indic3,w_regular,e,3rd,sg,aor2,indic,act
-verbinfl.w_aor2_indic3b,w_pp1,e,3rd,sg,aor2,indic,
+verbinfl.w_aor2_indic1,aor2,on,1st,sg,aor,indic,act
+verbinfl.w_aor2_indic2,aor2,es,2nd,sg,aor,indic,act
+verbinfl.w_aor2_indic3,aor2,e,3rd,sg,aor,indic,act
 
-verbinfl.w_aor2_indic4,w_regular,eton,2nd,dual,aor2,indic,act
-verbinfl.w_aor2_indic4b,w_pp1,eton,2nd,dual,aor2,indic,act
-verbinfl.w_aor2_indic5,w_regular,ethn,3rd,dual,aor2,indic,act
-verbinfl.w_aor2_indic5b,w_pp1,ethn,3rd,dual,aor2,indic,act
+verbinfl.w_aor2_indic4,aor2,eton,2nd,dual,aor,indic,act
+verbinfl.w_aor2_indic5,aor2,ethn,3rd,dual,aor,indic,act
 
-verbinfl.w_aor2_indic6,w_regular,omen,1st,pl,aor2,indic,act
-verbinfl.w_aor2_indic6b,w_pp1,omen,1st,pl,aor2,indic,act
-verbinfl.w_aor2_indic7,w_regular,ete,2nd,pl,aor2,indic,act
-verbinfl.w_aor2_indic7b,w_pp1,ete,2nd,pl,aor2,indic,act
-verbinfl.w_aor2_indic8,w_regular,on,3rd,pl,aor2,indic,act
-verbinfl.w_aor2_indic8b,w_pp1,on,3rd,pl,aor2,indic,act
+verbinfl.w_aor2_indic6,aor2,omen,1st,pl,aor,indic,act
+verbinfl.w_aor2_indic7,aor2,ete,2nd,pl,aor,indic,act
+verbinfl.w_aor2_indic8,aor2,on,3rd,pl,aor,indic,act
 
-verbinfl.w_aor2_indic9,w_regular,omhn,1st,sg,aor2,indic,mid
-verbinfl.w_aor2_indic9b,w_pp1,omhn,1st,sg,aor2,indic,mid
-verbinfl.w_aor2_indic10,w_regular,ou,2nd,sg,aor2,indic,mid
-verbinfl.w_aor2_indic10b,w_pp1,ou,2nd,sg,aor2,indic,mid
-verbinfl.w_aor2_indic11,w_regular,eto,3rd,sg,aor2,indic,mid
-verbinfl.w_aor2_indic11b,w_pp1,eto,3rd,sg,aor2,indic,mid
+verbinfl.w_aor2_indic9,aor2,omhn,1st,sg,aor,indic,mid
+verbinfl.w_aor2_indic10,aor2,ou,2nd,sg,aor,indic,mid
+verbinfl.w_aor2_indic11,aor2,eto,3rd,sg,aor,indic,mid
 
-verbinfl.w_aor2_indic12,w_regular,esqon,2nd,dual,aor2,indic,mid
-verbinfl.w_aor2_indic12b,w_pp1,esqon,2nd,dual,aor2,indic,mid
-verbinfl.w_aor2_indic13,w_regular,esqhn,3rd,dual,aor2,indic,mid
-verbinfl.w_aor2_indic13b,w_pp1,esqhn,3rd,dual,aor2,indic,mid
+verbinfl.w_aor2_indic12,aor2,esqon,2nd,dual,aor,indic,mid
+verbinfl.w_aor2_indic13,aor2,esqhn,3rd,dual,aor,indic,mid
 
 
-verbinfl.w_aor2_indic14,w_regular,omeqa,1st,pl,aor2,indic,mid
-verbinfl.w_aor2_indic14b,w_pp1,omeqa,1st,pl,aor2,indic,mid
-verbinfl.w_aor2_indic15,w_regular,esqe,2nd,pl,aor2,indic,mid
-verbinfl.w_aor2_indic15b,w_pp1,esqe,2nd,pl,aor2,indic,mid
-verbinfl.w_aor2_indic16,w_regular,onto,3rd,pl,aor2,indic,mid
-verbinfl.w_aor2_indic16b,w_pp1,onto,3rd,pl,aor2,indic,mid
+verbinfl.w_aor2_indic14,aor2,omeqa,1st,pl,aor,indic,mid
+verbinfl.w_aor2_indic15,aor2,esqe,2nd,pl,aor,indic,mid
+verbinfl.w_aor2_indic16,aor2,onto,3rd,pl,aor,indic,mid
