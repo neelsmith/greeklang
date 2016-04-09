@@ -35,8 +35,7 @@ class TestGreekWSynopsisAorist {
 
     "ἐλύθην": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.INDICATIVE, Voice.PASSIVE],
     "λυθείην": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.OPTATIVE, Voice.PASSIVE],
-    //"λυθῶ": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.SUBJUNCTIVE, Voice.PASSIVE],
-
+    "λυθῶ": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.SUBJUNCTIVE, Voice.PASSIVE],
     "λύθητι": [Person.SECOND, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.IMPERATIVE, Voice.PASSIVE],
 
     ]
@@ -93,7 +92,7 @@ class TestGreekWSynopsisAorist {
   @Test
   void testAmbig4() {
     MorphologicalAnalysis morph = mp.parseGreekString(new GreekString("λῦσαι",true))
-    /*
+
     assert morph.analyses.size() == 2
     morph.analyses.each { ma ->
       MorphForm form = ma.getMorphForm()
@@ -115,7 +114,7 @@ System.err.println "For λῦσαι : " + formIdentification.toString()
         throw new Exception("Invalid analysis type for λῦσαι")
         break
       }
-    }*/
+    }
   }
 
 }

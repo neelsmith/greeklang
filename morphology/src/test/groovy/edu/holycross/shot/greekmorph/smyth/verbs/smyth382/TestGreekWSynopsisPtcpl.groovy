@@ -50,7 +50,7 @@ class TestGreekWSynopsisPtcpl{
   void testMP() {
     def expectedMP= [
     "λυόμενος": Tense.PRESENT,
-    //"λελυμένος": Tense.PERFECT,
+    "λελυμένος": Tense.PERFECT,
     ]
     expectedMP.keySet().each { greek ->
       System.err.println "GREEK " + greek

@@ -46,7 +46,7 @@ class TestGreekWSynopsisInfin {
   void testMP() {
     def expectedMP= [
     "λύεσθαι": Tense.PRESENT,
-    //"λελύσθαι": Tense.PERFECT,
+    "λελύσθαι": Tense.PERFECT,
     ]
     expectedMP.keySet().each { greek ->
       System.err.println "GREEK " + greek
