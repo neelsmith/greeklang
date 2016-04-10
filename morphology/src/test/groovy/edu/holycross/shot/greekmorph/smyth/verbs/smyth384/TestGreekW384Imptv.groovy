@@ -29,7 +29,7 @@ class TestGreekW384Imptv {
     "λιπέτων": [Person.THIRD, GrammaticalNumber.DUAL, Tense.AORIST, Mood.IMPERATIVE, Voice.ACTIVE],
 
     "λίπετε": [Person.SECOND, GrammaticalNumber.PLURAL, Tense.AORIST, Mood.IMPERATIVE, Voice.ACTIVE],
-    "λιπόντων": [Person.THIRD, GrammaticalNumber.PLURAL, Tense.AORIST, Mood.IMPERATIVE, Voice.ACTIVE],
+
 
 
 
@@ -39,10 +39,10 @@ class TestGreekW384Imptv {
 
 
     "λίπεσθον": [Person.SECOND, GrammaticalNumber.DUAL, Tense.AORIST, Mood.IMPERATIVE, Voice.MIDDLE],
-  //  "λιπέτων": [Person.THIRD, GrammaticalNumber.DUAL, Tense.AORIST, Mood.IMPERATIVE, Voice.MIDDLE],
+  
 
     "λίπεσθε": [Person.SECOND, GrammaticalNumber.PLURAL, Tense.AORIST, Mood.IMPERATIVE, Voice.MIDDLE],
-  //  "λιπόντων": [Person.THIRD, GrammaticalNumber.PLURAL, Tense.AORIST, Mood.IMPERATIVE, Voice.MIDDLE]
+
 
     ]
     expectedUnique.keySet().each { greek ->
@@ -58,6 +58,33 @@ class TestGreekW384Imptv {
       assert formIdentification.getMood() == expectedAnswer[3]
       assert formIdentification.getVoice() == expectedAnswer[4]
 
+    }
+  }
+
+  @Test
+  void testAmbig1() {
+    MorphologicalAnalysis morph = mp.parseGreekString(new GreekString("λιπόντων",true))
+    assert morph.analyses.size() == 3
+
+    morph.analyses.each { ma ->
+      MorphForm form = ma.getMorphForm()
+      switch (form.getAnalyticalType()) {
+        case AnalyticalType.CVERB:
+        CitableId formIdentification = form.getAnalysis()
+        def expectedAnswer=  [Person.THIRD, GrammaticalNumber.PLURAL, Tense.AORIST,         Mood.IMPERATIVE, Voice.ACTIVE]
+        assert formIdentification.getPerson() == expectedAnswer[0]
+        assert formIdentification.getNum() == expectedAnswer[1]
+        assert formIdentification.getTense() == expectedAnswer[2]
+        assert formIdentification.getMood() == expectedAnswer[3]
+        assert formIdentification.getVoice() == expectedAnswer[4]
+        break
+        case AnalyticalType.PARTICIPLE:
+        // ok: 2 of these tested elsewere
+        break
+        default:
+        throw new Exception("Bad analysis for λιπόντων")
+        break
+      }
     }
   }
 

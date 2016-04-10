@@ -22,11 +22,11 @@ verbinfl.w_pres_imptv14,aor2,e/sqwn,3rd,pl,aor,imptv,mid
 
 
 
-verbinfl.w_pres_imptv15,aor2,ou,2nd,sg,aor,imptv,pass
-verbinfl.w_pres_imptv16,aor2,e/sqw,3rd,sg,aor,imptv,pass
+verbinfl.w_pres_imptv15,w_pp6,ou,2nd,sg,aor,imptv,pass
+verbinfl.w_pres_imptv16,w_pp6,e/sqw,3rd,sg,aor,imptv,pass
 
-verbinfl.w_pres_imptv17,aor2,esqon,2nd,dual,aor,imptv,pass
-verbinfl.w_pres_imptv18,aor2,e/sqwn,3rd,dual,aor,imptv,pass
+verbinfl.w_pres_imptv17,w_pp6,esqon,2nd,dual,aor,imptv,pass
+verbinfl.w_pres_imptv18,w_pp6,e/sqwn,3rd,dual,aor,imptv,pass
 
-verbinfl.w_pres_imptv19,aor2,esq3,2nd,pl,aor,imptv,pass
-verbinfl.w_pres_imptv20,aor2,e/sqwn,3rd,pl,aor,imptv,pass
+verbinfl.w_pres_imptv19,w_pp6,esq3,2nd,pl,aor,imptv,pass
+verbinfl.w_pres_imptv20,w_pp6,e/sqwn,3rd,pl,aor,imptv,pass
