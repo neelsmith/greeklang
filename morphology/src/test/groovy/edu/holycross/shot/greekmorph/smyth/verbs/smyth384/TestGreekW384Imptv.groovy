@@ -39,7 +39,7 @@ class TestGreekW384Imptv {
 
 
     "λίπεσθον": [Person.SECOND, GrammaticalNumber.DUAL, Tense.AORIST, Mood.IMPERATIVE, Voice.MIDDLE],
-  
+
 
     "λίπεσθε": [Person.SECOND, GrammaticalNumber.PLURAL, Tense.AORIST, Mood.IMPERATIVE, Voice.MIDDLE],
 
@@ -87,5 +87,25 @@ class TestGreekW384Imptv {
       }
     }
   }
+
+
+
+  @Test
+  void testAmbig2() {
+    MorphologicalAnalysis morph = mp.parseGreekString(new GreekString("λιπέσθων",true))
+    assert morph.analyses.size() == 2
+    morph.analyses.each { ma ->
+      MorphForm form = ma.getMorphForm()
+      assert form.getAnalyticalType() == AnalyticalType.CVERB
+      CitableId formIdentification = form.getAnalysis()
+      assert formIdentification.getPerson() == Person.THIRD
+      assert [GrammaticalNumber.DUAL, GrammaticalNumber.PLURAL].contains(formIdentification.getNum())
+      assert formIdentification.getTense() == Tense.AORIST
+      assert formIdentification.getMood() == Mood.IMPERATIVE
+      assert formIdentification.getVoice() == Voice.MIDDLE
+    }
+  }
+
+
 
 }
