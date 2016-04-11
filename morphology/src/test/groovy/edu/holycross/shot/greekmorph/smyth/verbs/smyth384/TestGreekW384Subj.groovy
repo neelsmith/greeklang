@@ -23,7 +23,7 @@ class TestGreekW384Subj {
     def expectedUnique = [
     "λίπω": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.SUBJUNCTIVE, Voice.ACTIVE],
     "λίπῃς": [Person.SECOND, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.SUBJUNCTIVE, Voice.ACTIVE],
-    "λίπῃ": [Person.SECOND, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.SUBJUNCTIVE, Voice.ACTIVE],
+  //  "λίπῃ": [Person.SECOND, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.SUBJUNCTIVE, Voice.ACTIVE],
 
 
 
@@ -52,11 +52,13 @@ class TestGreekW384Subj {
     }
   }
 
-/*
+
 
   @Test
-  void testFirstThird() {
-    String greek = "ἔλιπον"
+  void testAmbig() {
+  //  "λίπῃ": [Person.SECOND, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.SUBJUNCTIVE, Voice.ACTIVE],
+
+    String greek = "λίπῃ"
     MorphologicalAnalysis morph = mp.parseGreekString(new GreekString(greek,true))
     assert morph.analyses.size() == 2
     morph.analyses.each { ma ->
@@ -66,31 +68,72 @@ class TestGreekW384Subj {
       CitableId formIdentification = form.getAnalysis()
       assert formIdentification.getTense() == Tense.AORIST
       assert formIdentification.getMood() == Mood.SUBJUNCTIVE
-      assert formIdentification.getVoice() ==  Voice.ACTIVE
+	    assert formIdentification.getNum() == GrammaticalNumber.SINGULAR
 
-      if (formIdentification.getPerson() == Person.FIRST) {
-	assert formIdentification.getNum() == GrammaticalNumber.SINGULAR
+      if (formIdentification.getVoice() ==  Voice.ACTIVE) {
+        assert formIdentification.getPerson() == Person.THIRD
+      } else if (formIdentification.getVoice() ==  Voice.MIDDLE) {
+        assert formIdentification.getPerson() == Person.SECOND
       } else {
-	assert formIdentification.getNum() == GrammaticalNumber.PLURAL
-	assert formIdentification.getPerson() == Person.THIRD
+        throw new Exception ("Bad voice for λίπῃ")
       }
     }
   }
 
 
   @Test
+  void testDualMid() {
+  //  "λίπῃ": [Person.SECOND, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.SUBJUNCTIVE, Voice.ACTIVE],
+
+    String greek = "λίπησθον"
+    MorphologicalAnalysis morph = mp.parseGreekString(new GreekString(greek,true))
+    assert morph.analyses.size() == 2
+    morph.analyses.each { ma ->
+      MorphForm form = ma.getMorphForm()
+      assert form.getAnalyticalType() == AnalyticalType.CVERB
+
+      CitableId formIdentification = form.getAnalysis()
+      assert formIdentification.getTense() == Tense.AORIST
+      assert formIdentification.getMood() == Mood.SUBJUNCTIVE
+	    assert formIdentification.getNum() == GrammaticalNumber.DUAL
+      assert formIdentification.getVoice() ==  Voice.MIDDLE
+      assert [Person.SECOND, Person.THIRD].contains(formIdentification.getPerson())
+    }
+  }
+
+
+  @Test
+  void testDualAct() {
+  //  "λίπῃ": [Person.SECOND, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.SUBJUNCTIVE, Voice.ACTIVE],
+
+    String greek = "λίπητον"
+    MorphologicalAnalysis morph = mp.parseGreekString(new GreekString(greek,true))
+    assert morph.analyses.size() == 2
+    morph.analyses.each { ma ->
+      MorphForm form = ma.getMorphForm()
+      assert form.getAnalyticalType() == AnalyticalType.CVERB
+
+      CitableId formIdentification = form.getAnalysis()
+      assert formIdentification.getTense() == Tense.AORIST
+      assert formIdentification.getMood() == Mood.SUBJUNCTIVE
+      assert formIdentification.getNum() == GrammaticalNumber.DUAL
+      assert formIdentification.getVoice() ==  Voice.ACTIVE
+      assert [Person.SECOND, Person.THIRD].contains(formIdentification.getPerson())
+    }
+  }
+
+  @Test
   void testMiddle() {
     def expected = [
-      "ἐλιπόμην": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.SUBJUNCTIVE, Voice.MIDDLE],
-      "ἐλίπου": [Person.SECOND, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.SUBJUNCTIVE, Voice.MIDDLE],
-      "ἐλίπετο": [Person.THIRD, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.SUBJUNCTIVE,  Voice.MIDDLE],
+      "λίπωμαι": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.SUBJUNCTIVE, Voice.MIDDLE],
 
-      "ἐλίπεσθον": [Person.SECOND, GrammaticalNumber.DUAL, Tense.AORIST, Mood.SUBJUNCTIVE,  Voice.MIDDLE],
-      "ἐλιπέσθην": [Person.THIRD, GrammaticalNumber.DUAL, Tense.AORIST, Mood.SUBJUNCTIVE,  Voice.MIDDLE],
+      "λίπηται": [Person.THIRD, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.SUBJUNCTIVE,  Voice.MIDDLE],
 
-      "ἐλιπόμεθα": [Person.FIRST, GrammaticalNumber.PLURAL, Tense.AORIST, Mood.SUBJUNCTIVE,  Voice.MIDDLE],
-      "ἐλίπεσθε": [Person.SECOND, GrammaticalNumber.PLURAL, Tense.AORIST, Mood.SUBJUNCTIVE, Voice.MIDDLE],
-      "ἐλίποντο" : [Person.THIRD, GrammaticalNumber.PLURAL, Tense.AORIST, Mood.SUBJUNCTIVE, Voice.MIDDLE],
+
+
+      "λιπώμεθα": [Person.FIRST, GrammaticalNumber.PLURAL, Tense.AORIST, Mood.SUBJUNCTIVE,  Voice.MIDDLE],
+      "λίπησθε": [Person.SECOND, GrammaticalNumber.PLURAL, Tense.AORIST, Mood.SUBJUNCTIVE, Voice.MIDDLE],
+      "λίπωνται" : [Person.THIRD, GrammaticalNumber.PLURAL, Tense.AORIST, Mood.SUBJUNCTIVE, Voice.MIDDLE],
     ]
 
     expected.keySet().each { greek ->
@@ -108,6 +151,6 @@ class TestGreekW384Subj {
     }
 
 
-  }*/
+  }
 
 }

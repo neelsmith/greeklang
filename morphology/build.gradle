@@ -124,7 +124,7 @@ String toFstAlphabet(String s) {
   fst = fst.replaceAll("\\(", "<ro>")
   fst = fst.replaceAll("\\)", "<sm>")
   fst = fst.replaceAll("=", "\\\\=")
-  fst = fst.replaceAll("\\|", "\\\\|")
+  fst = fst.replaceAll("\\|", "\\|")
   return fst
 }
 

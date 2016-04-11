@@ -23,13 +23,13 @@ verbinfl.aor2_subj15,aor2,hsqe,2nd,pl,aor,subj,mid
 verbinfl.aor2_subj16,aor2,wntai,3rd,pl,aor,subj,mid
 
 
-verbinfl.aor2_subj17,aor2,wmai,1st,sg,aor,subj,pass
-verbinfl.aor2_subj18,aor2,h|,2nd,sg,aor,subj,pass
-verbinfl.aor2_subj19,aor2,htai,3rd,sg,aor,subj,pass
+verbinfl.aor2_subj17,aor6,wmai,1st,sg,aor,subj,pass
+verbinfl.aor2_subj18,aor6,h|,2nd,sg,aor,subj,pass
+verbinfl.aor2_subj19,aor6,htai,3rd,sg,aor,subj,pass
 
-verbinfl.aor2_subj20,aor2,hsqon,2nd,dual,aor,subj,pass
-verbinfl.aor2_subj21,aor2,hsqon,3rd,dual,aor,subj,pass
+verbinfl.aor2_subj20,aor6,hsqon,2nd,dual,aor,subj,pass
+verbinfl.aor2_subj21,aor6,hsqon,3rd,dual,aor,subj,pass
 
-verbinfl.aor2_subj22,aor2,wmeqa,1st,pl,aor,subj,pass
-verbinfl.aor2_subj23,aor2,hsqe,2nd,pl,aor,subj,pass
-verbinfl.aor2_subj24,aor2,wntai,3rd,pl,aor,subj,pass
+verbinfl.aor2_subj22,aor6,wmeqa,1st,pl,aor,subj,pass
+verbinfl.aor2_subj23,aor6,hsqe,2nd,pl,aor,subj,pass
+verbinfl.aor2_subj24,aor6,wntai,3rd,pl,aor,subj,pass
