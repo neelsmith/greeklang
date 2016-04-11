@@ -7,7 +7,7 @@
 % modifies the stem accordingly.
 %
 
-"<@workdir@acceptors/infinitive/w_2_3_6pp.a>" || "<@workdir@acceptors/infinitive/w_4_5pp.a>"
+"<@workdir@acceptors/infinitive/w_2_3_6pp.a>" || "<@workdir@acceptors/infinitive/w_4_5pp.a>" || "<@workdir@acceptors/infinitive/ew_2_3_6pp.a>"  || "<@workdir@acceptors/infinitive/ew_4_5pp.a>"
 
 
 
