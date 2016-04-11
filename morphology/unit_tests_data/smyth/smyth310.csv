@@ -1,20 +1,20 @@
 Form,AnalysisType,P1,P2,P3,P4,P5
-ποιοῦσα,ptcplural,feminine,nominative,singular,present,active
-ποιούσης,ptcplural,feminine,genitive,singular,present,active
-ποιούσῃ,ptcplural,feminine,dative,singular,present,active
-ποιοῦσαν,ptcplural,feminine,accusative,singular,present,active
-ποιοῦσα,ptcplural,feminine,vocative,singular,present,active
+ποιοῦσα,ptc,plural,feminine,nominative,singular,present,active
+ποιούσης,ptc,plural,feminine,genitive,singular,present,active
+ποιούσῃ,ptc,plural,feminine,dative,singular,present,active
+ποιοῦσαν,ptc,plural,feminine,accusative,singular,present,active
+ποιοῦσα,ptc,plural,feminine,vocative,singular,present,active
 
 
-ποιούσα,ptcplural,feminine,nominative,dual,present,active
-ποιούσαιν,ptcplural,feminine,genitive,dual,present,active
-ποιούσαιν,ptcplural,feminine,dative,dual,present,active
-ποιούσα,ptcplural,feminine,accusative,dual,present,active
-ποιούσα,ptcplural,feminine,vocative,dual,present,active
+ποιούσα,ptc,plural,feminine,nominative,dual,present,active
+ποιούσαιν,ptc,plural,feminine,genitive,dual,present,active
+ποιούσαιν,ptc,plural,feminine,dative,dual,present,active
+ποιούσα,ptc,plural,feminine,accusative,dual,present,active
+ποιούσα,ptc,plural,feminine,vocative,dual,present,active
 
 
-ποιοῦσαι,ptcplural,feminine,nominative,plural,present,active
-ποιουσῶν,ptcplural,feminine,genitive,plural,present,active
-ποιούσαις,ptcplural,feminine,dative,plural,present,active
-ποιούσας,ptcplural,feminine,accusative,plural,present,active
-ποιοῦσαι,ptcplural,feminine,vocative,plural,present,active
+ποιοῦσαι,ptc,plural,feminine,nominative,plural,present,active
+ποιουσῶν,ptc,plural,feminine,genitive,plural,present,active
+ποιούσαις,ptc,plural,feminine,dative,plural,present,active
+ποιούσας,ptc,plural,feminine,accusative,plural,present,active
+ποιοῦσαι,ptc,plural,feminine,vocative,plural,present,active
