@@ -34,7 +34,7 @@ adjinfl.os_h_on23,os_h_on,ain,fem,dat,dual,pos
 adjinfl.os_h_on24,os_h_on,a_,fem,acc,dual,pos
 adjinfl.os_h_on25,os_h_on,a_,fem,voc,dual,pos
 
-djinfl.os_h_on26,os_h_on,ai,fem,nom,pl,pos
+adjinfl.os_h_on26,os_h_on,ai,fem,nom,pl,pos
 adjinfl.os_h_on27,os_h_on,wn,fem,gen,pl,pos
 adjinfl.os_h_on28,os_h_on,ais,fem,dat,pl,pos
 adjinfl.os_h_on29,os_h_on,a_s,fem,acc,pl,pos
@@ -56,7 +56,7 @@ adjinfl.os_h_on38,os_h_on,oin,neut,dat,dual,pos
 adjinfl.os_h_on39,os_h_on,w,neut,acc,dual,pos
 adjinfl.os_h_on40,os_h_on,w,neut,voc,dual,pos
 
-djinfl.os_h_on41,os_h_on,a,neut,nom,pl,pos
+adjinfl.os_h_on41,os_h_on,a,neut,nom,pl,pos
 adjinfl.os_h_on42,os_h_on,wn,neut,gen,pl,pos
 adjinfl.os_h_on43,os_h_on,ois,neut,dat,pl,pos
 adjinfl.os_h_on44,os_h_on,a,neut,acc,pl,pos
