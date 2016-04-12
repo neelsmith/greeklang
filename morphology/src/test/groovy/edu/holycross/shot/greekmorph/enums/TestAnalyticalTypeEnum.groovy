@@ -34,4 +34,14 @@ class TestAnalyticalTypeEnum {
     System.err.println analysisPattern
   }
 
+
+
+
+
+    @Test
+    void testStrConversion () {
+      assert AnalyticalType.CVERB == AnalyticalType.getByLabel("conjugated verb")
+
+    }
+
 }
