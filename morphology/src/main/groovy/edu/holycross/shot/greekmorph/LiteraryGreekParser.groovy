@@ -64,18 +64,8 @@ class LiteraryGreekParser implements GreekParser {
     GreekWord retrievedForm = new GreekWord(analysisInfo.getSurfaceStem() + analysisInfo.getSurfaceInflection())
 
     String inflectionTag = analysisInfo.getInflectionTag()
-
-    // see if retrieved from is pre-accented.
-    //inflectionTag
-    /*
-    if (isPreAccented(inflectionTag)) {
-      System.err.println "${inflectionTag} class is already accented!"
-      accented = retrievedForm
-    } else {
-    */
-      GreekString fstSurfaceString = new GreekString(analysisInfo.surfaceInflection)
-      accented = LiteraryGreekNounAccent.getAccentedNounForm(fstSurfaceString, analysisInfo)
-      //}
+    GreekString fstSurfaceString = new GreekString(analysisInfo.surfaceInflection)
+    accented = LiteraryGreekNounAccent.getAccentedNounForm(fstSurfaceString, analysisInfo)
 
 
     if (debug > 0 ) {
@@ -98,7 +88,8 @@ class LiteraryGreekParser implements GreekParser {
 
     // see if retrieved from is pre-accented.
     //inflectionTag
-    if (isPreAccented(inflectionTag)) {
+    // if (isPreAccented(inflectionTag)) {
+    if (Accent.hasAccent(retrievedForm)) {
       System.err.println "${inflectionTag} class is already accented!"
       accented = retrievedForm
     } else {
@@ -131,7 +122,7 @@ class LiteraryGreekParser implements GreekParser {
     if (debug > 1) { System.err.println "ADJ: ${retrievedForm} with infl tag ${inflectionTag}"}
     // see if retrieved from is pre-accented.
     //inflectionTag
-    if (isPreAccented(inflectionTag)) {
+    if (Accent.hasAccent(retrievedForm)) {
       System.err.println "${inflectionTag} class is already accented!"
       accented = retrievedForm
     } else {

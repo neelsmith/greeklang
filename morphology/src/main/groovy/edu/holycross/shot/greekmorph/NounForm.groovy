@@ -65,4 +65,7 @@ class NounForm implements CitableId {
     return labels.join(" ")
   }
 
+  boolean equals(NounForm form2) {
+    return ((this.gender == form2.gender ) && (this.num == form2.num) && (this.cas == form2.cas)  )
+  }
 }

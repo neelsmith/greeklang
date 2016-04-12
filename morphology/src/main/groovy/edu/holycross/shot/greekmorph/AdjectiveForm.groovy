@@ -42,6 +42,17 @@ class AdjectiveForm implements CitableId {
     persistentAccent = a
   }
 
+
+//  [masculine, nominative, singular, positive, inflacc]
+  AdjectiveForm(def parts ) {
+    System.err.println "Construct AdjectiveForm with " + parts
+    gender = Gender.getByLabel(parts[0])
+    cas = GrammaticalCase.getByLabel(parts[1])
+    num = GrammaticalNumber.getByLabel(parts[2])
+    degree = Degree.getByLabel(parts[3])
+    persistentAccent = PersistentAccent.getByToken("<" + parts[4] + ">")
+  }
+
   /** Gets a CITE URN corresponding to this identification.
   * @returns CiteUrn for this identification.
   */
@@ -57,5 +68,7 @@ class AdjectiveForm implements CitableId {
     def labels = [gender.getLabel(), cas.getLabel(), num.getLabel(), degree.getLabel()]
     return labels.join(" ")
   }
-
+  boolean equals(AdjectiveForm form2) {
+    return ((this.gender == form2.gender ) && (this.num == form2.num) && (this.cas == form2.cas) && (this.degree == form2.degree) )
+  }
 }
