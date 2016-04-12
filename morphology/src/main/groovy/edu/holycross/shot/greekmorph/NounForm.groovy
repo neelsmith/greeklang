@@ -38,6 +38,17 @@ class NounForm implements CitableId {
 
   }
 
+
+
+  NounForm(def parts) {
+    System.err.println "Construct NounForm with " + parts
+    gender = Gender.getByLabel(parts[0])
+    cas = GrammaticalCase.getByLabel(parts[1])
+    num = GrammaticalNumber.getByLabel(parts[2])
+    persistentAccent = PersistentAccent.getByToken("<" + parts[3] + ">")
+
+  }
+
   /** Gets a CITE URN corresponding to this identification.
   * @returns CiteUrn for this identification.
   */

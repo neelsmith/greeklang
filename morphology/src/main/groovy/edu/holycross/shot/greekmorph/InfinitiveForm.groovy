@@ -31,6 +31,12 @@ class InfinitiveForm implements CitableId {
     voice = v
   }
 
+
+  InfinitiveForm(def pair) {
+    tense = Tense.getByLabel(pair[0])
+    voice = Voice.getByLabel(pair[1])
+  }
+
   /** Gets a CITE URN corresponding to this identification.
   * @returns CiteUrn for this identification.
   */
@@ -47,4 +53,8 @@ class InfinitiveForm implements CitableId {
     return labels.join(" ")
   }
 
+
+  boolean equals(InfinitiveForm form2) {
+    return ((this.tense == form2.tense ) && (this.voice == form2.voice))
+  }
 }

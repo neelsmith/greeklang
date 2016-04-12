@@ -55,4 +55,8 @@ public enum Gender {
   public String getLabel() {
     return label
   }
+
+  static getByLabel(String labelStr) {
+    values().find { it.label == labelStr }
+  }
 }

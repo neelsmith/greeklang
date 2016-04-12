@@ -31,7 +31,13 @@ class VerbalAdjectiveForm implements CitableId {
     gender = g
     cas = c
     num = n
+  }
 
+
+  VerbalAdjectiveForm(def parts) {
+    gender = Gender.getByLabel(parts[0])
+    cas = GrammaticalCase.getByLabel(parts[1])
+    num = GrammaticalNumber.getByLabel(parts[2])
   }
 
   /** Gets a CITE URN corresponding to this identification.
@@ -50,4 +56,7 @@ class VerbalAdjectiveForm implements CitableId {
     return labels.join(" ")
   }
 
+  boolean equals(VerbalAdjectiveForm form2) {
+    return ((this.gender == form2.gender ) && (this.cas == form2.cas) && (this.num == form2.num))
+  }
 }

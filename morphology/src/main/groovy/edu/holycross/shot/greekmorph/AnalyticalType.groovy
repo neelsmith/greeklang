@@ -55,6 +55,15 @@ public enum AnalyticalType {
     return codeMap[fstToken]
   }
 
+
+
+
+  static getByLabel(String labelStr) {
+    values().find { it.label == labelStr }
+
+  }
+
+
   /** Gets the symbol for this value used in FST string. */
   public String getToken() {
     return fstToken

@@ -8,11 +8,11 @@ package edu.holycross.shot.greekmorph
 public enum Person {
 
   /** First person */
-  FIRST("first person", "<1st>"),
+  FIRST("first", "<1st>"),
   /** Second person */
-  SECOND("second person", "<2nd>"),
+  SECOND("second", "<2nd>"),
   /** Third person */
-  THIRD("third person", "<3rd>")
+  THIRD("third", "<3rd>")
 
   private String fstToken
   private String label
@@ -48,5 +48,9 @@ public enum Person {
   /** Gets a human-readable label for this value. */
   public String getLabel() {
     return label
+  }
+
+  static getByLabel(String labelStr) {
+    values().find { it.label == labelStr }
   }
 }

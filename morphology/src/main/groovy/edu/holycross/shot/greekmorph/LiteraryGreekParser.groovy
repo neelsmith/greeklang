@@ -15,7 +15,7 @@ import edu.harvard.chs.cite.CtsUrn
 */
 class LiteraryGreekParser implements GreekParser {
 
-  Integer debug  = 10
+  Integer debug  = 0
 
   /** Implementation of accent-free Greek morphology
   * in a finite state transducer. */
@@ -24,6 +24,8 @@ class LiteraryGreekParser implements GreekParser {
   /** Manager for expanding collection IDs to full CITE URNs. */
   UrnManager urnManager
 
+
+  
   /** Constructor with location of sfst binary and
   * a system for expanding abbreviated URN references.
   * @param fstBinary Full path to binary sfst (.a) file.
@@ -34,31 +36,19 @@ class LiteraryGreekParser implements GreekParser {
     fstParser = new FstParser(fstBinary)
     urnManager = umgr
   }
-
-
-  String projectVowelQuantity(String surfaceReply, String underlyingForm) {
-
+  
+  LiteraryGreekParser(String fstBinary, UrnManager umgr, Integer debugLevel) {
+    debug = debugLevel
+    fstParser = new FstParser(fstBinary)
+    urnManager = umgr
   }
+
 
   String fstStringToGreekString(String s) {
     String greek = s.replaceFirst("<sm>", "\\)").replaceFirst("<ro>","\\(").replaceFirst("<#>","")
-    System.err.println "COnverted " + s + " to " + greek
+    if (debug > 1) { System.err.println "COnverted " + s + " to " + greek}
     return greek
   }
-
-  // is this the best way to determine this?
-  /*  boolean isPreAccented(String inflectionClass) {
-    switch (inflectionClass) {
-      case "irregacc":
-      case "eus_ews":
-      return true
-      break
-      default:
-      return false
-      break
-    }
-    }*/
-
 
   /** Determines if form retrieved from FST parser should be considered a
    * match for GreekString gs.
@@ -234,7 +224,7 @@ class LiteraryGreekParser implements GreekParser {
 
     default:
     if (Accent.hasAccent(retrievedForm)) {
-      return retrievedForm
+      return retrievedForm.toString().replaceAll("[_^]","") == gs.toString()
     } else {
       GreekWord accentedForm = Accent.addRecessiveAccent(retrievedForm)
       String accentedStr = accentedForm.toString().replaceAll("[_^]","")
@@ -261,8 +251,7 @@ class LiteraryGreekParser implements GreekParser {
     MorphForm form = triple.getMorphForm()
 
     switch (form.getAnalyticalType()) {
-
-      // Have to check morphological data when dealing with persistent accent:
+      
     case AnalyticalType.NOUN:
     return checkNounAccent(utf8String, analysisInfo)
     break
@@ -271,11 +260,9 @@ class LiteraryGreekParser implements GreekParser {
     return checkPronounAccent(utf8String, analysisInfo)
     break
 
-
     case AnalyticalType.ADJECTIVE:
     return checkAdjAccent(utf8String, analysisInfo)
     break
-
 
     case AnalyticalType.ADVERB:
     return checkAdvAccent(utf8String, analysisInfo)
@@ -286,7 +273,6 @@ class LiteraryGreekParser implements GreekParser {
     break
 
     case AnalyticalType.INFINITIVE:
-    //GreekWord retrievedForm = Accent.addRecessiveAccent(new GreekWord(parserOutputString))
     return checkInfinitiveAccent(utf8String, parserOutputString, analysisInfo)
     break
 
@@ -311,7 +297,7 @@ class LiteraryGreekParser implements GreekParser {
       }
     }
 
-    System.err.println "Verb: compare  " + retrievedForm + " with submitted " + utf8String
+    if (debug > 0) { System.err.println "Verb: compare  " + retrievedForm + " with submitted " + utf8String}
     return retrievedForm.toString().replaceAll("[_^]","")  == utf8String.toString()
     break
 
@@ -347,15 +333,15 @@ class LiteraryGreekParser implements GreekParser {
         if (debug > 0) {System.err.println "parse with FAP: " + fap}
 	String underlying = fap.surfaceStem + fap.surfaceInflection
 	
-	System.err.println "And use compareison string " + parsedString
+	if (debug > 0) { System.err.println "And use compareison string " + parsedString} 
 	String convert1 = fstStringToGreekString(parsedString)
 
 	
 	ListDiff ldiff = new ListDiff (underlying, convert1)
 	String scs = ldiff.scs.join("")
-	System.err.println "Merge: " + underlying + " and " + convert1 + " -> " + scs
+	if (debug > 0) { System.err.println "Merge: " + underlying + " and " + convert1 + " -> " + scs}
 	String greekStyle  = fstStringToGreekString(scs)
-	System.err.println "Use converted string value " + greekStyle
+	if (debug > 0) {System.err.println "Use converted string value " + greekStyle}
         if (checkAccent(greekStyle,gkStr,fap)) {
           analysisList.add(fap.getTriple())
         } else {

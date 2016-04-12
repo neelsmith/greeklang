@@ -13,7 +13,7 @@ import edu.harvard.chs.cite.CiteUrn
 */
 class FstAnalysisParser {
 
-  Integer debug = 10
+  Integer debug = 0
 
   /** UrnManager expands collection abbreviations to full CITE URNs. */
   UrnManager urnMgr
@@ -192,10 +192,10 @@ class FstAnalysisParser {
   */
   MorphForm computeMorphForm() {
     MorphForm mf  = null
-    System.err.println "Analysis patterns: " + analysisPattern
+    if (debug > 0)  { System.err.println "Analysis patterns: " + analysisPattern}
     switch (analysisPattern) {
       case AnalyticalType.CVERB:
-      System.err.println "HERE ARE ALL INFL TAGS FOR A CVERB: " + inflTags
+      //System.err.println "HERE ARE ALL INFL TAGS FOR A CVERB: " + inflTags
 //<w_regular>, <verb>, <3rd>, <pl>, <pres>, <indic>, <act>
       Person person = Person.getByToken(inflTags[2])
       GrammaticalNumber num = GrammaticalNumber.getByToken(inflTags[3])
@@ -233,7 +233,7 @@ class FstAnalysisParser {
       break
 
       case AnalyticalType.INDECLINABLE:
-      System.err.println "HERE ARE ALL INFL TAGS FOR AN INDECLINABLE: " + inflTags
+      //System.err.println "HERE ARE ALL INFL TAGS FOR AN INDECLINABLE: " + inflTags
 
       Integer lastTag = stemTags.size() - 1
       PersistentAccent accent = PersistentAccent.getByToken(stemTags[lastTag])
@@ -259,7 +259,7 @@ class FstAnalysisParser {
 
 
       case AnalyticalType.PARTICIPLE:
-        System.err.println "HERE ARE ALL INFL TAGS FOR AN PTCPL: " + inflTags
+      //System.err.println "HERE ARE ALL INFL TAGS FOR AN PTCPL: " + inflTags
         //[<w_regular>, <ptcpl>, <masc>, <nom>, <sg>, <pres>, <act>,
         Gender gender = Gender.getByToken(inflTags[2])
         GrammaticalCase cas = GrammaticalCase.getByToken(inflTags[3])
@@ -270,7 +270,7 @@ class FstAnalysisParser {
         break
 
       case AnalyticalType.VERBAL_ADJECTIVE:
-      System.err.println "HERE ARE ALL INFL TAGS FOR AN VADJ: " + inflTags
+      //System.err.println "HERE ARE ALL INFL TAGS FOR AN VADJ: " + inflTags
       Gender gender = Gender.getByToken(inflTags[2])
       GrammaticalCase cas = GrammaticalCase.getByToken(inflTags[3])
       GrammaticalNumber num = GrammaticalNumber.getByToken(inflTags[4])
@@ -279,7 +279,7 @@ class FstAnalysisParser {
 
       case AnalyticalType.ADVERB:
       //<os_h_on>, <adv>, <pos>
-      System.err.println "HERE ARE ALL INFL TAGS FOR AN ADV: " + inflTags
+      //System.err.println "HERE ARE ALL INFL TAGS FOR AN ADV: " + inflTags
       Integer lastTag = stemTags.size() - 1
       PersistentAccent accent = PersistentAccent.getByToken(stemTags[lastTag])
 
@@ -292,7 +292,7 @@ class FstAnalysisParser {
     Integer lastTag = stemTags.size() - 1
     PersistentAccent accent = PersistentAccent.getByToken(stemTags[lastTag])
     
-    System.err.println "HERE ARE ALL INFL TAGS FOR A PRON: " + inflTags
+    //System.err.println "HERE ARE ALL INFL TAGS FOR A PRON: " + inflTags
 
     Gender gender = Gender.getByToken(inflTags[2])
     GrammaticalCase cas = GrammaticalCase.getByToken(inflTags[3])

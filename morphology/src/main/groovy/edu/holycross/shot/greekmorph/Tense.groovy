@@ -56,4 +56,8 @@ public enum Tense {
   public String getLabel() {
     return label
   }
+
+  static getByLabel(String labelStr) {
+    values().find { it.label == labelStr }
+  }
 }

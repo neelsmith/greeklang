@@ -43,6 +43,16 @@ class VerbForm implements CitableId {
     voice = v
   }
 
+
+
+  VerbForm(def partsList) {
+    System.err.println "VerbForm: construct with " + partsList
+    person = Person.getByLabel(partsList[0])
+    num = GrammaticalNumber.getByLabel(partsList[1])
+    tense = Tense.getByLabel(partsList[2])
+    mood = Mood.getByLabel(partsList[3])
+    voice = Voice.getByLabel(partsList[4])
+  }
   /** Gets a CITE URN corresponding to this identification.
   * @returns CiteUrn for this identification.
   */
@@ -58,5 +68,12 @@ class VerbForm implements CitableId {
     def labels = [person.getLabel(), num.getLabel(), tense.getLabel(), mood.getLabel(), voice.getLabel()]
     return labels.join(" ")
   }
+
+
+  boolean equals(VerbForm form2) {
+    return ((this.person == form2.person ) && (this.num == form2.num) && (this.tense == form2.tense) && (this.mood == form2.mood) && (this.voice == form2.voice) )
+  }
+
+
 
 }

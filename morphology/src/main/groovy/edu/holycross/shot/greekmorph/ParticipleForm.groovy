@@ -42,6 +42,24 @@ class ParticipleForm implements CitableId {
     num = n
   }
 
+
+
+  ParticipleForm(def  partsList) {
+    if (partsList.size() != 5) {
+      System.err.println "ParticipleForm: cannot construct from list of size ${partsList.size()}"
+      System.err.println "List was: " + partsList
+      throw new Exception("ParticipleForm: cannot construct from list of size ${partsList.size()}")
+
+    }
+    System.err.println "PF: List was: " + partsList
+
+    tense = Tense.getByLabel(partsList[0])
+    voice = Voice.getByLabel(partsList[1])
+    gender = Gender.getByLabel(partsList[2])
+    cas = GrammaticalCase.getByLabel(partsList[3])
+    num = GrammaticalNumber.getByLabel(partsList[4])
+  }
+
   /** Gets a CITE URN corresponding to this identification.
   * @returns CiteUrn for this identification.
   */
@@ -56,6 +74,10 @@ class ParticipleForm implements CitableId {
   String toString() {
     def labels = [tense.getLabel(), voice.getLabel(), gender.getLabel(), cas.getLabel(), num.getLabel()]
     return labels.join(" ")
+  }
+
+  boolean equals(ParticipleForm form2) {
+    return ((this.tense == form2.tense ) && (this.voice == form2.voice) && (this.gender == form2.gender) && (this.cas == form2.cas) && (this.num == form2.num) )
   }
 
 }
