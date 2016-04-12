@@ -13,7 +13,7 @@ class TestGreekW383All {
   File urnReg = new File("sampledata/smyth/urnregistry/collectionregistry.csv")
   UrnManager umgr = new UrnManager(urnReg)
   // The parser:
-  LiteraryGreekParser mp = new LiteraryGreekParser(fstBinary, umgr)
+  LiteraryGreekParser mp = new LiteraryGreekParser(fstBinary, umgr, 8)
   TableTester tester = new TableTester(mp)
 
   @Test
