@@ -124,7 +124,7 @@ String toFstAlphabet(String s) {
   fst = fst.replaceAll("\\(", "<ro>")
   fst = fst.replaceAll("\\)", "<sm>")
   fst = fst.replaceAll("=", "\\\\=")
-  fst = fst.replaceAll("\\|", "\\|")
+  fst = fst.replaceAll("\\|", "<isub>")
   return fst
 }
 
@@ -542,19 +542,12 @@ String adjInflFstForCols(ArrayList cols) {
 
   String ruleUrn = cols[0].replaceAll(/_/,"\\\\_")
   ruleUrn = ruleUrn.replaceAll("\\.","\\\\.")
-  String inflClass = cols[1] //.replaceAll(/_/,"\\_")
-
-  String inflString = cols[2]
+  String inflClass = cols[1] 
+  String inflString = toFstAlphabet(cols[2])
   String grammGender = cols[3]
   String grammCase = cols[4]
   String grammNumber = cols[5]
   String degree = cols[6]
-
-  inflString = inflString.replaceAll("_", "<lo>")
-  inflString = inflString.replaceAll("\\(", "<ro>")
-  inflString = inflString.replaceAll("\\)", "<sm>")
-  inflString = inflString.replaceAll("\\|", "\\\\|")
-
 
   fst.append(" <${inflClass}><adj>${inflString}<${grammGender}><${grammCase}><${grammNumber}><${degree}><u>${ruleUrn}</u>")
   return fst.toString()
@@ -790,7 +783,7 @@ String ptcplInflFstForCols(ArrayList cols) {
   if (cols.size() < 8) {
     return ""
   }
-  String inflClass = cols[1] //.replaceAll(/_/,"\\_")
+  String inflClass = cols[1] 
   String inflString = toFstAlphabet(cols[2])
   String gender = cols[3]
   String grammCase = cols[4]
@@ -798,17 +791,12 @@ String ptcplInflFstForCols(ArrayList cols) {
   String tense = cols[6]
   String voice = cols[7]
 
-  /*  inflString = inflString.replaceAll("_", "<lo>")
-  inflString = inflString.replaceAll("\\(", "<ro>")
-  inflString = inflString.replaceAll("\\)", "<sm>")
-  inflString = inflString.replaceAll("\\|", "\\\\|")
-  */
   fst.append(" <${inflClass}><ptcpl>${inflString}<${gender}><${grammCase}><${grammNumber}><${tense}><${voice}><u>${ruleUrn}</u>")
 
   return fst.toString()
 }
 
-task buildPtcplInflection() {
+task buildPtcplInflection(dependsOn: setUpInflDir) {
     description = "Builds rules for participles in ptcplinfl.fst from tabular source"
 }
 buildPtcplInflection.doLast {
@@ -923,6 +911,8 @@ String verbInflFstForCols(ArrayList cols) {
     return ""
   }
   String inflClass = cols[1] //.replaceAll(/_/,"\\_")
+
+  
   String inflString = toFstAlphabet(cols[2])
 
   String pers = cols[3]
