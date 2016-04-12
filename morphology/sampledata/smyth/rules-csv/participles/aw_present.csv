@@ -2,13 +2,13 @@ RuleUrn,InflectionClass,Ending,Gender,Case,Number,Tense,Voice
 verbinfl.aw_pres_ptcp1m,aw_contract,w=n,masc,nom,sg,pres,act
 verbinfl.aw_pres_ptcp2m,aw_contract,w=ntos,masc,gen,sg,pres,act
 verbinfl.aw_pres_ptcp3m,aw_contract,w=nti,masc,dat,sg,pres,act
-verbinfl.aw_pres_ptcp4m,aw_contract,w=nt,masc,acc,sg,pres,act
+verbinfl.aw_pres_ptcp4m,aw_contract,w=nta,masc,acc,sg,pres,act
 verbinfl.aw_pres_ptcp5m,aw_contract,w=n,masc,voc,sg,pres,act
 
 verbinfl.aw_pres_ptcp6m,aw_contract,w=nte,masc,nom,dual,pres,act
 verbinfl.aw_pres_ptcp7m,aw_contract,w/ntoin,masc,gen,dual,pres,act
 verbinfl.aw_pres_ptcp8m,aw_contract,w/ntoin,masc,dat,dual,pres,act
-verbinfl.aw_pres_ptcp9m,aw_contract,w/ntoin,masc,acc,dual,pres,act
+verbinfl.aw_pres_ptcp9m,aw_contract,w=nte,masc,acc,dual,pres,act
 verbinfl.aw_pres_ptcp10m,aw_contract,w=nte,masc,voc,dual,pres,act
 
 verbinfl.aw_pres_ptcp11m,aw_contract,w=ntes,masc,nom,pl,pres,act
@@ -29,7 +29,7 @@ verbinfl.aw_pres_ptcp5f,aw_contract,w=sa^,fem,voc,sg,pres,act
 verbinfl.aw_pres_ptcp6f,aw_contract,w/sa_,fem,nom,dual,pres,act
 verbinfl.aw_pres_ptcp7f,aw_contract,w/sain,fem,gen,dual,pres,act
 verbinfl.aw_pres_ptcp8f,aw_contract,w/sain,fem,dat,dual,pres,act
-verbinfl.aw_pres_ptcp9f,aw_contract,w/sain,fem,acc,dual,pres,act
+verbinfl.aw_pres_ptcp9f,aw_contract,w/sa_,fem,acc,dual,pres,act
 verbinfl.aw_pres_ptcp10f,aw_contract,w/sa_,fem,voc,dual,pres,act
 
 verbinfl.aw_pres_ptcp11f,aw_contract,w=sai,fem,nom,pl,pres,act
@@ -49,7 +49,7 @@ verbinfl.aw_pres_ptcp5n,aw_contract,w=n,neut,voc,sg,pres,act
 verbinfl.aw_pres_ptcp6n,aw_contract,w=nte,neut,nom,dual,pres,act
 verbinfl.aw_pres_ptcp7n,aw_contract,w/ntoin,neut,gen,dual,pres,act
 verbinfl.aw_pres_ptcp8n,aw_contract,w/ntoin,neut,dat,dual,pres,act
-verbinfl.aw_pres_ptcp9n,aw_contract,w/ntoin,neut,acc,dual,pres,act
+verbinfl.aw_pres_ptcp9n,aw_contract,w=nte,neut,acc,dual,pres,act
 verbinfl.aw_pres_ptcp10n,aw_contract,w=nte,neut,voc,dual,pres,act
 
 verbinfl.aw_pres_ptcp11n,aw_contract,w=nta,neut,nom,pl,pres,act

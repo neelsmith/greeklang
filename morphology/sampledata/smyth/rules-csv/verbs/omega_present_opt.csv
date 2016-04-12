@@ -15,7 +15,7 @@ verbinfl.w_pres_opt6,w_regular,oimen,1st,pl,pres,opt,act
 verbinfl.w_pres_opt6b,w_pp1,oimen,1st,pl,pres,opt,act
 verbinfl.w_pres_opt7,w_regular,oite,2nd,pl,pres,opt,act
 verbinfl.w_pres_opt7b,w_pp1,oite,2nd,pl,pres,opt,act
-verbinfl.w_pres_opt8,w_regular,wsi,3rd,pl,pres,opt,act
+verbinfl.w_pres_opt8,w_regular,oien,3rd,pl,pres,opt,act
 verbinfl.w_pres_opt8b,w_pp1,oien,3rd,pl,pres,opt,act
 verbinfl.w_pres_opt8n,oien,wsin,3rd,pl,pres,opt,act
 

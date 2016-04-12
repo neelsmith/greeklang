@@ -8,7 +8,7 @@ verbinfl.ew_pres_ptcp5m,ew_contract,w=n,masc,voc,sg,pres,act
 verbinfl.ew_pres_ptcp6m,ew_contract,ou=nte,masc,nom,dual,pres,act
 verbinfl.ew_pres_ptcp7m,ew_contract,ou/ntoin,masc,gen,dual,pres,act
 verbinfl.ew_pres_ptcp8m,ew_contract,ou/ntoin,masc,dat,dual,pres,act
-verbinfl.ew_pres_ptcp9m,ew_contract,ou/ntoin,masc,acc,dual,pres,act
+verbinfl.ew_pres_ptcp9m,ew_contract,ou=nte,masc,acc,dual,pres,act
 verbinfl.ew_pres_ptcp10m,ew_contract,ou=nte,masc,voc,dual,pres,act
 
 verbinfl.ew_pres_ptcp11m,ew_contract,ou=ntes,masc,nom,pl,pres,act
@@ -17,7 +17,6 @@ verbinfl.ew_pres_ptcp13m,ew_contract,ou=si,masc,dat,pl,pres,act
 verbinfl.ew_pres_ptcp13mn,ew_contract,ou=sin,masc,dat,pl,pres,act
 verbinfl.ew_pres_ptcp14m,ew_contract,ou=ntas,masc,acc,pl,pres,act
 verbinfl.ew_pres_ptcp15m,ew_contract,ou=ntes,masc,voc,pl,pres,act
-
 
 
 verbinfl.ew_pres_ptcp1f,ew_contract,ou=sa^,fem,nom,sg,pres,act
@@ -49,7 +48,7 @@ verbinfl.ew_pres_ptcp5n,ew_contract,ou=n,neut,voc,sg,pres,act
 verbinfl.ew_pres_ptcp6n,ew_contract,ou=nte,neut,nom,dual,pres,act
 verbinfl.ew_pres_ptcp7n,ew_contract,ou/ntoin,neut,gen,dual,pres,act
 verbinfl.ew_pres_ptcp8n,ew_contract,ou/ntoin,neut,dat,dual,pres,act
-verbinfl.ew_pres_ptcp9n,ew_contract,ou/ntoin,neut,acc,dual,pres,act
+verbinfl.ew_pres_ptcp9n,ew_contract,ou=nte,neut,acc,dual,pres,act
 verbinfl.ew_pres_ptcp10n,ew_contract,ou=nte,neut,voc,dual,pres,act
 
 verbinfl.ew_pres_ptcp11n,ew_contract,ou=nta,neut,nom,pl,pres,act
