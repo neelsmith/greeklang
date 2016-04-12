@@ -1,6 +1,11 @@
-NOUNS
+---
+title: "Smyth: substantives"
+layout: page
+---
 
-- ¶216: First-declension feminines
+## Nouns
+
+- [¶216](s216): First-declension feminines ([90 forms](s216))
 - ¶222: First-declension masculines
 - ¶227: First-declension  contracts
 - ¶231: Second-declensionnouns
@@ -16,7 +21,8 @@ NOUNS
 - ¶275: Third-declension, stems in  eu, au,  ou
 
 
-ADJECTIVES
+## Adjectives
+
 - ¶287: Three-ending adjectives
 - ¶289: Two-ending adjectives
 - ¶290: Contract adjectives

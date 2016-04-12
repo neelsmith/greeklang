@@ -10,6 +10,14 @@ The Kanōnes distribution includes a set of morphological stems and a set of inf
 
 The links lead to more details about the testing of individual synopses and paradigms.
 
+
+## Total forms tested from Smyth paradigms
+
+
+| Currently tested | Correctly analyzed | Per cent |
+|:-------------|:--------------------------|:---------|
+| 328         | 328                        | 100%     |
+
 ## Paradigms and synopses of -ω verbs
 
 - [¶382](s382): synopsis of λύω ([67 forms](s382))
@@ -34,13 +42,22 @@ The links lead to more details about the testing of individual synopses and para
 - ¶307: present active of τίθημι, δίδωμι
 - ¶308: present active of δείκνυμι, second aorist active of φύω
 - ¶309: perfect active of λύω, οἶδα
-- ¶310: present active of τιμάω, ποιέω
+- ¶310: present active of τιμάω, ποιέω 
 
 
+## Nouns
 
-### Total forms tested from Smyth paradigms
-
-
-| Currently tested | Correctly analyzed | Per cent |
-|:-------------|:--------------------------|:---------|
-| 238         | 238                        | 100%     |
+- [¶216](s216): First-declension feminines ([90 forms](s216))
+- ¶222: First-declension masculines
+- ¶227: First-declension  contracts
+- ¶231: Second-declensionnouns
+- ¶235: Second-declension contracts
+- ¶238: Attic declension
+- ¶254: Third-declension, stems in labial or palatal
+- ¶257: Third-declension, stems in  a  dental
+- ¶258: Third-declension, neuters with stems in t/at
+- ¶259: Third-declension, stems in liquid or nasal
+- ¶262: Third-declension, stems in er/r
+- ¶264: Third-declension, stems in sigma
+- ¶268: Third-declension, stems in i and u
+- ¶275: Third-declension, stems in  eu, au,  ou
