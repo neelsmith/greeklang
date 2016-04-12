@@ -45,7 +45,7 @@ class LiteraryGreekParser implements GreekParser {
 
 
   String fstStringToGreekString(String s) {
-    String greek = s.replaceFirst("<sm>", "\\)").replaceFirst("<ro>","\\(").replaceFirst("<#>","")
+    String greek = s.replaceFirst("<sm>", "\\)").replaceFirst("<ro>","\\(").replaceFirst("<#>","").replaceFirst("<isub>","\\|")
     if (debug > 1) { System.err.println "COnverted " + s + " to " + greek}
     return greek
   }
@@ -320,6 +320,7 @@ class LiteraryGreekParser implements GreekParser {
         // omit
 
       } else {
+	if (debug > 0) {System.err.println "Submit to FAP: ${l}"}
         FstAnalysisParser fap = new FstAnalysisParser(l, urnManager)
         if (debug > 0) {System.err.println "parse with FAP: " + fap}
 	String underlying = fap.surfaceStem + fap.surfaceInflection

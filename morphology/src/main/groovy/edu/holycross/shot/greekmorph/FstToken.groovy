@@ -42,6 +42,7 @@ class FstToken {
     convertedStr = convertedStr.replaceAll(/\^/, "<sh>")
     convertedStr = convertedStr.replaceAll("_", "<lo>")
     convertedStr = convertedStr.replaceAll(/\(/, "<ro>")
+    convertedStr = convertedStr.replaceAll(/\|/, "<isub>")
     fstStr = convertedStr.replaceAll(/\)/, "<sm>")
   }
 

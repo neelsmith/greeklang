@@ -13,7 +13,7 @@ import edu.harvard.chs.cite.CiteUrn
 */
 class FstAnalysisParser {
 
-  Integer debug = 0
+  Integer debug = 10
 
   /** UrnManager expands collection abbreviations to full CITE URNs. */
   UrnManager urnMgr
@@ -71,8 +71,21 @@ class FstAnalysisParser {
 
 
   /** Multicharacter symbols that can appear in stem strings.  */
-  static ArrayList editorialTags = ["<#>", "<lo>", "<sh>", "<ro>", "<sm>"]
+  static ArrayList editorialTags = ["<#>", "<lo>", "<sh>", "<ro>", "<sm>", "<isub>"]
 
+
+
+  /** Collects the surface representation of the inflection string,
+  * given the entire inflection component of the FST reply.
+  * @param stemString Stem component of the FST reply.
+  * @returns The literal string value of the stem.
+  */
+  String formatInflectionSurface(String inflectionString) {
+    String surfaceFormatted =  inflectionString.replaceFirst("<ro>", "(")
+    surfaceFormatted = surfaceFormatted.replaceFirst("<sm>", ")")
+    surfaceFormatted = surfaceFormatted.replaceFirst("<isub>", "|")
+    surfaceFormatted.replaceAll(rightmostUrn,"").replaceAll(semanticTags, "")
+  }
 
   /** Collects the surface representation of the stem string,
   * given the entire stem component of the FST reply.
@@ -82,6 +95,7 @@ class FstAnalysisParser {
   String formatStemSurface(String stemString){
     String surfaceFormatted =  stemString.replaceFirst("<ro>", "(")
     surfaceFormatted = surfaceFormatted.replaceFirst("<sm>", ")")
+    surfaceFormatted = surfaceFormatted.replaceFirst("<isub>", "|")
     surfaceFormatted = surfaceFormatted.replaceAll(leftmostUrn,"").replaceAll(leftmostUrn,"")
     surfaceFormatted = surfaceFormatted.replaceAll(semanticTags, "")
     return surfaceFormatted
@@ -106,6 +120,17 @@ class FstAnalysisParser {
 
       inflectionString = cols[1]
       inflTags = inflectionString.findAll(allTags)
+      inflTags = inflTags.minus(["<isub>"])
+      /*
+      System.err.println "INFL TAGS: " + inflTags
+      inflTags.each { s ->
+	
+	System.err.println "Tag "  + s + " (${s.getClass()})"
+	if (s == "<isub>") {
+	  System.err.println "KILL ${s}!"
+	}
+      }
+      */
       def inflUrns = inflectionString.findAll(urnTags)
 
       //  check size before indexing...
@@ -148,19 +173,19 @@ class FstAnalysisParser {
 
       if (debug > 0) { System.err.println "Compute morph form"}
       morphForm = computeMorphForm()
-
+     
 
       surfaceStem =  formatStemSurface(stemString)
       // Strip out all tags from surface form except <#>
       if (debug > 0) { System.err.println "RAW MORPHFORM has surface " + stemString + "-" + inflectionString}
 
-      surfaceInflection = inflectionString.replaceAll(rightmostUrn,"").replaceAll(semanticTags, "")
+      surfaceInflection = formatInflectionSurface(inflectionString)
+      //inflectionString.replaceAll(rightmostUrn,"").replaceAll(semanticTags, "")
 
-
-
-
-
-
+      if (debug > 0) {
+	System.err.println "Surface stem and inflection:"
+	System.err.println surfaceStem + " :: " + surfaceInflection
+      }
   }
 
 
@@ -195,7 +220,7 @@ class FstAnalysisParser {
     if (debug > 0)  { System.err.println "Analysis patterns: " + analysisPattern}
     switch (analysisPattern) {
       case AnalyticalType.CVERB:
-      //System.err.println "HERE ARE ALL INFL TAGS FOR A CVERB: " + inflTags
+      System.err.println "HERE ARE ALL INFL TAGS FOR A CVERB: " + inflTags
 //<w_regular>, <verb>, <3rd>, <pl>, <pres>, <indic>, <act>
       Person person = Person.getByToken(inflTags[2])
       GrammaticalNumber num = GrammaticalNumber.getByToken(inflTags[3])
