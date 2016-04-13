@@ -22,10 +22,8 @@ Form,AnalysisType,P4,P5,P1,P2,P3
 λύεσθαι,infin,present,passive,,,
 λυόμενος,ptcpl,present,middle,masculine,nominative,singular
 λυόμενος,ptcpl,present,passive,masculine,nominative,singular
-λυόμενος,ptcpl,present,passive,masculine,vocative,singular
 λυτός,vadj,masculine,nominative,singular,,
 λυτέος,vadj,masculine,nominative,singular,,
->>>>>>> Stashed changes
 λύσω,verb,first,singular,future,indicative,active
 λύσοιμι,verb,first,singular,future,optative,active
 λύσειν,infin,future,active,,,
@@ -37,7 +35,7 @@ Form,AnalysisType,P4,P5,P1,P2,P3
 λυθήσομαι,verb,first,singular,future,indicative,passive
 λυθησοίμην,verb,first,singular,future,optative,passive
 λυθήσεσθαι,infin,future,passive,,,
-λυθησόμενος,ptpcl,future,passive,masculine,nominative,singular
+λυθησόμενος,ptcpl,future,passive,masculine,nominative,singular
 ἔλυσα,verb,first,singular,aorist,indicative,active
 λύσω,verb,first,singular,aorist,subjunctive,active
 λύσαιμι,verb,first,singular,aorist,optative,active
