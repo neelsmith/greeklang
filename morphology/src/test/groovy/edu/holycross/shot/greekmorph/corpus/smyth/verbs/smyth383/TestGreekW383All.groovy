@@ -35,8 +35,8 @@ class TestGreekW383All {
   }
 
   @Test
-  void testConjugated() {
-    File dataFile =  new File("unit_tests_data/smyth/smyth383/smyth383cverb.csv")
+  void testPresAct() {
+    File dataFile =  new File("unit_tests_data/smyth/smyth383/smyth383pr-act.csv")
     assert tester.testFile(dataFile)
   }
 
