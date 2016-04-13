@@ -65,6 +65,12 @@ class VerbForm implements CitableId {
   * @returns A human-readable label for this form.
   */
   String toString() {
+
+      [person,num,tense,mood,voice].each { item ->
+        if (item == null) {
+          throw new Exception("Bad form!  (${person} ${num} ${tense} ${mood} ${voice}" )
+        }
+      }
     def labels = [person.getLabel(), num.getLabel(), tense.getLabel(), mood.getLabel(), voice.getLabel()]
     return labels.join(" ")
   }
