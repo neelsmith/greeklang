@@ -1,25 +1,23 @@
-
 Form,AnalysisType,P4,P5,P1,P2,P3
-ἐλελείμμην,verb,first,singular,pluperfect,indicative,middle
-ἐλέλειψο,verb,second,singular,pluperfect,indicative,middle
-ἐλέλειπτο,verb,third,singular,pluperfect,indicative,middle
+ἐγεγράμμην,verb,first,singular,pluperfect,indicative,middle
+ἐγέγραψο,verb,second,singular,pluperfect,indicative,middle
+ἐγέγραπτο,verb,third,singular,pluperfect,indicative,middle
 
-ἐλέλειφθον,verb,second,dual,pluperfect,indicative,middle
-ἐλελείφθην,verb,third,dual,pluperfect,indicative,middle
+ἐγέγραφθον,verb,second,dual,pluperfect,indicative,middle
+ἐγεγράφθην,verb,third,dual,pluperfect,indicative,middle
 
-ἐλελείμεθα,verb,first,plural,pluperfect,indicative,middle
-ἐλέλειφθε,verb,second,plural,pluperfect,indicative,middle
+ἐγεγράμμεθα,verb,first,plural,pluperfect,indicative,middle
+ἐγέγραφθε,verb,second,plural,pluperfect,indicative,middle
 
+ἐγεγράμμην,verb,first,singular,pluperfect,indicative,passive
+ἐγέγραψο,verb,second,singular,pluperfect,indicative,passive
+ἐγέγραπτο,verb,third,singular,pluperfect,indicative,passive
 
-ἐλελείμμην,verb,first,singular,pluperfect,indicative,passive
-ἐλέλειψο,verb,second,singular,pluperfect,indicative,passive
-ἐλέλειπτο,verb,third,singular,pluperfect,indicative,passive
+ἐγέγραφθον,verb,second,dual,pluperfect,indicative,passive
+ἐγεγράφθην,verb,third,dual,pluperfect,indicative,passive
 
-ἐλέλειφθον,verb,second,dual,pluperfect,indicative,passive
-ἐλελείφθην,verb,third,dual,pluperfect,indicative,passive
-
-ἐλελείμεθα,verb,first,plural,pluperfect,indicative,passive
-ἐλέλειφθε,verb,second,plural,pluperfect,indicative,passive
+ἐγεγράμμεθα,verb,first,plural,pluperfect,indicative,passive
+ἐγέγραφθε,verb,second,plural,pluperfect,indicative,passive
 
 
 
