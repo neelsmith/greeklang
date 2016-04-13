@@ -16,12 +16,12 @@ verbinfl.w_pft_ptcp1bx,w_pp4,ui=a,fem,voc,sg,pft,act
 
 
 
-verbinfl.w_pft_ptcp1x1,w_regular,o/s,masc,nom,sg,pft,act
-verbinfl.w_pft_ptcp1x1b,w_pp4,o/s,masc,nom,sg,pft,act
-verbinfl.w_pft_ptcp1x1x,w_regular,o/s,masc,acc,sg,pft,act
-verbinfl.w_pft_ptcp1bx,w_pp4,o/s,masc,acc,sg,pft,act
-verbinfl.w_pft_ptcp1x,w_regular,o/s,masc,voc,sg,pft,act
-verbinfl.w_pft_ptcp1bx,w_pp4,o/s,masc,voc,sg,pft,act
+verbinfl.w_pft_ptcp1x1,w_regular,o/s,neut,nom,sg,pft,act
+verbinfl.w_pft_ptcp1x1b,w_pp4,o/s,neut,nom,sg,pft,act
+verbinfl.w_pft_ptcp1x1x,w_regular,o/s,neut,acc,sg,pft,act
+verbinfl.w_pft_ptcp1bx,w_pp4,o/s,neut,acc,sg,pft,act
+verbinfl.w_pft_ptcp1x,w_regular,o/s,neut,voc,sg,pft,act
+verbinfl.w_pft_ptcp1bx,w_pp4,o/s,neut,voc,sg,pft,act
 
 
 
