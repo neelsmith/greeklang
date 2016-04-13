@@ -45,8 +45,8 @@ Form,AnalysisType,P4,P5,P1,P2,P3
 
 
 ἀξία,adj,feminine,nominative,singular,positive,stempenacc
-ἀξίης,adj,feminine,genitive,singular,positive,stempenacc
-ἀξίῃ,adj,feminine,dative,singular,positive,stempenacc
+ἀξίας,adj,feminine,genitive,singular,positive,stempenacc
+ἀξίᾳ,adj,feminine,dative,singular,positive,stempenacc
 ἀξίαν,adj,feminine,accusative,singular,positive,stempenacc
 ἀξία,adj,feminine,vocative,singular,positive,stempenacc
 
@@ -59,7 +59,7 @@ Form,AnalysisType,P4,P5,P1,P2,P3
 
 
 ἄξιαι,adj,feminine,nominative,plural,positive,stempenacc
-ἀξιῶν,adj,feminine,genitive,plural,positive,stempenacc
+ἀξίων,adj,feminine,genitive,plural,positive,stempenacc
 ἀξίαις,adj,feminine,dative,plural,positive,stempenacc
-ἀξιάς,adj,feminine,accusative,plural,positive,stempenacc
+ἀξίας,adj,feminine,accusative,plural,positive,stempenacc
 ἄξιαι,adj,feminine,vocative,plural,positive,stempenacc
