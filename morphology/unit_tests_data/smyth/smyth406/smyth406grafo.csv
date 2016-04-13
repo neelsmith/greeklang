@@ -21,59 +21,57 @@ Form,AnalysisType,P4,P5,P1,P2,P3
 
 
 
-λέλειμμαι,verb,first,singular,perfect,indicative,middle
-λέλειψαι,verb,second,singular,perfect,indicative,middle
-λέλειπται,verb,third,singular,perfect,indicative,middle
+γέγραμμαι,verb,first,singular,perfect,indicative,middle
+γέγραψαι,verb,second,singular,perfect,indicative,middle
+γέγραπται,verb,third,singular,perfect,indicative,middle
 
-λέλειφθον,verb,second,dual,perfect,indicative,middle
-λέλειφθον,verb,third,dual,perfect,indicative,middle
+γέγραφθον,verb,second,dual,perfect,indicative,middle
+γέγραφθον,verb,third,dual,perfect,indicative,middle
 
-λελείμμεθα,verb,first,plural,perfect,indicative,middle
-λέλειφθε,verb,second,plural,perfect,indicative,middle
-
-
-
-
-
-λέλειμμαι,verb,first,singular,perfect,indicative,passive
-λέλειψαι,verb,second,singular,perfect,indicative,passive
-λέλειπται,verb,third,singular,perfect,indicative,passive
-
-λέλειφθον,verb,second,dual,perfect,indicative,passive
-λέλειφθον,verb,third,dual,perfect,indicative,passive
-
-λελείμμεθα,verb,first,plural,perfect,indicative,passive
-λέλειφθε,verb,second,plural,perfect,indicative,middpassivele
+γεγράμμεθα,verb,first,plural,perfect,indicative,middle
+γέγραφθε,verb,second,plural,perfect,indicative,middle
 
 
 
 
-λέλειψο,verb,second,singular,perfect,imperative,middle
-λελείφθω,verb,third,singular,perfect,imperative,middle
 
-λέλειφθον,verb,second,dual,perfect,imperative,middle
-λελείφθων,verb,third,dual,perfect,imperative,middle
+γέγραμμαι,verb,first,singular,perfect,indicative,passive
+γέγραψαι,verb,second,singular,perfect,indicative,passive
+γέγραπται,verb,third,singular,perfect,indicative,passive
 
-λέλειφθε,verb,second,plural,perfect,imperative,middle
-λελείφθων,verb,third,plural,perfect,imperative,middle
+γέγραφθον,verb,second,dual,perfect,indicative,passive
+γέγραφθον,verb,third,dual,perfect,indicative,passive
 
-
-
-λέλειψο,verb,second,singular,perfect,imperative,passive
-λελείφθω,verb,third,singular,perfect,imperative,passive
-
-λέλειφθον,verb,second,dual,perfect,imperative,passive
-λελείφθων,verb,third,dual,perfect,imperative,passive
-
-λέλειφθε,verb,second,plural,perfect,imperative,passive
-λελείφθων,verb,third,plural,perfect,imperative,passive
+γεγράμμεθα,verb,first,plural,perfect,indicative,passive
+γέγραφθε,verb,second,plural,perfect,indicative,passive
 
 
 
 
-λελεῖφθαι,infin,perfect,middle,,
-λελεῖφθαι,infin,perfect,passive,,
+γέγραψο,verb,second,singular,perfect,imperative,middle
+γεγράφθω,verb,third,singular,perfect,imperative,middle
+
+γέγραφθον,verb,second,dual,perfect,imperative,middle
+γεγράφθων,verb,third,dual,perfect,imperative,middle
+
+γέγραφθε,verb,second,plural,perfect,imperative,middle
+γεγράφθων,verb,third,plural,perfect,imperative,middle
 
 
-λελειμμένος,ptcpl,perfect,middle,masculine,nominative,singular
-λελειμμένος,ptcpl,perfect,passive,masculine,nominative,singular
+γέγραψο,verb,second,singular,perfect,imperative,passive
+γεγράφθω,verb,third,singular,perfect,imperative,passive
+
+γέγραφθον,verb,second,dual,perfect,imperative,passive
+γεγράφθων,verb,third,dual,perfect,imperative,passive
+
+γέγραφθε,verb,second,plural,perfect,imperative,passive
+γεγράφθων,verb,third,plural,perfect,imperative,passive
+
+
+
+γεγράφθαι,infin,perfect,middle,,
+γεγράφθαι,infin,perfect,passive,,
+
+
+γεγραμμένος,ptcpl,perfect,middle,masculine,nominative,singular
+γεγραμμένος,ptcpl,perfect,passive,masculine,nominative,singular

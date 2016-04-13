@@ -1,80 +1,76 @@
 Form,AnalysisType,P4,P5,P1,P2,P3
-ἐλελείμμην,verb,first,singular,pluperfect,indicative,middle
-ἐλέλειψο,verb,second,singular,pluperfect,indicative,middle
-ἐλέλειπτο,verb,third,singular,pluperfect,indicative,middle
+ἐπεπράγμην,verb,first,singular,pluperfect,indicative,middle
+ἐπέπραξο,verb,second,singular,pluperfect,indicative,middle
+ἐπέπρακτο,verb,third,singular,pluperfect,indicative,middle
 
-ἐλέλειφθον,verb,second,dual,pluperfect,indicative,middle
-ἐλελείφθην,verb,third,dual,pluperfect,indicative,middle
+ἐπέπραχθον,verb,second,dual,pluperfect,indicative,middle
+ἐπεπράχθην,verb,third,dual,pluperfect,indicative,middle
 
-ἐλελείμεθα,verb,first,plural,pluperfect,indicative,middle
-ἐλέλειφθε,verb,second,plural,pluperfect,indicative,middle
+ἐπεπράγμεθα,verb,first,plural,pluperfect,indicative,middle
+ἐπέπραχθε,verb,second,plural,pluperfect,indicative,middle
 
+ἐπεπράγμην,verb,first,singular,pluperfect,indicative,passive
+ἐπέπραξο,verb,second,singular,pluperfect,indicative,passive
+ἐπέπρακτο,verb,third,singular,pluperfect,indicative,passive
 
-ἐλελείμμην,verb,first,singular,pluperfect,indicative,passive
-ἐλέλειψο,verb,second,singular,pluperfect,indicative,passive
-ἐλέλειπτο,verb,third,singular,pluperfect,indicative,passive
+ἐπέπραχθον,verb,second,dual,pluperfect,indicative,passive
+ἐπεπράχθην,verb,third,dual,pluperfect,indicative,passive
 
-ἐλέλειφθον,verb,second,dual,pluperfect,indicative,passive
-ἐλελείφθην,verb,third,dual,pluperfect,indicative,passive
-
-ἐλελείμεθα,verb,first,plural,pluperfect,indicative,passive
-ἐλέλειφθε,verb,second,plural,pluperfect,indicative,passive
-
-
-
-λέλειμμαι,verb,first,singular,perfect,indicative,middle
-λέλειψαι,verb,second,singular,perfect,indicative,middle
-λέλειπται,verb,third,singular,perfect,indicative,middle
-
-λέλειφθον,verb,second,dual,perfect,indicative,middle
-λέλειφθον,verb,third,dual,perfect,indicative,middle
-
-λελείμμεθα,verb,first,plural,perfect,indicative,middle
-λέλειφθε,verb,second,plural,perfect,indicative,middle
+ἐπεπράγμεθα,verb,first,plural,pluperfect,indicative,passive
+ἐπέπραχθε,verb,second,plural,pluperfect,indicative,passive
 
 
 
 
+πέπραγμαι,verb,first,singular,perfect,indicative,middle
+πέπραξαι,verb,second,singular,perfect,indicative,middle
+πέπρακται,verb,third,singular,perfect,indicative,middle
 
-λέλειμμαι,verb,first,singular,perfect,indicative,passive
-λέλειψαι,verb,second,singular,perfect,indicative,passive
-λέλειπται,verb,third,singular,perfect,indicative,passive
+πέπραχθον,verb,second,dual,perfect,indicative,middle
+πέπραχθον,verb,third,dual,perfect,indicative,middle
 
-λέλειφθον,verb,second,dual,perfect,indicative,passive
-λέλειφθον,verb,third,dual,perfect,indicative,passive
+πεπράγμεθα,verb,first,plural,perfect,indicative,middle
+πέπραχθε,verb,second,plural,perfect,indicative,middle
 
-λελείμμεθα,verb,first,plural,perfect,indicative,passive
-λέλειφθε,verb,second,plural,perfect,indicative,middpassivele
+πέπραγμαι,verb,first,singular,perfect,indicative,passive
+πέπραξαι,verb,second,singular,perfect,indicative,passive
+πέπρακται,verb,third,singular,perfect,indicative,passive
 
+πέπραχθον,verb,second,dual,perfect,indicative,passive
+πέπραχθον,verb,third,dual,perfect,indicative,passive
 
-
-
-λέλειψο,verb,second,singular,perfect,imperative,middle
-λελείφθω,verb,third,singular,perfect,imperative,middle
-
-λέλειφθον,verb,second,dual,perfect,imperative,middle
-λελείφθων,verb,third,dual,perfect,imperative,middle
-
-λέλειφθε,verb,second,plural,perfect,imperative,middle
-λελείφθων,verb,third,plural,perfect,imperative,middle
-
-
-
-λέλειψο,verb,second,singular,perfect,imperative,passive
-λελείφθω,verb,third,singular,perfect,imperative,passive
-
-λέλειφθον,verb,second,dual,perfect,imperative,passive
-λελείφθων,verb,third,dual,perfect,imperative,passive
-
-λέλειφθε,verb,second,plural,perfect,imperative,passive
-λελείφθων,verb,third,plural,perfect,imperative,passive
+πεπράγμεθα,verb,first,plural,perfect,indicative,passive
+πέπραχθε,verb,second,plural,perfect,indicative,passive
 
 
 
 
-λελεῖφθαι,infin,perfect,middle,,
-λελεῖφθαι,infin,perfect,passive,,
+πέπραξο,verb,second,singular,perfect,imperative,middle
+πεπράχθω,verb,third,singular,perfect,imperative,middle
+
+πέπραχθον,verb,second,dual,perfect,imperative,middle
+πεπράχθων,verb,third,dual,perfect,imperative,middle
+
+πέπραχθε,verb,second,plural,perfect,imperative,middle
+πεπράχθων,verb,third,plural,perfect,imperative,middle
 
 
-λελειμμένος,ptcpl,perfect,middle,masculine,nominative,singular
-λελειμμένος,ptcpl,perfect,passive,masculine,nominative,singular
+
+πέπραξο,verb,second,singular,perfect,imperative,passive
+πεπράχθω,verb,third,singular,perfect,imperative,passive
+
+πέπραχθον,verb,second,dual,perfect,imperative,passive
+πεπράχθων,verb,third,dual,perfect,imperative,passive
+
+πέπραχθε,verb,second,plural,perfect,imperative,passive
+πεπράχθων,verb,third,plural,perfect,imperative,passive
+
+
+
+
+πεπρᾶχθαι,infin,perfect,middle,,
+πεπρᾶχθαι,infin,perfect,passive,,
+
+
+πεπράγμενος,ptcpl,perfect,middle,masculine,nominative,singular
+πεπράγμενος,ptcpl,perfect,passive,masculine,nominative,singular

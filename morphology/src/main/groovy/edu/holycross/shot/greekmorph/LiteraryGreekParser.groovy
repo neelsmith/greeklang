@@ -120,8 +120,7 @@ class LiteraryGreekParser implements GreekParser {
 
     String inflectionTag = analysisInfo.getInflectionTag()
     if (debug > 1) { System.err.println "ADJ: ${retrievedForm} with infl tag ${inflectionTag}"}
-    // see if retrieved from is pre-accented.
-    //inflectionTag
+
     if (Accent.hasAccent(retrievedForm)) {
       System.err.println "${inflectionTag} class is already accented!"
       accented = retrievedForm
@@ -187,8 +186,13 @@ class LiteraryGreekParser implements GreekParser {
 
      
     case Tense.PERFECT:
-    GreekWord accentedForm = Accent.addPenultAccent(retrievedForm,true)
-    return accentedForm.toString().replaceAll("[_^]","")  == gs.toString()
+
+    GreekWord accentedForm = Accent.addPenultAccent(retrievedForm)
+    System.err.println "Special case PERFECT infinitive: " + accentedForm
+
+    String cf = accentedForm.toString().replaceAll("[_^]","")
+    System.err.println "Cf ${cf} to ${gs}"
+    return cf == gs.toString()
     break
 
       
