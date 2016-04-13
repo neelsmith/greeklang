@@ -1,21 +1,21 @@
 Form,AnalysisType,P4,P5,P1,P2,P3
-νίκη,noun,feminine,nominative,singular,stempenacc
-νίκης,noun,feminine,genitive,singular,stempenacc
-νίκῃ,noun,feminine,dative,singular,stempenacc
-νίκην,noun,feminine,accusative,singular,stempenacc
-νίκη,noun,feminine,vocative,singular,stempenacc
+νίκη,noun,feminine,nominative,singular,stempenacc,
+νίκης,noun,feminine,genitive,singular,stempenacc,
+νίκῃ,noun,feminine,dative,singular,stempenacc,
+νίκην,noun,feminine,accusative,singular,stempenacc,
+νίκη,noun,feminine,vocative,singular,stempenacc,
 
 
 
-νίκα,noun,feminine,nominative,dual,stempenacc
-νίκαιν,noun,feminine,genitive,dual,stempenacc
-νίκαιν,noun,feminine,dative,dual,stempenacc
-νίκα,noun,feminine,accusative,dual,stempenacc
-νίκα,noun,feminine,vocative,dual,stempenacc
+νίκα,noun,feminine,nominative,dual,stempenacc,
+νίκαιν,noun,feminine,genitive,dual,stempenacc,
+νίκαιν,noun,feminine,dative,dual,stempenacc,
+νίκα,noun,feminine,accusative,dual,stempenacc,
+νίκα,noun,feminine,vocative,dual,stempenacc,
 
 
-νῖκαι,noun,feminine,nominative,plural,stempenacc
-νικῶν,noun,feminine,genitive,plural,stempenacc
-νίκαις,noun,feminine,dative,plural,stempenacc
-νίκας,noun,feminine,accusative,plural,stempenacc
-νῖκαι,noun,feminine,vocative,plural,stempenacc
+νῖκαι,noun,feminine,nominative,plural,stempenacc,
+νικῶν,noun,feminine,genitive,plural,stempenacc,
+νίκαις,noun,feminine,dative,plural,stempenacc,
+νίκας,noun,feminine,accusative,plural,stempenacc,
+νῖκαι,noun,feminine,vocative,plural,stempenacc,
