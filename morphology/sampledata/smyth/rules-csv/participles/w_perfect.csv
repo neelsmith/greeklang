@@ -7,6 +7,26 @@ verbinfl.w_pft_ptcp1bx,w_pp4,w/s,masc,voc,sg,pft,act
 
 
 
+verbinfl.w_pft_ptcpxx,w_regular,ui=a,fem,nom,sg,pft,act
+verbinfl.w_pft_ptcpxx,w_pp4,ui=a,fem,nom,sg,pft,act
+
+verbinfl.w_pft_ptcp1x,w_regular,ui=a,fem,voc,sg,pft,act
+verbinfl.w_pft_ptcp1bx,w_pp4,ui=a,fem,voc,sg,pft,act
+
+
+
+
+verbinfl.w_pft_ptcp1x1,w_regular,o/s,masc,nom,sg,pft,act
+verbinfl.w_pft_ptcp1x1b,w_pp4,o/s,masc,nom,sg,pft,act
+verbinfl.w_pft_ptcp1x1x,w_regular,o/s,masc,acc,sg,pft,act
+verbinfl.w_pft_ptcp1bx,w_pp4,o/s,masc,acc,sg,pft,act
+verbinfl.w_pft_ptcp1x,w_regular,o/s,masc,voc,sg,pft,act
+verbinfl.w_pft_ptcp1bx,w_pp4,o/s,masc,voc,sg,pft,act
+
+
+
+
+
 verbinfl.w_pft_ptcp2,w_regular,me/nos,masc,nom,sg,pft,mid
 verbinfl.w_pft_ptcp2b,w_pp5,me/nos,masc,nom,sg,pft,mid
 
