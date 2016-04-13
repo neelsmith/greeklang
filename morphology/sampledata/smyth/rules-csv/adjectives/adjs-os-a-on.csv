@@ -24,7 +24,7 @@ adjinfl.os_a_on15,os_a_on,oi,masc,voc,pl,pos
 
 adjinfl.os_a_on16,os_a_on,a_,fem,nom,sg,pos
 adjinfl.os_a_on17,os_a_on,a_s,fem,gen,sg,pos
-adjinfl.os_a_on18,os_a_on,a|,fem,dat,sg,pos
+adjinfl.os_a_on18,os_a_on,a_|,fem,dat,sg,pos
 adjinfl.os_a_on19,os_a_on,a_n,fem,acc,sg,pos
 adjinfl.os_a_on20,os_a_on,a_,fem,voc,sg,pos
 
