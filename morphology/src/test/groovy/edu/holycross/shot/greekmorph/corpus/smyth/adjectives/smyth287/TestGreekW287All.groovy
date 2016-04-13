@@ -4,7 +4,7 @@ import org.junit.Test
 
 /** Test of epsilon contract forms in Smyth 310.
 */
-class TestGreekW287{
+class TestGreekW287All{
   String fstBinary = "build/smyth/greek.a"
   File urnReg = new File("sampledata/smyth/urnregistry/collectionregistry.csv")
   UrnManager umgr = new UrnManager(urnReg)
@@ -14,10 +14,25 @@ class TestGreekW287{
   TableTester tester = new TableTester(mp)
 
   @Test
-  void testEpsilonContracts() {
+  void testAgathos() {
     File dataFile =  new File("unit_tests_data/smyth/smyth287/smyth287agathos.csv")
     assert tester.testFile(dataFile)
   }
+
+
+  @Test
+  void testMarkos() {
+    File dataFile =  new File("unit_tests_data/smyth/smyth287/smyth287makros.csv")
+    assert tester.testFile(dataFile)
+  }
+
+
+  @Test
+  void testAxios() {
+    File dataFile =  new File("unit_tests_data/smyth/smyth287/smyth287axios.csv")
+    assert tester.testFile(dataFile)
+  }
+
 
 
 }
