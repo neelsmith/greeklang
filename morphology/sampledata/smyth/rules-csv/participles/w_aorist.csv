@@ -11,7 +11,7 @@ verbinfl.w_aor_ptcp2,w_regular,amenos,masc,nom,sg,aor,mid
 verbinfl.w_aor_ptcp2b,w_pp2,amenos,masc,nom,sg,aor,mid
 
 
-verbinfl.w_aor_ptcp3,w_regular,ei=s,masc,nom,sg,aor,pass
-verbinfl.w_aor_ptcp3b,w_pp6,ei=s,masc,nom,sg,aor,pass
-verbinfl.w_aor_ptcpx3,w_regular,ei=s,masc,voc,sg,aor,pass
-verbinfl.w_aor_ptcpx3b,w_pp6,ei=s,masc,voc,sg,aor,pass
+verbinfl.w_aor_ptcp3,w_regular,ei=/,masc,nom,sg,aor,pass
+verbinfl.w_aor_ptcp3b,w_pp6,ei/s,masc,nom,sg,aor,pass
+verbinfl.w_aor_ptcpx3,w_regular,ei/s,masc,voc,sg,aor,pass
+verbinfl.w_aor_ptcpx3b,w_pp6,ei/s,masc,voc,sg,aor,pass
