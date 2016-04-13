@@ -8,7 +8,7 @@ import static groovy.test.GroovyAssert.shouldFail
 
 /** Tests demonstrating parsing of nouns from Unicode string.
 */
-class TestGreekW383All {
+class TestSmythW383All {
   String fstBinary = "build/smyth/greek.a"
   File urnReg = new File("sampledata/smyth/urnregistry/collectionregistry.csv")
   UrnManager umgr = new UrnManager(urnReg)
@@ -35,7 +35,7 @@ class TestGreekW383All {
   }
 
   @Test
-  void testPresAct() {
+  void testPresImpftAct() {
     File dataFile =  new File("unit_tests_data/smyth/smyth383/smyth383pr-act.csv")
     assert tester.testFile(dataFile)
   }

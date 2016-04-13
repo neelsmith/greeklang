@@ -48,7 +48,8 @@ class TestSyllables {
   "a)nalu_w": "a)#na#lu_#w",
   "is" : "is",
   "ios" : "i#os",
-  "ni_ke": "ni_#ke"
+  "ni_ke": "ni_#ke",
+  "e)gegra^pto" : "e)#ge#gra^#pto"
   ]
 
   @Test

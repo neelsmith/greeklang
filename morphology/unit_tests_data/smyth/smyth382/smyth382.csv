@@ -21,11 +21,11 @@ Form,AnalysisType,P4,P5,P1,P2,P3
 λύεσθαι,infin,present,middle,,,
 λύεσθαι,infin,present,passive,,,
 λυόμενος,ptcpl,present,middle,masculine,nominative,singular
-λυόμενος,ptcpl,present,middle,masculine,vocative,singular
 λυόμενος,ptcpl,present,passive,masculine,nominative,singular
 λυόμενος,ptcpl,present,passive,masculine,vocative,singular
 λυτός,vadj,masculine,nominative,singular,,
 λυτέος,vadj,masculine,nominative,singular,,
+>>>>>>> Stashed changes
 λύσω,verb,first,singular,future,indicative,active
 λύσοιμι,verb,first,singular,future,optative,active
 λύσειν,infin,future,active,,,
@@ -52,9 +52,9 @@ Form,AnalysisType,P4,P5,P1,P2,P3
 λύσασθαι,infin,aorist,middle,,,
 λυσάμενος,ptcpl,aorist,middle,masculine,nominative,singular
 ἐλύθην,verb,first,singular,aorist,indicative,passive
-λυθῶ,verb,first,singeular,aorist,subjunctive,passive
-λυθείην,verb,first,singeular,aorist,optative,passive
-λύθητι,verb,second,singeular,aorist,imperative,passive
+λυθῶ,verb,first,singular,aorist,subjunctive,passive
+λυθείην,verb,first,singular,aorist,optative,passive
+λύθητι,verb,second,singular,aorist,imperative,passive
 λυθῆναι,infin,aorist,passive,,,
 λυθείς,ptcpl,aorist,passive,masculine,nominative,singular
 λυθείς,ptcpl,aorist,passive,masculine,vocative,singular

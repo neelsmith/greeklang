@@ -23,13 +23,17 @@ class TestGreekEWSynopsisInfin {
 
     "ποιεῖν": [Tense.PRESENT, Voice.ACTIVE],
     "ποιήσειν": [Tense.FUTURE, Voice.ACTIVE],
-    "ποιῆσαι": [Tense.AORIST, Voice.ACTIVE],
+    //"ποιῆσαι": [Tense.AORIST, Voice.ACTIVE],
     "πεποιηκέναι": [Tense.PERFECT, Voice.ACTIVE],
 
-    "ποιεῖσθαι": [Tense.PRESENT, Voice.MIDDLE],
+
     "ποιήσεσθαι": [Tense.FUTURE, Voice.MIDDLE],
     "ποιήσασθαι": [Tense.AORIST, Voice.MIDDLE],
-    //"": [Tense.PERFECT, Voice.MIDDLE],n ORN PASSIVE
+
+
+    "ποιηθήσεσθαι": [Tense.FUTURE, Voice.PASSIVE],
+    "ποιηθῆναι": [Tense.AORIST, Voice.PASSIVE],
+
     ]
 
     expectedUnique.keySet().each { greek ->
@@ -45,6 +49,27 @@ class TestGreekEWSynopsisInfin {
     }
   }
 
+// Voice.MIDDLE],
+  @Test
+  void testMP() {
+    def expectedMP = [
+    "ποιεῖσθαι": Tense.PRESENT,
+    //"πεποιῆσθαι": Tense.PERFECT
+    ]
+    expectedMP.keySet().each { greek ->
+      def expectedAnswer = expectedMP[greek]
+      MorphologicalAnalysis morph = mp.parseGreekString(new GreekString(greek,true))
 
+      assert morph.analyses.size() == 2
+      morph.analyses.each{ ma ->
+        MorphForm form = morph.analyses[0].getMorphForm()
+        assert form.getAnalyticalType() == AnalyticalType.INFINITIVE
+        CitableId formIdentification = form.getAnalysis()
+        assert formIdentification.getTense() == expectedAnswer
+        assert [Voice.MIDDLE, Voice.PASSIVE].contains(formIdentification.getVoice())
+      }
+
+    }
+  }
 
 }

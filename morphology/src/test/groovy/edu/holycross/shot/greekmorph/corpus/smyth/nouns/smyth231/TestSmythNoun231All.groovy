@@ -8,7 +8,7 @@ import static groovy.test.GroovyAssert.shouldFail
 
 /** Tests demonstrating parsing of nouns from Unicode string.
 */
-class TestGreekNoun231All {
+class TestSmythNoun231All {
 
   String fstBinary = "build/smyth/greek.a"
   File urnReg = new File("sampledata/smyth/urnregistry/collectionregistry.csv")

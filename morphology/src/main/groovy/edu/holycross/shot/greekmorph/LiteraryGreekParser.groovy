@@ -336,6 +336,9 @@ class LiteraryGreekParser implements GreekParser {
 	if (debug > 0) {System.err.println "Use converted string value " + greekStyle}
         if (checkAccent(greekStyle,gkStr,fap)) {
           analysisList.add(fap.getTriple())
+	  if (debug > 0) {
+	    System.err.println "Accept ${gkStr}"
+	  }
         } else {
           if (debug > 0) {
             System.err.println "Reject ${gkStr}"

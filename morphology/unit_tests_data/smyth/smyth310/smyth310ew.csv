@@ -1,66 +1,70 @@
-Form,AnalysisType,P1,P2,P3,P4,P5
-ποιοῦσα,ptc,plural,feminine,nominative,singular,present,active
-ποιούσης,ptc,plural,feminine,genitive,singular,present,active
-ποιούσῃ,ptc,plural,feminine,dative,singular,present,active
-ποιοῦσαν,ptc,plural,feminine,accusative,singular,present,active
-ποιοῦσα,ptc,plural,feminine,vocative,singular,present,active
+Form,AnalysisType,P4,P5,P1,P2,P3
+ποιοῦσα,ptcpl,present,active,feminine,nominative,singular
+ποιούσης,ptcpl,present,active,feminine,genitive,singular
+ποιούσῃ,ptcpl,present,active,feminine,dative,singular
+ποιοῦσαν,ptcpl,present,active,feminine,accusative,singular
+ποιοῦσα,ptcpl,present,active,feminine,vocative,singular
 
 
-ποιούσα,ptc,plural,feminine,nominative,dual,present,active
-ποιούσαιν,ptc,plural,feminine,genitive,dual,present,active
-ποιούσαιν,ptc,plural,feminine,dative,dual,present,active
-ποιούσα,ptc,plural,feminine,accusative,dual,present,active
-ποιούσα,ptc,plural,feminine,vocative,dual,present,active
+ποιούσα,ptcpl,present,active,feminine,nominative,dual
+ποιούσαιν,ptcpl,present,active,feminine,genitive,dual
+ποιούσαιν,ptcpl,present,active,feminine,dative,dual
+ποιούσα,ptcpl,present,active,feminine,accusative,dual
+ποιούσα,ptcpl,present,active,feminine,vocative,dual
 
 
-ποιοῦσαι,ptc,plural,feminine,nominative,plural,present,active
-ποιουσῶν,ptc,plural,feminine,genitive,plural,present,active
-ποιούσαις,ptc,plural,feminine,dative,plural,present,active
-ποιούσας,ptc,plural,feminine,accusative,plural,present,active
-ποιοῦσαι,ptc,plural,feminine,vocative,plural,present,active
-
-
-
-ποιῶν,ptc,plural,masculine,nominative,singular,present,active
-ποιοῦντος,ptc,plural,masculine,genitive,singular,present,active
-ποιοῦντι,ptc,plural,masculine,dative,singular,present,active
-ποιοῦντα,ptc,plural,masculine,accusative,singular,present,active
-ποιῶν,ptc,plural,masculine,vocative,singular,present,active
-
-
-ποιοῦντε,ptc,plural,masculine,nominative,dual,present,active
-ποιούντοιν,ptc,plural,masculine,genitive,dual,present,active
-ποιούντοιν,ptc,plural,masculine,dative,dual,present,active
-ποιοῦντε,ptc,plural,masculine,accusative,dual,present,active
-ποιοῦντε,ptc,plural,masculine,vocative,dual,present,active
-
-
-ποιοῦντες,ptc,plural,masculine,nominative,plural,present,active
-ποιούντων,ptc,plural,masculine,genitive,plural,present,active
-ποιούντοις,ptc,plural,masculine,dative,plural,present,active
-ποιοῦντας,ptc,plural,masculine,accusative,plural,present,active
-ποιοῦντες,ptc,plural,masculine,vocative,plural,present,active
+ποιοῦσαι,ptcpl,present,active,feminine,nominative,plural
+ποιουσῶν,ptcpl,present,active,feminine,genitive,plural
+ποιούσαις,ptcpl,present,active,feminine,dative,plural
+ποιούσας,ptcpl,present,active,feminine,accusative,plural
+ποιοῦσαι,ptcpl,present,active,feminine,vocative,plural
 
 
 
+ποιῶν,ptcpl,present,active,masculine,nominative,singular
+ποιοῦντος,ptcpl,present,active,masculine,genitive,singular
+ποιοῦντι,ptcpl,present,active,masculine,dative,singular
+ποιοῦντα,ptcpl,present,active,masculine,accusative,singular
+ποιῶν,ptcpl,present,active,masculine,vocative,singular
 
 
-ποιοῦν,ptc,plural,neuter,nominative,singular,present,active
-ποιοῦντος,ptc,plural,neuter,genitive,singular,present,active
-ποιοῦντι,ptc,plural,neuter,dative,singular,present,active
-ποιοῦν,ptc,plural,neuter,accusative,singular,present,active
-ποιοῦν,ptc,plural,neuter,vocative,singular,present,active
+ποιοῦντε,ptcpl,present,active,masculine,nominative,dual
+ποιούντοιν,ptcpl,present,active,masculine,genitive,dual
+ποιούντοιν,ptcpl,present,active,masculine,dative,dual
+ποιοῦντε,ptcpl,present,active,masculine,accusative,dual
+ποιοῦντε,ptcpl,present,active,masculine,vocative,dual
 
 
-ποιοῦντε,ptc,plural,neuter,nominative,dual,present,active
-ποιούντοιν,ptc,plural,neuter,genitive,dual,present,active
-ποιούντοιν,ptc,plural,neuter,dative,dual,present,active
-ποιοῦντε,ptc,plural,neuter,accusative,dual,present,active
-ποιοῦντε,ptc,plural,neuter,vocative,dual,present,active
+ποιοῦντες,ptcpl,present,active,masculine,nominative,plural
+ποιούντων,ptcpl,present,active,masculine,genitive,plural
+ποιοῦσιν,ptcpl,present,active,masculine,dative,plural
+ποιοῦσι,ptcpl,present,active,masculine,dative,plural
+ποιοῦσιν,verb,third,plural,present,indicative,active
+ποιοῦσι,verb,third,plural,present,indicative,active
+ποιοῦντας,ptcpl,present,active,masculine,accusative,plural
+ποιοῦντες,ptcpl,present,active,masculine,vocative,plural
 
 
-ποιοῦντα,ptc,plural,neuter,nominative,plural,present,active
-ποιούντων,ptc,plural,neuter,genitive,plural,present,active
-ποιούντοις,ptc,plural,neuter,dative,plural,present,active
-ποιοῦντα,ptc,plural,neuter,accusative,plural,present,active
-ποιοῦντα,ptc,plural,neuter,vocative,plural,present,active
+
+
+
+ποιοῦν,ptcpl,present,active,neuter,nominative,singular
+ποιοῦντος,ptcpl,present,active,neuter,genitive,singular
+ποιοῦντι,ptcpl,present,active,neuter,dative,singular
+ποιοῦν,ptcpl,present,active,neuter,accusative,singular
+ποιοῦν,ptcpl,present,active,neuter,vocative,singular
+
+
+ποιοῦντε,ptcpl,present,active,neuter,nominative,dual
+ποιούντοιν,ptcpl,present,active,neuter,genitive,dual
+ποιούντοιν,ptcpl,present,active,neuter,dative,dual
+ποιοῦντε,ptcpl,present,active,neuter,accusative,dual
+ποιοῦντε,ptcpl,present,active,neuter,vocative,dual
+
+
+ποιοῦντα,ptcpl,present,active,neuter,nominative,plural
+ποιούντων,ptcpl,present,active,neuter,genitive,plural
+ποιοῦσι,ptcpl,present,active,neuter,dative,plural
+ποιοῦσιν,ptcpl,present,active,neuter,dative,plural
+ποιοῦντα,ptcpl,present,active,neuter,accusative,plural
+ποιοῦντα,ptcpl,present,active,neuter,vocative,plural

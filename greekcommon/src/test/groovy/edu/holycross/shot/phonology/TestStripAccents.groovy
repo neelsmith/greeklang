@@ -28,4 +28,41 @@ class TestStripAccents {
     assert syllStripped.toString() == "ios"
   }
 
+
+
+
+    @Test
+    void testRmExtras() {
+      GreekString s = new GreekString("luo/meno/s")
+      GreekString stripped = Accent.removeMultipleAccents(s)
+
+      assert stripped.toString() =="luo/menos"
+
+    }
+
+
+        @Test
+        void testFlip() {
+          String grave = "λυὼν"
+          GreekString s = new GreekString(grave, true)
+          GreekString flipped = Accent.flipGrave(s)
+
+          assert flipped.toString() =="luw/n"
+
+        }
+
+
+
+                @Test
+                void testNormalize() {
+                  String grave = "λυὼν"
+                  GreekString s = new GreekString(grave, true)
+                  GreekString flipped = Accent.normalizeAccent(s)
+                  assert flipped.toString() =="luw/n"
+
+                  GreekString enclitic = new GreekString("λυόμενός", true)
+                  assert Accent.normalizeAccent(enclitic).toString() == "luo/menos"
+
+
+                }
 }

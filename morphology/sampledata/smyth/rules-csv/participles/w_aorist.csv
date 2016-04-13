@@ -3,9 +3,15 @@ verbinfl.w_aor_ptcp1,w_regular,a_s,masc,nom,sg,aor,act
 verbinfl.w_aor_ptcp1b,w_pp2,a_s,masc,nom,sg,aor,act
 
 
+verbinfl.w_aor_ptcp1x,w_regular,a_s,masc,voc,sg,aor,act
+verbinfl.w_aor_ptcp1xb,w_pp2,a_s,masc,voc,sg,aor,act
+
+
 verbinfl.w_aor_ptcp2,w_regular,amenos,masc,nom,sg,aor,mid
 verbinfl.w_aor_ptcp2b,w_pp2,amenos,masc,nom,sg,aor,mid
 
 
 verbinfl.w_aor_ptcp3,w_regular,ei=s,masc,nom,sg,aor,pass
 verbinfl.w_aor_ptcp3b,w_pp6,ei=s,masc,nom,sg,aor,pass
+verbinfl.w_aor_ptcpx3,w_regular,ei=s,masc,voc,sg,aor,pass
+verbinfl.w_aor_ptcpx3b,w_pp6,ei=s,masc,voc,sg,aor,pass

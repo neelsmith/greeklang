@@ -4,7 +4,7 @@ import org.junit.Test
 
 /** Test of epsilon contract forms in Smyth 310.
 */
-class TestGreekPtcpl310 {
+class TestSmythPtcpl310 {
   String fstBinary = "build/smyth/greek.a"
   File urnReg = new File("sampledata/smyth/urnregistry/collectionregistry.csv")
   UrnManager umgr = new UrnManager(urnReg)

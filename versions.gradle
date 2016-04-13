@@ -2,9 +2,9 @@ ext {
 
   versionMap = [
     "groovy" : '[2.0,)',
-    "cite" : "[1.0,)",
+    "cite" : "1.3.2",
     "epidoc": "1.2-SNAPSHOT",
-    "listutils": "1.1.0",
+    "listutils": "1.1.1",
 
     "xmlutils": "1.+",
 

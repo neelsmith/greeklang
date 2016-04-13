@@ -15,7 +15,7 @@ class Syllable {
   // puncutation
   /** Split vowel with diaeresis from preceding vowel, and capture possible
   * following vowel. */
-  static java.util.regex.Pattern diaeresis =  ~/([aeiouhw][_^]?[\)\(]?)([iu][_^]?[\)\(]?\+)([aeiouhw]?)/
+  static java.util.regex.Pattern diaeresis =  ~/([aeiouhw][_\^]?[\)\(]?)([iu][_\^]?[\)\(]?\+)([aeiouhw]?)/
 
   // Regular expressions to split up succesive vowels:
   //
@@ -25,7 +25,7 @@ class Syllable {
 
   /** Vowel is split from a following diphthong. Breathing on
   * vowel possible if word-initial. */
-  static java.util.regex.Pattern vowel_diphthong = ~/([\)\(aeiouhw][_^]?)(ai|oi|ei|au|eu|ou|hu|wu|ui)/
+  static java.util.regex.Pattern vowel_diphthong = ~/([\)\(aeiouhw][_\^]?)(ai|oi|ei|au|eu|ou|hu|wu|ui)/
 
   /** Short vowel is split form a following vowel other than [iu].
   * Breathing on vowel possible if word-initial. */
@@ -44,12 +44,12 @@ class Syllable {
   // Regular expressions to split up consonant-vowel combinations.
   //
   /** Preceded by a vowel, the sequence mu-nu always starts a syllable. */
-  static java.util.regex.Pattern mu_nu = ~/([\)\(aeiouhw\|\+][_^]?)mn/
+  static java.util.regex.Pattern mu_nu = ~/([\)\(aeiouhw\|\+][_\^]?)mn/
 
   /** Other than mu-nu, a liquid-consonant combination is split up
   * when it follows a vowel.
   */
-  static java.util.regex.Pattern liquid_consonant = ~/([\)\(aeiouhw\|\+][_^]?)([lmnr])([bgdzqkcprstfxy]+)([^'])/
+  static java.util.regex.Pattern liquid_consonant = ~/([\)\(aeiouhw\|\+][_\^]?)([lmnr])([bgdzqkcprstfxy]+)([^'])/
 
   /**  Double consonants are split. */
   static java.util.regex.Pattern double_consonant = ~/(b{2}|g{2}|d{2}|z{2}|q{2}|k{2}|l{2}|m{2}|n{2}|p{2}|r{2}|s{2}|t{2}|f{2}|x{2})([^'])/
@@ -57,11 +57,11 @@ class Syllable {
   /** Other consonant clusters stay together. This regex *must*
   * be applied later in the pipeline than the preceding regexes
   * spliting on consonant patterns!*/
-  static java.util.regex.Pattern consonant_cluster = ~/([\)\(aeiouhw\|\+][_^]?)([bgdzqkpcstfxy][mnbgdzqklcprstfxy]+)([^'])/
+  static java.util.regex.Pattern consonant_cluster = ~/([\)\(aeiouhw\|\+][_\^]?)([bgdzqkpcstfxy][mnbgdzqklcprstfxy]+)([^'])/
 
   /** In the pattern vowel-consonant-vowel, consonant begins
   * a new syllable. */
-  static java.util.regex.Pattern vowel_consonantvowel = ~/([\)\(aeiouhw\|\+][_^]?)([bgdzqklmncprstfxy][aeiouhw])/
+  static java.util.regex.Pattern vowel_consonantvowel = ~/([\)\(aeiouhw\|\+][_\^]?)([bgdzqklmncprstfxy][aeiouhw])/
 
 
 
@@ -149,7 +149,12 @@ class Syllable {
       doubled[0] + "#" + doubled[1] + trail
     }
 
-    // Otherwise, consonant clusters start a syllable
+    // Otherwise, consonant clusters start a syllable.
+    // Must apply  pattern twice, because regex
+    // matches can overlap.
+    syllabic = syllabic.replaceAll(consonant_cluster) { fullMatch, v, cons, trail ->
+      v + "#" + cons + trail
+    }
     syllabic = syllabic.replaceAll(consonant_cluster) { fullMatch, v, cons, trail ->
       v + "#" + cons + trail
     }

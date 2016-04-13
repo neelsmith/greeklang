@@ -17,34 +17,19 @@ class TestGreekEWSynopsis {
 
 
   @Test
-  void testUnique() {
+  void testPres() {
     //
     def expectedUnique = [
 
-    "ἐποίησα": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.INDICATIVE, Voice.ACTIVE],
-    "πεποίηκα": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.PERFECT, Mood.INDICATIVE, Voice.ACTIVE],
+
+
     //"ἐπεποιήκη": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.PLUPERFECT, Mood.INDICATIVE, Voice.ACTIVE],
     "ποιοίην": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.PRESENT, Mood.OPTATIVE, Voice.ACTIVE],
-    "ποιήσοιμι": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.FUTURE, Mood.OPTATIVE, Voice.ACTIVE],
-    "ποιήσαιμι": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.OPTATIVE, Voice.ACTIVE],
-    "ποίησον": [Person.SECOND, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.IMPERATIVE, Voice.ACTIVE],
 
-    "ποιηθησοίμην": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.FUTURE, Mood.OPTATIVE, Voice.PASSIVE],
-    "ποιηθήσομαι": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.FUTURE, Mood.INDICATIVE, Voice.PASSIVE],
-    "ἐποιήθην": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.INDICATIVE, Voice.PASSIVE],
-    "ποιηθείην": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.OPTATIVE, Voice.PASSIVE],
 
-    "ποιήθητι": [Person.SECOND, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.IMPERATIVE, Voice.PASSIVE],
-
-    "ἐποιησάμην": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.INDICATIVE, Voice.MIDDLE],
-    "ποιήσωμαι": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.SUBJUNCTIVE, Voice.MIDDLE],
-    "ποιησαίμην": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.OPTATIVE, Voice.MIDDLE],
     // poihqw=
     ]
-    // poiw = indic or sub
-    // poihsw =  fut indic or aor subj
-    // epoioun = 1 s or 3 pl
-    // ποιει = indic or imptv
+
     expectedUnique.keySet().each { greek ->
       def expectedAnswer = expectedUnique[greek]
       MorphologicalAnalysis morph = mp.parseGreekString(new GreekString(greek,true))
@@ -59,6 +44,74 @@ class TestGreekEWSynopsis {
       assert formIdentification.getMood() == expectedAnswer[3]
       assert formIdentification.getVoice() == expectedAnswer[4]
     }
+  }
+
+
+
+
+
+
+  // poiw = indic or sub
+  // poihsw =  fut indic or aor subj
+  // epoioun = 1 s or 3 pl
+  // ποιει = indic or imptv
+  @Test
+  void testAmbig1() {
+    MorphologicalAnalysis morph = mp.parseGreekString(new GreekString("ποιῶ",true))
+
+    assert morph.analyses.size() == 2
+
+    morph.analyses.each {ma ->
+       MorphForm form = ma.getMorphForm()
+       assert form.getAnalyticalType() == AnalyticalType.CVERB
+       CitableId formIdentification = form.getAnalysis()
+       assert formIdentification.getPerson() == Person.FIRST
+       assert formIdentification.getNum() == GrammaticalNumber.SINGULAR
+       assert formIdentification.getTense() == Tense.PRESENT
+      assert formIdentification.getVoice() == Voice.ACTIVE
+      assert [Mood.INDICATIVE,Mood.SUBJUNCTIVE].contains(formIdentification.getMood())
+    }
+  }
+
+
+
+  @Test
+  void testFut() {
+    //
+    def expectedUnique = [
+      "ποιήσοιμι": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.FUTURE, Mood.OPTATIVE, Voice.ACTIVE],
+
+      "ποιηθησοίμην": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.FUTURE, Mood.OPTATIVE, Voice.PASSIVE],
+      "ποιηθήσομαι": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.FUTURE, Mood.INDICATIVE, Voice.PASSIVE],
+    ]
+  }
+  @Test
+  void testAor() {
+    //
+    def expectedUnique = [
+      "ἐποίησα": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.INDICATIVE, Voice.ACTIVE],
+      "ποιήσαιμι": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.OPTATIVE, Voice.ACTIVE],
+      "ποίησον": [Person.SECOND, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.IMPERATIVE, Voice.ACTIVE],
+
+
+
+      "ἐποιησάμην": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.INDICATIVE, Voice.MIDDLE],
+      "ποιήσωμαι": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.SUBJUNCTIVE, Voice.MIDDLE],
+      "ποιησαίμην": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.OPTATIVE, Voice.MIDDLE],
+
+
+      "ἐποιήθην": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.INDICATIVE, Voice.PASSIVE],
+      "ποιηθείην": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.OPTATIVE, Voice.PASSIVE],
+      "ποιήθητι": [Person.SECOND, GrammaticalNumber.SINGULAR, Tense.AORIST, Mood.IMPERATIVE, Voice.PASSIVE],
+    ]
+  }
+
+  @Test
+  void testPft() {
+    //
+    def expectedUnique = [
+      "πεποίηκα": [Person.FIRST, GrammaticalNumber.SINGULAR, Tense.PERFECT, Mood.INDICATIVE, Voice.ACTIVE],
+    ]
   }
 
 

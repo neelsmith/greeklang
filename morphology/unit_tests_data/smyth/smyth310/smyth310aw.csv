@@ -37,7 +37,10 @@ Form,AnalysisType,P4,P5,P1,P2,P3
 
 τιμῶντες,ptcpl,present,active,masculine,nominative,plural
 τιμώντων,ptcpl,present,active,masculine,genitive,plural
-τιμώντοις,ptcpl,present,active,masculine,dative,plural
+τιμῶσι,ptcpl,present,active,masculine,dative,plural
+τιμῶσιν,ptcpl,present,active,masculine,dative,plural
+
+
 τιμῶντας,ptcpl,present,active,masculine,accusative,plural
 τιμῶντες,ptcpl,present,active,masculine,vocative,plural
 
@@ -61,6 +64,16 @@ Form,AnalysisType,P4,P5,P1,P2,P3
 
 τιμῶντα,ptcpl,present,active,neuter,nominative,plural
 τιμώντων,ptcpl,present,active,neuter,genitive,plural
-τιμώντοις,ptcpl,present,active,neuter,dative,plural
+τιμῶσι,ptcpl,present,active,neuter,dative,plural
+τιμῶσιν,ptcpl,present,active,neuter,dative,plural
 τιμῶντα,ptcpl,present,active,neuter,accusative,plural
 τιμῶντα,ptcpl,present,active,neuter,vocative,plural
+
+
+
+
+τιμῶσι,verb,third,plural,present,indicative,active
+τιμῶσιν,verb,third,plural,present,indicative,active
+
+τιμῶσι,verb,third,plural,present,subjunctive,active
+τιμῶσιν,verb,third,plural,present,subjunctive,active

@@ -7,7 +7,7 @@ package edu.holycross.shot.greekmorph
 */
 class FstParser {
 
-  Integer debug = 0
+  Integer debug = 10
 
   /** Path to FST toolkit's fst-infl parser. */
   String FSTINFL = "/usr/bin/fst-infl"
@@ -51,10 +51,10 @@ class FstParser {
 
     // Protect angle brackets in FST multicharacter symbols
     // before submitting to sh:
-    String protectedStr  = fstStr.replaceFirst(/[>]/, '\\\\>')
-    protectedStr = protectedStr.replaceFirst(/[<]/, '\\\\<')
-    protectedStr = protectedStr.replaceFirst(/[|]/, '\\\\|')
-
+    String protectedStr  = fstStr.replaceAll(/[>]/, '\\\\>')
+    protectedStr = protectedStr.replaceAll(/[<]/, '\\\\<')
+    //protectedStr = protectedStr.replaceFirst(/[|]/, '\\\\|')
+    // NS
     if (debug > 0) {System.err.println "FstParser: run ${ECHO} ${protectedStr} | ${FSTINFL} ${fstParser}"}
     def procList = [SH, "-c",  "${ECHO} ${protectedStr} | ${FSTINFL} ${fstParser}"]
     if (debug > 0) {System.err.println "FstParser: " + procList}

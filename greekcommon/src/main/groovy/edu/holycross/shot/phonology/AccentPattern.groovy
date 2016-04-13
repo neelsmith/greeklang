@@ -12,7 +12,9 @@ public enum AccentPattern {
   /** Persistent accent on penult. */
   PENULT("persistent accent on penult", "<penacc>"),
   /** Persistent accent on ultima. */
-  ULTIMA("persistent accent on ultima", "<ultacc>")
+  ULTIMA("persistent accent on ultima", "<ultacc>"),
+  /** Irregular accent pattern.*/
+  IRREGULAR("irregular accent", "<irregacc>")
 
   private String fstToken
   private String label
