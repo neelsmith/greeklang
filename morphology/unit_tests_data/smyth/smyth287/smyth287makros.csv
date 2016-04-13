@@ -1,65 +1,65 @@
 Form,AnalysisType,P4,P5,P1,P2,P3
-ἀγαθός,adj,masculine,nominative,singular,positive,inflacc
-ἀγαθοῦ,adj,masculine,genitive,singular,positive,inflacc
-ἀγαθῷ,adj,masculine,dative,singular,positive,inflacc
-ἀγαθόν,adj,masculine,accusative,singular,positive,inflacc
-ἀγαθέ,adj,masculine,vocative,singular,positive,inflacc
+μακρός,adj,masculine,nominative,singular,positive,inflacc
+μακροῦ,adj,masculine,genitive,singular,positive,inflacc
+μακρῷ,adj,masculine,dative,singular,positive,inflacc
+μακρόν,adj,masculine,accusative,singular,positive,inflacc
+μακρέ,adj,masculine,vocative,singular,positive,inflacc
 
 
-ἀγαθώ,adj,masculine,nominative,dual,positive,inflacc
-ἀγαθοῖν,adj,masculine,genitive,dual,positive,inflacc
-ἀγαθοῖν,adj,masculine,dative,dual,positive,inflacc
-ἀγαθώ,adj,masculine,accusative,dual,positive,inflacc
-ἀγαθώ,adj,masculine,vocative,dual,positive,inflacc
+μακρώ,adj,masculine,nominative,dual,positive,inflacc
+μακροῖν,adj,masculine,genitive,dual,positive,inflacc
+μακροῖν,adj,masculine,dative,dual,positive,inflacc
+μακρώ,adj,masculine,accusative,dual,positive,inflacc
+μακρώ,adj,masculine,vocative,dual,positive,inflacc
 
 
-ἀγαθοί,adj,masculine,nominative,plural,positive,inflacc
-ἀγαθῶν,adj,masculine,genitive,plural,positive,inflacc
-ἀγαθοῖς,adj,masculine,dative,plural,positive,inflacc
-ἀγαθούς,adj,masculine,accusative,plural,positive,inflacc
-ἀγαθοί,adj,masculine,vocative,plural,positive,inflacc
+μακροί,adj,masculine,nominative,plural,positive,inflacc
+μακρῶν,adj,masculine,genitive,plural,positive,inflacc
+μακροῖς,adj,masculine,dative,plural,positive,inflacc
+μακρούς,adj,masculine,accusative,plural,positive,inflacc
+μακροί,adj,masculine,vocative,plural,positive,inflacc
 
 
-ἀγαθόν,adj,neuter,nominative,singular,positive,inflacc
-ἀγαθοῦ,adj,neuter,genitive,singular,positive,inflacc
-ἀγαθῷ,adj,neuter,dative,singular,positive,inflacc
-ἀγαθόν,adj,neuter,accusative,singular,positive,inflacc
-ἀγαθόν,adj,neuter,vocative,singular,positive,inflacc
+μακρόν,adj,neuter,nominative,singular,positive,inflacc
+μακροῦ,adj,neuter,genitive,singular,positive,inflacc
+μακρῷ,adj,neuter,dative,singular,positive,inflacc
+μακρόν,adj,neuter,accusative,singular,positive,inflacc
+μακρόν,adj,neuter,vocative,singular,positive,inflacc
 
 
-ἀγαθώ,adj,neuter,nominative,dual,positive,inflacc
-ἀγαθοῖν,adj,neuter,genitive,dual,positive,inflacc
-ἀγαθοῖν,adj,neuter,dative,dual,positive,inflacc
-ἀγαθώ,adj,neuter,accusative,dual,positive,inflacc
-ἀγαθώ,adj,neuter,vocative,dual,positive,inflacc
+μακρώ,adj,neuter,nominative,dual,positive,inflacc
+μακροῖν,adj,neuter,genitive,dual,positive,inflacc
+μακροῖν,adj,neuter,dative,dual,positive,inflacc
+μακρώ,adj,neuter,accusative,dual,positive,inflacc
+μακρώ,adj,neuter,vocative,dual,positive,inflacc
 
 
-ἀγαθά,adj,neuter,nominative,plural,positive,inflacc
-ἀγαθῶν,adj,neuter,genitive,plural,positive,inflacc
-ἀγαθοῖς,adj,neuter,dative,plural,positive,inflacc
-ἀγαθά,adj,neuter,accusative,plural,positive,inflacc
-ἀγαθά,adj,neuter,vocative,plural,positive,inflacc
+μακρά,adj,neuter,nominative,plural,positive,inflacc
+μακρῶν,adj,neuter,genitive,plural,positive,inflacc
+μακροῖς,adj,neuter,dative,plural,positive,inflacc
+μακρά,adj,neuter,accusative,plural,positive,inflacc
+μακρά,adj,neuter,vocative,plural,positive,inflacc
 
 
 
 
 
-ἀγαθή,adj,feminine,nominative,singular,positive,inflacc
-ἀγαθῆς,adj,feminine,genitive,singular,positive,inflacc
-ἀγαθῇ,adj,feminine,dative,singular,positive,inflacc
-ἀγαθήν,adj,feminine,accusative,singular,positive,inflacc
-ἀγαθή,adj,feminine,vocative,singular,positive,inflacc
+μακρά,adj,feminine,nominative,singular,positive,inflacc
+μακρᾶς,adj,feminine,genitive,singular,positive,inflacc
+μακρᾷ,adj,feminine,dative,singular,positive,inflacc
+μακράν,adj,feminine,accusative,singular,positive,inflacc
+μακρά,adj,feminine,vocative,singular,positive,inflacc
 
 
-ἀγαθά,adj,feminine,nominative,dual,positive,inflacc
-ἀγαθαῖν,adj,feminine,genitive,dual,positive,inflacc
-ἀγαθαῖν,adj,feminine,dative,dual,positive,inflacc
-ἀγαθά,adj,feminine,accusative,dual,positive,inflacc
-ἀγαθά,adj,feminine,vocative,dual,positive,inflacc
+μακρά,adj,feminine,nominative,dual,positive,inflacc
+μακραῖν,adj,feminine,genitive,dual,positive,inflacc
+μακραῖν,adj,feminine,dative,dual,positive,inflacc
+μακρά,adj,feminine,accusative,dual,positive,inflacc
+μακρά,adj,feminine,vocative,dual,positive,inflacc
 
 
-ἀγαθαί,adj,feminine,nominative,plural,positive,inflacc
-ἀγαθῶν,adj,feminine,genitive,plural,positive,inflacc
-ἀγαθαῖς,adj,feminine,dative,plural,positive,inflacc
-ἀγαθάς,adj,feminine,accusative,plural,positive,inflacc
-ἀγαθαί,adj,feminine,vocative,plural,positive,inflacc
+μακραί,adj,feminine,nominative,plural,positive,inflacc
+μακρῶν,adj,feminine,genitive,plural,positive,inflacc
+μακραῖς,adj,feminine,dative,plural,positive,inflacc
+μακράς,adj,feminine,accusative,plural,positive,inflacc
+μακραί,adj,feminine,vocative,plural,positive,inflacc
