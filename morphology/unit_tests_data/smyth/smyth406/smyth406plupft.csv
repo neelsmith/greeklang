@@ -1,36 +1,25 @@
 Form,AnalysisType,P4,P5,P1,P2,P3
-λέλειμμαι,verb,first,singular,perfect,indicative,middle
 
 
-λέλειμμαι,verb,first,singular,perfect,indicative,passive
+ἐπεπείσμην,verb,first,singular,pluperfect,indicative,middle
+ἐπέπεισο,verb,second,singular,pluperfect,indicative,middle
+ἐπέπειστο,verb,third,singular,pluperfect,indicative,middle
 
+ἐπέπεισθον,verb,second,dual,pluperfect,indicative,middle
+ἐπεπείσθην,verb,third,dual,pluperfect,indicative,middle
 
-πέπεισμαι,verb,first,singular,perfect,indicative,middle
-πέπεισαι,verb,second,singular,perfect,indicative,middle
-πέπεισται,verb,third,singular,perfect,indicative,middle
-
-πέπεισθον,verb,second,dual,perfect,indicative,middle
-πέπεισθον,verb,third,dual,perfect,indicative,middle
-
-πεπείσμεθα,verb,first,plural,perfect,indicative,middle
-πέπεισθε,verb,second,plural,perfect,indicative,middle
-
-πέπεισθε,verb,second,plural,perfect,imperative,middle
+ἐπεπείσμεθα,verb,first,plural,pluperfect,indicative,middle
+ἐπέπεισθε,verb,second,plural,pluperfect,indicative,middle
 
 
 
 
+ἐπεπείσμην,verb,first,singular,pluperfect,indicative,passive
+ἐπέπεισο,verb,second,singular,pluperfect,indicative,passive
+ἐπέπειστο,verb,third,singular,pluperfect,indicative,passive
 
-πέπεισμαι,verb,first,singular,perfect,indicative,passive
-πέπεισαι,verb,second,singular,perfect,indicative,passive
-πέπεισται,verb,third,singular,perfect,indicative,passive
+ἐπέπεισθον,verb,second,dual,pluperfect,indicative,passive
+ἐπεπείσθην,verb,third,dual,pluperfect,indicative,passive
 
-πέπεισθον,verb,second,dual,perfect,indicative,passive
-πέπεισθον,verb,third,dual,perfect,indicative,passive
-
-πεπείσμεθα,verb,first,plural,perfect,indicative,passive
-πέπεισθε,verb,second,plural,perfect,indicative,passive
-
-πέπεισθε,verb,second,plural,perfect,imperative,passive
-πέπεισθον,verb,second,dual,perfect,imperative,passive
-πέπεισθον,verb,second,dual,perfect,imperative,middle
+ἐπεπείσμεθα,verb,first,plural,pluperfect,indicative,passive
+ἐπέπεισθε,verb,second,plural,pluperfect,indicative,passive
