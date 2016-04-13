@@ -15,7 +15,6 @@ Form,AnalysisType,P4,P5,P1,P2,P3
 πεπείσμεθα,verb,first,plural,perfect,indicative,middle
 πέπεισθε,verb,second,plural,perfect,indicative,middle
 
-πέπεισθε,verb,second,plural,perfect,imperative,middle
 
 
 
@@ -30,5 +29,29 @@ Form,AnalysisType,P4,P5,P1,P2,P3
 πέπεισθε,verb,second,plural,perfect,indicative,passive
 
 πέπεισθε,verb,second,plural,perfect,imperative,passive
+
+
+
+πέπεισο,verb,second,singular,perfect,imperative,middle
+πεπείσθω,verb,third,singular,perfect,imperative,middle
+
 πέπεισθον,verb,second,dual,perfect,imperative,passive
 πέπεισθον,verb,second,dual,perfect,imperative,middle
+
+πέπεισθε,verb,second,plural,perfect,imperative,middle
+πεπείσθων,verb,third,plural,perfect,imperative,middle
+
+
+πέπεισο,verb,second,singular,perfect,imperative,passive
+πεπείσθω,verb,third,singular,perfect,imperative,passive
+
+πέπεισθε,verb,second,plural,perfect,imperative,passive
+πεπείσθων,verb,third,plural,perfect,imperative,passive
+
+
+πεπεῖσθαι,infin,perfect,middle,,
+πεπεῖσθαι,infin,perfect,passive,,
+
+
+πεπεισμένος,ptcpl,perfect,middle,masculine,nominative,singular
+πεπεισμένος,ptcpl,perfect,passive,masculine,nominative,singular
