@@ -3,7 +3,7 @@ verbinfl.w_pres_ptcp1m,w_regular,wn,masc,nom,sg,pres,act
 verbinfl.w_pres_ptcp2m,w_regular,ontos,masc,gen,sg,pres,act
 verbinfl.w_pres_ptcp3m,w_regular,onti,masc,dat,sg,pres,act
 verbinfl.w_pres_ptcp4m,w_regular,onton,masc,acc,sg,pres,act
-verbinfl.w_pres_ptcp5m,w_regular,onte,masc,voc,sg,pres,act
+verbinfl.w_pres_ptcp5m,w_regular,wn,masc,voc,sg,pres,act
 
 verbinfl.w_pres_ptcp6m,w_regular,onte,masc,nom,dual,pres,act
 verbinfl.w_pres_ptcp7m,w_regular,ontoin,masc,gen,dual,pres,act
