@@ -30,8 +30,8 @@ Form,AnalysisType,P4,P5,P1,P2,P3,verb,aorist
 λιποίτην,verb,third,dual,aorist,optative,active
 
 λίποιμεν,verb,first,plural,aorist,optative,active
-λίποιτε,verb,first,plural,aorist,optative,active
-λίποιεν,verb,first,plural,aorist,optative,active
+λίποιτε,verb,second,plural,aorist,optative,active
+λίποιεν,verb,third,plural,aorist,optative,active
 
 λίπε,verb,second,singular,aorist,imperative,active
 λιπέτω,verb,third,singular,aorist,imperative,active
@@ -44,7 +44,10 @@ Form,AnalysisType,P4,P5,P1,P2,P3,verb,aorist
 λιπεῖν,infin,aorist,active,,
 λιπών,ptcpl,aorist,active,masculine,nominative,singular
 λιποῦσα,ptcpl,aorist,active,feminine,nominative,singular
+λιποῦσα,ptcpl,aorist,active,feminine,vocative,singular
 λιπόν,ptcpl,aorist,active,neuter,nominative,singular
+λιπόν,ptcpl,aorist,active,neuter,accusative,singular
+λιπόν,ptcpl,aorist,active,neuter,vocative,singular
 
 
 
@@ -54,8 +57,8 @@ Form,AnalysisType,P4,P5,P1,P2,P3,verb,aorist
 ἐλίπεσθον,verb,second,dual,aorist,indicative,middle
 ἐλιπέσθην,verb,third,dual,aorist,indicative,middle
 ἐλιπόμεθα,verb,first,plural,aorist,indicative,middle
-ἐλίπεσθε,verb,first,plural,aorist,indicative,middle
-ἐλίποντο,verb,first,plural,aorist,indicative,middle
+ἐλίπεσθε,verb,second,plural,aorist,indicative,middle
+ἐλίποντο,verb,third,plural,aorist,indicative,middle
 
 λίπωμαι,verb,first,singular,aorist,subjunctive,middle
 λίπῃ,verb,second,singular,aorist,subjunctive,middle
@@ -93,3 +96,7 @@ Form,AnalysisType,P4,P5,P1,P2,P3,verb,aorist
 λιπόμενον,ptcpl,aorist,middle,neuter,nominative,singular
 λιπόμενον,ptcpl,aorist,middle,neuter,accusative,singular
 λιπόμενον,ptcpl,aorist,middle,neuter,vocative,singular
+
+
+λιπόντων,ptcpl,aorist,active,masculine,genitive,plural
+λιπόντων,ptcpl,aorist,active,neuter,genitive,plural
