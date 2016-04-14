@@ -46,7 +46,7 @@ verbinfl.w_pres_imptv17b,w_pp1,esqon,2nd,dual,pres,imptv,pass
 verbinfl.w_pres_imptv18,w_regular,e/sqwn,3rd,dual,pres,imptv,pass
 verbinfl.w_pres_imptv18b,w_pp1,e/sqwn,3rd,dual,pres,imptv,pass
 
-verbinfl.w_pres_imptv19,w_regular,esq3,2nd,pl,pres,imptv,pass
+verbinfl.w_pres_imptv19,w_regular,esqe,2nd,pl,pres,imptv,pass
 verbinfl.w_pres_imptv19b,w_pp1,esqe,2nd,pl,pres,imptv,pass
 verbinfl.w_pres_imptv20,w_regular,e/sqwn,3rd,pl,pres,imptv,pass
 verbinfl.w_pres_imptv21b,w_pp1,e/sqwn,3rd,pl,pres,imptv,pass
