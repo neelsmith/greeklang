@@ -62,61 +62,61 @@ verbinfl.w_aor_ptcp15n,w_regular,anta,neut,voc,pl,aor,act
 
 
 
-verbinfl.w_aorptcp-mp1m,w_regular,amenos,masc,nom,sg,aor,mid
-verbinfl.w_aorptcp-mp2m,w_regular,amenou,masc,gen,sg,aor,mid
-verbinfl.w_aorptcp-mp3m,w_regular,amenw|,masc,dat,sg,aor,mid
-verbinfl.w_aorptcp-mp4m,w_regular,amenon,masc,acc,sg,aor,mid
-verbinfl.w_aorptcp-mp5m,w_regular,amene,masc,voc,sg,aor,mid
+verbinfl.w_aorptcp_mp1m,w_regular,amenos,masc,nom,sg,aor,mid
+verbinfl.w_aorptcp_mp2m,w_regular,amenou,masc,gen,sg,aor,mid
+verbinfl.w_aorptcp_mp3m,w_regular,amenw|,masc,dat,sg,aor,mid
+verbinfl.w_aorptcp_mp4m,w_regular,amenon,masc,acc,sg,aor,mid
+verbinfl.w_aorptcp_mp5m,w_regular,amene,masc,voc,sg,aor,mid
 
-verbinfl.w_aorptcp-mp6m,w_regular,amenw,masc,nom,dual,aor,mid
-verbinfl.w_aorptcp-mp7m,w_regular,amenoin,masc,gen,dual,aor,mid
-verbinfl.w_aorptcp-mp8m,w_regular,amenoin,masc,dat,dual,aor,mid
-verbinfl.w_aorptcp-mp9m,w_regular,amenw,masc,acc,dual,aor,mid
-verbinfl.w_aorptcp-mp10m,w_regular,amenw,masc,voc,dual,aor,mid
+verbinfl.w_aorptcp_mp6m,w_regular,amenw,masc,nom,dual,aor,mid
+verbinfl.w_aorptcp_mp7m,w_regular,amenoin,masc,gen,dual,aor,mid
+verbinfl.w_aorptcp_mp8m,w_regular,amenoin,masc,dat,dual,aor,mid
+verbinfl.w_aorptcp_mp9m,w_regular,amenw,masc,acc,dual,aor,mid
+verbinfl.w_aorptcp_mp10m,w_regular,amenw,masc,voc,dual,aor,mid
 
-verbinfl.w_aorptcp-mp11m,w_regular,amenoi,masc,nom,pl,aor,mid
-verbinfl.w_aorptcp-mp12m,w_regular,amenwn,masc,gen,pl,aor,mid
-verbinfl.w_aorptcp-mp13m,w_regular,amenois,masc,dat,pl,aor,mid
-verbinfl.w_aorptcp-mp14m,w_regular,amenous,masc,acc,pl,aor,mid
-verbinfl.w_aorptcp-mp15m,w_regular,amenoi,masc,voc,pl,aor,mid
-
-
+verbinfl.w_aorptcp_mp11m,w_regular,amenoi,masc,nom,pl,aor,mid
+verbinfl.w_aorptcp_mp12m,w_regular,amenwn,masc,gen,pl,aor,mid
+verbinfl.w_aorptcp_mp13m,w_regular,amenois,masc,dat,pl,aor,mid
+verbinfl.w_aorptcp_mp14m,w_regular,amenous,masc,acc,pl,aor,mid
+verbinfl.w_aorptcp_mp15m,w_regular,amenoi,masc,voc,pl,aor,mid
 
 
 
-verbinfl.w_aorptcp-mp1m,w_regular,amenh,fem,nom,sg,aor,mid
-verbinfl.w_aorptcp-mp2m,w_regular,amenhs,fem,gen,sg,aor,mid
-verbinfl.w_aorptcp-mp3m,w_regular,amenh|,fem,dat,sg,aor,mid
-verbinfl.w_aorptcp-mp4m,w_regular,amena_n,fem,acc,sg,aor,mid
-verbinfl.w_aorptcp-mp5m,w_regular,amenh,fem,voc,sg,aor,mid
-
-verbinfl.w_aorptcp-mp6m,w_regular,amena_,fem,nom,dual,aor,mid
-verbinfl.w_aorptcp-mp7m,w_regular,amenain,fem,gen,dual,aor,mid
-verbinfl.w_aorptcp-mp8m,w_regular,amenain,fem,dat,dual,aor,mid
-verbinfl.w_aorptcp-mp9m,w_regular,amena_,fem,acc,dual,aor,mid
-verbinfl.w_aorptcp-mp10m,w_regular,amena_,fem,voc,dual,aor,mid
-
-verbinfl.w_aorptcp-mp11m,w_regular,amenai,fem,nom,pl,aor,mid
-verbinfl.w_aorptcp-mp12m,w_regular,amenwn,fem,gen,pl,aor,mid
-verbinfl.w_aorptcp-mp13m,w_regular,amenais,fem,dat,pl,aor,mid
-verbinfl.w_aorptcp-mp14m,w_regular,amena_s,fem,acc,pl,aor,mid
-verbinfl.w_aorptcp-mp15m,w_regular,amenai,fem,voc,pl,aor,mid
 
 
-verbinfl.w_aorptcp-mp1n,w_regular,amenon,neut,nom,sg,aor,mid
-verbinfl.w_aorptcp-mp2n,w_regular,amenou,neut,gen,sg,aor,mid
-verbinfl.w_aorptcp-mp3n,w_regular,amenw|,neut,dat,sg,aor,mid
-verbinfl.w_aorptcp-mp4n,w_regular,amenon,neut,acc,sg,aor,mid
-verbinfl.w_aorptcp-mp5n,w_regular,amenon,neut,voc,sg,aor,mid
+verbinfl.w_aorptcp_mp1m,w_regular,amenh,fem,nom,sg,aor,mid
+verbinfl.w_aorptcp_mp2m,w_regular,amenhs,fem,gen,sg,aor,mid
+verbinfl.w_aorptcp_mp3m,w_regular,amenh|,fem,dat,sg,aor,mid
+verbinfl.w_aorptcp_mp4m,w_regular,amena_n,fem,acc,sg,aor,mid
+verbinfl.w_aorptcp_mp5m,w_regular,amenh,fem,voc,sg,aor,mid
 
-verbinfl.w_aorptcp-mp6n,w_regular,amenw,neut,nom,dual,aor,mid
-verbinfl.w_aorptcp-mp7n,w_regular,amenoin,neut,gen,dual,aor,mid
-verbinfl.w_aorptcp-mp8n,w_regular,amenoin,neut,dat,dual,aor,mid
-verbinfl.w_aorptcp-mp9n,w_regular,amenw,neut,acc,dual,aor,mid
-verbinfl.w_aorptcp-mp10n,w_regular,amenw,neut,voc,dual,aor,mid
+verbinfl.w_aorptcp_mp6m,w_regular,amena_,fem,nom,dual,aor,mid
+verbinfl.w_aorptcp_mp7m,w_regular,amenain,fem,gen,dual,aor,mid
+verbinfl.w_aorptcp_mp8m,w_regular,amenain,fem,dat,dual,aor,mid
+verbinfl.w_aorptcp_mp9m,w_regular,amena_,fem,acc,dual,aor,mid
+verbinfl.w_aorptcp_mp10m,w_regular,amena_,fem,voc,dual,aor,mid
 
-verbinfl.w_aorptcp-mp11n,w_regular,amena,neut,nom,pl,aor,mid
-verbinfl.w_aorptcp-mp12n,w_regular,amenwn,neut,gen,pl,aor,mid
-verbinfl.w_aorptcp-mp13n,w_regular,amenois,neut,dat,pl,aor,mid
-verbinfl.w_aorptcp-mp14n,w_regular,amena,neut,acc,pl,aor,mid
-verbinfl.w_aorptcp-mp15n,w_regular,amena,neut,voc,pl,aor,mid
+verbinfl.w_aorptcp_mp11m,w_regular,amenai,fem,nom,pl,aor,mid
+verbinfl.w_aorptcp_mp12m,w_regular,amenwn,fem,gen,pl,aor,mid
+verbinfl.w_aorptcp_mp13m,w_regular,amenais,fem,dat,pl,aor,mid
+verbinfl.w_aorptcp_mp14m,w_regular,amena_s,fem,acc,pl,aor,mid
+verbinfl.w_aorptcp_mp15m,w_regular,amenai,fem,voc,pl,aor,mid
+
+
+verbinfl.w_aorptcp_mp1n,w_regular,amenon,neut,nom,sg,aor,mid
+verbinfl.w_aorptcp_mp2n,w_regular,amenou,neut,gen,sg,aor,mid
+verbinfl.w_aorptcp_mp3n,w_regular,amenw|,neut,dat,sg,aor,mid
+verbinfl.w_aorptcp_mp4n,w_regular,amenon,neut,acc,sg,aor,mid
+verbinfl.w_aorptcp_mp5n,w_regular,amenon,neut,voc,sg,aor,mid
+
+verbinfl.w_aorptcp_mp6n,w_regular,amenw,neut,nom,dual,aor,mid
+verbinfl.w_aorptcp_mp7n,w_regular,amenoin,neut,gen,dual,aor,mid
+verbinfl.w_aorptcp_mp8n,w_regular,amenoin,neut,dat,dual,aor,mid
+verbinfl.w_aorptcp_mp9n,w_regular,amenw,neut,acc,dual,aor,mid
+verbinfl.w_aorptcp_mp10n,w_regular,amenw,neut,voc,dual,aor,mid
+
+verbinfl.w_aorptcp_mp11n,w_regular,amena,neut,nom,pl,aor,mid
+verbinfl.w_aorptcp_mp12n,w_regular,amenwn,neut,gen,pl,aor,mid
+verbinfl.w_aorptcp_mp13n,w_regular,amenois,neut,dat,pl,aor,mid
+verbinfl.w_aorptcp_mp14n,w_regular,amena,neut,acc,pl,aor,mid
+verbinfl.w_aorptcp_mp15n,w_regular,amena,neut,voc,pl,aor,mid
