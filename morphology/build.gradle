@@ -154,7 +154,13 @@ String toFstAlphabet(String s) {
 }
 
 
+
+
+/////////////////////////////////////////////////////////////////////////////////
+// Tasks for writing FST statements for stem lexica for irregulars.
 // Irregulars are a little different.
+//a
+
 //Source: StemUrn,LexicalEntity,String,Gender,Case,Number
 // Target: <u>smyth\.n23069\_0</u><u>lexent\.n23069</u>gunaiko/s<fem><gen><sg><irregnoun>
 String irregNounFstStringForCols(ArrayList columns) {
@@ -170,12 +176,6 @@ String irregNounFstStringForCols(ArrayList columns) {
   nounEntry.append("\n")
   return nounEntry.toString()
 }
-
-
-
-
-
-
 // StemUrn,LexicalEntity,String,Gender,Case,Number
 task buildIrregNouns(dependsOn:setUpLexDir) {
   description = "Builds FST lexicon for irregular nouns from .csv files"
@@ -219,6 +219,11 @@ buildIrregStems.doLast {
 }
 
 
+
+// Tasks for writing FST statements for stem lexica for regular formation.
+// 
+//
+
 // SOURCE:  lsjpool.n64316_0,lexent.n64316,lu_,w_regular,
 // TARGET: <u>lsjpool.n64316_0</u><u>lexent.n64316</u>lu<lo><verb><w_regular>
 String verbFstStringForCols(ArrayList columns) {
@@ -234,48 +239,13 @@ String verbFstStringForCols(ArrayList columns) {
   verbEntry.append("\n")
   return verbEntry.toString()
 }
-
 task buildVerbStems(dependsOn: setUpLexDir) {
   description = "Builds FST lexicon for verbs from .csv files"
 }
 buildVerbStems.doLast {
-n  csvDirToFst("${loaddir}/${dataset}/stems-csv/verbs-simplex", "lex-verbs", this.&verbFstStringForCols) 
-}
-/*
-  File lexDir = new File("${loaddir}/${dataset}/stems-csv/verbs-simplex")
-  File orthoBuild = new File(buildDir,dataset)
-  File fstDir = new File(orthoBuild,"lexica")
-  if (! fstDir.exists()) {
-    fstDir.mkdir()
-  }
-
-  def fileCount = 0
-  lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
-    File fstFile = new File(fstDir, "lex-verbs-${csvFile.getName().replaceFirst(/.csv/,'.fst')}")
-    fstFile.setText("")
-    StringBuilder data = new StringBuilder()
-    def lineCount = 0
-    csvFile.eachLine { l ->
-      ArrayList cols = l.split(/,/)
-
-      // CHECK THAT LINE IS NOT EMPTYR
-      if ((lineCount > 0) && (cols.size() > 1)) {
-        data.append(verbFstStringForCols(cols))
-      }
-      lineCount++
-    }
-    System.err.println "${fileCount}. File ${csvFile}"
-    if (fileCount > 0) {
-     fstFile.append(" \\\\|\n")
-    }
-    fstFile.append(data.toString())
-    fileCount++
-  }
-
+  csvDirToFst("${loaddir}/${dataset}/stems-csv/verbs-simplex", "lex-verbs", this.&verbFstStringForCols) 
 }
 
-
-*/
 // SOURCE:
 // TARGET:
 String nounFstStringForCols(ArrayList columns) {
@@ -295,59 +265,15 @@ task buildNounStems(dependsOn: setUpLexDir) {
   description = "Builds .fst files from tabular source in ${loaddir}/${dataset}/stems-csv/nouns"
 
   File lexDir = new File("${loaddir}/${dataset}/stems-csv/nouns")
-
   File orthoBuild = new File(buildDir,dataset)
   File fstDir = new File(orthoBuild,"lexica")
 
   outputs.dir fstDir
   inputs.dir lexDir
 }
-
 buildNounStems.doLast {
   csvDirToFst("${loaddir}/${dataset}/stems-csv/nouns", "lex-nouns", this.&nounFstStringForCols) 
 }
-/*
-  File lexDir = new File("${loaddir}/${dataset}/stems-csv/nouns")
-  File orthoBuild = new File(buildDir,dataset)
-  File fstDir = new File(orthoBuild,"lexica")
-
-  if (! fstDir.exists()) {
-    fstDir.mkdir()
-  }
-
-  System.err.println "Looking for csv files in " + lexDir
-  def fileCount = 0
-  lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
-    File fstFile = new File(fstDir, "lex-nouns-${csvFile.getName().replaceFirst(/.csv/,'.fst')}")
-    fstFile.setText("")
-    StringBuilder data = new StringBuilder()
-    def lineCount = 0
-    csvFile.eachLine { l ->
-      ArrayList cols = l.split(/,/)
-
-      // CHECK THAT LINE IS NOT EMPTYR
-      if ((lineCount > 0) && (cols.size() > 1)) {
-        data.append(nounFstStringForCols(cols))
-      }
-      lineCount++
-    }
-    System.err.println "${fileCount}. File ${csvFile}"
-    if (fileCount > 0) {
-     fstFile.append(" \\\\|\n")
-    }
-    fstFile.append(data.toString())
-    fileCount++
-  }
-
-}
-
-*/
-
-
-
-
-
-
 
 // pronouns
 //SOURCE: smyth.lexent.n71882_00,lexent.n71882,t,os_h_on,inflacc
@@ -356,7 +282,6 @@ String pronFstStringForCols(ArrayList columns) {
   if (columns.size() < 5) {
     return ""
   }
-  
   StringBuilder pronEntry  = new StringBuilder()
   pronEntry.append("<u>${columns[0]}</u>")
   pronEntry.append("<u>${columns[1]}</u>")
@@ -368,12 +293,10 @@ String pronFstStringForCols(ArrayList columns) {
   pronEntry.append("\n")
   return pronEntry.toString()
 }
-
 task buildPronounStems(dependsOn: setUpLexDir) {
   description = "Builds .fst files from tabular source in ${loaddir}/${dataset}/stems-csv/pronouns"
 
   File lexDir = new File("${loaddir}/${dataset}/stems-csv/pronouns")
-
   File orthoBuild = new File(buildDir,dataset)
   File fstDir = new File(orthoBuild,"lexica")
 
@@ -381,35 +304,7 @@ task buildPronounStems(dependsOn: setUpLexDir) {
   inputs.dir lexDir
 }
 buildPronounStems.doLast {
-  File lexDir = new File("${loaddir}/${dataset}/stems-csv/pronouns")
-  File orthoBuild = new File(buildDir,dataset)
-  File fstDir = new File(orthoBuild,"lexica")
-
-  System.err.println "Looking for csv files in " + lexDir
-  def fileCount = 0
-  lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
-    File fstFile = new File(fstDir, "lex-prons-${csvFile.getName().replaceFirst(/.csv/,'.fst')}")
-    fstFile.setText("")
-    StringBuilder data = new StringBuilder()
-    def lineCount = 0
-    csvFile.eachLine { l ->
-      ArrayList cols = l.split(/,/)
-
-      // CHECK THAT LINE IS NOT EMPTYR
-      if ((lineCount > 0) && (cols.size() > 1)) {
-        data.append(pronFstStringForCols(cols))
-      }
-      lineCount++
-    }
-    System.err.println "${fileCount}. File ${csvFile}"
-    //if (fileCount > 0) {
-      //fstFile.append(" \\\\|\n")
-    //}
-    fstFile.append(data.toString())
-    fileCount++
-  }
-
-
+  csvDirToFst("${loaddir}/${dataset}/stems-csv/pronouns", "lex-prons", this.&pronFstStringForCols) 
 }
 
 // SOURCE: smythpool.n260_0,lexent.n260,a)gaq,os_h_on,inflacc
@@ -418,7 +313,6 @@ String adjFstStringForCols(ArrayList columns) {
   if (columns.size() < 5) {
     return ""
   }
-  
   StringBuilder adjEntry  = new StringBuilder()
   adjEntry.append("<u>${columns[0]}</u>")
   adjEntry.append("<u>${columns[1]}</u>")
@@ -434,7 +328,6 @@ task buildAdjectiveStems(dependsOn: setUpLexDir) {
   description = "Builds .fst files from tabular source in ${loaddir}/${dataset}/stems-csv/adjectives"
 
   File lexDir = new File("${loaddir}/${dataset}/stems-csv/adjectives")
-
   File orthoBuild = new File(buildDir,dataset)
   File fstDir = new File(orthoBuild,"lexica")
 
@@ -442,35 +335,7 @@ task buildAdjectiveStems(dependsOn: setUpLexDir) {
   inputs.dir lexDir
 }
 buildAdjectiveStems.doLast {
-  File lexDir = new File("${loaddir}/${dataset}/stems-csv/adjectives")
-  File orthoBuild = new File(buildDir,dataset)
-  File fstDir = new File(orthoBuild,"lexica")
-
-  System.err.println "Looking for csv files in " + lexDir
-  def fileCount = 0
-  lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
-    File fstFile = new File(fstDir, "lex-adjs-${csvFile.getName().replaceFirst(/.csv/,'.fst')}")
-    fstFile.setText("")
-    StringBuilder data = new StringBuilder()
-    def lineCount = 0
-    csvFile.eachLine { l ->
-      ArrayList cols = l.split(/,/)
-
-      // CHECK THAT LINE IS NOT EMPTYR
-      if ((lineCount > 0) && (cols.size() > 1)) {
-        data.append(adjFstStringForCols(cols))
-      }
-      lineCount++
-    }
-    System.err.println "${fileCount}. File ${csvFile}"
-    if (fileCount > 0) {
-     fstFile.append(" \\\\|\n")
-    }
-    fstFile.append(data.toString())
-    fileCount++
-  }
-
-
+  csvDirToFst("${loaddir}/${dataset}/stems-csv/adjectives", "lex-adjs", this.&adjFstStringForCols) 
 }
 
 // SOURCE: smythpool.n51951_0,lexent.n51951,kai/,conjunct
@@ -489,52 +354,20 @@ String indeclFstStringForCols(ArrayList columns) {
   return indeclEntry.toString()
 }
 task buildIndeclinableStems(dependsOn: setUpLexDir) {
+  description = "Builds .fst files from tabular source in ${loaddir}/${dataset}/stems-csv/indeclinables"
+
+  File lexDir = new File("${loaddir}/${dataset}/stems-csv/indeclinables")
+  File orthoBuild = new File(buildDir,dataset)
+  File fstDir = new File(orthoBuild,"lexica")
+
+  outputs.dir fstDir
+  inputs.dir lexDir
 }
 buildIndeclinableStems.doLast {
-  File lexDir = new File("${loaddir}/${dataset}/stems-csv/indeclinable")
-  File orthoBuild = new File(buildDir,dataset)
-  File fstDir = new File(orthoBuild,"lexica")
-
-  if (! fstDir.exists()) {
-    fstDir.mkdir()
-  }
-
-  System.err.println "Looking for csv files in " + lexDir
-  def fileCount = 0
-  lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
-    File fstFile = new File(fstDir, "lex-indecl-${csvFile.getName().replaceFirst(/.csv/,'.fst')}")
-    fstFile.setText("")
-    StringBuilder data = new StringBuilder()
-    def lineCount = 0
-    csvFile.eachLine { l ->
-      ArrayList cols = l.split(/,/)
-
-      // CHECK THAT LINE IS NOT EMPTYR
-      if ((lineCount > 0) && (cols.size() > 1)) {
-        data.append(indeclFstStringForCols(cols))
-      }
-      lineCount++
-    }
-    System.err.println "${fileCount}. File ${csvFile}"
-    if (fileCount > 0) {
-     fstFile.append(" \\\\|\n")
-    }
-    fstFile.append(data.toString())
-    fileCount++
-  }
-
+    csvDirToFst("${loaddir}/${dataset}/stems-csv/indeclinable", "lex-indecl", this.&indeclFstStringForCols) 
 }
 
-task buildStems (dependsOn: [buildIrregStems, buildNounStems, buildVerbStems]) {
-  description = "Builds .fst files from tabular source in data/stems-csv"
-  File orthoBuild = new File(buildDir,dataset)
-  File fstDir = new File(orthoBuild,"lexica")
-  outputs.dir fstDir
-}
-
-
-
-task buildStemsX(dependsOn: [buildNounStems, buildVerbStems, buildAdjectiveStems, buildIndeclinableStems, buildIrregStems, buildPronounStems]) {
+task buildStems(dependsOn: [buildNounStems, buildVerbStems, buildAdjectiveStems, buildIndeclinableStems, buildIrregStems, buildPronounStems]) {
   description = "Builds .fst files from tabular source in data/stems-csv"
   File orthoBuild = new File(buildDir,dataset)
   File fstDir = new File(orthoBuild,"lexica")
