@@ -423,41 +423,6 @@ def inflCsvToFst(String srcDir, String baseName, Closure formatter) {
   data.append("\n\n\$${baseName}\$\n")
   fstFile.append(data.toString())
 }
-/*
-  File adjFst = new File(inflDir,"adjectiveinfl.fst")
-  adjFst.setText("")
-  StringBuilder data = new StringBuilder("\$adjinfl\$ = ")
-
-  File lexDir = new File("${loaddir}/${dataset}/rules-csv/adjectives")
-  def fileCount = 0
-  lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
-    if (fileCount > 0) {
-      data.append(" |\\\n")
-    }
-    def lineCount = 0
-    csvFile.eachLine { l ->
-      ArrayList cols = l.split(/,/)
-      if (lineCount == 0) {
-	// skip
-      } else {
-	String fstRow = adjInflFstForCols(cols)
-	if (fstRow.size() > 1) {
-	  if (lineCount == 1) {
-	    data.append(fstRow)
-	  } else if (lineCount > 1) {
-	    data.append(" |\\\n" + fstRow)
-	  }
-	}
-      }
-      lineCount++;
-    }
-    fileCount++
-  }
-  data.append("\n\n\$adjinfl\$\n")
-  adjFst.append(data.toString())
-}
-*/
-
 
 String advInflFstForCols(ArrayList cols) {
   if (cols.size() < 4) {
@@ -480,8 +445,6 @@ task buildAdverbInflection(dependsOn:setUpInflDir) {
 buildAdverbInflection.doLast {
   inflCsvToFst("${loaddir}/${dataset}/rules-csv/adverbs", "adverbinfl", this.&advInflFstForCols)
 }
-
-
 
 // SOURCE: adjinfl.os_h_on1,os_h_on,os,masc,nom,sg,posit
 // TARGET: <os_h_on><u>adjinfl.os_h_on1</u>os<adj><masc><nom><sg><posit>
@@ -531,47 +494,6 @@ task buildIndeclInflection(dependsOn: setUpInflDir) {
 buildIndeclInflection.doLast {
   inflCsvToFst("${loaddir}/${dataset}/rules-csv/indeclinable", "indeclinfl", this.&indeclInflFstForCols)
 }
-/*
-  File orthoBuild = new File(buildDir, dataset)
-  File inflDir = new File(orthoBuild,"inflection")
-  File indeclFst = new File(inflDir,"indeclinfl.fst")
-  indeclFst.setText("")
-  StringBuilder data = new StringBuilder("\$indeclinfl\$ = ")
-
-  File lexDir = new File("${loaddir}/${dataset}/rules-csv/indeclinable")
-  def fileCount = 0
-  lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
-    if (fileCount > 0) {
-      data.append(" |\\\n")
-    }
-    def lineCount = 0
-    csvFile.eachLine { l ->
-      ArrayList cols = l.split(/,/)
-      if (lineCount == 0) {
-	// skip
-      } else {
-	String fstRow = indeclInflFstForCols(cols)
-	if (fstRow.size() > 1) {
-	  if (lineCount == 1) {
-	    data.append(fstRow)
-	  } else if (lineCount > 1) {
-	    data.append(" |\\\n" + fstRow)
-	  }
-	}
-      }
-      lineCount++;
-    }
-    fileCount++
-  }
-  data.append("\n\n\$indeclinfl\$\n")
-  indeclFst.append(data.toString())
-}
-
-*/
-
-
-
-
 
 // Four inflectional patterns for verbs:
 //1.
@@ -598,45 +520,6 @@ task buildInfInflection(dependsOn: setUpInflDir) {
 buildInfInflection.doLast {
     inflCsvToFst("${loaddir}/${dataset}/rules-csv/infinitives", "infininfl", this.&infInflFstForCols)
 }
-/*
-  File orthoBuild = new File(buildDir, dataset)
-  File inflDir = new File(orthoBuild,"inflection")
-  File infinFst = new File(inflDir,"infininfl.fst")
-  infinFst.setText("")
-  StringBuilder data = new StringBuilder("\$infininfl\$ = ")
-
-  File lexDir = new File("${loaddir}/${dataset}/rules-csv/infinitives")
-  def fileCount = 0
-  lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
-    if (fileCount > 0) {
-      data.append(" |\\\n")
-    }
-    def lineCount = 0
-    csvFile.eachLine { l ->
-      ArrayList cols = l.split(/,/)
-      if (lineCount == 0) {
-	// skip
-      } else {
-	String fstRow = infInflFstForCols(cols)
-	if (fstRow.size() > 1) {
-	  if (lineCount == 1) {
-	    data.append(fstRow)
-	  } else if (lineCount > 1) {
-	    data.append(" |\\\n" + fstRow)
-	  }
-	}
-      }
-      lineCount++
-      }
-    fileCount++
-  }
-  data.append("\n\n\$infininfl\$\n")
-  infinFst.append(data.toString())
-}
-*/
-
-
-
 
 //2.
 // SOURCE: verbinfl.w_pres_ptcp1,w_regular,wn,masc,nom,sg,pres,act
@@ -670,42 +553,7 @@ task buildPtcplInflection(dependsOn: setUpInflDir) {
 buildPtcplInflection.doLast {
   inflCsvToFst("${loaddir}/${dataset}/rules-csv/participles", "ptcplinfl", this.&ptcplInflFstForCols)
 }
-/*
-  File orthoBuild = new File(buildDir, dataset)
-  File inflDir = new File(orthoBuild,"inflection")
-  File ptcplFst = new File(inflDir,"ptcplinfl.fst")
-  ptcplFst.setText("")
-  StringBuilder data = new StringBuilder("\$ptcplinfl\$ = ")
 
-  File lexDir = new File("${loaddir}/${dataset}/rules-csv/participles")
-  def fileCount = 0
-  lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
-    if (fileCount > 0) {
-      data.append(" |\\\n")
-    }
-    def lineCount = 0
-    csvFile.eachLine { l ->
-      ArrayList cols = l.split(/,/)
-      if (lineCount == 0) {
-	// skip
-      } else {
-	String fstRow = ptcplInflFstForCols(cols)
-	if (fstRow.size() > 1) {
-	  if (lineCount == 1) {
-	    data.append(fstRow)
-	  } else if (lineCount > 1) {
-	    data.append(" |\\\n" + fstRow)
-	  }
-	}
-      }
-      lineCount++
-      }
-    fileCount++
-  }
-  data.append("\n\n\$ptcplinfl\$\n")
-  ptcplFst.append(data.toString())
-}
-*/
 
 //3.
 // SOURCE: verbinfl.teos_1,w_regular,te/os,masc,nom,sg,vadj1
@@ -735,43 +583,7 @@ task buildVadjInflection(dependsOn: setUpInflDir) {
 buildVadjInflection.doLast {
   inflCsvToFst("${loaddir}/${dataset}/rules-csv/verbaladj", "vadjinfl", this.&vadjInflFstForCols)
 }
-/*
 
-  File orthoBuild = new File(buildDir, dataset)
-  File inflDir = new File(orthoBuild,"inflection")
-  File vadjFst = new File(inflDir,"vadjinfl.fst")
-  vadjFst.setText("")
-  StringBuilder data = new StringBuilder("\$vadjinfl\$ = ")
-
-  File lexDir = new File("${loaddir}/${dataset}/rules-csv/verbaladj")
-  def fileCount = 0
-  lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
-    if (fileCount > 0) {
-      data.append(" |\\\n")
-    }
-    def lineCount = 0
-    csvFile.eachLine { l ->
-      ArrayList cols = l.split(/,/)
-      if (lineCount == 0) {
-	// skip
-      } else {
-	String fstRow = vadjInflFstForCols(cols)
-	if (fstRow.size() > 1) {
-	  if (lineCount == 1) {
-	    data.append(fstRow)
-	  } else if (lineCount > 1) {
-	    data.append(" |\\\n" + fstRow)
-	  }
-	}
-      }
-      lineCount++;
-    }
-    fileCount++
-  }
-  data.append("\n\n\$vadjinfl\$\n")
-  vadjFst.append(data.toString())
-}
-*/
 //4.
 // SOURCE:  verbinfl.w_impf_indic1,w_regular,on,1st,sg,impft,indic,act
 // TARGET:  <w_regular>es<2nd><sg><impft><indic><act><u>verbinfl.w_impf_indic2</u>
@@ -786,20 +598,12 @@ String verbInflFstForCols(ArrayList cols) {
     return ""
   }
   String inflClass = cols[1] //.replaceAll(/_/,"\\_")
-
-  
   String inflString = toFstAlphabet(cols[2])
-
   String pers = cols[3]
   String num = cols[4]
   String tense = cols[5]
   String mood = cols[6]
   String voice = cols[7]
-
-  inflString = inflString.replaceAll("_", "<lo>")
-  inflString = inflString.replaceAll("\\(", "<ro>")
-  inflString = inflString.replaceAll("\\)", "<sm>")
-  inflString = inflString.replaceAll("\\|", "\\\\|")
 
   fst.append(" <${inflClass}><verb>${inflString}<${pers}><${num}><${tense}><${mood}><${voice}><u>${ruleUrn}</u>")
 
@@ -813,43 +617,6 @@ task buildVerbInflection(dependsOn: setUpInflDir) {
 buildVerbInflection.doLast {
   inflCsvToFst("${loaddir}/${dataset}/rules-csv/verbs", "verbinfl", this.&verbInflFstForCols)
 }
-/*
-  File orthoBuild = new File(buildDir, dataset)
-  File inflDir = new File(orthoBuild,"inflection")
-  File verbFst = new File(inflDir,"verbinfl.fst")
-  verbFst.setText("")
-  StringBuilder data = new StringBuilder("\$verbinfl\$ = ")
-
-  File lexDir = new File("${loaddir}/${dataset}/rules-csv/verbs")
-  def fileCount = 0
-  lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
-    if (fileCount > 0) {
-      data.append(" |\\\n")
-    }
-    def lineCount = 0
-    csvFile.eachLine { l ->
-      ArrayList cols = l.split(/,/)
-      if (lineCount == 0) {
-	// skip
-      } else {
-	String fstRow = verbInflFstForCols(cols)
-	if (fstRow.size() > 1) {
-	  if (lineCount == 1) {
-	    data.append(fstRow)
-	  } else if (lineCount > 1) {
-	    data.append(" |\\\n" + fstRow)
-	  }
-	}
-      }
-      lineCount++
-      }
-    fileCount++
-  }
-  data.append("\n\n\$verbinfl\$\n")
-  verbFst.append(data.toString())
-}
-*/
-
 
 String nounInflFstForCols(ArrayList cols) {
   if (cols.size() < 6) {
@@ -864,12 +631,6 @@ String nounInflFstForCols(ArrayList cols) {
   String grammCase = cols[4]
   String grammNumber = cols[5]
 
-  inflString = inflString.replaceAll("_", "<lo>")
-  inflString = inflString.replaceAll("\\(", "<ro>")
-  inflString = inflString.replaceAll("\\)", "<sm>")
-
-
-
   fst.append(" <${inflClass}><noun>${inflString}<${grammGender}><${grammCase}><${grammNumber}> <u>${ruleUrn}</u>")
   return fst.toString()
 }
@@ -879,45 +640,6 @@ task buildNounInflection(dependsOn: setUpInflDir) {
 buildNounInflection.doLast {
   inflCsvToFst("${loaddir}/${dataset}/rules-csv/nouns", "nouninfl", this.&nounInflFstForCols)
 }
-/*
-  File orthoBuild = new File(buildDir, dataset)
-  File inflDir = new File(orthoBuild,"inflection")
-  File nounFst = new File(inflDir,"nouninfl.fst")
-  nounFst.setText("")
-  StringBuilder data = new StringBuilder("\$nouninfl\$ = ")
-
-  File lexDir = new File("${loaddir}/${dataset}/rules-csv/nouns")
-  def fileCount = 0
-  lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
-    if (fileCount > 0) {
-      data.append(" |\\\n")
-    }
-
-    def lineCount = 0
-    csvFile.eachLine { l ->
-      ArrayList cols = l.split(/,/)
-      if (lineCount == 0) {
-	// skip
-      } else {
-	String fstRow = nounInflFstForCols(cols)
-	if (fstRow.size() > 1) {
-	  if (lineCount == 1) {
-	    data.append(fstRow)
-	  } else if (lineCount > 1) {
-	    data.append(" |\\\n" + fstRow)
-	  }
-	}
-      }
-      lineCount++
-      }
-    fileCount++
-  }
-  data.append("\n\n\$nouninfl\$\n")
-  nounFst.append(data.toString())
-}
-*/
-
-
 
 task buildInflection(dependsOn: [buildNounInflection, buildAdjectiveInflection, buildAdverbInflection,buildIndeclInflection, buildInfInflection, buildPtcplInflection, buildVadjInflection,  buildVerbInflection ]) {
   description = "Builds .fst files from tabular source in data/rules-csv"
