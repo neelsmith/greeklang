@@ -107,6 +107,18 @@ String lexiconFstStatement(File dir) {
     return stmt.toString()
   }
 }
+
+
+String toFstAlphabet(String s) {
+  String fst = s.replaceAll("_", "<lo>")
+  fst = fst.replaceAll("\\^", "<sh>")
+  fst = fst.replaceAll("\\(", "<ro>")
+  fst = fst.replaceAll("\\)", "<sm>")
+  fst = fst.replaceAll("=", "\\\\=")
+  fst = fst.replaceAll("\\|", "<isub>")
+  return fst
+}
+
 //
 /////////////////////////////////////////////////////////////////////////////////
 
@@ -119,7 +131,7 @@ String lexiconFstStatement(File dir) {
 
 // loop through files in dir and convert data using formatter closure 
 //  passed as an arg:
-def csvDirToFst(String d, String baseName, Closure formatter) {
+def stemsCsvToFst(String d, String baseName, Closure formatter) {
   File orthoBuild = new File(buildDir,dataset)
   File fstDir = new File(orthoBuild,"lexica")
   if (! fstDir.exists()) {
@@ -142,17 +154,6 @@ def csvDirToFst(String d, String baseName, Closure formatter) {
     fstFile.append(data.toString())
   }
 }
-
-String toFstAlphabet(String s) {
-  String fst = s.replaceAll("_", "<lo>")
-  fst = fst.replaceAll("\\^", "<sh>")
-  fst = fst.replaceAll("\\(", "<ro>")
-  fst = fst.replaceAll("\\)", "<sm>")
-  fst = fst.replaceAll("=", "\\\\=")
-  fst = fst.replaceAll("\\|", "<isub>")
-  return fst
-}
-
 
 
 
@@ -188,7 +189,7 @@ task buildIrregNouns(dependsOn:setUpLexDir) {
   inputs.dir lexDir
 }
 buildIrregNouns.doLast {
-  csvDirToFst("${loaddir}/${dataset}/irregular-stems-csv/nouns", "lex-irreg-noun", this.&irregNounFstStringForCols) 
+  stemsCsvToFst("${loaddir}/${dataset}/irregular-stems-csv/nouns", "lex-irreg-noun", this.&irregNounFstStringForCols) 
 }
 
 task buildIrregAdjectives(dependsOn:setUpLexDir) {
@@ -243,7 +244,7 @@ task buildVerbStems(dependsOn: setUpLexDir) {
   description = "Builds FST lexicon for verbs from .csv files"
 }
 buildVerbStems.doLast {
-  csvDirToFst("${loaddir}/${dataset}/stems-csv/verbs-simplex", "lex-verbs", this.&verbFstStringForCols) 
+  stemsCsvToFst("${loaddir}/${dataset}/stems-csv/verbs-simplex", "lex-verbs", this.&verbFstStringForCols) 
 }
 
 // SOURCE:
@@ -272,7 +273,7 @@ task buildNounStems(dependsOn: setUpLexDir) {
   inputs.dir lexDir
 }
 buildNounStems.doLast {
-  csvDirToFst("${loaddir}/${dataset}/stems-csv/nouns", "lex-nouns", this.&nounFstStringForCols) 
+  stemsCsvToFst("${loaddir}/${dataset}/stems-csv/nouns", "lex-nouns", this.&nounFstStringForCols) 
 }
 
 // pronouns
@@ -304,7 +305,7 @@ task buildPronounStems(dependsOn: setUpLexDir) {
   inputs.dir lexDir
 }
 buildPronounStems.doLast {
-  csvDirToFst("${loaddir}/${dataset}/stems-csv/pronouns", "lex-prons", this.&pronFstStringForCols) 
+  stemsCsvToFst("${loaddir}/${dataset}/stems-csv/pronouns", "lex-prons", this.&pronFstStringForCols) 
 }
 
 // SOURCE: smythpool.n260_0,lexent.n260,a)gaq,os_h_on,inflacc
@@ -335,7 +336,7 @@ task buildAdjectiveStems(dependsOn: setUpLexDir) {
   inputs.dir lexDir
 }
 buildAdjectiveStems.doLast {
-  csvDirToFst("${loaddir}/${dataset}/stems-csv/adjectives", "lex-adjs", this.&adjFstStringForCols) 
+  stemsCsvToFst("${loaddir}/${dataset}/stems-csv/adjectives", "lex-adjs", this.&adjFstStringForCols) 
 }
 
 // SOURCE: smythpool.n51951_0,lexent.n51951,kai/,conjunct
@@ -364,7 +365,7 @@ task buildIndeclinableStems(dependsOn: setUpLexDir) {
   inputs.dir lexDir
 }
 buildIndeclinableStems.doLast {
-    csvDirToFst("${loaddir}/${dataset}/stems-csv/indeclinable", "lex-indecl", this.&indeclFstStringForCols) 
+  stemsCsvToFst("${loaddir}/${dataset}/stems-csv/indeclinable", "lex-indecl", this.&indeclFstStringForCols) 
 }
 
 task buildStems(dependsOn: [buildNounStems, buildVerbStems, buildAdjectiveStems, buildIndeclinableStems, buildIrregStems, buildPronounStems]) {
@@ -382,7 +383,80 @@ task buildStems(dependsOn: [buildNounStems, buildVerbStems, buildAdjectiveStems,
 /////////////////////////////////////////////////////////////////////////////////////
 // 
 // Tasks to build inflectional rules in FST from source data in .csv files
-//
+
+def inflCsvToFst(String srcDir, String baseName, Closure formatter) {
+  File orthoBuild = new File(buildDir,dataset)
+  File fstDir = new File(orthoBuild,"inflection")
+  if (! fstDir.exists()) {
+    fstDir.mkdir()
+  }
+  
+  File inflDir = new File(srcDir)
+  File fstFile = new File(fstDir,"${baseName}.fst")
+  fstFile.setText("")
+  System.err.println "Set up output file " + fstFile
+  StringBuilder data = new StringBuilder("\$${baseName}\$ = ")
+  def fileCount = 0
+  inflDir.eachFileMatch(~/.*.csv/) { csvFile ->
+    if (fileCount > 0) {
+      data.append(" |\\\n")
+    }
+    def lineCount = 0
+    csvFile.eachLine { l ->
+      ArrayList cols = l.split(/,/)
+      if (lineCount == 0) {
+	// skip
+      } else {
+	String fstRow = formatter(cols)
+	if (fstRow.size() > 1) {
+	  if (lineCount == 1) {
+	    data.append(fstRow)
+	  } else if (lineCount > 1) {
+	    data.append(" |\\\n" + fstRow)
+	  }
+	}
+      }
+      lineCount++;
+    }
+    fileCount++
+  }
+  data.append("\n\n\$${baseName}\$\n")
+  fstFile.append(data.toString())
+}
+/*
+  File adjFst = new File(inflDir,"adjectiveinfl.fst")
+  adjFst.setText("")
+  StringBuilder data = new StringBuilder("\$adjinfl\$ = ")
+
+  File lexDir = new File("${loaddir}/${dataset}/rules-csv/adjectives")
+  def fileCount = 0
+  lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
+    if (fileCount > 0) {
+      data.append(" |\\\n")
+    }
+    def lineCount = 0
+    csvFile.eachLine { l ->
+      ArrayList cols = l.split(/,/)
+      if (lineCount == 0) {
+	// skip
+      } else {
+	String fstRow = adjInflFstForCols(cols)
+	if (fstRow.size() > 1) {
+	  if (lineCount == 1) {
+	    data.append(fstRow)
+	  } else if (lineCount > 1) {
+	    data.append(" |\\\n" + fstRow)
+	  }
+	}
+      }
+      lineCount++;
+    }
+    fileCount++
+  }
+  data.append("\n\n\$adjinfl\$\n")
+  adjFst.append(data.toString())
+}
+*/
 
 // SOURCE: adjinfl.os_h_on1,os_h_on,os,masc,nom,sg,posit
 // TARGET: <os_h_on><u>adjinfl.os_h_on1</u>os<adj><masc><nom><sg><posit>
@@ -430,6 +504,9 @@ task buildAdverbInflection(dependsOn:setUpInflDir) {
   description = "Builds rules for adverbs in adverbinfl.fst from tabular source"
 }
 buildAdverbInflection.doLast {
+  inflCsvToFst("${loaddir}/${dataset}/rules-csv/adverbs", "adverbinfl", this.&advInflFstForCols)
+}
+/*
   File orthoBuild = new File(buildDir, dataset)
   File inflDir = new File(orthoBuild,"inflection")
   File adjFst = new File(inflDir,"adverbinfl.fst")
@@ -466,47 +543,17 @@ buildAdverbInflection.doLast {
   data.append("\n\n\$advinfl\$\n")
   adjFst.append(data.toString())
 }
-
+*/
 task buildAdjectiveInflection(dependsOn: setUpInflDir) {
   description = "Builds rules for adjectives in adjectiveinfl.fst from tabular source"
 
 }
 buildAdjectiveInflection.doLast {
-  File orthoBuild = new File(buildDir, dataset)
-  File inflDir = new File(orthoBuild,"inflection")
-  File adjFst = new File(inflDir,"adjectiveinfl.fst")
-  adjFst.setText("")
-  StringBuilder data = new StringBuilder("\$adjinfl\$ = ")
-
-  File lexDir = new File("${loaddir}/${dataset}/rules-csv/adjectives")
-  def fileCount = 0
-  lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
-    if (fileCount > 0) {
-      data.append(" |\\\n")
-    }
-    def lineCount = 0
-    csvFile.eachLine { l ->
-      ArrayList cols = l.split(/,/)
-      if (lineCount == 0) {
-	// skip
-      } else {
-	String fstRow = adjInflFstForCols(cols)
-	if (fstRow.size() > 1) {
-	  if (lineCount == 1) {
-	    data.append(fstRow)
-	  } else if (lineCount > 1) {
-	    data.append(" |\\\n" + fstRow)
-	  }
-	}
-      }
-      lineCount++;
-    }
-    fileCount++
-  }
-  data.append("\n\n\$adjinfl\$\n")
-  adjFst.append(data.toString())
+  //  sourcedir, outfile,
+  inflCsvToFst("${loaddir}/${dataset}/rules-csv/adjectives", "adjectiveinfl", this.&adjInflFstForCols)
 }
 
+// infl
 
 // SOURCE: indeclinfl.2,conjunct
 // TARGET: <conjunct><u>indeclinfl.2</u>
@@ -887,6 +934,8 @@ buildNounInflection.doLast {
   nounFst.append(data.toString())
 }
 
+
+task buildInflectionX(dependsOn: buildAdjectiveInflection) {}
 
 task buildInflection(dependsOn: [buildNounInflection, buildAdjectiveInflection, buildAdverbInflection,buildIndeclInflection, buildInfInflection, buildPtcplInflection, buildVadjInflection,  buildVerbInflection ]) {
   description = "Builds .fst files from tabular source in data/rules-csv"
