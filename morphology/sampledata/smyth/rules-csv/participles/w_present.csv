@@ -8,7 +8,7 @@ verbinfl.w_pres_ptcp5m,w_regular,wn,masc,voc,sg,pres,act
 verbinfl.w_pres_ptcp6m,w_regular,onte,masc,nom,dual,pres,act
 verbinfl.w_pres_ptcp7m,w_regular,ontoin,masc,gen,dual,pres,act
 verbinfl.w_pres_ptcp8m,w_regular,ontoin,masc,dat,dual,pres,act
-verbinfl.w_pres_ptcp9m,w_regular,ontoin,masc,acc,dual,pres,act
+verbinfl.w_pres_ptcp9m,w_regular,onte,masc,acc,dual,pres,act
 verbinfl.w_pres_ptcp10m,w_regular,onte,masc,voc,dual,pres,act
 
 verbinfl.w_pres_ptcp11m,w_regular,ontes,masc,nom,pl,pres,act
