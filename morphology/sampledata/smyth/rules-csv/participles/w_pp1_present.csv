@@ -1,105 +1,105 @@
 RuleUrn,InflectionClass,Ending,Gender,Case,Number,Tense,Voice
-vverbinfl.pp1_ptcp1m,w_regular,wn,masc,nom,sg,pres,act
-verbinfl.pp1_ptcp2m,w_regular,ontos,masc,gen,sg,pres,act
-verbinfl.pp1_ptcp3m,w_regular,onti,masc,dat,sg,pres,act
-verbinfl.pp1_ptcp4m,w_regular,onta,masc,acc,sg,pres,act
-verbinfl.pp1_ptcp5m,w_regular,wn,masc,voc,sg,pres,act
+vverbinfl.pp1_ptcp1m,w_pp1,wn,masc,nom,sg,pres,act
+verbinfl.pp1_ptcp2m,w_pp1,ontos,masc,gen,sg,pres,act
+verbinfl.pp1_ptcp3m,w_pp1,onti,masc,dat,sg,pres,act
+verbinfl.pp1_ptcp4m,w_pp1,onta,masc,acc,sg,pres,act
+verbinfl.pp1_ptcp5m,w_pp1,wn,masc,voc,sg,pres,act
 
-verbinfl.pp1_ptcp6m,w_regular,onte,masc,nom,dual,pres,act
-verbinfl.pp1_ptcp7m,w_regular,ontoin,masc,gen,dual,pres,act
-verbinfl.pp1_ptcp8m,w_regular,ontoin,masc,dat,dual,pres,act
-verbinfl.pp1_ptcp9m,w_regular,onte,masc,acc,dual,pres,act
-verbinfl.pp1_ptcp10m,w_regular,onte,masc,voc,dual,pres,act
+verbinfl.pp1_ptcp6m,w_pp1,onte,masc,nom,dual,pres,act
+verbinfl.pp1_ptcp7m,w_pp1,ontoin,masc,gen,dual,pres,act
+verbinfl.pp1_ptcp8m,w_pp1,ontoin,masc,dat,dual,pres,act
+verbinfl.pp1_ptcp9m,w_pp1,onte,masc,acc,dual,pres,act
+verbinfl.pp1_ptcp10m,w_pp1,onte,masc,voc,dual,pres,act
 
-verbinfl.pp1_ptcp11m,w_regular,ontes,masc,nom,pl,pres,act
-verbinfl.pp1_ptcp12m,w_regular,ontwn,masc,gen,pl,pres,act
-verbinfl.pp1_ptcp13m,w_regular,ousi,masc,dat,pl,pres,act
-verbinfl.pp1_ptcp13mn,w_regular,ousin,masc,dat,pl,pres,act
-verbinfl.pp1_ptcp14m,w_regular,ontas,masc,acc,pl,pres,act
-verbinfl.pp1_ptcp15m,w_regular,ontes,masc,voc,pl,pres,act
-
-
-
-verbinfl.pp1_ptcp1f,w_regular,ousa^,fem,nom,sg,pres,act
-verbinfl.pp1_ptcp2f,w_regular,oushs,fem,gen,sg,pres,act
-verbinfl.pp1_ptcp3f,w_regular,oush|,fem,dat,sg,pres,act
-verbinfl.pp1_ptcp4f,w_regular,ousa^n,fem,acc,sg,pres,act
-verbinfl.pp1_ptcp5f,w_regular,ousa^,fem,voc,sg,pres,act
-
-verbinfl.pp1_ptcp6f,w_regular,ousa_,fem,nom,dual,pres,act
-verbinfl.pp1_ptcp7f,w_regular,ousain,fem,gen,dual,pres,act
-verbinfl.pp1_ptcp8f,w_regular,ousain,fem,dat,dual,pres,act
-verbinfl.pp1_ptcp9f,w_regular,ousa_,fem,acc,dual,pres,act
-verbinfl.pp1_ptcp10f,w_regular,ousa_,fem,voc,dual,pres,act
-
-verbinfl.pp1_ptcp11f,w_regular,ousai,fem,nom,pl,pres,act
-verbinfl.pp1_ptcp12f,w_regular,ousw=n,fem,gen,pl,pres,act
-verbinfl.pp1_ptcp13f,w_regular,ousais,fem,dat,pl,pres,act
-verbinfl.pp1_ptcp14f,w_regular,ousa_s,fem,acc,pl,pres,act
-verbinfl.pp1_ptcp15f,w_regular,ousai,fem,voc,pl,pres,act
+verbinfl.pp1_ptcp11m,w_pp1,ontes,masc,nom,pl,pres,act
+verbinfl.pp1_ptcp12m,w_pp1,ontwn,masc,gen,pl,pres,act
+verbinfl.pp1_ptcp13m,w_pp1,ousi,masc,dat,pl,pres,act
+verbinfl.pp1_ptcp13mn,w_pp1,ousin,masc,dat,pl,pres,act
+verbinfl.pp1_ptcp14m,w_pp1,ontas,masc,acc,pl,pres,act
+verbinfl.pp1_ptcp15m,w_pp1,ontes,masc,voc,pl,pres,act
 
 
 
-verbinfl.pp1_ptcp1n,w_regular,on,neut,nom,sg,pres,act
-verbinfl.pp1_ptcp2n,w_regular,ontos,neut,gen,sg,pres,act
-verbinfl.pp1_ptcp3n,w_regular,onti,neut,dat,sg,pres,act
-verbinfl.pp1_ptcp4n,w_regular,on,neut,acc,sg,pres,act
-verbinfl.pp1_ptcp5n,w_regular,on,neut,voc,sg,pres,act
+verbinfl.pp1_ptcp1f,w_pp1,ousa^,fem,nom,sg,pres,act
+verbinfl.pp1_ptcp2f,w_pp1,oushs,fem,gen,sg,pres,act
+verbinfl.pp1_ptcp3f,w_pp1,oush|,fem,dat,sg,pres,act
+verbinfl.pp1_ptcp4f,w_pp1,ousa^n,fem,acc,sg,pres,act
+verbinfl.pp1_ptcp5f,w_pp1,ousa^,fem,voc,sg,pres,act
 
-verbinfl.pp1_ptcp6n,w_regular,onte,neut,nom,dual,pres,act
-verbinfl.pp1_ptcp7n,w_regular,ontoin,neut,gen,dual,pres,act
-verbinfl.pp1_ptcp8n,w_regular,ontoin,neut,dat,dual,pres,act
-verbinfl.pp1_ptcp9n,w_regular,onte,neut,acc,dual,pres,act
-verbinfl.pp1_ptcp10n,w_regular,onte,neut,voc,dual,pres,act
+verbinfl.pp1_ptcp6f,w_pp1,ousa_,fem,nom,dual,pres,act
+verbinfl.pp1_ptcp7f,w_pp1,ousain,fem,gen,dual,pres,act
+verbinfl.pp1_ptcp8f,w_pp1,ousain,fem,dat,dual,pres,act
+verbinfl.pp1_ptcp9f,w_pp1,ousa_,fem,acc,dual,pres,act
+verbinfl.pp1_ptcp10f,w_pp1,ousa_,fem,voc,dual,pres,act
 
-verbinfl.pp1_ptcp11n,w_regular,onta,neut,nom,pl,pres,act
-verbinfl.pp1_ptcp12n,w_regular,ontwn,neut,gen,pl,pres,act
-verbinfl.pp1_ptcp13n,w_regular,ousi,neut,dat,pl,pres,act
-verbinfl.pp1_ptcp13mn,w_regular,ousin,neut,dat,pl,pres,act
-verbinfl.pp1_ptcp14n,w_regular,onta,neut,acc,pl,pres,act
-verbinfl.pp1_ptcp15n,w_regular,onta,neut,voc,pl,pres,act
+verbinfl.pp1_ptcp11f,w_pp1,ousai,fem,nom,pl,pres,act
+verbinfl.pp1_ptcp12f,w_pp1,ousw=n,fem,gen,pl,pres,act
+verbinfl.pp1_ptcp13f,w_pp1,ousais,fem,dat,pl,pres,act
+verbinfl.pp1_ptcp14f,w_pp1,ousa_s,fem,acc,pl,pres,act
+verbinfl.pp1_ptcp15f,w_pp1,ousai,fem,voc,pl,pres,act
 
 
+
+verbinfl.pp1_ptcp1n,w_pp1,on,neut,nom,sg,pres,act
+verbinfl.pp1_ptcp2n,w_pp1,ontos,neut,gen,sg,pres,act
+verbinfl.pp1_ptcp3n,w_pp1,onti,neut,dat,sg,pres,act
+verbinfl.pp1_ptcp4n,w_pp1,on,neut,acc,sg,pres,act
+verbinfl.pp1_ptcp5n,w_pp1,on,neut,voc,sg,pres,act
+
+verbinfl.pp1_ptcp6n,w_pp1,onte,neut,nom,dual,pres,act
+verbinfl.pp1_ptcp7n,w_pp1,ontoin,neut,gen,dual,pres,act
+verbinfl.pp1_ptcp8n,w_pp1,ontoin,neut,dat,dual,pres,act
+verbinfl.pp1_ptcp9n,w_pp1,onte,neut,acc,dual,pres,act
+verbinfl.pp1_ptcp10n,w_pp1,onte,neut,voc,dual,pres,act
+
+verbinfl.pp1_ptcp11n,w_pp1,onta,neut,nom,pl,pres,act
+verbinfl.pp1_ptcp12n,w_pp1,ontwn,neut,gen,pl,pres,act
+verbinfl.pp1_ptcp13n,w_pp1,ousi,neut,dat,pl,pres,act
+verbinfl.pp1_ptcp13mn,w_pp1,ousin,neut,dat,pl,pres,act
+verbinfl.pp1_ptcp14n,w_pp1,onta,neut,acc,pl,pres,act
+verbinfl.pp1_ptcp15n,w_pp1,onta,neut,voc,pl,pres,act
 
 
 
 
 
-verbinfl.pp1ptcp-mp1m,w_regular,omenos,masc,nom,sg,pres,act
-verbinfl.pp1ptcp-mp2m,w_regular,omenou,masc,gen,sg,pres,act
-verbinfl.pp1ptcp-mp3m,w_regular,omenw|,masc,dat,sg,pres,act
-verbinfl.pp1ptcp-mp4m,w_regular,omenon,masc,acc,sg,pres,act
-verbinfl.pp1ptcp-mp5m,w_regular,omene,masc,voc,sg,pres,act
-
-verbinfl.pp1ptcp-mp6m,w_regular,omenw,masc,nom,dual,pres,act
-verbinfl.pp1ptcp-mp7m,w_regular,omenoin,masc,gen,dual,pres,act
-verbinfl.pp1ptcp-mp8m,w_regular,omenoin,masc,dat,dual,pres,act
-verbinfl.pp1ptcp-mp9m,w_regular,omenw,masc,acc,dual,pres,act
-verbinfl.pp1ptcp-mp10m,w_regular,omenw,masc,voc,dual,pres,act
-
-verbinfl.pp1ptcp-mp11m,w_regular,omenoi,masc,nom,pl,pres,act
-verbinfl.pp1ptcp-mp12m,w_regular,omenwn,masc,gen,pl,pres,act
-verbinfl.pp1ptcp-mp13m,w_regular,omenois,masc,dat,pl,pres,act
-verbinfl.pp1ptcp-mp14m,w_regular,omenous,masc,acc,pl,pres,act
-verbinfl.pp1ptcp-mp15m,w_regular,omenoi,masc,voc,pl,pres,act
 
 
+verbinfl.pp1ptcp-mp1m,w_pp1,omenos,masc,nom,sg,pres,act
+verbinfl.pp1ptcp-mp2m,w_pp1,omenou,masc,gen,sg,pres,act
+verbinfl.pp1ptcp-mp3m,w_pp1,omenw|,masc,dat,sg,pres,act
+verbinfl.pp1ptcp-mp4m,w_pp1,omenon,masc,acc,sg,pres,act
+verbinfl.pp1ptcp-mp5m,w_pp1,omene,masc,voc,sg,pres,act
+
+verbinfl.pp1ptcp-mp6m,w_pp1,omenw,masc,nom,dual,pres,act
+verbinfl.pp1ptcp-mp7m,w_pp1,omenoin,masc,gen,dual,pres,act
+verbinfl.pp1ptcp-mp8m,w_pp1,omenoin,masc,dat,dual,pres,act
+verbinfl.pp1ptcp-mp9m,w_pp1,omenw,masc,acc,dual,pres,act
+verbinfl.pp1ptcp-mp10m,w_pp1,omenw,masc,voc,dual,pres,act
+
+verbinfl.pp1ptcp-mp11m,w_pp1,omenoi,masc,nom,pl,pres,act
+verbinfl.pp1ptcp-mp12m,w_pp1,omenwn,masc,gen,pl,pres,act
+verbinfl.pp1ptcp-mp13m,w_pp1,omenois,masc,dat,pl,pres,act
+verbinfl.pp1ptcp-mp14m,w_pp1,omenous,masc,acc,pl,pres,act
+verbinfl.pp1ptcp-mp15m,w_pp1,omenoi,masc,voc,pl,pres,act
 
 
-verbinfl.pp1ptcp-mp1n,w_regular,omenon,masc,nom,sg,pres,act
-verbinfl.pp1ptcp-mp2n,w_regular,omenou,masc,gen,sg,pres,act
-verbinfl.pp1ptcp-mp3n,w_regular,omenw|,masc,dat,sg,pres,act
-verbinfl.pp1ptcp-mp4n,w_regular,omenon,masc,acc,sg,pres,act
-verbinfl.pp1ptcp-mp5n,w_regular,omenon,masc,voc,sg,pres,act
 
-verbinfl.pp1ptcp-mp6n,w_regular,omenw,masc,nom,dual,pres,act
-verbinfl.pp1ptcp-mp7n,w_regular,omenoin,masc,gen,dual,pres,act
-verbinfl.pp1ptcp-mp8n,w_regular,omenoin,masc,dat,dual,pres,act
-verbinfl.pp1ptcp-mp9n,w_regular,omenw,masc,acc,dual,pres,act
-verbinfl.pp1ptcp-mp10n,w_regular,omenw,masc,voc,dual,pres,act
 
-verbinfl.pp1ptcp-mp11n,w_regular,omena,masc,nom,pl,pres,act
-verbinfl.pp1ptcp-mp12n,w_regular,omenwn,masc,gen,pl,pres,act
-verbinfl.pp1ptcp-mp13n,w_regular,omenois,masc,dat,pl,pres,act
-verbinfl.pp1ptcp-mp14n,w_regular,omena,masc,acc,pl,pres,act
-verbinfl.pp1ptcp-mp15n,w_regular,omena,masc,voc,pl,pres,act
+verbinfl.pp1ptcp-mp1n,w_pp1,omenon,masc,nom,sg,pres,act
+verbinfl.pp1ptcp-mp2n,w_pp1,omenou,masc,gen,sg,pres,act
+verbinfl.pp1ptcp-mp3n,w_pp1,omenw|,masc,dat,sg,pres,act
+verbinfl.pp1ptcp-mp4n,w_pp1,omenon,masc,acc,sg,pres,act
+verbinfl.pp1ptcp-mp5n,w_pp1,omenon,masc,voc,sg,pres,act
+
+verbinfl.pp1ptcp-mp6n,w_pp1,omenw,masc,nom,dual,pres,act
+verbinfl.pp1ptcp-mp7n,w_pp1,omenoin,masc,gen,dual,pres,act
+verbinfl.pp1ptcp-mp8n,w_pp1,omenoin,masc,dat,dual,pres,act
+verbinfl.pp1ptcp-mp9n,w_pp1,omenw,masc,acc,dual,pres,act
+verbinfl.pp1ptcp-mp10n,w_pp1,omenw,masc,voc,dual,pres,act
+
+verbinfl.pp1ptcp-mp11n,w_pp1,omena,masc,nom,pl,pres,act
+verbinfl.pp1ptcp-mp12n,w_pp1,omenwn,masc,gen,pl,pres,act
+verbinfl.pp1ptcp-mp13n,w_pp1,omenois,masc,dat,pl,pres,act
+verbinfl.pp1ptcp-mp14n,w_pp1,omena,masc,acc,pl,pres,act
+verbinfl.pp1ptcp-mp15n,w_pp1,omena,masc,voc,pl,pres,act

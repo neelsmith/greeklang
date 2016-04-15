@@ -1,6 +1,20 @@
 StemUrn,LexicalEntity,String,Gender,Case,Number,Notes
-smyth.n23069_0,lexent.n23069,gunh/,fem,nom,sg,Smyth 285 no. 6
-smyth.n23069_0,lexent.n23069,gunaiko/s,fem,gen,sg,Smyth 285 no. 6
-smyth.n23069_0,lexent.n23069,gunaiki/,fem,dat,sg,Smyth 285 no. 6
-smyth.n23069_0,lexent.n23069,gunai=ka,fem,acc,sg,Smyth 285 no. 6
-smyth.n23069_0,lexent.n23069,gu/nai,fem,voc,sg,Smyth 285 no. 6
+smyth.n23069_0s,lexent.n23069,gunh/,fem,nom,sg,Smyth 285 no. 6
+smyth.n23069_1s,lexent.n23069,gunaiko/s,fem,gen,sg,Smyth 285 no. 6
+smyth.n23069_2s,lexent.n23069,gunaiki/,fem,dat,sg,Smyth 285 no. 6
+smyth.n23069_3s,lexent.n23069,gunai=ka,fem,acc,sg,Smyth 285 no. 6
+smyth.n23069_4s,lexent.n23069,gu/nai,fem,voc,sg,Smyth 285 no. 6
+
+
+smyth.n23069_0d,lexent.n23069,gunai=ke,fem,nom,dual,Smyth 285 no. 6
+smyth.n23069_1d,lexent.n23069,gunaikoi=n,fem,gen,dual,Smyth 285 no. 6
+smyth.n23069_2d,lexent.n23069,gunaikoi=n,fem,dat,dual,Smyth 285 no. 6
+smyth.n23069_3d,lexent.n23069,gunai=ke,fem,acc,dual,Smyth 285 no. 6
+smyth.n23069_4d,lexent.n23069,gunai=ke,fem,voc,dual,Smyth 285 no. 6
+
+
+smyth.n23069_0p,lexent.n23069,gunai=kes,fem,nom,pl,Smyth 285 no. 6
+smyth.n23069_1p,lexent.n23069,gunaikw=n,fem,gen,pl,Smyth 285 no. 6
+smyth.n23069_2p,lexent.n23069,gunaici/,fem,dat,pl,Smyth 285 no. 6
+smyth.n23069_3p,lexent.n23069,gunai=kas,fem,acc,pl,Smyth 285 no. 6
+smyth.n23069_4p,lexent.n23069,gunai=kes,fem,voc,pl,Smyth 285 no. 6
