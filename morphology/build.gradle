@@ -458,26 +458,6 @@ def inflCsvToFst(String srcDir, String baseName, Closure formatter) {
 }
 */
 
-// SOURCE: adjinfl.os_h_on1,os_h_on,os,masc,nom,sg,posit
-// TARGET: <os_h_on><u>adjinfl.os_h_on1</u>os<adj><masc><nom><sg><posit>
-String adjInflFstForCols(ArrayList cols) {
-  if (cols.size() < 7) {
-    return ""
-  }
-  StringBuilder fst = new StringBuilder("")
-
-  String ruleUrn = cols[0].replaceAll(/_/,"\\\\_")
-  ruleUrn = ruleUrn.replaceAll("\\.","\\\\.")
-  String inflClass = cols[1] 
-  String inflString = toFstAlphabet(cols[2])
-  String grammGender = cols[3]
-  String grammCase = cols[4]
-  String grammNumber = cols[5]
-  String degree = cols[6]
-
-  fst.append(" <${inflClass}><adj>${inflString}<${grammGender}><${grammCase}><${grammNumber}><${degree}><u>${ruleUrn}</u>")
-  return fst.toString()
-}
 
 String advInflFstForCols(ArrayList cols) {
   if (cols.size() < 4) {
@@ -486,14 +466,8 @@ String advInflFstForCols(ArrayList cols) {
   String ruleUrn = cols[0].replaceAll(/_/,"\\\\_")
   ruleUrn = ruleUrn.replaceAll("\\.","\\\\.")
   String inflClass = cols[1] //.replaceAll(/_/,"\\_")
-  String inflString = cols[2]
+  String inflString = toFstAlphabet(cols[2])
   String degree = cols[3]
-
-
-  inflString = inflString.replaceAll("_", "<lo>")
-  inflString = inflString.replaceAll("\\(", "<ro>")
-  inflString = inflString.replaceAll("\\)", "<sm>")
-  inflString = inflString.replaceAll("\\|", "\\\\|")
   String fst = "<${inflClass}><adv>${inflString}<${degree}><u>${ruleUrn}</u>"
 
   return  fst
@@ -506,54 +480,34 @@ task buildAdverbInflection(dependsOn:setUpInflDir) {
 buildAdverbInflection.doLast {
   inflCsvToFst("${loaddir}/${dataset}/rules-csv/adverbs", "adverbinfl", this.&advInflFstForCols)
 }
-/*
-  File orthoBuild = new File(buildDir, dataset)
-  File inflDir = new File(orthoBuild,"inflection")
-  File adjFst = new File(inflDir,"adverbinfl.fst")
-  adjFst.setText("")
-  StringBuilder data = new StringBuilder("\$advinfl\$ = ")
 
-  File lexDir = new File("${loaddir}/${dataset}/rules-csv/adverbs")
-  System.err.println "Look for adverbs in " + lexDir
-  def fileCount = 0
-  lexDir.eachFileMatch(~/.*.csv/) { csvFile ->
-    System.err.println "Look at " + csvFile
-    if (fileCount > 0) {
-      data.append(" |\\\n")
-    }
-    def lineCount = 0
-    csvFile.eachLine { l ->
-      ArrayList cols = l.split(/,/)
-      if (lineCount == 0) {
-	// skip
-      } else {
-	String fstRow = advInflFstForCols(cols)
-	if (fstRow.size() > 1) {
-	  if (lineCount == 1) {
-	    data.append(fstRow)
-	  } else if (lineCount > 1) {
-	    data.append(" |\\\n" + fstRow)
-	  }
-	}
-      }
-      lineCount++;
-    }
-    fileCount++
+
+
+// SOURCE: adjinfl.os_h_on1,os_h_on,os,masc,nom,sg,posit
+// TARGET: <os_h_on><u>adjinfl.os_h_on1</u>os<adj><masc><nom><sg><posit>
+String adjInflFstForCols(ArrayList cols) {
+  if (cols.size() < 7) {
+    return ""
   }
-  data.append("\n\n\$advinfl\$\n")
-  adjFst.append(data.toString())
+  StringBuilder fst = new StringBuilder("")
+  String ruleUrn = cols[0].replaceAll(/_/,"\\\\_")
+  ruleUrn = ruleUrn.replaceAll("\\.","\\\\.")
+  String inflClass = cols[1] 
+  String inflString = toFstAlphabet(cols[2])
+  String grammGender = cols[3]
+  String grammCase = cols[4]
+  String grammNumber = cols[5]
+  String degree = cols[6]
+
+  fst.append(" <${inflClass}><adj>${inflString}<${grammGender}><${grammCase}><${grammNumber}><${degree}><u>${ruleUrn}</u>")
+  return fst.toString()
 }
-*/
 task buildAdjectiveInflection(dependsOn: setUpInflDir) {
   description = "Builds rules for adjectives in adjectiveinfl.fst from tabular source"
-
 }
 buildAdjectiveInflection.doLast {
-  //  sourcedir, outfile,
   inflCsvToFst("${loaddir}/${dataset}/rules-csv/adjectives", "adjectiveinfl", this.&adjInflFstForCols)
 }
-
-// infl
 
 // SOURCE: indeclinfl.2,conjunct
 // TARGET: <conjunct><u>indeclinfl.2</u>
@@ -575,6 +529,9 @@ task buildIndeclInflection(dependsOn: setUpInflDir) {
   description = "Builds rules for indeclinable forsm in indeclinfl.fst from tabular source"
 }
 buildIndeclInflection.doLast {
+  inflCsvToFst("${loaddir}/${dataset}/rules-csv/indeclinable", "indeclinfl", this.&indeclInflFstForCols)
+}
+/*
   File orthoBuild = new File(buildDir, dataset)
   File inflDir = new File(orthoBuild,"inflection")
   File indeclFst = new File(inflDir,"indeclinfl.fst")
@@ -610,6 +567,12 @@ buildIndeclInflection.doLast {
   indeclFst.append(data.toString())
 }
 
+*/
+
+
+
+
+
 // Four inflectional patterns for verbs:
 //1.
 //SOURCE: verbinfl.w_infin1,w_regular,ein,pres,act
@@ -633,6 +596,9 @@ task buildInfInflection(dependsOn: setUpInflDir) {
   description = "Builds rules for infinitive forms of verbs in infinfl.fst from tabular source"
 }
 buildInfInflection.doLast {
+    inflCsvToFst("${loaddir}/${dataset}/rules-csv/infinitives", "infininfl", this.&infInflFstForCols)
+}
+/*
   File orthoBuild = new File(buildDir, dataset)
   File inflDir = new File(orthoBuild,"inflection")
   File infinFst = new File(inflDir,"infininfl.fst")
@@ -667,6 +633,9 @@ buildInfInflection.doLast {
   data.append("\n\n\$infininfl\$\n")
   infinFst.append(data.toString())
 }
+*/
+
+
 
 
 //2.
@@ -699,6 +668,9 @@ task buildPtcplInflection(dependsOn: setUpInflDir) {
     description = "Builds rules for participles in ptcplinfl.fst from tabular source"
 }
 buildPtcplInflection.doLast {
+  inflCsvToFst("${loaddir}/${dataset}/rules-csv/participles", "ptcplinfl", this.&ptcplInflFstForCols)
+}
+/*
   File orthoBuild = new File(buildDir, dataset)
   File inflDir = new File(orthoBuild,"inflection")
   File ptcplFst = new File(inflDir,"ptcplinfl.fst")
@@ -733,7 +705,7 @@ buildPtcplInflection.doLast {
   data.append("\n\n\$ptcplinfl\$\n")
   ptcplFst.append(data.toString())
 }
-
+*/
 
 //3.
 // SOURCE: verbinfl.teos_1,w_regular,te/os,masc,nom,sg,vadj1
@@ -761,6 +733,9 @@ task buildVadjInflection(dependsOn: setUpInflDir) {
   description = "Builds rules for verbal adjectives in vadjinfl.fst from tabular source"
 }
 buildVadjInflection.doLast {
+  inflCsvToFst("${loaddir}/${dataset}/rules-csv/verbaladj", "vadjinfl", this.&vadjInflFstForCols)
+}
+/*
 
   File orthoBuild = new File(buildDir, dataset)
   File inflDir = new File(orthoBuild,"inflection")
@@ -796,6 +771,7 @@ buildVadjInflection.doLast {
   data.append("\n\n\$vadjinfl\$\n")
   vadjFst.append(data.toString())
 }
+*/
 //4.
 // SOURCE:  verbinfl.w_impf_indic1,w_regular,on,1st,sg,impft,indic,act
 // TARGET:  <w_regular>es<2nd><sg><impft><indic><act><u>verbinfl.w_impf_indic2</u>
@@ -835,6 +811,9 @@ task buildVerbInflection(dependsOn: setUpInflDir) {
   description = "Builds rules for conjugated verb forms in verbinfl.fst from tabular source"
 }
 buildVerbInflection.doLast {
+  inflCsvToFst("${loaddir}/${dataset}/rules-csv/verbs", "verbinfl", this.&verbInflFstForCols)
+}
+/*
   File orthoBuild = new File(buildDir, dataset)
   File inflDir = new File(orthoBuild,"inflection")
   File verbFst = new File(inflDir,"verbinfl.fst")
@@ -869,7 +848,7 @@ buildVerbInflection.doLast {
   data.append("\n\n\$verbinfl\$\n")
   verbFst.append(data.toString())
 }
-
+*/
 
 
 String nounInflFstForCols(ArrayList cols) {
@@ -898,6 +877,9 @@ task buildNounInflection(dependsOn: setUpInflDir) {
   description = "Builds nouninfl.fst from tabular source"
 }
 buildNounInflection.doLast {
+  inflCsvToFst("${loaddir}/${dataset}/rules-csv/nouns", "nouninfl", this.&nounInflFstForCols)
+}
+/*
   File orthoBuild = new File(buildDir, dataset)
   File inflDir = new File(orthoBuild,"inflection")
   File nounFst = new File(inflDir,"nouninfl.fst")
@@ -933,9 +915,9 @@ buildNounInflection.doLast {
   data.append("\n\n\$nouninfl\$\n")
   nounFst.append(data.toString())
 }
+*/
 
 
-task buildInflectionX(dependsOn: buildAdjectiveInflection) {}
 
 task buildInflection(dependsOn: [buildNounInflection, buildAdjectiveInflection, buildAdverbInflection,buildIndeclInflection, buildInfInflection, buildPtcplInflection, buildVadjInflection,  buildVerbInflection ]) {
   description = "Builds .fst files from tabular source in data/rules-csv"
