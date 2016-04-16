@@ -1,58 +1,34 @@
 RuleUrn,InflectionClasses,Ending,Person,Number,Tense,Mood,Voice
 verbinfl.w_impf_indic1,w_regular,on,1st,sg,impft,indic,act
-verbinfl.w_impf_indic1b,w_pp1,on,1st,sg,impft,indic,act
 verbinfl.w_impf_indic2,w_regular,es,2nd,sg,impft,indic,act
-verbinfl.w_impf_indic2b,w_pp1,es,2nd,sg,impft,indic,act
 verbinfl.w_impf_indic3,w_regular,e,3rd,sg,impft,indic,act
-verbinfl.w_impf_indic3b,w_pp1,e,3rd,sg,impft,indic,
 
 verbinfl.w_impf_indic4,w_regular,eton,2nd,dual,impft,indic,act
-verbinfl.w_impf_indic4b,w_pp1,eton,2nd,dual,impft,indic,act
 verbinfl.w_impf_indic5,w_regular,ethn,3rd,dual,impft,indic,act
-verbinfl.w_impf_indic5b,w_pp1,ethn,3rd,dual,impft,indic,act
 
 verbinfl.w_impf_indic6,w_regular,omen,1st,pl,impft,indic,act
-verbinfl.w_impf_indic6b,w_pp1,omen,1st,pl,impft,indic,act
 verbinfl.w_impf_indic7,w_regular,ete,2nd,pl,impft,indic,act
-verbinfl.w_impf_indic7b,w_pp1,ete,2nd,pl,impft,indic,act
 verbinfl.w_impf_indic8,w_regular,on,3rd,pl,impft,indic,act
-verbinfl.w_impf_indic8b,w_pp1,on,3rd,pl,impft,indic,act
 
 verbinfl.w_impf_indic9,w_regular,omhn,1st,sg,impft,indic,mid
-verbinfl.w_impf_indic9b,w_pp1,omhn,1st,sg,impft,indic,mid
 verbinfl.w_impf_indic10,w_regular,ou,2nd,sg,impft,indic,mid
-verbinfl.w_impf_indic10b,w_pp1,ou,2nd,sg,impft,indic,mid
 verbinfl.w_impf_indic11,w_regular,eto,3rd,sg,impft,indic,mid
-verbinfl.w_impf_indic11b,w_pp1,eto,3rd,sg,impft,indic,mid
 
 verbinfl.w_impf_indic12,w_regular,esqon,2nd,dual,impft,indic,mid
-verbinfl.w_impf_indic12b,w_pp1,esqon,2nd,dual,impft,indic,mid
 verbinfl.w_impf_indic13,w_regular,esqhn,3rd,dual,impft,indic,mid
-verbinfl.w_impf_indic13b,w_pp1,esqhn,3rd,dual,impft,indic,mid
 
 
 verbinfl.w_impf_indic14,w_regular,omeqa,1st,pl,impft,indic,mid
-verbinfl.w_impf_indic14b,w_pp1,omeqa,1st,pl,impft,indic,mid
 verbinfl.w_impf_indic15,w_regular,esqe,2nd,pl,impft,indic,mid
-verbinfl.w_impf_indic15b,w_pp1,esqe,2nd,pl,impft,indic,mid
 verbinfl.w_impf_indic16,w_regular,onto,3rd,pl,impft,indic,mid
-verbinfl.w_impf_indic16b,w_pp1,onto,3rd,pl,impft,indic,mid
 
 verbinfl.w_impf_indic17,w_regular,omhn,1st,sg,impft,indic,pass
-verbinfl.w_impf_indic17b,w_pp1,omhn,1st,sg,impft,indic,pass
 verbinfl.w_impf_indic18,w_regular,ou,2nd,sg,impft,indic,pass
-verbinfl.w_impf_indic18b,w_pp1,ou,2nd,sg,impft,indic,pass
 verbinfl.w_impf_indic19,w_regular,eto,3rd,sg,impft,indic,pass
-verbinfl.w_impf_indic19b,w_pp1,eto,3rd,sg,impft,indic,pass
 
 verbinfl.w_impf_indic20,w_regular,esqon,2nd,dual,impft,indic,pass
-verbinfl.w_impf_indic20b,w_pp1,esqon,2nd,dual,impft,indic,pass
 verbinfl.w_impf_indic21,w_regular,esqhn,3rd,dual,impft,indic,pass
-verbinfl.w_impf_indic21b,w_pp1,esqhn,3rd,dual,impft,indic,pass
 
 verbinfl.w_impf_indic22,w_regular,omeqa,1st,pl,impft,indic,pass
-verbinfl.w_impf_indic22b,w_pp1,omeqa,1st,pl,impft,indic,pass
 verbinfl.w_impf_indic23,w_regular,esqe,2nd,pl,impft,indic,pass
-verbinfl.w_impf_indic23b,w_pp1,esqe,2nd,pl,impft,indic,pass
 verbinfl.w_impf_indic24,w_regular,onto,3rd,pl,impft,indic,pass
-verbinfl.w_impf_indic24b,w_pp1,onto,3rd,pl,impft,indic,pass
