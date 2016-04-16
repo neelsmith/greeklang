@@ -1,6 +1,7 @@
-verbinfl.w_pres_imptv15,w_pp6,ou,2nd,sg,aor,imptv,pass
-verbinfl.w_pres_imptv16,w_pp6,e/sqw,3rd,sg,aor,imptv,pass
-verbinfl.w_pres_imptv17,w_pp6,esqon,2nd,dual,aor,imptv,pass
-verbinfl.w_pres_imptv18,w_pp6,e/sqwn,3rd,dual,aor,imptv,pass
-verbinfl.w_pres_imptv19,w_pp6,esq3,2nd,pl,aor,imptv,pass
-verbinfl.w_pres_imptv20,w_pp6,e/sqwn,3rd,pl,aor,imptv,pass
+RuleUrn,InflectionClasses,Ending,Person,Number,Tense,Mood,Voice
+verbinfl.w_pp6_imptv15,w_pp6,ou,2nd,sg,aor,imptv,pass
+verbinfl.w_pp6_imptv16,w_pp6,e/sqw,3rd,sg,aor,imptv,pass
+verbinfl.w_pp6_imptv17,w_pp6,esqon,2nd,dual,aor,imptv,pass
+verbinfl.w_pp6_imptv18,w_pp6,e/sqwn,3rd,dual,aor,imptv,pass
+verbinfl.w_pp6_imptv19,w_pp6,esq3,2nd,pl,aor,imptv,pass
+verbinfl.w_pp6_imptv20,w_pp6,e/sqwn,3rd,pl,aor,imptv,pass

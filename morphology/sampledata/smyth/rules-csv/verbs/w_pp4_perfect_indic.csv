@@ -1,8 +1,9 @@
-verbinfl.w_pft_indic1b,w_pp4,a,1st,sg,pft,indic,act
-verbinfl.w_pft_indic2b,w_pp4,as,2nd,sg,pft,indic,act
-verbinfl.w_pft_indic3b,w_pp4,e,3rd,sg,pft,indic,act
-verbinfl.w_pft_indic4b,w_pp4,aton,2nd,dual,pft,indic,act
-verbinfl.w_pft_indic5b,w_pp4,aton,3rd,dual,pft,indic,act
-verbinfl.w_pft_indic6b,w_pp4,amen,1st,pl,pft,indic,act
-verbinfl.w_pft_indic7b,w_pp4,ate,2nd,pl,pft,indic,act
-verbinfl.w_pft_indic8b,w_pp4,a_si,3rd,pl,pft,indic,act
+RuleUrn,InflectionClasses,Ending,Person,Number,Tense,Mood,Voice
+verbinfl.w_pp4_pft_indic1b,w_pp4,a,1st,sg,pft,indic,act
+verbinfl.w_pp4_pft_indic2b,w_pp4,as,2nd,sg,pft,indic,act
+verbinfl.w_pp4_pft_indic3b,w_pp4,e,3rd,sg,pft,indic,act
+verbinfl.w_pp4_pft_indic4b,w_pp4,aton,2nd,dual,pft,indic,act
+verbinfl.w_pp4_pft_indic5b,w_pp4,aton,3rd,dual,pft,indic,act
+verbinfl.w_pp4_pft_indic6b,w_pp4,amen,1st,pl,pft,indic,act
+verbinfl.w_pp4_pft_indic7b,w_pp4,ate,2nd,pl,pft,indic,act
+verbinfl.w_pp4_pft_indic8b,w_pp4,a_si,3rd,pl,pft,indic,act
