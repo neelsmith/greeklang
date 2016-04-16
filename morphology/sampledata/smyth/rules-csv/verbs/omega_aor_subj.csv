@@ -1,60 +1,35 @@
 RuleUrn,InflectionClasses,Ending,Person,Number,Tense,Mood,Voice
 verbinfl.w_aor_subj1,w_regular,w,1st,sg,aor,subj,act
-verbinfl.w_aor_subj1b,w_pp3,w,1st,sg,aor,subj,act
 verbinfl.w_aor_subj2,w_regular,h|s,2nd,sg,aor,subj,act
-verbinfl.w_aor_subj2b,w_pp3,h|s,2nd,sg,aor,subj,act
 verbinfl.w_aor_subj3,w_regular,h|,3rd,sg,aor,subj,act
-verbinfl.w_aor_subj3b,w_pp3,h|,3rd,sg,aor,subj,act
 
 verbinfl.w_aor_subj4,w_regular,hton,2nd,dual,aor,subj,act
-verbinfl.w_aor_subj4b,w_pp3,hton,2nd,dual,aor,subj,act
 verbinfl.w_aor_subj5,w_regular,hton,3rd,dual,aor,subj,act
-verbinfl.w_aor_subj5b,w_pp3,hton,3rd,dual,aor,subj,act
 
 verbinfl.w_aor_subj6,w_regular,wmen,1st,pl,aor,subj,act
-verbinfl.w_aor_subj6b,w_pp3,wmen,1st,pl,aor,subj,act
 verbinfl.w_aor_subj7,w_regular,hte,2nd,pl,aor,subj,act
-verbinfl.w_aor_subj7b,w_pp3,hte,2nd,pl,aor,subj,act
 verbinfl.w_aor_subj8,w_regular,wsi,3rd,pl,aor,subj,act
-verbinfl.w_aor_subj8b,w_pp3,wsi,3rd,pl,aor,subj,act
 verbinfl.w_aor_subj8n,w_regular,wsin,3rd,pl,aor,subj,act
-verbinfl.w_aor_subj8bn,w_pp3,wsin,3rd,pl,aor,subj,act
 
 verbinfl.w_aor_subj9,w_regular,wmai,1st,sg,aor,subj,mid
-verbinfl.w_aor_subj9b,w_pp3,wmai,1st,sg,aor,subj,mid
 verbinfl.w_aor_subj10,w_regular,h|,2nd,sg,aor,subj,mid
-verbinfl.w_aor_subj10b,w_pp3,h|,2nd,sg,aor,subj,mid
 verbinfl.w_aor_subj11,w_regular,htai,3rd,sg,aor,subj,mid
-verbinfl.w_aor_subj11b,w_pp3,htai,3rd,sg,aor,subj,mid
 
 verbinfl.w_aor_subj12,w_regular,hsqon,2nd,dual,aor,subj,mid
-verbinfl.w_aor_subj12b,w_pp3,hsqon,2nd,dual,aor,subj,mid
 verbinfl.w_aor_subj13,w_regular,hsqon,3rd,dual,aor,subj,mid
-verbinfl.w_aor_subj13b,w_pp3,hsqon,3rd,dual,aor,subj,mid
 
 verbinfl.w_aor_subj14,w_regular,wmeqa,1st,pl,aor,subj,mid
-verbinfl.w_aor_subj14b,w_pp3,wmeqa,1st,pl,aor,subj,mid
 verbinfl.w_aor_subj15,w_regular,hsqe,2nd,pl,aor,subj,mid
-verbinfl.w_aor_subj15b,w_pp3,hsqe,2nd,pl,aor,subj,mid
 verbinfl.w_aor_subj16,w_regular,wntai,3rd,pl,aor,subj,mid
-verbinfl.w_aor_subj16b,w_pp3,wntai,3rd,pl,aor,subj,mid
 
 
 verbinfl.w_aor_subj17,w_regular,w=,1st,sg,aor,subj,pass
-verbinfl.w_aor_subj17b,w_pp3,w=,1st,sg,aor,subj,pass
 verbinfl.w_aor_subj18,w_regular,h=|s,2nd,sg,aor,subj,pass
-verbinfl.w_aor_subj18b,w_pp3,h=|s,2nd,sg,aor,subj,pass
 verbinfl.w_aor_subj19,w_regular,h=|,3rd,sg,aor,subj,pass
-verbinfl.w_aor_subj19b,w_pp3,h=|,3rd,sg,aor,subj,pass
 
 verbinfl.w_aor_subj20,w_regular,h=ton,2nd,dual,aor,subj,pass
-verbinfl.w_aor_subj20b,w_pp3,h=ton,2nd,dual,aor,subj,pass
 verbinfl.w_aor_subj21,w_regular,h=ton,3rd,dual,aor,subj,pass
-verbinfl.w_aor_subj21b,w_pp3,h=ton,3rd,dual,aor,subj,pass
 
 verbinfl.w_aor_subj22,w_regular,w=men,1st,pl,aor,subj,pass
-verbinfl.w_aor_subj22b,w_pp3,w=men,1st,pl,aor,subj,pass
 verbinfl.w_aor_subj23,w_regular,h=te,2nd,pl,aor,subj,pass
-verbinfl.w_aor_subj23b,w_pp3,h=te,2nd,pl,aor,subj,pass
 verbinfl.w_aor_subj24,w_regular,w=si,3rd,pl,aor,subj,pass
-verbinfl.w_aor_subj24b,w_pp3,w=si,3rd,pl,aor,subj,pass

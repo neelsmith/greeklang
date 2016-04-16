@@ -1,0 +1,12 @@
+verbinfl.w_pft_imptv1bm,w_pp5,so,2nd,sg,pft,imptv,mid
+verbinfl.w_pft_imptv2bm,w_pp5,tai,sqw,sg,pft,imptv,mid
+verbinfl.w_pft_imptv3bm,w_pp5,sqon,2nd,dual,pft,imptv,mid
+verbinfl.w_pft_imptv4bm,w_pp5,sqwn,3rd,dual,pft,imptv,mid
+verbinfl.w_pft_imptv5bm,w_pp5,sqe,2nd,pl,pft,imptv,mid
+verbinfl.w_pft_imptv6bm,w_pp5,ntai,sqwn,pl,pft,imptv,mid
+verbinfl.w_pft_imptv1bp,w_pp5,so,2nd,sg,pft,imptv,pass
+verbinfl.w_pft_imptv2bp,w_pp5,tai,sqw,sg,pft,imptv,pass
+verbinfl.w_pft_imptv3bp,w_pp5,sqon,2nd,dual,pft,imptv,pass
+verbinfl.w_pft_imptv4bp,w_pp5,sqwn,3rd,dual,pft,imptv,pass
+verbinfl.w_pft_imptv5bp,w_pp5,sqe,2nd,pl,pft,imptv,pass
+verbinfl.w_pft_imptv6bp,w_pp5,ntai,sqwn,pl,pft,imptv,pass

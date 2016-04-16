@@ -1,61 +1,36 @@
 RuleUrn,InflectionClasses,Ending,Person,Number,Tense,Mood,Voice
 verbinfl.w_plupft_indic1,w_regular,h,1st,sg,plupft,indic,act
-verbinfl.w_plupft_indic1b,w_pp4,h,1st,sg,plupft,indic,act
 verbinfl.w_plupft_indic2,w_regular,hs,2nd,sg,plupft,indic,act
-verbinfl.w_plupft_indic2b,w_pp4,hs,2nd,sg,plupft,indic,act
 verbinfl.w_plupft_indic3,w_regular,ei,3rd,sg,plupft,indic,act
-verbinfl.w_plupft_indic3b,w_pp4,ei,3rd,sg,plupft,indic,act
 verbinfl.w_plupft_indic3n,w_regular,ein,3rd,sg,plupft,indic,act
-verbinfl.w_plupft_indic3bn,w_pp4,ein,3rd,sg,plupft,indic,act
 
 verbinfl.w_plupft_indic4,w_regular,eton,2nd,dual,plupft,indic,act
-verbinfl.w_plupft_indic4b,w_pp4,eton,2nd,dual,plupft,indic,act
 verbinfl.w_plupft_indic5,w_regular,ethn,3rd,dual,plupft,indic,act
-verbinfl.w_plupft_indic5b,w_pp4,ethn,3rd,dual,plupft,indic,act
 
 verbinfl.w_plupft_indic6,w_regular,emen,1st,pl,plupft,indic,act
-verbinfl.w_plupft_indic6b,w_pp4,emen,1st,pl,plupft,indic,act
 verbinfl.w_plupft_indic7,w_regular,ete,2nd,pl,plupft,indic,act
-verbinfl.w_plupft_indic7b,w_pp4,ete,2nd,pl,plupft,indic,act
 verbinfl.w_plupft_indic8,w_regular,esan,3rd,pl,plupft,indic,act
-verbinfl.w_plupft_indic8b,w_pp4,esan,3rd,pl,plupft,indic,act
 
 
 verbinfl.w_plupft_indic9,w_regular,mhn,1st,sg,plupft,indic,mid
-verbinfl.w_plupft_indic9b,w_pp5,mhn,1st,sg,plupft,indic,mid
 verbinfl.w_plupft_indic11,w_regular,so,2nd,sg,plupft,indic,mid
-verbinfl.w_plupft_indic11b,w_pp5,so,2nd,sg,plupft,indic,mid
 verbinfl.w_plupft_indic12,w_regular,to,3rd,sg,plupft,indic,mid
-verbinfl.w_plupft_indic12b,w_pp5,to,3rd,sg,plupft,indic,mid
 
 verbinfl.w_plupft_indic13,w_regular,sqon,2nd,dual,plupft,indic,mid
-verbinfl.w_plupft_indic13b,w_pp5,sqon,2nd,dual,plupft,indic,mid
 verbinfl.w_plupft_indic14,w_regular,sqhn,3rd,dual,plupft,indic,mid
-verbinfl.w_plupft_indic14b,w_pp5,sqhn,3rd,dual,plupft,indic,mid
 
 verbinfl.w_plupft_indic15,w_regular,meqa,1st,pl,plupft,indic,mid
-verbinfl.w_plupft_indic15b,w_pp5,meqa,1st,pl,plupft,indic,mid
 verbinfl.w_plupft_indic16,w_regular,sqe,2nd,pl,plupft,indic,mid
-verbinfl.w_plupft_indic16b,w_pp5,sqe,2nd,pl,plupft,indic,mid
 verbinfl.w_plupft_indic17,w_regular,nto,3rd,pl,plupft,indic,mid
-verbinfl.w_plupft_indic17b,w_pp5,nto,3rd,pl,plupft,indic,mid
 
 
 verbinfl.w_plupft_indic18,w_regular,mhn,1st,sg,plupft,indic,pass
-verbinfl.w_plupft_indic18b,w_pp5,mhn,1st,sg,plupft,indic,pass
 verbinfl.w_plupft_indic19,w_regular,so,2nd,sg,plupft,indic,pass
-verbinfl.w_plupft_indic19b,w_pp5,so,2nd,sg,plupft,indic,pass
 verbinfl.w_plupft_indic2o,w_regular,to,3rd,sg,plupft,indic,pass
-verbinfl.w_plupft_indic20b,w_pp5,tai,to,sg,plupft,indic,pass
 
 verbinfl.w_plupft_indic21,w_regular,sqon,2nd,dual,plupft,indic,pass
-verbinfl.w_plupft_indic21b,w_pp5,sqon,2nd,dual,plupft,indic,pass
 verbinfl.w_plupft_indic22,w_regular,sqhn,3rd,dual,plupft,indic,pass
-verbinfl.w_plupft_indic22b,w_pp5,sqhn,3rd,dual,plupft,indic,pass
 
 verbinfl.w_plupft_indic23,w_regular,meqa,1st,pl,plupft,indic,pass
-verbinfl.w_plupft_indic23b,w_pp5,meqa,1st,pl,plupft,indic,pass
 verbinfl.w_plupft_indic24,w_regular,sqe,2nd,pl,plupft,indic,pass
-verbinfl.w_plupft_indic24b,w_pp5,sqe,2nd,pl,plupft,indic,pass
 verbinfl.w_plupft_indic25,w_regular,nto,3rd,pl,plupft,indic,pass
-verbinfl.w_plupft_indic25b,w_pp5,nto,3rd,pl,plupft,indic,pass

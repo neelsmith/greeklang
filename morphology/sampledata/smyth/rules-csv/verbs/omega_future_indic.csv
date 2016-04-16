@@ -1,18 +1,15 @@
 RuleUrn,InflectionClasses,Ending,Person,Number,Tense,Mood,Voice
 verbinfl.w_fut_indic1,w_regular,w,1st,sg,fut,indic,act
-verbinfl.w_fut_indic1b,w_pp2,w,1st,sg,fut,indic,act
 verbinfl.w_fut_indic1c,aw,w,1st,sg,fut,indic,act
 verbinfl.w_fut_indic1d,ew,w,1st,sg,fut,indic,act
 verbinfl.w_fut_indic1e,ow,w,1st,sg,fut,indic,act
 
 verbinfl.w_fut_indic2,w_regular,eis,2nd,sg,fut,indic,act
-verbinfl.w_fut_indic2b,w_pp2,eis,2nd,sg,fut,indic,act
 verbinfl.w_fut_indic2c,aw,eis,2nd,sg,fut,indic,act
 verbinfl.w_fut_indic2d,ew,eis,2nd,sg,fut,indic,act
 verbinfl.w_fut_indic2e,ow,eis,2nd,sg,fut,indic,act
 
 verbinfl.w_fut_indic3,w_regular,ei,3rd,sg,fut,indic,act
-verbinfl.w_fut_indic3b,w_pp2,ei,3rd,sg,fut,indic,act
 verbinfl.w_fut_indic3c,aw,ei,3rd,sg,fut,indic,act
 verbinfl.w_fut_indic3d,ew,ei,3rd,sg,fut,indic,act
 verbinfl.w_fut_indic3e,ow,ei,3rd,sg,fut,indic,act
@@ -20,13 +17,11 @@ verbinfl.w_fut_indic3e,ow,ei,3rd,sg,fut,indic,act
 
 
 verbinfl.w_fut_indic4,w_regular,eton,2nd,dual,fut,indic,act
-verbinfl.w_fut_indic4b,w_pp2,eton,2nd,dual,fut,indic,act
 verbinfl.w_fut_indic4c,aw,eton,2nd,dual,fut,indic,act
 verbinfl.w_fut_indic4d,ew,eton,2nd,dual,fut,indic,act
 verbinfl.w_fut_indic4e,ow,eton,2nd,dual,fut,indic,act
 
 verbinfl.w_fut_indic5,w_regular,eton,3rd,dual,fut,indic,act
-verbinfl.w_fut_indic5b,w_pp2,eton,3rd,dual,fut,indic,act
 verbinfl.w_fut_indic5b,aw,eton,3rd,dual,fut,indic,act
 verbinfl.w_fut_indic5b,ew,eton,3rd,dual,fut,indic,act
 verbinfl.w_fut_indic5b,ow,eton,3rd,dual,fut,indic,act
@@ -34,50 +29,42 @@ verbinfl.w_fut_indic5b,ow,eton,3rd,dual,fut,indic,act
 
 
 verbinfl.w_fut_indic6,w_regular,omen,1st,pl,fut,indic,act
-verbinfl.w_fut_indic6b,w_pp2,omen,1st,pl,fut,indic,act
 verbinfl.w_fut_indic6c,aw,omen,1st,pl,fut,indic,act
 verbinfl.w_fut_indic6d,ew,omen,1st,pl,fut,indic,act
 verbinfl.w_fut_indic6e,ow,omen,1st,pl,fut,indic,act
 
 verbinfl.w_fut_indic7,w_regular,ete,2nd,pl,fut,indic,act
-verbinfl.w_fut_indic7b,w_pp2,ete,2nd,pl,fut,indic,act
 verbinfl.w_fut_indic7c,aw,ete,2nd,pl,fut,indic,act
 verbinfl.w_fut_indic7d,ew,ete,2nd,pl,fut,indic,act
 verbinfl.w_fut_indic7e,ow,ete,2nd,pl,fut,indic,act
 
 verbinfl.w_fut_indic8,w_regular,ousi,3rd,pl,fut,indic,act
-verbinfl.w_fut_indic8b,w_pp2,ousi,3rd,pl,fut,indic,act
 verbinfl.w_fut_indic8c,aw,ousi,3rd,pl,fut,indic,act
 verbinfl.w_fut_indic8d,ew,ousi,3rd,pl,fut,indic,act
 verbinfl.w_fut_indic8e,ow,ousi,3rd,pl,fut,indic,act
 verbinfl.w_fut_indic8n,w_regular,ousin,3rd,pl,fut,indic,act
-verbinfl.w_fut_indic8bn,w_pp2,ousin,3rd,pl,fut,indic,act
 verbinfl.w_fut_indic8cn,aw,ousin,3rd,pl,fut,indic,act
 verbinfl.w_fut_indic8dn,ew,ousin,3rd,pl,fut,indic,act
 verbinfl.w_fut_indic8en,ow,ousin,3rd,pl,fut,indic,act
 
 
 verbinfl.w_fut_indic9,w_regular,omai,1st,sg,fut,indic,mid
-verbinfl.w_fut_indic9b,w_pp2,omai,1st,sg,fut,indic,mid
 verbinfl.w_fut_indic9c,aw,omai,1st,sg,fut,indic,mid
 verbinfl.w_fut_indic9d,ew,omai,1st,sg,fut,indic,mid
 verbinfl.w_fut_indic9e,ow,omai,1st,sg,fut,indic,mid
 
 verbinfl.w_fut_indic10,w_regular,ei,2nd,sg,fut,indic,mid
-verbinfl.w_fut_indic10b,w_pp2,ei,2nd,sg,fut,indic,mid
 verbinfl.w_fut_indic10c,aw,ei,2nd,sg,fut,indic,mid
 verbinfl.w_fut_indic10d,ew,ei,2nd,sg,fut,indic,mid
 verbinfl.w_fut_indic10e,ow,ei,2nd,sg,fut,indic,mid
 
 verbinfl.w_fut_indic10h,w_regular,h|,2nd,sg,fut,indic,mid
-verbinfl.w_fut_indic10bh,w_pp2,h|,2nd,sg,fut,indic,mid
 verbinfl.w_fut_indic10ch,aw,h|,2nd,sg,fut,indic,mid
 verbinfl.w_fut_indic10dh,ew,h|,2nd,sg,fut,indic,mid
 verbinfl.w_fut_indic10eh,ow,h|,2nd,sg,fut,indic,mid
 
 
 verbinfl.w_fut_indic11,w_regular,etai,3rd,sg,fut,indic,mid
-verbinfl.w_fut_indic11b,w_pp2,etai,3rd,sg,fut,indic,mid
 verbinfl.w_fut_indic11c,aw,etai,3rd,sg,fut,indic,mid
 verbinfl.w_fut_indic11d,ew,etai,3rd,sg,fut,indic,mid
 verbinfl.w_fut_indic11e,ow,etai,3rd,sg,fut,indic,mid
@@ -85,13 +72,11 @@ verbinfl.w_fut_indic11e,ow,etai,3rd,sg,fut,indic,mid
 
 
 verbinfl.w_fut_indic12,w_regular,esqon,2nd,dual,fut,indic,mid
-verbinfl.w_fut_indic12b,w_pp2,esqon,2nd,dual,fut,indic,mid
 verbinfl.w_fut_indic12c,aw,esqon,2nd,dual,fut,indic,mid
 verbinfl.w_fut_indic12d,ew,esqon,2nd,dual,fut,indic,mid
 verbinfl.w_fut_indic12e,ow,esqon,2nd,dual,fut,indic,mid
 
 verbinfl.w_fut_indic13,w_regular,esqon,3rd,dual,fut,indic,mid
-verbinfl.w_fut_indic13b,w_pp2,esqon,3rd,dual,fut,indic,mid
 verbinfl.w_fut_indic13c,aw,esqon,3rd,dual,fut,indic,mid
 verbinfl.w_fut_indic13d,ew,esqon,3rd,dual,fut,indic,mid
 verbinfl.w_fut_indic13e,ow,esqon,3rd,dual,fut,indic,mid
@@ -99,57 +84,48 @@ verbinfl.w_fut_indic13e,ow,esqon,3rd,dual,fut,indic,mid
 
 
 verbinfl.w_fut_indic14,w_regular,omeqa,1st,pl,fut,indic,mid
-verbinfl.w_fut_indic14b,w_pp2,omeqa,1st,pl,fut,indic,mid
 verbinfl.w_fut_indic14c,aw,omeqa,1st,pl,fut,indic,mid
 verbinfl.w_fut_indic14d,ew,omeqa,1st,pl,fut,indic,mid
 verbinfl.w_fut_indic14e,ow,omeqa,1st,pl,fut,indic,mid
 
 verbinfl.w_fut_indic15,w_regular,esqe,2nd,pl,fut,indic,mid
-verbinfl.w_fut_indic15b,w_pp2,esqe,2nd,pl,fut,indic,mid
 verbinfl.w_fut_indic15c,aw,esqe,2nd,pl,fut,indic,mid
 verbinfl.w_fut_indic15d,ew,esqe,2nd,pl,fut,indic,mid
 verbinfl.w_fut_indic15e,ow,esqe,2nd,pl,fut,indic,mid
 
 verbinfl.w_fut_indic16,w_regular,ontai,3rd,pl,fut,indic,mid
-verbinfl.w_fut_indic16b,w_pp2,ontai,3rd,pl,fut,indic,mid
 verbinfl.w_fut_indic16c,aw,ontai,3rd,pl,fut,indic,mid
 verbinfl.w_fut_indic16d,ew,ontai,3rd,pl,fut,indic,mid
 verbinfl.w_fut_indic16e,ow,ontai,3rd,pl,fut,indic,mid
 
 
 verbinfl.w_fut_indic17,w_regular,hsomai,1st,sg,fut,indic,pass
-verbinfl.w_fut_indic17b,w_pp6,hsomai,1st,sg,fut,indic,pass
 verbinfl.w_fut_indic17c,aw,hsomai,1st,sg,fut,indic,pass
 verbinfl.w_fut_indic17d,ew,hsomai,1st,sg,fut,indic,pass
 verbinfl.w_fut_indic17e,ow,hsomai,1st,sg,fut,indic,pass
 
 verbinfl.w_fut_indic18,w_regular,hsei,2nd,sg,fut,indic,pass
-verbinfl.w_fut_indic18b,w_pp6,ou,hsei,sg,fut,indic,pass
 verbinfl.w_fut_indic18c,aw,ou,hsei,sg,fut,indic,pass
 verbinfl.w_fut_indic18d,ew,ou,hsei,sg,fut,indic,pass
 verbinfl.w_fut_indic18e,ow,ou,hsei,sg,fut,indic,pass
 
 verbinfl.w_fut_indic18h,w_regular,hsh|,2nd,sg,fut,indic,pass
-verbinfl.w_fut_indic18bh,w_pp6,ou,hsh|,sg,fut,indic,pass
 verbinfl.w_fut_indic18ch,aw,ou,hsh|,sg,fut,indic,pass
 verbinfl.w_fut_indic18dh,ew,ou,hsh|,sg,fut,indic,pass
 verbinfl.w_fut_indic18eh,ow,ou,hsh|,sg,fut,indic,pass
 
 
 verbinfl.w_fut_indic19,w_regular,hsetai,3rd,sg,fut,indic,pass
-verbinfl.w_fut_indic19b,w_pp6,hsetai,3rd,sg,fut,indic,pass
 verbinfl.w_fut_indic19c,aw,hsetai,3rd,sg,fut,indic,pass
 verbinfl.w_fut_indic19d,ew,hsetai,3rd,sg,fut,indic,pass
 verbinfl.w_fut_indic19e,ow,hsetai,3rd,sg,fut,indic,pass
 
 verbinfl.w_fut_indic20,w_regular,hsesqon,2nd,dual,fut,indic,pass
-verbinfl.w_fut_indic20b,w_pp6,hsesqon,2nd,dual,fut,indic,pass
 verbinfl.w_fut_indic20c,aw,hsesqon,2nd,dual,fut,indic,pass
 verbinfl.w_fut_indic20d,ew,hsesqon,2nd,dual,fut,indic,pass
 verbinfl.w_fut_indic20e,ow,hsesqon,2nd,dual,fut,indic,pass
 
 verbinfl.w_fut_indic21,w_regular,hsesqon,3rd,dual,fut,indic,pass
-verbinfl.w_fut_indic21b,w_pp6,hsesqon,3rd,dual,fut,indic,pass
 verbinfl.w_fut_indic21c,aw,hsesqon,3rd,dual,fut,indic,pass
 verbinfl.w_fut_indic21d,ew,hsesqon,3rd,dual,fut,indic,pass
 verbinfl.w_fut_indic21e,ow,hsesqon,3rd,dual,fut,indic,pass
@@ -158,19 +134,16 @@ verbinfl.w_fut_indic21e,ow,hsesqon,3rd,dual,fut,indic,pass
 
 
 verbinfl.w_fut_indic22,w_regular,hsomeqa,1st,pl,fut,indic,pass
-verbinfl.w_fut_indic22b,w_pp6,hsomeqa,1st,pl,fut,indic,pass
 verbinfl.w_fut_indic22c,aw,hsomeqa,1st,pl,fut,indic,pass
 verbinfl.w_fut_indic22d,ew,hsomeqa,1st,pl,fut,indic,pass
 verbinfl.w_fut_indic22e,ow,hsomeqa,1st,pl,fut,indic,pass
 
 verbinfl.w_fut_indic23,w_regular,hsesqe,2nd,pl,fut,indic,pass
-verbinfl.w_fut_indic23b,w_pp6,hsesqe,2nd,pl,fut,indic,pass
 verbinfl.w_fut_indic23c,aw,hsesqe,2nd,pl,fut,indic,pass
 verbinfl.w_fut_indic23d,ew,hsesqe,2nd,pl,fut,indic,pass
 verbinfl.w_fut_indic23e,ow,hsesqe,2nd,pl,fut,indic,pass
 
 verbinfl.w_fut_indic24,w_regular,hsontai,3rd,pl,fut,indic,pass
-verbinfl.w_fut_indic24b,w_pp6,hsontai,3rd,pl,fut,indic,pass
 verbinfl.w_fut_indic24c,aw,hsontai,3rd,pl,fut,indic,pass
 verbinfl.w_fut_indic24d,ew,hsontai,3rd,pl,fut,indic,pass
 verbinfl.w_fut_indic24e,ow,hsontai,3rd,pl,fut,indic,pass

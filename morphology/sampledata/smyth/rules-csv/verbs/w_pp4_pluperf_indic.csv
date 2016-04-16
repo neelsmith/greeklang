@@ -1,0 +1,9 @@
+verbinfl.w_plupft_indic1b,w_pp4,h,1st,sg,plupft,indic,act
+verbinfl.w_plupft_indic2b,w_pp4,hs,2nd,sg,plupft,indic,act
+verbinfl.w_plupft_indic3b,w_pp4,ei,3rd,sg,plupft,indic,act
+verbinfl.w_plupft_indic3bn,w_pp4,ein,3rd,sg,plupft,indic,act
+verbinfl.w_plupft_indic4b,w_pp4,eton,2nd,dual,plupft,indic,act
+verbinfl.w_plupft_indic5b,w_pp4,ethn,3rd,dual,plupft,indic,act
+verbinfl.w_plupft_indic6b,w_pp4,emen,1st,pl,plupft,indic,act
+verbinfl.w_plupft_indic7b,w_pp4,ete,2nd,pl,plupft,indic,act
+verbinfl.w_plupft_indic8b,w_pp4,esan,3rd,pl,plupft,indic,act

@@ -1,0 +1,16 @@
+verbinfl.w_plupft_indic9b,w_pp5,mhn,1st,sg,plupft,indic,mid
+verbinfl.w_plupft_indic11b,w_pp5,so,2nd,sg,plupft,indic,mid
+verbinfl.w_plupft_indic12b,w_pp5,to,3rd,sg,plupft,indic,mid
+verbinfl.w_plupft_indic13b,w_pp5,sqon,2nd,dual,plupft,indic,mid
+verbinfl.w_plupft_indic14b,w_pp5,sqhn,3rd,dual,plupft,indic,mid
+verbinfl.w_plupft_indic15b,w_pp5,meqa,1st,pl,plupft,indic,mid
+verbinfl.w_plupft_indic16b,w_pp5,sqe,2nd,pl,plupft,indic,mid
+verbinfl.w_plupft_indic17b,w_pp5,nto,3rd,pl,plupft,indic,mid
+verbinfl.w_plupft_indic18b,w_pp5,mhn,1st,sg,plupft,indic,pass
+verbinfl.w_plupft_indic19b,w_pp5,so,2nd,sg,plupft,indic,pass
+verbinfl.w_plupft_indic20b,w_pp5,tai,to,sg,plupft,indic,pass
+verbinfl.w_plupft_indic21b,w_pp5,sqon,2nd,dual,plupft,indic,pass
+verbinfl.w_plupft_indic22b,w_pp5,sqhn,3rd,dual,plupft,indic,pass
+verbinfl.w_plupft_indic23b,w_pp5,meqa,1st,pl,plupft,indic,pass
+verbinfl.w_plupft_indic24b,w_pp5,sqe,2nd,pl,plupft,indic,pass
+verbinfl.w_plupft_indic25b,w_pp5,nto,3rd,pl,plupft,indic,pass
