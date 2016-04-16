@@ -1,5 +1,4 @@
 StemUrn,LexicalEntity,StemString,MorphologicalClass,Tags
-smyth.n64316_0,lexent.n64316,lu_,w_regular,Smyth 383
 smyth.n62274_0,lexent.n62274,leip,w_pp1,Smyth 384
 smyth.n62274_1,lexent.n62274,leiy,w_pp2,Smyth 384
 smyth.n62274_2,lexent.n62274,lip,aor2,Smyth 384
@@ -35,3 +34,9 @@ smyth.n86238_3,lexent.n86238,pepra_g,w_pp4,
 smyth.n86238_3b,lexent.n86238,pepra_x,w_pp4,
 smyth.n86238_4,lexent.n86238,pepra_,gm_pp5,Smyth 406
 smyth.n86238_5,lexent.n86238,praxq,w_pp6,Smyth 406
+smyth.n64316_0,lexent.n64316,lu_,w_pp1,Smyth Smyth 475
+smyth.n64316_1,lexent.n64316,lu_s,w_pp2,Smyth Smyth 475
+smyth.n64316_2,lexent.n64316,lu_s,w_pp3,Smyth Smyth 475
+smyth.n64316_3,lexent.n64316,lelu^,w_pp4,Smyth Smyth 475
+smyth.n64316_4,lexent.n64316,lelu^,w_pp5,Smyth Smyth 475
+smyth.n64316_5,lexent.n64316,lu^,w_pp6,Smyth Smyth 475
