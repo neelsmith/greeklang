@@ -1,7 +1,7 @@
 RuleUrn,InflectionClasses,Ending,Person,Number,Tense,Mood,Voice
 verbinfl.w_pp2_fut_opt1b,w_pp2,oimi,1st,sg,fut,opt,act
 verbinfl.w_pp2_fut_opt2b,w_pp2,ois,2nd,sg,fut,opt,act
-verbinfl.w_pp2_fut_opt3b,w_pp2,oi|,3rd,sg,fut,opt,act
+verbinfl.w_pp2_fut_opt3b,w_pp2,oi,3rd,sg,fut,opt,act
 verbinfl.w_pp2_fut_opt4b,w_pp2,oiton,2nd,dual,fut,opt,act
 verbinfl.w_pp2_fut_opt5b,w_pp2,oithn,3rd,dual,fut,opt,act
 verbinfl.w_pp2_fut_opt6b,w_pp2,oimen,1st,pl,fut,opt,act
