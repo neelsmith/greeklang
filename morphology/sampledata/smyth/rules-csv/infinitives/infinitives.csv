@@ -19,7 +19,7 @@ verbinfl.w_infin7b,w_pp3,ai,aor,act
 verbinfl.w_infin8,w_regular,asqai,aor,mid
 verbinfl.w_infin8b,w_pp3,asqai,aor,mid
 verbinfl.w_infin9,w_regular,h=nai,aor,pass
-verbinfl.w_infin9b,w_pp3,h=nai,aor,pass
+verbinfl.w_infin9b,w_pp6,h=nai,aor,pass
 
 
 verbinfl.w_infin10,w_regular,e/nai,pft,act
