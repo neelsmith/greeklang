@@ -8,6 +8,7 @@ Form,AnalysisType,P4,P5,P1,P2,P3
 λύειν,infin,present,active,,,
 λύων,ptcpl,present,active,masculine,nominative,singular
 λύων,ptcpl,present,active,masculine,vocative,singular
+
 λύομαι,verb,first,singular,present,indicative,middle
 λύομαι,verb,first,singular,present,indicative,passive
 ἐλυόμην,verb,first,singular,imperfect,indicative,middle
@@ -22,8 +23,10 @@ Form,AnalysisType,P4,P5,P1,P2,P3
 λύεσθαι,infin,present,passive,,,
 λυόμενος,ptcpl,present,middle,masculine,nominative,singular
 λυόμενος,ptcpl,present,passive,masculine,nominative,singular
+
 λυτός,vadj,masculine,nominative,singular,,
 λυτέος,vadj,masculine,nominative,singular,,
+
 λύσω,verb,first,singular,future,indicative,active
 λύσοιμι,verb,first,singular,future,optative,active
 λύσειν,infin,future,active,,,
@@ -35,10 +38,12 @@ Form,AnalysisType,P4,P5,P1,P2,P3
 λυσοίμην,verb,first,singular,future,optative,middle
 λύσεσθαι,infin,future,middle,,,
 λυσόμενος,ptcpl,future,middle,masculine,nominative,singular
+
 λυθήσομαι,verb,first,singular,future,indicative,passive
 λυθησοίμην,verb,first,singular,future,optative,passive
 λυθήσεσθαι,infin,future,passive,,,
 λυθησόμενος,ptcpl,future,passive,masculine,nominative,singular
+
 ἔλυσα,verb,first,singular,aorist,indicative,active
 λύσω,verb,first,singular,aorist,subjunctive,active
 λύσαιμι,verb,first,singular,aorist,optative,active
@@ -46,12 +51,14 @@ Form,AnalysisType,P4,P5,P1,P2,P3
 λῦσαι,infin,aorist,active,,,
 λύσας,ptcpl,aorist,active,masculine,nominative,singular
 λύσας,ptcpl,aorist,active,masculine,vocative,singular
+
 ἐλυσάμην,verb,first,singular,aorist,indicative,middle
 λύσωμαι,verb,first,singular,aorist,subjunctive,middle
 λυσαίμην,verb,first,singular,aorist,optative,middle
 λῦσαι,verb,second,singular,aorist,imperative,middle
 λύσασθαι,infin,aorist,middle,,,
 λυσάμενος,ptcpl,aorist,middle,masculine,nominative,singular
+
 ἐλύθην,verb,first,singular,aorist,indicative,passive
 λυθῶ,verb,first,singular,aorist,subjunctive,passive
 λυθείην,verb,first,singular,aorist,optative,passive
@@ -68,7 +75,6 @@ Form,AnalysisType,P4,P5,P1,P2,P3
 
 λέλυμαι,verb,first,singular,perfect,indicative,middle
 λέλυμαι,verb,first,singular,perfect,indicative,passive
-
 ἐλελύμην,verb,first,singular,pluperfect,indicative,middle
 ἐλελύμην,verb,first,singular,pluperfect,indicative,passive
 λέλυσο,verb,second,singular,perfect,imperative,middle
