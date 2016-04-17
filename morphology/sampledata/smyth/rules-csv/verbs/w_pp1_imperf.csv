@@ -1,7 +1,8 @@
 RuleUrn,InflectionClasses,Ending,Person,Number,Tense,Mood,Voice
 verbinfl.w_pp1_impf_indic1b,w_pp1,on,1st,sg,impft,indic,act
 verbinfl.w_pp1_impf_indic2b,w_pp1,es,2nd,sg,impft,indic,act
-verbinfl.w_pp1_impf_indic3b,w_pp1,e,3rd,sg,impft,indic,
+verbinfl.w_pp1_impf_indic3b,w_pp1,e,3rd,sg,impft,indic,act
+
 verbinfl.w_pp1_impf_indic4b,w_pp1,eton,2nd,dual,impft,indic,act
 verbinfl.w_pp1_impf_indic5b,w_pp1,ethn,3rd,dual,impft,indic,act
 verbinfl.w_pp1_impf_indic6b,w_pp1,omen,1st,pl,impft,indic,act
