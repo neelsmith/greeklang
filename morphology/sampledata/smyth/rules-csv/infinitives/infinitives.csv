@@ -12,7 +12,7 @@ verbinfl.w_infin4b,w_pp2,ein,fut,act
 verbinfl.w_infin5,w_regular,esqai,fut,mid
 verbinfl.w_infin5b,w_pp2,esqai,fut,mid
 verbinfl.w_infin6,w_regular,hsesqai,fut,pass
-verbinfl.w_infin6b,w_pp2,hsesqai,fut,pass
+verbinfl.w_infin6b,w_pp6,hsesqai,fut,pass
 
 verbinfl.w_infin7,w_regular,ai,aor,act
 verbinfl.w_infin7b,w_pp3,ai,aor,act
