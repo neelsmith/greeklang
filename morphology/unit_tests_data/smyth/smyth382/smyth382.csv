@@ -77,3 +77,7 @@ Form,AnalysisType,P4,P5,P1,P2,P3
 λελύσθαι,infin,perfect,passive,,,
 λελυμένος,ptcpl,perfect,middle,masculine,nominative,singular
 λελυμένος,ptcpl,perfect,passive,masculine,nominative,singular
+
+λῦσον,ptcpl,future,active,neuter,nominative,singular
+λῦσον,ptcpl,future,active,neuter,accusative,singular
+λῦσον,ptcpl,future,active,neuter,vocative,singular
