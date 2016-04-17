@@ -1,5 +1,5 @@
 RuleUrn,InflectionClass,Ending,Gender,Case,Number,Tense,Voice
-verbinfl.w_pp6_aor_passpt1m,w_r6egular,ei/s,masc,nom,sg,aor,pass
+verbinfl.w_pp6_aor_passpt1m,w_pp6,ei/s,masc,nom,sg,aor,pass
 verbinfl.w_pp6_aor_passpt2m,w_pp6,e/ntos,masc,gen,sg,aor,pass
 verbinfl.w_pp6_aor_passpt3m,w_pp6,e/nti,masc,dat,sg,aor,pass
 verbinfl.w_pp6_aor_passpt4m,w_pp6,e/nta,masc,acc,sg,aor,pass
