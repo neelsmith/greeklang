@@ -25,9 +25,9 @@ verbinfl.w_infin9b,w_pp6,h=nai,aor,pass
 verbinfl.w_infin10,w_regular,e/nai,pft,act
 verbinfl.w_infin10b,w_pp4,e/nai,pft,act
 verbinfl.w_infin11,w_regular,sqai,pft,mid
-verbinfl.w_infin11b,w_pp4,sqai,pft,mid
+verbinfl.w_infin11b,w_pp5,sqai,pft,mid
 verbinfl.w_infin12,w_regular,sqai,pft,pass
-verbinfl.w_infin12b,w_pp4,sqai,pft,pass
+verbinfl.w_infin12b,w_pp5,sqai,pft,pass
 
 verbinfl.w_infin13,aor2,ei=n,aor,act
 verbinfl.w_infin14,aor2,e/sqai,aor,mid

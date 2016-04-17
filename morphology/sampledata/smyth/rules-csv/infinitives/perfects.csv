@@ -1,14 +1,10 @@
 RuleUrn,InflectionClass,Ending,Tense,Voice
-verbinfl.w_pp4_pft_mp_infin1m,w_pp4,fqai,pft,mid
-verbinfl.w_pp4_pft_mp_infin1p,w_pp4,fqai,pft,pass
+verbinfl.w_pp5_pft_mp_infin1m,m_w_pp5,fqai,pft,mid
+verbinfl.w_pp5_pft_mp_infin1p,m_w_pp5,fqai,pft,pass
 
 
-verbinfl.w_pp4_pft_mp_infin1m,m_w_pp4,fqai,pft,mid
-verbinfl.w_pp4_pft_mp_infin1p,m_w_pp4,fqai,pft,pass
+verbinfl.w_pp5_pft_mp_infin2m,s_w_pp5,qai,pft,mid
+verbinfl.w_pp5_pft_mp_infin2p,s_w_pp5,qai,pft,pass
 
-
-verbinfl.w_pp4_pft_mp_infin2m,s_w_pp4,qai,pft,mid
-verbinfl.w_pp4_pft_mp_infin2p,s_w_pp4,qai,pft,pass
-
-verbinfl.w_pp4_pft_mp_infin3m,gm_w_pp4,xqai,pft,mid
-verbinfl.w_pp4_pft_mp_infin3p,gm_w_pp4,xqai,pft,pass
+verbinfl.w_pp5_pft_mp_infin3m,gm_w_pp5,xqai,pft,mid
+verbinfl.w_pp5_pft_mp_infin3p,gm_w_pp5,xqai,pft,pass
