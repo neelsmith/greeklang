@@ -27,7 +27,10 @@ Form,AnalysisType,P4,P5,P1,P2,P3
 λύσω,verb,first,singular,future,indicative,active
 λύσοιμι,verb,first,singular,future,optative,active
 λύσειν,infin,future,active,,,
+
 λύσων,ptcpl,future,active,masculine,nominative,singular
+λύσων,ptcpl,future,active,masculine,vocative,singular
+
 λύσομαι,verb,first,singular,future,indicative,middle
 λυσοίμην,verb,first,singular,future,optative,middle
 λύσεσθαι,infin,future,middle,,,
@@ -59,10 +62,13 @@ Form,AnalysisType,P4,P5,P1,P2,P3
 λέλυκα,verb,first,singular,perfect,indicative,active
 ἐλελύκη,verb,first,singular,pluperfect,indicative,active
 λελυκέναι,infin,perfect,active,,,
+
 λελυκώς,ptcpl,perfect,active,masculine,nominative,singular
 λελυκώς,ptcpl,perfect,active,masculine,vocative,singular
+
 λέλυμαι,verb,first,singular,perfect,indicative,middle
 λέλυμαι,verb,first,singular,perfect,indicative,passive
+
 ἐλελύμην,verb,first,singular,pluperfect,indicative,middle
 ἐλελύμην,verb,first,singular,pluperfect,indicative,passive
 λέλυσο,verb,second,singular,perfect,imperative,middle
