@@ -130,63 +130,63 @@ verbinfl.w_futptcp_mp15n,w_regular,omena,neut,voc,pl,fut,mid
 
 
 
-verbinfl.w_futptcp_mp1m,w_regular,omenos,masc,nom,sg,fut,pass
-verbinfl.w_futptcp_mp2m,w_regular,omenou,masc,gen,sg,fut,pass
-verbinfl.w_futptcp_mp3m,w_regular,omenw|,masc,dat,sg,fut,pass
-verbinfl.w_futptcp_mp4m,w_regular,omenon,masc,acc,sg,fut,pass
-verbinfl.w_futptcp_mp5m,w_regular,omene,masc,voc,sg,fut,pass
+verbinfl.w_futptcp_mp1m,w_regular,hsomenos,masc,nom,sg,fut,pass
+verbinfl.w_futptcp_mp2m,w_regular,hsomenou,masc,gen,sg,fut,pass
+verbinfl.w_futptcp_mp3m,w_regular,hsomenw|,masc,dat,sg,fut,pass
+verbinfl.w_futptcp_mp4m,w_regular,hsomenon,masc,acc,sg,fut,pass
+verbinfl.w_futptcp_mp5m,w_regular,hsomene,masc,voc,sg,fut,pass
 
-verbinfl.w_futptcp_mp6m,w_regular,omenw,masc,nom,dual,fut,pass
-verbinfl.w_futptcp_mp7m,w_regular,omenoin,masc,gen,dual,fut,pass
-verbinfl.w_futptcp_mp8m,w_regular,omenoin,masc,dat,dual,fut,pass
-verbinfl.w_futptcp_mp9m,w_regular,omenw,masc,acc,dual,fut,pass
-verbinfl.w_futptcp_mp10m,w_regular,omenw,masc,voc,dual,fut,pass
+verbinfl.w_futptcp_mp6m,w_regular,hsomenw,masc,nom,dual,fut,pass
+verbinfl.w_futptcp_mp7m,w_regular,hsomenoin,masc,gen,dual,fut,pass
+verbinfl.w_futptcp_mp8m,w_regular,hsomenoin,masc,dat,dual,fut,pass
+verbinfl.w_futptcp_mp9m,w_regular,hsomenw,masc,acc,dual,fut,pass
+verbinfl.w_futptcp_mp10m,w_regular,hsomenw,masc,voc,dual,fut,pass
 
-verbinfl.w_futptcp_mp11m,w_regular,omenoi,masc,nom,pl,fut,pass
-verbinfl.w_futptcp_mp12m,w_regular,omenwn,masc,gen,pl,fut,pass
-verbinfl.w_futptcp_mp13m,w_regular,omenois,masc,dat,pl,fut,pass
-verbinfl.w_futptcp_mp14m,w_regular,omenous,masc,acc,pl,fut,pass
-verbinfl.w_futptcp_mp15m,w_regular,omenoi,masc,voc,pl,fut,pass
-
-
-
-
-
-verbinfl.w_futptcp_mp1m,w_regular,omenh,fem,nom,sg,fut,pass
-verbinfl.w_futptcp_mp2m,w_regular,omenhs,fem,gen,sg,fut,pass
-verbinfl.w_futptcp_mp3m,w_regular,omenh|,fem,dat,sg,fut,pass
-verbinfl.w_futptcp_mp4m,w_regular,omenhn,fem,acc,sg,fut,pass
-verbinfl.w_futptcp_mp5m,w_regular,omenh,fem,voc,sg,fut,pass
-
-verbinfl.w_futptcp_mp6m,w_regular,omena_,fem,nom,dual,fut,pass
-verbinfl.w_futptcp_mp7m,w_regular,omenain,fem,gen,dual,fut,pass
-verbinfl.w_futptcp_mp8m,w_regular,omenain,fem,dat,dual,fut,pass
-verbinfl.w_futptcp_mp9m,w_regular,omena_,fem,acc,dual,fut,pass
-verbinfl.w_futptcp_mp10m,w_regular,omena_,fem,voc,dual,fut,pass
-
-verbinfl.w_futptcp_mp11m,w_regular,omenai,fem,nom,pl,fut,pass
-verbinfl.w_futptcp_mp12m,w_regular,omenwn,fem,gen,pl,fut,pass
-verbinfl.w_futptcp_mp13m,w_regular,omenais,fem,dat,pl,fut,pass
-verbinfl.w_futptcp_mp14m,w_regular,omena_s,fem,acc,pl,fut,pass
-verbinfl.w_futptcp_mp15m,w_regular,omenai,fem,voc,pl,fut,pass
+verbinfl.w_futptcp_mp11m,w_regular,hsomenoi,masc,nom,pl,fut,pass
+verbinfl.w_futptcp_mp12m,w_regular,hsomenwn,masc,gen,pl,fut,pass
+verbinfl.w_futptcp_mp13m,w_regular,hsomenois,masc,dat,pl,fut,pass
+verbinfl.w_futptcp_mp14m,w_regular,hsomenous,masc,acc,pl,fut,pass
+verbinfl.w_futptcp_mp15m,w_regular,hsomenoi,masc,voc,pl,fut,pass
 
 
 
 
-verbinfl.w_futptcp_mp1n,w_regular,omenon,neut,nom,sg,fut,pass
-verbinfl.w_futptcp_mp2n,w_regular,omenou,neut,gen,sg,fut,pass
-verbinfl.w_futptcp_mp3n,w_regular,omenw|,neut,dat,sg,fut,pass
-verbinfl.w_futptcp_mp4n,w_regular,omenon,neut,acc,sg,fut,pass
-verbinfl.w_futptcp_mp5n,w_regular,omenon,neut,voc,sg,fut,pass
 
-verbinfl.w_futptcp_mp6n,w_regular,omenw,neut,nom,dual,fut,pass
-verbinfl.w_futptcp_mp7n,w_regular,omenoin,neut,gen,dual,fut,pass
-verbinfl.w_futptcp_mp8n,w_regular,omenoin,neut,dat,dual,fut,pass
-verbinfl.w_futptcp_mp9n,w_regular,omenw,neut,acc,dual,fut,pass
-verbinfl.w_futptcp_mp10n,w_regular,omenw,neut,voc,dual,fut,pass
+verbinfl.w_futptcp_mp1m,w_regular,hsomenh,fem,nom,sg,fut,pass
+verbinfl.w_futptcp_mp2m,w_regular,hsomenhs,fem,gen,sg,fut,pass
+verbinfl.w_futptcp_mp3m,w_regular,hsomenh|,fem,dat,sg,fut,pass
+verbinfl.w_futptcp_mp4m,w_regular,hsomenhn,fem,acc,sg,fut,pass
+verbinfl.w_futptcp_mp5m,w_regular,hsomenh,fem,voc,sg,fut,pass
 
-verbinfl.w_futptcp_mp11n,w_regular,omena,neut,nom,pl,fut,pass
-verbinfl.w_futptcp_mp12n,w_regular,omenwn,neut,gen,pl,fut,pass
-verbinfl.w_futptcp_mp13n,w_regular,omenois,neut,dat,pl,fut,pass
-verbinfl.w_futptcp_mp14n,w_regular,omena,neut,acc,pl,fut,pass
-verbinfl.w_futptcp_mp15n,w_regular,omena,neut,voc,pl,fut,pass
+verbinfl.w_futptcp_mp6m,w_regular,hsomena_,fem,nom,dual,fut,pass
+verbinfl.w_futptcp_mp7m,w_regular,hsomenain,fem,gen,dual,fut,pass
+verbinfl.w_futptcp_mp8m,w_regular,hsomenain,fem,dat,dual,fut,pass
+verbinfl.w_futptcp_mp9m,w_regular,hsomena_,fem,acc,dual,fut,pass
+verbinfl.w_futptcp_mp10m,w_regular,hsomena_,fem,voc,dual,fut,pass
+
+verbinfl.w_futptcp_mp11m,w_regular,hsomenai,fem,nom,pl,fut,pass
+verbinfl.w_futptcp_mp12m,w_regular,hsomenwn,fem,gen,pl,fut,pass
+verbinfl.w_futptcp_mp13m,w_regular,hsomenais,fem,dat,pl,fut,pass
+verbinfl.w_futptcp_mp14m,w_regular,hsomena_s,fem,acc,pl,fut,pass
+verbinfl.w_futptcp_mp15m,w_regular,hsomenai,fem,voc,pl,fut,pass
+
+
+
+
+verbinfl.w_futptcp_mp1n,w_regular,hsomenon,neut,nom,sg,fut,pass
+verbinfl.w_futptcp_mp2n,w_regular,hsomenou,neut,gen,sg,fut,pass
+verbinfl.w_futptcp_mp3n,w_regular,hsomenw|,neut,dat,sg,fut,pass
+verbinfl.w_futptcp_mp4n,w_regular,hsomenon,neut,acc,sg,fut,pass
+verbinfl.w_futptcp_mp5n,w_regular,hsomenon,neut,voc,sg,fut,pass
+
+verbinfl.w_futptcp_mp6n,w_regular,hsomenw,neut,nom,dual,fut,pass
+verbinfl.w_futptcp_mp7n,w_regular,hsomenoin,neut,gen,dual,fut,pass
+verbinfl.w_futptcp_mp8n,w_regular,hsomenoin,neut,dat,dual,fut,pass
+verbinfl.w_futptcp_mp9n,w_regular,hsomenw,neut,acc,dual,fut,pass
+verbinfl.w_futptcp_mp10n,w_regular,hsomenw,neut,voc,dual,fut,pass
+
+verbinfl.w_futptcp_mp11n,w_regular,hsomena,neut,nom,pl,fut,pass
+verbinfl.w_futptcp_mp12n,w_regular,hsomenwn,neut,gen,pl,fut,pass
+verbinfl.w_futptcp_mp13n,w_regular,hsomenois,neut,dat,pl,fut,pass
+verbinfl.w_futptcp_mp14n,w_regular,hsomena,neut,acc,pl,fut,pass
+verbinfl.w_futptcp_mp15n,w_regular,hsomena,neut,voc,pl,fut,pass
