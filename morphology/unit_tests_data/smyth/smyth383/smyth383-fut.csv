@@ -18,18 +18,22 @@ Form,AnalysisType,P4,P5,P1,P2,P3
 λύσοις,verb,second,singular,future,optative,active
 λύσοι,verb,third,singular,future,optative,active
 λύσοιτον,verb,second,dual,future,optative,active
-λυοσοίτην,verb,third,dual,future,optative,active
+λυσοίτην,verb,third,dual,future,optative,active
 λύσοιμεν,verb,first,plural,future,optative,active
 λύσοιτε,verb,second,plural,future,optative,active
 λύσοιεν,verb,third,plural,future,optative,active
 
 
 λύσειν,infin,future,active
+
 λύσων,ptcpl,future,active,masculine,nominative,singular
 λύσουσα,ptcpl,future,active,feminine,nominative,singular
 λῦσον,ptcpl,future,active,neuter,nominative,singular
 
-
+λύσων,ptcpl,future,active,masculine,vocative,singular
 λύσουσα,ptcpl,future,active,feminine,vocative,singular
 λῦσον,ptcpl,future,active,neuter,accusative,singular
 λῦσον,ptcpl,future,active,neuter,vocative,singular
+
+
+λῦσον,verb,second,singular,aorist,imperative,active
