@@ -1,0 +1,10 @@
+RuleUrn,InflectionClasses,Ending,Person,Number,Tense,Mood,Voice
+verbinfl.w_pp6_aor_opt7,w_pp6,eihn,1st,sg,aor,opt,pass
+verbinfl.w_pp6_aor_opt18,w_pp6,eihs,2nd,sg,aor,opt,pass
+verbinfl.w_pp6_aor_opt19,w_pp6,eih,3rd,sg,aor,opt,pass
+
+verbinfl.w_pp6_aor_opt20,w_pp6,eihton,2nd,dual,aor,opt,pass
+verbinfl.w_pp6_aor_opt20c,w_pp6,ei=ton,2nd,dual,aor,opt,pass
+
+verbinfl.w_pp6_aor_opt21,w_pp6,ei=thn,3rd,dual,aor,opt,pass
+verbinfl.w_pp6_aor_opt21c,w_pp6,eihthn,3rd,dual,aor,opt,pass
