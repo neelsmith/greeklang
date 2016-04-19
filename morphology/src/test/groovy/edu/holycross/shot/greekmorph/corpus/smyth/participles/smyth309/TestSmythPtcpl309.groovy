@@ -15,7 +15,13 @@ class TestSmythPtcpl309 {
 
   @Test
   void testLuo() {
-    File dataFile =  new File("unit_tests_data/smyth/smyth305/smyth305-luo.csv")
+    File dataFile =  new File("unit_tests_data/smyth/smyth309/smyth309-luo.csv")
+    assert tester.testFile(dataFile)
+  }
+
+  @Test
+  void testPaideuo() {
+    File dataFile =  new File("unit_tests_data/smyth/smyth309/paideuo309.csv")
     assert tester.testFile(dataFile)
   }
 
