@@ -21,4 +21,10 @@ class TestPaideu383 {
     File dataFile =  new File("unit_tests_data/smyth/smyth383/paideu-pr-act.csv")
     assert tester.testFile(dataFile)
   }
+
+  @Test
+  void testImpftAct() {
+    File dataFile =  new File("unit_tests_data/smyth/smyth383/paideu-impft-act.csv")
+    assert tester.testFile(dataFile)
+  }
 }

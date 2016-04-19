@@ -8,7 +8,7 @@ import static groovy.test.GroovyAssert.shouldFail
 
 /** Tests demonstrating parsing of nouns from Unicode string.
 */
-class TestSmythW383All {
+class TestSmythW383pres{
   String fstBinary = "build/smyth/greek.a"
   File urnReg = new File("sampledata/smyth/urnregistry/collectionregistry.csv")
   UrnManager umgr = new UrnManager(urnReg)
@@ -16,11 +16,7 @@ class TestSmythW383All {
   LiteraryGreekParser mp = new LiteraryGreekParser(fstBinary, umgr, 8)
   TableTester tester = new TableTester(mp)
 
-  @Test
-  void testInfinitives() {
-    File dataFile =  new File("unit_tests_data/smyth/smyth383/smyth383infin.csv")
-    assert tester.testFile(dataFile)
-  }
+
 
   @Test
   void testVadjs() {
@@ -28,16 +24,18 @@ class TestSmythW383All {
     assert tester.testFile(dataFile)
   }
 
-  @Test
-  void testPtcpls() {
-    File dataFile =  new File("unit_tests_data/smyth/smyth383/smyth383ptcpl.csv")
-    assert tester.testFile(dataFile)
-  }
+
 
   @Test
-  void testPresImpftAct() {
+  void testPresentAct() {
     File dataFile =  new File("unit_tests_data/smyth/smyth383/smyth383pr-act.csv")
     assert tester.testFile(dataFile)
   }
 
+
+  @Test
+  void testImpftAct() {
+    File dataFile =  new File("unit_tests_data/smyth/smyth383/smyth383impft-act.csv")
+    assert tester.testFile(dataFile)
+  }
 }

@@ -18,7 +18,7 @@ class TestSmythW383fut {
 
   @Test
   void testMP() {
-    File dataFile =  new File("unit_tests_data/smyth/smyth383/smyth383-fut.csv")
+    File dataFile =  new File("unit_tests_data/smyth/smyth383/smyth383fut-act.csv")
     assert tester.testFile(dataFile)
   }
 
