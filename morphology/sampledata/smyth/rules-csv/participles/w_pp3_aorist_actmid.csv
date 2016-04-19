@@ -15,7 +15,7 @@ verbinfl.w_pp3_aor_ptcp11m,w_pp3,antes,masc,nom,pl,aor,act
 verbinfl.w_pp3_aor_ptcp12m,w_pp3,antwn,masc,gen,pl,aor,act
 verbinfl.w_pp3_aor_ptcp13m,w_pp3,a_si,masc,dat,pl,aor,act
 verbinfl.w_pp3_aor_ptcp13mn,w_pp3,a_sin,masc,dat,pl,aor,act
-verbin.w_pp3_aor_ptcp14m,w_pp3,antas,masc,acc,pl,aor,act
+verbinfl.w_pp3_aor_ptcp14m,w_pp3,antas,masc,acc,pl,aor,act
 verbinfl.w_pp3_aor_ptcp15m,w_pp3,antes,masc,voc,pl,aor,act
 
 
@@ -55,7 +55,7 @@ verbinfl.w_pp3_aor_ptcp11n,w_pp3,anta,neut,nom,pl,aor,act
 verbinfl.w_pp3_aor_ptcp12n,w_pp3,antwn,neut,gen,pl,aor,act
 verbinfl.w_pp3_aor_ptcp13n,w_pp3,a_si,neut,dat,pl,aor,act
 verbinfl.w_pp3_aor_ptcp13nn,w_pp3,a_sin,neut,dat,pl,aor,act
-verbin.w_pp3_aor_ptcp14n,w_pp3,anta,neut,acc,pl,aor,act
+verbinfl.w_pp3_aor_ptcp14n,w_pp3,anta,neut,acc,pl,aor,act
 verbinfl.w_pp3_aor_ptcp15n,w_pp3,anta,neut,voc,pl,aor,act
 
 

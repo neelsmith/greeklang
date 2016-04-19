@@ -15,7 +15,7 @@ verbinfl.w_pp6_aor_passpt11m,w_pp6,e/ntes,masc,nom,pl,aor,pass
 verbinfl.w_pp6_aor_passpt12m,w_pp6,e/ntwn,masc,gen,pl,aor,pass
 verbinfl.w_pp6_aor_passpt13m,w_pp6,ei=si,masc,dat,pl,aor,pass
 verbinfl.w_pp6_aor_passpt13mn,w_pp6,ei=sin,masc,dat,pl,aor,pass
-verbin.w_pp6_aor_passpt14m,w_pp6,e/ntas,masc,acc,pl,aor,pass
+verbinfl.w_pp6_aor_passpt14m,w_pp6,e/ntas,masc,acc,pl,aor,pass
 verbinfl.w_pp6_aor_passpt15m,w_pp6,e/ntes,masc,voc,pl,aor,pass
 
 
@@ -36,7 +36,7 @@ verbinfl.w_pp6_aor_passpt10f,w_pp6,ei/sa,fem,voc,dual,aor,pass
 verbinfl.w_pp6_aor_passpt11f,w_pp6,ei=sai,fem,nom,pl,aor,pass
 verbinfl.w_pp6_aor_passpt12f,w_pp6,eisw=n,fem,gen,pl,aor,pass
 verbinfl.w_pp6_aor_passpt13f,w_pp6,ei/sais,fem,dat,pl,aor,pass
-verbin.w_pp6_aor_passpt14f,w_pp6,ei/sas,fem,acc,pl,aor,pass
+verbinfl.w_pp6_aor_passpt14f,w_pp6,ei/sas,fem,acc,pl,aor,pass
 verbinfl.w_pp6_aor_passpt15f,w_pp6,ei=sai,fem,voc,pl,aor,pass
 
 
@@ -58,5 +58,5 @@ verbinfl.w_pp6_aor_passpt11n,w_pp6,e/nta,neut,nom,pl,aor,pass
 verbinfl.w_pp6_aor_passpt12n,w_pp6,e/ntwn,neut,gen,pl,aor,pass
 verbinfl.w_pp6_aor_passpt13n,w_pp6,ei=si,neut,dat,pl,aor,pass
 verbinfl.w_pp6_aor_passpt13mn,w_pp6,ei=sin,neut,dat,pl,aor,pass
-verbin.w_pp6_aor_passpt14n,w_pp6,e/nta,neut,acc,pl,aor,pass
+verbinfl.w_pp6_aor_passpt14n,w_pp6,e/nta,neut,acc,pl,aor,pass
 verbinfl.w_pp6_aor_passpt15n,w_pp6,e/nta,neut,voc,pl,aor,pass
