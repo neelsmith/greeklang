@@ -25,10 +25,10 @@ Form,AnalysisType,P4,P5,P1,P2,P3
 λύσαις,verb,second,singular,aorist,optative,active
 λύσειας,verb,second,singular,aorist,optative,active
 λύσαι,verb,third,singular,aorist,optative,active
-λύσειε,verb,second,singular,aorist,optative,active
+λύσειε,verb,third,singular,aorist,optative,active
 
 λύσαιτον,verb,second,dual,aorist,optative,active
-λυαίτην,verb,third,dual,aorist,optative,active
+λυσαίτην,verb,third,dual,aorist,optative,active
 
 λύσαιμεν,verb,first,plural,aorist,optative,active
 λύσαιτε,verb,second,plural,aorist,optative,active
@@ -38,8 +38,12 @@ Form,AnalysisType,P4,P5,P1,P2,P3
 
 λῦσον,verb,second,singular,aorist,imperative,active
 λυσάτω,verb,third,singular,aorist,imperative,active
+
 λύσατον,verb,second,dual,aorist,imperative,active
 λυσάντων,verb,third,dual,aorist,imperative,active
+
+λύσατε,verb,second,plural,aorist,imperative,active
+λυσάντων,verb,third,plural,aorist,imperative,active
 
 
 λῦσαι,infin,aorist,active,,,
@@ -61,3 +65,14 @@ Form,AnalysisType,P4,P5,P1,P2,P3
 λύσω,verb,first,singular,future,indicative,active
 λύσῃ,verb,second,singular,aorist,subjunctive,middle
 λύσῃ,verb,second,singular,future,indicative,middle
+
+
+λῦσον,ptcpl,future,active,neuter,nominative,singular
+λῦσον,ptcpl,future,active,neuter,accusative,singular
+λῦσον,ptcpl,future,active,neuter,vocative,singular
+
+
+λυσάντων,ptcpl,aorist,active,masculine,genitive,plural
+λυσάντων,ptcpl,aorist,active,neuter,genitive,plural
+
+λῦσαι,verb,second,singular,aorist,imperative,middle

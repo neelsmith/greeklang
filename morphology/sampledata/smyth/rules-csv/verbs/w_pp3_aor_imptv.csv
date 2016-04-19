@@ -1,21 +1,23 @@
 RuleUrn,InflectionClasses,Ending,Person,Number,Tense,Mood,Voice
 verbinfl.w_pp3_aor_imptv2b,w_pp3,on,2nd,sg,aor,imptv,act
-verbinfl.w_pp3_aor_imptv3b,w_pp3,a/tw,3rd,sg,aor,imptv,act
+verbinfl.w_pp3_aor_imptv3b,w_pp3,atw,3rd,sg,aor,imptv,act
 
 verbinfl.w_pp3_aor_imptv4b,w_pp3,aton,2nd,dual,aor,imptv,act
-verbinfl.w_pp3_aor_imptv5b,w_pp3,a/twn,3rd,dual,aor,imptv,act
+verbinfl.w_pp3_aor_imptv5b,w_pp3,antwn,3rd,dual,aor,imptv,act
 
 verbinfl.w_pp3_aor_imptv7b,w_pp3,ate,2nd,pl,aor,imptv,act
-verbinfl.w_pp3_aor_imptv8b,w_pp3,a/ntwn,3rd,pl,aor,imptv,act
+verbinfl.w_pp3_aor_imptv8b,w_pp3,antwn,3rd,pl,aor,imptv,act
+
+
 
 verbinfl.w_pp3_aor_imptv10b,w_pp3,ai,2nd,sg,aor,imptv,mid
-verbinfl.w_pp3_aor_imptv11b,w_pp3,a/sqw,3rd,sg,aor,imptv,mid
+verbinfl.w_pp3_aor_imptv11b,w_pp3,asqw,3rd,sg,aor,imptv,mid
 
 verbinfl.w_pp3_aor_imptv12b,w_pp3,asqon,2nd,dual,aor,imptv,mid
-verbinfl.w_pp3_aor_imptv13b,w_pp3,a/sqwn,3rd,dual,aor,imptv,mid
+verbinfl.w_pp3_aor_imptv13b,w_pp3,asqwn,3rd,dual,aor,imptv,mid
 
 verbinfl.w_pp3_aor_imptv12b,w_pp3,asqe,2nd,pl,aor,imptv,mid
-verbinfl.w_pp3_aor_imptv13b,w_pp3,a/sqwn,3rd,pl,aor,imptv,mid
+verbinfl.w_pp3_aor_imptv13b,w_pp3,asqwn,3rd,pl,aor,imptv,mid
 
 
 verbinfl.w_pp6_aor_imptv14b,w_pp6,hti,2nd,sg,aor,imptv,pass
