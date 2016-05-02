@@ -3,7 +3,7 @@ verbinfl.w_pp3_aor_imptv2b,w_pp3,on,2nd,sg,aor,imptv,act
 verbinfl.w_pp3_aor_imptv3b,w_pp3,atw,3rd,sg,aor,imptv,act
 
 verbinfl.w_pp3_aor_imptv4b,w_pp3,aton,2nd,dual,aor,imptv,act
-verbinfl.w_pp3_aor_imptv5b,w_pp3,antwn,3rd,dual,aor,imptv,act
+verbinfl.w_pp3_aor_imptv5b,w_pp3,atwn,3rd,dual,aor,imptv,act
 
 verbinfl.w_pp3_aor_imptv7b,w_pp3,ate,2nd,pl,aor,imptv,act
 verbinfl.w_pp3_aor_imptv8b,w_pp3,antwn,3rd,pl,aor,imptv,act
