@@ -1,5 +1,4 @@
 RuleUrn,InflectionClass,Ending,Gender,Case,Number,Tense,Voice
-RuleUrn,InflectionClass,Ending,Gender,Case,Number,Tense,Voice
 verbinfl.w_pft_pftptcp_mp1m,w_pft,me/nos,masc,nom,sg,pft,mid
 verbinfl.w_pft_pftptcp_mp2m,w_pft,me/nou,masc,gen,sg,pft,mid
 verbinfl.w_pft_pftptcp_mp3m,w_pft,me/nw|,masc,dat,sg,pft,mid
