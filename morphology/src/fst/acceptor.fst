@@ -51,13 +51,13 @@ $squashindeclurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:
 % Irregular noun acceptor
 $squashirregnounurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+ $gender$ $case$ $number$ <irregnoun>  $separator$+ <irregnoun><noun><u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u>
 
+$squashirregptcplurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+ $tense$ $voice$ $gender$ $case$ $number$ <irregnoun>  $separator$+ <irregptcpl><ptcpl><u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u>
 
 % Pronoun acceptor
 $squashpronounurn$ = <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u> <u>{lexent}:<>\.:<>[#urnchar#]:<>+</u>[#stemchars#]+  <pron> $=adjclass$  [#persistacc#]  $separator$+ $=adjclass$ <adj> [#stemchars#]* $gender$ $case$ $number$ <pos> <u>[#urnchar#]:<>+\.:<>[#urnchar#]:<>+</u>
 
 %% Union of all URN squashers:
-$acceptor$ = $squashverburn$ | $squashnounurn$ | $squashinfinurn$ | $squashptcplurn$ | $squashvadjurn$  | $squashindeclurn$ | $squashadjurn$ | $squashadvurn$ | $squashirregnounurn$ | $squashpronounurn$
-
+$acceptor$ = $squashverburn$ | $squashnounurn$ | $squashinfinurn$ | $squashptcplurn$ | $squashvadjurn$  | $squashindeclurn$ | $squashadjurn$ | $squashadvurn$  | $squashpronounurn$ | $squashirregnounurn$ | $squashirregptcplurn$
 
 %% Put all symbols in 2 categories:  pass
 %% surface symbols through, suppress analytical symbols.

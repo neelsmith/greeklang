@@ -221,7 +221,7 @@ class FstAnalysisParser {
     switch (analysisPattern) {
       case AnalyticalType.CVERB:
       System.err.println "HERE ARE ALL INFL TAGS FOR A CVERB: " + inflTags
-//<w_regular>, <verb>, <3rd>, <pl>, <pres>, <indic>, <act>
+      //<w_regular>, <verb>, <3rd>, <pl>, <pres>, <indic>, <act>
       Person person = Person.getByToken(inflTags[2])
       GrammaticalNumber num = GrammaticalNumber.getByToken(inflTags[3])
       Tense tense = Tense.getByToken(inflTags[4])
@@ -284,6 +284,9 @@ class FstAnalysisParser {
 
 
       case AnalyticalType.PARTICIPLE:
+      if (inflTags[0] == "<irregptcpl>") {
+	System.err.println "PTCPL IS IRREG!"
+      }
       //System.err.println "HERE ARE ALL INFL TAGS FOR AN PTCPL: " + inflTags
         //[<w_regular>, <ptcpl>, <masc>, <nom>, <sg>, <pres>, <act>,
         Gender gender = Gender.getByToken(inflTags[2])

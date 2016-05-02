@@ -192,6 +192,7 @@ buildIrregNouns.doLast {
   stemsCsvToFst("${loaddir}/${dataset}/irregular-stems-csv/nouns", "lex-irreg-noun", this.&irregNounFstStringForCols) 
 }
 
+
 task buildIrregAdjectives(dependsOn:setUpLexDir) {
   description = "Builds FST lexicon for irregular adjectives from .csv files"
 }
@@ -204,15 +205,44 @@ task buildIrregVerbs(dependsOn:setUpLexDir) {
 task buildIrregInfinitives(dependsOn:setUpLexDir) {
   description = "Builds FST lexicon for irregular infinitives from .csv files"
 }
+
+//<u>smyth.n31130_0s</u><u>lexent.n31130</u>w)/n<pres><act><masc><nom><sg><irregptcpl>
+String irregPtcpFstStringForCols(ArrayList columns) {
+  StringBuilder ptcplEntry  = new StringBuilder()
+  ptcplEntry.append("<u>${columns[0]}</u>")
+  ptcplEntry.append("<u>${columns[1]}</u>")
+  String stem = toFstAlphabet(columns[2])
+  ptcplEntry.append(stem)
+  ptcplEntry.append("<${columns[3]}>")
+  ptcplEntry.append("<${columns[4]}>")
+  ptcplEntry.append("<${columns[5]}>")
+  ptcplEntry.append("<${columns[6]}>")
+  ptcplEntry.append("<${columns[7]}>")
+  ptcplEntry.append("<irregptcpl>")
+  ptcplEntry.append("\n")
+  return ptcplEntry.toString()
+}
 task buildIrregPtcpls(dependsOn:setUpLexDir) {
   description = "Builds FST lexicon for irregular participles from .csv files"
+  File lexDir = new File("${loaddir}/${dataset}/irregular-stems-csv/participles")
+  File orthoBuild = new File(buildDir,dataset)
+  File fstDir = new File(orthoBuild,"lexica")
+
+  outputs.dir fstDir
+  inputs.dir lexDir
 }
+buildIrregPtcpls.doLast {
+  stemsCsvToFst("${loaddir}/${dataset}/irregular-stems-csv/participles", "lex-irreg-ptcpl", this.&irregPtcpFstStringForCols) 
+}
+
+
+
+/* Not persuaded there are any...
 task buildIrregVadjs(dependsOn:setUpLexDir) {
   description = "Builds FST lexicon for irregular verbal adjectives from .csv files"
 }
-
-
-task buildIrregStems(dependsOn: [buildIrregNouns, buildIrregAdjectives,buildIrregAdverbs,buildIrregVerbs,buildIrregInfinitives,buildIrregPtcpls,buildIrregPtcpls,buildIrregVadjs ]) {
+*/
+task buildIrregStems(dependsOn: [buildIrregNouns, buildIrregAdjectives,buildIrregAdverbs,buildIrregVerbs,buildIrregInfinitives,buildIrregPtcpls,buildIrregPtcpls]) { //,buildIrregVadjs ]) {
   description = "Builds FST lexicon for irregular forms from .csv files"
 }
 buildIrregStems.doLast {
