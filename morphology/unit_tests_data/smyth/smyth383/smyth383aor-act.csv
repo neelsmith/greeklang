@@ -40,7 +40,7 @@ Form,AnalysisType,P4,P5,P1,P2,P3
 λυσάτω,verb,third,singular,aorist,imperative,active
 
 λύσατον,verb,second,dual,aorist,imperative,active
-λυσάντων,verb,third,dual,aorist,imperative,active
+λυσάτων,verb,third,dual,aorist,imperative,active
 
 λύσατε,verb,second,plural,aorist,imperative,active
 λυσάντων,verb,third,plural,aorist,imperative,active
@@ -49,14 +49,18 @@ Form,AnalysisType,P4,P5,P1,P2,P3
 λῦσαι,infin,aorist,active,,,
 
 λύσας,ptcpl,aorist,active,masculine,nominative,singular
+λύσασα,ptcpl,aorist,active,feminine,nominative,singular
+λῦσαν,ptcpl,aorist,active,neuter,nominative,singular
+
+
 λύσας,ptcpl,aorist,active,masculine,vocative,singular
 
 
-λύσασα,ptcpl,aorist,active,feminine,nominative,singular
+
 λύσασα,ptcpl,aorist,active,feminine,vocative,singular
 
 
-λῦσαν,ptcpl,aorist,active,neuter,nominative,singular
+
 λῦσαν,ptcpl,aorist,active,neuter,accusative,singular
 λῦσαν,ptcpl,aorist,active,neuter,vocative,singular
 

@@ -17,11 +17,8 @@ class TestSmythW383aor{
   TableTester tester = new TableTester(mp)
 
 
-
-
-
   @Test
-  void testPresentAct() {
+  void testAorAct() {
     File dataFile =  new File("unit_tests_data/smyth/smyth383/smyth383aor-act.csv")
     assert tester.testFile(dataFile)
   }
