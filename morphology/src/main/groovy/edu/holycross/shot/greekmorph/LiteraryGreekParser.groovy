@@ -214,13 +214,15 @@ class LiteraryGreekParser implements GreekParser {
     MorphForm morphForm = analysisInfo.getMorphForm()
     ParticipleForm  form = morphForm.getAnalysis()    
 
-    
+
     switch(form.getTense()) {
 
     default:
     if (Accent.hasAccent(retrievedForm)) {
+      System.err.println "PREACCENTED FORM FOR PTCPL" + gs
       return retrievedForm.toString().replaceAll("[_^]","") == gs.toString()
     } else {
+      System.err.println "ADDING RECESSIVE ACC  FOR PTCPL " + gs
       GreekWord accentedForm = Accent.addRecessiveAccent(retrievedForm)
       String accentedStr = accentedForm.toString().replaceAll("[_^]","")
       System.err.println "Compare ptcpl ${accentedStr} with ${gs}"
@@ -338,7 +340,7 @@ class LiteraryGreekParser implements GreekParser {
 	if (debug > 0) { System.err.println "Merge: " + underlying + " and " + convert1 + " -> " + scs}
 	String greekStyle  = fstStringToGreekString(scs)
 	if (debug > 0) {System.err.println "Use converted string value " + greekStyle}
-        if (checkAccent(greekStyle,gkStr,fap)) {
+	if (checkAccent(greekStyle,gkStr,fap)) {
           analysisList.add(fap.getTriple())
 	  if (debug > 0) {
 	    System.err.println "Accept ${gkStr}"

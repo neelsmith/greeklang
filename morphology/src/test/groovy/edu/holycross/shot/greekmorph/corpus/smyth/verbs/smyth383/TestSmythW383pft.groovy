@@ -29,5 +29,4 @@ class TestSmythW383pft{
     File dataFile =  new File("unit_tests_data/smyth/smyth383/smyth383pft-mp.csv")
     assert tester.testFile(dataFile)
   }
-
 }
