@@ -18,10 +18,16 @@ class TestSmythW383pft{
 
 
   @Test
-  void testAorAct() {
+  void testPftAct() {
     File dataFile =  new File("unit_tests_data/smyth/smyth383/smyth383pft-act.csv")
     assert tester.testFile(dataFile)
   }
 
+
+  @Test
+  void testPftMp() {
+    File dataFile =  new File("unit_tests_data/smyth/smyth383/smyth383pft-mp.csv")
+    assert tester.testFile(dataFile)
+  }
 
 }
