@@ -17,8 +17,15 @@ class TestSmythW383fut {
   TableTester tester = new TableTester(mp)
 
   @Test
-  void testMP() {
+  void testFutAct() {
     File dataFile =  new File("unit_tests_data/smyth/smyth383/smyth383fut-act.csv")
+    assert tester.testFile(dataFile)
+  }
+
+
+  @Test
+  void testFutMid() {
+    File dataFile =  new File("unit_tests_data/smyth/smyth383/smyth383fut-mid.csv")
     assert tester.testFile(dataFile)
   }
 

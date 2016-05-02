@@ -18,12 +18,13 @@ class TestSmythW383pres{
 
 
 
+/* Acutally in Smyth 382, not 383.
   @Test
   void testVadjs() {
     File dataFile =  new File("unit_tests_data/smyth/smyth383/smyth383vadj.csv")
     assert tester.testFile(dataFile)
   }
-
+*/
 
 
   @Test

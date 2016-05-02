@@ -22,4 +22,13 @@ class TestSmythW383mp {
     assert tester.testFile(dataFile)
   }
 
+
+
+
+    @Test
+    void testImpftMP() {
+      File dataFile =  new File("unit_tests_data/smyth/smyth383/smyth383impft-mp.csv")
+      assert tester.testFile(dataFile)
+    }
+
 }
