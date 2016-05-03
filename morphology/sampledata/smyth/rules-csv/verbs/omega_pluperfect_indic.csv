@@ -26,7 +26,7 @@ verbinfl.w_plupft_indic17,w_regular,nto,3rd,pl,plupft,indic,mid
 
 verbinfl.w_plupft_indic18,w_regular,mhn,1st,sg,plupft,indic,pass
 verbinfl.w_plupft_indic19,w_regular,so,2nd,sg,plupft,indic,pass
-verbinfl.w_plupft_indic2o,w_regular,to,3rd,sg,plupft,indic,pass
+verbinfl.w_plupft_indic20,w_regular,to,3rd,sg,plupft,indic,pass
 
 verbinfl.w_plupft_indic21,w_regular,sqon,2nd,dual,plupft,indic,pass
 verbinfl.w_plupft_indic22,w_regular,sqhn,3rd,dual,plupft,indic,pass
