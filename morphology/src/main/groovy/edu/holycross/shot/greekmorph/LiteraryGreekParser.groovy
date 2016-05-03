@@ -15,7 +15,7 @@ import edu.harvard.chs.cite.CtsUrn
 */
 class LiteraryGreekParser implements GreekParser {
 
-  Integer debug  = 0
+  Integer debug  = 10
 
   /** Implementation of accent-free Greek morphology
   * in a finite state transducer. */
@@ -326,9 +326,15 @@ class LiteraryGreekParser implements GreekParser {
         // omit
 
       } else {
-	if (debug > 0) {System.err.println "Submit to FAP: ${l}"}
+	if (debug > 0) {System.err.println "Submit to FAP: ${l}\n\n"}
         FstAnalysisParser fap = new FstAnalysisParser(l, urnManager)
+	System.err.println "TIME TO PARSE."
+	System.err.print "using..."
+	System.err.println "this " + fap
         if (debug > 0) {System.err.println "parse with FAP: " + fap}
+
+	System.err.println "FAP stem surface: " + fap.surfaceStem
+	System.err.println "FAP infl surface: " + fap.surfaceInflection
 	String underlying = fap.surfaceStem + fap.surfaceInflection
 	
 	if (debug > 0) { System.err.println "And use compareison string " + parsedString} 
