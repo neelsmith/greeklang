@@ -29,4 +29,11 @@ class TestSmythPtcpl305 {
 
 
 
+
+    @Test
+    void testPaideuo() {
+      File dataFile =  new File("unit_tests_data/smyth/smyth305/smyth305-paideuo.csv")
+    //  assert tester.testFile(dataFile)
+    }
+
 }
