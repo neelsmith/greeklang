@@ -24,10 +24,16 @@ class TestSmythW383aor{
   }
 
 
+  @Test
+  void testAorMid() {
+    File dataFile =  new File("unit_tests_data/smyth/smyth383/smyth383aor-mid.csv")
+    assert tester.testFile(dataFile)
+  }
 
-    @Test
-    void testAorMid() {
-      File dataFile =  new File("unit_tests_data/smyth/smyth383/smyth383aor-mid.csv")
-      assert tester.testFile(dataFile)
-    }
+
+  @Test
+  void testAorPass() {
+    File dataFile =  new File("unit_tests_data/smyth/smyth383/smyth383aor-pass.csv")
+    assert tester.testFile(dataFile)
+  }
 }
