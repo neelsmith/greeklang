@@ -1,0 +1,66 @@
+StemUrn,LexicalEntity,String,Tense,Voice,Gender,Case,Number,Notes
+smyth.n72202_m0s,lexent.n72202,ei)dw/s,pft,act,masc,nom,sg,Smyth 306
+smyth.n72202_m1s,lexent.n72202,ei)do/tos,pft,act,masc,gen,sg,Smyth 306
+smyth.n72202_m2s,lexent.n72202,ei)do/ti,pft,act,masc,dat,sg,Smyth 306
+smyth.n72202_m3s,lexent.n72202,ei)do/ta,pft,act,masc,acc,sg,Smyth 306
+smyth.n72202_m4s,lexent.n72202,ei)dw/s,,pft,act,masc,voc,sg,Smyth 306
+
+
+smyth.n72202_m0d,lexent.n72202,ei)do/te,pft,act,masc,nom,dual,Smyth 306
+smyth.n72202_m1d,lexent.n72202,ei)do/toin,pft,act,masc,gen,dual,Smyth 306
+smyth.n72202_m2d,lexent.n72202,ei)do/toin,pft,act,masc,dat,dual,Smyth 306
+smyth.n72202_m3d,lexent.n72202,ei)do/te,pft,act,masc,acc,dual,Smyth 306
+smyth.n72202_m4d,lexent.n72202,ei)do/te,pft,act,masc,voc,dual,Smyth 306
+
+
+smyth.n72202_m0p,lexent.n72202,ei)do/tes,pft,act,masc,nom,pl,Smyth 306
+smyth.n72202_m1p,lexent.n72202,ei)do/twn,pft,act,masc,gen,pl,Smyth 306
+smyth.n72202_m2p,lexent.n72202,ei)do/si,pft,act,masc,dat,pl,Smyth 306
+smyth.n72202_m2pn,lexent.n72202,ei)do/sin,pft,act,masc,dat,pl,Smyth 306
+smyth.n72202_m3p,lexent.n72202,ei)do/tas,pft,act,masc,acc,pl,Smyth 306
+smyth.n72202_m4p,lexent.n72202,ei)do/tes,pft,act,masc,voc,pl,Smyth 306
+
+
+
+smyth.n72202_f0s,lexent.n72202,ei)dui=a,pft,act,fem,nom,sg,Smyth 306
+smyth.n72202_f1s,lexent.n72202,ei)dui/as,pft,act,fem,gen,sg,Smyth 306
+smyth.n72202_f2s,lexent.n72202,ei)dui/a|,pft,act,fem,dat,sg,Smyth 306
+smyth.n72202_f3s,lexent.n72202,ei)dui=an,pft,act,fem,acc,sg,Smyth 306
+smyth.n72202_f4s,lexent.n72202,ei)dui=a,pft,act,fem,voc,sg,Smyth 306
+
+
+smyth.n72202_f0d,lexent.n72202,ei)dui/a,pft,act,fem,nom,dual,Smyth 306
+smyth.n72202_f1d,lexent.n72202,ei)dui/ain,pft,act,fem,gen,dual,Smyth 306
+smyth.n72202_f2d,lexent.n72202,ei)dui/ain,pft,act,fem,dat,dual,Smyth 306
+smyth.n72202_f3d,lexent.n72202,ei)dui/a,pft,act,fem,acc,dual,Smyth 306
+smyth.n72202_f4d,lexent.n72202,ei)dui/a,pft,act,fem,voc,dual,Smyth 306
+
+
+smyth.n72202_f0p,lexent.n72202,ei)dui=ai,pft,act,fem,nom,pl,Smyth 306
+smyth.n72202_f1p,lexent.n72202,ei)duiw=n,pft,act,fem,gen,pl,Smyth 306
+smyth.n72202_f2p,lexent.n72202,ei)dui/ais,pft,act,fem,dat,pl,Smyth 306
+smyth.n72202_f3p,lexent.n72202,ei)dui/as,pft,act,fem,acc,pl,Smyth 306
+smyth.n72202_f4p,lexent.n72202,ei)dui=ai,pft,act,fem,voc,pl,Smyth 306
+
+
+
+smyth.n72202_n0s,lexent.n72202,ei)do/s,pft,act,neut,nom,sg,Smyth 306
+smyth.n72202_n1s,lexent.n72202,ei)do/tos,pft,act,neut,gen,sg,Smyth 306
+smyth.n72202_n2s,lexent.n72202,ei)do/i,pft,act,neut,dat,sg,Smyth 306
+smyth.n72202_n3s,lexent.n72202,ei)do/s,pft,act,neut,acc,sg,Smyth 306
+smyth.n72202_n4s,lexent.n72202,ei)do/s,pft,act,neut,voc,sg,Smyth 306
+
+
+smyth.n72202_n0d,lexent.n72202,ei)do/te,pft,act,neut,nom,dual,Smyth 306
+smyth.n72202_n1d,lexent.n72202,ei)do/toin,pft,act,neut,gen,dual,Smyth 306
+smyth.n72202_n2d,lexent.n72202,ei)do/toin,pft,act,neut,dat,dual,Smyth 306
+smyth.n72202_n3d,lexent.n72202,ei)do/te,pft,act,neut,acc,dual,Smyth 306
+smyth.n72202_n4d,lexent.n72202,ei)do/te,pft,act,neut,voc,dual,Smyth 306
+
+
+smyth.n72202_n0p,lexent.n72202,ei)do/ta,pft,act,neut,nom,pl,Smyth 306
+smyth.n72202_n1p,lexent.n72202,ei)do/wn,pft,act,neut,gen,pl,Smyth 306
+smyth.n72202_n2p,lexent.n72202,ei)do/si,pft,act,neut,dat,pl,Smyth 306
+smyth.n72202_n2pn,lexent.n72202,ei)do/sin,pft,act,neut,dat,pl,Smyth 306
+smyth.n72202_n3p,lexent.n72202,ei)do/ta,pft,act,neut,acc,pl,Smyth 306
+smyth.n72202_n4p,lexent.n72202,ei)do/ta,pft,act,neut,voc,pl,Smyth 306
