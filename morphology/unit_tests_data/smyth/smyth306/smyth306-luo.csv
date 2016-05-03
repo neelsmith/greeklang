@@ -1,26 +1,4 @@
 Form,AnalysisType,P4,P5,P1,P2,P3
-λύσασα,ptcpl,aorist,active,feminine,nominative,singular
-λυσάσης,ptcpl,aorist,active,feminine,genitive,singular
-λυσάσῃ,ptcpl,aorist,active,feminine,dative,singular
-λύσασαν,ptcpl,aorist,active,feminine,accusative,singular
-λύσασα,ptcpl,aorist,active,feminine,vocative,singular
-
-
-λυσάσα,ptcpl,aorist,active,feminine,nominative,dual
-λυσάσαιν,ptcpl,aorist,active,feminine,genitive,dual
-λυσάσαιν,ptcpl,aorist,active,feminine,dative,dual
-λυσάσα,ptcpl,aorist,active,feminine,accusative,dual
-λυσάσα,ptcpl,aorist,active,feminine,vocative,dual
-
-
-λύσασαι,ptcpl,aorist,active,feminine,nominative,plural
-λυσασῶν,ptcpl,aorist,active,feminine,genitive,plural
-λυσάσαις,ptcpl,aorist,active,feminine,dative,plural
-λυσάσας,ptcpl,aorist,active,feminine,accusative,plural
-λύσασαι,ptcpl,aorist,active,feminine,vocative,plural
-
-
-
 λύσας,ptcpl,aorist,active,masculine,nominative,singular
 λύσαντος,ptcpl,aorist,active,masculine,genitive,singular
 λύσαντι,ptcpl,aorist,active,masculine,dative,singular
@@ -40,10 +18,28 @@ Form,AnalysisType,P4,P5,P1,P2,P3
 λύσασι,ptcpl,aorist,active,masculine,dative,plural
 λύσασιν,ptcpl,aorist,active,masculine,dative,plural
 λύσαντας,ptcpl,aorist,active,masculine,accusative,plural
-λύοντες,ptcpl,aorist,active,masculine,vocative,plural
+λύσαντες,ptcpl,aorist,active,masculine,vocative,plural
 
 
+λύσασα,ptcpl,aorist,active,feminine,nominative,singular
+λυσάσης,ptcpl,aorist,active,feminine,genitive,singular
+λυσάσῃ,ptcpl,aorist,active,feminine,dative,singular
+λύσασαν,ptcpl,aorist,active,feminine,accusative,singular
+λύσασα,ptcpl,aorist,active,feminine,vocative,singular
 
+
+λυσάσα,ptcpl,aorist,active,feminine,nominative,dual
+λυσάσαιν,ptcpl,aorist,active,feminine,genitive,dual
+λυσάσαιν,ptcpl,aorist,active,feminine,dative,dual
+λυσάσα,ptcpl,aorist,active,feminine,accusative,dual
+λυσάσα,ptcpl,aorist,active,feminine,vocative,dual
+
+
+λύσασαι,ptcpl,aorist,active,feminine,nominative,plural
+λυσασῶν,ptcpl,aorist,active,feminine,genitive,plural
+λυσάσαις,ptcpl,aorist,active,feminine,dative,plural
+λυσάσας,ptcpl,aorist,active,feminine,accusative,plural
+λύσασαι,ptcpl,aorist,active,feminine,vocative,plural
 
 
 
@@ -67,3 +63,6 @@ Form,AnalysisType,P4,P5,P1,P2,P3
 λύσασιν,ptcpl,aorist,active,neuter,dative,plural
 λύσαντα,ptcpl,aorist,active,neuter,accusative,plural
 λύσαντα,ptcpl,aorist,active,neuter,vocative,plural
+
+
+λυσάντων,verb,third,plural,aorist,imperative,active
