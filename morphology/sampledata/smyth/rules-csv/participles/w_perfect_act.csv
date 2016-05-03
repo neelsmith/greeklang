@@ -1,66 +1,66 @@
 RuleUrn,InflectionClass,Ending,Number,Tense,Voice,Gender,Case
-verbinfl.w_pft_pftptcp_m0s,w_pft,w/s,masc,nom,sg,pft,act
-verbinfl.w_pft_pftptcp_m1s,w_pft,o/tos,masc,gen,sg,pft,act
-verbinfl.w_pft_pftptcp_m2s,w_pft,o/ti,masc,dat,sg,pft,act
-verbinfl.w_pft_pftptcp_m3s,w_pft,o/ta,masc,acc,sg,pft,act
-verbinfl.w_pft_pftptcp_m4s,w_pft,w/s,act,masc,vocpft
+verbinfl.w_pp4_pftptcp_m0s,w_pp4,w/s,masc,nom,sg,pft,act
+verbinfl.w_pp4_pftptcp_m1s,w_pp4,o/tos,masc,gen,sg,pft,act
+verbinfl.w_pp4_pftptcp_m2s,w_pp4,o/ti,masc,dat,sg,pft,act
+verbinfl.w_pp4_pftptcp_m3s,w_pp4,o/ta,masc,acc,sg,pft,act
+verbinfl.w_pp4_pftptcp_m4s,w_pp4,w/s,act,masc,vocpft
 
 
-verbinfl.w_pft_pftptcp_m0d,w_pft,o/te,masc,nom,dual,pft,act
-verbinfl.w_pft_pftptcp_m1d,w_pft,o/toin,masc,gen,dual,pft,act
-verbinfl.w_pft_pftptcp_m2d,w_pft,o/toin,masc,dat,dual,pft,act
-verbinfl.w_pft_pftptcp_m3d,w_pft,o/te,masc,acc,dual,pft,act
-verbinfl.w_pft_pftptcp_m4d,w_pft,o/te,masc,voc,dual,pft,act
+verbinfl.w_pp4_pftptcp_m0d,w_pp4,o/te,masc,nom,dual,pft,act
+verbinfl.w_pp4_pftptcp_m1d,w_pp4,o/toin,masc,gen,dual,pft,act
+verbinfl.w_pp4_pftptcp_m2d,w_pp4,o/toin,masc,dat,dual,pft,act
+verbinfl.w_pp4_pftptcp_m3d,w_pp4,o/te,masc,acc,dual,pft,act
+verbinfl.w_pp4_pftptcp_m4d,w_pp4,o/te,masc,voc,dual,pft,act
 
 
-verbinfl.w_pft_pftptcp_m0p,w_pft,o/tes,masc,nom,pl,pft,act
-verbinfl.w_pft_pftptcp_m1p,w_pft,o/twn,masc,gen,pl,pft,act
-verbinfl.w_pft_pftptcp_m2p,w_pft,o/si,masc,dat,pl,pft,act
-verbinfl.w_pft_pftptcp_m2pn,w_pft,o/sin,masc,dat,pl,pft,act
-verbinfl.w_pft_pftptcp_m3p,w_pft,o/tas,masc,acc,pl,pft,act
-verbinfl.w_pft_pftptcp_m4p,w_pft,o/tes,masc,voc,pl,pft,act
-
-
-
-verbinfl.w_pft_pftptcp_f0s,w_pft,ui=a,fem,nom,sg,pft,act
-verbinfl.w_pft_pftptcp_f1s,w_pft,ui/as,fem,gen,sg,pft,act
-verbinfl.w_pft_pftptcp_f2s,w_pft,ui/a|,fem,dat,sg,pft,act
-verbinfl.w_pft_pftptcp_f3s,w_pft,ui=an,fem,acc,sg,pft,act
-verbinfl.w_pft_pftptcp_f4s,w_pft,ui=a,fem,voc,sg,pft,act
-
-
-verbinfl.w_pft_pftptcp_f0d,w_pft,ui/a,fem,nom,dual,pft,act
-verbinfl.w_pft_pftptcp_f1d,w_pft,ui/ain,fem,gen,dual,pft,act
-verbinfl.w_pft_pftptcp_f2d,w_pft,ui/ain,fem,dat,dual,pft,act
-verbinfl.w_pft_pftptcp_f3d,w_pft,ui/a,fem,acc,dual,pft,act
-verbinfl.w_pft_pftptcp_f4d,w_pft,ui/a,fem,voc,dual,pft,act
-
-
-verbinfl.w_pft_pftptcp_f0p,w_pft,ui=ai,fem,nom,pl,pft,act
-verbinfl.w_pft_pftptcp_f1p,w_pft,uiw=n,fem,gen,pl,pft,act
-verbinfl.w_pft_pftptcp_f2p,w_pft,ui/ais,fem,dat,pl,pft,act
-verbinfl.w_pft_pftptcp_f3p,w_pft,ui/as,fem,acc,pl,pft,act
-verbinfl.w_pft_pftptcp_f4p,w_pft,ui=ai,fem,voc,pl,pft,act
+verbinfl.w_pp4_pftptcp_m0p,w_pp4,o/tes,masc,nom,pl,pft,act
+verbinfl.w_pp4_pftptcp_m1p,w_pp4,o/twn,masc,gen,pl,pft,act
+verbinfl.w_pp4_pftptcp_m2p,w_pp4,o/si,masc,dat,pl,pft,act
+verbinfl.w_pp4_pftptcp_m2pn,w_pp4,o/sin,masc,dat,pl,pft,act
+verbinfl.w_pp4_pftptcp_m3p,w_pp4,o/tas,masc,acc,pl,pft,act
+verbinfl.w_pp4_pftptcp_m4p,w_pp4,o/tes,masc,voc,pl,pft,act
 
 
 
-verbinfl.w_pft_pftptcp_n0s,w_pft,o/s,neut,nom,sg,pft,act
-verbinfl.w_pft_pftptcp_n1s,w_pft,o/tos,neut,gen,sg,pft,act
-verbinfl.w_pft_pftptcp_n2s,w_pft,o/i,neut,dat,sg,pft,act
-verbinfl.w_pft_pftptcp_n3s,w_pft,o/s,neut,acc,sg,pft,act
-verbinfl.w_pft_pftptcp_n4s,w_pft,o/s,neut,voc,sg,pft,act
+verbinfl.w_pp4_pftptcp_f0s,w_pp4,ui=a,fem,nom,sg,pft,act
+verbinfl.w_pp4_pftptcp_f1s,w_pp4,ui/as,fem,gen,sg,pft,act
+verbinfl.w_pp4_pftptcp_f2s,w_pp4,ui/a|,fem,dat,sg,pft,act
+verbinfl.w_pp4_pftptcp_f3s,w_pp4,ui=an,fem,acc,sg,pft,act
+verbinfl.w_pp4_pftptcp_f4s,w_pp4,ui=a,fem,voc,sg,pft,act
 
 
-verbinfl.w_pft_pftptcp_n0d,w_pft,o/te,neut,nom,dual,pft,act
-verbinfl.w_pft_pftptcp_n1d,w_pft,o/toin,neut,gen,dual,pft,act
-verbinfl.w_pft_pftptcp_n2d,w_pft,o/toin,neut,dat,dual,pft,act
-verbinfl.w_pft_pftptcp_n3d,w_pft,o/te,neut,acc,dual,pft,act
-verbinfl.w_pft_pftptcp_n4d,w_pft,o/te,neut,voc,dual,pft,act
+verbinfl.w_pp4_pftptcp_f0d,w_pp4,ui/a,fem,nom,dual,pft,act
+verbinfl.w_pp4_pftptcp_f1d,w_pp4,ui/ain,fem,gen,dual,pft,act
+verbinfl.w_pp4_pftptcp_f2d,w_pp4,ui/ain,fem,dat,dual,pft,act
+verbinfl.w_pp4_pftptcp_f3d,w_pp4,ui/a,fem,acc,dual,pft,act
+verbinfl.w_pp4_pftptcp_f4d,w_pp4,ui/a,fem,voc,dual,pft,act
 
 
-verbinfl.w_pft_pftptcp_n0p,w_pft,o/ta,neut,nom,pl,pft,act
-verbinfl.w_pft_pftptcp_n1p,w_pft,o/wn,neut,gen,pl,pft,act
-verbinfl.w_pft_pftptcp_n2p,w_pft,o/si,neut,dat,pl,pft,act
-verbinfl.w_pft_pftptcp_n2pn,w_pft,o/sin,neut,dat,pl,pft,act
-verbinfl.w_pft_pftptcp_n3p,w_pft,o/ta,neut,acc,pl,pft,act
-verbinfl.w_pft_pftptcp_n4p,w_pft,o/ta,neut,voc,pl,pft,act
+verbinfl.w_pp4_pftptcp_f0p,w_pp4,ui=ai,fem,nom,pl,pft,act
+verbinfl.w_pp4_pftptcp_f1p,w_pp4,uiw=n,fem,gen,pl,pft,act
+verbinfl.w_pp4_pftptcp_f2p,w_pp4,ui/ais,fem,dat,pl,pft,act
+verbinfl.w_pp4_pftptcp_f3p,w_pp4,ui/as,fem,acc,pl,pft,act
+verbinfl.w_pp4_pftptcp_f4p,w_pp4,ui=ai,fem,voc,pl,pft,act
+
+
+
+verbinfl.w_pp4_pftptcp_n0s,w_pp4,o/s,neut,nom,sg,pft,act
+verbinfl.w_pp4_pftptcp_n1s,w_pp4,o/tos,neut,gen,sg,pft,act
+verbinfl.w_pp4_pftptcp_n2s,w_pp4,o/i,neut,dat,sg,pft,act
+verbinfl.w_pp4_pftptcp_n3s,w_pp4,o/s,neut,acc,sg,pft,act
+verbinfl.w_pp4_pftptcp_n4s,w_pp4,o/s,neut,voc,sg,pft,act
+
+
+verbinfl.w_pp4_pftptcp_n0d,w_pp4,o/te,neut,nom,dual,pft,act
+verbinfl.w_pp4_pftptcp_n1d,w_pp4,o/toin,neut,gen,dual,pft,act
+verbinfl.w_pp4_pftptcp_n2d,w_pp4,o/toin,neut,dat,dual,pft,act
+verbinfl.w_pp4_pftptcp_n3d,w_pp4,o/te,neut,acc,dual,pft,act
+verbinfl.w_pp4_pftptcp_n4d,w_pp4,o/te,neut,voc,dual,pft,act
+
+
+verbinfl.w_pp4_pftptcp_n0p,w_pp4,o/ta,neut,nom,pl,pft,act
+verbinfl.w_pp4_pftptcp_n1p,w_pp4,o/wn,neut,gen,pl,pft,act
+verbinfl.w_pp4_pftptcp_n2p,w_pp4,o/si,neut,dat,pl,pft,act
+verbinfl.w_pp4_pftptcp_n2pn,w_pp4,o/sin,neut,dat,pl,pft,act
+verbinfl.w_pp4_pftptcp_n3p,w_pp4,o/ta,neut,acc,pl,pft,act
+verbinfl.w_pp4_pftptcp_n4p,w_pp4,o/ta,neut,voc,pl,pft,act
