@@ -23,8 +23,8 @@ class TestSmythPtcpl306 {
 
   @Test
   void testHistas() {
-    File dataFile =  new File("unit_tests_data/smyth/smyth305/smyth306-histas.csv")
-    //assert tester.testFile(dataFile)
+    File dataFile =  new File("unit_tests_data/smyth/smyth306/smyth306-histas.csv")
+    assert tester.testFile(dataFile)
   }
 
 

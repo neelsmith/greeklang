@@ -1,26 +1,4 @@
 Form,AnalysisType,P4,P5,P1,P2,P3
-ἱστᾶσα,ptcpl,aorist,active,feminine,nominative,singular
-ἱστάσης,ptcpl,aorist,active,feminine,genitive,singular
-ἱστάσῃ,ptcpl,aorist,active,feminine,dative,singular
-ἱστᾶσαν,ptcpl,aorist,active,feminine,accusative,singular
-ἱστᾶσα,ptcpl,aorist,active,feminine,vocative,singular
-
-
-ἱστάσα,ptcpl,aorist,active,feminine,nominative,dual
-ἱστάσαιν,ptcpl,aorist,active,feminine,genitive,dual
-ἱστάσαιν,ptcpl,aorist,active,feminine,dative,dual
-ἱστάσα,ptcpl,aorist,active,feminine,accusative,dual
-ἱστάσα,ptcpl,aorist,active,feminine,vocative,dual
-
-
-ἱστᾶσαι,ptcpl,aorist,active,feminine,nominative,plural
-ἱστασῶν,ptcpl,aorist,active,feminine,genitive,plural
-ἱστάσαις,ptcpl,aorist,active,feminine,dative,plural
-ἱστάσας,ptcpl,aorist,active,feminine,accusative,plural
-ἱστᾶσαι,ptcpl,aorist,active,feminine,vocative,plural
-
-
-
 ἱστάς,ptcpl,aorist,active,masculine,nominative,singular
 ἱστάντος,ptcpl,aorist,active,masculine,genitive,singular
 ἱστάντι,ptcpl,aorist,active,masculine,dative,singular
@@ -43,6 +21,25 @@ Form,AnalysisType,P4,P5,P1,P2,P3
 ἱστάντες,ptcpl,aorist,active,masculine,vocative,plural
 
 
+ἱστᾶσα,ptcpl,aorist,active,feminine,nominative,singular
+ἱστάσης,ptcpl,aorist,active,feminine,genitive,singular
+ἱστάσῃ,ptcpl,aorist,active,feminine,dative,singular
+ἱστᾶσαν,ptcpl,aorist,active,feminine,accusative,singular
+ἱστᾶσα,ptcpl,aorist,active,feminine,vocative,singular
+
+
+ἱστάσα,ptcpl,aorist,active,feminine,nominative,dual
+ἱστάσαιν,ptcpl,aorist,active,feminine,genitive,dual
+ἱστάσαιν,ptcpl,aorist,active,feminine,dative,dual
+ἱστάσα,ptcpl,aorist,active,feminine,accusative,dual
+ἱστάσα,ptcpl,aorist,active,feminine,vocative,dual
+
+
+ἱστᾶσαι,ptcpl,aorist,active,feminine,nominative,plural
+ἱστασῶν,ptcpl,aorist,active,feminine,genitive,plural
+ἱστάσαις,ptcpl,aorist,active,feminine,dative,plural
+ἱστάσας,ptcpl,aorist,active,feminine,accusative,plural
+ἱστᾶσαι,ptcpl,aorist,active,feminine,vocative,plural
 
 
 
