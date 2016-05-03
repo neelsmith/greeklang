@@ -85,14 +85,28 @@ class FstAnalysisParser {
     surfaceFormatted = surfaceFormatted.replaceFirst("<sm>", ")")
     surfaceFormatted = surfaceFormatted.replaceFirst("<isub>", "|")
     surfaceFormatted.replaceAll(rightmostUrn,"").replaceAll(semanticTags, "")
+
+
+    // IF IRREG: don't do this
+    System.err.println "FORMATTED SURF INFL == " + surfaceFormatted
+    return surfaceFormatted
   }
 
+
+
+  boolean isIrreg(String classTag) {
+    return (["<irregnoun>", "<irregptcpl>"].contains(classTag))
+  }
+
+  
   /** Collects the surface representation of the stem string,
   * given the entire stem component of the FST reply.
   * @param stemString Stem component of the FST reply.
   * @returns The literal string value of the stem.
   */
   String formatStemSurface(String stemString){
+    // check here for irreg!
+    
     String surfaceFormatted =  stemString.replaceFirst("<ro>", "(")
     surfaceFormatted = surfaceFormatted.replaceFirst("<sm>", ")")
     surfaceFormatted = surfaceFormatted.replaceFirst("<isub>", "|")
@@ -118,6 +132,11 @@ class FstAnalysisParser {
       stemTags = stemString.findAll(allTags)
       def stemUrns = stemString.findAll(urnTags)
 
+      stemTags = stemTags - editorialTags
+      System.err.println "STEM TAGS on ${analysisStr}\n==>" + stemTags
+      
+
+      
       inflectionString = cols[1]
       inflTags = inflectionString.findAll(allTags)
       inflTags = inflTags.minus(["<isub>"])
@@ -173,18 +192,29 @@ class FstAnalysisParser {
 
       if (debug > 0) { System.err.println "Compute morph form"}
       morphForm = computeMorphForm()
-     
-
+      if (morphForm == null) {
+	throw new Exception("FstAnalysisParser: failed to create morph. form." )
+      } else {
+	System.err.print "Successfully made a morph form: "
+	System.err.println morphForm
+      }
       surfaceStem =  formatStemSurface(stemString)
+      if (isIrreg(inflTags[0])) {
+	surfaceInflection = ""
+      } else {
+	surfaceInflection = formatInflectionSurface(inflectionString)
+      }
+	//inflectionString.replaceAll(rightmostUrn,"").replaceAll(semanticTags, "")
+
+
       // Strip out all tags from surface form except <#>
       if (debug > 0) { System.err.println "RAW MORPHFORM has surface " + stemString + "-" + inflectionString}
 
-      surfaceInflection = formatInflectionSurface(inflectionString)
-      //inflectionString.replaceAll(rightmostUrn,"").replaceAll(semanticTags, "")
 
       if (debug > 0) {
 	System.err.println "Surface stem and inflection:"
 	System.err.println surfaceStem + " :: " + surfaceInflection
+	System.err.println "That was cool."
       }
   }
 
@@ -284,18 +314,37 @@ class FstAnalysisParser {
 
 
       case AnalyticalType.PARTICIPLE:
+      Gender gender
+      GrammaticalCase cas 
+      GrammaticalNumber num
+      Tense tense 
+      Voice voice 
+      //PersistentAccent accent
+      
       if (inflTags[0] == "<irregptcpl>") {
-	System.err.println "PTCPL IS IRREG!"
-      }
-      //System.err.println "HERE ARE ALL INFL TAGS FOR AN PTCPL: " + inflTags
+	System.err.println "PTCPL IS IRREG! use infltags" + inflTags
+	tense = Tense.getByToken(stemTags[4])
+	voice = Voice.getByToken(stemTags[5])
+	gender = Gender.getByToken(stemTags[6])
+	cas = GrammaticalCase.getByToken(stemTags[7])
+	num = GrammaticalNumber.getByToken(stemTags[8])
+	//accent = PersistentAccent.getByToken("<irregacc>")
+
+      } else {
+	System.err.println "HERE ARE ALL INFL TAGS FOR AN PTCPL: " + inflTags
         //[<w_regular>, <ptcpl>, <masc>, <nom>, <sg>, <pres>, <act>,
-        Gender gender = Gender.getByToken(inflTags[2])
-        GrammaticalCase cas = GrammaticalCase.getByToken(inflTags[3])
-        GrammaticalNumber num = GrammaticalNumber.getByToken(inflTags[4])
-        Tense tense = Tense.getByToken(inflTags[5])
-        Voice voice = Voice.getByToken(inflTags[6])
-        mf = new MorphForm(analysisPattern, new ParticipleForm(tense,voice,gender,cas,num))
-        break
+	gender = Gender.getByToken(inflTags[2])
+	cas = GrammaticalCase.getByToken(inflTags[3])
+	num = GrammaticalNumber.getByToken(inflTags[4])
+	tense = Tense.getByToken(inflTags[5])
+	voice = Voice.getByToken(inflTags[6])
+      }
+
+      System.err.println "PTCP ANALYSIS PATT " + analysisPattern
+      System.err.println "make ptcpl for from ${tense} ${voice} ${gender} ${cas} ${num}"
+      
+      mf = new MorphForm(analysisPattern, new ParticipleForm(tense,voice,gender,cas,num))
+      break
 
       case AnalyticalType.VERBAL_ADJECTIVE:
       //System.err.println "HERE ARE ALL INFL TAGS FOR AN VADJ: " + inflTags
@@ -360,6 +409,12 @@ class FstAnalysisParser {
 
 
   String toString() {
+    System.err.println "Make str from: "
+    System.err.println "surf stem " + surfaceStem
+    System.err.println "surf infl " + surfaceInflection
+    System.err.println "lex ent " + lexicalEntity
+    System.err.println "morph form " + morphForm
+    
     return "${surfaceStem}-${surfaceInflection} < ${lexicalEntity} ${morphForm}"
   }
 
