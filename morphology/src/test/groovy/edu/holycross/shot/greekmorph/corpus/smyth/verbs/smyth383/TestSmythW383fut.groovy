@@ -29,4 +29,9 @@ class TestSmythW383fut {
     assert tester.testFile(dataFile)
   }
 
+  @Test
+  void testFutPass() {
+    File dataFile =  new File("unit_tests_data/smyth/smyth383/smyth383fut-pass.csv")
+    assert tester.testFile(dataFile)
+  }
 }

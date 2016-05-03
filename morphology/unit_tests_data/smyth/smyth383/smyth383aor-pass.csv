@@ -11,9 +11,9 @@ Form,AnalysisType,P4,P5,P1,P2,P3
 ἐλύθησαν,verb,third,plural,aorist,indicative,passive
 
 
+
 λυθῶ,verb,first,singular,aorist,subjunctive,passive
 λυθῇς,verb,second,singular,aorist,subjunctive,passive
-λυθῇ,verb,third,singular,aorist,subjunctive,passive
 
 λυθῆτον,verb,second,dual,aorist,subjunctive,passive
 λυθῆτον,verb,third,dual,aorist,subjunctive,passive
@@ -27,7 +27,7 @@ Form,AnalysisType,P4,P5,P1,P2,P3
 λυθείης,verb,second,singular,aorist,optative,passive
 λυθείη,verb,third,singular,aorist,optative,passive
 
-λυθείτον,verb,second,dual,aorist,optative,passive
+λυθεῖτον,verb,second,dual,aorist,optative,passive
 λυθείητον,verb,second,dual,aorist,optative,passive
 λυθείτην,verb,third,dual,aorist,optative,passive
 λυθειήτην,verb,third,dual,aorist,optative,passive
@@ -59,18 +59,10 @@ Form,AnalysisType,P4,P5,P1,P2,P3
 
 
 
+λυθείς,ptcpl,aorist,passive,masculine,vocative,singular
+λυθεῖσα,ptcpl,aorist,passive,feminine,vocative,singular
+λυθέν,ptcpl,aorist,passive,neuter,accusative,singular
+λυθέν,ptcpl,aorist,passive,neuter,vocative,singular
 
-λυσαμένη,ptcpl,aorist,passive,feminine,vocative,singular
-
-
-
-λυσάμενον,ptcpl,aorist,passive,neuter,accusative,singular
-λυσάμενον,ptcpl,aorist,passive,neuter,vocative,singular
-λυσάμενον,ptcpl,aorist,passive,masculine,accusative,singular
-
-
-λύσῃ,verb,second,singular,future,indicative,passive
-λύσῃ,verb,third,singular,aorist,subjunctive,active
-
-
-λῦσαι,infin,aorist,active,,,
+λυθέντων,ptcpl,aorist,passive,masculine,genitive,plural
+λυθέντων,ptcpl,aorist,passive,neuter,genitive,plural

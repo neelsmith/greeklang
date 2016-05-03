@@ -16,11 +16,3 @@ verbinfl.w_pp3_aor_subj13b,w_pp3,hsqon,3rd,dual,aor,subj,mid
 verbinfl.w_pp3_aor_subj14b,w_pp3,wmeqa,1st,pl,aor,subj,mid
 verbinfl.w_pp3_aor_subj15b,w_pp3,hsqe,2nd,pl,aor,subj,mid
 verbinfl.w_pp3_aor_subj16b,w_pp3,wntai,3rd,pl,aor,subj,mid
-verbinfl.w_pp3_aor_subj17b,w_pp3,w=,1st,sg,aor,subj,pass
-verbinfl.w_pp3_aor_subj18b,w_pp3,h=|s,2nd,sg,aor,subj,pass
-verbinfl.w_pp3_aor_subj19b,w_pp3,h=|,3rd,sg,aor,subj,pass
-verbinfl.w_pp3_aor_subj20b,w_pp3,h=ton,2nd,dual,aor,subj,pass
-verbinfl.w_pp3_aor_subj21b,w_pp3,h=ton,3rd,dual,aor,subj,pass
-verbinfl.w_pp3_aor_subj22b,w_pp3,w=men,1st,pl,aor,subj,pass
-verbinfl.w_pp3_aor_subj23b,w_pp3,h=te,2nd,pl,aor,subj,pass
-verbinfl.w_pp3_aor_subj24b,w_pp3,w=si,3rd,pl,aor,subj,pass

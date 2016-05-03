@@ -1,10 +1,16 @@
 RuleUrn,InflectionClasses,Ending,Person,Number,Tense,Mood,Voice
-verbinfl.w_pp6_aor_opt7,w_pp6,eihn,1st,sg,aor,opt,pass
-verbinfl.w_pp6_aor_opt18,w_pp6,eihs,2nd,sg,aor,opt,pass
-verbinfl.w_pp6_aor_opt19,w_pp6,eih,3rd,sg,aor,opt,pass
+verbinfl.w_pp6_aor_opt1,w_pp6,eihn,1st,sg,aor,opt,pass
+verbinfl.w_pp6_aor_opt2,w_pp6,eihs,2nd,sg,aor,opt,pass
+verbinfl.w_pp6_aor_opt3,w_pp6,eih,3rd,sg,aor,opt,pass
 
-verbinfl.w_pp6_aor_opt20,w_pp6,eihton,2nd,dual,aor,opt,pass
-verbinfl.w_pp6_aor_opt20c,w_pp6,ei=ton,2nd,dual,aor,opt,pass
+verbinfl.w_pp6_aor_opt4,w_pp6,eihton,2nd,dual,aor,opt,pass
+verbinfl.w_pp6_aor_opt5,w_pp6,ei=ton,2nd,dual,aor,opt,pass
+verbinfl.w_pp6_aor_opt6,w_pp6,eithn,3rd,dual,aor,opt,pass
+verbinfl.w_pp6_aor_opt7,w_pp6,eihthn,3rd,dual,aor,opt,pass
 
-verbinfl.w_pp6_aor_opt21,w_pp6,ei=thn,3rd,dual,aor,opt,pass
-verbinfl.w_pp6_aor_opt21c,w_pp6,eihthn,3rd,dual,aor,opt,pass
+verbinfl.w_pp6_aor_opt8,w_pp6,ei=men,1st,pl,aor,opt,pass
+verbinfl.w_pp6_aor_opt9,w_pp6,eihmen,1st,pl,aor,opt,pass
+verbinfl.w_pp6_aor_opt10,w_pp6,ei=te,2nd,pl,aor,opt,pass
+verbinfl.w_pp6_aor_opt11,w_pp6,eihte,2nd,pl,aor,opt,pass
+verbinfl.w_pp6_aor_opt12,w_pp6,ei=en,3rd,pl,aor,opt,pass
+verbinfl.w_pp6_aor_opt13,w_pp6,eihsan,3rd,pl,aor,opt,pass
