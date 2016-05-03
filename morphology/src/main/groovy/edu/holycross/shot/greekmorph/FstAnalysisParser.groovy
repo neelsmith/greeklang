@@ -85,10 +85,6 @@ class FstAnalysisParser {
     surfaceFormatted = surfaceFormatted.replaceFirst("<sm>", ")")
     surfaceFormatted = surfaceFormatted.replaceFirst("<isub>", "|")
     surfaceFormatted.replaceAll(rightmostUrn,"").replaceAll(semanticTags, "")
-
-
-    // IF IRREG: don't do this
-    System.err.println "FORMATTED SURF INFL == " + surfaceFormatted
     return surfaceFormatted
   }
 
@@ -202,9 +198,10 @@ class FstAnalysisParser {
       if (isIrreg(inflTags[0])) {
 	surfaceInflection = ""
       } else {
-	surfaceInflection = formatInflectionSurface(inflectionString)
+	//surfaceInflection = formatInflectionSurface(inflectionString)
+	surfaceInflection = formatInflectionSurface(inflectionString.replaceAll(rightmostUrn,"").replaceAll(semanticTags, ""))
       }
-	//inflectionString.replaceAll(rightmostUrn,"").replaceAll(semanticTags, "")
+      //
 
 
       // Strip out all tags from surface form except <#>

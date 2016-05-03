@@ -1,2 +1,62 @@
 StemUrn,LexicalEntity,String,Tense,Voice,Gender,Case,Number,Notes
-smyth.n31130_0s,lexent.n31130,w)/n,pres,act,masc,nom,sg,Smyth 306
+smyth.n31130_m0s,lexent.n31130,w)/n,masc,nom,sg,Smyth 305
+smyth.n31130_m1s,lexent.n31130,o)/nto,masc,gen,sg,Smyth 305
+smyth.n31130_m2s,lexent.n31130,o)/nti,masc,dat,sg,Smyth 305
+smyth.n31130_m3s,lexent.n31130,o)/nta,masc,acc,sg,Smyth 305
+smyth.n31130_m4s,lexent.n31130,w)/n,masc,voc,sg,Smyth 305
+
+
+smyth.n31130_m0d,lexent.n31130,o)/nte,masc,nom,dual,Smyth 305
+smyth.n31130_m1d,lexent.n31130,o)/ntoin,masc,gen,dual,Smyth 305
+smyth.n31130_m2d,lexent.n31130,o)/ntoin,masc,dat,dual,Smyth 305
+smyth.n31130_m3d,lexent.n31130,o)/nte,masc,acc,dual,Smyth 305
+smyth.n31130_m4d,lexent.n31130,o)/nte,masc,voc,dual,Smyth 305
+
+
+smyth.n31130_m0p,lexent.n31130,o)/ntes,masc,nom,pl,Smyth 305
+smyth.n31130_m1p,lexent.n31130,o)/ntwn,masc,gen,pl,Smyth 305
+smyth.n31130_m2p,lexent.n31130,o)/ntois,masc,dat,pl,Smyth 305
+smyth.n31130_m3p,lexent.n31130,o)/ntas,masc,acc,pl,Smyth 305
+smyth.n31130_m4p,lexent.n31130,o)/ntes,masc,voc,pl,Smyth 305
+
+
+smyth.n31130_f0s,lexent.n31130,ou)=sa,fem,nom,sg,Smyth 305
+smyth.n31130_f1s,lexent.n31130,ou)/shs,fem,gen,sg,Smyth 305
+smyth.n31130_f2s,lexent.n31130,ou)/sh|,fem,dat,sg,Smyth 305
+smyth.n31130_f3s,lexent.n31130,ou)=san,fem,acc,sg,Smyth 305
+smyth.n31130_f4s,lexent.n31130,ou)=sa,fem,voc,sg,Smyth 305
+
+
+smyth.n31130_f0d,lexent.n31130,ou)/sa,fem,nom,dual,Smyth 305
+smyth.n31130_f1d,lexent.n31130,ou)/sain,fem,gen,dual,Smyth 305
+smyth.n31130_f2d,lexent.n31130,ou)/sain,fem,dat,dual,Smyth 305
+smyth.n31130_f3d,lexent.n31130,ou)/sa,fem,acc,dual,Smyth 305
+smyth.n31130_f4d,lexent.n31130,ou)/sa,fem,voc,dual,Smyth 305
+
+
+smyth.n31130_f0p,lexent.n31130,ou)=sai,fem,nom,pl,Smyth 305
+smyth.n31130_f1p,lexent.n31130,ou)sw=n,fem,gen,pl,Smyth 305
+smyth.n31130_f2p,lexent.n31130,ou)/sais,fem,dat,pl,Smyth 305
+smyth.n31130_f3p,lexent.n31130,ou)/sas,fem,acc,pl,Smyth 305
+smyth.n31130_f4p,lexent.n31130,ou)=sai,fem,voc,pl,Smyth 305
+
+
+smyth.n31130_n0s,lexent.n31130,o)/n,neut,nom,sg,Smyth 305
+smyth.n31130_n1s,lexent.n31130,o)/nto,neut,gen,sg,Smyth 305
+smyth.n31130_n2s,lexent.n31130,o)/nti,neut,dat,sg,Smyth 305
+smyth.n31130_n3s,lexent.n31130,o)/n,neut,acc,sg,Smyth 305
+smyth.n31130_n4s,lexent.n31130,o)/n,neut,voc,sg,Smyth 305
+
+
+smyth.n31130_n0d,lexent.n31130,o)/nte,neut,nom,dual,Smyth 305
+smyth.n31130_n1d,lexent.n31130,o)/ntoin,neut,gen,dual,Smyth 305
+smyth.n31130_n2d,lexent.n31130,o)/ntoin,neut,dat,dual,Smyth 305
+smyth.n31130_n3d,lexent.n31130,o)/nte,neut,acc,dual,Smyth 305
+smyth.n31130_n4d,lexent.n31130,o)/nte,neut,voc,dual,Smyth 305
+
+
+smyth.n31130_n0p,lexent.n31130,o)/nta,neut,nom,pl,Smyth 305
+smyth.n31130_n1p,lexent.n31130,o)/ntwn,neut,gen,pl,Smyth 305
+smyth.n31130_n2p,lexent.n31130,o)/ntois,neut,dat,pl,Smyth 305
+smyth.n31130_n3p,lexent.n31130,o)/nta,neut,acc,pl,Smyth 305
+smyth.n31130_n4p,lexent.n31130,o)/nta,neut,voc,pl,Smyth 305
