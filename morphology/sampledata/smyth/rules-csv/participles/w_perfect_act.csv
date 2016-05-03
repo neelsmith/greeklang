@@ -3,7 +3,7 @@ verbinfl.w_pp4_pftptcp_m0s,w_pp4,w/s,masc,nom,sg,pft,act
 verbinfl.w_pp4_pftptcp_m1s,w_pp4,o/tos,masc,gen,sg,pft,act
 verbinfl.w_pp4_pftptcp_m2s,w_pp4,o/ti,masc,dat,sg,pft,act
 verbinfl.w_pp4_pftptcp_m3s,w_pp4,o/ta,masc,acc,sg,pft,act
-verbinfl.w_pp4_pftptcp_m4s,w_pp4,w/s,act,masc,vocpft
+verbinfl.w_pp4_pftptcp_m4s,w_pp4,w/s,masc,voc,sg,pft,act
 
 
 verbinfl.w_pp4_pftptcp_m0d,w_pp4,o/te,masc,nom,dual,pft,act
