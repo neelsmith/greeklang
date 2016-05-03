@@ -59,7 +59,7 @@ verbinfl.w_pp4_pftptcp_n4d,w_pp4,o/te,neut,voc,dual,pft,act
 
 
 verbinfl.w_pp4_pftptcp_n0p,w_pp4,o/ta,neut,nom,pl,pft,act
-verbinfl.w_pp4_pftptcp_n1p,w_pp4,ont/wn,neut,gen,pl,pft,act
+verbinfl.w_pp4_pftptcp_n1p,w_pp4,o/ntwn,neut,gen,pl,pft,act
 verbinfl.w_pp4_pftptcp_n2p,w_pp4,o/si,neut,dat,pl,pft,act
 verbinfl.w_pp4_pftptcp_n2pn,w_pp4,o/sin,neut,dat,pl,pft,act
 verbinfl.w_pp4_pftptcp_n3p,w_pp4,o/ta,neut,acc,pl,pft,act
