@@ -46,7 +46,7 @@ verbinfl.w_pp4_pftptcp_f4p,w_pp4,ui=ai,fem,voc,pl,pft,act
 
 verbinfl.w_pp4_pftptcp_n0s,w_pp4,o/s,neut,nom,sg,pft,act
 verbinfl.w_pp4_pftptcp_n1s,w_pp4,o/tos,neut,gen,sg,pft,act
-verbinfl.w_pp4_pftptcp_n2s,w_pp4,o/i,neut,dat,sg,pft,act
+verbinfl.w_pp4_pftptcp_n2s,w_pp4,o/ti,neut,dat,sg,pft,act
 verbinfl.w_pp4_pftptcp_n3s,w_pp4,o/s,neut,acc,sg,pft,act
 verbinfl.w_pp4_pftptcp_n4s,w_pp4,o/s,neut,voc,sg,pft,act
 
@@ -59,7 +59,7 @@ verbinfl.w_pp4_pftptcp_n4d,w_pp4,o/te,neut,voc,dual,pft,act
 
 
 verbinfl.w_pp4_pftptcp_n0p,w_pp4,o/ta,neut,nom,pl,pft,act
-verbinfl.w_pp4_pftptcp_n1p,w_pp4,o/wn,neut,gen,pl,pft,act
+verbinfl.w_pp4_pftptcp_n1p,w_pp4,ont/wn,neut,gen,pl,pft,act
 verbinfl.w_pp4_pftptcp_n2p,w_pp4,o/si,neut,dat,pl,pft,act
 verbinfl.w_pp4_pftptcp_n2pn,w_pp4,o/sin,neut,dat,pl,pft,act
 verbinfl.w_pp4_pftptcp_n3p,w_pp4,o/ta,neut,acc,pl,pft,act
