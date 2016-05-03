@@ -15,7 +15,8 @@ smyth.n51241_m4d,lexent.n51241,i(sta/nte,aor,act,masc,voc,dual,Smyth 305
 
 smyth.n51241_m0p,lexent.n51241,i(sta/ntes,aor,act,masc,nom,pl,Smyth 305
 smyth.n51241_m1p,lexent.n51241,i(sta/ntwn,aor,act,masc,gen,pl,Smyth 305
-smyth.n51241_m2p,lexent.n51241,i(sta/ntois,aor,act,masc,dat,pl,Smyth 305
+smyth.n51241_m2p,lexent.n51241,i(sta=si,aor,act,masc,dat,pl,Smyth 305
+smyth.n51241_m2pn,lexent.n51241,i(sta=sin,aor,act,masc,dat,pl,Smyth 305
 smyth.n51241_m3p,lexent.n51241,i(sta/ntas,aor,act,masc,acc,pl,Smyth 305
 smyth.n51241_m4p,lexent.n51241,i(sta/ntes,aor,act,masc,voc,pl,Smyth 305
 
@@ -59,6 +60,7 @@ smyth.n51241_n4d,lexent.n51241,i(sta/nte,aor,act,neut,voc,dual,Smyth 305
 
 smyth.n51241_n0p,lexent.n51241,i(sta/nta,aor,act,neut,nom,pl,Smyth 305
 smyth.n51241_n1p,lexent.n51241,i(sta/ntwn,aor,act,neut,gen,pl,Smyth 305
-smyth.n51241_n2p,lexent.n51241,i(sta/ntois,aor,act,neut,dat,pl,Smyth 305
+smyth.n51241_n2p,lexent.n51241,i(sta=si,aor,act,neut,dat,pl,Smyth 305
+smyth.n51241_n2pn,lexent.n51241,i(sta=sin,aor,act,neut,dat,pl,Smyth 305
 smyth.n51241_n3p,lexent.n51241,i(sta/nta,aor,act,neut,acc,pl,Smyth 305
 smyth.n51241_n4p,lexent.n51241,i(sta/nta,aor,act,neut,voc,pl,Smyth 305
