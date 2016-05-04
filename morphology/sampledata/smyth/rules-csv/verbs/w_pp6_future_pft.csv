@@ -1,0 +1,10 @@
+RuleUrn,InflectionClasses,Ending,Person,Number,Tense,Mood,Voice
+verbinfl.w_pp5_fut_indic17b,w_pp5,somai,1st,sg,futpft,indic,pass
+verbinfl.w_pp5_fut_indic18b,w_pp5,sei,2nd,sg,futpft,indic,pass
+verbinfl.w_pp5_fut_indic18bh,w_pp5,sh|,2rd,sg,futpft,indic,pass
+verbinfl.w_pp5_fut_indic19b,w_pp5,setai,3rd,sg,futpft,indic,pass
+verbinfl.w_pp5_fut_indic20b,w_pp5,sesqon,2nd,dual,futpft,indic,pass
+verbinfl.w_pp5_fut_indic21b,w_pp5,sesqon,3rd,dual,futpft,indic,pass
+verbinfl.w_pp5_fut_indic22b,w_pp5,someqa,1st,pl,futpft,indic,pass
+verbinfl.w_pp5_fut_indic23b,w_pp5,sesqe,2nd,pl,futpft,indic,pass
+verbinfl.w_pp5_fut_indic24b,w_pp5,sontai,3rd,pl,futpft,indic,pass
