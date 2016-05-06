@@ -20,7 +20,7 @@ In active development.  Follow the [scorecard of paradigms from Smyth's *Greek G
 
 ## Release information
 
-Initial 1.0 release expected in May, 2016.
+Initial 1.0 release planned for June, 2016, together with an example application in a virtual environment to be published as part of the Center for Hellenic Studies' *Research Bulletin*.
 
 - requires:
     - java version >= 7

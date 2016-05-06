@@ -22,10 +22,12 @@ paginate:         5
 links:
   - title: Foundational libraries
     url: basics
-  - title: Attic orthography
-    url: attic
+  - title: Dedication of Kanōnes
+    url: morphology/dedication
   - title: Kanōnes
     url: morphology
+  - title: Attic orthography
+    url: attic
   - title: Hexameter
     url: hexameter
   - title: Github project
