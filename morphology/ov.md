@@ -22,6 +22,6 @@ Both lines use the default source directory (since no `datadir` property was spe
 
 ## Using a parser
 
-The compiled parser can be used in multiple ways.  You can work directly with the utility programs of SFST toolkit, such as `fst-mor`.   (See [SFST documentation](http://www.cis.uni-muenchen.de/~schmid/tools/SFST/) for information.)  For example,  run `fst-mor build/smyth/greek.a` to enter forms interactively for analysis.  Note, however, that the FST works on *unaccented* forms.
+The compiled parser can be used in multiple ways.  You can work directly with the utility programs of the SFST toolkit, such as `fst-mor`.   (See [SFST documentation](http://www.cis.uni-muenchen.de/~schmid/tools/SFST/) for information.)  For example,  run `fst-mor build/smyth/greek.a` to enter forms interactively for analysis.  Note, however, that the FST works on *unaccented* forms.
 
 You can also parse fully accented forms in a simple text file with one word per line using the included `greek.sh` shell script.  It writes to standard output, so redirect it if you want to save to a file, e.g., `greek.sh WORDSTOPARSE.txt > analyses.txt` to save analyses of `WORDSTOPARSE.txt` in `analyses.txt`.
