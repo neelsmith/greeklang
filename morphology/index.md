@@ -31,5 +31,4 @@ See a [brief overview](ov) of using Kanōnes.
     - [gradle](http://gradle.org/)
     - Stuttgart Finite State Transducer tools (<http://www.cis.uni-muenchen.de/~schmid/tools/SFST/>)
 - [release notes](releases)
-- documentation
 - github:  subproject of the [`greeklang` repository](https://github.com/neelsmith/greeklang)
