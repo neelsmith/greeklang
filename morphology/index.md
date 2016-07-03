@@ -14,27 +14,22 @@ layout: page
 
 ## Current status
 
-In active development.  Follow the [scorecard of paradigms from Smyth's *Greek Grammar*](smyth)!
+In active development.  Current emphasis is on developing large lexica of stems that users can draw from in building their own corpus-specific parsers.  Tables of noun stems from the Perseus project's `morpheus` parser have already been integrated into Kanōnes, and work is now focused on adding verb stems.
 
+
+## Documentation for end users
+
+See a [brief overview](ov) of using Kanōnes.
 
 
 ## Release information
 
-Initial 1.0 release planned for June, 2016, together with an example application in a virtual environment to be published as part of the Center for Hellenic Studies' *Research Bulletin*.
+
 
 - requires:
     - java version >= 7
+    - [gradle](http://gradle.org/)
     - Stuttgart Finite State Transducer tools (<http://www.cis.uni-muenchen.de/~schmid/tools/SFST/>)
-
-
-
 - [release notes](releases)
 - documentation
 - github:  subproject of the [`greeklang` repository](https://github.com/neelsmith/greeklang)
-
-
-## To be added with 1.0 release
-
-- live specifications
-- API docs
-- maven identifiers
