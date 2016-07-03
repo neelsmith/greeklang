@@ -5,7 +5,7 @@ layout: page
 
 ## Building a parser
 
-Use gradle to compile a parser in two steps:
+Compile a parser with two gradle tasks:
 
 1. `gradle buildStems`
 2. `gradle fst`
