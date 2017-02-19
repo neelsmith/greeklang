@@ -1,5 +1,12 @@
-#greeklang#
+#greeklang is moving!#
 
-Specification of a suite of libraries for working with ancient Greek, and implementations of the specifications in groovy and java.
+I'm migrating my work on code libraries for working with ancient Greek to Scala, and cross-compiling for both the JVM and javascript engines.  I won't be deleting this repository any time soon, but am deprecating it and will not be further developing it.
 
-For more information, see the project web site at <http://neelsmith.github.io/greeklang/>.
+For links to work replacing this repository, see the repositories listed at  <http://neelsmith.github.io/greek_language/>.
+
+
+
+## Previous work
+
+
+Described here: <http://neelsmith.github.io/greeklang/>.
