@@ -1,4 +1,4 @@
-#greeklang is moving!#
+# `greeklang` is moving!
 
 I'm migrating my work on code libraries for working with ancient Greek to Scala, and cross-compiling for both the JVM and javascript engines.  I won't be deleting this repository any time soon, but am deprecating it and will not be further developing it.
 
